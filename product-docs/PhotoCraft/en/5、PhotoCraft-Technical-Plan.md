@@ -83,3 +83,5 @@ Plugin, skills, upstream CLI and protocol versions evolve independently. Release
 **Created**: 2026-10-05
 **Updated**: 2026-10-05
 **Document status**: Ready for review; implementation status is governed by OpenSpec tasks and evidence.
+
+Exchange delivery now includes exchange-loss.json binding native, reopened inspection and exports by digest. Derivatives never substitute for native projects; cross-editor font, effect and mask fidelity remains explicitly unknown until separate acceptance.
