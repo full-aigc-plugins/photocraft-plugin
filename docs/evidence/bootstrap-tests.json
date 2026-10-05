@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-10-05",
+  "platform": "darwin-arm64",
+  "command": "CRAFT_LIVE_TEST=1 python3 -m unittest discover -s tests -v",
+  "exitCode": 0,
+  "testCount": 8,
+  "unitTestCount": 7,
+  "liveTestCount": 1,
+  "resultTail": "ok\n\n----------------------------------------------------------------------\nRan 8 tests in 10.513s\n\nOK\n",
+  "redPhase": "Initial bootstrap module absent: FileNotFoundError. Pinned version metadata regression: runtime_version_mismatch before fix.",
+  "scope": "Single isolated skill installation and read-only CLI invocation only",
+  "notVerified": [
+    "full-domain-workflow",
+    "plugin-host-installation",
+    "cross-plugin-orchestration",
+    "other-platforms"
+  ],
+  "sourcePackage": "photocraft-skills",
+  "sourceHashes": {
+    "README.md": "a33c76b31475777dead7a2c5015d5dd5dd434d37639f52b84ba1fc4c6454efde",
+    "README.zh-CN.md": "6f638f0db64e7995dba33c43cd254d73727b07d2ea6bc52e40aabdf314ebfa56",
+    "tests/test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "tests/test_bootstrap.py": "a3bc5fdf4056c6eaac4223a9e3771c62c4f521f83f67a82cbe3513093fed0136",
+    "skills/photocraft-use/SKILL.md": "15ce8aaf8a8dfa1986e625fe67b12df91bfb92e74129ebc3aa690351a5d9f9c1",
+    "skills/photocraft-use/scripts/bootstrap.py": "1c0867a919a7b81d0b971f817ba5287742c0e602cdd0b33377c65840963b856b",
+    "skills/photocraft-use/scripts/runtime.lock.json": "1b94994549e0914d47c443bd1e95c45d3d9d7fd7f7d0e3c927f9da4d456da59b"
+  }
+}

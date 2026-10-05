@@ -1,0 +1,72 @@
+{
+  "document": {
+    "width": 320,
+    "height": 400,
+    "background": "#faf4e8",
+    "name": "NOVA poster"
+  },
+  "minimumLayers": 4,
+  "operations": [
+    {
+      "command": "asset.place",
+      "params": {
+        "asset": "product",
+        "center": [
+          160,
+          220
+        ],
+        "name": "Product"
+      },
+      "as": "product"
+    },
+    {
+      "command": "select.rect",
+      "params": {
+        "x": 105,
+        "y": 140,
+        "width": 110,
+        "height": 160
+      }
+    },
+    {
+      "command": "layer.layerMask.revealSelection"
+    },
+    {
+      "command": "select.deselect"
+    },
+    {
+      "command": "type.create",
+      "params": {
+        "x": 28,
+        "y": 60,
+        "text": "NOVA",
+        "name": "Headline",
+        "font": "Arial",
+        "size": 32,
+        "color": "#192a3b"
+      },
+      "as": "headline"
+    },
+    {
+      "command": "type.create",
+      "params": {
+        "x": 28,
+        "y": 360,
+        "text": "Everyday essentials",
+        "name": "Caption",
+        "font": "Arial",
+        "size": 15,
+        "color": "#192a3b"
+      },
+      "as": "caption"
+    }
+  ],
+  "exports": [
+    {
+      "format": "png"
+    },
+    {
+      "format": "psd"
+    }
+  ]
+}

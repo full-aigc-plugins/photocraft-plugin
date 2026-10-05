@@ -4,7 +4,7 @@
     {
       "command": "python3 scripts/validate_docs.py",
       "exitCode": 0,
-      "stdout": "{\n  \"status\": \"passed\",\n  \"scope\": \"documentation structure, local links, status honesty and spec/task traceability only\",\n  \"markdownFiles\": 58,\n  \"capabilities\": 7,\n  \"requirements\": 19,\n  \"scenarios\": 38,\n  \"openImplementationTasks\": 57,\n  \"errors\": []\n}",
+      "stdout": "{\n  \"status\": \"passed\",\n  \"scope\": \"documentation structure, local links, status honesty and spec/task traceability only\",\n  \"markdownFiles\": 58,\n  \"capabilities\": 7,\n  \"requirements\": 19,\n  \"scenarios\": 38,\n  \"openImplementationTasks\": 56,\n  \"errors\": []\n}",
       "stderr": ""
     },
     {

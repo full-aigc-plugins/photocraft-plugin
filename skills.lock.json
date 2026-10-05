@@ -1,4 +1,18 @@
 {
   "version": 1,
-  "sources": []
+  "sources": [
+    {
+      "package": "photocraft-skills",
+      "repo": "https://github.com/full-aigc-skills/photocraft-skills.git",
+      "ref": "v0.1.0-dev.0",
+      "sha": "2b9399019f460347a99debcaeb27a28f06b25f8d",
+      "skills": [
+        "photocraft-use"
+      ],
+      "dest": "skills/",
+      "sha256": {
+        "photocraft-use": "ada9c729bbc879be0e9136e8b3acf1ffc2631f737fa7ae531189ea829b58f845"
+      }
+    }
+  ]
 }

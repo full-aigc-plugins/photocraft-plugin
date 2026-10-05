@@ -1,7 +1,10 @@
 {
-  "stage": "documentation-baseline",
-  "implementation": "not-started",
+  "stage": "implementation-in-progress",
+  "implementation": "in-progress",
   "marketplaceEligible": false,
   "specAuthority": "openspec/changes/establish-v1-plugin",
-  "supportedPluginHosts": []
+  "supportedPluginHosts": [],
+  "taskEvidence": {
+    "2.1": "docs/evidence/bootstrap-tests.json"
+  }
 }

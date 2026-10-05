@@ -32,7 +32,8 @@
         "2.3"
       ],
       "owner": "Runtime owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/bootstrap-tests.json"
     },
     {
       "requirement": "PC-RT-002",
@@ -87,7 +88,8 @@
         "4.3"
       ],
       "owner": "Domain owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/photo-workflow-tests.json"
     },
     {
       "requirement": "PC-DM-002",
@@ -98,7 +100,8 @@
         "4.6"
       ],
       "owner": "Domain owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/photo-workflow-tests.json"
     },
     {
       "requirement": "PC-DM-003",
@@ -109,7 +112,8 @@
         "4.9"
       ],
       "owner": "Domain owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/photo-workflow-tests.json"
     },
     {
       "requirement": "PC-DM-004",
@@ -120,7 +124,8 @@
         "4.12"
       ],
       "owner": "Domain owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/photo-workflow-tests.json"
     },
     {
       "requirement": "PC-DM-005",
@@ -131,7 +136,8 @@
         "4.15"
       ],
       "owner": "Domain owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/photo-workflow-tests.json"
     },
     {
       "requirement": "PC-DM-006",
@@ -142,7 +148,8 @@
         "4.18"
       ],
       "owner": "Domain owner",
-      "status": "planned"
+      "status": "in-progress",
+      "evidence": "docs/evidence/photo-workflow-tests.json"
     },
     {
       "requirement": "PC-AR-001",

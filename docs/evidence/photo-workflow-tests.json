@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-05",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0",
+  "testRuns": [
+    {
+      "command": "CRAFT_LIVE_TEST=1 python3 -m unittest discover -s tests -v",
+      "passed": 14,
+      "exitCode": 0
+    },
+    {
+      "command": "CRAFT_LIVE_TEST=1 python3 -m unittest discover -s tests -p test_native_workflow.py -v",
+      "passed": 1,
+      "exitCode": 0,
+      "reason": "Added explicit PSD decoded-pixel equality and missing-font rejection"
+    }
+  ],
+  "fixtureType": "synthetic solid-color raster for functional tests, not a product photo or visual-quality acceptance",
+  "observed": {
+    "nativeLayerCount": 4,
+    "editableText": true,
+    "maskBoundToProductLayer": true,
+    "protectedPixelsUnchangedAfterMask": true,
+    "protectedPixelsUnchangedAfterTextEdit": true,
+    "psdLayerSemanticsPreserved": true,
+    "psdDecodedPixelsEqual": true,
+    "posterSize": [
+      320,
+      400
+    ],
+    "coverSize": [
+      400,
+      400
+    ],
+    "originalProjectPreserved": true,
+    "assetChecksumsVerified": true,
+    "missingFontsRejected": true,
+    "staleRevisionRejected": true,
+    "scopedDocumentAssetImport": true
+  },
+  "nativeProjectSha256": "911ba3dc70620483ceb6f61ce7323e34c67b6abd91ac8376539679ba56e58712",
+  "exportWarnings": [
+    {
+      "path": "design.png",
+      "warnings": [
+        "4 layer(s) flattened; layers, masks and blend modes are not kept"
+      ]
+    },
+    {
+      "path": "design.psd",
+      "warnings": []
+    }
+  ],
+  "sourcePackage": "photocraft-skills",
+  "sourceHashes": {
+    "LICENSE": "f51b5b32a3b7c3df50ef7153f4dd46233221574f07384d2cf99c6fae08c59f03",
+    "README.md": "c40514195fbbe7ec2d4d187ea32a34ac55a0a6a50a4a4a949240f16a69f3cd2b",
+    ".gitignore": "60c9bdd905fcf45ac485c680d32e9773962cf061b6f041dcddd033911558a672",
+    "README.zh-CN.md": "ff679a83634081408658a19203b717e99613453600e81c7d21aa2d661fe13e88",
+    "tests/test_native_workflow.py": "3c80e6c21dcfc0e9f00980e3b7a960c023e55bc56654d17bb215f80cf959fad3",
+    "tests/test_workflow.py": "3cd1a1e009f3a687576bfb6c642798b411253b6ae7f4833bde10bef41a085af6",
+    "tests/test_first_use.py": "8bdf24b4c705915707304fee9f7dcab5d19b8f30a170b4f7fe4d24b191caf28f",
+    "tests/test_bootstrap.py": "a3bc5fdf4056c6eaac4223a9e3771c62c4f521f83f67a82cbe3513093fed0136",
+    "skills/photocraft-use/SKILL.md": "aa44dac1610fbb45dc436c06ea378d1fc22bae15eb196c11a98ee273a1cf4a2f",
+    "skills/photocraft-use/references/workflow.md": "5b2f2b9c7aa8355570906f92947bb90c76fb420c5278a52d8ce6b31ed0f93253",
+    "skills/photocraft-use/examples/poster-plan.json": "33dce8089816a570f9dd0a99a6fede5fcd163dd12892817f8c59dfb13bd16ea3",
+    "skills/photocraft-use/scripts/bootstrap.py": "1c0867a919a7b81d0b971f817ba5287742c0e602cdd0b33377c65840963b856b",
+    "skills/photocraft-use/scripts/mcp_session.py": "2f1e6de76d1fe12917933f4967a40c827ba80994a8441e47cb68f212b00160a4",
+    "skills/photocraft-use/scripts/runtime.lock.json": "1b94994549e0914d47c443bd1e95c45d3d9d7fd7f7d0e3c927f9da4d456da59b",
+    "skills/photocraft-use/scripts/workflow.py": "2c60c8cbf85272efdb1b9605c7df0b8a1ec5e8ec7564906ca99b5893c41f1398"
+  },
+  "notVerified": [
+    "plugin-harness-state-machine",
+    "host-plugin-installation",
+    "all-PSD-features",
+    "real-poster-visual-quality",
+    "other-platforms",
+    "ArtCraft-orchestration"
+  ]
+}
