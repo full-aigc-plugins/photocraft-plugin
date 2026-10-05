@@ -43,3 +43,5 @@ python3 -I -B /mnt/skills/user/photocraft-use/scripts/bootstrap.py
 当前完成安装器单元测试，专业工作流仍在逐项验证。CLI 安装成功不代表原生创作、导出保真或宿主加载验收完成；按真实结果记录通过、失败和未验证项。
 
 首次安装或复用遇到其他安装进程时有界等待，超时保持现状并报 runtime_install_busy。参见[安装并发合同](references/installation-concurrency.md)。
+
+开发版本 dev.2 随原生与导出交付[交换损失报告](references/exchange-loss.md)。阅读 lost/observed/unknown 和导出警告；不把扁平导出、SVG 结构或 PSD 图层计数称为无损原生替代。

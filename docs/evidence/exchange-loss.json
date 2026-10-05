@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-05T14:16:39.886418+00:00",
+  "version": "0.1.0-dev.2",
+  "platform": "darwin-arm64",
+  "result": "partial-acceptance",
+  "redPhase": {
+    "domainHelperMissing": true,
+    "artcraftValidatorMissing": false
+  },
+  "regression": {
+    "passed": 20,
+    "skipped": 0
+  },
+  "checks": [
+    "hash-bound native project, reopened inspection and exports",
+    "lost/observed/unknown remain distinct",
+    "flattening, editable parameters, alpha and subtitle style format losses explicit",
+    "SVG XML element observations and unknown font/effect fidelity",
+    "PSD reopened structure is not complete fidelity proof",
+    "native substitute and false approval rejected",
+    "native/output/inspection mismatches rejected"
+  ],
+  "limits": [
+    "cross-editor font, effects and masks fidelity still unverified",
+    "unknown values do not establish lossless interchange",
+    "full AR-002 real boundary acceptance task remains open",
+    "technical observations are not creative approval"
+  ]
+}

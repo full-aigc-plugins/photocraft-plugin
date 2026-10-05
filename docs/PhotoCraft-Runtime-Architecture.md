@@ -200,3 +200,5 @@ If real concurrency or multi-machine needs exceed the local ledger, evaluate ser
 **Created**: 2026-10-05
 **Updated**: 2026-10-05
 **Document status**: Ready for review; implementation status is governed by OpenSpec tasks and evidence.
+
+Current implementation: native deliveries include exchange-loss.json. The public workflow retains native source and reopened inspection digests and records format losses, observed SVG/PSD structure and unknown font/effect fidelity. Reports are part of manifest.files and are rechecked during ArtCraft adoption and packaging. Full interchange fidelity acceptance remains open.

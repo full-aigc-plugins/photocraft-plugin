@@ -5,7 +5,9 @@
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "supportedPluginHosts": [],
   "taskEvidence": {
-    "2.1": "docs/evidence/bootstrap-tests.json"
+    "2.1": "docs/evidence/bootstrap-tests.json",
+    "5.4": "docs/evidence/exchange-loss.json",
+    "5.5": "docs/evidence/exchange-loss.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-installation.json"
 }

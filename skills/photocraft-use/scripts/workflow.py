@@ -12,6 +12,11 @@ import re
 import shutil
 import tempfile
 
+def exchange_report(root,outputs,warnings):
+    spec=importlib.util.spec_from_file_location('craft_exchange_loss',Path(__file__).with_name('exchange_loss.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    module.write_report(root,outputs,warnings)
+
 ALLOWED = {
     'shape.create', 'type.create', 'type.edit', 'type.setStyle',
     'layer.new.layer', 'layer.new.group', 'layer.renameLayer', 'layer.select',
@@ -204,11 +209,12 @@ def execute(plan, output, runtime_home=None, source=None):
             (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
         if psd is not None:
             (stage / 'psd-inspection.json').write_text(json.dumps(psd, ensure_ascii=False, indent=2) + '\n')
+        exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
         manifest = {'schema': 'photocraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'assets': assets,
                     'outputs': outputs, 'nativeWarnings': saved.get('warnings', []),
                     'files': {f.name: sha(f) for f in stage.iterdir() if f.is_file()},
-                    'acceptance': 'requires-domain-and-visual-review'}
+                    'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
