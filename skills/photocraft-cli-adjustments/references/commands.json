@@ -7,6 +7,30 @@
   "scope": "observed command catalogue, not capability or creative acceptance",
   "commands": [
     {
+      "id": "select.deselect",
+      "label": "Deselect",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.rect",
+      "label": "Rectangular Selection",
+      "params": "{\"x\":i32,\"y\":i32,\"width\":u32,\"height\":u32,\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"ellipse\":bool=false,\"antiAlias\":bool=true,\"feather\":px=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.select",
+      "label": "Select Layer",
+      "params": "{\"layer\":id,\"mode\":\"replace|toggle|range|add\"=\"replace\"} (toggle = ⌘-click, range = ⇧-click)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.revealSelection",
+      "label": "Reveal Selection",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
       "id": "layer.setAdjustment",
       "label": "Adjustment Properties",
       "params": "{\"layer\":id?, …params of that adjustment kind}",
@@ -213,6 +237,18 @@
     {
       "id": "image.adjustments.equalize",
       "label": "Equalize",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.deselectLayers",
+      "label": "Deselect Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.selectLinkedLayers",
+      "label": "Select Linked Layers",
       "params": "{}",
       "enabledAtEmptySession": false
     },

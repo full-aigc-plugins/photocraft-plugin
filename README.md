@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.5 |
+| Metadata version | 0.1.0-dev.6 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.4 |
+| Skills source | photocraft-skills / v0.1.0-dev.5 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -148,3 +148,5 @@ The source suite contains 12 independently installable skills with setup, public
 Current plugin: `0.1.0-dev.5`; skill suite: `0.1.0-dev.4`. The corrected examples resolve scripts from the actual host-loaded `SKILL.md` directory. All skills passed isolated entry-point checks in user, project and plugin layouts with spaces. [Path evidence](docs/evidence/installed-skill-paths.json). Earlier host evidence above covers its recorded release; existing installations require an update.
 
 Plugin `0.1.0-dev.5` corrects the whole-skill digests by fetching the immutable public source tag, without local Python caches. Plugin tag `v0.1.0-dev.4` is superseded and must not be installed because its source digests included ignored development caches.
+
+Current plugin `0.1.0-dev.6` pins skill suite `0.1.0-dev.5`. Nine independently copied task skills passed fresh installation and real native editing; local adjustment masks, retouch parameter units and preserved pixels are verified. Full regression: 36 passed, no skips. [Evidence](docs/evidence/task-skill-first-use.json). Full creative/GUI/model acceptance remains pending.

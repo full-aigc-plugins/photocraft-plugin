@@ -12,7 +12,8 @@
     "1.8": "docs/evidence/skill-suite.json",
     "1.9": "docs/evidence/skill-suite.json",
     "1.11": "docs/evidence/installed-skill-paths.json",
-    "1.12": "docs/evidence/installed-skill-paths.json"
+    "1.12": "docs/evidence/installed-skill-paths.json",
+    "1.10": "docs/evidence/task-skill-first-use.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-skill-suite.json"
 }

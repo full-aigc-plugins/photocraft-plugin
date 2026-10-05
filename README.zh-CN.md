@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.5 |
+| Metadata version | 0.1.0-dev.6 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.4 |
+| Skills source | photocraft-skills / v0.1.0-dev.5 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -148,3 +148,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 当前插件版本：`0.1.0-dev.5`；技能源版本：`0.1.0-dev.4`。命令示例以宿主实际加载的 `SKILL.md` 所在目录调用脚本。全部技能在用户、项目与插件三种含空格布局中通过隔离入口检查。[路径证据](docs/evidence/installed-skill-paths.json)。此前宿主验证仍对应其记录版本，既有安装需更新。
 
 插件 `0.1.0-dev.5` 从固定公开标签重新取快照并修正整个技能摘要，未带入本地 Python 缓存。插件标签 `v0.1.0-dev.4` 的摘要误包含被忽略的开发缓存，已被替代，不可安装该标签。
+
+当前插件 `0.1.0-dev.6` 固定技能源 `0.1.0-dev.5`。九类独立场景技能通过冷安装及真实原生编辑，验证局部调整蒙版、修图数值范围和保护区域；完整回归 36 项、零跳过。[证据](docs/evidence/task-skill-first-use.json)。完整创作、GUI 与模型派发验收仍未完成。

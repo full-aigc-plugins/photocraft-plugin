@@ -225,7 +225,8 @@
         "1.7",
         "1.8",
         "1.9",
-        "1.11"
+        "1.11",
+        "1.10"
       ],
       "owner": "Skills owner",
       "status": "bounded-verification-passed",

@@ -1,0 +1,60 @@
+{
+  "schema": "craft-task-skill-first-use/v1",
+  "date": "2026-10-06",
+  "skillSourceRef": "v0.1.0-dev.5",
+  "nativeCliVersion": "0.2.0",
+  "testFile": "tests/test_task_skill_first_use.py",
+  "testFileSha256": "4da289902b34d76637ac6557b9e7fa3e77b277c5ad64e2ef1ca50a87f295dd44",
+  "wholeSkillSha256": {
+    "photocraft-cli-project": "1155a87170caf8230a61de2a28f6705d46d7c9a3ff6b3b006a0517627829aad0",
+    "photocraft-cli-layers": "20b84b1fe74746ced78a1371ab66946adb78a2c5fe2f09bac47eb90f7275c357",
+    "photocraft-cli-selection": "d3db21473474d1feb25bd55b4c3431aad345d5972e0a134c4fc8f4bebb05e593",
+    "photocraft-cli-masks": "37be4698cdcadc24adbb3d44cda4286f3b868148af1bd2e58fec02a484ab710d",
+    "photocraft-cli-adjustments": "5261885fdc54ecf7fcac3d4bc4e0d8a5fdcbcd6efe6aa87a4b23812905707193",
+    "photocraft-cli-retouch": "13c617897f3fc4b540c2a1644f082a20c9d3a8ca51c758bef9273486690504ba",
+    "photocraft-cli-text": "9e704aed670cbb164ec8c972d1ed6a8dd9413ba0b0754bf4ed5c0dca52c580ad",
+    "photocraft-cli-resize": "791c36155d7cd0abbec813c1cf65f8e97c3e869c65d641b9f25b790f694929e5",
+    "photocraft-cli-export": "ce506f31ada67c7a3a7a84187286452dc993fa403dde7ceb00ba0a72d7e2c186"
+  },
+  "testCommand": "CRAFT_TASK_FIRST_USE=1 CRAFT_LIVE_TEST=1 CRAFT_LIVE_SUITE=1 /opt/anaconda3/bin/python3 -B -m unittest discover -s tests -v",
+  "result": {
+    "tests": 36,
+    "passed": 36,
+    "skipped": 0,
+    "seconds": 76.648
+  },
+  "taskCaseCount": 9,
+  "isolatedFirstUse": {
+    "onlySelectedSkillCopied": true,
+    "layout": ".agents/skills/<skill>",
+    "freshRuntimePerCase": true,
+    "nativeInstalledFromPublicArchive": true,
+    "subprocessPath": "/usr/bin:/bin",
+    "originalNativeProjectHashPreserved": true
+  },
+  "verified": [
+    "Create/reopen editable pcraft layers",
+    "Duplicate/properties preserve original product and text",
+    "Selected fill changes only requested rectangle",
+    "Half-product layer mask preserves headline pixels",
+    "Editable local brightness adjustment requires explicit selection mask; outside pixels unchanged",
+    "Brush stroke, clone stamp and healing brush restore sampled patch and preserve other pixels",
+    "Type revision changes headline but preserves product pixels",
+    "Canvas/resampled variants preserve layers",
+    "PSD signature, layer/text semantics and rendered pixels match native source"
+  ],
+  "redBeforeFix": [
+    "Adjustment catalogue lacked selection/mask prerequisites",
+    "Retouch catalogue lacked layer selection and guide omitted different parameter units"
+  ],
+  "runtimeFindings": [
+    "Creating adjustment layer does not automatically restrict to selection; explicit revealSelection mask required",
+    "paint.stroke hardness/opacity/flow use 0..1; clone/heal hardness 0..100 and opacity/flow 1..100"
+  ],
+  "exclusions": [
+    "All 748 commands",
+    "Complex texture or arbitrary retouch quality",
+    "GUI/model dispatch",
+    "Full plugin Harness acceptance"
+  ]
+}
