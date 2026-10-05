@@ -32,7 +32,7 @@ Intent + assets
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / v0.1.0-dev.0 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
-| Host compatibility | NOT_RUN |
+| Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
 
 
@@ -93,7 +93,7 @@ photocraft-cli --version
 | 上游 CLI 与只读 MCP | 已观察，仅 macOS arm64 |
 | 独立技能与适配器 | 技术工作流已验证；完整 Harness 待完成 |
 | 原生工程与创作验收 | 原生技术用例通过；创作质量待验收 |
-| 目标宿主安装 | NOT_RUN |
+| 目标宿主安装 | Codex 受控安装与发现通过；完整宿主验收待完成 |
 
 
 ## 路线与贡献
@@ -126,3 +126,7 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 ```
 
 首次入口会安装锁定官方 CLI 到用户数据目录；要求 macOS arm64 与 Python 3.11+。使用技能内示例计划并提供真实素材；交付与修订合同见技能的 SKILL.md。[来源与校验证据](docs/evidence/skill-publication.json)。
+
+## Codex 开发版宿主验证
+
+五个插件已在隔离 Codex 配置中从公开标签安装，app-server 发现带命名空间的技能且无加载错误；安装缓存中的 ArtCraft 入口已交付四种原生工程。[宿主证据](docs/evidence/codex-installation.json)。此为受控开发验收，不代表桌面 GUI、其他宿主、完整创作或正式市场发布通过。

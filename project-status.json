@@ -6,5 +6,6 @@
   "supportedPluginHosts": [],
   "taskEvidence": {
     "2.1": "docs/evidence/bootstrap-tests.json"
-  }
+  },
+  "hostValidationEvidence": "docs/evidence/codex-installation.json"
 }

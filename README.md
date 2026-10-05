@@ -32,7 +32,7 @@ Intent + assets
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / v0.1.0-dev.0 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
-| Host compatibility | NOT_RUN |
+| Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
 
 
@@ -93,7 +93,7 @@ Planned safeguards include project write locks, revision preconditions, persiste
 | Upstream CLI and read-only MCP | Observed on macOS arm64 only |
 | Independent skill and adapter | Technical workflow tested; full harness pending |
 | Native project and creative acceptance | Native technical cases pass; creative acceptance pending |
-| Target host installation | NOT_RUN |
+| Target host installation | Codex controlled install/discovery pass; full host acceptance pending |
 
 
 ## Roadmap and contribution
@@ -126,3 +126,7 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 ```
 
 First use installs the pinned official CLI into user-level storage. Requires macOS arm64 and Python 3.11+. Use the bundled example with real input assets; consult SKILL.md for delivery and revision contracts. [Source verification](docs/evidence/skill-publication.json).
+
+## Codex development host checks
+
+All five plugins installed from public tags into an isolated Codex configuration. App-server discovered their namespaced skills without loading errors; the installed ArtCraft entry produced four native projects. [Host evidence](docs/evidence/codex-installation.json). These controlled development checks do not establish desktop GUI, other hosts, complete creative or production marketplace acceptance.

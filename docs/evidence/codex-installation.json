@@ -1,0 +1,26 @@
+{
+  "schema": "craft-codex-host-evidence/v1",
+  "observedAt": "2026-10-05T11:51:21.177492+00:00",
+  "platform": "darwin-arm64",
+  "pluginId": "photocraft",
+  "releaseTag": "v0.1.0-dev.0",
+  "releaseCommit": "11777a78d77e1a3a2e939bcd19d7944f775d502c",
+  "cliVersion": "codex-cli 0.153.4",
+  "appServerUserAgent": "Codex Desktop/0.147.0",
+  "result": "passed",
+  "scope": [
+    "temporary isolated host configuration and local test marketplace",
+    "install from public GitHub immutable tag",
+    "plugin list installed and enabled",
+    "app-server skills/list discovers enabled namespaced skill with zero errors",
+    "installed skill content matches source lock"
+  ],
+  "skillName": "photocraft:photocraft-use",
+  "marketplacePromotion": false,
+  "notVerified": [
+    "desktop GUI activation and interaction",
+    "other hosts or platforms",
+    "full domain and creative acceptance",
+    "production release"
+  ]
+}
