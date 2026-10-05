@@ -15,5 +15,6 @@
     "1.12": "docs/evidence/installed-skill-paths.json",
     "1.10": "docs/evidence/task-skill-first-use.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-current-release-20261006.json"
+  "hostValidationEvidence": "docs/evidence/codex-release17-native-20261006.json",
+  "hostValidationStatus": "bounded-installed-native-workflow-passed"
 }
