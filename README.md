@@ -6,11 +6,11 @@ Independent-skills-driven Layer-preserving image editing and visual design.
 
 ## Current release and reproducible host checks
 
-Previous verified plugin/skill snapshot: `0.1.0-dev.2`; current suite is `0.1.0-dev.3`. Codex 0.147.0 and 0.153.4 installed all five fixed releases and discovered five enabled namespaced skills with zero loading errors. Installed ArtCraft public entrypoints passed mixed first-use workflows on both hosts. Four standalone representative workflows passed on 0.147.0. These runs invoke the installed Python entrypoints; model dispatch, desktop GUI, creative final review and full interchange fidelity remain unverified.
+Current plugin/skill suite: `0.1.0-dev.3`. Codex 0.147.0 and 0.153.4 installed five fixed public releases and discovered all 58 enabled namespaced skills with zero loading errors and matching source digests. Five representative workflows passed through installed task-skill entrypoints on 0.147.0, including native projects, targeted revisions and the mixed ArtCraft online workflow. Model dispatch, desktop GUI, final creative review and full interchange fidelity remain unverified.
 
-[Host verification design](docs/PhotoCraft-Host-Verification-Architecture.md) · [Version-bound evidence](docs/evidence/codex-current-release.json). Historical milestones below retain their original scope; the current manifest and locks own version identity.
+[Host verification design](docs/PhotoCraft-Host-Verification-Architecture.md) · [Version-bound evidence](docs/evidence/codex-skill-suite.json). Historical milestones below retain their original scope; the current manifest and locks own version identity.
 
-> Implementation is in progress. This is not yet a validated, installable plugin release; independent skills and runtime integration are being developed.
+> Development release. Fixed-tag Codex installation, skill discovery and representative native workflows have passed; complete product and creative acceptance remain open.
 
 Implementation has started in the independent skills package. The isolated first-use installer is tested on macOS arm64; complete creative workflows and plugin host acceptance remain pending. [Evidence](docs/evidence/bootstrap-tests.json)
 
@@ -120,7 +120,7 @@ Original content uses [Apache-2.0](LICENSE). This is a third-party integration d
 
 [Upstream PhotoCraft](https://github.com/storytold/photocraft) · [Issues](https://github.com/full-aigc-plugins/photocraft-plugin/issues)
 
-Independent skills are pinned at the current published development tag `v0.1.0-dev.2`, including the exact source commit and whole-skill digest in `skills.lock.json`. Verify using `python3 scripts/vendor/skill_vendor.py check`. These source snapshots do not establish plugin-host acceptance or production readiness.
+Independent skills are pinned at the current published development tag `v0.1.0-dev.3`, including the exact source commit and whole-skill digest in `skills.lock.json`. Verify using `python3 scripts/vendor/skill_vendor.py check`. These source snapshots do not establish plugin-host acceptance or production readiness.
 
 ## Development skill installation and use
 

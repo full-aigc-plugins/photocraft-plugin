@@ -26,10 +26,26 @@
     "passed": 1,
     "seconds": 0.415
   },
-  "hostDiscovery": "pending fixed release verification",
+  "hostDiscovery": {
+    "result": "passed",
+    "versions": [
+      "0.147.0",
+      "0.153.4"
+    ],
+    "suiteSkills": 58,
+    "pluginSkills": 12,
+    "loadingErrors": 0,
+    "evidence": "codex-skill-suite.json"
+  },
   "limits": [
     "not all individual command IDs executed",
     "model task dispatch and GUI remain unverified",
     "creative final acceptance and full interchange fidelity remain open"
-  ]
+  ],
+  "installedTaskWorkflow": {
+    "pluginId": "photocraft",
+    "skill": "photocraft-cli-masks",
+    "result": "passed",
+    "testOutput": "test_layer_mask_text_revision_psd_and_size_variant (test_native_workflow.NativeWorkflowTests.test_layer_mask_text_revision_psd_and_size_variant) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.642s\n\nOK"
+  }
 }

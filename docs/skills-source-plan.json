@@ -1,5 +1,5 @@
 {
-  "status": "implementation-in-progress",
+  "status": "published-and-vendored",
   "package": "photocraft-skills",
   "proposedRepository": "https://github.com/full-aigc-skills/photocraft-skills",
   "skills": [
@@ -18,5 +18,7 @@
   ],
   "sourceOfTruth": "independent skills repository",
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
-  "suiteManifest": "https://github.com/full-aigc-skills/photocraft-skills/blob/main/skill-suite.json"
+  "suiteManifest": "https://github.com/full-aigc-skills/photocraft-skills/blob/main/skill-suite.json",
+  "sourceRef": "v0.1.0-dev.3",
+  "sourceSha": "8f3f277c96b5b39550a6a2bc7d55988cc8ad3807"
 }

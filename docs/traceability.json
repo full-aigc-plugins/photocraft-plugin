@@ -226,7 +226,8 @@
         "1.9"
       ],
       "owner": "Skills owner",
-      "status": "planned"
+      "status": "bounded-verification-passed",
+      "evidence": "docs/evidence/skill-suite.json"
     }
   ]
 }

@@ -6,11 +6,11 @@
 
 ## 当前版本与可复现宿主验证
 
-前一已验证插件/技能源快照：`0.1.0-dev.2`；当前技能体系为 `0.1.0-dev.3`。Codex 0.147.0 与 0.153.4 均安装五个固定发布，发现五项启用的命名空间技能，加载错误为零；两套宿主中的 ArtCraft 公开入口均通过混合首次使用流程。四个独立代表任务在 0.147.0 通过。这些测试执行安装后的 Python 入口；模型自动派发、桌面 GUI、创作最终评审和完整交换保真尚未验证。
+当前插件/技能源版本：`0.1.0-dev.3`。Codex 0.147.0 与 0.153.4 均安装五个固定公开发布，发现全部 58 项启用的命名空间技能，加载错误为零，来源摘要一致。五项代表流程已通过 0.147.0 安装后的场景技能入口验证，包括原生工程、局部修订和 ArtCraft 在线混合流程。模型自动派发、桌面 GUI、创作最终评审和完整交换保真尚未验证。
 
-[宿主验证设计](docs/PhotoCraft-Host-Verification-Architecture.zh_CN.md) · [绑定版本的证据](docs/evidence/codex-current-release.json)。历史里程碑保留原证据范围；当前版本身份以 manifest 和锁文件为准。
+[宿主验证设计](docs/PhotoCraft-Host-Verification-Architecture.zh_CN.md) · [绑定版本的证据](docs/evidence/codex-skill-suite.json)。历史里程碑保留原证据范围；当前版本身份以 manifest 和锁文件为准。
 
-> 当前已进入实施阶段，尚未完成可安装插件版本的验收；独立技能与运行时集成正在开发。
+> 开发版已通过固定标签的 Codex 安装、技能发现和原生代表工作流；完整产品与创作验收仍未完成。
 
 独立技能包已进入实施，单技能隔离安装已在 macOS arm64 实测；完整创作流程与插件宿主验收仍未完成。[证据](docs/evidence/bootstrap-tests.json)
 
@@ -120,7 +120,7 @@ photocraft-cli --version
 
 [Upstream PhotoCraft](https://github.com/storytold/photocraft) · [Issues](https://github.com/full-aigc-plugins/photocraft-plugin/issues)
 
-独立技能现已绑定当前已发布开发标签 `v0.1.0-dev.2`，`skills.lock.json` 固定来源提交与整个技能摘要。使用 `python3 scripts/vendor/skill_vendor.py check` 核对。技能源快照发布不代表宿主验收或生产完成。
+独立技能现已绑定当前已发布开发标签 `v0.1.0-dev.3`，`skills.lock.json` 固定来源提交与整个技能摘要。使用 `python3 scripts/vendor/skill_vendor.py check` 核对。技能源快照发布不代表宿主验收或生产完成。
 
 ## 开发版独立技能安装与使用
 
