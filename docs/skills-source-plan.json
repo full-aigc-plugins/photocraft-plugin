@@ -1,0 +1,20 @@
+{
+  "status": "planned-not-published",
+  "package": "photocraft-skills",
+  "proposedRepository": "https://github.com/full-aigc-skills/photocraft-skills",
+  "skills": [
+    "photocraft-use",
+    "photocraft-setup",
+    "photocraft-inspect",
+    "photocraft-layers",
+    "photocraft-masks",
+    "photocraft-adjustments",
+    "photocraft-typography",
+    "photocraft-composition",
+    "photocraft-preview",
+    "photocraft-export",
+    "photocraft-recover"
+  ],
+  "sourceOfTruth": "independent skills repository",
+  "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums"
+}

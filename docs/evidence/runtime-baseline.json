@@ -1,0 +1,53 @@
+{
+  "schema": "craft-documentation-evidence/v1",
+  "observedAt": "2026-10-05T07:37:55.385823+00:00",
+  "platform": "darwin-arm64",
+  "scope": "Installed upstream CLI and headless MCP smoke checks only; not plugin or creative workflow acceptance",
+  "runtimes": [
+    {
+      "name": "photocraft",
+      "identity": {
+        "name": "photocraft",
+        "version": "0.2.0",
+        "url": "https://github.com/storytold/photocraft/releases/download/v0.2.0/photocraft-cli-0.2.0-macos-universal.zip",
+        "archiveSha256": "185e0375eaceeab595cb7fc2dc01e5813479a335f47172e562e4dea461141e30",
+        "platform": "darwin-arm64",
+        "binarySha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+        "source": "official-github-release"
+      },
+      "versionOutput": "photocraft-cli 0.2.0 (ad8632173, 2026-10-05)",
+      "initializePassed": true,
+      "toolCount": 18,
+      "tools": [
+        "command_batch",
+        "command_list",
+        "command_run",
+        "control_call",
+        "doc_close",
+        "doc_export",
+        "doc_inspect",
+        "doc_new",
+        "doc_open",
+        "doc_render_preview",
+        "doc_save",
+        "doc_select",
+        "session_list",
+        "ui_inspect",
+        "ui_menu_invoke",
+        "ui_pointer",
+        "ui_screenshot",
+        "ui_set"
+      ],
+      "readOnlyToolCall": "command_list",
+      "readOnlyCallPassed": true
+    }
+  ],
+  "notVerified": [
+    "native-project-roundtrip",
+    "render-fidelity",
+    "host-plugin-installation",
+    "desktop-bridge",
+    "other-platforms",
+    "cross-plugin-orchestration"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "design-reference-not-runtime-lock",
+  "owner": "full-aigc-plugins/artcraft-plugin",
+  "authority": {
+    "task": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/main/openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md",
+    "artifact": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/main/openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md"
+  },
+  "releaseRule": "Pin a verified owner commit and schema digest before implementation release; main URLs here are documentation navigation only."
+}
