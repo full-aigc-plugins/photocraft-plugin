@@ -1,0 +1,84 @@
+{
+  "schema": "craft-photocraft-chinese-text-first-use/v1",
+  "date": "2026-10-06",
+  "state": "bounded-host-installed-native-PASS",
+  "pluginVersion": "0.1.0-dev.6",
+  "pluginSha": "3b66769df70ec420e6db19498b3ac0f124216509",
+  "skillSourceVersion": "v0.1.0-dev.5",
+  "skillSourceSha": "02e2a4f33ff73c54b51c830f1f1c9937c58a2ed4",
+  "textSkillSha256": "9e704aed670cbb164ec8c972d1ed6a8dd9413ba0b0754bf4ed5c0dca52c580ad",
+  "runtimeVersion": "0.2.0",
+  "workflowPython": "3.14.3",
+  "testAssertionPython": "3.13.5 with Pillow",
+  "native": {
+    "tests": 1,
+    "passed": 1,
+    "seconds": 5.927,
+    "scope": "actual fixed-host text skill copied alone into project .agents/skills; empty domain cache; public default download; native workflow and convert entry"
+  },
+  "regression": {
+    "tests": 37,
+    "passed": 24,
+    "skipped": 13,
+    "seconds": 7.308
+  },
+  "postExecutionSkillHashesVerified": 58,
+  "observed": [
+    "four independently editable layers",
+    "same headline identity edited from 新品上市 to 品牌焕新",
+    "Songti SC font and 32pt size retained",
+    "product and caption native layer inspection unchanged",
+    "pixels outside headline area unchanged",
+    "all original delivery files and input product unchanged",
+    "PSD retains editable type content and four layers",
+    "PSD decoded pixels exactly match native PNG",
+    "unknown layer rejected with no published output",
+    "missing font rejected with no published output",
+    "no skill bytecode emitted"
+  ],
+  "visualObservation": {
+    "actor": "current-assistant",
+    "scope": "exported v2 PNG inspected; 品牌焕新 four glyphs readable",
+    "acceptance": "NOT_RUN"
+  },
+  "outputs": {
+    "v1": {
+      "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+      "design.png": "2552a2c41e154cae5c4d85afd29ec3a29e1b77e8ba71dc49165696e81ae016d0",
+      "plan.json": "6a74e30581e29cb7af86f34e6e6466bc0cffb62c40588c7a231235c2c33ebb04",
+      "design.psd": "630c2c984ea04be90671985ebf3196579f5fe0083deb1c45de1cf802edf9dde4",
+      "exchange-loss.json": "aa6c9a5973f3dcf906c880c6a415c60348f248d2ac56ab1ce80eb38df8d919d4",
+      "psd-inspection.json": "c3acf0c33e66c3b71fd8978e5a27c7af4865c357122c3e83dfea8603bb3c5e12",
+      "native.json": "e3d388520c89514f53dfff322d422b86e55113ecbc7b5c10f29e92cfd1c24904",
+      "project.pcraft": "a7d1eeedab06a9336354f8dcf03a094d151e1ef8b083f3d1d7fce98ed9b0aedc",
+      "manifest.json": "39ccd39bf401a510ee3e72b34f65b7ca898cb4bad8babc4c1731c9217339e115",
+      "operations.json": "b5c2c76f9dcdf8b280dc44173e883e5795722693ad8e4fdf90f41a6f7513ff1a"
+    },
+    "v2": {
+      "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+      "design.png": "58cce7d884fe830f64300e92ab6241a99471b834182b59c76cd4f7d2da4d5b04",
+      "plan.json": "8baace13096e5ed37dc12e59eea00426365b90b9147231700e5ac68b4beabfe6",
+      "design.psd": "26164b2473202e2d476fa20c432ce8f3570f83a84edbf1e5e1d23753be856a46",
+      "exchange-loss.json": "fcaf237fe85625ba69fd46ad0f7e5959030a4c59a9fc472acb48e66d3e4899ed",
+      "psd-inspection.json": "4b94f41ec9afa363f2cf3a6434d1aa7b10b806020ff2f7d537903c912ff6a629",
+      "native.json": "06968eae2021b3739d647395c8786eb96f56da86bd734d167283f7e28d80df3d",
+      "project.pcraft": "e1a8288d1701d2e298c61983b8443aba59b9a392c60cf22090307b07439b38b1",
+      "manifest.json": "f7b23e36bb77aa329e66be73155bfa5c3468278f1b6864ff6ad0b57c3d653951",
+      "operations.json": "762e7e344c7ef459d2e637996181a64fde42c42c59bac091f489c4f0827b111e"
+    }
+  },
+  "notProven": [
+    "all font families and CJK shaping cases",
+    "Photoshop or other editor GUI behavior",
+    "actual npx granular installation",
+    "new model session dispatch",
+    "human creative acceptance",
+    "real product photography quality; product is a synthetic fixture"
+  ],
+  "psdFontConfirmation": {
+    "tests": 1,
+    "passed": 1,
+    "seconds": 5.546,
+    "scope": "same complete installed cold test rerun with explicit PSD/native headline text, font and size equality"
+  }
+}

@@ -154,3 +154,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 当前固定发布的宿主核验（2026-10-06）：Codex 0.153.4 安装五个当前固定插件，加载全部 58 技能并逐项核对内容身份。本插件代表性原生工作流从实际安装路径调用，在新的原生运行时中完成创建、重开和修订检查；五工作流调用后，全部 58 个技能摘要保持不变。[证据](docs/evidence/codex-current-release-20261006.json)。显式标签生成器由 ArtCraft 统一持有。模型派发等待授权，GUI、创作与完整宿主验收仍未完成；本次 QA 维护不改变已发布技能/运行时内容或标签。
 
 当前固定发布矩阵（FilmCraft dev.6、EffectCraft dev.7、PhotoCraft dev.6、VectorCraft dev.6、ArtCraft dev.17）在隔离 Codex 安装后通过 58 技能发现及原生代表工作流；执行后所有技能摘要保持不变。[宿主安装内容的原生验证](docs/evidence/codex-release17-native-20261006.json)。此证据不代表模型调度、GUI 或完整创作验收。
+
+固定插件 dev.6／技能 dev.5 的实际安装单文字技能中文海报冷启动与标题修订通过（1 项，5.927 秒）。源文件和保护区域不变，PSD 保留文字且解码像素与 PNG 一致；未知图层和缺失字体被拒绝。人工接受仍为 NOT_RUN。[架构](docs/PhotoCraft-Chinese-Text-Architecture.zh_CN.md)、[证据](docs/evidence/chinese-text-first-use.json)。

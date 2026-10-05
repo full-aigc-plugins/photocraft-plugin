@@ -13,7 +13,8 @@
     "1.9": "docs/evidence/skill-suite.json",
     "1.11": "docs/evidence/installed-skill-paths.json",
     "1.12": "docs/evidence/installed-skill-paths.json",
-    "1.10": "docs/evidence/task-skill-first-use.json"
+    "1.10": "docs/evidence/task-skill-first-use.json",
+    "4.19": "docs/evidence/chinese-text-first-use.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-release18-native-20261006.json",
   "hostValidationStatus": "bounded-installed-native-workflow-passed"
