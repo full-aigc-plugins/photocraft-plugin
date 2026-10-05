@@ -22,7 +22,7 @@
       ],
       "dest": "skills/",
       "sha256": {
-        "photocraft-use": "de5c11d34d3524c0e439d985733ad81fa3c0baec85aa2d79af14ed80f934c000",
+        "photocraft-use": "1b980fd6546002e2443e06aa373d35f85f554c0f7ac4aea318d5d881217f1794",
         "photocraft-cli": "e8dbd0bd32fddf75eff523285c11e63dc3b91ab328eacbc6b8af1f58c47345a1",
         "photocraft-cli-setup": "9276a51852691a9c4a9810a2790e1b858edfcdcbdfe54b5c9ff2400992cabbc4",
         "photocraft-cli-project": "1155a87170caf8230a61de2a28f6705d46d7c9a3ff6b3b006a0517627829aad0",
