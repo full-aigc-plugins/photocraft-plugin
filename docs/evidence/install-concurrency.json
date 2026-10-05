@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-05T12:59:17.454891+00:00",
+  "platform": "darwin-arm64",
+  "version": "0.1.0-dev.1",
+  "result": "passed",
+  "redPhase": {
+    "target": "effectcraft bootstrap",
+    "errors": 2,
+    "reason": "nonblocking install lock rejects concurrent reuse and does not produce bounded timeout"
+  },
+  "bootstrapTests": {
+    "passed": 10,
+    "skipped": 0,
+    "checks": [
+      "two OS processes first-install exactly once",
+      "busy installer waits then reuses",
+      "bounded timeout preserves existing installation"
+    ]
+  },
+  "fullSkillRegression": {
+    "passed": 17,
+    "skipped": 0,
+    "command": "CRAFT_LIVE_TEST=1 python3 -m unittest discover -s tests"
+  },
+  "bootstrapSha256": "73eadc05f3cbb61738a4720997c829c1de1dd82d356244627d38b37e2c696f00",
+  "scope": "fixture lock races plus actual pinned native workflow regression; no production capacity guarantee"
+}

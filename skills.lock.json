@@ -4,14 +4,14 @@
     {
       "package": "photocraft-skills",
       "repo": "https://github.com/full-aigc-skills/photocraft-skills.git",
-      "ref": "v0.1.0-dev.0",
-      "sha": "2b9399019f460347a99debcaeb27a28f06b25f8d",
+      "ref": "v0.1.0-dev.1",
+      "sha": "5411f496c8acf88cb83f150454993d7ef7495159",
       "skills": [
         "photocraft-use"
       ],
       "dest": "skills/",
       "sha256": {
-        "photocraft-use": "ada9c729bbc879be0e9136e8b3acf1ffc2631f737fa7ae531189ea829b58f845"
+        "photocraft-use": "09c35e3ca5e0f83bb3a28a432f9ed236382fe4694ffa571dfda51c806bd06ca5"
       }
     }
   ]

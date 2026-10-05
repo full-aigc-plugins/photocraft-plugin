@@ -11,10 +11,12 @@ import shutil
 import stat
 import subprocess
 import tempfile
+import time
 import urllib.request
 import zipfile
 
 MAX_BYTES = 1024 * 1024 * 1024
+LOCK_WAIT_SECONDS = 120
 
 
 def digest(path):
@@ -88,7 +90,17 @@ def install(lock, runtime_home, archive=None, platform_key=None):
     import fcntl
     fd = os.open(parent / '.install.lock', os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600)
     with os.fdopen(fd, 'w') as mutex:
-        fcntl.flock(mutex, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        # 只等待安装互斥；不得因此重放编辑、渲染等原生副作用。
+        deadline = time.monotonic() + LOCK_WAIT_SECONDS
+        while True:
+            try:
+                fcntl.flock(mutex, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise TimeoutError('runtime_install_busy: installation lock wait expired') from None
+                time.sleep(min(.05, remaining))
         if destination.exists() or destination.is_symlink():
             return inspect_install(destination, artifact, expected)
         with tempfile.TemporaryDirectory(prefix='.install-', dir=parent) as temporary:
