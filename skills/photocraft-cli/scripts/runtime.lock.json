@@ -1,0 +1,17 @@
+{
+  "schema": "craft-runtime-lock/v1",
+  "artifact": "photocraft-cli",
+  "resolvedVersion": "0.2.0",
+  "releaseRef": "v0.2.0",
+  "repository": "https://github.com/storytold/photocraft",
+  "artifacts": {
+    "darwin-arm64": {
+      "url": "https://github.com/storytold/photocraft/releases/download/v0.2.0/photocraft-cli-0.2.0-macos-universal.zip",
+      "archiveSha256": "185e0375eaceeab595cb7fc2dc01e5813479a335f47172e562e4dea461141e30",
+      "binarySha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+      "evidenceScope": "headless MCP smoke only",
+      "versionOutput": "photocraft-cli 0.2.0 (ad8632173, 2026-10-05)"
+    }
+  },
+  "supportedPluginWorkflows": []
+}

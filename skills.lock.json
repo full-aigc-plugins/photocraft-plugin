@@ -4,14 +4,36 @@
     {
       "package": "photocraft-skills",
       "repo": "https://github.com/full-aigc-skills/photocraft-skills.git",
-      "ref": "v0.1.0-dev.2",
-      "sha": "9293e29222218ee9bf30307f466d491052c64430",
+      "ref": "v0.1.0-dev.3",
+      "sha": "8f3f277c96b5b39550a6a2bc7d55988cc8ad3807",
       "skills": [
-        "photocraft-use"
+        "photocraft-use",
+        "photocraft-cli",
+        "photocraft-cli-setup",
+        "photocraft-cli-project",
+        "photocraft-cli-layers",
+        "photocraft-cli-selection",
+        "photocraft-cli-masks",
+        "photocraft-cli-adjustments",
+        "photocraft-cli-retouch",
+        "photocraft-cli-text",
+        "photocraft-cli-resize",
+        "photocraft-cli-export"
       ],
       "dest": "skills/",
       "sha256": {
-        "photocraft-use": "5495d79c1bc1738d269ceeb65591be230158e4723291ef09e5278468916a16be"
+        "photocraft-use": "e8fccaf7cb519144ee475653cbb41e7d6a8bfc92f3670b2ddba38f95400a53c0",
+        "photocraft-cli": "f06aca2fc13a0f8a6d2b28e0e6cadaf71a806cd1b4c25f15ae4299e6062533ee",
+        "photocraft-cli-setup": "e6eff158da344105b0db24d173766ae1936d2046b09569222eee0e9af2beb614",
+        "photocraft-cli-project": "1a31c10c857b6778f5f53b56a56b81c43ce2330eee45422db455cf3cfb590669",
+        "photocraft-cli-layers": "bd24ea4d2f3703f06006fe509f3f18bfda0d425e68f4e6a3a175db38a12ebb04",
+        "photocraft-cli-selection": "f4b6c6e9df0ae8c8f0307b3e7777400ee005e634ae6dd56494d85bc6b1edc93a",
+        "photocraft-cli-masks": "c5fb53ec68e8628cac1846bb1b6537569316dab06b3dee685296e0c93bcd6d96",
+        "photocraft-cli-adjustments": "0e7e8ff4202167a264e0d662392e387c21ed8a80691f073aa888c6e8985fd572",
+        "photocraft-cli-retouch": "cbc7102adc67aa5bd81a9a924a8c8bb0115e1acbc649dd6906e7d6504b5af895",
+        "photocraft-cli-text": "5b78720b1abbb38a7ccaa4fddddb9867b723f3fc37bcc93e605346b1164fa14f",
+        "photocraft-cli-resize": "6a1e199da0e336149eeb12b67e7317f0ebd4658c35b6138da07f0daca6b45b7f",
+        "photocraft-cli-export": "621335922138c2e7323f6291041a9f42e0044b7c0e4900a9981ec9d0d8aad255"
       }
     }
   ]

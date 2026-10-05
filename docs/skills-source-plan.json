@@ -1,20 +1,22 @@
 {
-  "status": "planned-not-published",
+  "status": "implementation-in-progress",
   "package": "photocraft-skills",
   "proposedRepository": "https://github.com/full-aigc-skills/photocraft-skills",
   "skills": [
     "photocraft-use",
-    "photocraft-setup",
-    "photocraft-inspect",
-    "photocraft-layers",
-    "photocraft-masks",
-    "photocraft-adjustments",
-    "photocraft-typography",
-    "photocraft-composition",
-    "photocraft-preview",
-    "photocraft-export",
-    "photocraft-recover"
+    "photocraft-cli",
+    "photocraft-cli-setup",
+    "photocraft-cli-project",
+    "photocraft-cli-layers",
+    "photocraft-cli-selection",
+    "photocraft-cli-masks",
+    "photocraft-cli-adjustments",
+    "photocraft-cli-retouch",
+    "photocraft-cli-text",
+    "photocraft-cli-resize",
+    "photocraft-cli-export"
   ],
   "sourceOfTruth": "independent skills repository",
-  "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums"
+  "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
+  "suiteManifest": "https://github.com/full-aigc-skills/photocraft-skills/blob/main/skill-suite.json"
 }

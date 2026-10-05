@@ -1,0 +1,346 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "type.create",
+      "label": "New Type Layer",
+      "params": "{\"x\":px,\"y\":px (baseline anchor of point text),\"text\":str,\"box\":[x,y,w,h]? (paragraph text),\"name\":str?,\"align\":\"left|center|right|justify…\"?, …character keys: \"font\",\"size\":pt=12,\"color\",…}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.edit",
+      "label": "Edit Type",
+      "params": "{\"layer\":id?,\"text\":str? (replace all, styles kept),\"replace\":{\"start\":char,\"end\":char,\"text\":str}?,\"runs\":[{\"start\":char,\"end\":char,…character keys}]?,\"box\":[x,y,w,h]? (to paragraph text),\"point\":[x,y]? (to point text),\"move\":[dx,dy]?,\"transform\":[a,b,c,d,e,f]?,\"antialias\":\"none|sharp|crisp|strong|smooth\"?,\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.setStyle",
+      "label": "Set Type Style",
+      "params": "{\"layer\":id?,\"range\":[startChar,endChar]? (default all), \"font\":str,\"fontStyle\":str,\"weight\":100..900,\"italic\":bool,\"size\":pt,\"color\":\"#rrggbb\"|[r,g,b,a],\"tracking\":1/1000em,\"leading\":pt|\"auto\",\"baselineShift\":pt,\"horizontalScale\":%,\"verticalScale\":%,\"underline\":bool,\"strikethrough\":bool,\"fauxBold\":bool,\"fauxItalic\":bool,\"kerning\":\"metrics|optical|none\",\"caps\":\"normal|small|all\",\"ligatures\":bool,\"discretionaryLigatures\":bool,\"features\":{\"ss01\":1},\"variations\":{\"wght\":650},\"language\":str, paragraph keys: \"align\":\"left|center|right|justify|justifyCenter|justifyRight|justifyAll\",\"firstLineIndent\":pt,\"startIndent\":pt,\"endIndent\":pt,\"spaceBefore\":pt,\"spaceAfter\":pt,\"autoLeading\":%,\"direction\":\"auto|ltr|rtl\",\"hyphenate\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.rasterize",
+      "label": "Rasterize Type",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.info",
+      "label": "Type Layer Info",
+      "params": "{\"layer\":id?} → text, runs/paragraphs (char offsets + styles), shape, transform, laid-out lines (text space px), bounds",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.fonts",
+      "label": "List Fonts",
+      "params": "{\"family\":str? (faces of one family)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "type.antiAlias.none",
+      "label": "None",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.sharp",
+      "label": "Sharp",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.crisp",
+      "label": "Crisp",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.strong",
+      "label": "Strong",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.smooth",
+      "label": "Smooth",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.windowsLcd",
+      "label": "Windows LCD",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.windows",
+      "label": "Windows",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.orientation.horizontal",
+      "label": "Horizontal",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.orientation.vertical",
+      "label": "Vertical",
+      "params": "{\"layer\":id?} (stored and saved; rendered horizontally for now)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.standardLigatures",
+      "label": "Standard Ligatures",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.contextualAlternates",
+      "label": "Contextual Alternates",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.discretionaryLigatures",
+      "label": "Discretionary Ligatures",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.swash",
+      "label": "Swash",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.oldstyle",
+      "label": "Oldstyle",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.stylisticAlternates",
+      "label": "Stylistic Alternates",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.titlingAlternates",
+      "label": "Titling Alternates",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.ornaments",
+      "label": "Ornaments",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.ordinals",
+      "label": "Ordinals",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.fractions",
+      "label": "Fractions",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.createWorkPath",
+      "label": "Create Work Path",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.convertToShape",
+      "label": "Convert to Shape",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.rasterizeTypeLayer",
+      "label": "Rasterize Type Layer",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.convertToParagraphText",
+      "label": "Convert to Paragraph Text",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.convertToPointText",
+      "label": "Convert to Point Text",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.warpText",
+      "label": "Warp Text…",
+      "params": "{\"layer\":id?,\"style\":\"none|arc|arcLower|arcUpper|arch|bulge|shellLower|shellUpper|flag|wave|fish|rise|fisheye|inflate|squeeze|twist\"=\"arc\",\"bend\":-100..100=50,\"horizontalDistortion\":-100..100=0,\"verticalDistortion\":-100..100=0,\"orientation\":\"horizontal|vertical\"=\"horizontal\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.updateAllTextLayers",
+      "label": "Update All Text Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.replaceAllMissingFonts",
+      "label": "Replace All Missing Fonts",
+      "params": "{} (with the default family)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.resolveMissingFonts",
+      "label": "Resolve Missing Fonts…",
+      "params": "{\"map\":{\"Missing Family\":\"Installed Family\"}?} (no map: list the missing families)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.pasteLoremIpsum",
+      "label": "Paste Lorem Ipsum",
+      "params": "{\"layer\":id?,\"at\":char? (default end),\"new\":bool=false (new paragraph text layer)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.saveDefaultTypeStyles",
+      "label": "Save Default Type Styles",
+      "params": "{} (from the active type layer; new type layers start from them)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.loadDefaultTypeStyles",
+      "label": "Load Default Type Styles",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.new",
+      "label": "New Character Style",
+      "params": "{\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)}?,\"fromSelection\":bool=true (start from the targeted text's formatting),\"apply\":bool=false,\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"id\",\"name\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.duplicate",
+      "label": "Duplicate Style",
+      "params": "{\"id\":u32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.delete",
+      "label": "Delete Style",
+      "params": "{\"id\":u32} (text keeps its formatting as overrides)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.rename",
+      "label": "Rename Style",
+      "params": "{\"id\":u32,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.set",
+      "label": "Character Style Options",
+      "params": "{\"id\":u32 (paragraph: 0 = Basic Paragraph),\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)},\"replace\":bool=false (drop attributes not given),\"clear\":[field]?} (text using the style updates, overrides kept)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.apply",
+      "label": "Apply Character Style",
+      "params": "{\"id\":u32|0|null (0/null: None / Basic Paragraph),\"clearOverrides\":bool=false (Alt-click),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.redefine",
+      "label": "Redefine Character Style",
+      "params": "{\"id\":u32? (default: the targeted text's style),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} (the style takes the formatting of the start of the targeted text)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.clearOverride",
+      "label": "Clear Override",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.list",
+      "label": "List Character Styles",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"styles\":[{\"id\",\"name\",attributes,\"resolved\"}],\"current\":{\"character\":id|null (mixed),\"characterOverride\":bool,\"paragraph\":id|null,\"paragraphOverride\":bool}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.new",
+      "label": "New Paragraph Style",
+      "params": "{\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)}?,\"fromSelection\":bool=true (start from the targeted text's formatting),\"apply\":bool=false,\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"id\",\"name\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.duplicate",
+      "label": "Duplicate Style",
+      "params": "{\"id\":u32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.delete",
+      "label": "Delete Style",
+      "params": "{\"id\":u32} (text keeps its formatting as overrides)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.rename",
+      "label": "Rename Style",
+      "params": "{\"id\":u32,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.set",
+      "label": "Paragraph Style Options",
+      "params": "{\"id\":u32 (paragraph: 0 = Basic Paragraph),\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)},\"replace\":bool=false (drop attributes not given),\"clear\":[field]?} (text using the style updates, overrides kept)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.apply",
+      "label": "Apply Paragraph Style",
+      "params": "{\"id\":u32|0|null (0/null: None / Basic Paragraph),\"clearOverrides\":bool=false (Alt-click),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.redefine",
+      "label": "Redefine Paragraph Style",
+      "params": "{\"id\":u32? (default: the targeted text's style),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} (the style takes the formatting of the start of the targeted text)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.clearOverride",
+      "label": "Clear Override",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.list",
+      "label": "List Paragraph Styles",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"styles\":[{\"id\",\"name\",attributes,\"resolved\"}],\"current\":{\"character\":id|null (mixed),\"characterOverride\":bool,\"paragraph\":id|null,\"paragraphOverride\":bool}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.insertText",
+      "label": "Insert Glyph",
+      "params": "{\"layer\":id?,\"text\":str,\"at\":char? (default: end of text),\"range\":[startChar,endChar]? (replaced),\"label\":str?} → {\"layer\",\"caret\"}",
+      "enabledAtEmptySession": false
+    }
+  ]
+}

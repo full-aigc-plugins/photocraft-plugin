@@ -1,0 +1,136 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "layer.createClippingMask",
+      "label": "Create Clipping Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.releaseClippingMask",
+      "label": "Release Clipping Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.revealAll",
+      "label": "Reveal All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.hideAll",
+      "label": "Hide All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.revealSelection",
+      "label": "Reveal Selection",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.delete",
+      "label": "Delete",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.add",
+      "label": "Add Vector Mask",
+      "params": "{\"layer\":id?,\"path\":{…}? | \"name\":str|\"work\"? (copy a document path),\"hide\":bool=false (Hide All = inverted)} → vector mask info. Without a path the mask reveals all.",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.fromPath",
+      "label": "Vector Mask from Current Path",
+      "params": "{\"layer\":id?,\"name\":str|\"work\"=\"work\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.edit",
+      "label": "Edit Vector Mask",
+      "params": "{\"layer\":id?,\"path\":{…}?,\"enabled\":bool?,\"linked\":bool?,\"density\":0..100?,\"feather\":px?,\"invert\":true?}. path: {\"subpaths\":[{\"closed\":bool=true,\"op\":\"combine|subtract|intersect|exclude\",\"knots\":[[x,y] | {\"anchor\":[x,y],\"in\":[x,y],\"out\":[x,y],\"smooth\":bool}]}],\"fillRule\":\"nonzero|evenodd\",\"inverted\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.delete",
+      "label": "Delete Vector Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.revealAll",
+      "label": "Vector Mask: Reveal All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.hideAll",
+      "label": "Vector Mask: Hide All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.currentPath",
+      "label": "Vector Mask: Current Path",
+      "params": "{\"layer\":id?,\"name\":str|\"work\"=\"work\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.enabled",
+      "label": "Enable Vector Mask",
+      "params": "{\"layer\":id?,\"enabled\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.linked",
+      "label": "Link Vector Mask",
+      "params": "{\"layer\":id?,\"linked\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.info",
+      "label": "Vector Mask Info",
+      "params": "{\"layer\":id?} → {layer,path,enabled,linked,density,feather}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.enabled",
+      "label": "Disable Layer Mask",
+      "params": "{\"layer\":id?,\"enabled\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.linked",
+      "label": "Unlink Layer Mask",
+      "params": "{\"layer\":id?,\"linked\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.apply",
+      "label": "Apply",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.fromTransparency",
+      "label": "From Transparency",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.hideSelection",
+      "label": "Hide Selection",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    }
+  ]
+}

@@ -216,6 +216,17 @@
       ],
       "owner": "Release owner",
       "status": "planned"
+    },
+    {
+      "requirement": "PC-SK-003",
+      "capability": "skills-distribution",
+      "tasks": [
+        "1.7",
+        "1.8",
+        "1.9"
+      ],
+      "owner": "Skills owner",
+      "status": "planned"
     }
   ]
 }

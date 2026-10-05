@@ -24,7 +24,7 @@ PhotoCraft: 保留图层的图像编辑与平面设计.
 | Skills source (planned) | full-aigc-skills/photocraft-skills |
 | Native deliverable | .pcraft |
 | Current stage | documentation-baseline |
-| Metadata version | 0.1.0-dev.2 |
+| Metadata version | 0.1.0-dev.3 |
 
 
 ## 3. 品牌与版权边界

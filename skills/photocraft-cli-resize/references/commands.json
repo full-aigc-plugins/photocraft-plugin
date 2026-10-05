@@ -1,0 +1,58 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "image.imageRotation.flipCanvasHorizontal",
+      "label": "Flip Canvas Horizontal",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.flipCanvasVertical",
+      "label": "Flip Canvas Vertical",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.180",
+      "label": "180°",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.90cw",
+      "label": "90° Clockwise",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.90ccw",
+      "label": "90° Counter Clockwise",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageSize",
+      "label": "Image Size…",
+      "params": "{\"width\":px,\"height\":px,\"resolution\":ppi,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails|none\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.canvasSize",
+      "label": "Canvas Size…",
+      "params": "{\"width\":px,\"height\":px,\"relative\":bool=false,\"anchor\":\"topLeft|top|topRight|left|center|right|bottomLeft|bottom|bottomRight\"=\"center\",\"extensionColor\":\"background|foreground|white|black|transparent|#rrggbb\"=\"background\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.crop",
+      "label": "Crop",
+      "params": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"deleteCroppedPixels\":bool=true}",
+      "enabledAtEmptySession": false
+    }
+  ]
+}

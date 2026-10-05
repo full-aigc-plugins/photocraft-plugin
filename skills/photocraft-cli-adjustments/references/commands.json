@@ -1,0 +1,250 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "layer.setAdjustment",
+      "label": "Adjustment Properties",
+      "params": "{\"layer\":id?, …params of that adjustment kind}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.desaturate",
+      "label": "Desaturate",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.brightnessContrast",
+      "label": "Brightness/Contrast…",
+      "params": "{\"brightness\":-150..150=0,\"contrast\":-50..100=0,\"legacy\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.brightnessContrast",
+      "label": "Brightness/Contrast…",
+      "params": "{\"brightness\":-150..150=0,\"contrast\":-50..100=0,\"legacy\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.levels",
+      "label": "Levels…",
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.levels",
+      "label": "Levels…",
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.curves",
+      "label": "Curves…",
+      "params": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.curves",
+      "label": "Curves…",
+      "params": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.exposure",
+      "label": "Exposure…",
+      "params": "{\"exposure\":-20..20=0,\"offset\":-0.5..0.5=0,\"gamma\":0.01..9.99=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.exposure",
+      "label": "Exposure…",
+      "params": "{\"exposure\":-20..20=0,\"offset\":-0.5..0.5=0,\"gamma\":0.01..9.99=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.vibrance",
+      "label": "Vibrance…",
+      "params": "{\"vibrance\":-100..100=0,\"saturation\":-100..100=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.vibrance",
+      "label": "Vibrance…",
+      "params": "{\"vibrance\":-100..100=0,\"saturation\":-100..100=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.hueSaturation",
+      "label": "Hue/Saturation…",
+      "params": "{\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0,\"colorize\":bool=false,\"reds\":json,\"yellows\":json,\"greens\":json,\"cyans\":json,\"blues\":json,\"magentas\":json} (per range {\"hue\",\"saturation\",\"lightness\",\"range\":[4 hue degrees]}; colorize: hue 0..360, saturation 0..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.hueSaturation",
+      "label": "Hue/Saturation…",
+      "params": "{\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0,\"colorize\":bool=false,\"reds\":json,\"yellows\":json,\"greens\":json,\"cyans\":json,\"blues\":json,\"magentas\":json} (per range {\"hue\",\"saturation\",\"lightness\",\"range\":[4 hue degrees]}; colorize: hue 0..360, saturation 0..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.colorBalance",
+      "label": "Color Balance…",
+      "params": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.colorBalance",
+      "label": "Color Balance…",
+      "params": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.blackWhite",
+      "label": "Black & White…",
+      "params": "{\"reds\":-200..300=40,\"yellows\":-200..300=60,\"greens\":-200..300=40,\"cyans\":-200..300=60,\"blues\":-200..300=20,\"magentas\":-200..300=80,\"tint\":bool=false,\"tintColor\":\"#rrggbb\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.blackWhite",
+      "label": "Black & White…",
+      "params": "{\"reds\":-200..300=40,\"yellows\":-200..300=60,\"greens\":-200..300=40,\"cyans\":-200..300=60,\"blues\":-200..300=20,\"magentas\":-200..300=80,\"tint\":bool=false,\"tintColor\":\"#rrggbb\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.photoFilter",
+      "label": "Photo Filter…",
+      "params": "{\"filter\":\"warming85|warmingLBA|warming81|cooling80|coolingLBB|cooling82|red|orange|yellow|green|cyan|blue|violet|magenta|sepia|deepRed|deepBlue|deepEmerald|deepYellow|underwater\",\"color\":\"#rrggbb\",\"density\":0..100=25,\"preserveLuminosity\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.photoFilter",
+      "label": "Photo Filter…",
+      "params": "{\"filter\":\"warming85|warmingLBA|warming81|cooling80|coolingLBB|cooling82|red|orange|yellow|green|cyan|blue|violet|magenta|sepia|deepRed|deepBlue|deepEmerald|deepYellow|underwater\",\"color\":\"#rrggbb\",\"density\":0..100=25,\"preserveLuminosity\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.channelMixer",
+      "label": "Channel Mixer…",
+      "params": "{\"red\":json,\"green\":json,\"blue\":json,\"gray\":json,\"monochrome\":bool=false} (per output channel [red %, green %, blue %, constant %] in -200..200; gray = the monochrome mix)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.channelMixer",
+      "label": "Channel Mixer…",
+      "params": "{\"red\":json,\"green\":json,\"blue\":json,\"gray\":json,\"monochrome\":bool=false} (per output channel [red %, green %, blue %, constant %] in -200..200; gray = the monochrome mix)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.invert",
+      "label": "Invert",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.invert",
+      "label": "Invert",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.posterize",
+      "label": "Posterize…",
+      "params": "{\"levels\":2..255=4}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.posterize",
+      "label": "Posterize…",
+      "params": "{\"levels\":2..255=4}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.threshold",
+      "label": "Threshold…",
+      "params": "{\"level\":1..255=128}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.threshold",
+      "label": "Threshold…",
+      "params": "{\"level\":1..255=128}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.gradientMap",
+      "label": "Gradient Map…",
+      "params": "{\"stops\":json,\"reverse\":bool=false,\"dither\":bool=false} (stops [[location 0..1, \"#rrggbb\"], …], 2..64)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.gradientMap",
+      "label": "Gradient Map…",
+      "params": "{\"stops\":json,\"reverse\":bool=false,\"dither\":bool=false} (stops [[location 0..1, \"#rrggbb\"], …], 2..64)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.selectiveColor",
+      "label": "Selective Color…",
+      "params": "{\"method\":\"relative|absolute\"=\"relative\",\"colors\":\"reds|yellows|greens|cyans|blues|magentas|whites|neutrals|blacks\"=\"reds\",\"cyan\":-100..100=0,\"magenta\":-100..100=0,\"yellow\":-100..100=0,\"black\":-100..100=0,\"reds\":json} (per-range [c,m,y,k] arrays: reds yellows greens cyans blues magentas whites neutrals blacks)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.selectiveColor",
+      "label": "Selective Color…",
+      "params": "{\"method\":\"relative|absolute\"=\"relative\",\"colors\":\"reds|yellows|greens|cyans|blues|magentas|whites|neutrals|blacks\"=\"reds\",\"cyan\":-100..100=0,\"magenta\":-100..100=0,\"yellow\":-100..100=0,\"black\":-100..100=0,\"reds\":json} (per-range [c,m,y,k] arrays: reds yellows greens cyans blues magentas whites neutrals blacks)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.colorLookup",
+      "label": "Color Lookup…",
+      "params": "{\"lut\":\"none|warm|cool|tealOrange|bleachBypass|fadedFilm|dayForNight|monoContrast|crossProcess\"=\"none\",\"file\":text,\"interpolation\":\"trilinear|tetrahedral\"=\"trilinear\",\"dither\":bool=false,\"data\":json} (file: .cube/.3dl/.look path; data: file text + \"fileName\")",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.colorLookup",
+      "label": "Color Lookup…",
+      "params": "{\"lut\":\"none|warm|cool|tealOrange|bleachBypass|fadedFilm|dayForNight|monoContrast|crossProcess\"=\"none\",\"file\":text,\"interpolation\":\"trilinear|tetrahedral\"=\"trilinear\",\"dither\":bool=false,\"data\":json} (file: .cube/.3dl/.look path; data: file text + \"fileName\")",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.equalize",
+      "label": "Equalize",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.shadowsHighlights",
+      "label": "Shadows/Highlights…",
+      "params": "{\"shadowAmount\":0..100=35,\"shadowTone\":0..100=50,\"shadowRadius\":0..2500=30,\"highlightAmount\":0..100=0,\"highlightTone\":0..100=50,\"highlightRadius\":0..2500=30,\"color\":-100..100=20,\"midtone\":-100..100=0,\"blackClip\":0..50=0.01,\"whiteClip\":0..50=0.01}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.replaceColor",
+      "label": "Replace Color…",
+      "params": "{\"color\":json,\"fuzziness\":0..200=40,\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0} (color: \"#rrggbb\", default the foreground colour)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.matchColor",
+      "label": "Match Color…",
+      "params": "{\"source\":doc,\"sourceLayer\":json,\"luminance\":1..200=100,\"intensity\":1..200=100,\"fade\":0..100=0,\"neutralize\":bool=false,\"useSelectionInSource\":bool=false,\"useSelectionInTarget\":bool=false} (source: document index; sourceLayer: layer id, default the merged image)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.hdrToning",
+      "label": "HDR Toning…",
+      "params": "{\"radius\":1..500=30,\"strength\":0.1..4=0.5,\"gamma\":0.1..2=1,\"exposure\":-5..5=0,\"detail\":-100..300=30,\"shadow\":-100..100=0,\"highlight\":-100..100=0,\"vibrance\":-100..100=0,\"saturation\":-100..100=20,\"curve\":[[in,out],…] 0..255} (flattens the image)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.colorLookup.list",
+      "label": "List Color Lookup Looks",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    }
+  ]
+}

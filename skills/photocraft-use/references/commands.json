@@ -1,0 +1,4498 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "file.new",
+      "label": "New…",
+      "params": "{\"width\":u32=1920,\"height\":u32=1080,\"mode\":\"rgb|gray|cmyk|lab\"=\"rgb\",\"depth\":8|16|32=8,\"background\":\"white|black|backgroundColor|transparent|#rrggbb\"=\"white\",\"resolution\":ppi=72,\"name\":str}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.close",
+      "label": "Close",
+      "params": "{\"document\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.undo",
+      "label": "Undo",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.redo",
+      "label": "Redo",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.fill",
+      "label": "Fill…",
+      "params": "{\"contents\":\"color|pattern\"=\"color\",\"color\":\"#rrggbb|[r,g,b,a]\"=foreground,\"pattern\":id|name (contents=pattern),\"scale\":%=100,\"angle\":deg,\"opacity\":%=100,\"target\":\"pixels\"|{\"channel\":i}|\"quickMask\"?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.clear",
+      "label": "Clear",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.all",
+      "label": "All",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.deselect",
+      "label": "Deselect",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.inverse",
+      "label": "Inverse",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.rect",
+      "label": "Rectangular Selection",
+      "params": "{\"x\":i32,\"y\":i32,\"width\":u32,\"height\":u32,\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"ellipse\":bool=false,\"antiAlias\":bool=true,\"feather\":px=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.layer",
+      "label": "Layer…",
+      "params": "{\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.group",
+      "label": "Group…",
+      "params": "{\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.groupLayers",
+      "label": "Group Layers",
+      "params": "{\"layer\":id?,\"name\":str?} (no layer: every selected layer)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.duplicate",
+      "label": "Duplicate Layer…",
+      "params": "{\"layer\":id?} (no layer: every selected layer)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.delete",
+      "label": "Delete Layer",
+      "params": "{\"layer\":id?} (no layer: every selected layer)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.select",
+      "label": "Select Layer",
+      "params": "{\"layer\":id,\"mode\":\"replace|toggle|range|add\"=\"replace\"} (toggle = ⌘-click, range = ⇧-click)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.setProps",
+      "label": "Layer Properties",
+      "params": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.arrange.bringForward",
+      "label": "Bring Forward",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.arrange.sendBackward",
+      "label": "Send Backward",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.arrange.bringToFront",
+      "label": "Bring to Front",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.arrange.sendToBack",
+      "label": "Send to Back",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.createClippingMask",
+      "label": "Create Clipping Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.releaseClippingMask",
+      "label": "Release Clipping Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.revealAll",
+      "label": "Reveal All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.hideAll",
+      "label": "Hide All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.revealSelection",
+      "label": "Reveal Selection",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.delete",
+      "label": "Delete",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.mergeDown",
+      "label": "Merge Down",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.flattenImage",
+      "label": "Flatten Image",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newFillLayer.solidColor",
+      "label": "Solid Color…",
+      "params": "{\"color\":\"#rrggbb\"=foreground}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newFillLayer.gradient",
+      "label": "Gradient…",
+      "params": "{\"from\":\"#rrggbb\",\"to\":\"#rrggbb\",\"angle\":deg=90,\"style\":\"linear|radial|angle|reflected|diamond\",\"reverse\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.setAdjustment",
+      "label": "Adjustment Properties",
+      "params": "{\"layer\":id?, …params of that adjustment kind}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.moveTo",
+      "label": "Reorder Layer",
+      "params": "{\"layer\":id?,\"target\":id,\"position\":\"above|below|into\"=\"above\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.translate",
+      "label": "Move Layer",
+      "params": "{\"layer\":id?,\"dx\":i32,\"dy\":i32} (no layer: every selected layer; linked layers follow)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.flipCanvasHorizontal",
+      "label": "Flip Canvas Horizontal",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.flipCanvasVertical",
+      "label": "Flip Canvas Vertical",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.180",
+      "label": "180°",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.90cw",
+      "label": "90° Clockwise",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageRotation.90ccw",
+      "label": "90° Counter Clockwise",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.desaturate",
+      "label": "Desaturate",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.stroke",
+      "label": "Brush Stroke",
+      "params": "{\"points\":[[x,y,pressure?,tiltX?,tiltY?,rotation?,timeMs?,wheel?],…],\"brush\":{…BrushSettings}?,\"preset\":name?,\"size\":px?,\"hardness\":0..1?,\"opacity\":0..1?,\"flow\":0..1?,\"spacing\":0..10?,\"color\":\"#rrggbb\"?=foreground,\"mode\":\"normal|multiply|screen|…\"=\"normal\",\"erase\":bool?,\"smoothing\":0..1?,\"zoom\":number=1,\"seed\":u64?,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "tools.setColors",
+      "label": "Set Colors",
+      "params": "{\"foreground\":\"#rrggbb\"?,\"background\":\"#rrggbb\"?}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tools.swapColors",
+      "label": "Switch Foreground and Background Colors",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tools.defaultColors",
+      "label": "Default Foreground and Background Colors",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "session.inspect",
+      "label": "Inspect Session",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "document.inspect",
+      "label": "Inspect Document",
+      "params": "{\"document\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "document.activate",
+      "label": "Activate Document",
+      "params": "{\"document\":index}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "command.list",
+      "label": "List Commands",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "document.pixel",
+      "label": "Read Composite Pixel",
+      "params": "{\"x\":i32,\"y\":i32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.brightnessContrast",
+      "label": "Brightness/Contrast…",
+      "params": "{\"brightness\":-150..150=0,\"contrast\":-50..100=0,\"legacy\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.brightnessContrast",
+      "label": "Brightness/Contrast…",
+      "params": "{\"brightness\":-150..150=0,\"contrast\":-50..100=0,\"legacy\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.levels",
+      "label": "Levels…",
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.levels",
+      "label": "Levels…",
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.curves",
+      "label": "Curves…",
+      "params": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.curves",
+      "label": "Curves…",
+      "params": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.exposure",
+      "label": "Exposure…",
+      "params": "{\"exposure\":-20..20=0,\"offset\":-0.5..0.5=0,\"gamma\":0.01..9.99=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.exposure",
+      "label": "Exposure…",
+      "params": "{\"exposure\":-20..20=0,\"offset\":-0.5..0.5=0,\"gamma\":0.01..9.99=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.vibrance",
+      "label": "Vibrance…",
+      "params": "{\"vibrance\":-100..100=0,\"saturation\":-100..100=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.vibrance",
+      "label": "Vibrance…",
+      "params": "{\"vibrance\":-100..100=0,\"saturation\":-100..100=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.hueSaturation",
+      "label": "Hue/Saturation…",
+      "params": "{\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0,\"colorize\":bool=false,\"reds\":json,\"yellows\":json,\"greens\":json,\"cyans\":json,\"blues\":json,\"magentas\":json} (per range {\"hue\",\"saturation\",\"lightness\",\"range\":[4 hue degrees]}; colorize: hue 0..360, saturation 0..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.hueSaturation",
+      "label": "Hue/Saturation…",
+      "params": "{\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0,\"colorize\":bool=false,\"reds\":json,\"yellows\":json,\"greens\":json,\"cyans\":json,\"blues\":json,\"magentas\":json} (per range {\"hue\",\"saturation\",\"lightness\",\"range\":[4 hue degrees]}; colorize: hue 0..360, saturation 0..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.colorBalance",
+      "label": "Color Balance…",
+      "params": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.colorBalance",
+      "label": "Color Balance…",
+      "params": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.blackWhite",
+      "label": "Black & White…",
+      "params": "{\"reds\":-200..300=40,\"yellows\":-200..300=60,\"greens\":-200..300=40,\"cyans\":-200..300=60,\"blues\":-200..300=20,\"magentas\":-200..300=80,\"tint\":bool=false,\"tintColor\":\"#rrggbb\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.blackWhite",
+      "label": "Black & White…",
+      "params": "{\"reds\":-200..300=40,\"yellows\":-200..300=60,\"greens\":-200..300=40,\"cyans\":-200..300=60,\"blues\":-200..300=20,\"magentas\":-200..300=80,\"tint\":bool=false,\"tintColor\":\"#rrggbb\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.photoFilter",
+      "label": "Photo Filter…",
+      "params": "{\"filter\":\"warming85|warmingLBA|warming81|cooling80|coolingLBB|cooling82|red|orange|yellow|green|cyan|blue|violet|magenta|sepia|deepRed|deepBlue|deepEmerald|deepYellow|underwater\",\"color\":\"#rrggbb\",\"density\":0..100=25,\"preserveLuminosity\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.photoFilter",
+      "label": "Photo Filter…",
+      "params": "{\"filter\":\"warming85|warmingLBA|warming81|cooling80|coolingLBB|cooling82|red|orange|yellow|green|cyan|blue|violet|magenta|sepia|deepRed|deepBlue|deepEmerald|deepYellow|underwater\",\"color\":\"#rrggbb\",\"density\":0..100=25,\"preserveLuminosity\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.channelMixer",
+      "label": "Channel Mixer…",
+      "params": "{\"red\":json,\"green\":json,\"blue\":json,\"gray\":json,\"monochrome\":bool=false} (per output channel [red %, green %, blue %, constant %] in -200..200; gray = the monochrome mix)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.channelMixer",
+      "label": "Channel Mixer…",
+      "params": "{\"red\":json,\"green\":json,\"blue\":json,\"gray\":json,\"monochrome\":bool=false} (per output channel [red %, green %, blue %, constant %] in -200..200; gray = the monochrome mix)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.invert",
+      "label": "Invert",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.invert",
+      "label": "Invert",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.posterize",
+      "label": "Posterize…",
+      "params": "{\"levels\":2..255=4}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.posterize",
+      "label": "Posterize…",
+      "params": "{\"levels\":2..255=4}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.threshold",
+      "label": "Threshold…",
+      "params": "{\"level\":1..255=128}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.threshold",
+      "label": "Threshold…",
+      "params": "{\"level\":1..255=128}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.gradientMap",
+      "label": "Gradient Map…",
+      "params": "{\"stops\":json,\"reverse\":bool=false,\"dither\":bool=false} (stops [[location 0..1, \"#rrggbb\"], …], 2..64)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.gradientMap",
+      "label": "Gradient Map…",
+      "params": "{\"stops\":json,\"reverse\":bool=false,\"dither\":bool=false} (stops [[location 0..1, \"#rrggbb\"], …], 2..64)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.selectiveColor",
+      "label": "Selective Color…",
+      "params": "{\"method\":\"relative|absolute\"=\"relative\",\"colors\":\"reds|yellows|greens|cyans|blues|magentas|whites|neutrals|blacks\"=\"reds\",\"cyan\":-100..100=0,\"magenta\":-100..100=0,\"yellow\":-100..100=0,\"black\":-100..100=0,\"reds\":json} (per-range [c,m,y,k] arrays: reds yellows greens cyans blues magentas whites neutrals blacks)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.selectiveColor",
+      "label": "Selective Color…",
+      "params": "{\"method\":\"relative|absolute\"=\"relative\",\"colors\":\"reds|yellows|greens|cyans|blues|magentas|whites|neutrals|blacks\"=\"reds\",\"cyan\":-100..100=0,\"magenta\":-100..100=0,\"yellow\":-100..100=0,\"black\":-100..100=0,\"reds\":json} (per-range [c,m,y,k] arrays: reds yellows greens cyans blues magentas whites neutrals blacks)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newAdjustmentLayer.colorLookup",
+      "label": "Color Lookup…",
+      "params": "{\"lut\":\"none|warm|cool|tealOrange|bleachBypass|fadedFilm|dayForNight|monoContrast|crossProcess\"=\"none\",\"file\":text,\"interpolation\":\"trilinear|tetrahedral\"=\"trilinear\",\"dither\":bool=false,\"data\":json} (file: .cube/.3dl/.look path; data: file text + \"fileName\")",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.colorLookup",
+      "label": "Color Lookup…",
+      "params": "{\"lut\":\"none|warm|cool|tealOrange|bleachBypass|fadedFilm|dayForNight|monoContrast|crossProcess\"=\"none\",\"file\":text,\"interpolation\":\"trilinear|tetrahedral\"=\"trilinear\",\"dither\":bool=false,\"data\":json} (file: .cube/.3dl/.look path; data: file text + \"fileName\")",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.dropShadow",
+      "label": "Drop Shadow…",
+      "params": "{\"color\":\"#rrggbb\",\"opacity\":0..100=75,\"blend\":str=\"multiply\",\"angle\":deg=120,\"useGlobalLight\":bool,\"distance\":px=5,\"spread\":0..100,\"size\":px=5,\"knocksOut\":bool,\"add\":bool,\"layer\":id}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.innerShadow",
+      "label": "Inner Shadow…",
+      "params": "{\"color\":\"#rrggbb\",\"opacity\":0..100=75,\"blend\":str,\"angle\":deg,\"distance\":px,\"choke\":0..100,\"size\":px,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.outerGlow",
+      "label": "Outer Glow…",
+      "params": "{\"color\":\"#rrggbb\",\"opacity\":0..100=75,\"blend\":str=\"screen\",\"technique\":\"softer|precise\",\"spread\":0..100,\"size\":px,\"range\":0..100,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.innerGlow",
+      "label": "Inner Glow…",
+      "params": "{\"color\":\"#rrggbb\",\"opacity\":0..100=75,\"blend\":str=\"screen\",\"technique\":\"softer|precise\",\"source\":\"edge|center\",\"choke\":0..100,\"size\":px,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.stroke",
+      "label": "Stroke…",
+      "params": "{\"size\":px=3,\"position\":\"outside|inside|center\",\"color\":\"#rrggbb\",\"from\":\"#rrggbb\",\"to\":\"#rrggbb\",\"style\":str,\"angle\":deg,\"opacity\":0..100,\"blend\":str,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.colorOverlay",
+      "label": "Color Overlay…",
+      "params": "{\"color\":\"#rrggbb\",\"opacity\":0..100=100,\"blend\":str,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.gradientOverlay",
+      "label": "Gradient Overlay…",
+      "params": "{\"from\":\"#rrggbb\",\"to\":\"#rrggbb\",\"style\":\"linear|radial|angle|reflected|diamond\",\"angle\":deg=90,\"scale\":10..150=100,\"reverse\":bool,\"opacity\":0..100,\"blend\":str,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.patternOverlay",
+      "label": "Pattern Overlay…",
+      "params": "{\"pattern\":id|name?=first library pattern,\"opacity\":0..100=100,\"blend\":str,\"scale\":1..1000=100,\"angle\":deg=0,\"link\":bool=true,\"phaseX\":px,\"phaseY\":px,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.bevelEmboss",
+      "label": "Bevel & Emboss…",
+      "params": "{\"style\":\"inner|outer|emboss|pillow|stroke\",\"technique\":\"smooth|chiselHard|chiselSoft\",\"contour\":bool,\"contourRange\":1..100=50,\"texture\":pattern id|name?,\"textureScale\":1..1000=100,\"textureDepth\":-1000..1000=100,\"textureInvert\":bool,\"textureLink\":bool=true,\"depth\":1..1000=100,\"direction\":\"up|down\",\"size\":px=5,\"soften\":px,\"angle\":deg,\"altitude\":deg,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.satin",
+      "label": "Satin…",
+      "params": "{\"color\":\"#rrggbb\",\"opacity\":0..100=50,\"blend\":str,\"angle\":deg,\"distance\":px,\"size\":px,\"invert\":bool,\"add\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.clear",
+      "label": "Clear Layer Style",
+      "params": "{\"layer\":id}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.gaussianBlur",
+      "label": "Gaussian Blur…",
+      "params": "{\"radius\":0.1..1000=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.blur",
+      "label": "Blur",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.blurMore",
+      "label": "Blur More",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.sharpen.sharpen",
+      "label": "Sharpen",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.sharpen.sharpenMore",
+      "label": "Sharpen More",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.sharpen.sharpenEdges",
+      "label": "Sharpen Edges",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.noise.despeckle",
+      "label": "Despeckle",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.boxBlur",
+      "label": "Box Blur…",
+      "params": "{\"radius\":1..2000=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.motionBlur",
+      "label": "Motion Blur…",
+      "params": "{\"angle\":-360..360=0,\"distance\":1..2000=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.radialBlur",
+      "label": "Radial Blur…",
+      "params": "{\"amount\":1..100=10,\"method\":\"spin|zoom\",\"centerX\":0..1=0.5,\"centerY\":0..1=0.5}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.surfaceBlur",
+      "label": "Surface Blur…",
+      "params": "{\"radius\":1..100=5,\"threshold\":2..255=15}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.sharpen.unsharpMask",
+      "label": "Unsharp Mask…",
+      "params": "{\"amount\":1..500=50,\"radius\":0.1..1000=1,\"threshold\":0..255=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.sharpen.smartSharpen",
+      "label": "Smart Sharpen…",
+      "params": "{\"amount\":1..500=100,\"radius\":0.1..64=1,\"reduceNoise\":0..100=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.noise.addNoise",
+      "label": "Add Noise…",
+      "params": "{\"amount\":0.1..400=12.5,\"distribution\":\"uniform|gaussian\",\"monochromatic\":bool,\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.noise.median",
+      "label": "Median…",
+      "params": "{\"radius\":1..500=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.noise.dustAndScratches",
+      "label": "Dust & Scratches…",
+      "params": "{\"radius\":1..500=1,\"threshold\":0..255=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.mosaic",
+      "label": "Mosaic…",
+      "params": "{\"cellSize\":2..200=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.emboss",
+      "label": "Emboss…",
+      "params": "{\"angle\":-180..180=135,\"height\":1..100=3,\"amount\":1..500=100}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.findEdges",
+      "label": "Find Edges",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.solarize",
+      "label": "Solarize",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.twirl",
+      "label": "Twirl…",
+      "params": "{\"angle\":-999..999=50}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.pinch",
+      "label": "Pinch…",
+      "params": "{\"amount\":-100..100=50}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.spherize",
+      "label": "Spherize…",
+      "params": "{\"amount\":-100..100=100,\"mode\":\"normal|horizontalOnly|verticalOnly\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.wave",
+      "label": "Wave…",
+      "params": "{\"generators\":1..999=5,\"wavelengthMin\":1..998=10,\"wavelengthMax\":2..999=120,\"amplitudeMin\":1..998=5,\"amplitudeMax\":1..999=35,\"type\":\"sine|triangle|square\",\"undefinedAreas\":\"wrap|repeat\",\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.ripple",
+      "label": "Ripple…",
+      "params": "{\"amount\":-999..999=100,\"size\":\"small|medium|large\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.polarCoordinates",
+      "label": "Polar Coordinates…",
+      "params": "{\"mode\":\"rectangularToPolar|polarToRectangular\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.other.highPass",
+      "label": "High Pass…",
+      "params": "{\"radius\":0.1..1000=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.other.minimum",
+      "label": "Minimum…",
+      "params": "{\"radius\":0.2..500=1,\"preserve\":\"squareness|roundness\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.other.maximum",
+      "label": "Maximum…",
+      "params": "{\"radius\":0.2..500=1,\"preserve\":\"squareness|roundness\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.other.offset",
+      "label": "Offset…",
+      "params": "{\"horizontal\":px=0,\"vertical\":px=0,\"undefinedAreas\":\"wrap|repeat|transparent\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.lastFilter",
+      "label": "Last Filter",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.colorHalftone",
+      "label": "Color Halftone…",
+      "params": "{\"maxRadius\":4..127=8,\"channel1\":-360..360=108,\"channel2\":-360..360=162,\"channel3\":-360..360=90,\"channel4\":-360..360=45}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.crystallize",
+      "label": "Crystallize…",
+      "params": "{\"cellSize\":3..300=10,\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.facet",
+      "label": "Facet",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.fragment",
+      "label": "Fragment",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.mezzotint",
+      "label": "Mezzotint…",
+      "params": "{\"type\":\"fineDots|mediumDots|grainyDots|coarseDots|shortLines|mediumLines|longLines|shortStrokes|mediumStrokes|longStrokes\",\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.pixelate.pointillize",
+      "label": "Pointillize…",
+      "params": "{\"cellSize\":3..300=5,\"seed\":u32=0,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.diffuse",
+      "label": "Diffuse…",
+      "params": "{\"mode\":\"normal|darkenOnly|lightenOnly|anisotropic\",\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.extrude",
+      "label": "Extrude…",
+      "params": "{\"type\":\"blocks|pyramids\",\"size\":2..255=30,\"depth\":1..255=30,\"depthMode\":\"random|levelBased\",\"solidFrontFaces\":bool,\"maskIncompleteBlocks\":bool,\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.oilPaint",
+      "label": "Oil Paint…",
+      "params": "{\"stylization\":0.1..10=4,\"cleanliness\":0..10=5,\"scale\":0.1..10=1,\"bristleDetail\":0..10=5,\"lighting\":bool=true,\"angle\":-180..180=-60,\"shine\":0..10=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.tiles",
+      "label": "Tiles…",
+      "params": "{\"count\":1..99=10,\"maxOffset\":1..99=10,\"fill\":\"background|foreground|inverse|unaltered\",\"seed\":u32=0,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.traceContour",
+      "label": "Trace Contour…",
+      "params": "{\"level\":0..255=128,\"edge\":\"lower|upper\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.stylize.wind",
+      "label": "Wind…",
+      "params": "{\"method\":\"wind|blast|stagger\",\"direction\":\"fromRight|fromLeft\",\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.displace",
+      "label": "Displace…",
+      "params": "{\"horizontal\":-999..999=10,\"vertical\":-999..999=10,\"fit\":\"stretch|tile\",\"undefinedAreas\":\"repeat|wrap\",\"mapDocument\":doc,\"mapPath\":text,\"mapLayer\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.shear",
+      "label": "Shear…",
+      "params": "{\"amount\":-100..100=0,\"undefinedAreas\":\"wrap|repeat\",\"points\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.distort.zigZag",
+      "label": "ZigZag…",
+      "params": "{\"amount\":-100..100=10,\"ridges\":0..20=5,\"style\":\"pondRipples|outFromCenter|aroundCenter\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.fibers",
+      "label": "Fibers…",
+      "params": "{\"variance\":1..64=16,\"strength\":1..64=4,\"seed\":u32=0,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.lensFlare",
+      "label": "Lens Flare…",
+      "params": "{\"brightness\":10..300=100,\"centerX\":0..1=0.5,\"centerY\":0..1=0.5,\"lens\":\"zoom|prime35|prime105|moviePrime\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.lightingEffects",
+      "label": "Lighting Effects…",
+      "params": "{\"lightType\":\"spot|point|infinite\",\"intensity\":-100..100=75,\"lightX\":0..1=0.25,\"lightY\":0..1=0.2,\"lightZ\":0..2=0.6,\"targetX\":0..1=0.5,\"targetY\":0..1=0.55,\"cone\":1..89=45,\"hotspot\":0..100=50,\"angle\":-180..180=135,\"elevation\":0..90=45,\"gloss\":-100..100=0,\"metallic\":-100..100=0,\"exposure\":-100..100=0,\"ambience\":-100..100=8,\"texture\":\"none|red|green|blue|alpha|luminance\",\"height\":0..100=50,\"whiteIsHigh\":bool=true,\"lights\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.noise.reduceNoise",
+      "label": "Reduce Noise…",
+      "params": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.smartBlur",
+      "label": "Smart Blur…",
+      "params": "{\"radius\":0.1..100=3,\"threshold\":0.1..100=25,\"quality\":\"high|medium|low\",\"mode\":\"normal|edgeOnly|overlayEdge\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.lensBlur",
+      "label": "Lens Blur…",
+      "params": "{\"radius\":0..100=15,\"shape\":\"hexagon|triangle|square|pentagon|heptagon|octagon\",\"bladeCurvature\":0..100=0,\"rotation\":0..360=0,\"depthMap\":\"none|transparency|layerMask\",\"focalDistance\":0..255=0,\"invert\":bool,\"brightness\":0..100=0,\"threshold\":0..255=255,\"noise\":0..100=0,\"distribution\":\"uniform|gaussian\",\"monochromatic\":bool,\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.shapeBlur",
+      "label": "Shape Blur…",
+      "params": "{\"radius\":5..1000=10,\"shape\":\"circle|ring|square|diamond|triangle|hexagon|star|heart|cross\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blurGallery.tiltShift",
+      "label": "Tilt-Shift…",
+      "params": "{\"blur\":0..500=15,\"centerX\":0..1=0.5,\"centerY\":0..1=0.5,\"angle\":-90..90=0,\"focus\":0..1=0.1,\"transition\":0.01..1=0.15}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blurGallery.irisBlur",
+      "label": "Iris Blur…",
+      "params": "{\"blur\":0..500=15,\"centerX\":0..1=0.5,\"centerY\":0..1=0.5,\"radiusX\":0.01..1=0.35,\"radiusY\":0.01..1=0.25,\"angle\":-180..180=0,\"roundness\":0..100=0,\"feather\":0..0.99=0.5,\"pins\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blurGallery.fieldBlur",
+      "label": "Field Blur…",
+      "params": "{\"blur\":0..500=15,\"centerX\":0..1=0.5,\"centerY\":0..1=0.5,\"pins\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blurGallery.spinBlur",
+      "label": "Spin Blur…",
+      "params": "{\"blurAngle\":0..360=15,\"centerX\":0..1=0.5,\"centerY\":0..1=0.5,\"radiusX\":0.01..1=0.3,\"radiusY\":0.01..1=0.3,\"angle\":-180..180=0,\"pins\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blurGallery.pathBlur",
+      "label": "Path Blur…",
+      "params": "{\"speed\":0..500=50,\"taper\":0..100=0,\"startX\":0..1=0.2,\"startY\":0..1=0.5,\"endX\":0..1=0.8,\"endY\":0..1=0.5,\"paths\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.other.custom",
+      "label": "Custom…",
+      "params": "{\"kernel\":int[25],\"scale\":1..9999=1,\"offset\":-9999..9999=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.other.hsbHsl",
+      "label": "HSB/HSL",
+      "params": "{\"inputMode\":\"rgb|hsb|hsl\",\"rowOrder\":\"hsb|hsl|rgb\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.video.deInterlace",
+      "label": "De-Interlace…",
+      "params": "{\"eliminate\":\"oddFields|evenFields\",\"createBy\":\"interpolation|duplication\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.video.ntscColors",
+      "label": "NTSC Colors",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.filterGallery",
+      "label": "Filter Gallery…",
+      "params": "{\"effects\":json,\"foreground\":json,\"background\":json,\"list\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.coloredPencil",
+      "label": "Colored Pencil",
+      "params": "{\"pencilWidth\":1..24=4,\"strokePressure\":0..15=8,\"paperBrightness\":0..50=25}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.cutout",
+      "label": "Cutout",
+      "params": "{\"numberOfLevels\":2..8=4,\"edgeSimplicity\":0..10=4,\"edgeFidelity\":1..3=2}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.dryBrush",
+      "label": "Dry Brush",
+      "params": "{\"brushSize\":0..10=2,\"brushDetail\":0..10=8,\"texture\":1..3=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.filmGrain",
+      "label": "Film Grain",
+      "params": "{\"grain\":0..20=4,\"highlightArea\":0..20=0,\"intensity\":0..10=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.fresco",
+      "label": "Fresco",
+      "params": "{\"brushSize\":0..10=2,\"brushDetail\":0..10=8,\"texture\":1..3=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.neonGlow",
+      "label": "Neon Glow",
+      "params": "{\"glowSize\":-24..24=5,\"glowBrightness\":0..50=15,\"glowColor\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.paintDaubs",
+      "label": "Paint Daubs",
+      "params": "{\"brushSize\":1..50=8,\"sharpness\":0..40=7,\"brushType\":\"simple|lightRough|darkRough|wideSharp|wideBlurry|sparkle\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.paletteKnife",
+      "label": "Palette Knife",
+      "params": "{\"strokeSize\":1..50=25,\"strokeDetail\":1..3=3,\"softness\":0..10=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.plasticWrap",
+      "label": "Plastic Wrap",
+      "params": "{\"highlightStrength\":0..20=15,\"detail\":1..15=9,\"smoothness\":1..15=7}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.posterEdges",
+      "label": "Poster Edges",
+      "params": "{\"edgeThickness\":0..10=2,\"edgeIntensity\":0..10=1,\"posterization\":0..6=2}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.roughPastels",
+      "label": "Rough Pastels",
+      "params": "{\"strokeLength\":0..40=6,\"strokeDetail\":1..20=4,\"texture\":\"canvas|brick|burlap|sandstone\",\"scaling\":50..200=100,\"relief\":0..50=20,\"light\":\"bottom|bottomLeft|left|topLeft|top|topRight|right|bottomRight\",\"invert\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.smudgeStick",
+      "label": "Smudge Stick",
+      "params": "{\"strokeLength\":0..10=2,\"highlightArea\":0..20=0,\"intensity\":0..10=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.sponge",
+      "label": "Sponge",
+      "params": "{\"brushSize\":0..10=2,\"definition\":0..25=12,\"smoothness\":1..15=5}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.underpainting",
+      "label": "Underpainting",
+      "params": "{\"brushSize\":0..40=6,\"textureCoverage\":0..40=16,\"texture\":\"canvas|brick|burlap|sandstone\",\"scaling\":50..200=100,\"relief\":0..50=4,\"light\":\"top|topRight|right|bottomRight|bottom|bottomLeft|left|topLeft\",\"invert\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.watercolor",
+      "label": "Watercolor",
+      "params": "{\"brushDetail\":1..14=9,\"shadowIntensity\":0..10=1,\"texture\":1..3=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.accentedEdges",
+      "label": "Accented Edges",
+      "params": "{\"edgeWidth\":1..14=2,\"edgeBrightness\":0..50=38,\"smoothness\":1..15=5}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.angledStrokes",
+      "label": "Angled Strokes",
+      "params": "{\"directionBalance\":0..100=50,\"strokeLength\":3..50=15,\"sharpness\":0..10=3}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.crosshatch",
+      "label": "Crosshatch",
+      "params": "{\"strokeLength\":3..50=9,\"sharpness\":0..20=6,\"strength\":1..3=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.darkStrokes",
+      "label": "Dark Strokes",
+      "params": "{\"balance\":0..10=5,\"blackIntensity\":0..10=6,\"whiteIntensity\":0..10=2}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.inkOutlines",
+      "label": "Ink Outlines",
+      "params": "{\"strokeLength\":1..50=4,\"darkIntensity\":0..50=20,\"lightIntensity\":0..50=10}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.spatter",
+      "label": "Spatter",
+      "params": "{\"sprayRadius\":0..25=10,\"smoothness\":1..15=5}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.sprayedStrokes",
+      "label": "Sprayed Strokes",
+      "params": "{\"strokeLength\":0..20=12,\"sprayRadius\":0..25=7,\"strokeDirection\":\"rightDiagonal|horizontal|leftDiagonal|vertical\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.sumiE",
+      "label": "Sumi-e",
+      "params": "{\"strokeWidth\":3..15=10,\"strokePressure\":0..15=2,\"contrast\":0..40=16}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.diffuseGlow",
+      "label": "Diffuse Glow",
+      "params": "{\"graininess\":0..10=6,\"glowAmount\":0..20=10,\"clearAmount\":0..20=15,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.glass",
+      "label": "Glass",
+      "params": "{\"distortion\":0..20=5,\"smoothness\":1..15=3,\"texture\":\"frosted|blocks|canvas|tinyLens\",\"scaling\":50..200=100,\"invert\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.oceanRipple",
+      "label": "Ocean Ripple",
+      "params": "{\"rippleSize\":1..15=9,\"rippleMagnitude\":0..20=9}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.basRelief",
+      "label": "Bas Relief",
+      "params": "{\"detail\":1..15=13,\"smoothness\":1..15=3,\"light\":\"bottom|bottomLeft|left|topLeft|top|topRight|right|bottomRight\",\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.chalkCharcoal",
+      "label": "Chalk & Charcoal",
+      "params": "{\"charcoalArea\":0..20=6,\"chalkArea\":0..20=6,\"strokePressure\":0..5=1,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.charcoal",
+      "label": "Charcoal",
+      "params": "{\"charcoalThickness\":1..7=1,\"detail\":0..5=5,\"lightDarkBalance\":0..100=50,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.chrome",
+      "label": "Chrome",
+      "params": "{\"detail\":0..10=4,\"smoothness\":0..10=7}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.conteCrayon",
+      "label": "Conté Crayon",
+      "params": "{\"foregroundLevel\":1..15=11,\"backgroundLevel\":1..15=7,\"texture\":\"canvas|brick|burlap|sandstone\",\"scaling\":50..200=100,\"relief\":0..50=4,\"light\":\"top|topRight|right|bottomRight|bottom|bottomLeft|left|topLeft\",\"invert\":bool,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.graphicPen",
+      "label": "Graphic Pen",
+      "params": "{\"strokeLength\":1..15=15,\"lightDarkBalance\":0..100=50,\"strokeDirection\":\"rightDiagonal|horizontal|leftDiagonal|vertical\",\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.halftonePattern",
+      "label": "Halftone Pattern",
+      "params": "{\"size\":1..12=1,\"contrast\":0..50=5,\"patternType\":\"dot|circle|line\",\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.notePaper",
+      "label": "Note Paper",
+      "params": "{\"imageBalance\":0..50=25,\"graininess\":0..20=10,\"relief\":0..25=11,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.photocopy",
+      "label": "Photocopy",
+      "params": "{\"detail\":1..24=7,\"darkness\":1..50=8,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.plaster",
+      "label": "Plaster",
+      "params": "{\"imageBalance\":0..50=20,\"smoothness\":1..15=2,\"light\":\"top|topRight|right|bottomRight|bottom|bottomLeft|left|topLeft\",\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.reticulation",
+      "label": "Reticulation",
+      "params": "{\"density\":0..50=12,\"foregroundLevel\":0..50=40,\"backgroundLevel\":0..50=5,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.stamp",
+      "label": "Stamp",
+      "params": "{\"lightDarkBalance\":0..50=25,\"smoothness\":1..50=5,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.tornEdges",
+      "label": "Torn Edges",
+      "params": "{\"imageBalance\":0..50=25,\"smoothness\":1..15=11,\"contrast\":1..25=17,\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.waterPaper",
+      "label": "Water Paper",
+      "params": "{\"fiberLength\":3..50=15,\"brightness\":0..100=60,\"contrast\":0..100=80}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.glowingEdges",
+      "label": "Glowing Edges",
+      "params": "{\"edgeWidth\":1..14=2,\"edgeBrightness\":0..20=6,\"smoothness\":1..15=5}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.craquelure",
+      "label": "Craquelure",
+      "params": "{\"crackSpacing\":2..100=15,\"crackDepth\":0..10=6,\"crackBrightness\":0..10=9}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.grain",
+      "label": "Grain",
+      "params": "{\"intensity\":0..100=40,\"contrast\":0..100=50,\"grainType\":\"regular|soft|sprinkles|clumped|contrasty|enlarged|stippled|horizontal|vertical|speckle\",\"foreground\":json,\"background\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.mosaicTiles",
+      "label": "Mosaic Tiles",
+      "params": "{\"tileSize\":2..100=12,\"groutWidth\":1..15=3,\"lightenGrout\":0..10=9}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.patchwork",
+      "label": "Patchwork",
+      "params": "{\"squareSize\":0..10=4,\"relief\":0..25=8}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.stainedGlass",
+      "label": "Stained Glass",
+      "params": "{\"cellSize\":2..50=10,\"borderThickness\":1..20=4,\"lightIntensity\":0..10=3,\"foreground\":json}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.gallery.texturizer",
+      "label": "Texturizer",
+      "params": "{\"texture\":\"canvas|brick|burlap|sandstone\",\"scaling\":50..200=100,\"relief\":0..50=4,\"light\":\"top|topRight|right|bottomRight|bottom|bottomLeft|left|topLeft\",\"invert\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.create",
+      "label": "New Type Layer",
+      "params": "{\"x\":px,\"y\":px (baseline anchor of point text),\"text\":str,\"box\":[x,y,w,h]? (paragraph text),\"name\":str?,\"align\":\"left|center|right|justify…\"?, …character keys: \"font\",\"size\":pt=12,\"color\",…}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.edit",
+      "label": "Edit Type",
+      "params": "{\"layer\":id?,\"text\":str? (replace all, styles kept),\"replace\":{\"start\":char,\"end\":char,\"text\":str}?,\"runs\":[{\"start\":char,\"end\":char,…character keys}]?,\"box\":[x,y,w,h]? (to paragraph text),\"point\":[x,y]? (to point text),\"move\":[dx,dy]?,\"transform\":[a,b,c,d,e,f]?,\"antialias\":\"none|sharp|crisp|strong|smooth\"?,\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.setStyle",
+      "label": "Set Type Style",
+      "params": "{\"layer\":id?,\"range\":[startChar,endChar]? (default all), \"font\":str,\"fontStyle\":str,\"weight\":100..900,\"italic\":bool,\"size\":pt,\"color\":\"#rrggbb\"|[r,g,b,a],\"tracking\":1/1000em,\"leading\":pt|\"auto\",\"baselineShift\":pt,\"horizontalScale\":%,\"verticalScale\":%,\"underline\":bool,\"strikethrough\":bool,\"fauxBold\":bool,\"fauxItalic\":bool,\"kerning\":\"metrics|optical|none\",\"caps\":\"normal|small|all\",\"ligatures\":bool,\"discretionaryLigatures\":bool,\"features\":{\"ss01\":1},\"variations\":{\"wght\":650},\"language\":str, paragraph keys: \"align\":\"left|center|right|justify|justifyCenter|justifyRight|justifyAll\",\"firstLineIndent\":pt,\"startIndent\":pt,\"endIndent\":pt,\"spaceBefore\":pt,\"spaceAfter\":pt,\"autoLeading\":%,\"direction\":\"auto|ltr|rtl\",\"hyphenate\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.rasterize",
+      "label": "Rasterize Type",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.info",
+      "label": "Type Layer Info",
+      "params": "{\"layer\":id?} → text, runs/paragraphs (char offsets + styles), shape, transform, laid-out lines (text space px), bounds",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.fonts",
+      "label": "List Fonts",
+      "params": "{\"family\":str? (faces of one family)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.transform",
+      "label": "Free Transform",
+      "params": "{\"layer\":id?,\"rect\":[x0,y0,x1,y1]? (source frame; default = layer content ∩ selection),\"quad\":[[x,y]×4]? (where the frame's corners go, clockwise from top-left),\"matrix\":[a,b,c,d,e,f]? (affine alternative),\"interpolation\":\"bicubic|bilinear|nearest\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "shape.create",
+      "label": "New Shape Layer",
+      "params": "{\"kind\":\"rect|roundedRect|ellipse|polygon|star|line|path\"=\"rect\",\"rect\":[x,y,w,h] (rect/roundedRect/ellipse/polygon/star),\"radii\":[tl,tr,br,bl]|r (roundedRect=10),\"sides\":3..100=5,\"starRatio\":0..1 (star=0.5),\"from\":[x,y],\"to\":[x,y],\"weight\":px=1 (line),\"path\":{…} (kind path),\"fill\":\"#rrggbb\"|[r,g,b,a]|{\"gradient\":{\"stops\":[[t,\"#hex\"]],\"angle\":deg,\"scale\":%,\"style\":\"linear|radial|angle|reflected|diamond\",\"reverse\":bool}}|{\"pattern\":name}|null (no fill)=foreground,\"stroke\":{\"width\":px,\"color\":\"#rrggbb\"|fill,\"opacity\":0..100,\"align\":\"inside|center|outside\",\"cap\":\"butt|round|square\",\"join\":\"miter|round|bevel\",\"miterLimit\":n,\"dashes\":[multiples of width],\"dashOffset\":n}|null=none,\"name\":str?,\"addTo\":layerId? + \"op\":\"combine|subtract|intersect|exclude\" (append to an existing shape layer)} → shape.info. path: {\"subpaths\":[{\"closed\":bool=true,\"op\":\"combine|subtract|intersect|exclude\",\"knots\":[[x,y] | {\"anchor\":[x,y],\"in\":[x,y],\"out\":[x,y],\"smooth\":bool}]}],\"fillRule\":\"nonzero|evenodd\",\"inverted\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "shape.edit",
+      "label": "Edit Shape",
+      "params": "{\"layer\":id?,\"path\":{…}? (replaces; drops live shape),\"kind\":str?,\"rect\":[x,y,w,h]?,\"radii\":[tl,tr,br,bl]|r?,\"sides\":n?,\"starRatio\":r?,\"from\":[x,y]?,\"to\":[x,y]?,\"weight\":px? (live-shape params regenerate the path),\"move\":[dx,dy]?,\"transform\":[a,b,c,d,e,f]?,\"op\":\"combine|…\"? + \"subpath\":index? (default all but the first),\"fillRule\":\"nonzero|evenodd\"?,\"fill\":\"#rrggbb\"|[r,g,b,a]|{\"gradient\":{\"stops\":[[t,\"#hex\"]],\"angle\":deg,\"scale\":%,\"style\":\"linear|radial|angle|reflected|diamond\",\"reverse\":bool}}|{\"pattern\":name}|null (no fill)?,\"stroke\":{\"width\":px,\"color\":\"#rrggbb\"|fill,\"opacity\":0..100,\"align\":\"inside|center|outside\",\"cap\":\"butt|round|square\",\"join\":\"miter|round|bevel\",\"miterLimit\":n,\"dashes\":[multiples of width],\"dashOffset\":n}|null? (merged into the current stroke),\"name\":str?} → shape.info",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "shape.info",
+      "label": "Shape Layer Info",
+      "params": "{\"layer\":id?} → {layer,name,kind,path,fill,stroke,live,bounds:[x,y,w,h]}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "shape.rasterize",
+      "label": "Rasterize Shape",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.list",
+      "label": "List Paths",
+      "params": "{} → {paths:[{name,knots,subpaths}],workPath,clippingPath,layerPath (active layer's shape path / vector mask)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.info",
+      "label": "Path Info",
+      "params": "{\"name\":str|\"work\"|\"layer\"=\"work\"} → {name,path}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.set",
+      "label": "Set Path",
+      "params": "{\"name\":str|\"work\"=\"work\",\"path\":{…},\"op\":\"combine|subtract|intersect|exclude\"? (append to the existing path with this op instead of replacing)}. path: {\"subpaths\":[{\"closed\":bool=true,\"op\":\"combine|subtract|intersect|exclude\",\"knots\":[[x,y] | {\"anchor\":[x,y],\"in\":[x,y],\"out\":[x,y],\"smooth\":bool}]}],\"fillRule\":\"nonzero|evenodd\",\"inverted\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.delete",
+      "label": "Delete Path",
+      "params": "{\"name\":str|\"work\"=\"work\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.rename",
+      "label": "Rename Path",
+      "params": "{\"name\":str|\"work\"=\"work\",\"to\":str} (renaming the work path saves it)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.toSelection",
+      "label": "Make Selection from Path",
+      "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"feather\":px=0,\"antiAlias\":bool=true,\"mode\":\"replace|add|subtract|intersect\"=\"replace\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.toWorkPath",
+      "label": "Make Work Path",
+      "params": "{\"tolerance\":0.5..10 px=2} → {subpaths,knots}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.fill",
+      "label": "Fill Path",
+      "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"layer\":id? (pixel layer, default active),\"color\":\"#rrggbb\"=foreground,\"opacity\":0..100=100,\"mode\":\"normal|multiply|…\"=\"normal\",\"feather\":px=0,\"antiAlias\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "path.stroke",
+      "label": "Stroke Path",
+      "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"layer\":id? (pixel layer),\"tool\":\"brush|pencil|eraser\"=\"brush\",\"size\":px?,\"hardness\":0..1?,\"opacity\":0..100?,\"color\":\"#rrggbb\"=foreground} (current brush settings otherwise)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.add",
+      "label": "Add Vector Mask",
+      "params": "{\"layer\":id?,\"path\":{…}? | \"name\":str|\"work\"? (copy a document path),\"hide\":bool=false (Hide All = inverted)} → vector mask info. Without a path the mask reveals all.",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.fromPath",
+      "label": "Vector Mask from Current Path",
+      "params": "{\"layer\":id?,\"name\":str|\"work\"=\"work\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.edit",
+      "label": "Edit Vector Mask",
+      "params": "{\"layer\":id?,\"path\":{…}?,\"enabled\":bool?,\"linked\":bool?,\"density\":0..100?,\"feather\":px?,\"invert\":true?}. path: {\"subpaths\":[{\"closed\":bool=true,\"op\":\"combine|subtract|intersect|exclude\",\"knots\":[[x,y] | {\"anchor\":[x,y],\"in\":[x,y],\"out\":[x,y],\"smooth\":bool}]}],\"fillRule\":\"nonzero|evenodd\",\"inverted\":bool}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.delete",
+      "label": "Delete Vector Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.vectorMask",
+      "label": "Rasterize Vector Mask",
+      "params": "{\"layer\":id?} (multiplied into the layer mask)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.revealAll",
+      "label": "Vector Mask: Reveal All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.hideAll",
+      "label": "Vector Mask: Hide All",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.currentPath",
+      "label": "Vector Mask: Current Path",
+      "params": "{\"layer\":id?,\"name\":str|\"work\"=\"work\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.enabled",
+      "label": "Enable Vector Mask",
+      "params": "{\"layer\":id?,\"enabled\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.linked",
+      "label": "Link Vector Mask",
+      "params": "{\"layer\":id?,\"linked\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.shape",
+      "label": "Rasterize Shape",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.combineShapes.unite",
+      "label": "Unite Shapes",
+      "params": "{\"layer\":id?,\"subpath\":index? (default all but the first)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.combineShapes.subtractFrontShape",
+      "label": "Subtract Front Shape",
+      "params": "{\"layer\":id?,\"subpath\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.combineShapes.intersectShapeAreas",
+      "label": "Intersect Shape Areas",
+      "params": "{\"layer\":id?,\"subpath\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.combineShapes.excludeOverlappingShapes",
+      "label": "Exclude Overlapping Shapes",
+      "params": "{\"layer\":id?,\"subpath\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.combineShapes.mergeShapeComponents",
+      "label": "Merge Shape Components",
+      "params": "{\"layer\":id?,\"tolerance\":px=0.1} (bakes the path operations into plain combined outlines, traced from the exact coverage)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.convertToShape",
+      "label": "Convert Selection to Shape",
+      "params": "{\"tolerance\":px=2,\"fill\":\"#rrggbb\"=foreground,\"name\":str?} → shape.info",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.vectorMask.info",
+      "label": "Vector Mask Info",
+      "params": "{\"layer\":id?} → {layer,path,enabled,linked,density,feather}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.quick",
+      "label": "Quick Selection",
+      "params": "{\"points\":[[x,y],…],\"size\":px=30,\"mode\":\"add|subtract|replace\"=\"add\",\"sampleAllLayers\":bool=false,\"enhanceEdge\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.object",
+      "label": "Object Selection",
+      "params": "{\"rect\":[x,y,w,h],\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"sampleAllLayers\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.subject",
+      "label": "Subject",
+      "params": "{\"sampleAllLayers\":bool=true,\"mode\":\"replace|add|subtract|intersect\"=\"replace\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.refineEdge",
+      "label": "Refine Edge",
+      "params": "{\"radius\":px=0,\"smartRadius\":bool=false,\"smooth\":0..100=0,\"feather\":px=0,\"contrast\":0..100=0,\"shiftEdge\":-100..100=0,\"decontaminate\":bool=false,\"amount\":0..100=100,\"output\":\"selection|layerMask|newLayer|newLayerWithMask\"=\"selection\",\"sampleAllLayers\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.focusArea",
+      "label": "Focus Area…",
+      "params": "{\"range\":0..1=0.5,\"noise\":0..1=0,\"sampleAllLayers\":bool=true,\"mode\":\"replace|add|subtract|intersect\"=\"replace\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.cut",
+      "label": "Cut",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.copy",
+      "label": "Copy",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.copyMerged",
+      "label": "Copy Merged",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.paste",
+      "label": "Paste",
+      "params": "{\"center\":[x,y]? (view centre; default keeps the position when it overlaps the canvas)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.pasteSpecial.pasteInPlace",
+      "label": "Paste in Place",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.layerViaCopy",
+      "label": "Layer via Copy",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.layerViaCut",
+      "label": "Layer via Cut",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.mergeVisible",
+      "label": "Merge Visible",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.autoTone",
+      "label": "Auto Tone",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.autoContrast",
+      "label": "Auto Contrast",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.autoColor",
+      "label": "Auto Color",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.toggleLastState",
+      "label": "Toggle Last State",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.again",
+      "label": "Again",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.newGuide",
+      "label": "New Guide…",
+      "params": "{\"orientation\":\"horizontal|vertical\",\"position\":px}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.moveGuide",
+      "label": "Move Guide",
+      "params": "{\"orientation\":\"horizontal|vertical\",\"index\":n,\"position\":px}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.deleteGuide",
+      "label": "Delete Guide",
+      "params": "{\"orientation\":\"horizontal|vertical\",\"index\":n}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.clearGuides",
+      "label": "Clear Guides",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.assignProfile",
+      "label": "Assign Profile…",
+      "params": "{\"profile\":\"working|srgb|display-p3|adobe-rgb-compat|prophoto-compat|linear-srgb|rec2020|gray-gamma-2.2|sgray|lab-d50|coated-cmyk|none\" (or a path to an .icc file)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.convertToProfile",
+      "label": "Convert to Profile…",
+      "params": "{\"profile\":\"srgb|display-p3|adobe-rgb-compat|prophoto-compat|linear-srgb|rec2020|gray-gamma-2.2|sgray|lab-d50|coated-cmyk|working\" (or a path to an .icc file),\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.colorSettings",
+      "label": "Color Settings…",
+      "params": "{\"workingRgb\":\"srgb|display-p3|adobe-rgb-compat|prophoto-compat|linear-srgb|rec2020\",\"workingCmyk\":\"coated-cmyk\",\"workingGray\":\"sgray|gray-gamma-2.2\",\"policyRgb\":\"preserve|convert|off\",\"policyCmyk\":\"preserve|convert|off\",\"policyGray\":\"preserve|convert|off\",\"askOnMismatch\":bool=true,\"askOnPaste\":bool=true,\"askOnMissing\":bool=false,\"intent\":\"relative|perceptual|saturation|absolute\",\"blendTextGamma\":1.0..2.2|bool=1.45,\"bpc\":bool=true,\"dither\":bool=true,\"monitorProfile\":\"auto|srgb|display-p3|adobe-rgb-compat|prophoto-compat|rec2020\",\"reset\":bool=false} (working spaces and the monitor profile also accept .icc paths; monitor `auto` = the main display's profile when the platform provides it, else sRGB)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "color.profileMismatch",
+      "label": "Embedded Profile Mismatch",
+      "params": "{\"action\":\"preserve|convert|discard|assignWorking\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.profileInfo",
+      "label": "Profile Info",
+      "params": "{\"profile\":\"<builtin id>|document|/path/to/profile.icc\"=document}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "view.proofSetup",
+      "label": "Proof Setup…",
+      "params": "{\"profile\":\"working-cmyk|srgb|display-p3|adobe-rgb-compat|prophoto-compat|linear-srgb|rec2020|gray-gamma-2.2|sgray|lab-d50|coated-cmyk\" (or a path to an .icc file)=\"working-cmyk\",\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true,\"simulatePaper\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofColors",
+      "label": "Proof Colors",
+      "params": "{\"on\":bool=toggle}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.gamutWarning",
+      "label": "Gamut Warning",
+      "params": "{\"on\":bool=toggle,\"threshold\":deltaE=4,\"profile\":\"<proof profile override>\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.pencil",
+      "label": "Pencil",
+      "params": "{\"points\":[[x,y,pressure?,tiltX?,tiltY?,rotation?,timeMs?,wheel?],…],\"brush\":{…}?,\"preset\":name?,\"size\":px?,\"opacity\":0..1?,\"color\":\"#rrggbb\"?=foreground,\"mode\":\"normal|multiply|screen|…\"=\"normal\",\"erase\":bool?,\"autoErase\":bool=false,\"seed\":u64?,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.mixerBrush",
+      "label": "Mixer Brush",
+      "params": "{\"points\":[…],\"brush\":{…}?,\"preset\":name?,\"size\":px?,\"wet\":0..100=50,\"load\":0..100=50,\"mix\":0..100=50,\"flow\":0..100=100,\"color\":\"#rrggbb\"?=foreground,\"sampleAllLayers\":bool=false,\"cleanAfterStroke\":bool=true,\"loadAfterStroke\":bool=true,\"seed\":u64?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.colorReplacement",
+      "label": "Color Replacement",
+      "params": "{\"points\":[…],\"brush\":{…}?,\"size\":px?,\"mode\":\"hue|saturation|color|luminosity\"=\"color\",\"sampling\":\"continuous|once|backgroundSwatch\"=\"continuous\",\"limits\":\"contiguous|discontiguous|findEdges\"=\"contiguous\",\"tolerance\":0..100=30,\"antiAlias\":bool=true,\"color\":\"#rrggbb\"?=foreground,\"seed\":u64?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.presets.list",
+      "label": "List Brush Presets",
+      "params": "{\"full\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.presets.save",
+      "label": "Save Brush Preset",
+      "params": "{\"name\":string,\"brush\":{…BrushSettings}?=current brush}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.presets.delete",
+      "label": "Delete Brush Preset",
+      "params": "{\"name\":string}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.defineFromSelection",
+      "label": "Define Brush Preset…",
+      "params": "{\"name\":string}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.get",
+      "label": "Get Brush",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tools.setBrush",
+      "label": "Set Brush",
+      "params": "{\"preset\":name?,\"reset\":bool?,…BrushSettings fields (camelCase, deep-merged)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "paint.magicEraser",
+      "label": "Magic Eraser",
+      "params": "{\"x\":px,\"y\":px,\"tolerance\":0..255=32,\"antiAlias\":bool=true,\"contiguous\":bool=true,\"sampleAllLayers\":bool=false,\"opacity\":1..100=100}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.backgroundEraser",
+      "label": "Background Eraser",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px?,\"hardness\":0..1?,\"brush\":{…}?,\"preset\":name?,\"sampling\":\"continuous|once|backgroundSwatch\"=\"continuous\",\"limits\":\"discontiguous|contiguous|findEdges\"=\"contiguous\",\"tolerance\":0..100=50,\"protectForegroundColor\":bool=false,\"seed\":u64?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.presets.importAbr",
+      "label": "Import Brushes…",
+      "params": "{\"path\":\".abr file\"?,\"data\":base64 bytes?,\"group\":string?=file name,\"replace\":bool=true (replace a group of the same name),\"select\":bool=false (make the first imported preset current)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "gradient.presets.importGrd",
+      "label": "Import Gradients…",
+      "params": "{\"path\":\".grd file\"?,\"data\":base64 bytes?,\"group\":string?=file name,\"replace\":bool=true (replace a group of the same name)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "paint.cloneStamp",
+      "label": "Clone Stamp",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.healingBrush",
+      "label": "Healing Brush",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.spotHealing",
+      "label": "Spot Healing Brush",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.dodge",
+      "label": "Dodge",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"range\":\"shadows|midtones|highlights\"=\"midtones\",\"exposure\":1..100=50,\"protectTones\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.burn",
+      "label": "Burn",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"range\":\"shadows|midtones|highlights\"=\"midtones\",\"exposure\":1..100=50,\"protectTones\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.sponge",
+      "label": "Sponge",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"mode\":\"desaturate|saturate\"=\"desaturate\",\"vibrance\":bool=true (flow = sponge strength)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.blur",
+      "label": "Blur",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"strength\":1..100=50}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.sharpen",
+      "label": "Sharpen",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"strength\":1..100=50,\"protectDetail\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.smudge",
+      "label": "Smudge",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"strength\":1..100=50,\"fingerPainting\":bool=false (starts with the foreground colour)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.historyBrush",
+      "label": "History Brush",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"state\":index (into history.entries; default 0 = the oldest held state, normally the Open snapshot)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.imageSize",
+      "label": "Image Size…",
+      "params": "{\"width\":px,\"height\":px,\"resolution\":ppi,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails|none\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.canvasSize",
+      "label": "Canvas Size…",
+      "params": "{\"width\":px,\"height\":px,\"relative\":bool=false,\"anchor\":\"topLeft|top|topRight|left|center|right|bottomLeft|bottom|bottomRight\"=\"center\",\"extensionColor\":\"background|foreground|white|black|transparent|#rrggbb\"=\"background\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.crop",
+      "label": "Crop",
+      "params": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"deleteCroppedPixels\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.trim",
+      "label": "Trim…",
+      "params": "{\"basedOn\":\"transparent|topLeft|bottomRight\"=\"transparent\",\"top\":bool=true,\"bottom\":bool=true,\"left\":bool=true,\"right\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.rgb",
+      "label": "RGB Color",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.grayscale",
+      "label": "Grayscale",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.cmyk",
+      "label": "CMYK Color",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.lab",
+      "label": "Lab Color",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bits8",
+      "label": "8 Bits/Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bits16",
+      "label": "16 Bits/Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bits32",
+      "label": "32 Bits/Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.duplicate",
+      "label": "Duplicate…",
+      "params": "{\"name\":str,\"mergedOnly\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.magicWand",
+      "label": "Magic Wand",
+      "params": "{\"x\":px,\"y\":px,\"tolerance\":0..255=32,\"contiguous\":bool=true,\"antiAlias\":bool=true,\"sampleAllLayers\":bool=false,\"mode\":\"replace|add|subtract|intersect\"=\"replace\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.colorRange",
+      "label": "Color Range…",
+      "params": "{\"select\":\"sampledColors|reds|yellows|greens|cyans|blues|magentas|highlights|midtones|shadows|outOfGamut\"=\"sampledColors\",\"color\":\"#rrggbb\"=foreground,\"colors\":[\"#rrggbb\",…]?,\"points\":[[x,y],…]? (eyedropper samples),\"subtractPoints\":[[x,y],…]? (minus eyedropper),\"fuzziness\":0..200=40 (tones: 0..100 %=20),\"localized\":bool=false,\"range\":0..100=100 (% of the longer side),\"tonalRange\":level|[lo,hi] (shadows 65, highlights 190, midtones [105,150]),\"invert\":bool=false,\"sampleAllLayers\":bool=true,\"mode\":\"replace|add|subtract|intersect\"=\"replace\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.modify.border",
+      "label": "Border…",
+      "params": "{\"radius\":1..200=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.modify.smooth",
+      "label": "Smooth…",
+      "params": "{\"radius\":1..500=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.modify.expand",
+      "label": "Expand…",
+      "params": "{\"radius\":1..500=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.modify.contract",
+      "label": "Contract…",
+      "params": "{\"radius\":1..500=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.modify.feather",
+      "label": "Feather…",
+      "params": "{\"radius\":0.1..1000=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.grow",
+      "label": "Grow",
+      "params": "{\"tolerance\":0..255=32,\"sampleAllLayers\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.similar",
+      "label": "Similar",
+      "params": "{\"tolerance\":0..255=32,\"sampleAllLayers\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.lasso",
+      "label": "Lasso",
+      "params": "{\"points\":[[x,y],…],\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"antiAlias\":bool=true,\"feather\":px=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.sky",
+      "label": "Sky",
+      "params": "{\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"sampleAllLayers\":bool=true,\"threshold\":0..100=50 (higher = stricter),\"softness\":0..100=50 (edge softness)} → {selected, changed, coverage (0–1 of the canvas), bounds [x,y,w,h]}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.isolateLayers",
+      "label": "Isolate Layers",
+      "params": "{\"on\":bool? (default: toggle)} — Layers panel lists only the selected layers → {isolated, layers}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.transformSelection",
+      "label": "Transform Selection",
+      "params": "{\"rect\":[x0,y0,x1,y1]? (frame; default = selection bounds),\"quad\"|\"corners\":[[x,y]×4]? (where the frame's corners go: distort/perspective),\"matrix\":[a,b,c,d,e,f]?,\"scaleX\":%=100,\"scaleY\":%=100,\"rotate\":deg=0,\"skewX\":deg=0,\"skewY\":deg=0,\"dx\":px=0,\"dy\":px=0,\"reference\":\"center|topLeft|top|topRight|left|right|bottomLeft|bottom|bottomRight\"|[x,y]=\"center\",\"style\"|\"mesh\"|\"grid\"|\"warp\":… (warp, as edit.transform.warp),\"interpolation\":\"bilinear|bicubic|nearest\"=\"bilinear\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.bucket",
+      "label": "Paint Bucket",
+      "params": "{\"x\":px,\"y\":px,\"tolerance\":0..255=32,\"contiguous\":bool=true,\"antiAlias\":bool=true,\"contents\":\"foreground|pattern\"=\"foreground\",\"color\":\"#rrggbb\"=foreground,\"pattern\":id|name (contents=pattern),\"scale\":%=100,\"angle\":deg,\"opacity\":1..100=100,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.gradient",
+      "label": "Gradient",
+      "params": "{\"from\":[x,y],\"to\":[x,y],\"style\":\"linear|radial|angle|reflected|diamond\"=\"linear\",\"colors\":[\"#rrggbb\",…]? (evenly spaced),\"gradient\":preset name?,\"stops\":[[t,\"#rrggbb\"|\"foreground\"|\"background\"],…]?,\"transparency\":[[t,0..100],…]? (default: the current gradient, see gradient.presets.select),\"reverse\":bool=false,\"dither\":bool=true,\"opacity\":1..100=100,\"mode\":\"normal|multiply|…\"=\"normal\",\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.stroke",
+      "label": "Stroke…",
+      "params": "{\"width\":1..250=1,\"color\":\"#rrggbb|[r,g,b,a]\"=foreground,\"location\":\"inside|center|outside\"=\"center\",\"opacity\":0..100=100}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.rotate180",
+      "label": "Rotate 180°",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.rotate90Cw",
+      "label": "Rotate 90° Clockwise",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.rotate90Ccw",
+      "label": "Rotate 90° Counter Clockwise",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.flipHorizontal",
+      "label": "Flip Horizontal",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.flipVertical",
+      "label": "Flip Vertical",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.pasteSpecial.pasteInto",
+      "label": "Paste Into",
+      "params": "{\"center\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.pasteSpecial.pasteOutside",
+      "label": "Paste Outside",
+      "params": "{\"center\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.reselect",
+      "label": "Reselect",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.equalize",
+      "label": "Equalize",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.revealAll",
+      "label": "Reveal All",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.layerFromBackground",
+      "label": "Layer From Background…",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.copyLayerStyle",
+      "label": "Copy Layer Style",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.pasteLayerStyle",
+      "label": "Paste Layer Style",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.hideAllEffects",
+      "label": "Hide All Effects",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.showAllEffects",
+      "label": "Show All Effects",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.enabled",
+      "label": "Disable Layer Mask",
+      "params": "{\"layer\":id?,\"enabled\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.linked",
+      "label": "Unlink Layer Mask",
+      "params": "{\"layer\":id?,\"linked\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.layer",
+      "label": "Layer",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.allLayers",
+      "label": "All Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.type",
+      "label": "Type",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.fillContent",
+      "label": "Fill Content",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.smartObject",
+      "label": "Smart Object",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.delete.hiddenLayers",
+      "label": "Hidden Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.scripts.deleteAllEmptyLayers",
+      "label": "Delete All Empty Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.ungroupLayers",
+      "label": "Ungroup Layers",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.hideLayers",
+      "label": "Hide Layers",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.showLayers",
+      "label": "Show Layers",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.blur.average",
+      "label": "Average",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.clouds",
+      "label": "Clouds",
+      "params": "{\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.differenceClouds",
+      "label": "Difference Clouds",
+      "params": "{\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.closeAll",
+      "label": "Close All",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.closeOthers",
+      "label": "Close Others",
+      "params": "{\"document\":index? (the one to keep; default active)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.revert",
+      "label": "Revert",
+      "params": "{} (reloads the saved file as one undoable step)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.saveACopy",
+      "label": "Save a Copy…",
+      "params": "{\"path\":str (format from the extension),\"quality\":0..12? (JPEG),\"layers\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.openAs",
+      "label": "Open As…",
+      "params": "{\"path\":str,\"as\":\"psd|png|jpg|tiff|…\"? (decode as this format)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.placeEmbedded",
+      "label": "Place Embedded…",
+      "params": "{\"path\":str,\"scale\":%? (default: fit when larger than the canvas),\"fit\":bool=true,\"center\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.placeLinked",
+      "label": "Place Linked…",
+      "params": "{\"path\":str,\"scale\":%?,\"fit\":bool=true,\"center\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.fileInfo",
+      "label": "File Info…",
+      "params": "{\"title\":str?,\"author\":str?,\"authorTitle\":str?,\"description\":str?,\"keywords\":[str]|\"a; b\"?,\"copyright\":str?,\"copyrightStatus\":\"unknown|copyrighted|publicDomain\"?,\"copyrightUrl\":str?} (no keys: read)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.fitImage",
+      "label": "Fit Image…",
+      "params": "{\"width\":px,\"height\":px,\"dontEnlarge\":bool=false,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.conditionalModeChange",
+      "label": "Conditional Mode Change…",
+      "params": "{\"from\":[\"rgb\",\"grayscale\",\"cmyk\",\"lab\",\"indexed\",\"bitmap\",…]|\"any\"=\"any\",\"to\":\"rgb|grayscale|cmyk|lab\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.batch",
+      "label": "Batch…",
+      "params": "{\"steps\":[[commandId,params]|{\"command\":id,\"params\":{}}…] (a recorded action),\"input\":folder|[paths],\"output\":folder,\"format\":\"same|png|jpg|psd|tiff|…\"=\"same\",\"quality\":0..12?} → {files, errors}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.imageProcessor",
+      "label": "Image Processor…",
+      "params": "{\"input\":folder|[paths],\"output\":folder,\"format\":\"jpg|png|psd|tiff|…\"=\"jpg\",\"quality\":0..12=8,\"width\":px?,\"height\":px? (fit, never enlarge),\"convertToSrgb\":bool=false} → {files, errors}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.loadFilesIntoStack",
+      "label": "Load Files into Stack…",
+      "params": "{\"paths\":[str]|folder,\"createSmartObject\":bool=false} → new document with one layer per file (inside one smart object with createSmartObject)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.flattenAllLayerEffects",
+      "label": "Flatten All Layer Effects",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.scripts.flattenAllMasks",
+      "label": "Flatten All Masks",
+      "params": "{} (pixel layers; masks on other layer kinds are left)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.layersToFiles",
+      "label": "Layers to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name,\"visibleOnly\":bool=true,\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.colorLookupTables",
+      "label": "Color Lookup Tables…",
+      "params": "{\"path\":str? (.cube; omit to return the text),\"size\":2..256=33,\"title\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.newGuideLayout",
+      "label": "New Guide Layout…",
+      "params": "{\"columns\":n=0,\"width\":px?,\"gutter\":px=0,\"rows\":n=0,\"height\":px?,\"rowGutter\":px=gutter,\"margin\":px|[top,left,bottom,right]=0,\"centerColumns\":bool=false,\"clearExisting\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.newGuidesFromShape",
+      "label": "New Guides From Shape",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.clearCanvasGuides",
+      "label": "Clear Canvas Guides",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.none",
+      "label": "None",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.sharp",
+      "label": "Sharp",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.crisp",
+      "label": "Crisp",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.strong",
+      "label": "Strong",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.smooth",
+      "label": "Smooth",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.windowsLcd",
+      "label": "Windows LCD",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.antiAlias.windows",
+      "label": "Windows",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.orientation.horizontal",
+      "label": "Horizontal",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.orientation.vertical",
+      "label": "Vertical",
+      "params": "{\"layer\":id?} (stored and saved; rendered horizontally for now)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.standardLigatures",
+      "label": "Standard Ligatures",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.contextualAlternates",
+      "label": "Contextual Alternates",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.discretionaryLigatures",
+      "label": "Discretionary Ligatures",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.swash",
+      "label": "Swash",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.oldstyle",
+      "label": "Oldstyle",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.stylisticAlternates",
+      "label": "Stylistic Alternates",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.titlingAlternates",
+      "label": "Titling Alternates",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.ornaments",
+      "label": "Ornaments",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.ordinals",
+      "label": "Ordinals",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.openType.fractions",
+      "label": "Fractions",
+      "params": "{\"layer\":id?,\"on\":bool? (default: toggle),\"range\":[startChar,endChar]? (default all)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.createWorkPath",
+      "label": "Create Work Path",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.convertToShape",
+      "label": "Convert to Shape",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.rasterizeTypeLayer",
+      "label": "Rasterize Type Layer",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.convertToParagraphText",
+      "label": "Convert to Paragraph Text",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.convertToPointText",
+      "label": "Convert to Point Text",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.warpText",
+      "label": "Warp Text…",
+      "params": "{\"layer\":id?,\"style\":\"none|arc|arcLower|arcUpper|arch|bulge|shellLower|shellUpper|flag|wave|fish|rise|fisheye|inflate|squeeze|twist\"=\"arc\",\"bend\":-100..100=50,\"horizontalDistortion\":-100..100=0,\"verticalDistortion\":-100..100=0,\"orientation\":\"horizontal|vertical\"=\"horizontal\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.updateAllTextLayers",
+      "label": "Update All Text Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.replaceAllMissingFonts",
+      "label": "Replace All Missing Fonts",
+      "params": "{} (with the default family)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.resolveMissingFonts",
+      "label": "Resolve Missing Fonts…",
+      "params": "{\"map\":{\"Missing Family\":\"Installed Family\"}?} (no map: list the missing families)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.pasteLoremIpsum",
+      "label": "Paste Lorem Ipsum",
+      "params": "{\"layer\":id?,\"at\":char? (default end),\"new\":bool=false (new paragraph text layer)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.saveDefaultTypeStyles",
+      "label": "Save Default Type Styles",
+      "params": "{} (from the active type layer; new type layers start from them)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.loadDefaultTypeStyles",
+      "label": "Load Default Type Styles",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.new",
+      "label": "New Character Style",
+      "params": "{\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)}?,\"fromSelection\":bool=true (start from the targeted text's formatting),\"apply\":bool=false,\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"id\",\"name\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.duplicate",
+      "label": "Duplicate Style",
+      "params": "{\"id\":u32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.delete",
+      "label": "Delete Style",
+      "params": "{\"id\":u32} (text keeps its formatting as overrides)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.rename",
+      "label": "Rename Style",
+      "params": "{\"id\":u32,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.set",
+      "label": "Character Style Options",
+      "params": "{\"id\":u32 (paragraph: 0 = Basic Paragraph),\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)},\"replace\":bool=false (drop attributes not given),\"clear\":[field]?} (text using the style updates, overrides kept)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.apply",
+      "label": "Apply Character Style",
+      "params": "{\"id\":u32|0|null (0/null: None / Basic Paragraph),\"clearOverrides\":bool=false (Alt-click),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.redefine",
+      "label": "Redefine Character Style",
+      "params": "{\"id\":u32? (default: the targeted text's style),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} (the style takes the formatting of the start of the targeted text)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.clearOverride",
+      "label": "Clear Override",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.characterStyle.list",
+      "label": "List Character Styles",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"styles\":[{\"id\",\"name\",attributes,\"resolved\"}],\"current\":{\"character\":id|null (mixed),\"characterOverride\":bool,\"paragraph\":id|null,\"paragraphOverride\":bool}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.new",
+      "label": "New Paragraph Style",
+      "params": "{\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)}?,\"fromSelection\":bool=true (start from the targeted text's formatting),\"apply\":bool=false,\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"id\",\"name\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.duplicate",
+      "label": "Duplicate Style",
+      "params": "{\"id\":u32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.delete",
+      "label": "Delete Style",
+      "params": "{\"id\":u32} (text keeps its formatting as overrides)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.rename",
+      "label": "Rename Style",
+      "params": "{\"id\":u32,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.set",
+      "label": "Paragraph Style Options",
+      "params": "{\"id\":u32 (paragraph: 0 = Basic Paragraph),\"name\":str?,\"attrs\":{model fields as in type.info (\"size_pt\":36,\"font_family\":\"Inter\",\"align\":\"Center\",…) or Character/Paragraph panel keys as in type.setStyle (\"size\":36,\"font\":\"Inter\",\"color\":\"#rrggbb\",\"align\":\"center\",…)},\"replace\":bool=false (drop attributes not given),\"clear\":[field]?} (text using the style updates, overrides kept)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.apply",
+      "label": "Apply Paragraph Style",
+      "params": "{\"id\":u32|0|null (0/null: None / Basic Paragraph),\"clearOverrides\":bool=false (Alt-click),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.redefine",
+      "label": "Redefine Paragraph Style",
+      "params": "{\"id\":u32? (default: the targeted text's style),\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} (the style takes the formatting of the start of the targeted text)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.clearOverride",
+      "label": "Clear Override",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.paragraphStyle.list",
+      "label": "List Paragraph Styles",
+      "params": "{\"layer\":id? | \"layers\":[id]? (default: the selected type layers),\"range\":[startChar,endChar]? (one layer; default all text)} → {\"styles\":[{\"id\",\"name\",attributes,\"resolved\"}],\"current\":{\"character\":id|null (mixed),\"characterOverride\":bool,\"paragraph\":id|null,\"paragraphOverride\":bool}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.checkSpelling",
+      "label": "Check Spelling…",
+      "params": "{\"action\":\"list|change|changeAll|addToDictionary|removeFromDictionary|suggest\"=\"list\",\"allLayers\":bool=true,\"layer\":id? (check one layer),\"ignore\":[word]? (Ignore All for this check),\"suggestions\":n=5; change: \"layer\",\"start\",\"end\" (chars),\"word\"? (verified),\"replace\"; changeAll: \"word\",\"replace\"; addToDictionary/removeFromDictionary/suggest: \"word\"} → list: {\"misspellings\":[{\"layer\",\"start\",\"end\",\"word\",\"suggestions\"}],\"count\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "type.insertText",
+      "label": "Insert Glyph",
+      "params": "{\"layer\":id?,\"text\":str,\"at\":char? (default: end of text),\"range\":[startChar,endChar]? (replaced),\"label\":str?} → {\"layer\",\"caret\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.convertToSmartObject",
+      "label": "Convert to Smart Object",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.convertForSmartFilters",
+      "label": "Convert for Smart Filters",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.newSmartObjectViaCopy",
+      "label": "New Smart Object via Copy",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.rasterize",
+      "label": "Rasterize",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.editContents",
+      "label": "Edit Contents",
+      "params": "{\"layer\":id?} → opens the contents as a new document; saving (layer.smartObjects.saveContents) or closing it updates the smart object",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.saveContents",
+      "label": "Save Contents",
+      "params": "{} (in an Edit Contents document)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.replaceContents",
+      "label": "Replace Contents…",
+      "params": "{\"layer\":id?,\"path\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.exportContents",
+      "label": "Export Contents…",
+      "params": "{\"layer\":id?,\"path\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.relinkToFile",
+      "label": "Relink to File…",
+      "params": "{\"layer\":id?,\"path\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.updateModifiedContent",
+      "label": "Update Modified Content",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.updateAllModifiedContent",
+      "label": "Update All Modified Content",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.convertToEmbedded",
+      "label": "Convert to Embedded",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.convertToLinked",
+      "label": "Convert to Linked…",
+      "params": "{\"layer\":id?,\"path\":str} (writes the contents there)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.disableSmartFilters",
+      "label": "Disable Smart Filters",
+      "params": "{\"layer\":id?,\"enabled\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.deleteFilterMask",
+      "label": "Delete Filter Mask",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.disableFilterMask",
+      "label": "Disable Filter Mask",
+      "params": "{\"layer\":id?,\"enabled\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.blendingOptions",
+      "label": "Blending Options…",
+      "params": "{\"layer\":id?,\"index\":u32? (0 = bottom; default top),\"blend\":str?,\"opacity\":0..1?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.clearSmartFilters",
+      "label": "Clear Smart Filters",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.setVisible",
+      "label": "Show/Hide Smart Filter",
+      "params": "{\"layer\":id?,\"index\":u32?,\"visible\":bool? (default: toggle)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.setParams",
+      "label": "Edit Smart Filter",
+      "params": "{\"layer\":id?,\"index\":u32?,\"params\":{…} (merged)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.delete",
+      "label": "Delete Smart Filter",
+      "params": "{\"layer\":id?,\"index\":u32?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartFilter.move",
+      "label": "Move Smart Filter",
+      "params": "{\"layer\":id?,\"index\":u32?,\"to\":u32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.allLayers",
+      "label": "All Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.deselectLayers",
+      "label": "Deselect Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.findLayers",
+      "label": "Find Layers",
+      "params": "{\"name\":str (case-insensitive substring)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.selectLinkedLayers",
+      "label": "Select Linked Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.align.topEdges",
+      "label": "Top Edges",
+      "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.align.verticalCenters",
+      "label": "Vertical Centers",
+      "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.align.bottomEdges",
+      "label": "Bottom Edges",
+      "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.align.leftEdges",
+      "label": "Left Edges",
+      "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.align.horizontalCenters",
+      "label": "Horizontal Centers",
+      "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.align.rightEdges",
+      "label": "Right Edges",
+      "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.topEdges",
+      "label": "Top Edges",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.verticalCenters",
+      "label": "Vertical Centers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.bottomEdges",
+      "label": "Bottom Edges",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.leftEdges",
+      "label": "Left Edges",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.horizontalCenters",
+      "label": "Horizontal Centers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.rightEdges",
+      "label": "Right Edges",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.horizontally",
+      "label": "Horizontally",
+      "params": "{} (equal horizontal gaps)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.distribute.vertically",
+      "label": "Vertically",
+      "params": "{} (equal vertical gaps)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.linkLayers",
+      "label": "Link Layers",
+      "params": "{} (toggles: unlinks when the selection is already one link group)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.mergeLayers",
+      "label": "Merge Layers",
+      "params": "{} (one layer selected: Merge Down)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.groupFromLayers",
+      "label": "Group from Layers…",
+      "params": "{\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.arrange.reverse",
+      "label": "Reverse",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.lockLayers",
+      "label": "Lock Layers…",
+      "params": "{\"transparency\":bool?,\"pixels\":bool?,\"position\":bool?,\"artboard\":bool?,\"all\":bool?} (none given: toggle lock all)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.renameLayer",
+      "label": "Rename Layer",
+      "params": "{\"layer\":id?,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "prefs.get",
+      "label": "Get Preferences",
+      "params": "{\"path\":\"section.key\"?=everything (e.g. \"performance.historyStates\", \"colorSettings.workingRgb\")}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "prefs.set",
+      "label": "Set Preferences",
+      "params": "{\"path\":\"section.key\",\"value\":json} or {\"values\":{\"section.key\":json,…}} (validated; all or nothing)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "prefs.reset",
+      "label": "Reset Preferences",
+      "params": "{\"path\":\"section|section.key\"?=everything}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.general",
+      "label": "General…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.interface",
+      "label": "Interface…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.workspace",
+      "label": "Workspace…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.tools",
+      "label": "Tools…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.historyLog",
+      "label": "History Log…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.fileHandling",
+      "label": "File Handling…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.export",
+      "label": "Export…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.performance",
+      "label": "Performance…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.scratchDisks",
+      "label": "Scratch Disks…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.cursors",
+      "label": "Cursors…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.transparencyAndGamut",
+      "label": "Transparency & Gamut…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.unitsAndRulers",
+      "label": "Units & Rulers…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.guidesGridAndSlices",
+      "label": "Guides, Grid & Slices…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.plugIns",
+      "label": "Plug-ins…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.type",
+      "label": "Type…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.enhancedControls",
+      "label": "Enhanced Controls…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.rawDefaults",
+      "label": "Camera Raw…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.preferences.integrations",
+      "label": "Integrations…",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.keyboardShortcuts",
+      "label": "Keyboard Shortcuts…",
+      "params": "{\"set\":{\"<command id>\":\"Cmd+Shift+X\"|\"\"(remove)|null(default)}?,\"reset\":true|[\"<id>\",…]?,\"removeConflicts\":bool=true,\"filter\":str?,\"list\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.menus",
+      "label": "Menus…",
+      "params": "{\"hide\":[\"<id>\",…]?,\"show\":[\"<id>\",…]?,\"color\":{\"<id>\":\"red|orange|yellow|green|blue|violet|gray|none\"}?,\"reset\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.toolbar",
+      "label": "Toolbar…",
+      "params": "{\"hidden\":[\"<tool>\",…]?,\"order\":[\"<tool>\",…]?,\"reset\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.fade",
+      "label": "Fade…",
+      "params": "{\"opacity\":0..100=100,\"mode\":\"normal|multiply|screen|overlay|softLight|hardLight|darken|lighten|difference|color|luminosity\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.purge.undo",
+      "label": "Undo",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.purge.clipboard",
+      "label": "Clipboard",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.purge.histories",
+      "label": "Histories",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.purge.videoCache",
+      "label": "Video Cache",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.purge.all",
+      "label": "All",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.contentAwareFill",
+      "label": "Content-Aware Fill…",
+      "params": "{\"sampling\":\"auto|rectangular|custom\",\"margin\":px?,\"area\":[x,y,w,h]?,\"channel\":index|name?,\"colorAdaptation\":\"default|none|high|veryHigh\",\"rotationAdaptation\":\"none|low|medium|high|full\",\"scale\":bool=false,\"mirror\":bool=false,\"output\":\"current|new|duplicate\",\"seed\":u64=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.contentAwareScale",
+      "label": "Content-Aware Scale",
+      "params": "{\"width\":px?,\"height\":px?,\"scaleX\":1..400=100,\"scaleY\":1..400=100,\"amount\":0..100=100,\"protect\":\"none\"|channel index|name,\"protectSkinTones\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.defineBrushPreset",
+      "label": "Define Brush Preset…",
+      "params": "{\"name\":text}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.defineCustomShape",
+      "label": "Define Custom Shape…",
+      "params": "{\"name\":text,\"path\":\"work|<saved path name>\"?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.findAndReplaceText",
+      "label": "Find and Replace Text…",
+      "params": "{\"find\":text,\"replace\":text,\"action\":\"changeAll|find|change|changeFind\",\"caseSensitive\":bool=false,\"wholeWord\":bool=false,\"forward\":bool=true,\"allLayers\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.presets.presetManager",
+      "label": "Preset Manager…",
+      "params": "{\"action\":\"list|rename|delete|move\",\"kind\":\"brushes|customShapes|patterns\",\"index\":n?,\"name\":str?,\"newName\":str?,\"to\":n?}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.presets.exportImportPresets",
+      "label": "Export/Import Presets…",
+      "params": "{\"action\":\"export|import\",\"kinds\":[\"brushes\",\"customShapes\"]?,\"data\":json (import),\"includeBuiltins\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.autoAlignLayers",
+      "label": "Auto-Align Layers…",
+      "params": "{\"projection\":\"auto|perspective|cylindrical|spherical|collage|reposition\",\"reference\":layer id?=bottom selected layer,\"geometricCorrection\":bool=false,\"interpolation\":\"bicubic|bilinear|nearest\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.autoBlendLayers",
+      "label": "Auto-Blend Layers…",
+      "params": "{\"method\":\"panorama|stack\",\"seamlessTones\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.photomerge",
+      "label": "Photomerge…",
+      "params": "{\"paths\":[str]|folder,\"useOpenDocuments\":bool=false,\"layout\":\"auto|perspective|cylindrical|spherical|collage|reposition\",\"blend\":bool=true,\"vignetteRemoval\":bool=false,\"geometricCorrection\":bool=false,\"contentAwareFill\":bool=false,\"focalLength\":mm=0 (35 mm equivalent; 0 = EXIF or estimated)} → new document, one masked layer per image",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.mergeToHdrPro",
+      "label": "Merge to HDR Pro…",
+      "params": "{\"paths\":[str]|folder,\"useOpenDocuments\":bool=false,\"exposures\":[ev]? (default EXIF, else estimated),\"align\":bool=true,\"removeGhosts\":bool=false,\"ghostBase\":int?,\"mode\":\"32|16|8\",\"method\":\"localAdaptation|exposureGamma|highlightCompression|equalizeHistogram\",\"radius\":1..500=7,\"strength\":0.1..4=0.52,\"gamma\":0.1..2=1,\"exposure\":-5..5=0,\"detail\":-100..300=30,\"shadow\":-100..100=0,\"highlight\":-100..100=0,\"vibrance\":-100..100=0,\"saturation\":-100..100=20} → new document (32-bit linear, or tone-mapped 16/8-bit)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.cropAndStraightenPhotos",
+      "label": "Crop and Straighten Photos",
+      "params": "{} → one new document per photo found on the scan",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.lensCorrection",
+      "label": "Lens Correction…",
+      "params": "{\"profile\":\"none|auto|generic\",\"focalLength\":mm=0,\"correctDistortion\":bool=true,\"correctVignette\":bool=true,\"correctCA\":bool=true,\"autoScale\":bool=false,\"distortion\":-100..100=0,\"redCyan\":-100..100=0,\"blueYellow\":-100..100=0,\"vignetteAmount\":-100..100=0,\"vignetteMidpoint\":0..100=50,\"vertical\":-100..100=0,\"horizontal\":-100..100=0,\"angle\":-180..180=0,\"scale\":50..150=100,\"edge\":\"transparency|edgeExtension|black|white\",\"straighten\":[[x,y],[x,y]]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.adaptiveWideAngle",
+      "label": "Adaptive Wide Angle…",
+      "params": "{\"model\":\"auto|fisheye|perspective|fullSpherical\",\"focalLength\":0..200=0,\"cropFactor\":0.1..10=1,\"scale\":50..150=100,\"constraints\":[{\"a\":[x,y],\"b\":[x,y],\"orientation\":\"free|horizontal|vertical\"}]}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.cameraRaw",
+      "label": "Camera Raw Filter…",
+      "params": "{\"temperature\":-100..100=0,\"tint\":-100..100=0,\"exposure\":-5..5=0,\"contrast\":-100..100=0,\"highlights\":-100..100=0,\"shadows\":-100..100=0,\"whites\":-100..100=0,\"blacks\":-100..100=0,\"texture\":-100..100=0,\"clarity\":-100..100=0,\"dehaze\":-100..100=0,\"vibrance\":-100..100=0,\"saturation\":-100..100=0,\"curveHighlights\":-100..100=0,\"curveLights\":-100..100=0,\"curveDarks\":-100..100=0,\"curveShadows\":-100..100=0,\"curveSplits\":[25,50,75],\"pointCurve\":[[in,out]],\"pointCurveRed\":[[in,out]],\"pointCurveGreen\":[[in,out]],\"pointCurveBlue\":[[in,out]],\"hslHue\":[8],\"hslSat\":[8],\"hslLum\":[8],\"gradeShadows\":{\"hue\":deg,\"sat\":0..100,\"lum\":-100..100},\"gradeMidtones\":{},\"gradeHighlights\":{},\"gradeGlobal\":{},\"gradeBlending\":0..100=50,\"gradeBalance\":-100..100=0,\"sharpenAmount\":0..150=0,\"sharpenRadius\":0.5..3=1,\"sharpenDetail\":0..100=25,\"sharpenMasking\":0..100=0,\"noiseLuminance\":0..100=0,\"noiseLuminanceDetail\":0..100=50,\"noiseColor\":0..100=0,\"noiseColorDetail\":0..100=50,\"grainAmount\":0..100=0,\"grainSize\":0..100=25,\"grainRoughness\":0..100=50,\"vignetteAmount\":-100..100=0,\"vignetteMidpoint\":0..100=50,\"vignetteRoundness\":-100..100=0,\"vignetteFeather\":0..100=50,\"vignetteHighlights\":0..100=0,\"vignetteStyle\":\"highlightPriority|colorPriority|paintOverlay\",\"seed\":u32=0}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.lensCorrection",
+      "label": "Lens Correction…",
+      "params": "{\"input\":folder|[files],\"output\":folder,\"format\":\"same|jpg|png|tif|psd\",\"quality\":0..12?, …Filter › Lens Correction params (\"profile\" defaults to \"auto\")}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "filter.vanishingPoint",
+      "label": "Vanishing Point…",
+      "params": "{\"planes\":[{\"corners\":[[x,y]×4]} | {\"from\":plane,\"edge\":\"top|right|bottom|left\",\"angle\":deg=90,\"depth\":1}],\"focalLength\":px=0,\"paste\":[{\"plane\":0,\"layer\":id? (else the clipboard),\"at\":[u,v]=[0.25,0.25],\"width\":0..1=0.5}],\"clone\":[{\"source\":[x,y],\"points\":[[x,y]],\"size\":px=40,\"hardness\":0..100=50,\"opacity\":0..100=100}],\"newLayer\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.saveSelection",
+      "label": "Save Selection…",
+      "params": "{\"name\":str?,\"channel\":\"new\"|index|name=\"new\",\"document\":index?,\"operation\":\"new|replace|add|subtract|intersect\"=\"new\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.loadSelection",
+      "label": "Load Selection…",
+      "params": "{\"channel\":index|name|\"composite\"|\"red|green|blue|…\"|\"transparency\"|\"mask\"|\"quickMask\"|\"selection\",\"layer\":id?,\"document\":index?,\"invert\":bool=false,\"operation\":\"new|add|subtract|intersect\"=\"new\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "select.editInQuickMaskMode",
+      "label": "Edit in Quick Mask Mode",
+      "params": "{\"on\":bool?=toggle}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.applyImage",
+      "label": "Apply Image…",
+      "params": "{\"source\":{\"document\":index?,\"layer\":id|\"merged\"=\"merged\",\"channel\":\"composite\"|\"red|…\"|index|\"selection\"|\"transparency\"|\"mask\"=\"composite\",\"invert\":bool=false},\"blending\":\"normal|multiply|screen|overlay|softLight|hardLight|colorDodge|colorBurn|darken|lighten|difference|exclusion|linearBurn|linearDodge|add|subtract|…\"=\"multiply\",\"opacity\":0..100=100,\"scale\":1..2=1,\"offset\":-255..255=0,\"preserveTransparency\":bool=false,\"mask\":{\"document\",\"layer\",\"channel\",\"invert\"}?,\"sourceChannel|sourceDocument|sourceLayer|sourceInvert|maskChannel|…\":flat form of source/mask?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.calculations",
+      "label": "Calculations…",
+      "params": "{\"source1\":{\"document\",\"layer\",\"channel\",\"invert\"},\"source2\":{…},\"blending\":\"multiply|…\"=\"multiply\",\"opacity\":0..100=100,\"scale\":1..2=1,\"offset\":-255..255=0,\"mask\":{…}?,\"result\":\"newChannel|newDocument|selection\"=\"newChannel\",\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.new",
+      "label": "New Channel…",
+      "params": "{\"name\":str?,\"fill\":\"black|white|selection\"=\"black\",\"color\":\"#rrggbb\"=\"#ff0000\",\"opacity\":0..100=50,\"indicates\":\"masked|selected\"=\"masked\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.newSpot",
+      "label": "New Spot Channel…",
+      "params": "{\"name\":str?,\"color\":\"#rrggbb\"=\"#ff0000\",\"solidity\":0..100=0,\"fromSelection\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.duplicate",
+      "label": "Duplicate Channel…",
+      "params": "{\"channel\":index|name|\"red|…\"|\"composite\"|\"quickMask\",\"name\":str?,\"document\":index|\"new\"?=active,\"invert\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.delete",
+      "label": "Delete Channel",
+      "params": "{\"channel\":index|name?=targeted}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.rename",
+      "label": "Rename Channel",
+      "params": "{\"channel\":index|name,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.move",
+      "label": "Reorder Channel",
+      "params": "{\"channel\":index|name,\"to\":index}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target",
+      "label": "Target Channel",
+      "params": "{\"channel\":\"composite\"|\"red|green|blue|…\"|index|name=\"composite\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.setVisible",
+      "label": "Channel Visibility",
+      "params": "{\"channel\":\"composite\"|\"red|…\"|index|name|\"quickMask\",\"visible\":bool?=toggle}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.options",
+      "label": "Channel Options…",
+      "params": "{\"channel\":index|name|\"quickMask\",\"name\":str?,\"indicates\":\"masked|selected|spot\"?,\"color\":\"#rrggbb\"?,\"opacity\":0..100?,\"solidity\":0..100?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.mergeSpot",
+      "label": "Merge Spot Channel",
+      "params": "{\"channel\":index|name?=targeted or first spot}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.split",
+      "label": "Split Channels",
+      "params": "{\"closeOriginal\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.merge",
+      "label": "Merge Channels…",
+      "params": "{\"mode\":\"rgb|cmyk|lab\"=\"rgb\",\"documents\":[index,…]?=open grayscale docs of the active size,\"name\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.list",
+      "label": "Channels",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.composite",
+      "label": "Target Composite Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot3",
+      "label": "Target Channel 3",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot4",
+      "label": "Target Channel 4",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot5",
+      "label": "Target Channel 5",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot6",
+      "label": "Target Channel 6",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot7",
+      "label": "Target Channel 7",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot8",
+      "label": "Target Channel 8",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "channel.target.slot9",
+      "label": "Target Channel 9",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.shadowsHighlights",
+      "label": "Shadows/Highlights…",
+      "params": "{\"shadowAmount\":0..100=35,\"shadowTone\":0..100=50,\"shadowRadius\":0..2500=30,\"highlightAmount\":0..100=0,\"highlightTone\":0..100=50,\"highlightRadius\":0..2500=30,\"color\":-100..100=20,\"midtone\":-100..100=0,\"blackClip\":0..50=0.01,\"whiteClip\":0..50=0.01}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.replaceColor",
+      "label": "Replace Color…",
+      "params": "{\"color\":json,\"fuzziness\":0..200=40,\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0} (color: \"#rrggbb\", default the foreground colour)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.matchColor",
+      "label": "Match Color…",
+      "params": "{\"source\":doc,\"sourceLayer\":json,\"luminance\":1..200=100,\"intensity\":1..200=100,\"fade\":0..100=0,\"neutralize\":bool=false,\"useSelectionInSource\":bool=false,\"useSelectionInTarget\":bool=false} (source: document index; sourceLayer: layer id, default the merged image)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.hdrToning",
+      "label": "HDR Toning…",
+      "params": "{\"radius\":1..500=30,\"strength\":0.1..4=0.5,\"gamma\":0.1..2=1,\"exposure\":-5..5=0,\"detail\":-100..300=30,\"shadow\":-100..100=0,\"highlight\":-100..100=0,\"vibrance\":-100..100=0,\"saturation\":-100..100=20,\"curve\":[[in,out],…] 0..255} (flattens the image)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.adjustments.colorLookup.list",
+      "label": "List Color Lookup Looks",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "layer.layerMask.apply",
+      "label": "Apply",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.fromTransparency",
+      "label": "From Transparency",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerMask.hideSelection",
+      "label": "Hide Selection",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.maskAllObjects",
+      "label": "Mask All Objects",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.matting.defringe",
+      "label": "Defringe…",
+      "params": "{\"width\":1..200=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.matting.removeBlackMatte",
+      "label": "Remove Black Matte",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.matting.removeWhiteMatte",
+      "label": "Remove White Matte",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.matting.colorDecontaminate",
+      "label": "Color Decontaminate…",
+      "params": "{\"amount\":0..100=100,\"radius\":1..100=4}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.entropy",
+      "label": "Entropy",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.kurtosis",
+      "label": "Kurtosis",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.maximum",
+      "label": "Maximum",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.mean",
+      "label": "Mean",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.median",
+      "label": "Median",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.minimum",
+      "label": "Minimum",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.range",
+      "label": "Range",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.skewness",
+      "label": "Skewness",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.standardDeviation",
+      "label": "Standard Deviation",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.summation",
+      "label": "Summation",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.variance",
+      "label": "Variance",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.stackMode.none",
+      "label": "None",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.revealInFinder",
+      "label": "Reveal in Finder",
+      "params": "{\"dryRun\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.blendingOptions",
+      "label": "Blending Options…",
+      "params": "{\"layer\":id?,\"blend\":\"normal|multiply|…\"?,\"opacity\":0..100?,\"fillOpacity\":0..100?,\"blendIf\":{\"channel\":\"gray|red|green|blue|cyan|…\"|index=\"gray\",\"thisLayer\":[black,white]|[blackLo,blackHi,whiteLo,whiteHi]?,\"underlying\":[…]?}|[{…},…]|null?} (Blend If values 0..255; split points fade; null resets)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.globalLight",
+      "label": "Global Light…",
+      "params": "{\"angle\":-180..180=120,\"altitude\":0..90=30}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.createLayer",
+      "label": "Create Layer",
+      "params": "{\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerStyle.scaleEffects",
+      "label": "Scale Effects…",
+      "params": "{\"scale\":1..1000=100}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.layerContentOptions",
+      "label": "Layer Content Options…",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.quickExportAsPng",
+      "label": "Quick Export as PNG",
+      "params": "{\"layer\":id?,\"path\":text}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.exportAs",
+      "label": "Export As…",
+      "params": "{\"layer\":id?,\"path\":text,\"scale\":1..1000=100} (format from the path's extension)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.rotation.arbitrary",
+      "label": "Arbitrary…",
+      "params": "{\"angle\":-359.99..359.99=0,\"direction\":\"cw|ccw\"=\"cw\",\"interpolation\":\"bicubic|bilinear|nearest\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.indexedColor",
+      "label": "Indexed Color…",
+      "params": "{\"palette\":\"selective|perceptual|adaptive|exact|systemMac|systemWindows|web|uniform\"=\"selective\",\"colors\":2..256=256,\"forced\":\"blackWhite|none|primaries|web\"=\"blackWhite\",\"transparency\":bool=true,\"dither\":\"diffusion|none|pattern|noise\"=\"diffusion\",\"amount\":0..100=75} (flattens)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.colorTable",
+      "label": "Color Table…",
+      "params": "{\"table\":\"custom|blackBody|grayscale|spectrum|systemMac|systemWindows|web\"=\"custom\",\"colors\":json,\"entries\":json,\"transparent\":json} (colors: [\"#rrggbb\", …]; entries: {\"index\": \"#rrggbb\"}; transparent: index|null)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bitmap",
+      "label": "Bitmap…",
+      "params": "{\"method\":\"diffusion|threshold|pattern|halftone\"=\"diffusion\",\"frequency\":1..999=53,\"angle\":-180..180=45,\"shape\":\"round|ellipse|line|square|diamond|cross\"=\"round\"} (halftone frequency in lines/inch; flattens)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.duotone",
+      "label": "Duotone…",
+      "params": "{\"type\":\"duotone|monotone|tritone|quadtone\"=\"duotone\",\"inks\":json} (inks: [{\"name\",\"color\":\"#rrggbb\",\"curve\":[[in,out],…] in 0..100}, …])",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.multichannel",
+      "label": "Multichannel",
+      "params": "{} (flattens; RGB → Cyan/Magenta/Yellow, CMYK → Cyan/Magenta/Yellow/Black, Lab → Alpha 1–3, Grayscale → Black, Duotone → its inks)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.definePattern",
+      "label": "Define Pattern…",
+      "params": "{\"name\":str?,\"rect\":[x0,y0,x1,y1]? (default: selection bounds, else the canvas)} → {\"pattern\":id} (added to the library; samples the visible composite)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "pattern.list",
+      "label": "Patterns",
+      "params": "{} → [{id,name,width,height,mode,depth,inDocument,inLibrary}]",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.rename",
+      "label": "Rename Pattern",
+      "params": "{\"pattern\":id|name,\"name\":str}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.delete",
+      "label": "Delete Pattern",
+      "params": "{\"pattern\":id|name} (library only; documents keep their copy)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.import",
+      "label": "Import Patterns…",
+      "params": "{\"path\":\".pat file\"}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.export",
+      "label": "Export Patterns…",
+      "params": "{\"path\":\".pat file\",\"patterns\":[id|name]? (default: the whole library)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "layer.newFillLayer.pattern",
+      "label": "Pattern…",
+      "params": "{\"pattern\":id|name?=first library pattern,\"scale\":1..1000=100,\"angle\":deg=0,\"link\":bool=true,\"phase\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.texturePattern",
+      "label": "Brush Texture Pattern",
+      "params": "{\"pattern\":id|name,\"scale\":1..1000?,\"enabled\":bool=true} (sets the session brush's Texture to that pattern)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "edit.transform.warp",
+      "label": "Warp",
+      "params": "{\"layer\":id?,\"rect\":[x0,y0,x1,y1]? (warp box; default = layer content ∩ selection),\"style\":\"custom|none|arc|arcLower|arcUpper|arch|bulge|shellLower|shellUpper|flag|wave|fish|rise|fisheye|inflate|squeeze|twist\",\"bend\":%=50,\"hDistort\":%,\"vDistort\":%,\"vertical\":bool,\"mesh\":{\"us\":[0,…,1],\"vs\":[0,…,1],\"points\":[[x,y]…]} ((3c+1)×(3r+1) control points, row-major, document px),\"grid\":[cols,rows]?,\"warp\":{full warp object}?,\"interpolation\":\"bicubic|bilinear|nearest\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.warp",
+      "label": "Warp",
+      "params": "{\"layer\":id?,\"rect\":[x0,y0,x1,y1]? (warp box; default = layer content ∩ selection),\"style\":\"custom|none|arc|arcLower|arcUpper|arch|bulge|shellLower|shellUpper|flag|wave|fish|rise|fisheye|inflate|squeeze|twist\",\"bend\":%=50,\"hDistort\":%,\"vDistort\":%,\"vertical\":bool,\"mesh\":{\"us\":[0,…,1],\"vs\":[0,…,1],\"points\":[[x,y]…]} ((3c+1)×(3r+1) control points, row-major, document px),\"grid\":[cols,rows]?,\"warp\":{full warp object}?,\"interpolation\":\"bicubic|bilinear|nearest\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.splitWarpCrosswise",
+      "label": "Split Warp Crosswise",
+      "params": "{\"warp\":{…}? (the warp being edited; returned split),\"rect\":[x0,y0,x1,y1]?,\"at\":[x,y]? (document point; default = middle of the patch)} — without `warp`, edits the active smart object's warp",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.splitWarpHorizontally",
+      "label": "Split Warp Horizontally",
+      "params": "{\"warp\":{…}? (the warp being edited; returned split),\"rect\":[x0,y0,x1,y1]?,\"at\":[x,y]? (document point; default = middle of the patch)} — without `warp`, edits the active smart object's warp",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.splitWarpVertically",
+      "label": "Split Warp Vertically",
+      "params": "{\"warp\":{…}? (the warp being edited; returned split),\"rect\":[x0,y0,x1,y1]?,\"at\":[x,y]? (document point; default = middle of the patch)} — without `warp`, edits the active smart object's warp",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.transform.removeWarpSplit",
+      "label": "Remove Warp Split",
+      "params": "{\"warp\":{…}? (the warp being edited; returned split),\"rect\":[x0,y0,x1,y1]?,\"at\":[x,y]? (document point; default = middle of the patch)} — without `warp`, edits the active smart object's warp",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.new",
+      "label": "New Layer Comp…",
+      "params": "{\"name\":str=\"Layer Comp N\",\"comment\":str=\"\",\"visibility\":bool=true,\"position\":bool=true,\"appearance\":bool=true} → {comp}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.update",
+      "label": "Update Layer Comp",
+      "params": "{\"comp\":id|name|\"*\"? (default: last applied; \"*\" = all),\"what\":\"all|visibility|position|appearance\"=\"all\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.apply",
+      "label": "Apply Layer Comp",
+      "params": "{\"comp\":id|name? (default: last applied)} → {comp, missingLayers}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.previous",
+      "label": "Apply Previous Layer Comp",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.next",
+      "label": "Apply Next Layer Comp",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.delete",
+      "label": "Delete Layer Comp",
+      "params": "{\"comp\":id|name?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.duplicate",
+      "label": "Duplicate Layer Comp",
+      "params": "{\"comp\":id|name?} → {comp}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.rename",
+      "label": "Rename Layer Comp",
+      "params": "{\"comp\":id|name?,\"name\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.setComment",
+      "label": "Layer Comp Comment",
+      "params": "{\"comp\":id|name?,\"comment\":str}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.setOptions",
+      "label": "Layer Comp Options…",
+      "params": "{\"comp\":id|name?,\"visibility\":bool?,\"position\":bool?,\"appearance\":bool?,\"name\":str?,\"comment\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.restoreLastDocumentState",
+      "label": "Restore Last Document State",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.updateWarnings",
+      "label": "Layer Comp Warnings",
+      "params": "{\"clear\":bool=false (drop states of deleted layers)} → {warnings:[{comp,name,missingLayers}],count}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layerComp.list",
+      "label": "List Layer Comps",
+      "params": "{} → {comps:[{id,name,comment,visibility,position,appearance,layers,missingLayers}],lastApplied,hasLastDocumentState}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.layerCompsToFiles",
+      "label": "Layer Comps to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name,\"selectedOnly\":bool=false (only the last applied comp),\"comps\":[id]?,\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.artboard",
+      "label": "Artboard…",
+      "params": "{\"rect\":[x,y,w,h]? | \"x\",\"y\",\"width\",\"height\"? (default: canvas size, right of the last board),\"preset\":\"iPhone 14|Web 1920|A4|…\"?,\"name\":str?,\"background\":\"white|black|transparent|custom\"=\"white\",\"color\":[r,g,b]|\"#rrggbb\"? (custom)} → {layer, rect}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.artboardFromGroup",
+      "label": "Artboard from Group…",
+      "params": "{\"layer\":id? (a top-level group; default active),\"background\":…?} → {layer, rect}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.artboardFromLayers",
+      "label": "Artboard from Layers…",
+      "params": "{\"name\":str?,\"background\":…?} (the selected layers) → {layer, rect}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.artboard.set",
+      "label": "Edit Artboard",
+      "params": "{\"layer\":id? (default: the active artboard),\"x\",\"y\",\"width\",\"height\"?|\"rect\":[x,y,w,h]?,\"preset\":str?,\"background\":\"white|black|transparent|custom\"?,\"color\":…?,\"name\":str?,\"moveContents\":bool=true} → {layer, rect}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.clearSelectedArtboardGuides",
+      "label": "Clear Selected Artboard Guides",
+      "params": "{} (guides inside the active artboard)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.artboardsToFiles",
+      "label": "Artboards to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name (\"\" = none),\"artboards\":[id]? (default all),\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.artboardsToPdf",
+      "label": "Artboards to PDF…",
+      "params": "{\"path\":str (.pdf),\"artboards\":[id]?,\"quality\":0..12=10} → {path, pages} (one raster page per board)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.liquify",
+      "label": "Liquify…",
+      "params": "{\"strokes\":[{\"tool\":\"forwardWarp|reconstruct|smooth|twirlCw|twirlCcw|pucker|bloat|pushLeft|freeze|thaw|reconstructAll\",\"size\":px=100,\"density\":0-100=50,\"pressure\":0-100=100,\"rate\":0-100=80,\"points\":[[x,y,pressure?]…],\"amount\":%? (reconstructAll)}…],\"meshSize\":px? (field resolution, px per node; default 2, or 4 above 4 MP),\"layer\":id?} — strokes replay in order on a fresh field; a selection limits the effect; on a smart object it becomes a smart filter",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.puppetWarp",
+      "label": "Puppet Warp",
+      "params": "{\"pins\":[{\"src\":[x,y],\"dst\":[x,y],\"rotate\":deg?,\"depth\":n?}…],\"mode\":\"rigid|normal|distort\"=\"normal\",\"density\":\"fewer|normal|more\"=\"normal\",\"expansion\":px=2,\"interpolation\":\"bicubic|bilinear|nearest\",\"layer\":id?} — mesh over the opaque region, as-rigid-as-possible; on a smart object it becomes a smart filter",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.puppetWarp",
+      "label": "Puppet Warp",
+      "params": "{\"pins\":[{\"src\":[x,y],\"dst\":[x,y],\"rotate\":deg?,\"depth\":n?}…],\"mode\":\"rigid|normal|distort\"=\"normal\",\"density\":\"fewer|normal|more\"=\"normal\",\"expansion\":px=2,\"interpolation\":\"bicubic|bilinear|nearest\",\"layer\":id?} — mesh over the opaque region, as-rigid-as-possible; on a smart object it becomes a smart filter",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.perspectiveWarp",
+      "label": "Perspective Warp",
+      "params": "{\"planes\":[{\"src\":[[x,y]×4],\"dst\":[[x,y]×4]}…] (corners clockwise from top-left; corners that coincide in src are linked),\"straighten\":\"horizontal|vertical|auto\"?,\"interpolation\":\"bicubic|bilinear|nearest\",\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.smartObjects.perspectiveWarp",
+      "label": "Perspective Warp",
+      "params": "{\"planes\":[{\"src\":[[x,y]×4],\"dst\":[[x,y]×4]}…] (corners clockwise from top-left; corners that coincide in src are linked),\"straighten\":\"horizontal|vertical|auto\"?,\"interpolation\":\"bicubic|bilinear|nearest\",\"layer\":id?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.setMeasurementScale",
+      "label": "Set Measurement Scale…",
+      "params": "{\"preset\":\"default|custom\"=\"custom\",\"pixelLength\":px,\"logicalLength\":number,\"units\":str (e.g. \"mm\")} (no params: read the scale)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.selectDataPoints",
+      "label": "Select Data Points…",
+      "params": "{\"selection\":[keys]|{key:bool}?,\"ruler\":[keys]|{key:bool}?,\"count\":[keys]|{key:bool}?,\"reset\":bool=false} (keys: label,dateTime,document,source,scale,scaleUnits,scaleFactor,count,area,perimeter,circularity,height,width,grayMin,grayMax,grayMean,grayMedian,integratedDensity,histogram,length,angle)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "image.analysis.recordMeasurements",
+      "label": "Record Measurements",
+      "params": "{\"source\":\"auto|selection|ruler|count\"=\"auto\"} → appended Measurement Log rows (selection: summary + one row per feature)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.rulerTool",
+      "label": "Ruler Tool",
+      "params": "{\"start\":[x,y],\"end\":[x,y],\"protractor\":[x,y]|null?,\"clear\":bool=false} (no params: read) → X/Y/W/H/angle/L1/L2",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.countTool",
+      "label": "Count Tool",
+      "params": "{} → count groups and markers (edit with count.*)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.placeScaleMarker",
+      "label": "Place Scale Marker…",
+      "params": "{\"length\":logical units=nice ≈ width/5,\"font\":str?,\"fontSize\":pt=12,\"displayText\":bool=true,\"textPosition\":\"top|bottom\"=\"bottom\",\"color\":\"black|white\"=\"black\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.straightenLayer",
+      "label": "Straighten Layer",
+      "params": "{\"crop\":bool=(active layer is the Background)} (rotates so the ruler line is level; crop = rotate the canvas and crop to the image)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.analysis.info",
+      "label": "Analysis Info",
+      "params": "{} → scale, ruler readout, count groups, note and log counts",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.add",
+      "label": "Add Count",
+      "params": "{\"x\":px,\"y\":px,\"group\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.remove",
+      "label": "Remove Count",
+      "params": "{\"index\":n,\"group\":index?} | {\"x\":px,\"y\":px,\"radius\":px=6}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.move",
+      "label": "Move Count",
+      "params": "{\"index\":n,\"group\":index?,\"to\":[x,y]} | {\"x\":px,\"y\":px,\"to\":[x,y]}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.clear",
+      "label": "Clear Count",
+      "params": "{\"group\":index|\"all\"=active}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.newGroup",
+      "label": "New Count Group",
+      "params": "{\"name\":str?,\"color\":\"#rrggbb\"|[r,g,b]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.deleteGroup",
+      "label": "Delete Count Group",
+      "params": "{\"group\":index=active}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "count.setGroup",
+      "label": "Count Group Options",
+      "params": "{\"group\":index=active,\"name\":str?,\"color\":\"#rrggbb\"|[r,g,b]?,\"markerSize\":1..10?,\"labelSize\":8..72?,\"visible\":bool?,\"active\":bool?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "measurementLog.list",
+      "label": "Measurement Log",
+      "params": "{} → rows and columns",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "measurementLog.delete",
+      "label": "Delete Measurements",
+      "params": "{\"rows\":[ids]}|{\"all\":true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "measurementLog.export",
+      "label": "Export Measurements…",
+      "params": "{\"path\":str? (CSV file; omitted → returns the CSV text),\"rows\":[ids]?}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "notes.add",
+      "label": "New Note",
+      "params": "{\"x\":px,\"y\":px,\"text\":str=\"\",\"author\":str=\"\",\"color\":\"#rrggbb\"|[r,g,b]=pale yellow,\"open\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "notes.set",
+      "label": "Edit Note",
+      "params": "{\"index\":n,\"text\":str?,\"author\":str?,\"color\":\"#rrggbb\"|[r,g,b]?,\"x\":px?,\"y\":px?,\"open\":bool?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "notes.delete",
+      "label": "Delete Note",
+      "params": "{\"index\":n}|{\"all\":true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "notes.list",
+      "label": "Notes",
+      "params": "{} → notes (index, author, text, colour, position, open, modified)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.notes",
+      "label": "Notes…",
+      "params": "{\"path\":\".psd|.psb|.pcraft with notes\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.workingCyanPlate",
+      "label": "Working Cyan Plate",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.workingMagentaPlate",
+      "label": "Working Magenta Plate",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.workingYellowPlate",
+      "label": "Working Yellow Plate",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.workingBlackPlate",
+      "label": "Working Black Plate",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.workingCmyPlate",
+      "label": "Working CMY Plate",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.legacyMacintoshRgb",
+      "label": "Legacy Macintosh RGB",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.colorBlindnessProtanopia",
+      "label": "Color Blindness — Protanopia-type",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.proofSetup.colorBlindnessDeuteranopia",
+      "label": "Color Blindness — Deuteranopia-type",
+      "params": "{} (sets the proof and turns Proof Colors on)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.thirtyTwoBitPreviewOptions",
+      "label": "32-bit Preview Options…",
+      "params": "{\"method\":\"exposureGamma|highlightCompression\"=\"exposureGamma\",\"exposure\":-20..20=0,\"gamma\":0.1..9.99=1}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "gradient.presets.list",
+      "label": "Gradient Presets",
+      "params": "{} → {groups:[{name,presets:[{name,stops,transparency}]}],current}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "gradient.presets.select",
+      "label": "Select Gradient",
+      "params": "{\"preset\":name|\"stops\":[[t 0..1,\"#rrggbb\"|\"foreground\"|\"background\"],…],\"transparency\":[[t,opacity 0..100],…]?,\"group\":name?,\"applyToLayer\":bool=true (also recolours a selected Gradient Fill layer)} → {current,layer?}. The Gradient tool paints with it.",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "gradient.presets.apply",
+      "label": "New Gradient Fill Layer from Preset",
+      "params": "{\"preset\":name?=current|\"stops\":[[t 0..1,\"#rrggbb\"|\"foreground\"|\"background\"],…],\"transparency\":[[t,opacity 0..100],…]?,\"angle\":deg=90,\"style\":\"linear|radial|angle|reflected|diamond\"=\"linear\",\"scale\":10..150=100,\"reverse\":bool} → {layer}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "gradient.presets.new",
+      "label": "New Gradient Preset",
+      "params": "{\"name\":str=\"Custom\",\"group\":name?=first,\"stops\":[[t 0..1,\"#rrggbb\"|\"foreground\"|\"background\"],…],\"transparency\":[[t,opacity 0..100],…]? (default: the current gradient)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "gradient.presets.edit",
+      "label": "Edit Gradient Presets",
+      "params": "{\"action\":\"rename|delete|move|newGroup|renameGroup|deleteGroup\",\"preset\":name|[names] (rename/delete/move),\"group\":name? (narrows the lookup; the group for renameGroup/deleteGroup),\"name\":str (rename: new name; newGroup/renameGroup: group name),\"to\":group (move),\"index\":n? (move)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "gradient.presets.reset",
+      "label": "Restore Default Gradients",
+      "params": "{\"append\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.presets.list",
+      "label": "Pattern Presets",
+      "params": "{} → {groups:[{name,patterns:[{id,name,width,height}]}],current}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.presets.select",
+      "label": "Select Pattern",
+      "params": "{\"pattern\":id|name,\"applyToLayer\":bool=true (also changes a selected Pattern Fill layer)} (Fill and new Pattern Fill layers default to it)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "pattern.presets.apply",
+      "label": "New Pattern Fill Layer from Preset",
+      "params": "{\"pattern\":id|name?=selected,\"scale\":1..1000=100,\"angle\":deg=0} → {layer}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "pattern.presets.new",
+      "label": "New Pattern Preset",
+      "params": "{\"name\":str?,\"group\":name?,\"rect\":[x0,y0,x1,y1]?} (Define Pattern from the selection/canvas into a group)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "pattern.presets.edit",
+      "label": "Edit Pattern Presets",
+      "params": "{\"action\":\"rename|delete|move|newGroup|renameGroup|deleteGroup\",\"preset\":name|[names] (rename/delete/move),\"group\":name? (narrows the lookup; the group for renameGroup/deleteGroup),\"name\":str (rename: new name; newGroup/renameGroup: group name),\"to\":group (move),\"index\":n? (move)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "style.presets.list",
+      "label": "Style Presets",
+      "params": "{} → {groups:[{name,presets:[{name,effects,blend,fillOpacity}]}]}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "style.presets.apply",
+      "label": "Apply Style",
+      "params": "{\"preset\":name,\"group\":name?,\"layers\":[ids]?|\"layer\":id? (default: the selected layers),\"add\":bool=false (⇧-click: add to the existing effects)} → {layers,style}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "style.presets.new",
+      "label": "New Style…",
+      "params": "{\"name\":str=\"Style\",\"group\":name?,\"layer\":id?,\"includeEffects\":bool=true,\"includeBlending\":bool=true} (from the layer's effects)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "style.presets.edit",
+      "label": "Edit Style Presets",
+      "params": "{\"action\":\"rename|delete|move|newGroup|renameGroup|deleteGroup\",\"preset\":name|[names] (rename/delete/move),\"group\":name? (narrows the lookup; the group for renameGroup/deleteGroup),\"name\":str (rename: new name; newGroup/renameGroup: group name),\"to\":group (move),\"index\":n? (move)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "style.presets.reset",
+      "label": "Restore Default Styles",
+      "params": "{\"append\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "shape.presets.list",
+      "label": "Shape Presets",
+      "params": "{} → {groups:[{name,shapes:[{name,subpaths}]}]}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "shape.presets.place",
+      "label": "Place Custom Shape",
+      "params": "{\"preset\":name,\"group\":name?,\"rect\":[x,y,w,h]? (default: centred, half the canvas),\"keepAspect\":bool=true,\"fill\":…?=foreground,\"stroke\":…?,\"name\":str?,\"addTo\":layerId?,\"op\":\"combine|subtract|intersect|exclude\"?} → shape.info (Custom Shape tool / Shapes panel; fill and stroke as in shape.create)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "shape.presets.new",
+      "label": "New Shape Preset",
+      "params": "{\"name\":str=\"Shape\",\"group\":name?,\"path\":{…path}|\"M x y L …\" (preset path language)|\"work\"|saved path name? (default: work path, active shape layer or vector mask)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "shape.presets.edit",
+      "label": "Edit Shape Presets",
+      "params": "{\"action\":\"rename|delete|move|newGroup|renameGroup|deleteGroup\",\"preset\":name|[names] (rename/delete/move),\"group\":name? (narrows the lookup; the group for renameGroup/deleteGroup),\"name\":str (rename: new name; newGroup/renameGroup: group name),\"to\":group (move),\"index\":n? (move)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "shape.presets.reset",
+      "label": "Restore Default Shapes",
+      "params": "{\"append\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tool.presets.list",
+      "label": "Tool Presets",
+      "params": "{\"tool\":name? (Current Tool Only)} → {presets:[{name,tool}]}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tool.presets.new",
+      "label": "New Tool Preset…",
+      "params": "{\"name\":str?=tool,\"tool\":name,\"options\":{…}? (opaque; \"brush\" defaults to the current brush for painting tools),\"includeColor\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tool.presets.select",
+      "label": "Select Tool Preset",
+      "params": "{\"preset\":name} → {name,tool,options} (applies \"brush\" and \"foreground\"; the shell switches tool and options)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tool.presets.edit",
+      "label": "Edit Tool Presets",
+      "params": "{\"action\":\"rename|delete\",\"preset\":name|[names],\"name\":str (rename)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "tool.presets.reset",
+      "label": "Reset Tool Presets",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.list",
+      "label": "Clone Sources",
+      "params": "{} → {active,sources:[{index,source,anchor,offset,layer,width,height,rotation,flipH,flipV}],overlay}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.select",
+      "label": "Select Clone Source",
+      "params": "{\"index\":0..4}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.set",
+      "label": "Set Clone Source",
+      "params": "{\"index\":0..4?=active,\"source\":[x,y]? (⌥-click; re-pairs with the next stroke),\"offset\":[dx,dy]?,\"width\":%?,\"height\":%?|\"scale\":[w%,h%]?,\"rotation\":deg?,\"flipH\":bool?,\"flipV\":bool?,\"layer\":id?,\"clear\":bool?,\"select\":bool=true}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.resetTransform",
+      "label": "Reset Transform",
+      "params": "{\"index\":0..4?=active}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.overlay",
+      "label": "Clone Source Overlay",
+      "params": "{\"show\":bool?,\"opacity\":0..100?,\"clipped\":bool?,\"autoHide\":bool?,\"invert\":bool?,\"blend\":\"normal|darken|lighten|difference\"?}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "filter.render.flame",
+      "label": "Flame…",
+      "params": "{\"flameType\":\"oneFlameAlongPath|multipleFlamesAlongPath|multipleFlamesPathDirections|multipleFlamesVariousLength|candleLight|multipleFlamesOneDirection\",\"length\":1..1000=150,\"randomizeLength\":bool,\"width\":1..1000=40,\"angle\":-180..180=0,\"interval\":1..1000=60,\"adjustIntervalForLoops\":bool=true,\"useCustomColor\":bool,\"color\":color,\"turbulent\":0..100=25,\"jag\":0..100=25,\"opacity\":0..100=75,\"flameLines\":1..100=20,\"flameBottomAlignment\":0..100=20,\"flameStyle\":\"normal|violent|flat\",\"flameShape\":\"parallel|toCenter|spread|oval|pointed\",\"randomizeShapes\":bool,\"seed\":u32=0,\"quality\":\"draft|low|medium|high|fine\",\"path\":text,\"newLayer\":bool} → {layer,newLayer,bounds,primitives,usedPath}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.pictureFrame",
+      "label": "Picture Frame…",
+      "params": "{\"frame\":\"vineWithFlowers|vineWithLeaves|ivy|roses|daisies|berries|bamboo|waves|zigzag|dots|rope|scallops|doubleLine|snowflakes|stars|hearts\",\"margin\":0..30=4,\"size\":1..100=50,\"arrangement\":1..100=50,\"lines\":1..5=1,\"thickness\":1..100=30,\"fade\":0..100=0,\"vineColor\":color,\"flowerColor\":color,\"leafColor\":color,\"seed\":u32=0,\"newLayer\":bool} → {layer,newLayer,bounds,primitives,frame}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "filter.render.tree",
+      "label": "Tree…",
+      "params": "{\"baseTreeType\":1..34=1,\"lightDirection\":1..5=3,\"leavesAmount\":0..100=50,\"leavesSize\":0..200=100,\"branchesHeight\":50..300=100,\"branchesThickness\":50..200=100,\"defaultLeaves\":bool=true,\"leavesColor\":color,\"customBranchColor\":bool,\"branchesColor\":color,\"flatShading\":bool,\"seed\":u32=0,\"x\":0..1=0.5,\"y\":0..1=0.95,\"size\":0.05..2=0.8,\"newLayer\":bool} → {layer,newLayer,bounds,primitives,treeType}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.new",
+      "label": "Slice Tool",
+      "params": "{\"rect\":[x,y,w,h] | \"x\",\"y\",\"width\",\"height\", plus Slice Options (\"name\",\"kind\":\"image|noImage|table\",\"url\",\"target\",\"message\",\"alt\",\"cellText\",\"cellTextIsHtml\",\"background\":\"none|#rrggbb\")?} → {slice, number}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.fromGuides",
+      "label": "Slices From Guides",
+      "params": "{} (replaces every slice by the grid of the canvas guides) → {slices}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.set",
+      "label": "Slice Options…",
+      "params": "{\"slice\":id | \"number\":n (an auto slice is promoted), \"name\"?,\"kind\":\"image|noImage|table\"?,\"url\"?,\"target\"?,\"message\"?,\"alt\"?,\"cellText\"?,\"cellTextIsHtml\"?,\"horizontalAlign\":0..4?,\"verticalAlign\":0..4?,\"background\":\"none|#rrggbb\"?,\"outsets\":[t,l,b,r]? (layer slices),\"rect\":[x,y,w,h]? (move/resize; a layer slice becomes a user slice)} → the slice",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.promote",
+      "label": "Promote",
+      "params": "{\"slice\":id | \"number\":n} (auto or layer-based → user slice) → {slice}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.delete",
+      "label": "Delete Slice",
+      "params": "{\"slice\":id | \"number\":n | \"slices\":[id…]} → {deleted}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.divide",
+      "label": "Divide Slice…",
+      "params": "{\"slice\":id | \"number\":n,\"horizontal\":n=1 (slices down),\"vertical\":n=1 (slices across)} → {slices}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "slice.list",
+      "label": "List Slices",
+      "params": "{} → {slices:[{number,id,origin:auto|layer|user,name,rect:[x,y,w,h],kind,layer,url,alt,…}], locked}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.newLayerBasedSlice",
+      "label": "New Layer Based Slice",
+      "params": "{\"layer\":id?,\"name\":str?,\"url\":str?,\"alt\":str?} (follows the layer's bounds with effects) → {slice, rect}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.lockSlices",
+      "label": "Lock Slices",
+      "params": "{\"on\":bool? (default: toggle)} → {locked}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "view.clearSlices",
+      "label": "Clear Slices",
+      "params": "{} (deletes every user and layer-based slice) → {cleared}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.saveForWebLegacy",
+      "label": "Save for Web (Legacy)…",
+      "params": "{\"preset\":\"GIF 128 Dithered|JPEG High|PNG-24|…\"?,\"format\":\"gif|png8|png24|jpeg|wbmp\"=\"png24\",\"palette\":\"perceptual|selective|adaptive|restrictive|exact|systemMac|systemWindows|uniform\"=\"selective\",\"colors\":2..256=256,\"dither\":\"none|diffusion|pattern|noise\"=\"diffusion\",\"ditherAmount\":0..100=88,\"transparency\":bool=true,\"matte\":\"#rrggbb|none\"=\"#ffffff\",\"interlaced\":bool=false,\"webSnap\":0..100=0,\"quality\":0..100=60,\"progressive\":bool=false,\"optimized\":bool=true,\"embedIcc\":bool=false,\"metadata\":\"none|copyright|copyrightAndContact|all\"=\"copyright\",\"convertToSrgb\":bool=true,\"width\"|\"height\"|\"percent\"? (image size),\"resample\":\"bicubic|bilinear|nearest\"?,\"path\":file? (whole image),\"dir\":folder? (one file per slice in images/),\"html\":bool=false,\"slices\":\"all|user\"=\"all\",\"numbers\":[n]?} → no path/dir: {bytes,width,height,colors} estimate; else {files, html, bytes}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.exportPreferences",
+      "label": "Export Preferences…",
+      "params": "{\"quickExportFormat\":\"png|jpg|gif|webp\"?,\"quickExportLocation\":\"ask|sameFolder\"?,\"jpegQuality\":1..100?,\"metadata\":\"none|copyright|all\"?,\"convertToSrgb\":bool?} → {values}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.export.quickExport",
+      "label": "Quick Export",
+      "params": "{\"path\":str? (required unless Export Preferences › Location is \"sameFolder\" and the document is saved)} → {path, format, bytes}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.generate.imageAssets",
+      "label": "Image Assets",
+      "params": "{\"on\":bool? (default: toggle),\"dir\":folder? (default <document>-assets next to the file)} → {enabled, files, errors}; layers named like \"foo.png\", \"200% foo@2x.png\", \"48x48 icons/a.png8\", \"photo.jpg80%\" are exported, now and after each save",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.contactSheetII",
+      "label": "Contact Sheet II…",
+      "params": "{\"input\":folder|[paths],\"units\":\"inches|cm|mm|pixels\"=\"inches\",\"width\":8,\"height\":10,\"resolution\":ppi=300,\"mode\":\"rgb|gray|cmyk|lab\"=\"rgb\",\"depth\":8|16=8,\"columns\":5,\"rows\":6,\"placeAcrossFirst\":bool=true,\"autoSpacing\":bool=true,\"horizontal\":units?,\"vertical\":units?,\"rotateForBestFit\":bool=false,\"caption\":bool=true (file name as caption),\"font\":family?,\"fontSize\":pt=12,\"flatten\":bool=false} → {documents, pages, images}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.createDroplet",
+      "label": "Create Droplet…",
+      "params": "{\"path\":str (.pcdroplet),\"steps\":[[id,params]…] (the action),\"name\":str?,\"output\":folder?,\"format\":\"same|png|jpg|…\"?,\"quality\":0..12?,\"shim\":bool=true on macOS/Linux (writes <name>.command calling `photocraft-cli droplet`)} → {path, shim}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.runDroplet",
+      "label": "Run Droplet",
+      "params": "{\"droplet\":path,\"input\":[files or folders],\"output\":folder? (default: droplet's, else <input folder>/droplet-output)} → {files, errors}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.statistics",
+      "label": "Statistics…",
+      "params": "{\"mode\":\"mean|median|maximum|minimum|range|summation|variance|standardDeviation|skewness|kurtosis|entropy\"=\"median\",\"input\":folder|[paths],\"align\":bool=false (Auto-Align first)} → new document with one stack-mode smart object",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.browse",
+      "label": "Browse…",
+      "params": "{\"path\":script file | \"script\":text | \"steps\":[[id,params]…]} (JSON action, or one `command.id {json}` per line) → {steps, ok, results}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.scriptEventsManager",
+      "label": "Script Events Manager…",
+      "params": "{\"enabled\":bool?,\"add\":{\"event\":\"startApplication|newDocument|openDocument|saveDocument|closeDocument|print|export|everything\",\"script\":path?|\"steps\":[…]?,\"name\":str?}?,\"remove\":index?,\"removeAll\":bool?} → {enabled, bindings, events}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.print",
+      "label": "Print…",
+      "params": "{\"printer\":name? (default printer),\"copies\":1..999=1,\"paper\":\"letter|legal|tabloid|a3|a4|a5|4x6|5x7\"|[w,h] pt=\"letter\",\"orientation\":\"portrait|landscape\"=\"portrait\",\"center\":bool=true,\"top\":in?,\"left\":in?,\"scale\":%=100,\"scaleToFit\":bool=false,\"colorHandling\":\"printerManages|photocraftManages|noColorManagement\"=\"printerManages\",\"printerProfile\":profile? (photocraftManages),\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true,\"cornerCropMarks\":bool,\"centerCropMarks\":bool,\"registrationMarks\":bool,\"description\":bool,\"labels\":bool,\"output\":pdf path? (print to PDF; then \"send\" defaults to false),\"send\":bool?,\"dryRun\":bool=false (render the PDF, report the lp command, don't spool)} → {pdf, imageRect, command, sent}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.printOneCopy",
+      "label": "Print One Copy",
+      "params": "{} (the last Print settings, one copy; any Print key overrides)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.package",
+      "label": "Package…",
+      "params": "{\"dir\":folder,\"format\":\"pcraft|psd|psb\"=\"pcraft\"} → {folder, document, links, missing} (copies the document and its linked files into <dir>/<name>/, relinked to Links/)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.pathsToIllustrator",
+      "label": "Paths to Illustrator…",
+      "params": "{\"path\":str? (.ai; omit to return the text),\"paths\":\"all|work|<path name>\"=\"all\"} → {path, paths}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.pickAt",
+      "label": "Auto-Select Layer",
+      "params": "{\"x\":px,\"y\":px,\"target\":\"layer|group\"=\"layer\",\"select\":bool=true,\"mode\":\"replace|toggle|add\"=\"replace\",\"list\":bool=false (return every layer with pixels there, topmost first)} → {layer} | {layers}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.new.frameFromLayers",
+      "label": "Frame from Layers",
+      "params": "{\"name\":str?} → {layer, frame:[x,y,w,h]}: groups the selected layers and clips them to a frame rect",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "edit.presets.migratePresets",
+      "label": "Migrate Presets",
+      "params": "{path} → {migrated, added:{gradients,styles,shapes,patternGroups,toolPresets}}: merge a presets/preferences file into the library (appends groups by name)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "image.trap",
+      "label": "Trap…",
+      "params": "{width:px>=1=1} → {trapped,width}: spread inks at colour edges (CMYK only)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.create",
+      "label": "Create Video Timeline",
+      "params": "{duration?:30, fps?:30} → {timeline}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.delete",
+      "label": "Delete Timeline",
+      "params": "{} → {timeline:null}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.setFrame",
+      "label": "Go to Frame",
+      "params": "{frame} → {timeline}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.nextFrame",
+      "label": "Next Frame",
+      "params": "{} → {timeline}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.previousFrame",
+      "label": "Previous Frame",
+      "params": "{} → {timeline}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.setProps",
+      "label": "Timeline Settings",
+      "params": "{fps?, duration?, workStart?, workEnd?} → {timeline}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "timeline.info",
+      "label": "Timeline Info",
+      "params": "{} → {timeline}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.newBlankVideoLayer",
+      "label": "New Blank Video Layer",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.insertBlankFrame",
+      "label": "Insert Blank Frame",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.duplicateFrame",
+      "label": "Duplicate Frame",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.deleteFrame",
+      "label": "Delete Frame",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.restoreFrame",
+      "label": "Restore Frame",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.restoreAllFrames",
+      "label": "Restore All Frames",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.showAlteredVideo",
+      "label": "Show Altered Video",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.rasterize",
+      "label": "Rasterize",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.rasterize.video",
+      "label": "Video",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.newVideoLayerFromFile",
+      "label": "New Video Layer from File…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.replaceFootage",
+      "label": "Replace Footage…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.interpretFootage",
+      "label": "Interpret Footage…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.videoLayers.reloadFrame",
+      "label": "Reload Frame",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.videoFramesToLayers",
+      "label": "Video Frames to Layers…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.renderVideo",
+      "label": "Render Video…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.wiaSupport",
+      "label": "WIA Support…",
+      "params": "{} → {available, devices, note}: acquire from a scanner/camera (Windows only)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "image.variables.define",
+      "label": "Define…",
+      "params": "{defs:[{name, layer:id, type:visibility|textReplacement|pixelReplacement, method?:fit|fill|asIs|conform, align?, clip?}]} → {defs,dataSets,active}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.variables.dataSets",
+      "label": "Data Sets…",
+      "params": "{dataSets:[{name, values:[{variable, kind:visibility|text|pixels, value}]}], append?} → {defs,dataSets,active}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.applyDataSet",
+      "label": "Apply Data Set…",
+      "params": "{name|index} → {applied, index}: sets layer visibility/text/pixels from the data set (one history step)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.variableDataSets",
+      "label": "Variable Data Sets…",
+      "params": "{path, delimiter?} → {imported}: CSV header = variable names, each row a data set (first column may be the data-set name)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.dataSetsAsFiles",
+      "label": "Data Sets as Files…",
+      "params": "{dir, format?:png, dataSets?[names], naming?:\"{name}|{index}|{document}\"} → {files,count}: apply each data set and export the flattened document",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "variables.list",
+      "label": "List Variables",
+      "params": "{} → {defs,dataSets,active}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "plugin.list",
+      "label": "List Plug-ins",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "plugin.install",
+      "label": "Install Plug-in…",
+      "params": "{\"path\":text,\"data\":json,\"replace\":bool=true} (path: a .wasm file, native only; data: the module as base64)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "plugin.remove",
+      "label": "Remove Plug-in",
+      "params": "{\"id\":text}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "plugin.reload",
+      "label": "Reload Plug-ins",
+      "params": "{\"path\":text} (a folder of .wasm plug-ins; default: the Plug-ins preference folder)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "plugin.run",
+      "label": "Run Plug-in",
+      "params": "{\"id\":text,\"params\":json} (plug-in parameters under \"params\" or at the top level; see plugin.list)",
+      "enabledAtEmptySession": false
+    }
+  ]
+}

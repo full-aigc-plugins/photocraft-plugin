@@ -1,0 +1,23 @@
+{
+  "schema": "craft-upstream-research/v1",
+  "date": "2026-10-05",
+  "repository": "https://github.com/storytold/photocraft",
+  "commit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "codegraph": {
+    "files": 605,
+    "nodes": 16264,
+    "edges": 81661,
+    "queries": [
+      "apps/photocraft-cli/src/main.rs CLI parser/save/headless/MCP",
+      "crates/engine/src/lib.rs Session execute command registry"
+    ]
+  },
+  "runtime": {
+    "version": "0.2.0",
+    "catalogueCount": 748,
+    "identity": "official native CLI"
+  },
+  "skillCount": 12,
+  "boundary": "CodeGraph/static source and runtime command discovery; not whole upstream or all commands accepted",
+  "referencePattern": "Dreamina use / cli / setup / mode skills; copied neither authorization policy nor vendor code"
+}

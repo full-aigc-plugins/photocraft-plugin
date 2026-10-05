@@ -1,0 +1,190 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "paint.stroke",
+      "label": "Brush Stroke",
+      "params": "{\"points\":[[x,y,pressure?,tiltX?,tiltY?,rotation?,timeMs?,wheel?],…],\"brush\":{…BrushSettings}?,\"preset\":name?,\"size\":px?,\"hardness\":0..1?,\"opacity\":0..1?,\"flow\":0..1?,\"spacing\":0..10?,\"color\":\"#rrggbb\"?=foreground,\"mode\":\"normal|multiply|screen|…\"=\"normal\",\"erase\":bool?,\"smoothing\":0..1?,\"zoom\":number=1,\"seed\":u64?,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.pencil",
+      "label": "Pencil",
+      "params": "{\"points\":[[x,y,pressure?,tiltX?,tiltY?,rotation?,timeMs?,wheel?],…],\"brush\":{…}?,\"preset\":name?,\"size\":px?,\"opacity\":0..1?,\"color\":\"#rrggbb\"?=foreground,\"mode\":\"normal|multiply|screen|…\"=\"normal\",\"erase\":bool?,\"autoErase\":bool=false,\"seed\":u64?,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.mixerBrush",
+      "label": "Mixer Brush",
+      "params": "{\"points\":[…],\"brush\":{…}?,\"preset\":name?,\"size\":px?,\"wet\":0..100=50,\"load\":0..100=50,\"mix\":0..100=50,\"flow\":0..100=100,\"color\":\"#rrggbb\"?=foreground,\"sampleAllLayers\":bool=false,\"cleanAfterStroke\":bool=true,\"loadAfterStroke\":bool=true,\"seed\":u64?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.colorReplacement",
+      "label": "Color Replacement",
+      "params": "{\"points\":[…],\"brush\":{…}?,\"size\":px?,\"mode\":\"hue|saturation|color|luminosity\"=\"color\",\"sampling\":\"continuous|once|backgroundSwatch\"=\"continuous\",\"limits\":\"contiguous|discontiguous|findEdges\"=\"contiguous\",\"tolerance\":0..100=30,\"antiAlias\":bool=true,\"color\":\"#rrggbb\"?=foreground,\"seed\":u64?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.presets.list",
+      "label": "List Brush Presets",
+      "params": "{\"full\":bool=false}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.presets.save",
+      "label": "Save Brush Preset",
+      "params": "{\"name\":string,\"brush\":{…BrushSettings}?=current brush}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.presets.delete",
+      "label": "Delete Brush Preset",
+      "params": "{\"name\":string}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.defineFromSelection",
+      "label": "Define Brush Preset…",
+      "params": "{\"name\":string}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.get",
+      "label": "Get Brush",
+      "params": "{}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "paint.magicEraser",
+      "label": "Magic Eraser",
+      "params": "{\"x\":px,\"y\":px,\"tolerance\":0..255=32,\"antiAlias\":bool=true,\"contiguous\":bool=true,\"sampleAllLayers\":bool=false,\"opacity\":1..100=100}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.backgroundEraser",
+      "label": "Background Eraser",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px?,\"hardness\":0..1?,\"brush\":{…}?,\"preset\":name?,\"sampling\":\"continuous|once|backgroundSwatch\"=\"continuous\",\"limits\":\"discontiguous|contiguous|findEdges\"=\"contiguous\",\"tolerance\":0..100=50,\"protectForegroundColor\":bool=false,\"seed\":u64?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.presets.importAbr",
+      "label": "Import Brushes…",
+      "params": "{\"path\":\".abr file\"?,\"data\":base64 bytes?,\"group\":string?=file name,\"replace\":bool=true (replace a group of the same name),\"select\":bool=false (make the first imported preset current)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "paint.cloneStamp",
+      "label": "Clone Stamp",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.healingBrush",
+      "label": "Healing Brush",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.spotHealing",
+      "label": "Spot Healing Brush",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.dodge",
+      "label": "Dodge",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"range\":\"shadows|midtones|highlights\"=\"midtones\",\"exposure\":1..100=50,\"protectTones\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.burn",
+      "label": "Burn",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"range\":\"shadows|midtones|highlights\"=\"midtones\",\"exposure\":1..100=50,\"protectTones\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.sponge",
+      "label": "Sponge",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"mode\":\"desaturate|saturate\"=\"desaturate\",\"vibrance\":bool=true (flow = sponge strength)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.blur",
+      "label": "Blur",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"strength\":1..100=50}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.sharpen",
+      "label": "Sharpen",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"strength\":1..100=50,\"protectDetail\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.smudge",
+      "label": "Smudge",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"strength\":1..100=50,\"fingerPainting\":bool=false (starts with the foreground colour)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.historyBrush",
+      "label": "History Brush",
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=25,\"layer\":id?=active,\"state\":index (into history.entries; default 0 = the oldest held state, normally the Open snapshot)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.bucket",
+      "label": "Paint Bucket",
+      "params": "{\"x\":px,\"y\":px,\"tolerance\":0..255=32,\"contiguous\":bool=true,\"antiAlias\":bool=true,\"contents\":\"foreground|pattern\"=\"foreground\",\"color\":\"#rrggbb\"=foreground,\"pattern\":id|name (contents=pattern),\"scale\":%=100,\"angle\":deg,\"opacity\":1..100=100,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "paint.gradient",
+      "label": "Gradient",
+      "params": "{\"from\":[x,y],\"to\":[x,y],\"style\":\"linear|radial|angle|reflected|diamond\"=\"linear\",\"colors\":[\"#rrggbb\",…]? (evenly spaced),\"gradient\":preset name?,\"stops\":[[t,\"#rrggbb\"|\"foreground\"|\"background\"],…]?,\"transparency\":[[t,0..100],…]? (default: the current gradient, see gradient.presets.select),\"reverse\":bool=false,\"dither\":bool=true,\"opacity\":1..100=100,\"mode\":\"normal|multiply|…\"=\"normal\",\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "brush.texturePattern",
+      "label": "Brush Texture Pattern",
+      "params": "{\"pattern\":id|name,\"scale\":1..1000?,\"enabled\":bool=true} (sets the session brush's Texture to that pattern)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.list",
+      "label": "Clone Sources",
+      "params": "{} → {active,sources:[{index,source,anchor,offset,layer,width,height,rotation,flipH,flipV}],overlay}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.select",
+      "label": "Select Clone Source",
+      "params": "{\"index\":0..4}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.set",
+      "label": "Set Clone Source",
+      "params": "{\"index\":0..4?=active,\"source\":[x,y]? (⌥-click; re-pairs with the next stroke),\"offset\":[dx,dy]?,\"width\":%?,\"height\":%?|\"scale\":[w%,h%]?,\"rotation\":deg?,\"flipH\":bool?,\"flipV\":bool?,\"layer\":id?,\"clear\":bool?,\"select\":bool=true}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.resetTransform",
+      "label": "Reset Transform",
+      "params": "{\"index\":0..4?=active}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "cloneSource.overlay",
+      "label": "Clone Source Overlay",
+      "params": "{\"show\":bool?,\"opacity\":0..100?,\"clipped\":bool?,\"autoHide\":bool?,\"invert\":bool?,\"blend\":\"normal|darken|lighten|difference\"?}",
+      "enabledAtEmptySession": true
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "file.new",
+      "label": "New…",
+      "params": "{\"width\":u32=1920,\"height\":u32=1080,\"mode\":\"rgb|gray|cmyk|lab\"=\"rgb\",\"depth\":8|16|32=8,\"background\":\"white|black|backgroundColor|transparent|#rrggbb\"=\"white\",\"resolution\":ppi=72,\"name\":str}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.close",
+      "label": "Close",
+      "params": "{\"document\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "document.inspect",
+      "label": "Inspect Document",
+      "params": "{\"document\":index?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "document.activate",
+      "label": "Activate Document",
+      "params": "{\"document\":index}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "document.pixel",
+      "label": "Read Composite Pixel",
+      "params": "{\"x\":i32,\"y\":i32}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.scripts.deleteAllEmptyLayers",
+      "label": "Delete All Empty Layers",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.closeAll",
+      "label": "Close All",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.closeOthers",
+      "label": "Close Others",
+      "params": "{\"document\":index? (the one to keep; default active)}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.revert",
+      "label": "Revert",
+      "params": "{} (reloads the saved file as one undoable step)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.saveACopy",
+      "label": "Save a Copy…",
+      "params": "{\"path\":str (format from the extension),\"quality\":0..12? (JPEG),\"layers\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.openAs",
+      "label": "Open As…",
+      "params": "{\"path\":str,\"as\":\"psd|png|jpg|tiff|…\"? (decode as this format)}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.placeEmbedded",
+      "label": "Place Embedded…",
+      "params": "{\"path\":str,\"scale\":%? (default: fit when larger than the canvas),\"fit\":bool=true,\"center\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.placeLinked",
+      "label": "Place Linked…",
+      "params": "{\"path\":str,\"scale\":%?,\"fit\":bool=true,\"center\":[x,y]?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.fileInfo",
+      "label": "File Info…",
+      "params": "{\"title\":str?,\"author\":str?,\"authorTitle\":str?,\"description\":str?,\"keywords\":[str]|\"a; b\"?,\"copyright\":str?,\"copyrightStatus\":\"unknown|copyrighted|publicDomain\"?,\"copyrightUrl\":str?} (no keys: read)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.fitImage",
+      "label": "Fit Image…",
+      "params": "{\"width\":px,\"height\":px,\"dontEnlarge\":bool=false,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.conditionalModeChange",
+      "label": "Conditional Mode Change…",
+      "params": "{\"from\":[\"rgb\",\"grayscale\",\"cmyk\",\"lab\",\"indexed\",\"bitmap\",…]|\"any\"=\"any\",\"to\":\"rgb|grayscale|cmyk|lab\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.batch",
+      "label": "Batch…",
+      "params": "{\"steps\":[[commandId,params]|{\"command\":id,\"params\":{}}…] (a recorded action),\"input\":folder|[paths],\"output\":folder,\"format\":\"same|png|jpg|psd|tiff|…\"=\"same\",\"quality\":0..12?} → {files, errors}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.imageProcessor",
+      "label": "Image Processor…",
+      "params": "{\"input\":folder|[paths],\"output\":folder,\"format\":\"jpg|png|psd|tiff|…\"=\"jpg\",\"quality\":0..12=8,\"width\":px?,\"height\":px? (fit, never enlarge),\"convertToSrgb\":bool=false} → {files, errors}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.loadFilesIntoStack",
+      "label": "Load Files into Stack…",
+      "params": "{\"paths\":[str]|folder,\"createSmartObject\":bool=false} → new document with one layer per file (inside one smart object with createSmartObject)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.flattenAllLayerEffects",
+      "label": "Flatten All Layer Effects",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.scripts.flattenAllMasks",
+      "label": "Flatten All Masks",
+      "params": "{} (pixel layers; masks on other layer kinds are left)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.layersToFiles",
+      "label": "Layers to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name,\"visibleOnly\":bool=true,\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.colorLookupTables",
+      "label": "Color Lookup Tables…",
+      "params": "{\"path\":str? (.cube; omit to return the text),\"size\":2..256=33,\"title\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.photomerge",
+      "label": "Photomerge…",
+      "params": "{\"paths\":[str]|folder,\"useOpenDocuments\":bool=false,\"layout\":\"auto|perspective|cylindrical|spherical|collage|reposition\",\"blend\":bool=true,\"vignetteRemoval\":bool=false,\"geometricCorrection\":bool=false,\"contentAwareFill\":bool=false,\"focalLength\":mm=0 (35 mm equivalent; 0 = EXIF or estimated)} → new document, one masked layer per image",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.mergeToHdrPro",
+      "label": "Merge to HDR Pro…",
+      "params": "{\"paths\":[str]|folder,\"useOpenDocuments\":bool=false,\"exposures\":[ev]? (default EXIF, else estimated),\"align\":bool=true,\"removeGhosts\":bool=false,\"ghostBase\":int?,\"mode\":\"32|16|8\",\"method\":\"localAdaptation|exposureGamma|highlightCompression|equalizeHistogram\",\"radius\":1..500=7,\"strength\":0.1..4=0.52,\"gamma\":0.1..2=1,\"exposure\":-5..5=0,\"detail\":-100..300=30,\"shadow\":-100..100=0,\"highlight\":-100..100=0,\"vibrance\":-100..100=0,\"saturation\":-100..100=20} → new document (32-bit linear, or tone-mapped 16/8-bit)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.cropAndStraightenPhotos",
+      "label": "Crop and Straighten Photos",
+      "params": "{} → one new document per photo found on the scan",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.lensCorrection",
+      "label": "Lens Correction…",
+      "params": "{\"input\":folder|[files],\"output\":folder,\"format\":\"same|jpg|png|tif|psd\",\"quality\":0..12?, …Filter › Lens Correction params (\"profile\" defaults to \"auto\")}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.export.layerCompsToFiles",
+      "label": "Layer Comps to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name,\"selectedOnly\":bool=false (only the last applied comp),\"comps\":[id]?,\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.artboardsToFiles",
+      "label": "Artboards to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name (\"\" = none),\"artboards\":[id]? (default all),\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.artboardsToPdf",
+      "label": "Artboards to PDF…",
+      "params": "{\"path\":str (.pdf),\"artboards\":[id]?,\"quality\":0..12=10} → {path, pages} (one raster page per board)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.notes",
+      "label": "Notes…",
+      "params": "{\"path\":\".psd|.psb|.pcraft with notes\"}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.saveForWebLegacy",
+      "label": "Save for Web (Legacy)…",
+      "params": "{\"preset\":\"GIF 128 Dithered|JPEG High|PNG-24|…\"?,\"format\":\"gif|png8|png24|jpeg|wbmp\"=\"png24\",\"palette\":\"perceptual|selective|adaptive|restrictive|exact|systemMac|systemWindows|uniform\"=\"selective\",\"colors\":2..256=256,\"dither\":\"none|diffusion|pattern|noise\"=\"diffusion\",\"ditherAmount\":0..100=88,\"transparency\":bool=true,\"matte\":\"#rrggbb|none\"=\"#ffffff\",\"interlaced\":bool=false,\"webSnap\":0..100=0,\"quality\":0..100=60,\"progressive\":bool=false,\"optimized\":bool=true,\"embedIcc\":bool=false,\"metadata\":\"none|copyright|copyrightAndContact|all\"=\"copyright\",\"convertToSrgb\":bool=true,\"width\"|\"height\"|\"percent\"? (image size),\"resample\":\"bicubic|bilinear|nearest\"?,\"path\":file? (whole image),\"dir\":folder? (one file per slice in images/),\"html\":bool=false,\"slices\":\"all|user\"=\"all\",\"numbers\":[n]?} → no path/dir: {bytes,width,height,colors} estimate; else {files, html, bytes}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.exportPreferences",
+      "label": "Export Preferences…",
+      "params": "{\"quickExportFormat\":\"png|jpg|gif|webp\"?,\"quickExportLocation\":\"ask|sameFolder\"?,\"jpegQuality\":1..100?,\"metadata\":\"none|copyright|all\"?,\"convertToSrgb\":bool?} → {values}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.export.quickExport",
+      "label": "Quick Export",
+      "params": "{\"path\":str? (required unless Export Preferences › Location is \"sameFolder\" and the document is saved)} → {path, format, bytes}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.generate.imageAssets",
+      "label": "Image Assets",
+      "params": "{\"on\":bool? (default: toggle),\"dir\":folder? (default <document>-assets next to the file)} → {enabled, files, errors}; layers named like \"foo.png\", \"200% foo@2x.png\", \"48x48 icons/a.png8\", \"photo.jpg80%\" are exported, now and after each save",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.automate.contactSheetII",
+      "label": "Contact Sheet II…",
+      "params": "{\"input\":folder|[paths],\"units\":\"inches|cm|mm|pixels\"=\"inches\",\"width\":8,\"height\":10,\"resolution\":ppi=300,\"mode\":\"rgb|gray|cmyk|lab\"=\"rgb\",\"depth\":8|16=8,\"columns\":5,\"rows\":6,\"placeAcrossFirst\":bool=true,\"autoSpacing\":bool=true,\"horizontal\":units?,\"vertical\":units?,\"rotateForBestFit\":bool=false,\"caption\":bool=true (file name as caption),\"font\":family?,\"fontSize\":pt=12,\"flatten\":bool=false} → {documents, pages, images}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.createDroplet",
+      "label": "Create Droplet…",
+      "params": "{\"path\":str (.pcdroplet),\"steps\":[[id,params]…] (the action),\"name\":str?,\"output\":folder?,\"format\":\"same|png|jpg|…\"?,\"quality\":0..12?,\"shim\":bool=true on macOS/Linux (writes <name>.command calling `photocraft-cli droplet`)} → {path, shim}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.automate.runDroplet",
+      "label": "Run Droplet",
+      "params": "{\"droplet\":path,\"input\":[files or folders],\"output\":folder? (default: droplet's, else <input folder>/droplet-output)} → {files, errors}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.statistics",
+      "label": "Statistics…",
+      "params": "{\"mode\":\"mean|median|maximum|minimum|range|summation|variance|standardDeviation|skewness|kurtosis|entropy\"=\"median\",\"input\":folder|[paths],\"align\":bool=false (Auto-Align first)} → new document with one stack-mode smart object",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.browse",
+      "label": "Browse…",
+      "params": "{\"path\":script file | \"script\":text | \"steps\":[[id,params]…]} (JSON action, or one `command.id {json}` per line) → {steps, ok, results}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.scripts.scriptEventsManager",
+      "label": "Script Events Manager…",
+      "params": "{\"enabled\":bool?,\"add\":{\"event\":\"startApplication|newDocument|openDocument|saveDocument|closeDocument|print|export|everything\",\"script\":path?|\"steps\":[…]?,\"name\":str?}?,\"remove\":index?,\"removeAll\":bool?} → {enabled, bindings, events}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.print",
+      "label": "Print…",
+      "params": "{\"printer\":name? (default printer),\"copies\":1..999=1,\"paper\":\"letter|legal|tabloid|a3|a4|a5|4x6|5x7\"|[w,h] pt=\"letter\",\"orientation\":\"portrait|landscape\"=\"portrait\",\"center\":bool=true,\"top\":in?,\"left\":in?,\"scale\":%=100,\"scaleToFit\":bool=false,\"colorHandling\":\"printerManages|photocraftManages|noColorManagement\"=\"printerManages\",\"printerProfile\":profile? (photocraftManages),\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true,\"cornerCropMarks\":bool,\"centerCropMarks\":bool,\"registrationMarks\":bool,\"description\":bool,\"labels\":bool,\"output\":pdf path? (print to PDF; then \"send\" defaults to false),\"send\":bool?,\"dryRun\":bool=false (render the PDF, report the lp command, don't spool)} → {pdf, imageRect, command, sent}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.printOneCopy",
+      "label": "Print One Copy",
+      "params": "{} (the last Print settings, one copy; any Print key overrides)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.package",
+      "label": "Package…",
+      "params": "{\"dir\":folder,\"format\":\"pcraft|psd|psb\"=\"pcraft\"} → {folder, document, links, missing} (copies the document and its linked files into <dir>/<name>/, relinked to Links/)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.pathsToIllustrator",
+      "label": "Paths to Illustrator…",
+      "params": "{\"path\":str? (.ai; omit to return the text),\"paths\":\"all|work|<path name>\"=\"all\"} → {path, paths}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.videoFramesToLayers",
+      "label": "Video Frames to Layers…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.renderVideo",
+      "label": "Render Video…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.import.wiaSupport",
+      "label": "WIA Support…",
+      "params": "{} → {available, devices, note}: acquire from a scanner/camera (Windows only)",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.import.variableDataSets",
+      "label": "Variable Data Sets…",
+      "params": "{path, delimiter?} → {imported}: CSV header = variable names, each row a data set (first column may be the data-set name)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.dataSetsAsFiles",
+      "label": "Data Sets as Files…",
+      "params": "{dir, format?:png, dataSets?[names], naming?:\"{name}|{index}|{document}\"} → {files,count}: apply each data set and export the flattened document",
+      "enabledAtEmptySession": false
+    }
+  ]
+}

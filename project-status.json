@@ -7,7 +7,9 @@
   "taskEvidence": {
     "2.1": "docs/evidence/bootstrap-tests.json",
     "5.4": "docs/evidence/exchange-loss.json",
-    "5.5": "docs/evidence/exchange-loss.json"
+    "5.5": "docs/evidence/exchange-loss.json",
+    "1.7": "docs/evidence/skill-suite.json",
+    "1.8": "docs/evidence/skill-suite.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-current-release.json"
 }

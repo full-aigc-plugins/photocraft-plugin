@@ -6,7 +6,7 @@
 
 ## 当前版本与可复现宿主验证
 
-当前插件与独立技能源快照：`0.1.0-dev.2`。Codex 0.147.0 与 0.153.4 均安装五个固定发布，发现五项启用的命名空间技能，加载错误为零；两套宿主中的 ArtCraft 公开入口均通过混合首次使用流程。四个独立代表任务在 0.147.0 通过。这些测试执行安装后的 Python 入口；模型自动派发、桌面 GUI、创作最终评审和完整交换保真尚未验证。
+前一已验证插件/技能源快照：`0.1.0-dev.2`；当前技能体系为 `0.1.0-dev.3`。Codex 0.147.0 与 0.153.4 均安装五个固定发布，发现五项启用的命名空间技能，加载错误为零；两套宿主中的 ArtCraft 公开入口均通过混合首次使用流程。四个独立代表任务在 0.147.0 通过。这些测试执行安装后的 Python 入口；模型自动派发、桌面 GUI、创作最终评审和完整交换保真尚未验证。
 
 [宿主验证设计](docs/PhotoCraft-Host-Verification-Architecture.zh_CN.md) · [绑定版本的证据](docs/evidence/codex-current-release.json)。历史里程碑保留原证据范围；当前版本身份以 manifest 和锁文件为准。
 
@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.2 |
+| Metadata version | 0.1.0-dev.3 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.2 |
+| Skills source | photocraft-skills / v0.1.0-dev.3 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -140,3 +140,7 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 开发版本 `0.1.0-dev.1` 同步独立技能的安装锁等待修复；并行安装和复用按有界互斥协调，原生任务不自动重放。
 
 当前开发里程碑为原生交付增加摘要绑定的交换损失报告，区分 lost、observed、unknown；派生导出不替代原生工程。跨编辑器字体、效果和蒙版保真尚未验证，完整交换验收任务保持未完成。
+
+## CLI 与场景技能体系
+
+技能源包含 12 项可独立安装的技能，分为安装、CLI 公共操作与场景任务。[架构与清单](docs/PhotoCraft-Skill-Suite-Architecture.zh_CN.md)。运行时与插件版本分别维护；旧宿主证据保持原版本范围。

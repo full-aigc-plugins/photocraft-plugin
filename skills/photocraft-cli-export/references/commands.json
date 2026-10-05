@@ -1,0 +1,88 @@
+{
+  "schema": "craft-skill-command-evidence/v1",
+  "pluginId": "photocraft",
+  "runtimeVersion": "0.2.0",
+  "upstreamRepository": "https://github.com/storytold/photocraft",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "observed command catalogue, not capability or creative acceptance",
+  "commands": [
+    {
+      "id": "file.export.layersToFiles",
+      "label": "Layers to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name,\"visibleOnly\":bool=true,\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.colorLookupTables",
+      "label": "Color Lookup Tables…",
+      "params": "{\"path\":str? (.cube; omit to return the text),\"size\":2..256=33,\"title\":str?}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.quickExportAsPng",
+      "label": "Quick Export as PNG",
+      "params": "{\"layer\":id?,\"path\":text}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.exportAs",
+      "label": "Export As…",
+      "params": "{\"layer\":id?,\"path\":text,\"scale\":1..1000=100} (format from the path's extension)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.layerCompsToFiles",
+      "label": "Layer Comps to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name,\"selectedOnly\":bool=false (only the last applied comp),\"comps\":[id]?,\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.artboardsToFiles",
+      "label": "Artboards to Files…",
+      "params": "{\"dir\":folder,\"format\":\"png|jpg|psd|tiff|…\"=\"png\",\"prefix\":str=document name (\"\" = none),\"artboards\":[id]? (default all),\"quality\":0..12?} → {files}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.artboardsToPdf",
+      "label": "Artboards to PDF…",
+      "params": "{\"path\":str (.pdf),\"artboards\":[id]?,\"quality\":0..12=10} → {path, pages} (one raster page per board)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.saveForWebLegacy",
+      "label": "Save for Web (Legacy)…",
+      "params": "{\"preset\":\"GIF 128 Dithered|JPEG High|PNG-24|…\"?,\"format\":\"gif|png8|png24|jpeg|wbmp\"=\"png24\",\"palette\":\"perceptual|selective|adaptive|restrictive|exact|systemMac|systemWindows|uniform\"=\"selective\",\"colors\":2..256=256,\"dither\":\"none|diffusion|pattern|noise\"=\"diffusion\",\"ditherAmount\":0..100=88,\"transparency\":bool=true,\"matte\":\"#rrggbb|none\"=\"#ffffff\",\"interlaced\":bool=false,\"webSnap\":0..100=0,\"quality\":0..100=60,\"progressive\":bool=false,\"optimized\":bool=true,\"embedIcc\":bool=false,\"metadata\":\"none|copyright|copyrightAndContact|all\"=\"copyright\",\"convertToSrgb\":bool=true,\"width\"|\"height\"|\"percent\"? (image size),\"resample\":\"bicubic|bilinear|nearest\"?,\"path\":file? (whole image),\"dir\":folder? (one file per slice in images/),\"html\":bool=false,\"slices\":\"all|user\"=\"all\",\"numbers\":[n]?} → no path/dir: {bytes,width,height,colors} estimate; else {files, html, bytes}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.exportPreferences",
+      "label": "Export Preferences…",
+      "params": "{\"quickExportFormat\":\"png|jpg|gif|webp\"?,\"quickExportLocation\":\"ask|sameFolder\"?,\"jpegQuality\":1..100?,\"metadata\":\"none|copyright|all\"?,\"convertToSrgb\":bool?} → {values}",
+      "enabledAtEmptySession": true
+    },
+    {
+      "id": "file.export.quickExport",
+      "label": "Quick Export",
+      "params": "{\"path\":str? (required unless Export Preferences › Location is \"sameFolder\" and the document is saved)} → {path, format, bytes}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.pathsToIllustrator",
+      "label": "Paths to Illustrator…",
+      "params": "{\"path\":str? (.ai; omit to return the text),\"paths\":\"all|work|<path name>\"=\"all\"} → {path, paths}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.renderVideo",
+      "label": "Render Video…",
+      "params": "{} → {}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "file.export.dataSetsAsFiles",
+      "label": "Data Sets as Files…",
+      "params": "{dir, format?:png, dataSets?[names], naming?:\"{name}|{index}|{document}\"} → {files,count}: apply each data set and export the flattened document",
+      "enabledAtEmptySession": false
+    }
+  ]
+}

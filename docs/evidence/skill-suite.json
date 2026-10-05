@@ -1,0 +1,35 @@
+{
+  "schema": "craft-skill-suite-evidence/v1",
+  "date": "2026-10-05",
+  "pluginId": "photocraft",
+  "skillVersion": "0.1.0-dev.3",
+  "runtimeVersion": "0.2.0",
+  "skillCount": 12,
+  "redPhase": {
+    "previousSourceCommitFailsSuiteContract": true,
+    "failure": "skill-suite.json absent; executed isolated git archive of previous source commit"
+  },
+  "checks": {
+    "formatValidated": 12,
+    "isolatedDiscovery": 12,
+    "unknownSubcommandRejectedBeforeInstall": 12,
+    "internalSkillLinks": "passed",
+    "resourceSynchronization": "passed"
+  },
+  "regression": {
+    "tests": 23,
+    "skipped": 1,
+    "scope": "full native suite; individual skill discovery separately passed in live suite test"
+  },
+  "taskSkillNative": {
+    "skill": "photocraft-cli-masks",
+    "passed": 1,
+    "seconds": 0.415
+  },
+  "hostDiscovery": "pending fixed release verification",
+  "limits": [
+    "not all individual command IDs executed",
+    "model task dispatch and GUI remain unverified",
+    "creative final acceptance and full interchange fidelity remain open"
+  ]
+}

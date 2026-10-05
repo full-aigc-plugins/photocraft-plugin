@@ -6,7 +6,7 @@ Independent-skills-driven Layer-preserving image editing and visual design.
 
 ## Current release and reproducible host checks
 
-Current plugin and independent skill snapshot: `0.1.0-dev.2`. Codex 0.147.0 and 0.153.4 installed all five fixed releases and discovered five enabled namespaced skills with zero loading errors. Installed ArtCraft public entrypoints passed mixed first-use workflows on both hosts. Four standalone representative workflows passed on 0.147.0. These runs invoke the installed Python entrypoints; model dispatch, desktop GUI, creative final review and full interchange fidelity remain unverified.
+Previous verified plugin/skill snapshot: `0.1.0-dev.2`; current suite is `0.1.0-dev.3`. Codex 0.147.0 and 0.153.4 installed all five fixed releases and discovered five enabled namespaced skills with zero loading errors. Installed ArtCraft public entrypoints passed mixed first-use workflows on both hosts. Four standalone representative workflows passed on 0.147.0. These runs invoke the installed Python entrypoints; model dispatch, desktop GUI, creative final review and full interchange fidelity remain unverified.
 
 [Host verification design](docs/PhotoCraft-Host-Verification-Architecture.md) · [Version-bound evidence](docs/evidence/codex-current-release.json). Historical milestones below retain their original scope; the current manifest and locks own version identity.
 
@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.2 |
+| Metadata version | 0.1.0-dev.3 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.2 |
+| Skills source | photocraft-skills / v0.1.0-dev.3 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -140,3 +140,7 @@ All five plugins installed from public tags into an isolated Codex configuration
 Development version `0.1.0-dev.1` pins the independent skill install-lock fix: bounded coordination for concurrent installation/reuse, with no native task replay.
 
 The current development milestone adds hash-bound exchange loss reports to native deliveries. lost, observed and unknown are separate; derivatives never substitute for native projects. Font/effect/mask fidelity across editors remains unverified, so full exchange acceptance stays open.
+
+## CLI and task skill suite
+
+The source suite contains 12 independently installable skills with setup, public CLI operations and focused tasks. [Architecture and catalogue](docs/PhotoCraft-Skill-Suite-Architecture.md). Runtime and plugin versions are separate; prior host evidence retains its original version scope.

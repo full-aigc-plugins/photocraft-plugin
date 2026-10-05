@@ -206,3 +206,7 @@ stateDiagram-v2
 ## 当前宿主验收
 
 快照 `0.1.0-dev.2` 已有安装、发现及安装后公开入口的限定范围证据。参见[验证合同与未验证范围](PhotoCraft-Host-Verification-Architecture.zh_CN.md)。完整发布任务仍保持未完成，目标设计段落不作为实现证明。
+
+## CLI 技能体系增量
+
+[PhotoCraft CLI / setup / task suite](PhotoCraft-Skill-Suite-Architecture.zh_CN.md)

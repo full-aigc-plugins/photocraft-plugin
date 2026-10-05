@@ -45,3 +45,21 @@ python3 -I -B /mnt/skills/user/photocraft-use/scripts/bootstrap.py
 首次安装或复用遇到其他安装进程时有界等待，超时保持现状并报 runtime_install_busy。参见[安装并发合同](references/installation-concurrency.md)。
 
 开发版本 dev.2 随原生与导出交付[交换损失报告](references/exchange-loss.md)。阅读 lost/observed/unknown 和导出警告；不把扁平导出、SVG 结构或 PSD 图层计数称为无损原生替代。
+
+## 按任务选择独立技能
+
+| 技能 | 触发任务 |
+| :--- | :--- |
+| **photocraft-cli** | 查询实际命令参数和能力，调用公开 CLI、MCP 与诊断 |
+| **photocraft-cli-setup** | 首次安装、摘要校验、版本检查与缺失运行时排障 |
+| **photocraft-cli-project** | 创建、打开和保存 pcraft，检查尺寸、深度和色彩模式 |
+| **photocraft-cli-layers** | 组织产品、背景、文本与图层组，调整混合和层级 |
+| **photocraft-cli-selection** | 创建选区、反选、羽化和局部选择 |
+| **photocraft-cli-masks** | 建立图层蒙版、矢量蒙版与剪贴合成 |
+| **photocraft-cli-adjustments** | 使用调整图层或指定局部颜色调整 |
+| **photocraft-cli-retouch** | 对已授权图像做修复、克隆、画笔和局部修饰 |
+| **photocraft-cli-text** | 创建和修改文字图层、字体、段落和布局 |
+| **photocraft-cli-resize** | 调整画布和图像尺寸，制作海报封面变体 |
+| **photocraft-cli-export** | 从原生图层工程输出 PSD、PNG 或其他交换文件 |
+
+缺少技能：`npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
