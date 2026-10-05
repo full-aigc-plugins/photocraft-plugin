@@ -37,3 +37,5 @@ OpenSpec 是唯一行为事实源；本目录是解释与证据视图。
 
 
 [专业领域技术设计](PhotoCraft-Domain-Design.zh_CN.md)
+
+[Current host verification / 当前宿主验证](PhotoCraft-Host-Verification-Architecture.zh_CN.md)

@@ -202,3 +202,7 @@ stateDiagram-v2
 **文档状态**：待评审；实现以 OpenSpec 任务和证据为准。
 
 当前实现：原生交付包含 exchange-loss.json，公开工作流保留原生源与重开检查摘要，记录格式损失、SVG/PSD 实际结构观察及未知字体/效果保真。报告进入 manifest.files，由 ArtCraft 接管与打包时重新核验；完整交换保真验收仍待完成。
+
+## 当前宿主验收
+
+快照 `0.1.0-dev.2` 已有安装、发现及安装后公开入口的限定范围证据。参见[验证合同与未验证范围](PhotoCraft-Host-Verification-Architecture.zh_CN.md)。完整发布任务仍保持未完成，目标设计段落不作为实现证明。

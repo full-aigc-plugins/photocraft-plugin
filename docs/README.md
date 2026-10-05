@@ -37,3 +37,5 @@ OpenSpec is the sole behavioral authority; this documentation provides explanati
 
 
 [Domain technical design](PhotoCraft-Domain-Design.md)
+
+[Current host verification / 当前宿主验证](PhotoCraft-Host-Verification-Architecture.md)

@@ -21,7 +21,7 @@
 
 ## 2. 独立技能供应链
 
-`photocraft-skills` 是拟建的独立知识仓库，当前尚未发布。技能源包含 SKILL.md、引用与必要的可移植脚本。插件从固定 tag 解析 commit，核对整个技能树的内容摘要，同步进 `skills/`。发布验证在干净导出目录执行，检查包内链接、许可证、技能清单与锁文件一致。当前 `skills.lock.json` 的 sources 为空，不能伪造版本或摘要。
+`photocraft-skills` 已独立发布。插件通过 `skills.lock.json` 固定来源标签 `v0.1.0-dev.2`、提交和完整技能摘要；SKILL.md、引用与可移植脚本仍由技能源仓库维护。执行 `python3 scripts/vendor/skill_vendor.py check --offline` 核对内置快照。技能源发布不代表完整宿主或创作验收通过。
 
 | 阶段 | 输入 | 失败规则 |
 | :--- | :--- | :--- |
@@ -85,3 +85,7 @@
 **文档状态**：待评审；实现以 OpenSpec 任务和证据为准。
 
 交换交付已增加 exchange-loss.json：摘要绑定原生、重开记录和导出，派生物不替代原生；跨编辑器字体、效果和蒙版保真以 unknown 显式标注，完整边界验收不因此自动完成。
+
+## 当前宿主验收
+
+快照 `0.1.0-dev.2` 已有安装、发现及安装后公开入口的限定范围证据。参见[验证合同与未验证范围](../../docs/PhotoCraft-Host-Verification-Architecture.zh_CN.md)。完整发布任务仍保持未完成，目标设计段落不作为实现证明。

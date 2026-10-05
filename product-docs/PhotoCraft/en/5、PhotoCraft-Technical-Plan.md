@@ -21,7 +21,7 @@ Related documents: [Brand boundary](1%E3%80%81PhotoCraft-Naming-and-Brand.md) ·
 
 ## 2. Independent skill supply chain
 
-`photocraft-skills` is the planned independent knowledge repository and is not yet published. It owns SKILL.md, references and portable helper scripts where required. The plugin resolves a fixed tag to a commit, verifies the whole skill tree and packages it in `skills/`. Release checks run in a clean export and verify links, licenses, inventory and locks. The current skills lock has no sources; no version or digest is fabricated.
+`photocraft-skills` is an independent published knowledge repository. The plugin vendors source tag `v0.1.0-dev.2`, a fixed commit and the full skill digest recorded in `skills.lock.json`. SKILL.md, references and portable scripts remain owned by the skill repository. `python3 scripts/vendor/skill_vendor.py check --offline` verifies the packaged snapshot; a source release does not imply complete host or creative acceptance.
 
 | Stage | Input | Failure rule |
 | :--- | :--- | :--- |
@@ -85,3 +85,7 @@ Plugin, skills, upstream CLI and protocol versions evolve independently. Release
 **Document status**: Ready for review; implementation status is governed by OpenSpec tasks and evidence.
 
 Exchange delivery now includes exchange-loss.json binding native, reopened inspection and exports by digest. Derivatives never substitute for native projects; cross-editor font, effect and mask fidelity remains explicitly unknown until separate acceptance.
+
+## Current host acceptance
+
+Snapshot `0.1.0-dev.2` has scoped installation/discovery and installed-entrypoint evidence. See [verification contracts and exclusions](../../../docs/PhotoCraft-Host-Verification-Architecture.md). Full release tasks remain open; target design sections do not constitute implementation evidence.

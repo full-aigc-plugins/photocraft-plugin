@@ -9,5 +9,5 @@
     "5.4": "docs/evidence/exchange-loss.json",
     "5.5": "docs/evidence/exchange-loss.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-installation.json"
+  "hostValidationEvidence": "docs/evidence/codex-current-release.json"
 }

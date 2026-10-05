@@ -4,6 +4,12 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+## 当前版本与可复现宿主验证
+
+当前插件与独立技能源快照：`0.1.0-dev.2`。Codex 0.147.0 与 0.153.4 均安装五个固定发布，发现五项启用的命名空间技能，加载错误为零；两套宿主中的 ArtCraft 公开入口均通过混合首次使用流程。四个独立代表任务在 0.147.0 通过。这些测试执行安装后的 Python 入口；模型自动派发、桌面 GUI、创作最终评审和完整交换保真尚未验证。
+
+[宿主验证设计](docs/PhotoCraft-Host-Verification-Architecture.zh_CN.md) · [绑定版本的证据](docs/evidence/codex-current-release.json)。历史里程碑保留原证据范围；当前版本身份以 manifest 和锁文件为准。
+
 > 当前已进入实施阶段，尚未完成可安装插件版本的验收；独立技能与运行时集成正在开发。
 
 独立技能包已进入实施，单技能隔离安装已在 macOS arm64 实测；完整创作流程与插件宿主验收仍未完成。[证据](docs/evidence/bootstrap-tests.json)
@@ -28,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.0 |
+| Metadata version | 0.1.0-dev.2 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.0 |
+| Skills source | photocraft-skills / v0.1.0-dev.2 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -74,7 +80,7 @@ openspec validate establish-v1-plugin --strict --no-interactive
 photocraft-cli --version
 ```
 
-本次记录结果为 0.2.0。独立技能的 bootstrap 与 workflow 是当前开发版入口；插件宿主安装仍待验收。
+本次记录结果为 0.2.0。独立技能的 bootstrap 与 workflow 是当前开发版入口；插件安装与技能发现已有证据；完整宿主验收仍待完成。
 
 ## 配置与运行时
 
@@ -114,7 +120,7 @@ photocraft-cli --version
 
 [Upstream PhotoCraft](https://github.com/storytold/photocraft) · [Issues](https://github.com/full-aigc-plugins/photocraft-plugin/issues)
 
-独立技能现已绑定已发布的开发标签 `v0.1.0-dev.0`，`skills.lock.json` 固定来源提交与整个技能摘要。使用 `python3 scripts/vendor/skill_vendor.py check` 核对。技能源快照发布不代表宿主验收或生产完成。
+独立技能现已绑定当前已发布开发标签 `v0.1.0-dev.2`，`skills.lock.json` 固定来源提交与整个技能摘要。使用 `python3 scripts/vendor/skill_vendor.py check` 核对。技能源快照发布不代表宿主验收或生产完成。
 
 ## 开发版独立技能安装与使用
 
