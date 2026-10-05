@@ -2,9 +2,11 @@
 
 使用技能自带 `scripts/workflow.py` 执行可复现的编辑计划。首次执行自动安装或复用锁定 CLI；Python 3.11+ 即可运行，无需 Pillow。Pillow 只用于开发者的像素回归测试。
 
+以下 `SKILL_DIR` 沿用本技能 `SKILL.md` 的实际加载目录，脚本和示例均来自同一技能。
+
 ```bash
-python3 /mnt/skills/user/photocraft-cli-text/scripts/workflow.py \
-  /mnt/skills/user/photocraft-cli-text/examples/poster-plan.json \
+python3 "$SKILL_DIR/scripts/workflow.py" \
+  "$SKILL_DIR/examples/poster-plan.json" \
   --asset product=/absolute/input/product.png \
   --output /absolute/project/poster-v1
 ```

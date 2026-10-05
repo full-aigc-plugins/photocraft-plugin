@@ -1,6 +1,6 @@
 # PhotoCraft Skill Suite Architecture
 
-> Updated: 2026-10-05. Skill/plugin development version: 0.1.0-dev.3; native/orchestration runtime: 0.2.0. Target behavior is owned by the existing OpenSpec change.
+> Updated: 2026-10-05. Skill/plugin development version: 0.1.0-dev.4; native/orchestration runtime: 0.2.0. Target behavior is owned by the existing OpenSpec change.
 
 ## 1. Why a suite
 

@@ -1,0 +1,34 @@
+{
+  "schema": "craft-installed-skill-paths/v1",
+  "date": "2026-10-06",
+  "sourceRef": "v0.1.0-dev.4",
+  "skillCount": 12,
+  "layoutCount": 3,
+  "isolatedCopies": 36,
+  "helpInvocations": 69,
+  "layouts": [
+    "user-home/.agents/skills/<name>",
+    "project/.agents/skills/<name>",
+    "plugin/skills/<name>"
+  ],
+  "spacePaths": true,
+  "testFile": "tests/test_installed_paths.py",
+  "testSha256": "a127f856b8046419a730a922a419f443bd1713f9bbed180fbe138d7589b3d190",
+  "command": "python3 -B -m unittest discover -s tests -p test_installed_paths.py",
+  "result": {
+    "tests": 2,
+    "passed": 2,
+    "skipped": 0
+  },
+  "scope": [
+    "Markdown examples use the actual loaded skill directory",
+    "Quoted script paths execute from three isolated layouts with spaces",
+    "No legacy mounted skill path in skill Markdown",
+    "No bytecode files created"
+  ],
+  "exclusions": [
+    "Fresh native runtime installation was not rerun for this documentation correction",
+    "Full domain creative acceptance",
+    "Existing installed host caches are not upgraded automatically"
+  ]
+}

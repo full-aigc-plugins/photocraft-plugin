@@ -6,7 +6,7 @@ Independent-skills-driven Layer-preserving image editing and visual design.
 
 ## Current release and reproducible host checks
 
-Current plugin/skill suite: `0.1.0-dev.3`. Codex 0.147.0 and 0.153.4 installed five fixed public releases and discovered all 58 enabled namespaced skills with zero loading errors and matching source digests. Five representative workflows passed through installed task-skill entrypoints on 0.147.0, including native projects, targeted revisions and the mixed ArtCraft online workflow. Model dispatch, desktop GUI, final creative review and full interchange fidelity remain unverified.
+Previously verified plugin/skill suite: `0.1.0-dev.3`. Codex 0.147.0 and 0.153.4 installed five fixed public releases and discovered all 58 enabled namespaced skills with zero loading errors and matching source digests. Five representative workflows passed through installed task-skill entrypoints on 0.147.0, including native projects, targeted revisions and the mixed ArtCraft online workflow. Model dispatch, desktop GUI, final creative review and full interchange fidelity remain unverified.
 
 [Host verification design](docs/PhotoCraft-Host-Verification-Architecture.md) · [Version-bound evidence](docs/evidence/codex-skill-suite.json). Historical milestones below retain their original scope; the current manifest and locks own version identity.
 
@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.3 |
+| Metadata version | 0.1.0-dev.4 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.3 |
+| Skills source | photocraft-skills / v0.1.0-dev.4 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -120,7 +120,7 @@ Original content uses [Apache-2.0](LICENSE). This is a third-party integration d
 
 [Upstream PhotoCraft](https://github.com/storytold/photocraft) · [Issues](https://github.com/full-aigc-plugins/photocraft-plugin/issues)
 
-Independent skills are pinned at the current published development tag `v0.1.0-dev.3`, including the exact source commit and whole-skill digest in `skills.lock.json`. Verify using `python3 scripts/vendor/skill_vendor.py check`. These source snapshots do not establish plugin-host acceptance or production readiness.
+Independent skills are pinned at the current published development tag `v0.1.0-dev.4`, including the exact source commit and whole-skill digest in `skills.lock.json`. Verify using `python3 scripts/vendor/skill_vendor.py check`. These source snapshots do not establish plugin-host acceptance or production readiness.
 
 ## Development skill installation and use
 
@@ -144,3 +144,5 @@ The current development milestone adds hash-bound exchange loss reports to nativ
 ## CLI and task skill suite
 
 The source suite contains 12 independently installable skills with setup, public CLI operations and focused tasks. [Architecture and catalogue](docs/PhotoCraft-Skill-Suite-Architecture.md). Runtime and plugin versions are separate; prior host evidence retains its original version scope.
+
+Current plugin/skill suite: `0.1.0-dev.4`. The corrected examples resolve scripts from the actual host-loaded `SKILL.md` directory. All skills passed isolated entry-point checks in user, project and plugin layouts with spaces. [Path evidence](docs/evidence/installed-skill-paths.json). Earlier host evidence above covers its recorded release; existing installations require an update.
