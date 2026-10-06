@@ -56,9 +56,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.14 |
+| Metadata version | 0.1.0-dev.15 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.13 |
+| Skills source | photocraft-skills / 0.1.0-dev.14 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -204,3 +204,5 @@ Current plugin `0.1.0-dev.11` pins independent source `0.1.0-dev.10` and maintai
 Fixed Photo plugin dev.11 / source dev.10 / maintained CLI 0.2.0-craft.1 now passes installed copied-alone smart placement/replacement/relink collection and moved revision (4.633s), PSD independent decoding and fontless regressions (two passes), twelve independent cold starts (51.647s), all 58 installed digests, public archives and four exact-tag CI runs. The default maintained runtime coexists with unchanged official 0.2.0. [Version-bound evidence](docs/evidence/codex-photocraft11-smart-first-use-20261006.json). Art mixed upgrade is verified below; full V1 remains open.
 
 Fixed smart mixed acceptance (2026-10-06): Art plugin dev.70 / source dev.47 / runtime dev.68 and Photo plugin dev.11 / source dev.10 / maintained CLI 0.2.0-craft.1 pass one installed native test (64.957s), ten independent Art cold starts, all 58 installed digest checks, five fixed bundle rebuilds and four exact-commit CI runs. Logo replacement preserves the poster smart transform, mask and non-target layers; affected logo/poster/intro/film rebuild, independent work is reused, twelve film frames are decoded independently, corrupt-frame recovery and moved five-child package verification pass. [Evidence](docs/evidence/codex-artcraft70-smart-mixed-first-use-20261006.json). Full V1, generic Skills CLI, GUI/model dispatch, persistent external links and external PSD fidelity remain open.
+
+Public-workflow reply validation is synchronized in the domain source candidates and has bounded native/Art protocol evidence. Fixed updated domain and Art distributions are still pending. [Candidate architecture](docs/PhotoCraft-Complete-Commands-Architecture.md) · [Evidence](docs/evidence/public-workflow-session-candidate-20261007.json).

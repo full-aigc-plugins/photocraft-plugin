@@ -51,5 +51,11 @@
   "protocolFaultAcceptance": "bounded-source-and-fixed-installed-cold-faults-passed; exhaustive commands and Art bundle remain open",
   "previousRevisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
   "currentReleaseDiscoveryEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
-  "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json"
+  "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
+  "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
+  "publicWorkflowCandidateStatus": "new fixed source snapshot vendored; actual installed-copy and Art upgraded bundle acceptance pending",
+  "publicWorkflowSourceRelease": {
+    "tag": "v0.1.0-dev.14",
+    "commit": "7f26b8d075f0813c3aaf90d8161ce194949d3dcc"
+  }
 }

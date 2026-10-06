@@ -80,3 +80,11 @@ flowchart LR
 ```
 
 Unit tests use real stdio child processes. Opt-in native tests inject six faulty replies only after a locked public CLI has actually saved the project, and verify one native save, no later operation, unknown receipts, native reopening, and delivery/skill hash preservation. This is bounded transport/recovery evidence; exhaustive command and GUI acceptance remains separate.
+
+## Public workflow reply validation candidate
+
+The complete-command executor already validates replies, while public `workflow.py` also consumes `Session.request` directly. The old transport let `content: [null]` reach Python decoding and omitted a structured unknown result. Shared Session now validates `tools/call` result objects, content lists/types, text strings and boolean `isError`. Valid native semantic errors remain known errors. Invalid replies raise `outcome_unknown` without replay; domain parameters and project semantics still require their own validation.
+
+[Candidate evidence](evidence/public-workflow-session-candidate-20261007.json) binds real stdio checks, 24 post-save native command faults across four domains, and healthy public workflows with reopening and targeted revision. The actual published Art dev.73 engine with its trusted public Vector adapter passes six post-save faults, blocks consumers, preserves attempt/budget, and never replays the frozen plan. Injection uses test-only loading hooks; the published engine and native executable remain unchanged.
+
+The same tool-content test fails against immutable Vector source dev.13. Candidate transports are synchronized into all 48 standalone domain skills. Plugin vendors and Art distributions still pin earlier immutable sources; new fixed releases and installed-copy acceptance remain pending. Proxy capture proves a real saved project can reopen, not that the product preserves failed staged projects. OpenSpec 8.9 and exhaustive-command/GUI task 8.3 remain open.

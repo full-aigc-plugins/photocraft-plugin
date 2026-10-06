@@ -55,7 +55,17 @@ class Session:
                     raise RuntimeError('outcome_unknown: missing_or_ambiguous_mcp_result; request not retried')
                 if 'error' in response:
                     raise RuntimeError('mcp_error: ' + json.dumps(response['error']))
-                return response['result']
+                result = response['result']
+                if method == 'tools/call':
+                    if (not isinstance(result, dict)
+                            or not isinstance(result.get('isError', False), bool)
+                            or not isinstance(result.get('content'), list)
+                            or any(not isinstance(entry, dict)
+                                   or not isinstance(entry.get('type'), str)
+                                   or (entry['type'] == 'text' and not isinstance(entry.get('text'), str))
+                                   for entry in result.get('content', []))):
+                        raise RuntimeError('outcome_unknown: invalid_tool_reply; request not retried')
+                return result
             remaining = deadline - time.monotonic()
             if remaining <= 0 or not select.select([self.process.stdout], [], [], remaining)[0]:
                 raise TimeoutError('outcome_unknown: request not retried')

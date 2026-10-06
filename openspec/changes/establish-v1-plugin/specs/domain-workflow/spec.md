@@ -158,3 +158,8 @@ Photocraft SHALL 为锁定反射目录每条命令保留完整参数原文、场
 - **WHEN** 已发送的原生编辑请求返回畸形或非有限 JSON、非对象响应、缺少结果、同时包含结果和错误、畸形工具内容，或写入通道失败使提交状态无法确认
 - **THEN** 客户端 SHALL 保留逐步回执并标记 outcome_unknown／unknown，不把协议故障当作编辑未发生，不留下只有 running 的未解释回执
 - **AND** 不启动替代会话、不重放请求、不执行后续编辑；已成功写出的原生文件保留，恢复先在新会话检查原文件与原请求身份
+
+#### Scenario: [PC-CM-001-WORKFLOW-REPLY] 原生创作工作流的工具结构检查
+- **GIVEN** 公开workflow使用Session.request调用tools/call，原生操作可能已提交
+- **WHEN** 结果非对象，isError非布尔，content非数组，内容项非对象，或text类型字段缺失／非字符串
+- **THEN** 协议客户端统一抛出outcome_unknown，公开工作流返回结构化错误而非未捕获类型异常，不重放调用。
