@@ -89,3 +89,19 @@ CRAFT_NATIVE_COMMANDS=1 python3 -B -m unittest discover -s tests -p test_native_
 完整命令入口补充了配套的创建／返工 JSON 示例、重新打开后的显式选择前置条件，以及原生保存重开、非目标对象与像素检查。每个独立技能均包含两个可执行计划。[调用指南](../skills/photocraft-use/references/command-usage.md#7-可执行局部返工--executable-targeted-revision)。全量逐命令及 GUI 验收保持开放。
 
 显式原生测试直接执行文档中的创建和返工计划，每次只复制一个技能并从空运行时公开下载。Film 变速保留第一镜头／转场／音轨；Effect 表达式变更保留合成与图层设置；Photo 不透明度变更保留其他层／效果／通道；Vector 填色变更保留其他图形／符号／画板。原交付与源／副本技能文件摘要必须保持相同。
+
+## 请求提交后的协议故障
+
+畸形或非有限 JSON、非对象／缺失／冲突响应、畸形工具／注册目录及断管现在统一产生未知结果，避免未处理异常或把结果误解为编辑未发生。已开始编辑步标为 unknown，此前成功步骤保留，不重放、不创建替代会话。可另起新会话打开复制的已保存原生工程进行检查，原失败目录保留。
+
+```mermaid
+flowchart LR
+    Send[编辑请求仅发送一次] --> Reply{回复是否可信}
+    Reply -->|是| State[记录原生成功或错误]
+    Reply -->|否| Unknown[记录 unknown 并停止]
+    Unknown --> Keep[保留回执与原生文件]
+    Keep --> Inspect[新会话只打开检查]
+    Inspect --> Revise[明确建立新修订计划]
+```
+
+单元测试使用真实 stdio 子进程；显式原生测试仅在锁定公开 CLI 实际保存工程成功后注入六种坏回复，检查原生保存仅一次、后续不执行、未知回执、工程重开与交付／技能摘要保全。本证据仅覆盖所列通信恢复边界，全量命令与 GUI 验收另行记录。

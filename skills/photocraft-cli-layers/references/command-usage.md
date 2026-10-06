@@ -92,3 +92,13 @@ The revision recipe is paired with commands-revision-create.json. Replace EXT wi
 返工验收必须另起会话重开 revised.EXT：FilmCraft 检查第二镜头 speed=2、durationFrames=12、总时长60帧，第一镜头、转场、音轨与设置保持；EffectCraft 在0.5秒检查 opacity 表达式结果80，蒙版、相机及其他图层保持；PhotoCraft 检查 Subject opacity=0.5，其他层、效果与通道保持；VectorCraft 检查目标由蓝变红，对照绿矩形、三个符号实例与画板保持。比较实际渲染目标与非目标像素，原工程与技能文件保持不变。
 
 Reopen revised.EXT in a separate native session and inspect the expected target state plus untouched objects. The opt-in test tests/test_native_command_revision.py verifies these persisted settings, rendered target/control pixels, and original-delivery/skill fingerprints. These four fixture cases do not establish acceptance of every command or GUI workflow.
+
+## 8. 协议故障与不明确结果 / Protocol faults and unknown outcomes
+
+请求发送后出现畸形或非有限 JSON、非对象响应、缺少 result、同时含 error 与 result、畸形工具内容／发现目录或断管时，回执标为 unknown。failure.json 与 journal.json 保留此前成功步骤；正在等待回复的编辑步标为 unknown，后续编辑不执行，不创建替代会话或重放请求。协议错误不证明原生操作未发生。
+
+Malformed/nonfinite JSON, non-object or missing/ambiguous responses, invalid tool/discovery content and broken writes produce unknown outcomes after submission. Preserve prior succeeded steps and mark a pending edit unknown. No replacement session, automatic replay or later edits are allowed. A protocol fault does not prove that the native operation did not occur.
+
+先保留整个失败目录并读取回执，检查原生文件是否已写出。若存在可信工程，使用新输出目录、--input 登记工程，在新的会话只打开／检查原工程；核验摘要、实际对象与所需修改，再明确建立新的修订计划。不能直接重跑原计划、删除失败目录或把输出文件存在当作全部任务成功。
+
+Keep the failed directory and inspect its receipts and any native file. When a trustworthy project exists, copy it with --input into a new output and open/inspect it in a fresh session. Check hashes and actual objects before constructing an explicit revision. File existence alone does not establish successful completion, and the original plan must not be blindly replayed.

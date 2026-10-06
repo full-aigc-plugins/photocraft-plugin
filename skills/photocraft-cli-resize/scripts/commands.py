@@ -107,6 +107,13 @@ def native_call(identifier, params):
     return tool, {key: identifier, "params": params}
 
 def parse_reply(reply, output=None, index=0):
+    if (not isinstance(reply, dict)
+            or ('isError' in reply and not isinstance(reply['isError'], bool))
+            or not isinstance(reply.get('content'), list)
+            or any(not isinstance(item, dict) or not isinstance(item.get('type'), str)
+                   or (item.get('type') == 'text' and not isinstance(item.get('text'), str))
+                   for item in reply['content'])):
+        raise RuntimeError('outcome_unknown: invalid_tool_reply')
     if reply.get("isError"):
         raise RuntimeError("command_failed: " + json.dumps(reply.get("content"), ensure_ascii=False))
     content = reply.get("content", [])
@@ -189,8 +196,11 @@ def runtime_rows(session, params=None):
     reply = session.request("tools/call", {"name": ROUTES[DOMAIN][0], "arguments": params or {}})
     result = parse_reply(reply)
     rows = result.get("commands") if isinstance(result, dict) else result
-    if not isinstance(rows, list):
-        raise RuntimeError("unexpected_registry")
+    if (not isinstance(rows, list)
+            or any(not isinstance(row, dict) or not isinstance(row.get('id'), str)
+                   or not row['id'] for row in rows)
+            or len({row['id'] for row in rows}) != len(rows)):
+        raise RuntimeError("outcome_unknown: unexpected_registry")
     return rows
 
 def execute(plan, output, runtime_home=None, mode="headless", connect=None, token_file=None,
@@ -246,7 +256,12 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             bindings[name] = {"path": relative if DOMAIN == "photocraft" else str(target), "sha256": digest}
             receipt["inputs"][name] = {"path": relative, "sha256": digest}
         with session_factory(backend_argv(installed["executable"], output, mode, connect, token_file)) as session:
-            available = {t["name"] for t in session.request("tools/list", {})["tools"]}
+            discovery = session.request("tools/list", {})
+            if (not isinstance(discovery, dict) or not isinstance(discovery.get('tools'), list)
+                    or any(not isinstance(tool, dict) or not isinstance(tool.get('name'), str)
+                           or not tool['name'] for tool in discovery['tools'])):
+                raise RuntimeError('outcome_unknown: unexpected_tools_reply')
+            available = {tool['name'] for tool in discovery['tools']}
             required = {native_call(s["command"], {})[0] if "command" in s else s["tool"]
                         for s in plan["operations"]}
             # 目录查询也是原生能力合同；旧服务不能冒充新入口。
@@ -334,4 +349,3 @@ def main():
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

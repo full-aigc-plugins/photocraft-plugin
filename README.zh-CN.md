@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+协议故障修复候选：本领域12项技能逐个单独复制、空运行时公开安装后，原生保存成功再注入六种坏回复全部通过（72例，零跳过）。不重放、未知回执、工程重开与交付／技能保全均已检查。[证据](docs/evidence/protocol-fault-first-use-20261007.json)。固定安装副本与Art领域包升级仍为独立门禁。
+
 固定插件 0.1.0-dev.13／技能源 0.1.0-dev.12 已通过安装后的返工门禁：隔离 Codex 发现全部58项技能零加载错误，本领域安装技能从空运行时直接执行文档创建／返工计划、保存重开与非目标保全。全部58项安装摘要不变，当前固定发行CI通过。[固定返工证据](docs/evidence/codex-complete-command-revision-first-use-20261007.json)。全量命令／GUI／模型验收保持开放。
 
 本领域 12 个技能逐个单独复制、从各自空运行时公开安装后，配套返工计划全部通过（62.759 秒，零跳过）。[返工证据](docs/evidence/complete-command-revision-first-use-20261007.json)。更新快照的真实固定宿主安装另设门禁。
@@ -52,9 +54,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.13 |
+| Metadata version | 0.1.0-dev.14 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.12 |
+| Skills source | photocraft-skills / 0.1.0-dev.13 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

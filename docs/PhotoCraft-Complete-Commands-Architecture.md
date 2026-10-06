@@ -64,3 +64,19 @@ All 12 independently copied skills passed separate empty-runtime public download
 The complete-command entry now includes paired executable creation/revision recipes, explicit selection prerequisites after reopening, and native persisted-state/non-target checks. Each standalone skill includes both JSON plans. [Usage](../skills/photocraft-use/references/command-usage.md#7-可执行局部返工--executable-targeted-revision). Full per-command and GUI acceptance remains open.
 
 The opt-in native test executes the documented creation and revision plans from one copied skill and a fresh public runtime. Film speed changes preserve the first clip/transition/audio; Effect expression changes preserve composition/layer settings; Photo opacity changes preserve the other layers/effects/channels; Vector fill changes preserve other shapes/symbols/artboards. Original deliveries and source/copied skill fingerprints must remain identical.
+
+## Protocol faults after submission
+
+Malformed/nonfinite JSON, non-object/missing/ambiguous responses, invalid tool/registry content and broken writes now produce an unknown outcome rather than an unhandled exception or a claim that no edit happened. Started edit steps are marked unknown; succeeded steps remain intact. The client does not replay or create a replacement session. A fresh session may inspect a copied saved native project, preserving the failed directory.
+
+```mermaid
+flowchart LR
+    Send[Send edit once] --> Reply{Trustworthy response?}
+    Reply -->|Yes| State[Record native success or error]
+    Reply -->|No| Unknown[Record unknown and stop]
+    Unknown --> Keep[Keep receipts and native files]
+    Keep --> Inspect[New session: open and inspect]
+    Inspect --> Revise[Explicit new revision plan]
+```
+
+Unit tests use real stdio child processes. Opt-in native tests inject six faulty replies only after a locked public CLI has actually saved the project, and verify one native save, no later operation, unknown receipts, native reopening, and delivery/skill hash preservation. This is bounded transport/recovery evidence; exhaustive command and GUI acceptance remains separate.

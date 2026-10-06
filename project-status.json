@@ -29,10 +29,11 @@
     "8.2": "docs/evidence/complete-commands-20261007.json",
     "8.4": "docs/evidence/codex-complete-command-first-use-20261007.json",
     "8.5": "docs/evidence/complete-command-revision-first-use-20261007.json",
-    "8.6": "docs/evidence/codex-complete-command-revision-first-use-20261007.json"
+    "8.6": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
+    "8.7": "docs/evidence/protocol-fault-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
-  "hostValidationStatus": "bounded-fixed-installed-cold-revision-passed",
+  "hostValidationStatus": "previous-fixed-revision-passed; protocol repair installed gate pending",
   "fontlessFixedReleaseEvidence": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json",
   "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json",
   "smartFixedDomainEvidence": "docs/evidence/codex-photocraft11-smart-first-use-20261006.json",
@@ -44,6 +45,8 @@
   "completeCommandRevisionEvidence": "docs/evidence/complete-command-revision-first-use-20261007.json",
   "completeCommandRevisionStatus": "bounded-source-and-fixed-installed-cold-revision-passed; exhaustive command acceptance remains open",
   "previousFixedHostEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
-  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
-  "completeCommandRevisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json"
+  "completeCommandRevisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
+  "protocolFaultCandidateEvidence": "docs/evidence/protocol-fault-first-use-20261007.json",
+  "protocolFaultAcceptance": "bounded-source-cold-faults-passed; fixed installed and Art bundle pending",
+  "previousRevisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json"
 }

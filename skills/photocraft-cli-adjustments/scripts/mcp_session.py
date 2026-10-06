@@ -23,8 +23,13 @@ class Session:
             raise
 
     def send(self, value):
-        self.process.stdin.write((json.dumps(value, allow_nan=False) + '\n').encode())
-        self.process.stdin.flush()
+        encoded = (json.dumps(value, allow_nan=False) + '\n').encode()
+        try:
+            self.process.stdin.write(encoded)
+            self.process.stdin.flush()
+        except OSError:
+            # 写入／flush 失败不能证明对端没有接收编辑请求。
+            raise RuntimeError('outcome_unknown: mcp_write_failed; request not retried') from None
 
     def request(self, method, params):
         self.sequence += 1
@@ -38,9 +43,16 @@ class Session:
                 line, self.buffer = self.buffer.split(b'\n', 1)
                 if not line.strip():
                     continue
-                response = json.loads(line)
+                try:
+                    response = json.loads(line, parse_constant=lambda _: (_ for _ in ()).throw(ValueError('nonfinite')))
+                except (ValueError, UnicodeError):
+                    raise RuntimeError('outcome_unknown: invalid_mcp_json; request not retried') from None
+                if not isinstance(response, dict):
+                    raise RuntimeError('outcome_unknown: invalid_mcp_response; request not retried')
                 if response.get('id') != identifier:
                     continue
+                if ('error' in response) == ('result' in response):
+                    raise RuntimeError('outcome_unknown: missing_or_ambiguous_mcp_result; request not retried')
                 if 'error' in response:
                     raise RuntimeError('mcp_error: ' + json.dumps(response['error']))
                 return response['result']
