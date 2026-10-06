@@ -35,7 +35,8 @@
     "8.9": "docs/evidence/codex-public-workflow-session-first-use-20261007.json",
     "3.10": "docs/evidence/failed-stage-candidate-20261007.json",
     "3.11": "docs/evidence/failed-stage-candidate-20261007.json",
-    "3.12": "docs/evidence/codex-failed-stage-first-use-20261007.json"
+    "3.12": "docs/evidence/codex-failed-stage-first-use-20261007.json",
+    "8.10": "docs/evidence/photocraft-inner-json-command-candidate-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",

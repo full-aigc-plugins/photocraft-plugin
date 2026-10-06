@@ -163,3 +163,10 @@ Photocraft SHALL 为锁定反射目录每条命令保留完整参数原文、场
 - **GIVEN** 公开workflow使用Session.request调用tools/call，原生操作可能已提交
 - **WHEN** 结果非对象，isError非布尔，content非数组，内容项非对象，或text类型字段缺失／非字符串
 - **THEN** 协议客户端统一抛出outcome_unknown，公开工作流返回结构化错误而非未捕获类型异常，不重放调用。
+
+
+#### Scenario: [PC-CM-001-INNER-JSON] 内层响应的数值与键不明确
+
+- **WHEN** 已提交请求的工具 text JSON 包含 NaN／Infinity、数值溢出或重复对象键
+- **THEN** 完整命令入口 SHALL 在记录成功或绑定返回值前标记 outcome_unknown／unknown，保留原调用及原文件，停止后续编辑且不重放
+- **AND** 普通文字与图片工具保持原公开合同；单纯目录和单元测试不能代替固定安装与原生保存重开验收
