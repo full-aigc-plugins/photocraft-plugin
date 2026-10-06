@@ -18,3 +18,5 @@ Retries cover SSL EOF, timeout, connection failures, incomplete reads, HTTP 408/
 All standalone skills receive the same canonical bootstrap through suite synchronization. Plugins vendor a tagged source snapshot. ArtCraft must pin a new domain bundle before it receives this behavior; its package downloader alone cannot recover a native bootstrap subprocess.
 
 Candidate regression passed. Earlier plugin19/18 and Art80 native editing checks passed, but the independent cold installation gate failed on SSL EOF. Those failures remain evidence. A candidate change and mocked network tests do not close fixed release or full command acceptance. OpenSpec runtime-distribution owns this increment.
+
+Fixed release status update: new macOS arm64 installed/native subgates passed. Exhaustive commands, GUI, model and fullV1 remain open. [Evidence](evidence/codex-native-download-first-use-20261007.json).

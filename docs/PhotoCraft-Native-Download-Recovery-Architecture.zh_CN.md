@@ -18,3 +18,5 @@ flowchart LR
 全部独立技能通过同步获得同一安装器；插件从不可变技能源标签收录。ArtCraft 必须固定新的领域包才能获得此行为；仅 Art 包下载器的重试无法恢复领域安装子进程。
 
 候选回归通过。此前插件19/18及Art80的原生编辑验证通过，但独立冷安装门禁因SSL EOF失败，保留失败证据。候选代码及模拟网络测试不能关闭固定发布验收或全部命令验收。本增量由现有 OpenSpec runtime-distribution 管理。
+
+固定发布状态更新：新的macOS arm64安装与原生子门禁通过，未覆盖全部命令、GUI、模型及完整V1。 [Evidence](evidence/codex-native-download-first-use-20261007.json).

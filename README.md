@@ -1,10 +1,12 @@
 # PhotoCraft Agent Plugin
 
-Current plugin: `0.1.0-dev.19`; skill source: `0.1.0-dev.17`; bounded native download recovery is published; fixed installed cold acceptance pending.
+Fixed native first-use and complete-command recovery acceptance passed:58 standalone cold installations, ten Art all-domain cold installations, four partial-download SSL EOF recoveries,72 post-save faults, four healthy command revisions and mixed HD revision/recovery/moved delivery. Installed identities remain unchanged. Only domain2.10/8.11 and Art4.10 close; exhaustive2639-command, GUI, model, generic Skills CLI and fullV1 gates remain open. [Version-bound evidence](docs/evidence/codex-native-download-first-use-20261007.json).
 
-Native download recovery candidate: up to three read-only attempts discard partial archives. Earlier fixed cold installs failed on SSL EOF; new fixed installed acceptance remains open.
+Current plugin: `0.1.0-dev.19`; skill source: `0.1.0-dev.17`; fixed installed macOS arm64 acceptance passed; fullV1 remains open.
 
-Current plugin: `0.1.0-dev.18`; skill source: `0.1.0-dev.16`; complete-command inner JSON fix is published, fixed installed acceptance pending.
+Historical candidate observation before fixed acceptance: Native download recovery candidate: up to three read-only attempts discard partial archives. Earlier fixed cold installs failed on SSL EOF; new fixed installed acceptance remains open.
+
+Previous version-bound plugin: `0.1.0-dev.18`; skill source: `0.1.0-dev.16`; complete-command inner JSON fix is published, fixed installed acceptance pending.
 
 Previous version-bound failed-stage acceptance: plugin dev.17, standalone source dev.15. All58 independent CLI cold starts,24 original-stage native fault cases and37 native scene tests plus6 contracts pass. Art77 bundle upgrade remains open. [Evidence](docs/evidence/codex-failed-stage-first-use-20261007.json).
 
@@ -176,7 +178,7 @@ The current development milestone adds hash-bound exchange loss reports to nativ
 
 The source suite contains 12 independently installable skills with setup, public CLI operations and focused tasks. [Architecture and catalogue](docs/PhotoCraft-Skill-Suite-Architecture.md). Runtime and plugin versions are separate; prior host evidence retains its original version scope.
 
-Current plugin: `0.1.0-dev.5`; skill suite: `0.1.0-dev.4`. The corrected examples resolve scripts from the actual host-loaded `SKILL.md` directory. All skills passed isolated entry-point checks in user, project and plugin layouts with spaces. [Path evidence](docs/evidence/installed-skill-paths.json). Earlier host evidence above covers its recorded release; existing installations require an update.
+Previous version-bound plugin: `0.1.0-dev.5`; skill suite: `0.1.0-dev.4`. The corrected examples resolve scripts from the actual host-loaded `SKILL.md` directory. All skills passed isolated entry-point checks in user, project and plugin layouts with spaces. [Path evidence](docs/evidence/installed-skill-paths.json). Earlier host evidence above covers its recorded release; existing installations require an update.
 
 Plugin `0.1.0-dev.5` corrects the whole-skill digests by fetching the immutable public source tag, without local Python caches. Plugin tag `v0.1.0-dev.4` is superseded and must not be installed because its source digests included ignored development caches.
 

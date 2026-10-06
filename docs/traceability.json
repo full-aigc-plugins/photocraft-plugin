@@ -49,7 +49,8 @@
       ],
       "owner": "Runtime owner",
       "status": "in-progress",
-      "candidateEvidence": "docs/evidence/photocraft-native-download-candidate-20261007.json"
+      "candidateEvidence": "docs/evidence/photocraft-native-download-candidate-20261007.json",
+      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json"
     },
     {
       "requirement": "PC-TX-001",
@@ -265,7 +266,8 @@
       "protocolFaultCandidateEvidence": "docs/evidence/protocol-fault-first-use-20261007.json",
       "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
       "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
-      "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json"
+      "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json",
+      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json"
     },
     {
       "requirement": "PC-TX-004",
