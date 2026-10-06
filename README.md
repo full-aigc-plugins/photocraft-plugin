@@ -160,3 +160,5 @@ Frozen plugin dev.6 / skills dev.5 pass actual installed single-text-skill Chine
 Candidate plugin dev.7 vendors immutable skills dev.6 with explicit pixel-protected source revisions. Native CLI remains 0.2.0. Full source native tests: 44 passed, 0 skips; installed-host proof remains pending. [Architecture](docs/PhotoCraft-Protected-Region-Architecture.md), [proof](docs/evidence/protected-regions-first-use.json).
 
 Fixed PhotoCraft plugin dev.7 / skills dev.6 and ArtCraft plugin dev.30 / skills dev.26 pass installed native protection/handoff proof; all 58 installed skill hashes remain unchanged. Only the scoped protection tasks are complete; overall implementation and creative acceptance remain incomplete. [Proof](docs/evidence/codex-release30-protected-native-20261006.json).
+
+Candidate plugin dev.8 pins PhotoCraft skills dev.7 and its bounded retouch workflow. All 45 source native regression tests passed; actual installed-plugin revalidation remains pending. [Evidence](docs/evidence/retouch-workflow-first-use.json).

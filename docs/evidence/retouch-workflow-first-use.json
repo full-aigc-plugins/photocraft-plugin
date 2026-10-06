@@ -1,0 +1,169 @@
+{
+  "schema": "photocraft-retouch-workflow-first-use/v1",
+  "python": "3.14.3",
+  "runtimeSha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+  "sourceFiles": {
+    "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "design.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+    "plan.json": "58a598c0b480b12f91569c7c4698d18a59a9f22ccd5d9d96057369440da6013d",
+    "design.psd": "5f2df3c313a2bf7eb1739e5168867ff92e4a6639c77a9761d528a3953bfd0f40",
+    "exchange-loss.json": "db575a01ac25188d5fcda51855e98ca769bdcc56f3d806ad93e07a96e40d0c5e",
+    "psd-inspection.json": "9db9aa447b6eaa71687db7f2a56771c70f42d17ed32bbe70b9dd6e18da99744a",
+    "native.json": "c203821c7d498fa20f705cd83bce946a7ff22fbfe08dc0fa17b6a1500bd6301d",
+    "project.pcraft": "911ba3dc70620483ceb6f61ce7323e34c67b6abd91ac8376539679ba56e58712",
+    "manifest.json": "3e81f85353c9160ba78959da236fdf4b94bd40373b26fbcd245d0bccc1368d03",
+    "operations.json": "ad0f0e5dc28569c87cc6dd4b4f41395e204607c0a50765a513e67f6f538e908e"
+  },
+  "paintedFiles": {
+    "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "design.png": "2f45982e38d9c4ce67665fbc2433d47705e378f4ae49b177e5957d6b61b0dba7",
+    "protection-after.png": "2f45982e38d9c4ce67665fbc2433d47705e378f4ae49b177e5957d6b61b0dba7",
+    "plan.json": "ba2656a5967ccac57e823e38e8bf90f3505e108b81c682327993fe83e11eb8ac",
+    "design.psd": "975a9d11387c11aaac13b2ad50c915fdf7ef0fa5f9f3b485190d96a835db7da5",
+    "exchange-loss.json": "f17c773194fbacfe0e27a321590dd4f49efc4e1ce4070c2d7948d7a023ec24c7",
+    "pixel-protection.json": "3354624d8fbd15dcdc95b71e6b070adef1162181a954c8d10a279b175b84850b",
+    "psd-inspection.json": "9db9aa447b6eaa71687db7f2a56771c70f42d17ed32bbe70b9dd6e18da99744a",
+    "native.json": "c203821c7d498fa20f705cd83bce946a7ff22fbfe08dc0fa17b6a1500bd6301d",
+    "protection-before.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+    "project.pcraft": "c70f96c21eb1052f9162da03ea0125ae0c07d9ab20e00778fbcd79ccbdb020b1",
+    "operations.json": "4c091fef9a9214f422b4ed087748b0bd32c4fc787069870a49582636097f916f"
+  },
+  "operations": {
+    "paint.cloneStamp": {
+      "files": {
+        "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+        "design.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+        "protection-after.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+        "plan.json": "c62904e6780f51c59607eed06b77cd5edccf50804fbf1ff6e93343229ae52460",
+        "design.psd": "5f2df3c313a2bf7eb1739e5168867ff92e4a6639c77a9761d528a3953bfd0f40",
+        "exchange-loss.json": "db575a01ac25188d5fcda51855e98ca769bdcc56f3d806ad93e07a96e40d0c5e",
+        "pixel-protection.json": "3354624d8fbd15dcdc95b71e6b070adef1162181a954c8d10a279b175b84850b",
+        "psd-inspection.json": "9db9aa447b6eaa71687db7f2a56771c70f42d17ed32bbe70b9dd6e18da99744a",
+        "native.json": "c203821c7d498fa20f705cd83bce946a7ff22fbfe08dc0fa17b6a1500bd6301d",
+        "protection-before.png": "2f45982e38d9c4ce67665fbc2433d47705e378f4ae49b177e5957d6b61b0dba7",
+        "project.pcraft": "911ba3dc70620483ceb6f61ce7323e34c67b6abd91ac8376539679ba56e58712",
+        "operations.json": "b58c05851a290999b7086f3371a16b754b8334f003239bc65f4f26b4b78b1997"
+      },
+      "protection": {
+        "schema": "photocraft-pixel-protection/v1",
+        "canvas": {
+          "width": 320,
+          "height": 400
+        },
+        "regions": [
+          {
+            "id": "header",
+            "rect": [
+              0,
+              0,
+              320,
+              100
+            ],
+            "pixels": 32000,
+            "changedPixels": 0,
+            "beforeSha256": "d50d9461af6a13f32c48c4d7db3e4edc846773762e83b87c3da7e81733de140f",
+            "afterSha256": "d50d9461af6a13f32c48c4d7db3e4edc846773762e83b87c3da7e81733de140f"
+          },
+          {
+            "id": "footer",
+            "rect": [
+              0,
+              240,
+              320,
+              160
+            ],
+            "pixels": 51200,
+            "changedPixels": 0,
+            "beforeSha256": "f003a615bb07074597e9ea5ab6256eadcd0371c703599520ba6c679ac6e68674",
+            "afterSha256": "f003a615bb07074597e9ea5ab6256eadcd0371c703599520ba6c679ac6e68674"
+          }
+        ],
+        "scope": "exact 8-bit RGB/RGBA noninterlaced PNG samples and equal color-profile chunks; no visual or creative acceptance"
+      }
+    },
+    "paint.healingBrush": {
+      "files": {
+        "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+        "design.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+        "protection-after.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+        "plan.json": "ffad310a9c319af721ea5587579140173266c19e5e16508c456786c65b71974b",
+        "design.psd": "5f2df3c313a2bf7eb1739e5168867ff92e4a6639c77a9761d528a3953bfd0f40",
+        "exchange-loss.json": "db575a01ac25188d5fcda51855e98ca769bdcc56f3d806ad93e07a96e40d0c5e",
+        "pixel-protection.json": "3354624d8fbd15dcdc95b71e6b070adef1162181a954c8d10a279b175b84850b",
+        "psd-inspection.json": "9db9aa447b6eaa71687db7f2a56771c70f42d17ed32bbe70b9dd6e18da99744a",
+        "native.json": "c203821c7d498fa20f705cd83bce946a7ff22fbfe08dc0fa17b6a1500bd6301d",
+        "protection-before.png": "2f45982e38d9c4ce67665fbc2433d47705e378f4ae49b177e5957d6b61b0dba7",
+        "project.pcraft": "911ba3dc70620483ceb6f61ce7323e34c67b6abd91ac8376539679ba56e58712",
+        "operations.json": "25ab916695f3dc187f7be2d0cf21d3e8b51d14cb611f4a7c9b2d7c0ce210807f"
+      },
+      "protection": {
+        "schema": "photocraft-pixel-protection/v1",
+        "canvas": {
+          "width": 320,
+          "height": 400
+        },
+        "regions": [
+          {
+            "id": "header",
+            "rect": [
+              0,
+              0,
+              320,
+              100
+            ],
+            "pixels": 32000,
+            "changedPixels": 0,
+            "beforeSha256": "d50d9461af6a13f32c48c4d7db3e4edc846773762e83b87c3da7e81733de140f",
+            "afterSha256": "d50d9461af6a13f32c48c4d7db3e4edc846773762e83b87c3da7e81733de140f"
+          },
+          {
+            "id": "footer",
+            "rect": [
+              0,
+              240,
+              320,
+              160
+            ],
+            "pixels": 51200,
+            "changedPixels": 0,
+            "beforeSha256": "f003a615bb07074597e9ea5ab6256eadcd0371c703599520ba6c679ac6e68674",
+            "afterSha256": "f003a615bb07074597e9ea5ab6256eadcd0371c703599520ba6c679ac6e68674"
+          }
+        ],
+        "scope": "exact 8-bit RGB/RGBA noninterlaced PNG samples and equal color-profile chunks; no visual or creative acceptance"
+      }
+    }
+  },
+  "protectedStrokeRejected": true,
+  "allSourceFilesPreserved": true,
+  "scope": "single copied skill, fresh online install, system-only PATH; bounded solid-colour fixture, no creative quality acceptance",
+  "status": "source-native-passed-release-and-installed-plugin-pending",
+  "red": {
+    "result": "1 failed in 5.741s",
+    "reason": "unsupported_command when public workflow first executes paint.stroke"
+  },
+  "green": {
+    "result": "1 passed in 6.608s",
+    "python": "3.14.3",
+    "freshOnlineRuntime": true
+  },
+  "sourceSha256": {
+    "skills/photocraft-use/scripts/workflow.py": "ffcbf758d3ec70e9e01dd57af9b97c0065950ba34c75d8b078acd893e2324536",
+    "tests/test_retouch_workflow_first_use.py": "4d006822b4b271354fffb887e6e00413d661af2391466fe5a603eee3afb479bc"
+  },
+  "fullNativeRegression": {
+    "tests": 45,
+    "passed": 45,
+    "skipped": 0,
+    "seconds": 90.89,
+    "python": "3.13.5",
+    "workflowPython": "3.14.3 for tests declaring CRAFT_WORKFLOW_PYTHON",
+    "scope": "full declared native regression; individual cold-install test separately used isolated Python 3.14.3; not all tests are cold installs"
+  },
+  "defaultRegression": {
+    "tests": 45,
+    "passed": 30,
+    "skipped": 15,
+    "seconds": 7.298
+  }
+}

@@ -27,7 +27,7 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 
 `asset.place` 是本助手操作，不是上游命令。它使用限定读取根内的 `doc_open`，把素材复制到目标文档的独立像素图层，支持 `asset`、`center`、`name` 参数。它不创建链接图层或智能对象，不执行 MCP 明确禁止的带外文件命令。
 
-其他操作是白名单内原生命令：形状、文字、填充/调整图层、图层选择与命名、像素/矢量蒙版、选区和图像/画布尺寸。执行在同一 headless MCP 会话；读写能力根只覆盖本次暂存目录。
+其他操作是白名单内原生命令：形状、文字、填充/调整图层、图层选择与命名、像素/矢量蒙版、选区和图像/画布尺寸，以及 `paint.stroke`、`paint.cloneStamp`、`paint.healingBrush`。执行在同一 headless MCP 会话；读写能力根只覆盖本次暂存目录。
 
 ## 局部修改与尺寸变体
 
@@ -44,3 +44,9 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 交付包含 `.pcraft`、平面导出、可选 PSD、登记素材、操作记录、原生/PSD 检查结果与文件摘要。PNG 的“图层被扁平化”是平面导出特性；原生工程必须保留独立图层。兼容警告原样保留，不能仅凭 PSD 写入成功宣称无损。
 
 超时不自动重试有副作用的命令；失败不会发布目标目录。助手尚未代替插件级任务账本、跨插件恢复和宿主验收。
+
+## 修图另存与保护区域
+
+修图计划先执行 `layer.select`，用 `{"$ref":"product.layer"}` 或已核验的图层 ID 选择像素图层，再执行上述三个笔触命令。笔刷 hardness/opacity/flow 为 0..1；仿制图章和修复笔刷 hardness 为 0..100，opacity/flow 为 1..100，并显式提供 source 或 offset。不要混用单位。
+
+通过 workflow.py 的 `--source` 另存修订，可同时声明 `protectedRegions` 并请求 PNG/PSD；实际保存重开后才发布交付。直接调用原生 cli.py run 不会执行 Python 工作流保护区域门禁。更多绘画命令虽可被原生 CLI 列出，但不因此进入此工作流白名单。

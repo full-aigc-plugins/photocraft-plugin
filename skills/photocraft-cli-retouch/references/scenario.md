@@ -45,3 +45,7 @@ python3 -I -B "$SKILL_DIR/scripts/cli.py" -- run "$SOURCE_PROJECT" \
 ```
 
 `source` 是第一个笔触点对应的源采样位置，坐标按真实图像替换；克隆与修复均应返回非空 `damage`。已测样本包含蓝色笔触、从邻近原色区克隆和修复，修改区回到源色，保护区域和文字图层保持不变。这是有界技术样本，不证明任意复杂纹理的修复质量。
+
+## 公开工作流修图
+
+需要保护指定区域并另存完整交付时，使用本技能 `scripts/workflow.py`。计划中先 `layer.select`，再执行 `paint.stroke`、`paint.cloneStamp` 或 `paint.healingBrush`；原生参数和坐标沿用上例。添加 expectedProjectSha256、protectedRegions、exports，并传入源交付目录。工作流保存并重开 `.pcraft`，保留素材和操作记录；保护区变化时不发布目标目录。直接原生 `run` 不包含此保护门禁。

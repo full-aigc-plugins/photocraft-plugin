@@ -26,6 +26,7 @@ ALLOWED = {
     'layer.layerMask.revealSelection', 'layer.layerMask.hideSelection',
     'layer.layerMask.enabled', 'layer.vectorMask.add', 'layer.vectorMask.edit',
     'select.rect', 'select.deselect', 'asset.place',
+    'paint.stroke', 'paint.cloneStamp', 'paint.healingBrush',
     'image.imageSize', 'image.canvasSize',
 }
 

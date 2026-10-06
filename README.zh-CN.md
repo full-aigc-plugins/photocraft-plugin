@@ -160,3 +160,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 候选插件 dev.7 同步固定技能 dev.6，新增源工程局部修改像素保护。原生 CLI 保持 0.2.0。源仓全量原生测试 44 项通过、0 跳过；实际宿主安装复验尚待完成。[架构](docs/PhotoCraft-Protected-Region-Architecture.zh_CN.md)、[证据](docs/evidence/protected-regions-first-use.json)。
 
 固定 PhotoCraft 插件 dev.7／技能 dev.6 与 ArtCraft 插件 dev.30／技能 dev.26 的实际安装原生保护／交接复验通过；五插件全部 58 个技能摘要不变。只完成对应保护任务，整体实现和创作接受仍未完成。[证据](docs/evidence/codex-release30-protected-native-20261006.json)。
+
+候选插件 dev.8 固定 PhotoCraft 技能源 dev.7，接通有界修图工作流。源码 45 项原生回归通过；实际安装后的插件复验仍待完成。[证据](docs/evidence/retouch-workflow-first-use.json)。
