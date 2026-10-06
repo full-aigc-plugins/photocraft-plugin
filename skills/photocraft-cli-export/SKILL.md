@@ -48,3 +48,15 @@ PSD 重开检查图层结构但不宣称完整保真；平面输出明确丢失�
 - 安装/诊断需要时交给 **photocraft-cli-setup**，完整任务路由交给 **photocraft-use**；缺少技能时使用 `npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。不通过相邻文件路径加载其他技能。
 
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。PhotoCraft bridge 的 control-token 是本地应用访问控制，与云登录不同。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
+
+## 完整原生命令使用
+
+当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+```
+
+新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。

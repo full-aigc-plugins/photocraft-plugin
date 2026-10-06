@@ -1,5 +1,13 @@
 # PhotoCraft Agent Plugin
 
+## 完整原生命令入口
+
+本地候选：skills dev.11 / plugin dev.12；公开发行及宿主安装验收待完成。
+
+748 条命令现在均有逐项参数说明、技能归属与同会话调用入口。运行 `commands.py list / describe / check / run`；原生状态按实时 enabled 校验。旧工作流的 32 项交付合同保留。GUI 命令需显式 bridge，命令目录覆盖不代表全量验收。
+
+[架构与操作指南](docs/PhotoCraft-Complete-Commands-Architecture.zh_CN.md) · [逐项参考](skills/photocraft-use/references/command-reference.md) · [可运行示例](skills/photocraft-use/examples/commands-advanced.json)
+
 独立技能驱动的保留图层的图像编辑与平面设计.
 
 [English](README.md) | [简体中文](README.zh-CN.md)
@@ -34,9 +42,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.11 |
+| Metadata version | 0.1.0-dev.12 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.10 |
+| Skills source | photocraft-skills / v0.1.0-dev.11 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

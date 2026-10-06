@@ -237,6 +237,17 @@
       "owner": "Skills owner",
       "status": "bounded-verification-passed",
       "evidence": "docs/evidence/skill-suite.json"
+    },
+    {
+      "requirement": "PC-CM-001",
+      "capability": "domain-workflow",
+      "tasks": [
+        "8.1",
+        "8.2",
+        "8.3"
+      ],
+      "owner": "Skills owner",
+      "status": "in-progress"
     }
   ]
 }

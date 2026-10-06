@@ -1,0 +1,108 @@
+{
+  "schema": "craft-complete-command-evidence/v1",
+  "date": "2026-10-07",
+  "domain": "photocraft",
+  "documentationCommands": 748,
+  "workflowOperations": 32,
+  "workflowNativeCommands": 30,
+  "allCommandsRouted": true,
+  "newRegression": {
+    "passed": 12,
+    "failed": 0,
+    "initialRed": "8 tests failed because commands.py entry did not exist"
+  },
+  "defaultRegression": {
+    "total": 75,
+    "passed": 55,
+    "skipped": 20,
+    "failed": 0
+  },
+  "nativeSample": {
+    "schema": "craft-native-command-sample/v1",
+    "domain": "photocraft",
+    "result": "PASS",
+    "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+    "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+    "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+    "createOperations": 10,
+    "reopenOperations": 3,
+    "executedCommands": [
+      "edit.assignProfile",
+      "edit.convertToProfile",
+      "file.new",
+      "layer.layerStyle.dropShadow",
+      "layer.newAdjustmentLayer.curves",
+      "layer.newAdjustmentLayer.levels",
+      "shape.create"
+    ],
+    "savedProjectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+    "checks": [
+      "isolated single-skill copy",
+      "live command context",
+      "actual return references",
+      "native save and reopen",
+      "persisted domain settings",
+      "96x64 rendered output",
+      "source project and skill unchanged"
+    ],
+    "guiAcceptance": "NOT_RUN",
+    "fullPerCommandAcceptance": "NOT_RUN",
+    "coldInstall": "NOT_RUN"
+  },
+  "testDriverSha256": "c4b410772c89813478c2e4a4e081985c90c4c821eb80d7534c4cb1e808bad74f",
+  "sourceSkillCount": 12,
+  "scope": "Complete parameter documentation and native invocation route; bounded native sample, not all-command or GUI acceptance",
+  "fullPerCommandAcceptance": "NOT_RUN",
+  "fixedInstalledHostAcceptance": "NOT_RUN",
+  "publication": "local tagged candidate; not published by this change",
+  "verificationCommands": [
+    "python3 -B scripts/build_command_coverage.py --check",
+    "python3 -B scripts/sync_skill_suite.py --check",
+    "python3 -B -m unittest discover -s tests -v",
+    "CRAFT_NATIVE_COMMANDS=1 python3 -B -m unittest discover -s tests -p test_native_commands.py -v"
+  ],
+  "sourceVersion": "0.1.0-dev.11",
+  "pluginVersion": "0.1.0-dev.12",
+  "vendor": {
+    "result": "PASS",
+    "sourceTag": "v0.1.0-dev.11",
+    "sourceCommit": "1ea96325e1d253d63b4aeaebd988a4c7f111c8f4",
+    "skills": 12,
+    "checks": [
+      "local immutable tagged source checkout",
+      "per-skill lock digest and source comparison"
+    ]
+  },
+  "vendoredNativeSample": {
+    "schema": "craft-native-command-sample/v1",
+    "domain": "photocraft",
+    "result": "PASS",
+    "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+    "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+    "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+    "createOperations": 10,
+    "reopenOperations": 3,
+    "executedCommands": [
+      "edit.assignProfile",
+      "edit.convertToProfile",
+      "file.new",
+      "layer.layerStyle.dropShadow",
+      "layer.newAdjustmentLayer.curves",
+      "layer.newAdjustmentLayer.levels",
+      "shape.create"
+    ],
+    "savedProjectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+    "checks": [
+      "isolated single-skill copy",
+      "live command context",
+      "actual return references",
+      "native save and reopen",
+      "persisted domain settings",
+      "96x64 rendered output",
+      "source project and skill unchanged"
+    ],
+    "guiAcceptance": "NOT_RUN",
+    "fullPerCommandAcceptance": "NOT_RUN",
+    "coldInstall": "NOT_RUN"
+  }
+}
