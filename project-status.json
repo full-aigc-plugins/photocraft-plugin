@@ -39,7 +39,8 @@
     "8.10": "docs/evidence/photocraft-inner-json-command-candidate-20261007.json",
     "2.9": "docs/evidence/photocraft-native-download-candidate-20261007.json",
     "2.10": "docs/evidence/codex-native-download-first-use-20261007.json",
-    "8.11": "docs/evidence/codex-native-download-first-use-20261007.json"
+    "8.11": "docs/evidence/codex-native-download-first-use-20261007.json",
+    "8.12": "docs/evidence/codex-native-gateway-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",
