@@ -172,3 +172,5 @@ Installed plugin dev.9 / skill source dev.8 supplementary first-use acceptance v
 Image-only workflow font preconditions: [architecture](docs/PhotoCraft-Font-Preconditions-Architecture.md). Source dev.9 candidate passes public cold native image-only create/revision and independent PNG/PSD checks; actual fixed-plugin revalidation remains pending.
 
 Fixed plugin dev.10 / source dev.9 passes actual Codex 0.153.4 installation and copied-alone image-only cold native acceptance (5.601s). All 58 discovered installed skill hashes remain unchanged. ArtCraft upgraded fixed mixed acceptance remains separate. [Proof](docs/evidence/codex-photo10-fontless-first-use-20261006.json).
+
+Fixed installed matrix Film9 / Effect8 / Photo10 / Vector11 / Art61 passes registered PNG/JPEG Vector→Photo replacement/reuse (1 test), four-domain native first use/recovery/package (3 tests), and all 22 updated Photo/Art single-skill cold CLI starts (190.051s). All 58 installed skill hashes are preserved. SVG mixed input, dynamic transparent sequence and full creative acceptance remain open. [Proof](docs/evidence/codex-release61-vector-photo-first-use-20261006.json).

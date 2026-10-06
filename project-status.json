@@ -19,8 +19,10 @@
     "4.21": "docs/evidence/codex-release31-retouch-native-20261006.json",
     "4.22": "docs/evidence/codex-photo9-layout-first-use-20261006.json",
     "4.23": "docs/evidence/codex-photo9-independent-psd-first-use-20261006.json",
-    "4.24": "docs/evidence/fontless-source-candidate-20261006.json"
+    "4.24": "docs/evidence/fontless-source-candidate-20261006.json",
+    "4.25": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-photo9-layout-first-use-20261006.json",
-  "hostValidationStatus": "bounded-installed-native-layout-passed"
+  "hostValidationStatus": "bounded-installed-native-layout-passed",
+  "fontlessFixedReleaseEvidence": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json"
 }

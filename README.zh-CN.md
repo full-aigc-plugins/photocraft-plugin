@@ -172,3 +172,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 纯图片工作流字体前置条件：[架构](docs/PhotoCraft-Font-Preconditions-Architecture.zh_CN.md)。技能源 dev.9 候选通过公开冷启动原生创建／修订与独立 PNG／PSD 检查；固定插件实际安装复验仍待完成。
 
 固定插件 dev.10／技能源 dev.9 通过实际 Codex 0.153.4 安装及单技能纯图片冷启动原生验收（5.601 秒）；58 个已发现安装技能摘要全部不变。升级后的 ArtCraft 固定混合验收单独执行。[证据](docs/evidence/codex-photo10-fontless-first-use-20261006.json)。
+
+固定已安装矩阵 Film9／Effect8／Photo10／Vector11／Art61 通过登记 PNG／JPEG 的 Vector→Photo 替换复用（1 项）、四领域原生首用／恢复／打包（3 项），以及更新的 Photo／Art 全部 22 技能独立空缓存 CLI 检查（190.051 秒）；58 个安装技能摘要保持不变。SVG 混合输入、动态透明序列与完整创作验收仍开放。[证据](docs/evidence/codex-release61-vector-photo-first-use-20261006.json)。
