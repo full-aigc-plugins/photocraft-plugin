@@ -66,3 +66,5 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 | **photocraft-cli-export** | 从原生图层工程输出 PSD、PNG 或其他交换文件 |
 
 缺少技能：`npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
+
+源工程局部修改可声明 `protectedRegions`，发布交付前检查非目标区域像素；参见本技能[保护区域合同](references/pixel-protection.md)。没有声明区域时不自动推断保护范围。

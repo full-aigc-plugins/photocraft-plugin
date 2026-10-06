@@ -1,0 +1,88 @@
+{
+  "schema": "photocraft-protected-first-use-evidence/v1",
+  "python": "3.14.3",
+  "scope": "single copied skill, fresh default online native install and system-only PATH; exact PNG protected samples, no creative acceptance",
+  "sourceFiles": {
+    "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "design.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+    "plan.json": "bbffae625d1b673fc1bcfb3928291047c143f3921aaf0b09fe6aacc84dc58f90",
+    "design.psd": "5f2df3c313a2bf7eb1739e5168867ff92e4a6639c77a9761d528a3953bfd0f40",
+    "exchange-loss.json": "db575a01ac25188d5fcda51855e98ca769bdcc56f3d806ad93e07a96e40d0c5e",
+    "psd-inspection.json": "9db9aa447b6eaa71687db7f2a56771c70f42d17ed32bbe70b9dd6e18da99744a",
+    "native.json": "c203821c7d498fa20f705cd83bce946a7ff22fbfe08dc0fa17b6a1500bd6301d",
+    "project.pcraft": "911ba3dc70620483ceb6f61ce7323e34c67b6abd91ac8376539679ba56e58712",
+    "manifest.json": "8c300849e9c362b1fa3f7650a8502595407fed42f1a29c44d6b7ffc06e9e3e8b",
+    "operations.json": "ad0f0e5dc28569c87cc6dd4b4f41395e204607c0a50765a513e67f6f538e908e"
+  },
+  "updatedFiles": {
+    "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "design.png": "7415fba76829278b7f5f48157426b1f022474513ed3d399d095985be6a0773aa",
+    "protection-after.png": "7415fba76829278b7f5f48157426b1f022474513ed3d399d095985be6a0773aa",
+    "plan.json": "8d062db8be4c98e589e9992031d460cad6cf437ad504bc024bddfa93f882fc0e",
+    "exchange-loss.json": "7fd6ea6a8f3446afe33cac8ebb2a5a1c52fc5a9068c86fec1b9abc705f315d09",
+    "pixel-protection.json": "c35c023c262ffc30fd08a71c5c74f805e683a5eee33afb5e4bf49a5a8593985f",
+    "native.json": "e6b2a28be718713e86b1a6deef3774f0bcb365e9f390b01675760dda8782f995",
+    "protection-before.png": "837ce1526305249cd994919d71d7535aaf00f400327f1f8376feccabbe0d8810",
+    "project.pcraft": "a6ad09934be475052d0f5cdce749fe68134ab224f1790cd858ffacd81ed66bf7",
+    "operations.json": "a471858a34278f8146c8ab0282fa57a39c157a70535c5b948365edc850494197"
+  },
+  "runtimeSha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+  "protection": {
+    "schema": "photocraft-pixel-protection/v1",
+    "canvas": {
+      "width": 320,
+      "height": 400
+    },
+    "regions": [
+      {
+        "id": "product-and-background",
+        "rect": [
+          0,
+          100,
+          320,
+          300
+        ],
+        "pixels": 96000,
+        "changedPixels": 0,
+        "beforeSha256": "852dbf91f3499ea3d9af846dbf3efe6942a45c58537cfea0559a15fd31a140c5",
+        "afterSha256": "852dbf91f3499ea3d9af846dbf3efe6942a45c58537cfea0559a15fd31a140c5"
+      }
+    ],
+    "scope": "exact 8-bit RGB/RGBA noninterlaced PNG samples and equal color-profile chunks; no visual or creative acceptance"
+  },
+  "checks": [
+    "protected title change refuses delivery",
+    "legal title edit preserves product/background region",
+    "all source files unchanged",
+    "native source digest bound",
+    "protection before/after PNG and report bound to manifest",
+    "skill directory has no bytecode"
+  ],
+  "status": "source-native-passed-fixed-plugin-pending",
+  "nativeFirstUse": {
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "seconds": 6.007
+  },
+  "fullNativeSuite": {
+    "tests": 44,
+    "passed": 44,
+    "skipped": 0,
+    "seconds": 86.09
+  },
+  "red": {
+    "nativeTests": 1,
+    "failed": 1,
+    "seconds": 5.809,
+    "cause": "old workflow returned success after declared protected title pixels changed"
+  },
+  "sourceHashes": {
+    "skills/photocraft-use/scripts/pixel_guard.py": "aa5c8da250bfd6278879235cd2020b9f10951b1ef4539c76c5b2df8efa0890ef",
+    "skills/photocraft-use/scripts/workflow.py": "09b154bf456c28560028e1c8572bc0c3cddd8ea973134787f75d841351412c9a",
+    "tests/test_pixel_guard.py": "a6bf3e270b70c1b177df4af76eb9c962fdd31918e39f00dee3415b17f64ec957",
+    "tests/test_protected_regions_first_use.py": "61eed79fc96a361622a3e88263b12aafefb90e27e727ff5368bdd52ab7bb0e29"
+  },
+  "candidateSkillsVersion": "0.1.0-dev.6",
+  "nativeCliVersion": "0.2.0"
+}

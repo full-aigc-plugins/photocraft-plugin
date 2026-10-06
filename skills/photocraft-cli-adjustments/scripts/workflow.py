@@ -54,6 +54,7 @@ def resolve(value, bindings):
 def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
+    if 'protectedRegions' in plan:load_module('pixel_guard').validate(plan['protectedRegions'])
     aliases = set()
     for operation in plan['operations']:
         if operation.get('command') not in ALLOWED:
@@ -95,6 +96,7 @@ def execute(plan, output, runtime_home=None, source=None):
     output = Path(output).absolute()
     if output.exists() or output.is_symlink():
         raise ValueError('output_exists')
+    if 'protectedRegions' in plan and not source:raise ValueError('protected_source_required')
     source_project, source_hash = None, None
     bindings = {}
     inherited_assets = {}
@@ -162,6 +164,8 @@ def execute(plan, output, runtime_home=None, source=None):
                 return value
             opened = call('doc_open', {'path': 'source.pcraft'}) if source_project else call('doc_new', plan['document'])
             target_index = opened.get('index', opened.get('document'))
+            if 'protectedRegions' in plan:
+                call('doc_export', {'path':'protection-before.png','format':'png'})
             for operation in plan['operations']:
                 params = resolve(operation.get('params', {}), bindings)
                 if operation['command'] == 'asset.place':
@@ -197,6 +201,10 @@ def execute(plan, output, runtime_home=None, source=None):
             native = call('doc_inspect', {})
             if len(native['layers']) < plan.get('minimumLayers', 1):
                 raise ValueError('editable_layer_gate_failed')
+            if 'protectedRegions' in plan:
+                call('doc_export', {'path':'protection-after.png','format':'png'})
+                protection = load_module('pixel_guard').compare(stage/'protection-before.png',stage/'protection-after.png',plan['protectedRegions'])
+                (stage/'pixel-protection.json').write_text(json.dumps(protection,ensure_ascii=False,indent=2)+'\n')
             psd = None
             if any(item['format'] == 'psd' for item in plan.get('exports', [])):
                 call('doc_open', {'path': 'design.psd'})

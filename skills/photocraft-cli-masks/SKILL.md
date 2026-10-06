@@ -48,3 +48,5 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 - 安装/诊断需要时交给 **photocraft-cli-setup**，完整任务路由交给 **photocraft-use**；缺少技能时使用 `npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。不通过相邻文件路径加载其他技能。
 
 本技能不提供虚构的登录接口；本地 headless 不要求云账户。PhotoCraft bridge 的 control-token 是本地应用访问控制，与云登录不同。完整 GUI、跨编辑器保真与创作质量按实际证据陈述。
+
+源工程局部修改可声明 `protectedRegions`，发布交付前检查非目标区域像素；参见本技能[保护区域合同](references/pixel-protection.md)。没有声明区域时不自动推断保护范围。
