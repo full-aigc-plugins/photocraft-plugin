@@ -137,7 +137,7 @@
   "protectedStrokeRejected": true,
   "allSourceFilesPreserved": true,
   "scope": "single copied skill, fresh online install, system-only PATH; bounded solid-colour fixture, no creative quality acceptance",
-  "status": "source-native-passed-release-and-installed-plugin-pending",
+  "status": "fixed-release-and-installed-native-retouch-passed",
   "red": {
     "result": "1 failed in 5.741s",
     "reason": "unsupported_command when public workflow first executes paint.stroke"
@@ -165,5 +165,6 @@
     "passed": 30,
     "skipped": 15,
     "seconds": 7.298
-  }
+  },
+  "installedProof": "codex-release31-retouch-native-20261006.json"
 }

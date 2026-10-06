@@ -26,3 +26,5 @@ flowchart LR
 实际安装 PhotoCraft 保护测试 1 项通过（11.073 秒），ArtCraft 固定依赖交接 1 项通过（22.114 秒），系统 Python 3.14.3；五插件 58 个技能发现通过、加载错误 0，执行后全部摘要不变。证据：codex-release30-protected-native-20261006.json。完整目标与创作接受仍未完成。
 
 修图扩展（源码候选，尚未发布）：公开工作流接通 paint.stroke、paint.cloneStamp、paint.healingBrush，先显式选择像素图层。单技能在线原生测试验证绘制／恢复像素、原生与 PSD 重开、保护区域拒绝、全源文件保全。证据：evidence/retouch-workflow-first-use.json。固定发布和安装后的插件复验仍待完成，4.21 保持未勾选。直接原生 cli.py run 不经过此 Python 保护门禁。
+
+固定发布及安装后修图复验现已通过；参见 evidence/codex-release31-retouch-native-20261006.json。仅完成有界任务 4.21，不提升完整领域／创作验收状态。

@@ -162,3 +162,5 @@ Candidate plugin dev.7 vendors immutable skills dev.6 with explicit pixel-protec
 Fixed PhotoCraft plugin dev.7 / skills dev.6 and ArtCraft plugin dev.30 / skills dev.26 pass installed native protection/handoff proof; all 58 installed skill hashes remain unchanged. Only the scoped protection tasks are complete; overall implementation and creative acceptance remain incomplete. [Proof](docs/evidence/codex-release30-protected-native-20261006.json).
 
 Candidate plugin dev.8 pins PhotoCraft skills dev.7 and its bounded retouch workflow. All 45 source native regression tests passed; actual installed-plugin revalidation remains pending. [Evidence](docs/evidence/retouch-workflow-first-use.json).
+
+Fixed PhotoCraft plugin dev.8 / skills dev.7 and ArtCraft plugin dev.31 / skills dev.27 pass installed native retouch/handoff testing (13.260s and 23.264s). All 58 installed skill hashes remain unchanged. Only scoped retouch tasks are complete; the full goal remains incomplete. [Proof](docs/evidence/codex-release31-retouch-native-20261006.json).

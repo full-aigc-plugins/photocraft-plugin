@@ -162,3 +162,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 固定 PhotoCraft 插件 dev.7／技能 dev.6 与 ArtCraft 插件 dev.30／技能 dev.26 的实际安装原生保护／交接复验通过；五插件全部 58 个技能摘要不变。只完成对应保护任务，整体实现和创作接受仍未完成。[证据](docs/evidence/codex-release30-protected-native-20261006.json)。
 
 候选插件 dev.8 固定 PhotoCraft 技能源 dev.7，接通有界修图工作流。源码 45 项原生回归通过；实际安装后的插件复验仍待完成。[证据](docs/evidence/retouch-workflow-first-use.json)。
+
+固定 PhotoCraft 插件 dev.8／技能源 dev.7 与 ArtCraft 插件 dev.31／技能源 dev.27 通过安装后的原生修图和交接测试（13.260 秒／23.264 秒）。58 个安装后技能摘要全部保持不变。仅完成有界修图任务；完整目标仍未完成。[证据](docs/evidence/codex-release31-retouch-native-20261006.json)。
