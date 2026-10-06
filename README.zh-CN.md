@@ -170,3 +170,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 固定已安装插件 dev.9／技能源 dev.8 的补充首次使用验收验证分层蒙版海报、改字与封面，并用 Pillow 独立核对三份不透明 PSD 合成图与 PNG 全部 RGB 像素；这与原生图层检查分开，不代表 Photoshop 实际编辑验收。[验收记录](docs/PhotoCraft-Independent-PSD-Acceptance.zh_CN.md)。
 
 纯图片工作流字体前置条件：[架构](docs/PhotoCraft-Font-Preconditions-Architecture.zh_CN.md)。技能源 dev.9 候选通过公开冷启动原生创建／修订与独立 PNG／PSD 检查；固定插件实际安装复验仍待完成。
+
+固定插件 dev.10／技能源 dev.9 通过实际 Codex 0.153.4 安装及单技能纯图片冷启动原生验收（5.601 秒）；58 个已发现安装技能摘要全部不变。升级后的 ArtCraft 固定混合验收单独执行。[证据](docs/evidence/codex-photo10-fontless-first-use-20261006.json)。

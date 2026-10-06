@@ -170,3 +170,5 @@ Fixed PhotoCraft plugin dev.8 / skills dev.7 and ArtCraft plugin dev.31 / skills
 Installed plugin dev.9 / skill source dev.8 supplementary first-use acceptance verifies a layered masked poster, text revision and cover, with independent Pillow decoding of each opaque PSD merged image against all PNG RGB pixels. This is separate from native layer inspection and does not claim live editing in Photoshop. [Acceptance](docs/PhotoCraft-Independent-PSD-Acceptance.md).
 
 Image-only workflow font preconditions: [architecture](docs/PhotoCraft-Font-Preconditions-Architecture.md). Source dev.9 candidate passes public cold native image-only create/revision and independent PNG/PSD checks; actual fixed-plugin revalidation remains pending.
+
+Fixed plugin dev.10 / source dev.9 passes actual Codex 0.153.4 installation and copied-alone image-only cold native acceptance (5.601s). All 58 discovered installed skill hashes remain unchanged. ArtCraft upgraded fixed mixed acceptance remains separate. [Proof](docs/evidence/codex-photo10-fontless-first-use-20261006.json).

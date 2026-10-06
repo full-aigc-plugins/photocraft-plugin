@@ -36,3 +36,7 @@ flowchart TD
 ## 4. 发布与剩余工作
 
 发布不可变技能源标签，用 vendor 工具同步到下一版 PhotoCraft 插件，再用真实安装技能复验。随后更新 ArtCraft 的 Photo 技能源包，通过公开下载验证 Vector 到 Photo 混合流程。候选测试不能关闭固定发布任务。完整创作验收、模型派发、GUI 和其他平台仍未完成。
+
+## 5. 固定 Photo 插件证据
+
+插件 dev.10／技能源 dev.9 已通过隔离 Codex 0.153.4 实际发现与单图层技能公开冷启动原生复验（5.601 秒），58 个安装技能摘要保持不变。此证据完成上文待执行的 Photo 单插件安装检查；升级后 Art 混合验收单独记录。[证据](evidence/codex-photo10-fontless-first-use-20261006.json)。

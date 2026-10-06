@@ -36,3 +36,7 @@ The regression copies only the layers skill to an isolated `.agents/skills` dire
 ## 4. Release and remaining work
 
 Publish an immutable source tag, vendor that tag into the next PhotoCraft plugin, and repeat with an actually installed skill. Then update ArtCraft's Photo source bundle and verify the mixed Vector-to-Photo workflow using public downloads. Candidate tests do not close that fixed-release task. Full creative acceptance, model dispatch, GUI and other platforms remain open.
+
+## 5. Fixed Photo plugin evidence
+
+Plugin dev.10 / source dev.9 now passes actual isolated Codex 0.153.4 discovery and copied-alone layers-skill public cold native repetition (5.601s). All 58 installed skill digests are preserved. This supersedes the pending Photo-only installed check above; upgraded Art mixed acceptance is recorded separately. [Proof](evidence/codex-photo10-fontless-first-use-20261006.json).
