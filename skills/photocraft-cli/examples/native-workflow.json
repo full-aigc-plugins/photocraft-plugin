@@ -1,0 +1,42 @@
+{
+  "document": {
+    "name": "Native gateway",
+    "width": 32,
+    "height": 32,
+    "background": "#faf4e8"
+  },
+  "operations": [
+    {
+      "command": "shape.create",
+      "params": {
+        "kind": "rect",
+        "rect": [
+          4,
+          4,
+          8,
+          8
+        ],
+        "fill": "#ff0000",
+        "name": "Subject"
+      },
+      "as": "subject"
+    },
+    {
+      "command": "native.command",
+      "params": {
+        "command": "layer.setProps",
+        "params": {
+          "layer": {
+            "$ref": "subject.layer"
+          },
+          "opacity": 1
+        }
+      }
+    }
+  ],
+  "exports": [
+    {
+      "format": "png"
+    }
+  ]
+}

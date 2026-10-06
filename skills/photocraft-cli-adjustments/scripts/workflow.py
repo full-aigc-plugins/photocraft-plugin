@@ -18,7 +18,7 @@ def exchange_report(root,outputs,warnings):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     module.write_report(root,outputs,warnings)
 
-ALLOWED = {
+ALLOWED = {'native.command', 
     'asset.placeSmart', 'layer.smartObjects.convertToSmartObject',
     'layer.smartObjects.replaceContents', 'layer.smartObjects.relinkToFile',
     'layer.smartObjects.convertToEmbedded',
@@ -91,6 +91,12 @@ def validate_smart(command, params, resolved=False):
         if 'fit' in params and type(params['fit']) is not bool:raise ValueError('invalid_smart_params')
 
 
+def native_module():
+    spec = importlib.util.spec_from_file_location('craft_native_workflow', Path(__file__).with_name('native_workflow.py'))
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module
+
+
 def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
@@ -98,6 +104,8 @@ def validate(plan):
     if 'variant' in plan:load_module('layout_variant').validate(plan['variant'])
     aliases = set()
     for operation in plan['operations']:
+        if operation.get('command') == 'native.command':
+            native_module().validate(operation.get('params'))
         if operation.get('command') not in ALLOWED:
             raise ValueError('unsupported_command')
         alias = operation.get('as')
@@ -222,7 +230,9 @@ def execute(plan, output, runtime_home=None, source=None):
             for operation in plan['operations']:
                 params = resolve(operation.get('params', {}), bindings)
                 validate_smart(operation['command'],params,True)
-                if operation['command'] in SMART_SOURCE | {'asset.placeSmart'}:
+                if operation['command'] == 'native.command':
+                    result = native_module().execute(session, params, recovery_state, receipts, stage)
+                elif operation['command'] in SMART_SOURCE | {'asset.placeSmart'}:
                     asset=params['asset']
                     native_params={key:value for key,value in params.items() if key!='asset'}
                     native_params['path']=assets[asset]['path']

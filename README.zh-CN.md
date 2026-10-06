@@ -2,7 +2,7 @@
 
 固定原生首次安装与完整命令恢复验收通过：新版五插件58技能逐项独立冷安装，十个Art技能分别安装四领域；四个原生下载半包SSL EOF恢复、72个原生保存后故障、四个健康命令返工及混合HD返工／恢复／移动包通过，全部安装摘要保全。仅关闭领域2.10／8.11与Art4.10；2639条命令逐项、GUI、模型、通用Skills CLI及完整V1仍开放。 [版本及证据](docs/evidence/codex-native-download-first-use-20261007.json).
 
-当前插件 `0.1.0-dev.19`／技能源 `0.1.0-dev.17` 固定原生下载恢复修复；固定安装首用子门禁已通过。
+当前插件：`0.1.0-dev.20`；技能源：`0.1.0-dev.18`；包含原生命令网关，固定安装副本验收待执行，完整 V1 仍未验收。
 
 固定发布前的候选记录：原生下载恢复候选：最多三次只读重试并丢弃半包；此前固定版本冷安装遇到SSL EOF失败，修复后的固定安装验收仍开放。
 
@@ -67,9 +67,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.19 |
+| Metadata version | 0.1.0-dev.20 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.17 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.18 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

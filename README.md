@@ -2,7 +2,7 @@
 
 Fixed native first-use and complete-command recovery acceptance passed:58 standalone cold installations, ten Art all-domain cold installations, four partial-download SSL EOF recoveries,72 post-save faults, four healthy command revisions and mixed HD revision/recovery/moved delivery. Installed identities remain unchanged. Only domain2.10/8.11 and Art4.10 close; exhaustive2639-command, GUI, model, generic Skills CLI and fullV1 gates remain open. [Version-bound evidence](docs/evidence/codex-native-download-first-use-20261007.json).
 
-Current plugin: `0.1.0-dev.19`; skill source: `0.1.0-dev.17`; fixed installed macOS arm64 acceptance passed; fullV1 remains open.
+Current plugin: `0.1.0-dev.20`; skill source: `0.1.0-dev.18`; native gateway included; fixed installed acceptance pending; full V1 remains open.
 
 Historical candidate observation before fixed acceptance: Native download recovery candidate: up to three read-only attempts discard partial archives. Earlier fixed cold installs failed on SSL EOF; new fixed installed acceptance remains open.
 
@@ -67,9 +67,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.19 |
+| Metadata version | 0.1.0-dev.20 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.17 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.18 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
