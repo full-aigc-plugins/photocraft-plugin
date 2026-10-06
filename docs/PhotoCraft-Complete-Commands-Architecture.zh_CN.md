@@ -83,3 +83,9 @@ CRAFT_NATIVE_COMMANDS=1 python3 -B -m unittest discover -s tests -p test_native_
 ## 7. 公开冷安装首用
 
 全部 12 项分别单独复制、使用独立空运行时、公开下载，原生创建／保存重开／渲染及摘要保全通过。[证据](evidence/complete-commands-cold-first-use-20261007.json)。这是新增的冷首用证据，补充此前复用测试；全命令和宿主验收仍开放。可在独立技能源测试中设置 CRAFT_NATIVE_COMMANDS=1、CRAFT_NATIVE_COLD=1，按需设置 CRAFT_NATIVE_SKILL=<技能名> 重现。
+
+## 局部返工示例
+
+完整命令入口补充了配套的创建／返工 JSON 示例、重新打开后的显式选择前置条件，以及原生保存重开、非目标对象与像素检查。每个独立技能均包含两个可执行计划。[调用指南](../skills/photocraft-use/references/command-usage.md#7-可执行局部返工--executable-targeted-revision)。全量逐命令及 GUI 验收保持开放。
+
+显式原生测试直接执行文档中的创建和返工计划，每次只复制一个技能并从空运行时公开下载。Film 变速保留第一镜头／转场／音轨；Effect 表达式变更保留合成与图层设置；Photo 不透明度变更保留其他层／效果／通道；Vector 填色变更保留其他图形／符号／画板。原交付与源／副本技能文件摘要必须保持相同。

@@ -58,3 +58,9 @@ The plugin's existing OpenSpec `establish-v1-plugin` CM-001 requirement is autho
 ## 7. Public cold first use
 
 All 12 independently copied skills passed separate empty-runtime public downloads, native create/save/reopen/render and preserved hashes. [Evidence](evidence/complete-commands-cold-first-use-20261007.json). This supplements the earlier reuse sample; full command and host acceptance remain open. Reproduce with CRAFT_NATIVE_COMMANDS=1 CRAFT_NATIVE_COLD=1 and optional CRAFT_NATIVE_SKILL=<name> in the independent native test.
+
+## Targeted revision recipes
+
+The complete-command entry now includes paired executable creation/revision recipes, explicit selection prerequisites after reopening, and native persisted-state/non-target checks. Each standalone skill includes both JSON plans. [Usage](../skills/photocraft-use/references/command-usage.md#7-可执行局部返工--executable-targeted-revision). Full per-command and GUI acceptance remains open.
+
+The opt-in native test executes the documented creation and revision plans from one copied skill and a fresh public runtime. Film speed changes preserve the first clip/transition/audio; Effect expression changes preserve composition/layer settings; Photo opacity changes preserve the other layers/effects/channels; Vector fill changes preserve other shapes/symbols/artboards. Original deliveries and source/copied skill fingerprints must remain identical.

@@ -1,0 +1,382 @@
+{
+  "schema": "craft-domain-command-revision-first-use/v1",
+  "domain": "photocraft",
+  "result": "PASS",
+  "count": 12,
+  "elapsedSeconds": 62.759,
+  "cases": [
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-use"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-setup"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-project"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-layers"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-selection"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-masks"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-adjustments"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-retouch"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-text"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-resize"
+    },
+    {
+      "schema": "craft-native-command-revision/v1",
+      "domain": "photocraft",
+      "result": "PASS",
+      "entrySha256": "d247ab81b6d28478bbb3da4d958c0a96052067e483ac79fbbb9781bd291f1350",
+      "catalogSha256": "422320d13231096ff2ab6e7689d2ef05503f2e89d85455780d82edfc2a0233dd",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "testSha256": "547b6ce97e8b2453770b3ccd7a007c4b707e942eb77cb644be4ea19de4634300",
+      "exampleSha256": {
+        "commands-revision-create.json": "d0585885b908e265e385c6c57507e074e71158f9c41862990690a7ebb7967fde",
+        "commands-revision.json": "444baa22f6c1f6c26e0f498dbac68bdfc5c93280678f08f41486057ccd3a165f"
+      },
+      "revisionCommand": "layer.setProps",
+      "targetIdSource": "actual native results",
+      "projectSha256": "7234025c4cdf9cdecd007ca6614df50081def684929b0caaadfd123adf3a88b3",
+      "revisedProjectSha256": "a3b0f013e32180d5eac9aee938f32e0e4f8918e5d4b6c070443495a75941e293",
+      "operations": 20,
+      "checks": [
+        "single skill copy",
+        "actual target identity",
+        "save and reopen revision",
+        "non-target objects preserved",
+        "native persisted target settings",
+        "rendered output and non-target pixel preservation",
+        "original delivery and skills unchanged"
+      ],
+      "coldInstall": "PASS",
+      "guiAcceptance": "NOT_RUN",
+      "fullPerCommandAcceptance": "NOT_RUN",
+      "skill": "photocraft-cli-export"
+    }
+  ],
+  "scope": "Each skill copied alone; unique empty runtime; public locked native install; paired revision examples; saved/reopened target state and non-target objects/pixels; original delivery and skill hashes unchanged. Full registry/GUI/model dispatch acceptance remains open."
+}

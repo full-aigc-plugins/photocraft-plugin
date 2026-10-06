@@ -71,3 +71,24 @@ Save or export must be explicit operations in the plan. A successful command rec
 每项完整验收须绑定运行时摘要、实际前置上下文、输入参数、原生返回值、保存重开、预期输出、失败／禁用场景和适用时的局部修订。目录覆盖、结构预检、命令返回成功、代表实例通过分别记录。native-command-snapshot 是只读目录证据；command-coverage 中 NOT_RUN 表示本轮完整逐命令验收尚未完成，不覆盖历史有界任务证据。
 
 A complete command acceptance binds runtime identity, real prerequisites, inputs, receipts, saved-project reopening, expected output, failures and applicable local revisions. Documentation coverage and representative cases are distinct from complete per-command acceptance.
+
+## 7. 可执行局部返工 / Executable targeted revision
+
+先运行下面的创建示例，再从它的原生工程返工。两次输出目录均须不存在；工程扩展名依本领域为 .fcproj／.ecproj／.pcraft／.vectorcraft。
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-revision-create.json" --output /absolute/new-original
+python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-revision.json" --input project=/absolute/new-original/project.EXT --output /absolute/new-revision
+```
+
+将 EXT 替换为本领域原生扩展名；路径替换为真实新目录。这个返工计划只适用于对应创建示例的对象与顺序；真实用户工程必须先检查并按实际对象重新构造引用，不能照搬数组下标。
+
+PhotoCraft：示例检查结果中第三层是 Subject，使用实际 id 调用 layer.setProps；opacity 为 0..1。没有 layer.opacity／layer.setOpacity 这两个命令。
+
+PhotoCraft: the third inspected layer is Subject in this fixture. Use its actual id with layer.setProps and opacity 0..1; layer.opacity and layer.setOpacity are not registry commands.
+
+The revision recipe is paired with commands-revision-create.json. Replace EXT with this domain's native extension and use new absolute output directories. Array paths refer only to this fixture; inspect real user projects and rebuild references for their actual objects and ordering.
+
+返工验收必须另起会话重开 revised.EXT：FilmCraft 检查第二镜头 speed=2、durationFrames=12、总时长60帧，第一镜头、转场、音轨与设置保持；EffectCraft 在0.5秒检查 opacity 表达式结果80，蒙版、相机及其他图层保持；PhotoCraft 检查 Subject opacity=0.5，其他层、效果与通道保持；VectorCraft 检查目标由蓝变红，对照绿矩形、三个符号实例与画板保持。比较实际渲染目标与非目标像素，原工程与技能文件保持不变。
+
+Reopen revised.EXT in a separate native session and inspect the expected target state plus untouched objects. The opt-in test tests/test_native_command_revision.py verifies these persisted settings, rendered target/control pixels, and original-delivery/skill fingerprints. These four fixture cases do not establish acceptance of every command or GUI workflow.

@@ -27,10 +27,11 @@
     "4.28": "docs/evidence/codex-artcraft70-smart-mixed-first-use-20261006.json",
     "8.1": "docs/evidence/complete-commands-20261007.json",
     "8.2": "docs/evidence/complete-commands-20261007.json",
-    "8.4": "docs/evidence/codex-complete-command-first-use-20261007.json"
+    "8.4": "docs/evidence/codex-complete-command-first-use-20261007.json",
+    "8.5": "docs/evidence/complete-command-revision-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
-  "hostValidationStatus": "bounded-fixed-installed-cold-first-use-passed",
+  "hostValidationStatus": "previous-fixed-snapshot-passed; revised snapshot installed gate pending",
   "fontlessFixedReleaseEvidence": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json",
   "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json",
   "smartFixedDomainEvidence": "docs/evidence/codex-photocraft11-smart-first-use-20261006.json",
@@ -38,6 +39,8 @@
   "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
   "completeCommandAcceptance": "incomplete",
   "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json",
-  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
-  "currentFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json"
+  "currentFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
+  "completeCommandRevisionEvidence": "docs/evidence/complete-command-revision-first-use-20261007.json",
+  "completeCommandRevisionStatus": "bounded-single-skill-cold-revision-passed; fixed installed new release pending",
+  "previousFixedHostEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json"
 }
