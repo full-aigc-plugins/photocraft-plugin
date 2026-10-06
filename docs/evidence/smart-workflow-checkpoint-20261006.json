@@ -1,0 +1,41 @@
+{
+  "schema": "photocraft-smart-workflow-checkpoint/v1",
+  "status": "in-progress",
+  "sourceBoundaryTests": {
+    "passed": 3,
+    "initialFailure": "unsupported_command for missing smart workflow mapping"
+  },
+  "nativeAutomationRegression": {
+    "passed": 46,
+    "failed": 0,
+    "scope": "candidate patch debug tests; dedicated smart path rejection also passed"
+  },
+  "nativeFirstUse": {
+    "status": "FAILED_ON_OFFICIAL_RUNTIME",
+    "cause": "ambient file.placeEmbedded command disabled; source mapping alone insufficient"
+  },
+  "maintainedRuntime": {
+    "schema": "craft-maintained-runtime-patch/v1",
+    "upstreamRepository": "https://github.com/storytold/photocraft",
+    "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+    "patch": "runtime/patches/scoped-smart-content.patch",
+    "patchSha256": "7916c7bfee9c38ef6387d026cc5a1d9335b800b2e4e572a2b663076894348c5c",
+    "scope": "capability-scoped smart bytes; relink collected as embedded; ambient engine guard remains intact"
+  },
+  "workflowSha256": "b9432c98d8670819a366075c1ba8523612ab2a7471a5f6d8034e90eaa67313fa",
+  "excluded": [
+    "native smart candidate first use",
+    "fixed runtime publication",
+    "fixed installed plugin",
+    "Art mixed handoff",
+    "persistent external link delivery",
+    "creative acceptance"
+  ],
+  "defaultSuite": {
+    "tests": 60,
+    "passed": 41,
+    "skipped": 19,
+    "failed": 0,
+    "scope": "source unit regression; real native gates explicitly skipped"
+  }
+}

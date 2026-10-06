@@ -42,7 +42,8 @@
       "tasks": [
         "2.4",
         "2.5",
-        "2.6"
+        "2.6",
+        "4.29"
       ],
       "owner": "Runtime owner",
       "status": "planned"
@@ -86,7 +87,10 @@
       "tasks": [
         "4.1",
         "4.2",
-        "4.3"
+        "4.3",
+        "4.26",
+        "4.27",
+        "4.28"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
