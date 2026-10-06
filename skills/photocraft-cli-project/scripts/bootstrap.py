@@ -2,6 +2,9 @@
 """仅用标准库安装锁定的官方 CLI；技能单独复制后仍可运行。"""
 import argparse
 import hashlib
+import http.client
+import ssl
+import urllib.error
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -39,15 +42,33 @@ def download(url, destination):
     if not trusted_release_url(url):
         raise ValueError('untrusted_release_url')
     request = urllib.request.Request(url, headers={'User-Agent': 'craft-skill-bootstrap/0.1'})
-    with urllib.request.urlopen(request, timeout=60) as source, destination.open('wb') as out:
-        if not source.url.startswith('https://'):
-            raise ValueError('insecure_redirect')
-        total = 0
-        while block := source.read(1024 * 1024):
-            total += len(block)
-            if total > MAX_BYTES:
-                raise ValueError('archive_too_large')
-            out.write(block)
+    destination = Path(destination)
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=60) as source, destination.open('wb') as out:
+                if not source.url.startswith('https://'):
+                    raise ValueError('insecure_redirect')
+                total = 0
+                while block := source.read(1024 * 1024):
+                    total += len(block)
+                    if total > MAX_BYTES:
+                        raise ValueError('archive_too_large')
+                    out.write(block)
+                declared = source.headers.get('Content-Length')
+                if declared is not None and declared.isdigit() and total != int(declared):
+                    raise http.client.IncompleteRead(b'', int(declared) - total)
+            return
+        except (urllib.error.URLError, TimeoutError, ConnectionError, ssl.SSLEOFError, http.client.IncompleteRead) as error:
+            # 只读制品下载可以恢复；半包不可复用，不重试原生编辑或完整性失败。
+            if destination.exists():
+                destination.unlink()
+            if isinstance(error, urllib.error.HTTPError) and error.code not in (408, 429) and not 500 <= error.code <= 599:
+                raise
+            if isinstance(error, urllib.error.URLError) and isinstance(error.reason, ssl.SSLCertVerificationError):
+                raise
+            if attempt == 2:
+                raise ValueError('artifact_download_failed: three read-only attempts exhausted') from error
+            time.sleep(attempt + 1)
 
 
 def extract(archive, destination):

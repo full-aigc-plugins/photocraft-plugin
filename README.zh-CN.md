@@ -1,5 +1,9 @@
 # PhotoCraft Agent Plugin
 
+当前插件 `0.1.0-dev.19`／技能源 `0.1.0-dev.17` 固定原生下载恢复修复；实际安装首用复验进行中。
+
+原生下载恢复候选：最多三次只读重试并丢弃半包；此前固定版本冷安装遇到SSL EOF失败，修复后的固定安装验收仍开放。
+
 当前插件 `0.1.0-dev.18`／技能源 `0.1.0-dev.16` 固定完整命令内层JSON修复；实际安装首用复验进行中。
 
 当前固定失败暂存验收：插件 dev.17、独立技能源 dev.15。全部58项独立CLI冷启动、24个原暂存原生故障案例及37原生场景＋6合同检查通过；Art77领域包升级仍开放。[证据](docs/evidence/codex-failed-stage-first-use-20261007.json)。
@@ -61,9 +65,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.18 |
+| Metadata version | 0.1.0-dev.19 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.16 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.17 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
