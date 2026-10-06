@@ -1,0 +1,34 @@
+{
+  "document": {
+    "name": "Smart product poster",
+    "width": 640,
+    "height": 640,
+    "background": "#ffffff"
+  },
+  "operations": [
+    {
+      "command": "asset.placeSmart",
+      "params": {
+        "asset": "product",
+        "center": [
+          320,
+          320
+        ]
+      },
+      "as": "product"
+    },
+    {
+      "command": "layer.layerMask.revealAll",
+      "params": {
+        "layer": {
+          "$ref": "product.layer"
+        }
+      }
+    }
+  ],
+  "exports": [
+    {
+      "format": "png"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "craft-skill-command-evidence/v1",
   "pluginId": "photocraft",
-  "runtimeVersion": "0.2.0",
+  "runtimeVersion": "0.2.0-craft.1",
   "upstreamRepository": "https://github.com/storytold/photocraft",
   "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
   "scope": "observed command catalogue, not capability or creative acceptance",
@@ -27,7 +27,7 @@
     {
       "id": "paint.mixerBrush",
       "label": "Mixer Brush",
-      "params": "{\"points\":[…],\"brush\":{…}?,\"preset\":name?,\"size\":px?,\"wet\":0..100=50,\"load\":0..100=50,\"mix\":0..100=50,\"flow\":0..100=100,\"color\":\"#rrggbb\"?=foreground,\"sampleAllLayers\":bool=false,\"cleanAfterStroke\":bool=true,\"loadAfterStroke\":bool=true,\"seed\":u64?}",
+      "params": "{\"points\":[…],\"brush\":{…}?,\"preset\":name?,\"size\":px?,\"wet\":0..100=brush.mixer.wet,\"load\":0..100=brush.mixer.load,\"mix\":0..100=brush.mixer.mix,\"flow\":0..100=brush.mixer.flow,\"color\":\"#rrggbb\"?=foreground,\"sampleAllLayers\":bool=brush.mixer.sampleAllLayers,\"cleanAfterStroke\":bool=true,\"loadAfterStroke\":bool=true,\"seed\":u64?}",
       "enabledAtEmptySession": false
     },
     {

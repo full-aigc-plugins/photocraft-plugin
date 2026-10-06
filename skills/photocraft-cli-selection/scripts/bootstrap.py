@@ -12,6 +12,7 @@ import stat
 import subprocess
 import tempfile
 import time
+import urllib.parse
 import urllib.request
 import zipfile
 
@@ -24,9 +25,18 @@ def digest(path):
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
+def trusted_release_url(url):
+    """只接受本领域上游或独立技能源的固定公开发行路径。"""
+    parsed=urllib.parse.urlsplit(url)
+    return (parsed.scheme=='https' and parsed.netloc=='github.com' and not parsed.query and not parsed.fragment
+            and any(parsed.path.startswith(prefix) for prefix in (
+                '/storytold/photocraft/releases/download/',
+                '/full-aigc-skills/photocraft-skills/releases/download/')))
+
+
 def download(url, destination):
     """下载完成并核对摘要之前，永不运行内容。"""
-    if not url.startswith('https://github.com/storytold/'):
+    if not trusted_release_url(url):
         raise ValueError('untrusted_release_url')
     request = urllib.request.Request(url, headers={'User-Agent': 'craft-skill-bootstrap/0.1'})
     with urllib.request.urlopen(request, timeout=60) as source, destination.open('wb') as out:
@@ -79,7 +89,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
     if expected is None:
         raise ValueError('unsupported_platform: ' + key)
     artifact, version = lock['artifact'], lock['resolvedVersion']
-    if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
+    if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+(?:-craft\.[1-9]\d*)?', version):
         raise ValueError('invalid_runtime_identity')
     parent = Path(runtime_home).expanduser().absolute() / artifact.removesuffix('-cli')
     parent.mkdir(parents=True, exist_ok=True)

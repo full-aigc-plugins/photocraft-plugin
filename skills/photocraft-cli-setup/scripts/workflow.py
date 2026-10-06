@@ -6,6 +6,7 @@ sys.dont_write_bytecode = True
 import hashlib
 import importlib.util
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -18,6 +19,9 @@ def exchange_report(root,outputs,warnings):
     module.write_report(root,outputs,warnings)
 
 ALLOWED = {
+    'asset.placeSmart', 'layer.smartObjects.convertToSmartObject',
+    'layer.smartObjects.replaceContents', 'layer.smartObjects.relinkToFile',
+    'layer.smartObjects.convertToEmbedded',
     'shape.create', 'type.create', 'type.edit', 'type.setStyle',
     'layer.new.layer', 'layer.new.group', 'layer.renameLayer', 'layer.select',
     'layer.newFillLayer.solidColor', 'layer.newFillLayer.gradient',
@@ -66,6 +70,27 @@ def resolve(value, bindings):
     return value
 
 
+SMART_SOURCE = {'layer.smartObjects.replaceContents', 'layer.smartObjects.relinkToFile'}
+SMART_LAYER = SMART_SOURCE | {'layer.smartObjects.convertToSmartObject', 'layer.smartObjects.convertToEmbedded'}
+
+def validate_smart(command, params, resolved=False):
+    """智能对象只接受显式图层和登记素材；原生路径由执行器生成。"""
+    if command not in SMART_LAYER | {'asset.placeSmart'}:return
+    allowed = {'asset', 'center', 'scale', 'fit'} if command == 'asset.placeSmart' else {'layer', *({'asset'} if command in SMART_SOURCE else set())}
+    if not isinstance(params, dict) or set(params)-allowed:raise ValueError('invalid_smart_params')
+    if command in SMART_LAYER:
+        layer=params.get('layer')
+        reference=not resolved and isinstance(layer,dict) and set(layer)=={'$ref'} and isinstance(layer['$ref'],str) and re.fullmatch(r'[A-Za-z][\w-]*(?:\.[A-Za-z0-9_]+)+',layer['$ref'])
+        if not reference and not (type(layer) is int and 0 < layer <= 2**64-1):raise ValueError('invalid_smart_params')
+    if command in SMART_SOURCE or command=='asset.placeSmart':
+        if not isinstance(params.get('asset'),str) or not re.fullmatch(r'[A-Za-z][\w-]*',params['asset']):raise ValueError('invalid_smart_params')
+    if command=='asset.placeSmart':
+        finite=lambda n:type(n) in (int,float) and math.isfinite(n)
+        if 'center' in params and (not isinstance(params['center'],list) or len(params['center'])!=2 or not all(finite(n) for n in params['center'])):raise ValueError('invalid_smart_params')
+        if 'scale' in params and (not finite(params['scale']) or not 0 < params['scale'] <= 10000):raise ValueError('invalid_smart_params')
+        if 'fit' in params and type(params['fit']) is not bool:raise ValueError('invalid_smart_params')
+
+
 def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
@@ -84,6 +109,7 @@ def validate(plan):
             aliases.add(alias)
         if not isinstance(operation.get('params', {}), dict):
             raise ValueError('invalid_params')
+        validate_smart(operation['command'],operation.get('params',{}))
     formats = []
     for item in plan.get('exports', []):
         if set(item) != {'format'} or item['format'] not in ('png', 'psd', 'jpg', 'tif', 'webp'):
@@ -132,6 +158,9 @@ def execute(plan, output, runtime_home=None, source=None):
         inherited_assets = prior.get('assets', {})
     elif 'document' not in plan:
         raise ValueError('document_required')
+    registered=set(inherited_assets)|set(plan.get('assets',{}))
+    for operation in plan['operations']:
+        if operation['command'] in SMART_SOURCE | {'asset.placeSmart'} and operation['params']['asset'] not in registered:raise ValueError('unregistered_asset_path')
     installed = load_module('bootstrap').install(
         json.loads(Path(__file__).with_name('runtime.lock.json').read_text()),
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
@@ -188,7 +217,16 @@ def execute(plan, output, runtime_home=None, source=None):
                 call('doc_export', {'path':'protection-before.png','format':'png'})
             for operation in plan['operations']:
                 params = resolve(operation.get('params', {}), bindings)
-                if operation['command'] == 'asset.place':
+                validate_smart(operation['command'],params,True)
+                if operation['command'] in SMART_SOURCE | {'asset.placeSmart'}:
+                    asset=params['asset']
+                    native_params={key:value for key,value in params.items() if key!='asset'}
+                    native_params['path']=assets[asset]['path']
+                    command='file.placeEmbedded' if operation['command']=='asset.placeSmart' else operation['command']
+                    result=call('command_run',{'id':command,'params':native_params})
+                    if operation['command']=='layer.smartObjects.relinkToFile':
+                        call('command_run',{'id':'layer.smartObjects.convertToEmbedded','params':{'layer':params['layer']}})
+                elif operation['command'] == 'asset.place':
                     if params.get('asset') not in assets or set(params) - {'asset', 'center', 'name'}:
                         raise ValueError('unregistered_asset_path')
                     opened_asset = call('doc_open', {'path': assets[params['asset']]['path']})

@@ -1,7 +1,7 @@
 {
   "schema": "craft-skill-command-evidence/v1",
   "pluginId": "photocraft",
-  "runtimeVersion": "0.2.0",
+  "runtimeVersion": "0.2.0-craft.1",
   "upstreamRepository": "https://github.com/storytold/photocraft",
   "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
   "scope": "observed command catalogue, not capability or creative acceptance",
@@ -225,7 +225,7 @@
     {
       "id": "file.automate.createDroplet",
       "label": "Create Droplet…",
-      "params": "{\"path\":str (.pcdroplet),\"steps\":[[id,params]…] (the action),\"name\":str?,\"output\":folder?,\"format\":\"same|png|jpg|…\"?,\"quality\":0..12?,\"shim\":bool=true on macOS/Linux (writes <name>.command calling `photocraft-cli droplet`)} → {path, shim}",
+      "params": "{\"path\":str (.pcdroplet),\"steps\":[[id,params]…] (the action),\"name\":str?,\"output\":folder?,\"format\":\"same|png|jpg|…\"?,\"quality\":0..12?,\"shim\":bool=true on Unix (writes <name>.command calling `photocraft-cli droplet`)} → {path, shim}",
       "enabledAtEmptySession": true
     },
     {

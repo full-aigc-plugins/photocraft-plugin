@@ -64,3 +64,9 @@ background 的数字 ID 必须读取源 `native.json` 的真实 Background 图�
 操作必须包含 `image.canvasSize` 或 `image.imageSize`。工作流记录每次操作前的实际尺寸和 CLI 返回结果；画布调整使用原生 offset 计算四边裁切与留白，图像重采样记录横纵比例。保存并重开 `.pcraft` 后核验目标尺寸和角色，再写入 `layout-variant.json` 并在 manifest 中绑定 SHA-256。尺寸不符、图层身份或类型变化、隐藏、文字/产品越出安全区都会拒绝发布目标目录，源交付保留。`protectedRegions` 为同尺寸像素保护，不能用原画幅坐标替代尺寸变体的安全区。
 
 完整变体示例见本技能 `examples/resize-variant-plan.json`；先替换源工程摘要、背景 ID 和所需目标尺寸。
+
+## 登记智能对象工作流 / Registered smart content
+
+`asset.placeSmart` 使用 `{asset, center?, fit?, scale?}`；`layer.smartObjects.convertToSmartObject` 和 `layer.smartObjects.convertToEmbedded` 使用显式 `{layer}`。替换与重新链接使用 `{layer, asset}`，asset 必须是已登记图像别名；禁止直接传 path。维护版通过授权目录读取字节，收集交付中的重新链接转换为嵌入，保持原变换与蒙版。持续外部链接交付不由本映射证明。修订需提供 expectedProjectSha256 与 --source，另存旧包。
+
+Smart placement accepts registered asset aliases with optional center/fit/scale. Conversion requires an explicit layer; replacement/relink requires `{layer, asset}` and rejects direct paths. The maintained runtime reads through directory capabilities. Collected relink content is embedded while preserving transform and masks; persistent external linked delivery is not claimed. Revisions bind the expected project digest, use --source, and preserve old packages.
