@@ -106,6 +106,22 @@ def native_call(identifier, params):
     _, tool, key = ROUTES[DOMAIN]
     return tool, {key: identifier, "params": params}
 
+def reply_json(text):
+    """拒绝重复键与非有限值；保留合法 JSON 标量及普通文字工具兼容性。"""
+    def constant(value):
+        raise ValueError('nonfinite_json_value')
+    def object_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError('duplicate_json_key')
+            result[key] = value
+        return result
+    value = json.loads(text, parse_constant=constant, object_pairs_hook=object_pairs)
+    # 1e999 等合法数值字面量仍可能溢出；不能等到写回执时才发现。
+    json.dumps(value, allow_nan=False)
+    return value
+
 def parse_reply(reply, output=None, index=0):
     if (not isinstance(reply, dict)
             or ('isError' in reply and not isinstance(reply['isError'], bool))
@@ -120,10 +136,12 @@ def parse_reply(reply, output=None, index=0):
     texts = [item["text"] for item in content if item.get("type") == "text"]
     if len(content) == 1 and len(texts) == 1:
         try:
-            result = json.loads(texts[0])
-        except (ValueError, TypeError):
+            result = reply_json(texts[0])
+        except json.JSONDecodeError:
             if output is None:
                 raise RuntimeError("outcome_unknown: unexpected_reply") from None
+        except (ValueError, TypeError):
+            raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
         else:
             if isinstance(result, dict) and result.get("error"):
                 raise RuntimeError("semantic_error: " + json.dumps(result, ensure_ascii=False))
@@ -135,9 +153,11 @@ def parse_reply(reply, output=None, index=0):
     for number, item in enumerate(content):
         if item.get("type") == "text":
             try:
-                parsed = json.loads(item["text"])
-            except (ValueError, TypeError):
+                parsed = reply_json(item["text"])
+            except json.JSONDecodeError:
                 parsed = item["text"]
+            except (ValueError, TypeError):
+                raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
             if isinstance(parsed, dict) and parsed.get("error"):
                 raise RuntimeError("semantic_error: " + json.dumps(parsed, ensure_ascii=False))
             result["content"].append({"type": "text", "value": parsed})

@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+当前插件 `0.1.0-dev.18`／技能源 `0.1.0-dev.16` 固定完整命令内层JSON修复；实际安装首用复验进行中。
+
 当前固定失败暂存验收：插件 dev.17、独立技能源 dev.15。全部58项独立CLI冷启动、24个原暂存原生故障案例及37原生场景＋6合同检查通过；Art77领域包升级仍开放。[证据](docs/evidence/codex-failed-stage-first-use-20261007.json)。
 
 固定领域客户端首用复验：Film 插件 dev.16／技能源 dev.15，Effect／Photo／Vector 插件 dev.15／技能源 dev.14。隔离 Codex 发现58项零错误；实际安装副本24类保存后故障、四个健康公开工作流和已发布 Art 引擎＋安装后 Vector 客户端六类故障通过，全部58项安装摘要保全。Art dev.75 内置旧领域分发包尚需升级，全量命令／GUI／模型验收仍开放。[版本绑定证据](docs/evidence/codex-public-workflow-session-first-use-20261007.json)。
@@ -59,9 +61,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.17 |
+| Metadata version | 0.1.0-dev.18 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.15 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.16 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
