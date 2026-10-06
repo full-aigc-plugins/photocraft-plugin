@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.9 |
+| Metadata version | 0.1.0-dev.10 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.8 |
+| Skills source | photocraft-skills / v0.1.0-dev.9 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -168,3 +168,5 @@ Fixed PhotoCraft plugin dev.8 / skills dev.7 and ArtCraft plugin dev.31 / skills
 尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin cold repetition passed; [version-bound evidence](docs/evidence/codex-photo9-layout-first-use-20261006.json). Full creative acceptance remains open.
 
 Installed plugin dev.9 / skill source dev.8 supplementary first-use acceptance verifies a layered masked poster, text revision and cover, with independent Pillow decoding of each opaque PSD merged image against all PNG RGB pixels. This is separate from native layer inspection and does not claim live editing in Photoshop. [Acceptance](docs/PhotoCraft-Independent-PSD-Acceptance.md).
+
+Image-only workflow font preconditions: [architecture](docs/PhotoCraft-Font-Preconditions-Architecture.md). Source dev.9 candidate passes public cold native image-only create/revision and independent PNG/PSD checks; actual fixed-plugin revalidation remains pending.

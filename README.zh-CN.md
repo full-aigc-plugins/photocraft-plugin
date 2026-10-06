@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.9 |
+| Metadata version | 0.1.0-dev.10 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.8 |
+| Skills source | photocraft-skills / v0.1.0-dev.9 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -168,3 +168,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin cold repetition passed; [version-bound evidence](docs/evidence/codex-photo9-layout-first-use-20261006.json). Full creative acceptance remains open.
 
 固定已安装插件 dev.9／技能源 dev.8 的补充首次使用验收验证分层蒙版海报、改字与封面，并用 Pillow 独立核对三份不透明 PSD 合成图与 PNG 全部 RGB 像素；这与原生图层检查分开，不代表 Photoshop 实际编辑验收。[验收记录](docs/PhotoCraft-Independent-PSD-Acceptance.zh_CN.md)。
+
+纯图片工作流字体前置条件：[架构](docs/PhotoCraft-Font-Preconditions-Architecture.zh_CN.md)。技能源 dev.9 候选通过公开冷启动原生创建／修订与独立 PNG／PSD 检查；固定插件实际安装复验仍待完成。

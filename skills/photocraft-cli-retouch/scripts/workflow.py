@@ -30,6 +30,20 @@ ALLOWED = {
     'image.imageSize', 'image.canvasSize',
 }
 
+
+def contains_type_layers(layers):
+    """检查原生图层树；含组内文字时仍执行字体门禁，未知结构不能绕过检查。"""
+    if not isinstance(layers, list):
+        raise ValueError('invalid_native_layer_inspection')
+    found = False
+    for layer in layers:
+        if not isinstance(layer, dict) or not isinstance(layer.get('kind'), str):
+            raise ValueError('invalid_native_layer_inspection')
+        found = (layer['kind'] == 'Type') or found
+        if layer['kind'] == 'Group' or 'children' in layer:
+            found = contains_type_layers(layer.get('children')) or found
+    return found
+
 def sha(path):
     with Path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
@@ -194,9 +208,12 @@ def execute(plan, output, runtime_home=None, source=None):
                         variant_steps.append({'command':operation['command'], 'before':[geometry_before['width'],geometry_before['height']], 'result':result})
                 if operation.get('as'):
                     bindings[operation['as']] = result
-            fonts = call('command_run', {'id': 'type.resolveMissingFonts', 'params': {}})
-            if fonts.get('missing'):
-                raise ValueError('missing_fonts: ' + json.dumps(fonts['missing']))
+            # 原生命令仅允许含文字的文档；纯图片合成不具备此命令前置条件。
+            font_inspection = call('doc_inspect', {})
+            if contains_type_layers(font_inspection.get('layers')):
+                fonts = call('command_run', {'id': 'type.resolveMissingFonts', 'params': {}})
+                if fonts.get('missing'):
+                    raise ValueError('missing_fonts: ' + json.dumps(fonts['missing']))
             saved = call('doc_save', {'path': 'project.pcraft'})
             outputs = []
             for item in plan.get('exports', []):

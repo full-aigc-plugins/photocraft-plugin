@@ -1,0 +1,63 @@
+{
+  "schema": "craft-photo-fontless-first-use/v1",
+  "runtimeSha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+  "skillFiles": {
+    "SKILL.md": "6a3264ccd5c8fe9a5a7f62ae3249c0f9c0584a0c1dafacb633be2e7c77fc8d26",
+    "references/scenario.md": "dcae08a92b202cbda23f1a7a46df1fd126c3924b0d63e15fa5cb87238343416e",
+    "references/workflow.md": "8df26d88022b0e9f59a5189dc18f725bbdd36da31b7abf27baad5f1246eab3ae",
+    "references/commands.json": "b1cf0c54ef7c8d3e4f03fa9780771244f61596c3565d2e89427cbf62a47b85f5",
+    "references/pixel-protection.md": "73158823aae281fc3f418a5f9627b6d876b9f1357d3bd3e7f4eafc5f84035d8c",
+    "references/installation-concurrency.md": "69067acebcd47f1924a8d6aa9d8a4ce6f44ad0756d44888a21eb224bcdb1c215",
+    "references/exchange-loss.md": "eee665f62b77274ca8ce0efc4117012ade85978905cdfd40ab488af64297b8ae",
+    "examples/resize-variant-plan.json": "617e4ae6f3da6651f381299a6054acf97079148397247a59203d05f387bcab59",
+    "examples/poster-plan.json": "33dce8089816a570f9dd0a99a6fede5fcd163dd12892817f8c59dfb13bd16ea3",
+    "scripts/bootstrap.py": "73eadc05f3cbb61738a4720997c829c1de1dd82d356244627d38b37e2c696f00",
+    "scripts/exchange_loss.py": "7d5182e5c15dc651b19e396ddce946da8d1df1ee965bc21e45ffb2b21dbfa1f9",
+    "scripts/layout_variant.py": "dabe1ae92873b4127895b6bfe2316be17f28a49e7f987a02a5ede0162b44881a",
+    "scripts/mcp_session.py": "2f1e6de76d1fe12917933f4967a40c827ba80994a8441e47cb68f212b00160a4",
+    "scripts/runtime.lock.json": "1b94994549e0914d47c443bd1e95c45d3d9d7fd7f7d0e3c927f9da4d456da59b",
+    "scripts/cli.py": "6c24ecd4778feb477cd3fb00814622c668faebdabb60807d769315b3c8789c81",
+    "scripts/workflow.py": "4458052c43f6bee339ea21f0efb948f5926f9289dcb57640bfe87bd224cea3c3",
+    "scripts/pixel_guard.py": "aa5c8da250bfd6278879235cd2020b9f10951b1ef4539c76c5b2df8efa0890ef"
+  },
+  "checks": [
+    "single-skill-public-cold-install",
+    "image-only-native-reopen",
+    "independent-png-psd-pixel-match",
+    "revision-preserves-layer-ids",
+    "missing-font-rejected",
+    "source-asset-and-skills-unchanged"
+  ],
+  "excluded": [
+    "fixed-plugin-install",
+    "model-dispatch",
+    "GUI",
+    "full-PSD-fidelity"
+  ],
+  "stage": "source-candidate",
+  "sourceVersion": "0.1.0-dev.9",
+  "tests": {
+    "coldNative": {
+      "total": 1,
+      "passed": 1,
+      "skipped": 0,
+      "seconds": 5.672
+    },
+    "existingTextMaskRevision": {
+      "total": 1,
+      "passed": 1,
+      "seconds": 0.405
+    },
+    "default": {
+      "total": 56,
+      "passed": 38,
+      "skipped": 18,
+      "seconds": 7.335
+    }
+  },
+  "red": {
+    "failure": "type.resolveMissingFonts is not available: the document has no type layers",
+    "logSha256": "ecfd41dcf8e77585a2a3e49364b4051bf10ac94c8cb20fe78be89d6d11276359"
+  },
+  "nestedTypeDetection": "unit-tested nested groups; full group GUI acceptance pending"
+}
