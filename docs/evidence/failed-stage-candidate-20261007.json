@@ -1,0 +1,123 @@
+{
+  "schema": "craft-failed-stage-candidate/v1",
+  "date": "2026-10-07",
+  "domain": "photocraft",
+  "result": "PASS",
+  "scope": "candidate canonical standalone skills; locked native CLI; actual original-stage preservation/reopen; healthy native creation/revision regression",
+  "nativeIdentity": {
+    "pluginId": "photocraft",
+    "pluginVersion": "0.1.0-dev.14",
+    "cliVersion": "0.2.0-craft.1",
+    "sha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+    "mode": "headless",
+    "capabilitySnapshotSha256": "e91817c1e4ea74fc1f48c639ccf5a611a637fec39d02a62ca9c21f8710f737a0"
+  },
+  "sourceBase": "8b400f3e6af095efe53455bf52bf2c556f57df2c",
+  "nativeFaults": {
+    "schema": "craft-native-failed-stage/v1",
+    "domain": "photocraft",
+    "result": "PASS",
+    "cases": [
+      {
+        "fault": "malformed",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "scalar",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "missing",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "ambiguous",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "nonfinite",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      },
+      {
+        "fault": "tool-content",
+        "result": "PASS",
+        "originalStagePreserved": true,
+        "nativeReopened": true,
+        "noReplay": true,
+        "nativeSaveCount": 1,
+        "partialFiles": 2
+      }
+    ],
+    "scope": "candidate source with locked installed native CLI; original retained stage inspected and reopened; proxy capture is not recovery input"
+  },
+  "redBaseline": {
+    "faults": 6,
+    "reason": "actual native save succeeded once; public workflow removed stage and produced no recovery record",
+    "result": "FAILED_AS_EXPECTED"
+  },
+  "regression": {
+    "tests": 94,
+    "passed": 71,
+    "optionalSkipped": 23,
+    "lifecycleTests": 8,
+    "healthyNativeWorkflowTests": 1,
+    "healthyNativeWorkflowResult": "PASS"
+  },
+  "sourceHashes": {
+    "skills/photocraft-cli/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-adjustments/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-adjustments/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-export/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-export/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-layers/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-layers/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-masks/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-masks/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-project/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-project/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-resize/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-resize/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-retouch/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-retouch/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-selection/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-selection/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-setup/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-setup/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-cli-text/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-cli-text/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4",
+    "skills/photocraft-use/scripts/preserved_stage.py": "64199df3ee6af2901a859a5aac401fd27ca2f0c6ba9238e6f72c3563f681ad63",
+    "skills/photocraft-use/scripts/workflow.py": "0fdcc6ea7c166c70c8874c8503d5c12d7c494dcc3c6e9615fa1c707da147a9b4"
+  },
+  "excluded": [
+    "immutable candidate release and actual installed new source",
+    "Art fixed bundled upgrade",
+    "force-killed process and filesystem crash persistence",
+    "complete2639-command/GUI/model/fullV1 acceptance"
+  ]
+}

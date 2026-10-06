@@ -32,7 +32,9 @@
     "8.6": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
     "8.7": "docs/evidence/protocol-fault-first-use-20261007.json",
     "8.8": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
-    "8.9": "docs/evidence/codex-public-workflow-session-first-use-20261007.json"
+    "8.9": "docs/evidence/codex-public-workflow-session-first-use-20261007.json",
+    "3.10": "docs/evidence/failed-stage-candidate-20261007.json",
+    "3.11": "docs/evidence/failed-stage-candidate-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",
@@ -59,5 +61,6 @@
     "tag": "v0.1.0-dev.14",
     "commit": "7f26b8d075f0813c3aaf90d8161ce194949d3dcc"
   },
-  "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json"
+  "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json",
+  "failedStageCandidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json"
 }

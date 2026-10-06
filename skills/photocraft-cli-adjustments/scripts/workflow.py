@@ -165,7 +165,8 @@ def execute(plan, output, runtime_home=None, source=None):
         json.loads(Path(__file__).with_name('runtime.lock.json').read_text()),
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     output.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='.photocraft-', dir=output.parent) as temporary:
+    recovery_state = {}
+    with load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:
         stage = Path(temporary)
         assets = {}
         for name, entry in inherited_assets.items():
@@ -197,9 +198,12 @@ def execute(plan, output, runtime_home=None, source=None):
             shutil.copyfile(source_project, stage / 'source.pcraft')
         argv = [installed['executable'], 'mcp', '--automation-read-root', str(stage), '--automation-write-root', str(stage)]
         receipts = []
+        recovery_state['operations'] = receipts
         with load_module('mcp_session').Session(argv) as session:
             def call(name, args):
+                recovery_state['lastAttempt'] = {'tool': name, 'arguments': args, 'phase': 'submitted'}
                 result = session.request('tools/call', {'name': name, 'arguments': args})
+                recovery_state['lastAttempt']['phase'] = 'reply_received'
                 if result.get('isError'):
                     raise RuntimeError('command_failed: ' + name + ': ' + json.dumps(result['content']))
                 content = result.get('content', [])

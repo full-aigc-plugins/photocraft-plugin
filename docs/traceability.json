@@ -261,6 +261,18 @@
       "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
       "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
       "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json"
+    },
+    {
+      "requirement": "PC-TX-004",
+      "capability": "task-execution",
+      "tasks": [
+        "3.10",
+        "3.11",
+        "3.12"
+      ],
+      "owner": "Harness owner",
+      "status": "in-progress",
+      "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json"
     }
   ]
 }

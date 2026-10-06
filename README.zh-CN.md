@@ -57,9 +57,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.15 |
+| Metadata version | 0.1.0-dev.16 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.14 |
+| Skills source | photocraft-skills / 0.1.0-dev.15 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -207,3 +207,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 2026-10-06 固定智能对象混合验收：Art 插件 dev.70／技能源 dev.47／运行时 dev.68 与 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1，通过安装后原生测试一项（64.957 秒）、十项 Art 独立冷启动、58 安装摘要保全、五固定包重建及四项对应提交 CI。Logo 替换保留海报智能对象变换、蒙版及非目标图层；受影响 Logo／海报／片头／影片更新，独立任务复用，成片十二帧独立解码、坏帧恢复及五子工程移动验包通过。[证据](docs/evidence/codex-artcraft70-smart-mixed-first-use-20261006.json)。完整首版、通用 Skills CLI、GUI／模型调度、持久外部链接及外部 PSD 保真仍开放。
 
 公开工作流回复检查已同步领域技能源候选，并通过有界原生／Art 协议验证。新的固定领域和 Art 分发包仍待发行与实际安装验收。[候选架构](docs/PhotoCraft-Complete-Commands-Architecture.zh_CN.md) · [证据](docs/evidence/public-workflow-session-candidate-20261007.json)。
+
+失败暂存候选：公开工作流保留原生暂存原路径、依赖摘要、最后提交请求与已完成回执，禁止重放；固定发行与安装副本验收仍开放。[架构](docs/PhotoCraft-Failed-Stage-Architecture.zh_CN.md)。

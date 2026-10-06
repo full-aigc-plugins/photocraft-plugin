@@ -70,3 +70,11 @@ background 的数字 ID 必须读取源 `native.json` 的真实 Background 图�
 `asset.placeSmart` 使用 `{asset, center?, fit?, scale?}`；`layer.smartObjects.convertToSmartObject` 和 `layer.smartObjects.convertToEmbedded` 使用显式 `{layer}`。替换与重新链接使用 `{layer, asset}`，asset 必须是已登记图像别名；禁止直接传 path。维护版通过授权目录读取字节，收集交付中的重新链接转换为嵌入，保持原变换与蒙版。持续外部链接交付不由本映射证明。修订需提供 expectedProjectSha256 与 --source，另存旧包。
 
 Smart placement accepts registered asset aliases with optional center/fit/scale. Conversion requires an explicit layer; replacement/relink requires `{layer, asset}` and rejects direct paths. The maintained runtime reads through directory capabilities. Collected relink content is embedded while preserving transform and masks; persistent external linked delivery is not claimed. Revisions bind the expected project digest, use --source, and preserve old packages.
+
+## 失败暂存的原生恢复
+
+公开工作流已经进入暂存后失败时，保留输出 `failure.json` 指向的 `stage`、该原位置的工程与素材，以及 `recovery-operations.json`。核对 `files` 中全部摘要及 `lastAttempt`，未知请求可能已经执行；不能自动重跑计划、移动暂存或删除失败目录。输出已有时会拒绝再次运行，成功交付才清理未使用暂存。
+
+先用本技能 `commands.py` 的新会话执行打开／检查计划，并显式登记恢复工程作为 `--input project=原暂存工程绝对路径`；按真实对象状态建立新的修改计划。`failure.json` 不是交付 manifest，不能把失败输出直接传给 `workflow.py --source`。成功保存、重开、依赖收集及派生输出检查后才形成新的交付。诊断写入权限不足时仍保留暂存并返回原异常，不能假定失败输出目录一定存在。
+
+After staged failure, retain both the output recovery record and its original sibling stage. Verify all file hashes and the last submitted attempt; an unknown reply may follow a successful native operation. Open/inspect the retained project in a fresh commands.py session before an explicit new revision. Do not replay the original plan, move the stage or pass the failed directory as a successful workflow source package.
