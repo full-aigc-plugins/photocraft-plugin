@@ -9,7 +9,8 @@
   "redBaselineObserved": {
     "innerPayloadSubcaseFailures": 12,
     "unsafeEditResultErrors": 1,
-    "cause": "inner JSON accepted unsafe values; poisoned result cannot serialize durable failure receipt"
+    "cause": "inner JSON accepted unsafe values; poisoned result cannot serialize durable failure receipt",
+    "scope": "FilmCraft representative red run; all four pre-fix commands.py hashes equal d9b1fd19c18aaef7e51b5dd03b8e14e0802883f5e8d58f1094ea2fafc2f4adc4; no independent pre-fix red run claimed for other domains"
   },
   "defaultRegression": {
     "tests": 96,
