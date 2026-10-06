@@ -16,8 +16,9 @@
     "1.10": "docs/evidence/task-skill-first-use.json",
     "4.19": "docs/evidence/chinese-text-first-use.json",
     "4.20": "docs/evidence/codex-release30-protected-native-20261006.json",
-    "4.21": "docs/evidence/codex-release31-retouch-native-20261006.json"
+    "4.21": "docs/evidence/codex-release31-retouch-native-20261006.json",
+    "4.22": "docs/evidence/codex-photo9-layout-first-use-20261006.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-release30-protected-native-20261006.json",
-  "hostValidationStatus": "bounded-installed-native-retouch-passed"
+  "hostValidationEvidence": "docs/evidence/codex-photo9-layout-first-use-20261006.json",
+  "hostValidationStatus": "bounded-installed-native-layout-passed"
 }

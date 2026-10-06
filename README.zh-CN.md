@@ -165,4 +165,4 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 
 固定 PhotoCraft 插件 dev.8／技能源 dev.7 与 ArtCraft 插件 dev.31／技能源 dev.27 通过安装后的原生修图和交接测试（13.260 秒／23.264 秒）。58 个安装后技能摘要全部保持不变。仅完成有界修图任务；完整目标仍未完成。[证据](docs/evidence/codex-release31-retouch-native-20261006.json)。
 
-尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin repetition remains pending.
+尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin cold repetition passed; [version-bound evidence](docs/evidence/codex-photo9-layout-first-use-20261006.json). Full creative acceptance remains open.
