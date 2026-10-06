@@ -256,7 +256,8 @@
       "evidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
       "revisionEvidence": "docs/evidence/complete-command-revision-first-use-20261007.json",
       "revisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
-      "protocolFaultCandidateEvidence": "docs/evidence/protocol-fault-first-use-20261007.json"
+      "protocolFaultCandidateEvidence": "docs/evidence/protocol-fault-first-use-20261007.json",
+      "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json"
     }
   ]
 }
