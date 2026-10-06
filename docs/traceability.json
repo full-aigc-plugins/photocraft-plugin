@@ -271,8 +271,9 @@
         "3.12"
       ],
       "owner": "Harness owner",
-      "status": "in-progress",
-      "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json"
+      "status": "verified-darwin-arm64",
+      "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json",
+      "fixedHostEvidence": "docs/evidence/codex-failed-stage-first-use-20261007.json"
     }
   ]
 }

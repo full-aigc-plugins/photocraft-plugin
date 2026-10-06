@@ -1,6 +1,6 @@
 # PhotoCraft Failed Stage Architecture
 
-> Candidate implementation; fixed source/plugin installed acceptance remains open. Updated: 2026-10-07.
+> Fixed domain installed acceptance passed; Art bundled upgrade and full V1 remain open. Updated: 2026-10-07.
 
 ## Contract and ownership
 
@@ -32,3 +32,7 @@ An owned output is bound to device/inode identity. A competing directory or syml
 ## Evidence and limitations
 
 Native tests use six real post-save response faults per domain and reopen the product-retained original native project, verify inventory hashes and reject replay into the existing output. Lifecycle tests cover success cleanup/rename, directory replacement, symlinks, owned partial outputs and diagnostic write failure. Healthy native creative/revision tests remain required. Fixed releases, actual installed copies and Art bundled-source upgrades have separate gates. Filesystem crash durability, force-killed processes, complete command/GUI/model acceptance and full V1 are not proved by this candidate.
+
+## Fixed installed acceptance
+
+Fixed domain failed-stage first use passes: Film plugin18/source16 and other domain plugins17/source15; five plugins/58 skills without loading errors; all58 independent empty-runtime CLI starts (417.646s); actual installed24 post-save faults reopen product-retained original projects and dependencies; four healthy native creation/revision cases pass. All installed identities and16 fixed plugin CI runs pass. Source repositories have no CI runs, only local regression. Only domain OpenSpec3.12 closes; Art77 bundles older domain sources, task4.9 and fullV1 remain open. [Evidence](evidence/codex-failed-stage-first-use-20261007.json).
