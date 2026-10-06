@@ -24,5 +24,6 @@
   },
   "hostValidationEvidence": "docs/evidence/codex-photo9-layout-first-use-20261006.json",
   "hostValidationStatus": "bounded-installed-native-layout-passed",
-  "fontlessFixedReleaseEvidence": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json"
+  "fontlessFixedReleaseEvidence": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json",
+  "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json"
 }
