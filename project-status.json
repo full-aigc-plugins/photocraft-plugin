@@ -35,5 +35,6 @@
   "smartFixedDomainEvidence": "docs/evidence/codex-photocraft11-smart-first-use-20261006.json",
   "smartMixedFixedEvidence": "docs/evidence/codex-artcraft70-smart-mixed-first-use-20261006.json",
   "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
-  "completeCommandAcceptance": "incomplete"
+  "completeCommandAcceptance": "incomplete",
+  "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json"
 }

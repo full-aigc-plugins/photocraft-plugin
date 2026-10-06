@@ -54,3 +54,7 @@ In the independent source repository, run generator/suite `--check`, `test_comma
 ## 6. Specification and remaining work
 
 The plugin's existing OpenSpec `establish-v1-plugin` CM-001 requirement is authoritative. Tasks 8.1 and 8.2 cover regression, full documentation, invocation and vendor synchronization. Task 8.3 remains open for every command's applicable context, GUI/output assertions, local revisions, fixed publication and installed-copy verification. The complete registry retains NOT_RUN for that comprehensive audit; older bounded scene evidence remains separate.
+
+## 7. Public cold first use
+
+All 12 independently copied skills passed separate empty-runtime public downloads, native create/save/reopen/render and preserved hashes. [Evidence](evidence/complete-commands-cold-first-use-20261007.json). This supplements the earlier reuse sample; full command and host acceptance remain open. Reproduce with CRAFT_NATIVE_COMMANDS=1 CRAFT_NATIVE_COLD=1 and optional CRAFT_NATIVE_SKILL=<name> in the independent native test.

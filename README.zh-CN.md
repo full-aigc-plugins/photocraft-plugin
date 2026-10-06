@@ -2,6 +2,8 @@
 
 ## 完整原生命令入口
 
+全部 12 项独立技能分别从空运行时使用公开锁定 CLI 附件安装，随后完成创建、保存重开、领域参数及渲染检查（74.187 秒，零跳过）。[逐技能冷首用证据](docs/evidence/complete-commands-cold-first-use-20261007.json)。本轮覆盖每项技能的完整命令代表样例；全命令／GUI 和实际宿主安装另行验收。
+
 本地候选：skills dev.11 / plugin dev.12；公开发行及宿主安装验收待完成。
 
 748 条命令现在均有逐项参数说明、技能归属与同会话调用入口。运行 `commands.py list / describe / check / run`；原生状态按实时 enabled 校验。旧工作流的 32 项交付合同保留。GUI 命令需显式 bridge，命令目录覆盖不代表全量验收。

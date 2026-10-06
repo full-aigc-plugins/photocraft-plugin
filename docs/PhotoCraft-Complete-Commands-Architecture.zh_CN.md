@@ -79,3 +79,7 @@ CRAFT_NATIVE_COMMANDS=1 python3 -B -m unittest discover -s tests -p test_native_
 ## 6. 规格与下一阶段
 
 插件内 `establish-v1-plugin` 的领域需求 `CM-001` 是增量事实源：任务 8.1 管失败回归，8.2 管完整目录、入口与同步，8.3 管逐命令上下文、GUI、修订、发布及安装副本验收。完整目录所有项本轮完整逐命令验收仍是 NOT_RUN，既有代表场景证据保留。下一阶段为每个命令建立真实输入、前置状态、输出断言和局部修改断言；不能仅靠反射或返回成功关闭 8.3。
+
+## 7. 公开冷安装首用
+
+全部 12 项分别单独复制、使用独立空运行时、公开下载，原生创建／保存重开／渲染及摘要保全通过。[证据](evidence/complete-commands-cold-first-use-20261007.json)。这是新增的冷首用证据，补充此前复用测试；全命令和宿主验收仍开放。可在独立技能源测试中设置 CRAFT_NATIVE_COMMANDS=1、CRAFT_NATIVE_COLD=1，按需设置 CRAFT_NATIVE_SKILL=<技能名> 重现。
