@@ -178,3 +178,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 当前固定发行领域场景矩阵：FilmCraft dev.10、EffectCraft dev.9、PhotoCraft dev.10、VectorCraft dev.11 共 37 个原生场景及 6 项合同检查通过，零跳过。每个场景仅复制对应安装技能，从空运行时目录使用默认公开附件安装原生 CLI；核验原生工程、实际像素／音频及局部修改保持，全部 58 项安装身份保持一致。[版本绑定证据](docs/evidence/codex-current-domain-task-matrix-20261006.json)。完整首版、通用 Skills CLI 安装、模型派发、GUI 与创作验收仍开放。
 
 当前插件 `0.1.0-dev.11` 固定独立技能源 `0.1.0-dev.10` 与维护版 CLI `0.2.0-craft.1`，支持登记的可编辑智能对象内容。单技能公开源冷首用通过；实际固定插件安装及 Art 混合验收待执行。[证据](docs/evidence/smart-public-source-first-use-20261006.json)。
+
+固定 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1 已通过安装副本单技能智能对象放置／替换／重新链接收集与移动修订（4.633 秒）、PSD 独立解码及纯图片回归两项、十二项独立冷启动（51.647 秒）、全部 58 安装摘要、公开附件及四项标签 CI。默认维护版安装与旧官方 0.2.0 并存，旧二进制不变。[版本证据](docs/evidence/codex-photocraft11-smart-first-use-20261006.json)。Art 混合升级及完整首版仍开放。

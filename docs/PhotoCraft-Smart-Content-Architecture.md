@@ -26,3 +26,5 @@ The maintained patch routes only embedded placement and content replacement thro
 ## Delivery and verification
 
 Inputs retain hashes in the manifest. A native gate checks original and moved packages, smart transform, masks, unaffected layers, three independently decoded image pixels and invalid-path rejection. Persistent external links, all smart filters and external PSD editing require separate acceptance. [Checkpoint evidence](evidence/smart-workflow-checkpoint-20261006.json) records failed official-runtime first use, three passing input tests and 46 candidate automation tests. Build success alone will not close installation or editable-delivery gates.
+
+Fixed Photo plugin dev.11 / source dev.10 / CLI 0.2.0-craft.1 installed-domain acceptance now passes; Art mixed upgrade remains pending. [Evidence / 证据](evidence/codex-photocraft11-smart-first-use-20261006.json)。

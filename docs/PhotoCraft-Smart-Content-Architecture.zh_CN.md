@@ -26,3 +26,5 @@ flowchart LR
 ## 交付与验收
 
 输入摘要保留在素材清单。原生门禁检查旧包与移动包、智能对象变换、蒙版、非目标图层、三份独立解码像素及非法路径拒绝。持久外部链接、全部智能滤镜、外部 PSD 编辑需要单独验收。[检查点证据](evidence/smart-workflow-checkpoint-20261006.json)记录官方运行时首用失败、三项输入回归通过和 46 项候选自动化测试通过。构建成功不能单独关闭安装或可编辑交付门禁。
+
+固定 Photo 插件 dev.11／技能源 dev.10／CLI 0.2.0-craft.1 的安装后领域验收现已通过；Art 混合升级仍待完成。 [Evidence / 证据](evidence/codex-photocraft11-smart-first-use-20261006.json)。
