@@ -28,3 +28,5 @@ flowchart LR
 输入摘要保留在素材清单。原生门禁检查旧包与移动包、智能对象变换、蒙版、非目标图层、三份独立解码像素及非法路径拒绝。持久外部链接、全部智能滤镜、外部 PSD 编辑需要单独验收。[检查点证据](evidence/smart-workflow-checkpoint-20261006.json)记录官方运行时首用失败、三项输入回归通过和 46 项候选自动化测试通过。构建成功不能单独关闭安装或可编辑交付门禁。
 
 固定 Photo 插件 dev.11／技能源 dev.10／CLI 0.2.0-craft.1 的安装后领域验收现已通过；Art 混合升级仍待完成。 [Evidence / 证据](evidence/codex-photocraft11-smart-first-use-20261006.json)。
+
+2026-10-06 固定智能对象混合验收：Art 插件 dev.70／技能源 dev.47／运行时 dev.68 与 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1，通过安装后原生测试一项（64.957 秒）、十项 Art 独立冷启动、58 安装摘要保全、五固定包重建及四项对应提交 CI。Logo 替换保留海报智能对象变换、蒙版及非目标图层；受影响 Logo／海报／片头／影片更新，独立任务复用，成片十二帧独立解码、坏帧恢复及五子工程移动验包通过。[证据](evidence/codex-artcraft70-smart-mixed-first-use-20261006.json)。完整首版、通用 Skills CLI、GUI／模型调度、持久外部链接及外部 PSD 保真仍开放。

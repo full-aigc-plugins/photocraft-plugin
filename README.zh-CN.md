@@ -179,4 +179,6 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 
 当前插件 `0.1.0-dev.11` 固定独立技能源 `0.1.0-dev.10` 与维护版 CLI `0.2.0-craft.1`，支持登记的可编辑智能对象内容。单技能公开源冷首用通过；实际固定插件安装及 Art 混合验收待执行。[证据](docs/evidence/smart-public-source-first-use-20261006.json)。
 
-固定 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1 已通过安装副本单技能智能对象放置／替换／重新链接收集与移动修订（4.633 秒）、PSD 独立解码及纯图片回归两项、十二项独立冷启动（51.647 秒）、全部 58 安装摘要、公开附件及四项标签 CI。默认维护版安装与旧官方 0.2.0 并存，旧二进制不变。[版本证据](docs/evidence/codex-photocraft11-smart-first-use-20261006.json)。Art 混合升级及完整首版仍开放。
+固定 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1 已通过安装副本单技能智能对象放置／替换／重新链接收集与移动修订（4.633 秒）、PSD 独立解码及纯图片回归两项、十二项独立冷启动（51.647 秒）、全部 58 安装摘要、公开附件及四项标签 CI。默认维护版安装与旧官方 0.2.0 并存，旧二进制不变。[版本证据](docs/evidence/codex-photocraft11-smart-first-use-20261006.json)。Art 混合升级已按下述版本验收；完整首版仍开放。
+
+2026-10-06 固定智能对象混合验收：Art 插件 dev.70／技能源 dev.47／运行时 dev.68 与 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1，通过安装后原生测试一项（64.957 秒）、十项 Art 独立冷启动、58 安装摘要保全、五固定包重建及四项对应提交 CI。Logo 替换保留海报智能对象变换、蒙版及非目标图层；受影响 Logo／海报／片头／影片更新，独立任务复用，成片十二帧独立解码、坏帧恢复及五子工程移动验包通过。[证据](docs/evidence/codex-artcraft70-smart-mixed-first-use-20261006.json)。完整首版、通用 Skills CLI、GUI／模型调度、持久外部链接及外部 PSD 保真仍开放。
