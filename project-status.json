@@ -31,7 +31,8 @@
     "8.5": "docs/evidence/complete-command-revision-first-use-20261007.json",
     "8.6": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
     "8.7": "docs/evidence/protocol-fault-first-use-20261007.json",
-    "8.8": "docs/evidence/codex-protocol-fault-first-use-20261007.json"
+    "8.8": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
+    "8.9": "docs/evidence/codex-public-workflow-session-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",
@@ -53,9 +54,10 @@
   "currentReleaseDiscoveryEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
-  "publicWorkflowCandidateStatus": "new fixed source snapshot vendored; actual installed-copy and Art upgraded bundle acceptance pending",
+  "publicWorkflowCandidateStatus": "bounded fixed installed domain clients passed; Art bundled distribution and exhaustive command gates remain open",
   "publicWorkflowSourceRelease": {
     "tag": "v0.1.0-dev.14",
     "commit": "7f26b8d075f0813c3aaf90d8161ce194949d3dcc"
-  }
+  },
+  "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json"
 }

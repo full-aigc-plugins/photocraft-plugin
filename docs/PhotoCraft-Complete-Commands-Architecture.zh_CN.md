@@ -113,3 +113,5 @@ flowchart LR
 [候选证据](evidence/public-workflow-session-candidate-20261007.json)包含真实 stdio 异常结构、四领域 24 个实际保存后故障案例，以及四领域健康工作流保存重开和局部修改。实际已发布 Art runtime dev.73 的公开 Vector 适配器通过六类保存后异常验证，下游阻止、任务 attempt／预算保持且同计划不重放。注入仅在测试加载钩子中发生，未改已发布引擎或原生 CLI。
 
 旧 Vector 源 tag dev.13 在相同 `tool-content` 场景下失败，新工作区候选通过。四领域候选客户端同步至全部 48 项独立技能，但插件 vendor 和 Art 发布包仍引用旧不可变版本；固定发行与实际安装验证尚未完成。测试代理额外捕获临时原生工程，只证明实际保存及可重开，不证明产品保留失败暂存工程。OpenSpec 8.9 保持开放；8.3 全命令／GUI 门禁保持开放。
+
+固定领域版本后续验证已通过并关闭有界任务8.9：[安装证据](evidence/codex-public-workflow-session-first-use-20261007.json)。候选段落中的未发行状态是当时的验证边界；全量8.3与Art新内置领域分发包仍开放。

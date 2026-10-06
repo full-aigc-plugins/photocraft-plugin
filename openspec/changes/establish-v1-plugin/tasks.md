@@ -135,4 +135,6 @@
 
 8.7 候选证据 `docs/evidence/protocol-fault-first-use-20261007.json`；不可变旧源失败日志 `docs/evidence/protocol-fault-red-baseline-20261007.json`。默认回归344项：254通过、90显式跳过。48个独立技能分别空运行时公开安装，共288个原生保存成功后故障案例通过；未知回执、不重放、后续停止、原生重开及交付／技能摘要保全均已检查。8.8固定安装副本通过，证据 `docs/evidence/codex-protocol-fault-first-use-20261007.json`；Art领域包升级独立保持开放。
 
-- [ ] 8.9 [PC-CM-001] 用真实stdio子进程复现公开工作流工具结构缺失检查；Session统一检查tools/call响应，同步独立技能并验证代表原生公开工作流故障与Art编排不重放，固定发布／实际安装单独验收。
+- [x] 8.9 [PC-CM-001] 用真实stdio子进程复现公开工作流工具结构缺失检查；Session统一检查tools/call响应，同步独立技能并验证代表原生公开工作流故障与Art编排不重放，固定发布／实际安装单独验收。
+
+8.9 固定安装子门禁证据 `docs/evidence/codex-public-workflow-session-first-use-20261007.json`：新领域源／插件标签，实际安装副本24个保存后异常、四个健康公开工作流，以及已发布 Art 引擎＋实际安装 Vector 公开工作流六类异常通过；全部58项身份保持不变。仅关闭本次共享 Session 检查与固定领域副本复验；全量8.3和Art内置领域分发升级不关闭。
