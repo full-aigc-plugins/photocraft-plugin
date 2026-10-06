@@ -170,3 +170,10 @@ Photocraft SHALL 为锁定反射目录每条命令保留完整参数原文、场
 - **WHEN** 已提交请求的工具 text JSON 包含 NaN／Infinity、数值溢出或重复对象键
 - **THEN** 完整命令入口 SHALL 在记录成功或绑定返回值前标记 outcome_unknown／unknown，保留原调用及原文件，停止后续编辑且不重放
 - **AND** 普通文字与图片工具保持原公开合同；单纯目录和单元测试不能代替固定安装与原生保存重开验收
+
+#### Scenario: PC-CM-001-NATIVE-GATEWAY 完整命令的原生工作流交付
+
+- **WHEN** 用户在公开工作流中显式提交native.command及固定目录原生ID
+- **THEN** 系统 SHALL 核对固定摘要与实时enabled、使用真实对象引用，严格处理回复
+- **AND** 系统 SHALL 保持依赖收集、原生保存重开、导出与交换损失合同；unknown保留原暂存工程且不重放
+- **AND** 固定安装与逐命令验收 SHALL 单独完成，候选不得自动关闭8.3或8.12
