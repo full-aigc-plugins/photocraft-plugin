@@ -97,3 +97,5 @@
 ## 当前宿主证据范围
 
 `docs/evidence/codex-current-release.json` 记录固定发布在 Codex 0.147.0 / 0.153.4 的安装、发现与公开入口执行；共享复现工具由 ArtCraft 持有。该证据未覆盖模型派发、桌面 GUI、完整 P0 与创作验收，release-compatibility 任务的前置条件尚未全部满足，不能据此勾选完整发布任务。
+
+- [x] 4.23 [PC-DM-005] 重新隔离安装固定五插件，使用单导出技能空运行目录创建四图层蒙版海报、标题修订和封面；Pillow 独立解码三份不透明 PSD 合成图与 PNG 全像素比对，保留两个源交付和素材，核对全部 58 技能摘要。产物：docs/evidence/codex-photo9-independent-psd-first-use-20261006.json；不关闭完整 PSD／外部编辑器／创作验收任务。
