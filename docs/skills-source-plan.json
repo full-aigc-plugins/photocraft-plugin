@@ -20,5 +20,5 @@
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
   "suiteManifest": "https://github.com/full-aigc-skills/photocraft-skills/blob/main/skill-suite.json",
   "sourceRef": "v0.1.0-dev.15",
-  "sourceSha": "7f26b8d075f0813c3aaf90d8161ce194949d3dcc"
+  "sourceSha": "44941ae2393b5f83803e47064408cc74089a4330"
 }

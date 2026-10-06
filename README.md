@@ -57,7 +57,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.16 |
+| Metadata version | 0.1.0-dev.17 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.15 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |

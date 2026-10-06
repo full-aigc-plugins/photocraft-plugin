@@ -47,6 +47,9 @@ for path in markdown:
 manifest = json.loads((ROOT / 'plugin.json').read_text())
 status = json.loads((ROOT / 'project-status.json').read_text())
 lock = json.loads((ROOT / 'skills.lock.json').read_text())
+source_plan = json.loads((ROOT / 'docs/skills-source-plan.json').read_text())
+if len(lock['sources']) != 1 or any(source_plan.get(field) != lock['sources'][0].get(key) for field,key in [('package','package'),('sourceRef','ref'),('sourceSha','sha')]):
+    errors.append('source plan identity differs from immutable skill lock')
 if not re.fullmatch(r'0\.1\.0-dev\.\d+', manifest['version']) or status['stage'] not in ('documentation-baseline', 'implementation-in-progress'):
     errors.append('documentation status and metadata mismatch')
 if status['marketplaceEligible'] or status['supportedPluginHosts']:
