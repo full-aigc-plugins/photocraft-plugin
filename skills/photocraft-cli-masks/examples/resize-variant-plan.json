@@ -1,0 +1,42 @@
+{
+  "expectedProjectSha256": "REPLACE_WITH_SOURCE_PROJECT_SHA256",
+  "minimumLayers": 4,
+  "operations": [
+    {
+      "command": "image.canvasSize",
+      "params": {
+        "width": 360,
+        "height": 440,
+        "anchor": "center",
+        "extensionColor": "transparent"
+      }
+    }
+  ],
+  "exports": [
+    {
+      "format": "png"
+    },
+    {
+      "format": "psd"
+    }
+  ],
+  "variant": {
+    "width": 360,
+    "height": 440,
+    "safeArea": [
+      8,
+      8,
+      344,
+      424
+    ],
+    "roles": {
+      "background": 2,
+      "product": {
+        "$ref": "product.layer"
+      },
+      "text": {
+        "$ref": "headline.layer"
+      }
+    }
+  }
+}

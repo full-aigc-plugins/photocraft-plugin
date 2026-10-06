@@ -56,6 +56,7 @@ def validate(plan):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required')
     if 'protectedRegions' in plan:load_module('pixel_guard').validate(plan['protectedRegions'])
+    if 'variant' in plan:load_module('layout_variant').validate(plan['variant'])
     aliases = set()
     for operation in plan['operations']:
         if operation.get('command') not in ALLOWED:
@@ -98,6 +99,7 @@ def execute(plan, output, runtime_home=None, source=None):
     if output.exists() or output.is_symlink():
         raise ValueError('output_exists')
     if 'protectedRegions' in plan and not source:raise ValueError('protected_source_required')
+    if 'variant' in plan and not source:raise ValueError('variant_source_required')
     source_project, source_hash = None, None
     bindings = {}
     inherited_assets = {}
@@ -165,6 +167,9 @@ def execute(plan, output, runtime_home=None, source=None):
                 return value
             opened = call('doc_open', {'path': 'source.pcraft'}) if source_project else call('doc_new', plan['document'])
             target_index = opened.get('index', opened.get('document'))
+            variant_before = call('doc_inspect', {}) if 'variant' in plan else None
+            variant_roles = resolve(plan['variant']['roles'], bindings) if 'variant' in plan else None
+            variant_steps = []
             if 'protectedRegions' in plan:
                 call('doc_export', {'path':'protection-before.png','format':'png'})
             for operation in plan['operations']:
@@ -183,7 +188,10 @@ def execute(plan, output, runtime_home=None, source=None):
                     call('doc_close', {'index': opened_asset['index']})
                     call('doc_select', {'index': target_index})
                 else:
+                    geometry_before = call('doc_inspect', {}) if 'variant' in plan and operation['command'] in ('image.canvasSize', 'image.imageSize') else None
                     result = call('command_run', {'id': operation['command'], 'params': params})
+                    if geometry_before is not None:
+                        variant_steps.append({'command':operation['command'], 'before':[geometry_before['width'],geometry_before['height']], 'result':result})
                 if operation.get('as'):
                     bindings[operation['as']] = result
             fonts = call('command_run', {'id': 'type.resolveMissingFonts', 'params': {}})
@@ -202,6 +210,9 @@ def execute(plan, output, runtime_home=None, source=None):
             native = call('doc_inspect', {})
             if len(native['layers']) < plan.get('minimumLayers', 1):
                 raise ValueError('editable_layer_gate_failed')
+            if 'variant' in plan:
+                variant = load_module('layout_variant').assess(plan['variant'],variant_before,native,variant_steps,variant_roles)
+                (stage/'layout-variant.json').write_text(json.dumps(variant,ensure_ascii=False,indent=2)+'\n')
             if 'protectedRegions' in plan:
                 call('doc_export', {'path':'protection-after.png','format':'png'})
                 protection = load_module('pixel_guard').compare(stage/'protection-before.png',stage/'protection-after.png',plan['protectedRegions'])
@@ -224,6 +235,8 @@ def execute(plan, output, runtime_home=None, source=None):
                     'outputs': outputs, 'nativeWarnings': saved.get('warnings', []),
                     'files': {f.name: sha(f) for f in stage.iterdir() if f.is_file()},
                     'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
+        if 'variant' in plan:
+            manifest['layoutVariant'] = {'path':'layout-variant.json','sha256':sha(stage/'layout-variant.json')}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')

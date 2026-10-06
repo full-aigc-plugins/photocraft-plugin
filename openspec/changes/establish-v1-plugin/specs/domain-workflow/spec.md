@@ -84,6 +84,16 @@ PhotoCraft SHALL 从源工程创建独立画幅变体，记录裁切、留白和
 - **WHEN** 新尺寸覆盖了源文档
 - **THEN** 变体验收失败，使用源检查点恢复
 
+尺寸变体工作流 SHALL bind a requested size variant to its reopened native project, record native canvas offsets or resampling scales, verify distinct preserved background/product/text layer identities, and reject text or product bounds outside the declared safe area before publishing the variant directory.
+
+#### Scenario: Native canvas variant retains editable identities
+- **WHEN** a source-bound resize plan declares target dimensions, three layer roles and a safe area
+- **THEN** the delivery includes a hashed layout-variant.json with actual geometry operations and reopened layer bounds while retaining the original source files
+
+#### Scenario: Unsafe or inconsistent variant is rejected
+- **WHEN** saved dimensions differ or a declared editable role changes identity/type or exceeds the safe area
+- **THEN** no variant delivery directory is published and the source remains unchanged
+
 ### Requirement: PC-DM-005 原生与 PSD 保真
 
 PhotoCraft SHALL 将 .pcraft 作为原生事实源；PSD 交付逐项验证所用图层功能并记录兼容损失；不宣称所有 PSD 无损兼容。

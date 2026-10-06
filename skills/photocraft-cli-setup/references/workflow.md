@@ -50,3 +50,17 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 修图计划先执行 `layer.select`，用 `{"$ref":"product.layer"}` 或已核验的图层 ID 选择像素图层，再执行上述三个笔触命令。笔刷 hardness/opacity/flow 为 0..1；仿制图章和修复笔刷 hardness 为 0..100，opacity/flow 为 1..100，并显式提供 source 或 offset。不要混用单位。
 
 通过 workflow.py 的 `--source` 另存修订，可同时声明 `protectedRegions` 并请求 PNG/PSD；实际保存重开后才发布交付。直接调用原生 cli.py run 不会执行 Python 工作流保护区域门禁。更多绘画命令虽可被原生 CLI 列出，但不因此进入此工作流白名单。
+
+## 可核验的尺寸变体
+
+另存计划可增加 `variant`；它要求 `--source` 和已核验的 `expectedProjectSha256`。例如：
+
+```json
+{"variant":{"width":360,"height":440,"safeArea":[8,8,344,424],"roles":{"background":2,"product":{"$ref":"product.layer"},"text":{"$ref":"headline.layer"}}}}
+```
+
+background 的数字 ID 必须读取源 `native.json` 的真实 Background 图层，不能照抄示例。roles 的三个 ID 必须互不相同并来自源工程；文字必须保持原生 Type 图层，所有角色必须可见，产品和文字的实际边界必须完整位于安全区。安全区 `[x,y,width,height]` 使用最终画布坐标。它是几何门禁，不表示视觉审美、品牌或印刷验收。
+
+操作必须包含 `image.canvasSize` 或 `image.imageSize`。工作流记录每次操作前的实际尺寸和 CLI 返回结果；画布调整使用原生 offset 计算四边裁切与留白，图像重采样记录横纵比例。保存并重开 `.pcraft` 后核验目标尺寸和角色，再写入 `layout-variant.json` 并在 manifest 中绑定 SHA-256。尺寸不符、图层身份或类型变化、隐藏、文字/产品越出安全区都会拒绝发布目标目录，源交付保留。`protectedRegions` 为同尺寸像素保护，不能用原画幅坐标替代尺寸变体的安全区。
+
+完整变体示例见本技能 `examples/resize-variant-plan.json`；先替换源工程摘要、背景 ID 和所需目标尺寸。

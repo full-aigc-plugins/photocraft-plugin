@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.6 |
+| Metadata version | 0.1.0-dev.9 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.5 |
+| Skills source | photocraft-skills / v0.1.0-dev.8 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -164,3 +164,5 @@ Fixed PhotoCraft plugin dev.7 / skills dev.6 and ArtCraft plugin dev.30 / skills
 Candidate plugin dev.8 pins PhotoCraft skills dev.7 and its bounded retouch workflow. All 45 source native regression tests passed; actual installed-plugin revalidation remains pending. [Evidence](docs/evidence/retouch-workflow-first-use.json).
 
 Fixed PhotoCraft plugin dev.8 / skills dev.7 and ArtCraft plugin dev.31 / skills dev.27 pass installed native retouch/handoff testing (13.260s and 23.264s). All 58 installed skill hashes remain unchanged. Only scoped retouch tasks are complete; the full goal remains incomplete. [Proof](docs/evidence/codex-release31-retouch-native-20261006.json).
+
+尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin repetition remains pending.

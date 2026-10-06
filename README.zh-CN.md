@@ -34,9 +34,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.6 |
+| Metadata version | 0.1.0-dev.9 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.5 |
+| Skills source | photocraft-skills / v0.1.0-dev.8 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -164,3 +164,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 候选插件 dev.8 固定 PhotoCraft 技能源 dev.7，接通有界修图工作流。源码 45 项原生回归通过；实际安装后的插件复验仍待完成。[证据](docs/evidence/retouch-workflow-first-use.json)。
 
 固定 PhotoCraft 插件 dev.8／技能源 dev.7 与 ArtCraft 插件 dev.31／技能源 dev.27 通过安装后的原生修图和交接测试（13.260 秒／23.264 秒）。58 个安装后技能摘要全部保持不变。仅完成有界修图任务；完整目标仍未完成。[证据](docs/evidence/codex-release31-retouch-native-20261006.json)。
+
+尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin repetition remains pending.
