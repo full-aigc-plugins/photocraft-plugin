@@ -9,6 +9,9 @@ import subprocess
 import sys
 sys.dont_write_bytecode=True
 ALLOWED={'--version', 'batch', 'droplet', 'help', 'info', 'mcp', 'convert', 'commands', 'run', 'serve'}
+def setup_failure(runtime_home):
+ """安装器缺失时也保留当前技能自身的恢复位置，不读取兄弟技能。"""
+ return {'skill':'photocraft-cli-setup','bootstrapScript':str(Path(__file__).with_name('bootstrap.py').resolve()),'runtimeHome':str(Path(runtime_home).expanduser().absolute()),'automaticRetry':False}
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--runtime-home',default=os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')))
@@ -27,6 +30,6 @@ def main():
   return result.returncode
  except (ValueError,OSError,subprocess.SubprocessError) as error:
   reply={'error':str(error),'result':'unknown' if isinstance(error,subprocess.TimeoutExpired) else 'failed'}
-  if not installation_completed and 'module' in locals():reply['dependencySetup']=module.setup_failure(args.runtime_home)
+  if not installation_completed:reply['dependencySetup']=setup_failure(args.runtime_home)
   print(json.dumps(reply));return 1
 if __name__=='__main__':raise SystemExit(main())
