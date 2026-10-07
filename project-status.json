@@ -51,7 +51,10 @@
     "3.14": "docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json",
     "1.1": "docs/evidence/vendor-self-contained-20261008.json",
     "1.2": "docs/evidence/vendor-self-contained-20261008.json",
-    "1.3": "docs/evidence/vendor-self-contained-20261008.json"
+    "1.3": "docs/evidence/vendor-self-contained-20261008.json",
+    "1.4": "docs/evidence/craft-fixed-setup-boundary-20261008.json",
+    "1.5": "docs/evidence/craft-fixed-setup-boundary-20261008.json",
+    "1.6": "docs/evidence/craft-fixed-setup-boundary-20261008.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
