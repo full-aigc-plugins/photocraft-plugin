@@ -1,14 +1,16 @@
+Current fixed releases: domain source21/plugin23; Art source62/plugin89 (runtime83). Isolated installation, immutable identities and discovery of all58 skills pass. Desktop cold batches remain in progress; exhaustive2639 commands and fullV1 are not accepted. [Evidence](evidence/craft-fixed-desktop-release-host-20261007.json).
+
 # Complete command queries, invocation and native delivery
 
 The four pinned reflected registries own the complete native command catalog. Domain workflows retain their convenience operations and add `native.command`; their convenience-operation counts no longer bound the number of native IDs that can be attempted.
 
 | Tool | Complete catalog | Workflow operations, including gateway | Skills | Plugin |
 |---|---:|---:|---|---|
-| FilmCraft | 666 | 18 | dev.19 | dev.21 |
-| EffectCraft | 640 | 22 | dev.19 | dev.21 |
-| PhotoCraft | 748 | 33 | dev.19 | dev.21 |
-| VectorCraft | 585 | 28 | dev.19 | dev.21 |
-| ArtCraft | 2639 domain entries | Domain DAG orchestration | dev.61 | dev.88 / runtime83 |
+| FilmCraft | 666 | 18 | dev.21 | dev.23 |
+| EffectCraft | 640 | 22 | dev.21 | dev.23 |
+| PhotoCraft | 748 | 33 | dev.21 | dev.23 |
+| VectorCraft | 585 | 28 | dev.21 | dev.23 |
+| ArtCraft | 2639 domain entries | Domain DAG orchestration | dev.62 | dev.89 / runtime83 |
 
 `workflowMapped` marks convenience-operation mapping only. A false value does not disable `native.command` or establish a failed native execution. The gateway uses pinned membership and actual live context.
 

@@ -1,14 +1,16 @@
+当前固定版本：领域source21／plugin23，Art source62／plugin89（runtime83）。五插件58技能隔离宿主安装、内容身份与发现通过；桌面冷启动批次仍在执行，全量2639命令与完整V1尚未验收。 [Evidence](evidence/craft-fixed-desktop-release-host-20261007.json).
+
 # 完整命令的查询、调用与工程交付
 
 四领域的反射目录是完整命令入口的事实源。公开创作工作流仍提供领域快捷操作，并增加 `native.command`：因此其快捷操作数不再限制能够尝试调用的原生命令数量。
 
 | 工具 | 完整目录 | 工作流操作（含网关） | 固定技能源 | 固定插件 |
 |---|---:|---:|---|---|
-| FilmCraft | 666 | 18 | dev.19 | dev.21 |
-| EffectCraft | 640 | 22 | dev.19 | dev.21 |
-| PhotoCraft | 748 | 33 | dev.19 | dev.21 |
-| VectorCraft | 585 | 28 | dev.19 | dev.21 |
-| ArtCraft | 2639 个领域目录条目 | 编排上述领域节点 | dev.61 | dev.88，runtime dev.83 |
+| FilmCraft | 666 | 18 | dev.21 | dev.23 |
+| EffectCraft | 640 | 22 | dev.21 | dev.23 |
+| PhotoCraft | 748 | 33 | dev.21 | dev.23 |
+| VectorCraft | 585 | 28 | dev.21 | dev.23 |
+| ArtCraft | 2639 个领域目录条目 | 编排上述领域节点 | dev.62 | dev.89，runtime dev.83 |
 
 目录中的 `workflowMapped` 只标记领域快捷操作映射；`false` 不表示无法使用 `native.command`，也不表示原生命令已经运行失败。网关依据完整固定 ID 及实时原生上下文调用。
 
