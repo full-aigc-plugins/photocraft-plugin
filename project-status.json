@@ -44,10 +44,12 @@
     "8.13": "docs/evidence/photocraft-adjustment-mask-candidate-20261007.json",
     "8.14": "docs/evidence/codex-photocraft-adjustment-mask-first-use-20261007.json",
     "8.15": "docs/evidence/codex-art88-photo-adjustment-first-use-20261007.json",
-    "8.16": "docs/evidence/craft-owned-desktop-first-use-20261007.json"
+    "8.16": "docs/evidence/craft-owned-desktop-first-use-20261007.json",
+    "8.17": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+    "8.20": "docs/evidence/craft-full-command-fixed-first-use-20261007.json"
   },
-  "hostValidationEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
-  "hostValidationStatus": "fixed-protocol-repair-install-and-discovery-passed",
+  "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+  "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
   "fontlessFixedReleaseEvidence": "docs/evidence/codex-release61-vector-photo-first-use-20261006.json",
   "currentDomainTaskMatrixEvidence": "docs/evidence/codex-current-domain-task-matrix-20261006.json",
   "smartFixedDomainEvidence": "docs/evidence/codex-photocraft11-smart-first-use-20261006.json",
@@ -55,7 +57,7 @@
   "completeCommandEntryEvidence": "docs/evidence/complete-commands-20261007.json",
   "completeCommandAcceptance": "incomplete",
   "completeCommandColdFirstUseEvidence": "docs/evidence/complete-commands-cold-first-use-20261007.json",
-  "currentFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
+  "currentFixedFirstUseEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "completeCommandRevisionEvidence": "docs/evidence/complete-command-revision-first-use-20261007.json",
   "completeCommandRevisionStatus": "bounded-source-and-fixed-installed-cold-revision-passed; exhaustive command acceptance remains open",
   "previousFixedHostEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
@@ -63,7 +65,7 @@
   "protocolFaultCandidateEvidence": "docs/evidence/protocol-fault-first-use-20261007.json",
   "protocolFaultAcceptance": "bounded-source-and-fixed-installed-cold-faults-passed; exhaustive commands and Art bundle remain open",
   "previousRevisionHostEvidence": "docs/evidence/codex-complete-command-revision-first-use-20261007.json",
-  "currentReleaseDiscoveryEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
+  "currentReleaseDiscoveryEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
   "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
   "publicWorkflowCandidateStatus": "bounded fixed installed domain clients passed; Art bundled distribution and exhaustive command gates remain open",
@@ -77,5 +79,9 @@
   "nativeDownloadFixedHostEvidence": "docs/evidence/codex-native-download-first-use-20261007.json",
   "nativeDownloadAcceptance": "bounded-fixed-installed-macos-arm64-passed; exhaustive commands and fullV1 remain open",
   "adjustmentMaskStatus": "12-fixed-installed-passed; Art updated distribution, exhaustive748 and fullV1 remain open",
-  "adjustmentMaskArtDistributionEvidence": "docs/evidence/codex-art88-photo-adjustment-first-use-20261007.json"
+  "adjustmentMaskArtDistributionEvidence": "docs/evidence/codex-art88-photo-adjustment-first-use-20261007.json",
+  "previousFixedFirstUseEvidence": "docs/evidence/codex-complete-command-first-use-20261007.json",
+  "ownedDesktopFirstUseEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+  "advancedDesktopFirstUseEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
+  "ownedDesktopAcceptance": "bounded-first-use-and-advanced-desktop-passed; exhaustive commands and full V1 remain open"
 }
