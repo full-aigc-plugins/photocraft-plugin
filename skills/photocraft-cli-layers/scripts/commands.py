@@ -348,7 +348,7 @@ def main():
             if result is None:
                 raise ValueError("unknown_command: " + args.command)
         else:
-            plan = json.loads(args.plan.read_text(), parse_constant=lambda v: (_ for _ in ()).throw(ValueError("invalid_json_number")))
+            plan = reply_json(args.plan.read_text())
             inputs = {}
             for item in args.input:
                 name, separator, path = item.partition("=")

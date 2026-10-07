@@ -1,4 +1,4 @@
-Current plugin: `0.1.0-dev.30`; skill source: `0.1.0-dev.28`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed62 installation and bounded native cases passed; this release includes64 skills across the five plugins with additional scene instructions. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+Current plugin: `0.1.0-dev.31`; skill source: `0.1.0-dev.29`. Strict command-plan JSON snapshot is vendored. Source regression and standalone-copy plan tests pass; this fixed plugin's installed verification remains pending. Exhaustive commands and full V1 remain open.
 
 Fixed publication/installation proof: PhotoCraft plugin dev.30 / source dev.28 and ArtCraft plugin dev.96 / source dev.70. Isolated Codex 0.147.0 discovers all 64 skills with no loading errors; 64 standalone-copy CLI probes and 161 parameter queries across all 23 Photo/Art skills pass. Both installed entry points execute the added commands from fresh caches and preserve presets, original projects, layers and pixels; all installed skill hashes remain unchanged. The classified domain catalog contains 2,646 IDs. Exhaustive contexts, generic Skills CLI installation and full V1 remain open. [Evidence](docs/evidence/craft-photo30-art96-fixed-first-use-20261007.json).
 
@@ -105,9 +105,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.30 |
+| Metadata version | 0.1.0-dev.31 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.28 |
+| Skills source | photocraft-skills / v0.1.0-dev.29 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

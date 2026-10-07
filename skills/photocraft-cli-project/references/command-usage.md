@@ -114,3 +114,9 @@ python3 -I -B "$SKILL_DIR/scripts/desktop.py" run "$SKILL_DIR/examples/desktop-f
 该入口采用相同 craft-command-plan/v1 格式；先用 commands.py describe 查阅命令及前置状态，再组织真实计划。desktop-session.json 记录桌面身份、监听进程身份和会话退出结果，逐步命令结果仍在 journal.json、success.json 或 failure.json。固定桌面安装不等于所有 GUI 指令可在空工程运行；禁用项须根据原生原因建立所需文档、对象、选择或界面状态，不能绕过检查。
 
 For GUI prerequisites, use the skill-owned desktop.py entry and its pinned installation guide. It executes the same command-plan protocol, verifies the owned listener process, preserves command receipts, and closes the processes it started. Establish native prerequisites explicitly; installation or representative execution does not establish acceptance of every GUI command.
+
+## 计划 JSON 的唯一键 / Unique keys in plan JSON
+
+每个 JSON 对象中的键必须唯一，包括顶层、操作及嵌套参数。重复 `command`、`params` 或任何参数键会在公开 `check` / `run` 入口被拒绝，错误为 `duplicate_json_key`；不创建运行时缓存或输出目录，不进行原生调用。先修正计划，再重新校验。严格 JSON 校验还拒绝非有限数值。`check` 成功仍只证明计划结构与目录成员关系，不能证明原生参数、上下文或创作结果通过。
+
+Every object must use unique JSON keys, including the root, operations and nested parameters. Duplicate keys fail with `duplicate_json_key` before runtime installation, output creation or native execution. Correct the plan and check it again. Nonfinite values are also rejected. A successful `check` establishes structure and catalog membership only; native parameters, context and creative results require execution evidence.
