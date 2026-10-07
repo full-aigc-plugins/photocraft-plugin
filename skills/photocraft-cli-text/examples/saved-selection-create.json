@@ -1,0 +1,208 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "tool": "doc_new",
+      "params": {
+        "name": "Saved product selection",
+        "width": 128,
+        "height": 80,
+        "background": "#202020",
+        "mode": "rgb",
+        "depth": 8
+      },
+      "as": "created"
+    },
+    {
+      "command": "shape.create",
+      "params": {
+        "kind": "rect",
+        "rect": [
+          8,
+          16,
+          64,
+          48
+        ],
+        "fill": "#808080",
+        "name": "Product"
+      },
+      "as": "product"
+    },
+    {
+      "command": "shape.create",
+      "params": {
+        "kind": "rect",
+        "rect": [
+          104,
+          8,
+          16,
+          16
+        ],
+        "fill": "#27ae60",
+        "name": "Control"
+      },
+      "as": "control"
+    },
+    {
+      "command": "select.rect",
+      "params": {
+        "x": 16,
+        "y": 24,
+        "width": 24,
+        "height": 32,
+        "antiAlias": false,
+        "feather": 0
+      }
+    },
+    {
+      "command": "select.modify.feather",
+      "params": {
+        "radius": 2
+      }
+    },
+    {
+      "command": "select.saveSelection",
+      "params": {
+        "name": "Product Local",
+        "channel": "new",
+        "operation": "new"
+      },
+      "as": "region"
+    },
+    {
+      "command": "channel.duplicate",
+      "params": {
+        "channel": {
+          "$ref": "region.channel"
+        },
+        "name": "Region backup"
+      },
+      "as": "backup"
+    },
+    {
+      "command": "channel.rename",
+      "params": {
+        "channel": {
+          "$ref": "backup.channel"
+        },
+        "name": "Protected region"
+      }
+    },
+    {
+      "command": "channel.options",
+      "params": {
+        "channel": {
+          "$ref": "region.channel"
+        },
+        "opacity": 35,
+        "color": "#ff0000",
+        "indicates": "selected"
+      }
+    },
+    {
+      "command": "select.deselect",
+      "params": {}
+    },
+    {
+      "command": "select.loadSelection",
+      "params": {
+        "channel": {
+          "$ref": "region.channel"
+        },
+        "operation": "new",
+        "invert": false
+      },
+      "as": "loaded"
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "active-selection.pcraft"
+        }
+      }
+    },
+    {
+      "command": "channel.target.composite",
+      "params": {}
+    },
+    {
+      "command": "layer.newAdjustmentLayer.brightnessContrast",
+      "params": {
+        "brightness": 30,
+        "contrast": 0,
+        "legacy": false
+      },
+      "as": "adjustment"
+    },
+    {
+      "command": "layer.setProps",
+      "params": {
+        "layer": {
+          "$ref": "adjustment.layer"
+        },
+        "name": "Local brightness"
+      }
+    },
+    {
+      "command": "layer.layerMask.revealSelection",
+      "params": {
+        "layer": {
+          "$ref": "adjustment.layer"
+        }
+      }
+    },
+    {
+      "command": "select.deselect",
+      "params": {}
+    },
+    {
+      "command": "channel.list",
+      "params": {},
+      "as": "channels"
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "document"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "preview.png"
+        },
+        "format": "png"
+      }
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "project.pcraft"
+        }
+      }
+    },
+    {
+      "command": "channel.duplicate",
+      "params": {
+        "channel": "Product Local",
+        "name": "Selection proof",
+        "document": "new"
+      },
+      "as": "plane"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "selection-plane.png"
+        },
+        "format": "png",
+        "index": {
+          "$ref": "plane.document"
+        }
+      }
+    }
+  ]
+}

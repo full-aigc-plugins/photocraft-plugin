@@ -1,0 +1,113 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "tool": "doc_open",
+      "params": {
+        "path": {
+          "$ref": "project.path"
+        }
+      }
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "before"
+    },
+    {
+      "command": "select.loadSelection",
+      "params": {
+        "channel": "Product Local",
+        "operation": "new"
+      }
+    },
+    {
+      "command": "select.transformSelection",
+      "params": {
+        "dx": 16,
+        "dy": 0,
+        "interpolation": "nearest"
+      }
+    },
+    {
+      "command": "select.saveSelection",
+      "params": {
+        "channel": "Product Local",
+        "operation": "replace"
+      },
+      "as": "region"
+    },
+    {
+      "command": "channel.target.composite",
+      "params": {}
+    },
+    {
+      "command": "layer.layerMask.delete",
+      "params": {
+        "layer": {
+          "$ref": "before.layers.0.id"
+        }
+      }
+    },
+    {
+      "command": "layer.layerMask.revealSelection",
+      "params": {
+        "layer": {
+          "$ref": "before.layers.0.id"
+        }
+      }
+    },
+    {
+      "command": "select.deselect",
+      "params": {}
+    },
+    {
+      "command": "channel.list",
+      "params": {},
+      "as": "channels"
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "document"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "preview.png"
+        },
+        "format": "png"
+      }
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "project.pcraft"
+        }
+      }
+    },
+    {
+      "command": "channel.duplicate",
+      "params": {
+        "channel": "Product Local",
+        "name": "Selection proof",
+        "document": "new"
+      },
+      "as": "plane"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "selection-plane.png"
+        },
+        "format": "png",
+        "index": {
+          "$ref": "plane.document"
+        }
+      }
+    }
+  ]
+}

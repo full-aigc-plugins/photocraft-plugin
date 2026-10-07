@@ -29,6 +29,8 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 
 ## 场景操作
 
+先读取本技能的 [持久选区与通道场景指南](references/saved-selection.md)，按分类选择命令；创建／重开／返工计划位于本技能 examples。
+
 核对本场景输入、原生工程、目标对象、版本和输出边界。按 [场景指南](references/scenario.md) 选择当前命令，保存独立检查点后执行；完成后重开原生工程并检查实际输出与非目标内容。
 
 从 `commands --json --filter <关键词>` 读取 params；`run <工程> --cmd <id> --params <JSON> ... --out <新工程.pcraft>`，每个 --params 属于前一个 --cmd；serve/MCP 可保持单会话。

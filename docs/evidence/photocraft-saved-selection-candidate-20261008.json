@@ -1,0 +1,1144 @@
+{
+  "schema": "craft-saved-selection-candidate-suite/v1",
+  "result": "PASS",
+  "stage": "source-candidate",
+  "elapsedSeconds": 31.8,
+  "skills": [
+    {
+      "skill": "photocraft-cli",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "aed5d5763574df6c5dd8ceb336cffac28d3b3891851404cd5aaaced86184ed77",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-adjustments",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "d1afac051c374c5ede7430a6d2b7aa4ab3a0501e9c5439df3962b683d1459933",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-export",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "5aad9d42d4c4189393d29f9c263a17c1ecaa7866834e4773dd8aa0bb2e7e7184",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-filters",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "d1139e93166fc0915c03e239165b7fda07a7bae5f8894a409212d4df97ce868e",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-layers",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "06a985862dfc3ebdd2f5431f19030d10c06cef45427ecc1321a7bf0f3930c745",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-masks",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "046aedbcf7a572a5b6a9432ab15c9509b3b10d4ece703e7d4fbf04ef743f6f2c",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-project",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "4fe32ceed5bb75d8eade9eefed43a8834ade9501acb9d4d0648f1b189ada80da",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-resize",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "86b8a42c2ef55842899ef1293e5869e8b599fa01dc68aa1dca4b04f2cfed8777",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-retouch",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "069cb99d10d89d87a024a7097a9657cfdbe7940a4fb8928ce8724b1bd460b2bc",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-selection",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "452e28ce2259b5683e35e735e4a732e24ad9d32a0072300768a38afc89b7b126",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-setup",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "ed3084a3cba4f2703f24a0e33903d0678e38b3893aa3dfc823fd50573fbcf949",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-cli-text",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "d08d6533768bfee2ebe758f0d57166e8086eb393ee75ac6749e2e7b413019fb4",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    },
+    {
+      "skill": "photocraft-use",
+      "exitCode": 0,
+      "result": "PASS",
+      "evidence": {
+        "schema": "craft-saved-selection-first-use/v1",
+        "result": "PASS",
+        "skill": "photocraft-use",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+        "skillTreeSha256": "70f375abbd549ce03fd6fd9e9fcd21cc43b48402cd2fc185e1261d452a585c26",
+        "planSha256": {
+          "create": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+          "reopen": "c2ea2a35dd6f9251eb9eeeaec33e9f4434cd4ff19decfe68f9adefeadbd7993e",
+          "revise": "b0b26a5015c90850c4862aef9f6b37443f9d11887f4df8bc6b66719e87efac9c"
+        },
+        "createPlanSha256": "20b142dfd81b74cf0bcc467feafc7ea817d40b0865ef7e8c1ef7a0b24a6d7a59",
+        "commands": [
+          "channel.duplicate",
+          "channel.list",
+          "channel.options",
+          "channel.rename",
+          "channel.target.composite",
+          "layer.layerMask.revealSelection",
+          "layer.newAdjustmentLayer.brightnessContrast",
+          "layer.setProps",
+          "select.deselect",
+          "select.loadSelection",
+          "select.modify.feather",
+          "select.rect",
+          "select.saveSelection",
+          "shape.create"
+        ],
+        "activeSelectionNativeReopen": true,
+        "namedChannels": 2,
+        "translation": [
+          16,
+          0
+        ],
+        "featherFractionalCoverage": true,
+        "protectedTileHashes": [
+          "6146d127ed0a6d8b6626a662312a400967e349228ec5de964aa345b33d7879f3",
+          "765d9d9b3cb0a75d7802da72106d79f41d7f173c021683bb47c3153c25bd5380",
+          "903a9888f5182c6b6b831e30cec64308245fa42e40931a3a19e0a4dcc952cebb",
+          "bcb1e73b5fea867a1e969fbab48848679522749ca180341c46d723e9558112ae"
+        ],
+        "originalProjectSha256": "68c1cd4f7d67718a39e395de482928412bb26ee66a848c1321f2e972ef90b902",
+        "revisedProjectSha256": "edb7d98b824801b263edf425966f431fdd27634328eacb320839d9698c0500d0",
+        "failures": [
+          {
+            "case": "empty",
+            "result": "FAIL",
+            "error": "precondition_failed: select.loadSelection: native_context_disabled"
+          },
+          {
+            "case": "missing",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.loadSelection`: unknown `channel`\"}]"
+          },
+          {
+            "case": "invalidOperation",
+            "result": "FAIL",
+            "error": "command_failed: [{\"type\": \"text\", \"text\": \"invalid parameters for `select.saveSelection`: unknown operation `multiply`\"}]"
+          }
+        ],
+        "checks": [
+          "single skill public cold installation",
+          "active selection saved and reopened",
+          "named channel plane pixel identity after reopen",
+          "partial feather coverage",
+          "targeted channel and mask translation",
+          "native manifest non-target layer and backup channel identity",
+          "protected tile bytes identity",
+          "source and skill files preserved"
+        ],
+        "unverified": [
+          "all selection/channel command contexts",
+          "smart-selection/AI quality",
+          "spot/PSD fidelity",
+          "other modes/depths",
+          "GUI/creative quality"
+        ],
+        "scope": "bounded RGB8 saved-selection/feather/mask fixture, not full CM-001"
+      }
+    }
+  ],
+  "fixedInstalledAcceptance": "NOT_RUN",
+  "date": "2026-10-08",
+  "sourceBaseCommit": "608545aa87a19436a16b32bbb67aaea42e7291c6",
+  "sourceState": "unreleased candidate over dev.32",
+  "sourceRegression": {
+    "total": 143,
+    "passed": 113,
+    "skipped": 30,
+    "result": "PASS"
+  },
+  "registry": {
+    "commands": 755,
+    "selectionChannelOwnerCommands": 49,
+    "independentSkills": 13
+  },
+  "testFileSha256": "eede582ef3a4711681a68ab6c6b7d562446725fedf297756134f312d491dd5d4",
+  "spec": {
+    "change": "establish-v1-plugin",
+    "scenario": "PC-CM-001-SAVED-SELECTION",
+    "taskStatus": "OPEN"
+  },
+  "unverified": [
+    "immutable skills release",
+    "plugin vendor synchronization",
+    "actual host-installed candidate skills",
+    "all selection/channel contexts",
+    "AI selection quality",
+    "spot/PSD fidelity",
+    "other modes/depths",
+    "GUI and full V1"
+  ]
+}

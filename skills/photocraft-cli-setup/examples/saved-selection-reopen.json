@@ -1,0 +1,61 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "tool": "doc_open",
+      "params": {
+        "path": {
+          "$ref": "project.path"
+        }
+      }
+    },
+    {
+      "command": "channel.list",
+      "params": {},
+      "as": "channels"
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "document"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "preview.png"
+        },
+        "format": "png"
+      }
+    },
+    {
+      "command": "select.loadSelection",
+      "params": {
+        "channel": "Product Local",
+        "operation": "new"
+      },
+      "as": "loaded"
+    },
+    {
+      "command": "channel.duplicate",
+      "params": {
+        "channel": "Product Local",
+        "name": "Selection proof",
+        "document": "new"
+      },
+      "as": "plane"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "selection-plane.png"
+        },
+        "format": "png",
+        "index": {
+          "$ref": "plane.document"
+        }
+      }
+    }
+  ]
+}
