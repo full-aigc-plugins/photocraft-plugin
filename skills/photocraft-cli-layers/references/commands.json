@@ -1169,6 +1169,22 @@
       "label": "Reload Frame",
       "params": "{} → {}",
       "enabledAtEmptySession": false
+    },
+    {
+      "id": "layer.setExpanded",
+      "label": "Expand/Collapse Group",
+      "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every group; not an undo step)",
+      "enabledAtEmptySession": false,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+    },
+    {
+      "id": "layer.setEffectsExpanded",
+      "label": "Expand/Collapse Effects",
+      "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every layer with effects; view state, not an undo step)",
+      "enabledAtEmptySession": false,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
     }
   ]
 }

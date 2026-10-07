@@ -1,0 +1,57 @@
+{
+  "schema": "photocraft-native-catalog-candidate/v1",
+  "result": "PASS",
+  "scope": "working-tree candidate; fixed publication and installed-plugin verification pending",
+  "nativeCommandCount": 755,
+  "uniqueClassifiedCommands": 755,
+  "previousClassifiedCommands": 748,
+  "newCommands": [
+    "brush.presets.rename",
+    "brush.presets.move",
+    "brush.presets.moveGroup",
+    "brush.presets.renameGroup",
+    "brush.presets.deleteGroup",
+    "layer.setExpanded",
+    "layer.setEffectsExpanded"
+  ],
+  "unitRegression": {
+    "total": 129,
+    "passed": 101,
+    "skipped": 28
+  },
+  "native": {
+    "standaloneSkill": "photocraft-cli-retouch",
+    "runtimeHome": "fresh public download",
+    "registeredCommands": 755,
+    "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+    "planSteps": 20,
+    "allSevenNewCommandsExecuted": true,
+    "presetListBeforeAfterIdentical": true,
+    "ownedPresetGroupDeletionCounts": [
+      1,
+      1
+    ],
+    "closedGroupSavedAndReopened": true,
+    "layersAndDimensionsBeforeAfterIdentical": true,
+    "rgba96x64BeforeAfterIdentical": true,
+    "skillFilesUnchanged": true,
+    "projectSha256": "169e2e48453b21655eee179da7b36d85c5b5903edda11ba783e2dbcabe3b34db"
+  },
+  "inputHashes": {
+    "scripts/build_command_coverage.py": "6a3d0f7968fa5a3dab31a2328e5e5ab651937bf865670cc5d5b7c6f3a8a2b740",
+    "tests/test_native_catalog_completeness.py": "d9798fe8615e8c377490ada73bad3852a66bccbffe5ef5989360795967379863",
+    "skill-suite.json": "2aba5ed38621518ca251ed1075bafe002c9f7b0460bb5b07a9f641cbc4a33c11",
+    "skills/photocraft-use/references/commands.json": "c8b1c48b815e410dac0dd2ee9768a79a58d2fc58312fe96f7bc042fc295c7c3f",
+    "skills/photocraft-use/references/native-command-snapshot.json": "04fb30c79c01a849bda81689c26afb8c63741d1e0bf58b000d5d6bd23b44a10f",
+    "skills/photocraft-use/references/command-coverage.json": "c746b5dc6e2d7e9a1e09d585253b96b20350d401049934f8ff6f0bee9bf661b6",
+    "skills/photocraft-use/examples/preset-layer-view-create.json": "fd0d4847e7d0abcc78f168a8606c08bebf4306bff61444ebd84e8923fccdada6",
+    "skills/photocraft-use/references/preset-layer-view.md": "5f36cef68547adfd00f528af02047fcace7c8eb0746d30449cc1f89604738b33"
+  },
+  "notProven": [
+    "long-term preset persistence",
+    "effects disclosure persistence",
+    "all755 contexts",
+    "fullV1",
+    "fixed source/plugin installation"
+  ]
+}

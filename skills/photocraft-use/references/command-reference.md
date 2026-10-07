@@ -12735,3 +12735,122 @@ Run Plug-in
 ```text
 {"id":text,"params":json} (plug-in parameters under "params" or at the top level; see plugin.list)
 ```
+
+## brush.presets.rename
+
+Rename Brush
+
+- 技能 / Owner: `photocraft-cli-retouch`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.rename`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"name":string,"newName":string} → {name}
+```
+
+## brush.presets.move
+
+Move Brush
+
+- 技能 / Owner: `photocraft-cli-retouch`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.move`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"name":string,"group":string?=its group ("" = ungrouped),"before":name? (preset to land before) | "index":n? (position in the group)=end} → {name, group, index}
+```
+
+## brush.presets.moveGroup
+
+Move Brush Group
+
+- 技能 / Owner: `photocraft-cli-retouch`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.moveGroup`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"group":string,"before":group? | "index":n? (group position)=end} → {group, index}
+```
+
+## brush.presets.renameGroup
+
+Rename Brush Group
+
+- 技能 / Owner: `photocraft-cli-retouch`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.renameGroup`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"group":string,"newName":string} → {group}
+```
+
+## brush.presets.deleteGroup
+
+Delete Brush Group
+
+- 技能 / Owner: `photocraft-cli-retouch`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.deleteGroup`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"group":string} → {deleted, count}
+```
+
+## layer.setExpanded
+
+Expand/Collapse Group
+
+- 技能 / Owner: `photocraft-cli-layers`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setExpanded`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"layer":id?,"expanded":bool?,"all":bool?} (no expanded: toggle; all: every group; not an undo step)
+```
+
+## layer.setEffectsExpanded
+
+Expand/Collapse Effects
+
+- 技能 / Owner: `photocraft-cli-layers`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
+- 当前工作流映射 / Workflow mapped: false。
+- 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
+- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setEffectsExpanded`；按原生参数构造计划后执行 run。
+- 完整逐命令验收 / Full command acceptance: NOT_RUN。
+
+原生参数原文 / Verbatim native parameters:
+
+```text
+{"layer":id?,"expanded":bool?,"all":bool?} (no expanded: toggle; all: every layer with effects; view state, not an undo step)
+```

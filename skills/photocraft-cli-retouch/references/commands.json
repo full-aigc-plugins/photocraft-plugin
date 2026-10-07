@@ -197,6 +197,46 @@
       "label": "Clone Source Overlay",
       "params": "{\"show\":bool?,\"opacity\":0..100?,\"clipped\":bool?,\"autoHide\":bool?,\"invert\":bool?,\"blend\":\"normal|darken|lighten|difference\"?}",
       "enabledAtEmptySession": true
+    },
+    {
+      "id": "brush.presets.rename",
+      "label": "Rename Brush",
+      "params": "{\"name\":string,\"newName\":string} → {name}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+    },
+    {
+      "id": "brush.presets.move",
+      "label": "Move Brush",
+      "params": "{\"name\":string,\"group\":string?=its group (\"\" = ungrouped),\"before\":name? (preset to land before) | \"index\":n? (position in the group)=end} → {name, group, index}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+    },
+    {
+      "id": "brush.presets.moveGroup",
+      "label": "Move Brush Group",
+      "params": "{\"group\":string,\"before\":group? | \"index\":n? (group position)=end} → {group, index}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+    },
+    {
+      "id": "brush.presets.renameGroup",
+      "label": "Rename Brush Group",
+      "params": "{\"group\":string,\"newName\":string} → {group}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+    },
+    {
+      "id": "brush.presets.deleteGroup",
+      "label": "Delete Brush Group",
+      "params": "{\"group\":string} → {deleted, count}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
     }
   ]
 }

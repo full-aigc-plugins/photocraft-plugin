@@ -37,6 +37,54 @@
       "enabledAtEmptySession": false
     },
     {
+      "id": "image.mode.rgb",
+      "label": "RGB Color",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.grayscale",
+      "label": "Grayscale",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.cmyk",
+      "label": "CMYK Color",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.lab",
+      "label": "Lab Color",
+      "params": "{\"profile\":\"<builtin id>|working|/path/to/profile.icc\"=working,\"intent\":\"perceptual|relative|saturation|absolute\"=\"relative\",\"bpc\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bits8",
+      "label": "8 Bits/Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bits16",
+      "label": "16 Bits/Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bits32",
+      "label": "32 Bits/Channel",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.duplicate",
+      "label": "Duplicate…",
+      "params": "{\"name\":str,\"mergedOnly\":bool=false}",
+      "enabledAtEmptySession": false
+    },
+    {
       "id": "file.scripts.deleteAllEmptyLayers",
       "label": "Delete All Empty Layers",
       "params": "{}",
@@ -167,6 +215,36 @@
       "label": "Lens Correction…",
       "params": "{\"input\":folder|[files],\"output\":folder,\"format\":\"same|jpg|png|tif|psd\",\"quality\":0..12?, …Filter › Lens Correction params (\"profile\" defaults to \"auto\")}",
       "enabledAtEmptySession": true
+    },
+    {
+      "id": "image.mode.indexedColor",
+      "label": "Indexed Color…",
+      "params": "{\"palette\":\"selective|perceptual|adaptive|exact|systemMac|systemWindows|web|uniform\"=\"selective\",\"colors\":2..256=256,\"forced\":\"blackWhite|none|primaries|web\"=\"blackWhite\",\"transparency\":bool=true,\"dither\":\"diffusion|none|pattern|noise\"=\"diffusion\",\"amount\":0..100=75} (flattens)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.colorTable",
+      "label": "Color Table…",
+      "params": "{\"table\":\"custom|blackBody|grayscale|spectrum|systemMac|systemWindows|web\"=\"custom\",\"colors\":json,\"entries\":json,\"transparent\":json} (colors: [\"#rrggbb\", …]; entries: {\"index\": \"#rrggbb\"}; transparent: index|null)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.bitmap",
+      "label": "Bitmap…",
+      "params": "{\"method\":\"diffusion|threshold|pattern|halftone\"=\"diffusion\",\"frequency\":1..999=53,\"angle\":-180..180=45,\"shape\":\"round|ellipse|line|square|diamond|cross\"=\"round\"} (halftone frequency in lines/inch; flattens)",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.duotone",
+      "label": "Duotone…",
+      "params": "{\"type\":\"duotone|monotone|tritone|quadtone\"=\"duotone\",\"inks\":json} (inks: [{\"name\",\"color\":\"#rrggbb\",\"curve\":[[in,out],…] in 0..100}, …])",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.mode.multichannel",
+      "label": "Multichannel",
+      "params": "{} (flattens; RGB → Cyan/Magenta/Yellow, CMYK → Cyan/Magenta/Yellow/Black, Lab → Alpha 1–3, Grayscale → Black, Duotone → its inks)",
+      "enabledAtEmptySession": false
     },
     {
       "id": "file.export.layerCompsToFiles",

@@ -235,6 +235,24 @@
       "enabledAtEmptySession": false
     },
     {
+      "id": "image.autoTone",
+      "label": "Auto Tone",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.autoContrast",
+      "label": "Auto Contrast",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.autoColor",
+      "label": "Auto Color",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
       "id": "image.adjustments.equalize",
       "label": "Equalize",
       "params": "{}",

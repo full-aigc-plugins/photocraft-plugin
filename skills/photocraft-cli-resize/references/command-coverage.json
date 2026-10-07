@@ -17078,6 +17078,167 @@
       },
       "executionAcceptance": "NOT_RUN",
       "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "brush.presets.rename",
+      "label": "Rename Brush",
+      "params": "{\"name\":string,\"newName\":string} → {name}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-retouch",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch",
+      "nativeUsage": "commands.py describe brush.presets.rename; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "brush.presets.rename",
+        "label": "Rename Brush",
+        "menu": [],
+        "params": "{\"name\":string,\"newName\":string} → {name}",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "brush.presets.move",
+      "label": "Move Brush",
+      "params": "{\"name\":string,\"group\":string?=its group (\"\" = ungrouped),\"before\":name? (preset to land before) | \"index\":n? (position in the group)=end} → {name, group, index}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-retouch",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch",
+      "nativeUsage": "commands.py describe brush.presets.move; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "brush.presets.move",
+        "label": "Move Brush",
+        "menu": [],
+        "params": "{\"name\":string,\"group\":string?=its group (\"\" = ungrouped),\"before\":name? (preset to land before) | \"index\":n? (position in the group)=end} → {name, group, index}",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "brush.presets.moveGroup",
+      "label": "Move Brush Group",
+      "params": "{\"group\":string,\"before\":group? | \"index\":n? (group position)=end} → {group, index}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-retouch",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch",
+      "nativeUsage": "commands.py describe brush.presets.moveGroup; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "brush.presets.moveGroup",
+        "label": "Move Brush Group",
+        "menu": [],
+        "params": "{\"group\":string,\"before\":group? | \"index\":n? (group position)=end} → {group, index}",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "brush.presets.renameGroup",
+      "label": "Rename Brush Group",
+      "params": "{\"group\":string,\"newName\":string} → {group}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-retouch",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch",
+      "nativeUsage": "commands.py describe brush.presets.renameGroup; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "brush.presets.renameGroup",
+        "label": "Rename Brush Group",
+        "menu": [],
+        "params": "{\"group\":string,\"newName\":string} → {group}",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "brush.presets.deleteGroup",
+      "label": "Delete Brush Group",
+      "params": "{\"group\":string} → {deleted, count}",
+      "enabledAtEmptySession": true,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-retouch",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch",
+      "nativeUsage": "commands.py describe brush.presets.deleteGroup; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": true,
+        "id": "brush.presets.deleteGroup",
+        "label": "Delete Brush Group",
+        "menu": [],
+        "params": "{\"group\":string} → {deleted, count}",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "layer.setExpanded",
+      "label": "Expand/Collapse Group",
+      "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every group; not an undo step)",
+      "enabledAtEmptySession": false,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-layers",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers",
+      "nativeUsage": "commands.py describe layer.setExpanded; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": false,
+        "id": "layer.setExpanded",
+        "label": "Expand/Collapse Group",
+        "menu": [],
+        "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every group; not an undo step)",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
+    },
+    {
+      "id": "layer.setEffectsExpanded",
+      "label": "Expand/Collapse Effects",
+      "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every layer with effects; view state, not an undo step)",
+      "enabledAtEmptySession": false,
+      "provenance": "pinned-native-command-snapshot",
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "ownerSkill": "photocraft-cli-layers",
+      "ownerInstall": "npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers",
+      "nativeUsage": "commands.py describe layer.setEffectsExpanded; commands.py run PLAN.json --output NEW_DIRECTORY",
+      "workflowMapped": false,
+      "usageRecipes": [],
+      "observedEmptySession": {
+        "enabled": false,
+        "id": "layer.setEffectsExpanded",
+        "label": "Expand/Collapse Effects",
+        "menu": [],
+        "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every layer with effects; view state, not an undo step)",
+        "shortcut": null
+      },
+      "executionAcceptance": "NOT_RUN",
+      "acceptanceScope": "full per-command contexts and outputs in this coverage audit"
     }
   ]
 }

@@ -53,6 +53,24 @@
       "label": "Crop",
       "params": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"deleteCroppedPixels\":bool=true}",
       "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.trim",
+      "label": "Trim…",
+      "params": "{\"basedOn\":\"transparent|topLeft|bottomRight\"=\"transparent\",\"top\":bool=true,\"bottom\":bool=true,\"left\":bool=true,\"right\":bool=true}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.revealAll",
+      "label": "Reveal All",
+      "params": "{}",
+      "enabledAtEmptySession": false
+    },
+    {
+      "id": "image.rotation.arbitrary",
+      "label": "Arbitrary…",
+      "params": "{\"angle\":-359.99..359.99=0,\"direction\":\"cw|ccw\"=\"cw\",\"interpolation\":\"bicubic|bilinear|nearest\"=\"bicubic\"}",
+      "enabledAtEmptySession": false
     }
   ]
 }

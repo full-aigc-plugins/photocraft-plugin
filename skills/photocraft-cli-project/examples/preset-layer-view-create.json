@@ -1,0 +1,166 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "command": "brush.presets.list",
+      "params": {
+        "full": true
+      },
+      "as": "brushBefore"
+    },
+    {
+      "command": "brush.presets.save",
+      "params": {
+        "name": "CraftExampleAlpha"
+      }
+    },
+    {
+      "command": "brush.presets.move",
+      "params": {
+        "name": "CraftExampleAlpha",
+        "group": "CraftExampleGroupA",
+        "index": 0
+      }
+    },
+    {
+      "command": "brush.presets.rename",
+      "params": {
+        "name": "CraftExampleAlpha",
+        "newName": "CraftExampleRenamed"
+      }
+    },
+    {
+      "command": "brush.presets.save",
+      "params": {
+        "name": "CraftExampleBeta"
+      }
+    },
+    {
+      "command": "brush.presets.move",
+      "params": {
+        "name": "CraftExampleBeta",
+        "group": "CraftExampleGroupB"
+      }
+    },
+    {
+      "command": "brush.presets.moveGroup",
+      "params": {
+        "group": "CraftExampleGroupB",
+        "index": 0
+      },
+      "as": "movedGroup"
+    },
+    {
+      "command": "brush.presets.renameGroup",
+      "params": {
+        "group": "CraftExampleGroupA",
+        "newName": "CraftExampleRenamedGroup"
+      }
+    },
+    {
+      "command": "brush.presets.deleteGroup",
+      "params": {
+        "group": "CraftExampleRenamedGroup"
+      },
+      "as": "deletedGroup"
+    },
+    {
+      "command": "brush.presets.deleteGroup",
+      "params": {
+        "group": "CraftExampleGroupB"
+      },
+      "as": "cleanupGroup"
+    },
+    {
+      "command": "brush.presets.list",
+      "params": {
+        "full": true
+      },
+      "as": "brushAfter"
+    },
+    {
+      "command": "file.new",
+      "params": {
+        "width": 96,
+        "height": 64,
+        "background": "transparent"
+      }
+    },
+    {
+      "command": "shape.create",
+      "params": {
+        "name": "Subject",
+        "kind": "rect",
+        "rect": [
+          16,
+          16,
+          32,
+          16
+        ],
+        "fill": "#ff0000"
+      },
+      "as": "subject"
+    },
+    {
+      "command": "layer.layerStyle.dropShadow",
+      "params": {
+        "layer": {
+          "$ref": "subject.layer"
+        },
+        "color": "#000000",
+        "opacity": 75,
+        "distance": 2,
+        "size": 2
+      }
+    },
+    {
+      "command": "layer.setEffectsExpanded",
+      "params": {
+        "layer": {
+          "$ref": "subject.layer"
+        },
+        "expanded": false
+      },
+      "as": "effectsView"
+    },
+    {
+      "command": "layer.new.group",
+      "params": {
+        "name": "Assets"
+      },
+      "as": "group"
+    },
+    {
+      "command": "layer.setExpanded",
+      "params": {
+        "layer": {
+          "$ref": "group.layer"
+        },
+        "expanded": false
+      },
+      "as": "groupView"
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "project.pcraft"
+        }
+      }
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "saved"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "format": "png",
+        "path": {
+          "$output": "preview.png"
+        }
+      }
+    }
+  ]
+}

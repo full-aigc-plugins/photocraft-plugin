@@ -36,7 +36,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 152 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 154 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -46,7 +46,7 @@ Order: inspect project and selection, describe parameters, construct and check t
 
 这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
 
-### `layer` — 139
+### `layer` — 141
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
@@ -189,6 +189,8 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `layer.videoLayers.replaceFootage` | Replace Footage… | `describe layer.videoLayers.replaceFootage` |
 | `layer.videoLayers.interpretFootage` | Interpret Footage… | `describe layer.videoLayers.interpretFootage` |
 | `layer.videoLayers.reloadFrame` | Reload Frame | `describe layer.videoLayers.reloadFrame` |
+| `layer.setExpanded` | Expand/Collapse Group | `describe layer.setExpanded` |
+| `layer.setEffectsExpanded` | Expand/Collapse Effects | `describe layer.setEffectsExpanded` |
 
 ### `layerComp` — 13
 
