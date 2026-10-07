@@ -1,3 +1,5 @@
+PhotoCraft twelve independent source skill candidates pass editable adjustment/selection-mask/native revision acceptance. Fixed installed and Art distribution retests remain open. [Evidence](docs/evidence/photocraft-adjustment-mask-candidate-20261007.json). [Architecture](docs/PhotoCraft-Adjustment-Mask-Architecture.md).
+
 All 58 current pinned skills pass independent cold CLI first use: one skill directory, empty runtime, public installation, version query and complete command discovery. This proves installation/discovery, not exhaustive execution of 2639 commands or full creative acceptance. [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
 
 Current first-use entry: plugin `0.1.0-dev.20`, skill source `0.1.0-dev.18`. Installation and command guides are checked against the current pinned releases; historical evidence retains its original version scope. [Guide](docs/Craft-Native-Gateway-Usage.md).

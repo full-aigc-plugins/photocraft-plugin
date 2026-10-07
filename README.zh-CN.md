@@ -1,3 +1,5 @@
+PhotoCraft 十二个独立技能源候选通过可编辑调整层／选区蒙版／原生返工验收；固定安装和 Art 分发复验仍待完成。 [Evidence](docs/evidence/photocraft-adjustment-mask-candidate-20261007.json). [Architecture](docs/PhotoCraft-Adjustment-Mask-Architecture.md).
+
 当前固定版本的 58 个技能全部通过独立冷启动：单技能目录、空运行环境、公开安装、版本查询及完整命令发现。此证据不代表 2639 条命令全部执行通过或完整场景验收。 [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
 
 当前首次使用入口：插件 `0.1.0-dev.20`，技能源 `0.1.0-dev.18`。中英文安装与命令指南按当前固定发行核验；历史样例证据保留原版本范围。 [Guide](docs/Craft-Native-Gateway-Usage.zh_CN.md).
