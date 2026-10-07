@@ -47,3 +47,78 @@ python3 -I -B "$SKILL_DIR/scripts/cli.py" -- run "$SOURCE_PROJECT" \
 ```
 
 矩形是已测样本，按真实工程坐标替换。重开后应仍为 `Adjustment` 图层、`hasMask=true`；原像素图层保持可编辑，区域内像素变化、区域外像素不变。保持调整层与蒙版，不用破坏性扁平化替代局部调整。
+
+<!-- COMPLETE_SCENARIO_COMMANDS_START -->
+
+## 完整归属清单 / Complete assigned command list
+
+本技能归属 44 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+
+Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
+
+执行顺序：检查工程和选中对象 → `commands.py describe COMMAND_ID` → 根据参数说明构造计划 → `commands.py check PLAN.json` → `commands.py run PLAN.json --output NEW_DIRECTORY` → 保存并重开原生工程、核验目标修改和非目标内容。涉及 GUI 时按 `command-usage.md` 选择 bridge 模式。
+
+Order: inspect project and selection, describe parameters, construct and check the plan, run it, save and reopen the native project, then verify requested and unaffected content. Follow `command-usage.md` for bridge mode.
+
+这些是命令使用入口，不能把分类或计划校验当作实际执行成功；禁用项必须重新查询上下文，超时不得直接重放。 / Classification and preflight do not prove execution acceptance. Re-query disabled commands and reconcile timed-out operations before retry.
+
+### `image` — 23
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `image.adjustments.desaturate` | Desaturate | `describe image.adjustments.desaturate` |
+| `image.adjustments.brightnessContrast` | Brightness/Contrast… | `describe image.adjustments.brightnessContrast` |
+| `image.adjustments.levels` | Levels… | `describe image.adjustments.levels` |
+| `image.adjustments.curves` | Curves… | `describe image.adjustments.curves` |
+| `image.adjustments.exposure` | Exposure… | `describe image.adjustments.exposure` |
+| `image.adjustments.vibrance` | Vibrance… | `describe image.adjustments.vibrance` |
+| `image.adjustments.hueSaturation` | Hue/Saturation… | `describe image.adjustments.hueSaturation` |
+| `image.adjustments.colorBalance` | Color Balance… | `describe image.adjustments.colorBalance` |
+| `image.adjustments.blackWhite` | Black & White… | `describe image.adjustments.blackWhite` |
+| `image.adjustments.photoFilter` | Photo Filter… | `describe image.adjustments.photoFilter` |
+| `image.adjustments.channelMixer` | Channel Mixer… | `describe image.adjustments.channelMixer` |
+| `image.adjustments.invert` | Invert | `describe image.adjustments.invert` |
+| `image.adjustments.posterize` | Posterize… | `describe image.adjustments.posterize` |
+| `image.adjustments.threshold` | Threshold… | `describe image.adjustments.threshold` |
+| `image.adjustments.gradientMap` | Gradient Map… | `describe image.adjustments.gradientMap` |
+| `image.adjustments.selectiveColor` | Selective Color… | `describe image.adjustments.selectiveColor` |
+| `image.adjustments.colorLookup` | Color Lookup… | `describe image.adjustments.colorLookup` |
+| `image.adjustments.equalize` | Equalize | `describe image.adjustments.equalize` |
+| `image.adjustments.shadowsHighlights` | Shadows/Highlights… | `describe image.adjustments.shadowsHighlights` |
+| `image.adjustments.replaceColor` | Replace Color… | `describe image.adjustments.replaceColor` |
+| `image.adjustments.matchColor` | Match Color… | `describe image.adjustments.matchColor` |
+| `image.adjustments.hdrToning` | HDR Toning… | `describe image.adjustments.hdrToning` |
+| `image.adjustments.colorLookup.list` | List Color Lookup Looks | `describe image.adjustments.colorLookup.list` |
+
+### `layer` — 18
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `layer.layerMask.revealSelection` | Reveal Selection | `describe layer.layerMask.revealSelection` |
+| `layer.setAdjustment` | Adjustment Properties | `describe layer.setAdjustment` |
+| `layer.newAdjustmentLayer.brightnessContrast` | Brightness/Contrast… | `describe layer.newAdjustmentLayer.brightnessContrast` |
+| `layer.newAdjustmentLayer.levels` | Levels… | `describe layer.newAdjustmentLayer.levels` |
+| `layer.newAdjustmentLayer.curves` | Curves… | `describe layer.newAdjustmentLayer.curves` |
+| `layer.newAdjustmentLayer.exposure` | Exposure… | `describe layer.newAdjustmentLayer.exposure` |
+| `layer.newAdjustmentLayer.vibrance` | Vibrance… | `describe layer.newAdjustmentLayer.vibrance` |
+| `layer.newAdjustmentLayer.hueSaturation` | Hue/Saturation… | `describe layer.newAdjustmentLayer.hueSaturation` |
+| `layer.newAdjustmentLayer.colorBalance` | Color Balance… | `describe layer.newAdjustmentLayer.colorBalance` |
+| `layer.newAdjustmentLayer.blackWhite` | Black & White… | `describe layer.newAdjustmentLayer.blackWhite` |
+| `layer.newAdjustmentLayer.photoFilter` | Photo Filter… | `describe layer.newAdjustmentLayer.photoFilter` |
+| `layer.newAdjustmentLayer.channelMixer` | Channel Mixer… | `describe layer.newAdjustmentLayer.channelMixer` |
+| `layer.newAdjustmentLayer.invert` | Invert | `describe layer.newAdjustmentLayer.invert` |
+| `layer.newAdjustmentLayer.posterize` | Posterize… | `describe layer.newAdjustmentLayer.posterize` |
+| `layer.newAdjustmentLayer.threshold` | Threshold… | `describe layer.newAdjustmentLayer.threshold` |
+| `layer.newAdjustmentLayer.gradientMap` | Gradient Map… | `describe layer.newAdjustmentLayer.gradientMap` |
+| `layer.newAdjustmentLayer.selectiveColor` | Selective Color… | `describe layer.newAdjustmentLayer.selectiveColor` |
+| `layer.newAdjustmentLayer.colorLookup` | Color Lookup… | `describe layer.newAdjustmentLayer.colorLookup` |
+
+### `select` — 3
+
+| 命令 / Command | 用途 / Label | 参数入口 / Parameters |
+| --- | --- | --- |
+| `select.deselect` | Deselect | `describe select.deselect` |
+| `select.rect` | Rectangular Selection | `describe select.rect` |
+| `select.deselectLayers` | Deselect Layers | `describe select.deselectLayers` |
+
+<!-- COMPLETE_SCENARIO_COMMANDS_END -->

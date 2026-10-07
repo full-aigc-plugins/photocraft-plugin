@@ -1,4 +1,6 @@
-Current plugin: `0.1.0-dev.24`; skill source: `0.1.0-dev.22`; Complete reflected-command entries and standalone CLI/desktop bootstrap are available. Fixed releases passed 58 standalone cold cases, four advanced GUI save/reopen/render cases and Art mixed revision. Exhaustive native command execution and full V1 remain open. [Fixed evidence](docs/evidence/craft-full-command-fixed-first-use-20261007.json).
+Current plugin: `0.1.0-dev.25`; skill source: `0.1.0-dev.23`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+
+Historical release record: Current plugin: `0.1.0-dev.24`; skill source: `0.1.0-dev.22`; Complete reflected-command entries and standalone CLI/desktop bootstrap are available. Fixed releases passed 58 standalone cold cases, four advanced GUI save/reopen/render cases and Art mixed revision. Exhaustive native command execution and full V1 remain open. [Fixed evidence](docs/evidence/craft-full-command-fixed-first-use-20261007.json).
 
 Historical release record: Current plugin: `0.1.0-dev.23`; skill source: `0.1.0-dev.21`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous 48-source-skill cold cases pass; acceptance of this fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
 
@@ -83,9 +85,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.24 |
+| Metadata version | 0.1.0-dev.25 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.22 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.23 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

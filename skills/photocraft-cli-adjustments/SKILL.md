@@ -68,3 +68,7 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 可编辑局部调整与源返工见 [蒙版调整使用说明](references/adjustment-mask.md)；成对计划在本技能 examples 中，源候选与固定安装证据分开。
 
 GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-install.md)；安装、启动与实际GUI编辑分别核验。
+
+完整归属命令按命令族列于 [分类使用清单](references/scenario.md)，每项可通过本技能的 `commands.py describe` 查看参数；通用 CLI 清单也保留未归入专项技能的全部命令。
+
+业务任务从 [场景操作手册](references/business-scenes.md) 开始，按输入检查、模板适配、原生交付、局部返工和结果核验执行。
