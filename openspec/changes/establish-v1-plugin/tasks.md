@@ -199,3 +199,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 3.14固定发行证据：`docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json`。全部领域技能独立空缓存、安装7项保护及实际原生创建／返工通过，全部64安装摘要保全；Art捆绑升级与完整TX合同保持单独门禁。
 
 2026-10-08 独立技能事实源（PC-SK-001）完整合同验收：旧共享脚本的12项边界测试出现17个失败断言；修复链接拒绝、全部来源／旧目标预检、固定标签命名空间及完整锁检查。公开固定来源检出与当前64安装身份核对通过；当前Python回归18项（18通过／0条件跳过）。关闭本需求三项任务，不关闭实际Skills CLI、原生创作或完整V1。证据 `docs/evidence/vendor-self-contained-20261008.json`。
+
+- [ ] [PC-SK-003-PATH-SELF] 修正新增场景技能的自身安装目录例示，并在新固定插件安装副本上逐个独立冷启动、核对运行时与技能保全。源码路径检查与三布局帮助入口通过；完整SK-003及通用Skills CLI仍独立验收。

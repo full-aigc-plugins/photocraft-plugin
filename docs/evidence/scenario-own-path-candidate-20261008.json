@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "scope": "source candidate; documented paths and argument-parser entry help only; fixed installed runtime acceptance pending",
+  "record": {
+    "domain": "photocraft",
+    "skills": 13,
+    "layoutCopies": 39,
+    "helpInvocations": 114,
+    "greenLogSha256": "94921471a442aebfef5846eef0b401ffc0e92830a352ed8cbb6ba888b08beb60",
+    "redFailures": 1,
+    "regressionTests": 141,
+    "seconds": 22.464,
+    "skipped": 29,
+    "regressionLogSha256": "202d07218ed5be44c5361ada9a6dd2cfe069992af3880dd34dec2da5b53eab95"
+  }
+}

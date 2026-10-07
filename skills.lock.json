@@ -4,8 +4,8 @@
     {
       "package": "photocraft-skills",
       "repo": "https://github.com/full-aigc-skills/photocraft-skills.git",
-      "ref": "v0.1.0-dev.31",
-      "sha": "e427fd98ce34454daf4f7caeca643c2bab3578e9",
+      "ref": "v0.1.0-dev.32",
+      "sha": "dd2d477395871bf7b38b9051df6620db3601ae6c",
       "skills": [
         "photocraft-use",
         "photocraft-cli",
@@ -35,7 +35,7 @@
         "photocraft-cli-text": "457db9c042b7e5e32510bccda018b94cf3475d6e7758c75a574722718f030851",
         "photocraft-cli-resize": "18394c7ebf2bf18f7bb20ad5e9f349733623121b492e30b792b6e8d1378737c1",
         "photocraft-cli-export": "1f7f4e40fb7902cc3198aaa243cb6a702fbaa5030f516533dceb46bb84ade4ca",
-        "photocraft-cli-filters": "2725fa0f61a5d893b5fb3b8a3db16d31944285dd3e90e8f665ee335fe058c9f3"
+        "photocraft-cli-filters": "25d1de02110ffbd859330a48870c5e7bc7180abee5036058c38ff931577bf2b3"
       }
     }
   ]
