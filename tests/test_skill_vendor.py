@@ -12,7 +12,7 @@ vendor=importlib.util.module_from_spec(spec);spec.loader.exec_module(vendor)
 
 class VendorTests(unittest.TestCase):
     def source(self, ref='v0.1.0-dev.0', dest='skills/'):
-        return {'package':'photocraft-skills','repo':'https://github.com/full-aigc-skills/photocraft-skills.git','ref':ref,'skills':['photocraft-use'],'dest':dest}
+        return {'package':'photocraft-skills','repo':'https://github.com/full-aigc-skills/photocraft-skills.git','ref':ref,'skills':['photocraft-use'],'dest':dest,'sha':'a'*40,'sha256':{'photocraft-use':'b'*64}}
 
     def test_development_tag_is_immutable_version(self):
         with tempfile.TemporaryDirectory() as temporary:
