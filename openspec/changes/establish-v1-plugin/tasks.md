@@ -48,7 +48,7 @@
 - [x] 3.12 [PC-TX-004] 固定发布并验证实际安装副本首次使用与失败工程保留；Art 固定捆绑包另行验收，不以候选测试关闭发布子门禁。
 
 - [x] 3.13 [PC-TX-001] 公开工作流在原生会话前登记同目标身份；覆盖竞争、SIGKILL后的未知记录、不同目标、异常及用户文件保全；验证全部独立技能同步与源冷原生创建／返工，不关闭完整任务合同。
-- [ ] 3.14 [PC-TX-001] 固定发布后验证安装副本、逐技能冷安装及原生创建／返工，保持全部技能摘要；Art固定领域包单独升级验收。
+- [x] 3.14 [PC-TX-001] 固定发布后验证安装副本、逐技能冷安装及原生创建／返工，保持全部技能摘要；Art固定领域包单独升级验收。
 
 ## 4. domain-workflow
 
@@ -195,3 +195,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-07 跟踪根因与固定安装复验：`docs/evidence/craft-fixed-tracking-supported-input-20261007.json`。原输入使用原生不支持的lossless transform bypass；受支持H.264 High下独立冷安装、参考像素、12个实际关键帧、应用与重开及控制对象保全通过，累计43项／42个领域场景技能。每种编码、全部跟踪命令、Art角色、通用Skills CLI及完整V1仍开放；指南更新尚为技能源候选。
 
 3.13源码候选证据：`docs/evidence/photocraft-output-execution-candidate-20261007.json`。公开入口红例、7项竞争／中断保护与冷原生创建／返工通过，固定安装3.14及完整TX合同仍开放。
+
+3.14固定发行证据：`docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json`。全部领域技能独立空缓存、安装7项保护及实际原生创建／返工通过，全部64安装摘要保全；Art捆绑升级与完整TX合同保持单独门禁。

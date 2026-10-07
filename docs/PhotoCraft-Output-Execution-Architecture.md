@@ -36,3 +36,5 @@ Runtime installation precedes the claim, allowing download repair without creati
 Each installed skill contains its own helper, workflow and `references/output-execution.md`, with no sibling or Film skill dependency. Native binaries and runtime locks remain unchanged. Tests reproduce session startup without a claim, then cover seven ownership and preservation cases, including an owned real subprocess killed with SIGKILL. Cold native creation and revision verify editable project hashes, reopen/export, original output preservation and completed records bound to effective plans and source revisions.
 
 Candidate evidence and fixed installation evidence are recorded separately. Unit tests, native technical fixtures and visual/creative acceptance remain distinct. Only the bounded source and fixed-installation tasks may close; the full TX contracts remain open.
+
+Fixed plugin dev.32/source dev.30 acceptance passed. All domain skills used independent empty runtime caches; installed ownership tests and real native creation/revision passed. [Evidence](evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json).

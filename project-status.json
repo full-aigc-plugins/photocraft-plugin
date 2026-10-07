@@ -47,7 +47,8 @@
     "8.16": "docs/evidence/craft-owned-desktop-first-use-20261007.json",
     "8.17": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
     "8.20": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
-    "3.13": "docs/evidence/photocraft-output-execution-candidate-20261007.json"
+    "3.13": "docs/evidence/photocraft-output-execution-candidate-20261007.json",
+    "3.14": "docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
