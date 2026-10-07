@@ -1,10 +1,12 @@
+Current plugin: `0.1.0-dev.22`; skill source: `0.1.0-dev.20`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous 48-source-skill cold cases pass; acceptance of this fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+
 PhotoCraft plugin21/source19: all12 actual installed copies pass cold native editable mask/adjustment creation, save/reopen and source revision. Art87 still pins Photo18; updated distribution remains pending. [Evidence](docs/evidence/codex-photocraft-adjustment-mask-first-use-20261007.json).
 
 PhotoCraft twelve independent source skill candidates pass editable adjustment/selection-mask/native revision acceptance. Fixed installed and Art distribution retests remain open. [Evidence](docs/evidence/photocraft-adjustment-mask-candidate-20261007.json). [Architecture](docs/PhotoCraft-Adjustment-Mask-Architecture.md).
 
-All 58 current pinned skills pass independent cold CLI first use: one skill directory, empty runtime, public installation, version query and complete command discovery. This proves installation/discovery, not exhaustive execution of 2639 commands or full creative acceptance. [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
+Historical CLI-only acceptance (original pinned versions): All 58 current pinned skills pass independent cold CLI first use: one skill directory, empty runtime, public installation, version query and complete command discovery. This proves installation/discovery, not exhaustive execution of 2639 commands or full creative acceptance. [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
 
-Current first-use entry: plugin `0.1.0-dev.21`, skill source `0.1.0-dev.19`. Twelve fixed installed adjustment/mask cases pass; Art87 still pins Photo18.
+Historical release record: Current first-use entry: plugin `0.1.0-dev.21`, skill source `0.1.0-dev.19`. Twelve fixed installed adjustment/mask cases pass; Art87 still pins Photo18.
 
 Fixed native gateway first use passes:48 independently installed domain skills and ten Art85/source58 public workflows cold-install, create/reopen/export, revise and preserve original deliveries. Art public Brief, all four gateway domains, five child nodes, selective Logo revision/icon reuse, moved package, native cancellation and six unknown faults pass. All58 installed identities are unchanged. Full2639-command/GUI/model/generic Skills CLI/V1 gates remain open. [Usage](docs/Craft-Native-Gateway-Usage.md) · [Fixed evidence](docs/evidence/codex-native-gateway-first-use-20261007.json).
 
@@ -12,7 +14,7 @@ Fixed native gateway first use passes:48 independently installed domain skills a
 
 Fixed native first-use and complete-command recovery acceptance passed:58 standalone cold installations, ten Art all-domain cold installations, four partial-download SSL EOF recoveries,72 post-save faults, four healthy command revisions and mixed HD revision/recovery/moved delivery. Installed identities remain unchanged. Only domain2.10/8.11 and Art4.10 close; exhaustive2639-command, GUI, model, generic Skills CLI and fullV1 gates remain open. [Version-bound evidence](docs/evidence/codex-native-download-first-use-20261007.json).
 
-Current plugin: `0.1.0-dev.21`; skill source: `0.1.0-dev.19`; adjustment/mask recipes included; fixed installed acceptance pending; full V1 remains open.
+Historical release record: Current plugin: `0.1.0-dev.21`; skill source: `0.1.0-dev.19`; adjustment/mask recipes included; fixed installed acceptance pending; full V1 remains open.
 
 Historical candidate observation before fixed acceptance: Native download recovery candidate: up to three read-only attempts discard partial archives. Earlier fixed cold installs failed on SSL EOF; new fixed installed acceptance remains open.
 
@@ -77,9 +79,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.21 |
+| Metadata version | 0.1.0-dev.22 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.19 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.20 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

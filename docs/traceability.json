@@ -282,6 +282,17 @@
       "status": "verified-darwin-arm64",
       "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json",
       "fixedHostEvidence": "docs/evidence/codex-failed-stage-first-use-20261007.json"
+    },
+    {
+      "requirement": "PC-DS-001",
+      "capability": "runtime-distribution",
+      "tasks": [
+        "8.16",
+        "8.17"
+      ],
+      "owner": "Desktop runtime owner",
+      "status": "in-progress",
+      "evidence": "docs/evidence/craft-owned-desktop-first-use-20261007.json"
     }
   ]
 }

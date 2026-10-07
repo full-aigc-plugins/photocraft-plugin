@@ -55,7 +55,7 @@
 - **THEN** 安装器 SHALL 丢弃半包并最多执行三次只读下载，之后仍执行原摘要／安全解压／版本检查，不重试原生编辑
 - **AND** 证书、权限、磁盘、大小限制、摘要及非临时HTTP拒绝错误 SHALL 不被重试或放宽；固定发行及安装首用另行验收
 
-### Requirement: Owned standalone desktop workflow
+### Requirement: PC-DS-001 Owned standalone desktop workflow
 Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
 
 #### Scenario: First use without a running desktop
@@ -67,3 +67,11 @@ Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that 
 - **THEN** no installation or desktop launch occurs
 - **WHEN** owned desktop startup or MCP initialization fails
 - **THEN** only owned processes are closed, logs and failure receipts are retained, and edits are not retried
+
+#### Scenario: Interrupted command is not replayed
+- **WHEN** a standalone desktop workflow is interrupted with an editing request started
+- **THEN** completed steps remain preserved, the started request becomes unknown, and failure plus owned-process lifecycle receipts are written before exit code 130
+
+#### Scenario: Ambiguous JSON plan
+- **WHEN** a plan contains duplicate object keys or nonfinite numeric values
+- **THEN** the runner rejects it before installing or starting a desktop

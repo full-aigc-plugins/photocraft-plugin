@@ -1,10 +1,12 @@
+当前插件：`0.1.0-dev.22`；技能源：`0.1.0-dev.20`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。候选源码48项冷启动通过；本次固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+
 PhotoCraft 插件21／技能源19的十二项实际安装副本完成冷启动、可编辑蒙版调整、保存重开与源返工；Art87仍锁定Photo18，升级复验待完成。 [Evidence](docs/evidence/codex-photocraft-adjustment-mask-first-use-20261007.json).
 
 PhotoCraft 十二个独立技能源候选通过可编辑调整层／选区蒙版／原生返工验收；固定安装和 Art 分发复验仍待完成。 [Evidence](docs/evidence/photocraft-adjustment-mask-candidate-20261007.json). [Architecture](docs/PhotoCraft-Adjustment-Mask-Architecture.md).
 
-当前固定版本的 58 个技能全部通过独立冷启动：单技能目录、空运行环境、公开安装、版本查询及完整命令发现。此证据不代表 2639 条命令全部执行通过或完整场景验收。 [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
+历史 CLI 验收（原固定版本范围）：当前固定版本的 58 个技能全部通过独立冷启动：单技能目录、空运行环境、公开安装、版本查询及完整命令发现。此证据不代表 2639 条命令全部执行通过或完整场景验收。 [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
 
-当前首次使用入口：插件 `0.1.0-dev.20`，技能源 `0.1.0-dev.18`。中英文安装与命令指南按当前固定发行核验；历史样例证据保留原版本范围。 [Guide](docs/Craft-Native-Gateway-Usage.zh_CN.md).
+历史发行记录：当前首次使用入口：插件 `0.1.0-dev.20`，技能源 `0.1.0-dev.18`。中英文安装与命令指南按当前固定发行核验；历史样例证据保留原版本范围。 [Guide](docs/Craft-Native-Gateway-Usage.zh_CN.md).
 
 固定原生命令网关首用通过：48项领域安装技能与十项 Art85／技能源58 的公开入口独立冷安装、创建／重开／导出、返工并保全原交付。公开 Brief、四领域网关、五子工程、Logo选择性更新／无关图标复用、移动包、真实取消和六类未知回复故障通过；58项安装摘要不变。全2639命令／GUI／模型／通用Skills CLI／完整V1门禁保持开放。[使用指南](docs/Craft-Native-Gateway-Usage.zh_CN.md) · [固定证据](docs/evidence/codex-native-gateway-first-use-20261007.json)。
 
@@ -12,7 +14,7 @@ PhotoCraft 十二个独立技能源候选通过可编辑调整层／选区蒙版
 
 固定原生首次安装与完整命令恢复验收通过：新版五插件58技能逐项独立冷安装，十个Art技能分别安装四领域；四个原生下载半包SSL EOF恢复、72个原生保存后故障、四个健康命令返工及混合HD返工／恢复／移动包通过，全部安装摘要保全。仅关闭领域2.10／8.11与Art4.10；2639条命令逐项、GUI、模型、通用Skills CLI及完整V1仍开放。 [版本及证据](docs/evidence/codex-native-download-first-use-20261007.json).
 
-当前插件：`0.1.0-dev.21`；技能源：`0.1.0-dev.19`；包含调整层／蒙版计划，固定安装待验收，完整 V1 仍开放。
+历史发行记录：当前插件：`0.1.0-dev.21`；技能源：`0.1.0-dev.19`；包含调整层／蒙版计划，固定安装待验收，完整 V1 仍开放。
 
 固定发布前的候选记录：原生下载恢复候选：最多三次只读重试并丢弃半包；此前固定版本冷安装遇到SSL EOF失败，修复后的固定安装验收仍开放。
 
@@ -77,9 +79,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.21 |
+| Metadata version | 0.1.0-dev.22 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.19 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.20 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -236,3 +238,7 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 
 
 完整命令内层JSON修复候选：非有限值、溢出和重复键在绑定返回值前记录unknown，真实保存后九类故障与原工程重开通过。这是候选技能源证据，固定发布与实际安装复验尚未完成；逐命令／GUI门禁仍开放。
+
+## 桌面安装组件（候选源码）
+
+每个领域技能自带固定桌面安装、自动启动与完整命令工作流入口。使用当前技能实际目录运行 desktop.py run PLAN --output NEW_DIRECTORY；保留原生工程、命令与生命周期回执。源码48项冷启动已有证据，本次固定版本的实际安装复验仍待完成。见 [桌面使用架构](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。

@@ -84,3 +84,5 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 完整工作流命令网关源候选见 [使用说明](references/native-workflow.md)。固定版本尚待发布及安装验收；GUI与全量逐命令仍独立验收。
 
 可编辑局部调整与源返工见 [蒙版调整使用说明](references/adjustment-mask.md)；成对计划在本技能 examples 中，源候选与固定安装证据分开。
+
+GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-install.md)；安装、启动与实际GUI编辑分别核验。

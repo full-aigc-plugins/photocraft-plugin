@@ -1,0 +1,13 @@
+{
+  "schema": "craft-desktop-lock/v1",
+  "domain": "photocraft",
+  "version": "0.2.0",
+  "url": "https://github.com/storytold/photocraft/releases/download/v0.2.0/photocraft-0.2.0-macos-universal.dmg",
+  "filename": "photocraft-0.2.0-macos-universal.dmg",
+  "bytes": 35812180,
+  "archiveSha256": "d6128683f816c9ec924ce0d07ad22c3ed8599930d2cc5485ffc67d3029d3951c",
+  "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+  "app": "PhotoCraft.app",
+  "executable": "PhotoCraft",
+  "bundleIdentifier": "ai.storyteller.photocraft"
+}
