@@ -1,5 +1,5 @@
 """按固定官方DMG安装桌面应用；与CLI缓存分离，不启动或覆盖用户应用。"""
-import argparse,fcntl,hashlib,json,os,platform,plistlib,re,shutil,subprocess,tempfile
+import argparse,fcntl,hashlib,json,os,platform,plistlib,re,shutil,subprocess,tempfile,time
 from pathlib import Path
 
 def sha(path):
@@ -41,6 +41,16 @@ def inspect(directory,lock):
  subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(app)],check=True,capture_output=True,timeout=60)
  return {'app':str(app),'executable':str(binary),'version':lock['version'],'binarySha256':lock['binarySha256'],'files':tree(app)}
 
+def download_archive(url,target,max_bytes):
+ """仅在TLS握手失败时有限重试下载；不重放编辑且不绕过制品校验。"""
+ argv=['/usr/bin/curl','--fail','--location','--proto','=https','--retry','3','--connect-timeout','15','--retry-max-time','90','--max-time','180','--max-filesize',str(max_bytes+1),'--output',str(target),url]
+ for attempt in range(3):
+  try:
+   subprocess.run(argv,check=True,capture_output=True,timeout=240);return
+  except subprocess.CalledProcessError as error:
+   if error.returncode!=35 or attempt==2:raise
+   Path(target).unlink(missing_ok=True);time.sleep(2**attempt)
+
 def install(lock,runtime_home,archive=None,platform_key=None):
  validate(lock);key=platform_key or platform.system().lower()+'-'+platform.machine().lower()
  if key!='darwin-arm64':raise ValueError('unsupported_platform: '+key)
@@ -61,7 +71,7 @@ def install(lock,runtime_home,archive=None,platform_key=None):
   with tempfile.TemporaryDirectory(prefix='.desktop-',dir=parent) as td:
    stage=Path(td);source=Path(archive) if archive else stage/lock['filename']
    if archive is None:
-    subprocess.run(['/usr/bin/curl','--fail','--location','--proto','=https','--retry','3','--max-time','180','--max-filesize',str(lock['bytes']+1),'--output',str(source),lock['url']],check=True,capture_output=True,timeout=240)
+    download_archive(lock['url'],source,lock['bytes'])
    if source.is_symlink() or not source.is_file() or source.stat().st_size!=lock['bytes'] or sha(source)!=lock['archiveSha256']:raise ValueError('archive_identity_mismatch')
    mount=stage/'mount';mount.mkdir();payload=stage/'payload';payload.mkdir();attached=False
    try:

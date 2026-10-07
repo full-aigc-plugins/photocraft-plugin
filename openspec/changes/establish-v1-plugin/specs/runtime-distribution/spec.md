@@ -79,3 +79,8 @@ Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that 
 #### Scenario: Workflow metadata cannot be overwritten
 - **WHEN** a command plan names desktop-session.json, desktop.log, .desktop-data or artcraft-domain-command.json as a root deliverable through $output
 - **THEN** validation rejects the plan before installation or editing, preserving workflow receipts and owned desktop configuration
+
+#### Scenario: Bounded TLS download recovery
+- **WHEN** a pinned desktop download fails with curl TLS handshake exit35
+- **THEN** the installer retries at most three total attempts with clean private downloads and bounded connection/request timeouts before any desktop starts
+- **AND** other failure classes are propagated without an extra outer retry; archive identity and signature checks remain mandatory
