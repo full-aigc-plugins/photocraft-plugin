@@ -106,9 +106,24 @@ def inspect_install(destination, artifact, expected):
 def install(lock, runtime_home, archive=None, platform_key=None):
     """每个版本只安装一次；失败不覆盖旧版，也不改变 PATH 或用户配置。"""
     key = platform_key or f'{platform.system().lower()}-{platform.machine().lower()}'
-    expected = lock['artifacts'].get(key)
-    if expected is None:
+    # 锁结构先验证：损坏的独立安装材料不能触发目录写入或下载。
+    if (not isinstance(lock, dict) or not isinstance(lock.get('artifacts'), dict)
+            or not isinstance(lock.get('artifact'), str)
+            or not isinstance(lock.get('resolvedVersion'), str)):
+        raise ValueError('runtime_lock_invalid')
+    if key not in lock['artifacts']:
         raise ValueError('unsupported_platform: ' + key)
+    expected = lock['artifacts'][key]
+    if (not isinstance(expected, dict)
+            or not isinstance(expected.get('url'), str) or not expected['url']
+            or any(not isinstance(expected.get(field), str)
+                   or not re.fullmatch(r'[a-f0-9]{64}', expected[field])
+                   for field in ('archiveSha256', 'binarySha256'))
+            or ('versionOutput' in expected and not isinstance(expected['versionOutput'], str))
+            or ('provenanceSha256' in expected and
+                (not isinstance(expected['provenanceSha256'], str)
+                 or not re.fullmatch(r'[a-f0-9]{64}', expected['provenanceSha256'])))):
+        raise ValueError('runtime_lock_invalid')
     artifact, version = lock['artifact'], lock['resolvedVersion']
     if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+(?:-craft\.[1-9]\d*)?', version):
         raise ValueError('invalid_runtime_identity')
