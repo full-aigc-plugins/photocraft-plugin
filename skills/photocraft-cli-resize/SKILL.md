@@ -1,6 +1,6 @@
 ---
 name: photocraft-cli-resize
-description: 当需要调整画布和图像尺寸，制作海报封面变体时使用 PhotoCraft；本技能自带首次安装与公开 CLI 入口。
+description: 调整图像或画布尺寸，裁透明边、展开画布、旋转和制作封面变体；首次使用安装固定 PhotoCraft CLI。
 license: Apache-2.0
 ---
 
@@ -74,3 +74,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。
 
 产品局部滤镜、背景虚化与输出锐化任务，读取 [滤镜场景](references/filter-scene.md)，区分可编辑滤镜与烘焙像素，并核验选区、图层和非目标内容。
+
+尺寸、色彩模式或自动像素调整任务，读取本技能自带 [图像变换指南](references/image-transform-scene.md)，先核对保留图层要求和转换影响。

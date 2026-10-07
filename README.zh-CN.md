@@ -1,6 +1,8 @@
+当前插件：`0.1.0-dev.29`；技能源：`0.1.0-dev.27`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定62技能安装与专项实例通过，本次包含64技能的独立场景与扩充说明；本次新固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+
 固定安装复验：五插件共62技能在隔离Codex宿主中加载成功，加载错误0；62技能完整命令查询与场景资源核对通过，248项安装失败诊断检查通过；四个新增专项技能的空运行时安装、版本与查询通过。原生创作、全量命令和完整V1按各自证据验收。[安装证据](docs/evidence/craft-fixed62-installation-20261007.json)。
 
-当前插件：`0.1.0-dev.28`；技能源：`0.1.0-dev.26`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定版本58技能首次使用通过，当前源码四领域进阶桌面通过；本次新固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+历史发行记录：当前插件：`0.1.0-dev.28`；技能源：`0.1.0-dev.26`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定版本58技能首次使用通过，当前源码四领域进阶桌面通过；本次新固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
 
 历史发行记录：当前插件：`0.1.0-dev.27`；技能源：`0.1.0-dev.25`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定版本58技能首次使用通过，当前源码四领域进阶桌面通过；本次新固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
 
@@ -99,9 +101,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.28 |
+| Metadata version | 0.1.0-dev.29 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.26 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.27 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

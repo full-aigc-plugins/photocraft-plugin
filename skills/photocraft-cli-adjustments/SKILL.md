@@ -1,10 +1,10 @@
 ---
 name: photocraft-cli-adjustments
-description: 当需要使用调整图层或指定局部颜色调整时使用 PhotoCraft；本技能自带首次安装与公开 CLI 入口。
+description: 建立调整图层、修改局部颜色，或执行授权的自动色调、对比度及颜色像素调整；首次使用安装固定 PhotoCraft CLI。
 license: Apache-2.0
 ---
 
-# PhotoCraft 非破坏调整
+# PhotoCraft 调整图层与像素色彩
 
 本技能负责使用调整图层或指定局部颜色调整。与同包技能按名称交接，单独安装即可使用，不读取兄弟目录。调用固定官方 photocraft-cli，保留原生编辑工程。
 
@@ -76,3 +76,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。
 
 产品局部滤镜、背景虚化与输出锐化任务，读取 [滤镜场景](references/filter-scene.md)，区分可编辑滤镜与烘焙像素，并核验选区、图层和非目标内容。
+
+尺寸、色彩模式或自动像素调整任务，读取本技能自带 [图像变换指南](references/image-transform-scene.md)，先核对保留图层要求和转换影响。

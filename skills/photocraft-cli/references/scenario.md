@@ -4,7 +4,7 @@
 
 ## 完整归属清单 / Complete assigned command list
 
-本技能归属 213 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
+本技能归属 194 条命令。下面按命令族分组；上述短表若存在，仅是示例。归属按最长前缀确定，实际任务可组合其他能力的命令。
 
 Each command below has a parameter contract in this skill’s `command-reference.md`. Assignment uses the most specific prefix; a task can combine commands from multiple capabilities.
 
@@ -125,31 +125,12 @@ Order: inspect project and selection, describe parameters, construct and check t
 | `gradient.presets.edit` | Edit Gradient Presets | `describe gradient.presets.edit` |
 | `gradient.presets.reset` | Restore Default Gradients | `describe gradient.presets.reset` |
 
-### `image` — 33
+### `image` — 14
 
 | 命令 / Command | 用途 / Label | 参数入口 / Parameters |
 | --- | --- | --- |
-| `image.autoTone` | Auto Tone | `describe image.autoTone` |
-| `image.autoContrast` | Auto Contrast | `describe image.autoContrast` |
-| `image.autoColor` | Auto Color | `describe image.autoColor` |
-| `image.trim` | Trim… | `describe image.trim` |
-| `image.mode.rgb` | RGB Color | `describe image.mode.rgb` |
-| `image.mode.grayscale` | Grayscale | `describe image.mode.grayscale` |
-| `image.mode.cmyk` | CMYK Color | `describe image.mode.cmyk` |
-| `image.mode.lab` | Lab Color | `describe image.mode.lab` |
-| `image.mode.bits8` | 8 Bits/Channel | `describe image.mode.bits8` |
-| `image.mode.bits16` | 16 Bits/Channel | `describe image.mode.bits16` |
-| `image.mode.bits32` | 32 Bits/Channel | `describe image.mode.bits32` |
-| `image.duplicate` | Duplicate… | `describe image.duplicate` |
-| `image.revealAll` | Reveal All | `describe image.revealAll` |
 | `image.applyImage` | Apply Image… | `describe image.applyImage` |
 | `image.calculations` | Calculations… | `describe image.calculations` |
-| `image.rotation.arbitrary` | Arbitrary… | `describe image.rotation.arbitrary` |
-| `image.mode.indexedColor` | Indexed Color… | `describe image.mode.indexedColor` |
-| `image.mode.colorTable` | Color Table… | `describe image.mode.colorTable` |
-| `image.mode.bitmap` | Bitmap… | `describe image.mode.bitmap` |
-| `image.mode.duotone` | Duotone… | `describe image.mode.duotone` |
-| `image.mode.multichannel` | Multichannel | `describe image.mode.multichannel` |
 | `image.analysis.setMeasurementScale` | Set Measurement Scale… | `describe image.analysis.setMeasurementScale` |
 | `image.analysis.selectDataPoints` | Select Data Points… | `describe image.analysis.selectDataPoints` |
 | `image.analysis.recordMeasurements` | Record Measurements | `describe image.analysis.recordMeasurements` |

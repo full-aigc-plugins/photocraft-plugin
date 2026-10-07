@@ -1,0 +1,94 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "command": "file.new",
+      "params": {
+        "name": "Layered resize",
+        "width": 96,
+        "height": 64,
+        "mode": "rgb",
+        "depth": 8,
+        "background": "transparent"
+      }
+    },
+    {
+      "command": "shape.create",
+      "params": {
+        "name": "Product",
+        "kind": "rect",
+        "rect": [
+          16,
+          16,
+          32,
+          16
+        ],
+        "fill": "#ff0000"
+      }
+    },
+    {
+      "command": "shape.create",
+      "params": {
+        "name": "Badge",
+        "kind": "rect",
+        "rect": [
+          40,
+          20,
+          8,
+          8
+        ],
+        "fill": "#0000ff"
+      }
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "before"
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "original.pcraft"
+        }
+      }
+    },
+    {
+      "command": "image.trim",
+      "params": {
+        "basedOn": "transparent",
+        "top": true,
+        "bottom": true,
+        "left": true,
+        "right": true
+      },
+      "as": "trim"
+    },
+    {
+      "command": "image.mode.bits16",
+      "params": {}
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "after"
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "variant.pcraft"
+        }
+      }
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "preview.png"
+        },
+        "format": "png"
+      }
+    }
+  ]
+}

@@ -1,6 +1,8 @@
+Current plugin: `0.1.0-dev.29`; skill source: `0.1.0-dev.27`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed62 installation and bounded native cases passed; this release includes64 skills across the five plugins with additional scene instructions. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+
 Fixed installation verification: five plugins / 62 skills discovered in isolated Codex, zero loading errors; all62 command/resource checks and248 setup-diagnostic checks passed. Four new specialized skills passed empty-runtime installation, version and command queries. Native creative, exhaustive-command and fullV1 acceptance remain separately scoped. [Evidence](docs/evidence/craft-fixed62-installation-20261007.json).
 
-Current plugin: `0.1.0-dev.28`; skill source: `0.1.0-dev.26`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+Historical release record: Current plugin: `0.1.0-dev.28`; skill source: `0.1.0-dev.26`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
 
 Historical release record: Current plugin: `0.1.0-dev.27`; skill source: `0.1.0-dev.25`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
 
@@ -99,9 +101,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.28 |
+| Metadata version | 0.1.0-dev.29 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.26 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.27 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

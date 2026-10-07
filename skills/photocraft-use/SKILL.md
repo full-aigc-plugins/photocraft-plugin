@@ -94,3 +94,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。
 
 产品局部滤镜、背景虚化与输出锐化任务，读取 [滤镜场景](references/filter-scene.md)，区分可编辑滤镜与烘焙像素，并核验选区、图层和非目标内容。
+
+图像尺寸、模式和自动调整按 [图像变换指南](references/image-transform-scene.md) 交给对应现有领域技能。
