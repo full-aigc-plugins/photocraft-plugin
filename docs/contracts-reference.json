@@ -1,9 +1,36 @@
 {
-  "status": "design-reference-not-runtime-lock",
+  "status": "fixed-protocol-authority-reference",
   "owner": "full-aigc-plugins/artcraft-plugin",
-  "authority": {
-    "task": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/main/openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md",
-    "artifact": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/main/openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md"
+  "source": {
+    "repository": "https://github.com/full-aigc-plugins/artcraft-plugin.git",
+    "ref": "v0.1.0-dev.107",
+    "sha": "caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9"
   },
-  "releaseRule": "Pin a verified owner commit and schema digest before implementation release; main URLs here are documentation navigation only."
+  "protocols": {
+    "task": "craft-task/v1",
+    "artifact": "craft-artifact/v1"
+  },
+  "files": {
+    "taskSpec": {
+      "path": "openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md",
+      "sha256": "542f347387a76623512ff468c96794ada8bcfc95c7a6ba5032f587dd27aa1bcc",
+      "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9/openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md"
+    },
+    "artifactSpec": {
+      "path": "openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md",
+      "sha256": "d73aacc5adc872dbe437dd28e27d040d6fed38072efec55527707691ebd3d90b",
+      "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9/openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md"
+    },
+    "taskSchema": {
+      "path": "schemas/craft-task-v1.json",
+      "sha256": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+      "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9/schemas/craft-task-v1.json"
+    },
+    "artifactSchema": {
+      "path": "schemas/craft-artifact-v1.json",
+      "sha256": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+      "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9/schemas/craft-artifact-v1.json"
+    }
+  },
+  "scope": "Protocol authority only; not a runtime lock or full protocol acceptance."
 }

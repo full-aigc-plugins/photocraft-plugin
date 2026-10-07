@@ -17,3 +17,11 @@ jobs:
         with:
           node-version: '24'
       - run: npx --yes @fission-ai/openspec@1.13.1 validate establish-v1-plugin --strict --no-interactive
+      - name: Check immutable public protocol owner bytes
+        uses: actions/checkout@v4
+        with:
+          repository: full-aigc-plugins/artcraft-plugin
+          ref: caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9
+          path: .contract-authority
+          fetch-depth: 0
+      - run: python3 -I -B scripts/contract_reference.py --authority .contract-authority

@@ -272,3 +272,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 固定 PhotoCraft 插件 dev.35／技能源 dev.33 通过 64 项安装身份与发现，以及 13 项独立 Photo 公开空缓存原生保存／重开／局部返工／错误保护及 CLI 命令参数查询。其余 51 项冷安装记录仅复用摘要一致的历史运行。完整首版仍开放。[固定持久选区证据](docs/evidence/photocraft-saved-selection-fixed-first-use-20261008.json)。
 
 固定独立安装边界验收：全部 64 个当前技能的自身安装器／CLI 共 128 个不可用归档失败案例通过；错误保留本技能 setup 路径，无重试／原生启动，源副本摘要不变。四领域 SK-002 按当前精确锁验收；Art SK-002 和通用 Skills CLI 实际安装仍开放。历史 CLI 红灯为本轮重建，不冒充旧运行。[证据](docs/evidence/craft-fixed-setup-boundary-20261008.json)。
+
+公共协议来源已固定到 ArtCraft v0.1.0-dev.107：[引用与校验说明](docs/Craft-Protocol-Authority.zh_CN.md)。这项检查核对协议来源，完整运行时协议验收仍未完成。

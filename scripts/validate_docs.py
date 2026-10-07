@@ -9,6 +9,11 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 errors = []
+import importlib.util
+contract_spec = importlib.util.spec_from_file_location("contract_reference", ROOT / "scripts/contract_reference.py")
+contract_module = importlib.util.module_from_spec(contract_spec)
+contract_spec.loader.exec_module(contract_module)
+errors.extend(contract_module.validate_reference(json.loads((ROOT / "docs/contracts-reference.json").read_text())))
 markdown = sorted(ROOT.rglob('*.md'))
 markdown = [p for p in markdown if '.git' not in p.parts]
 for path in markdown:

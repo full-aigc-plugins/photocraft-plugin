@@ -1,0 +1,26 @@
+{
+  "schema": "craft-protocol-authority-check/v1",
+  "result": "PASS",
+  "scope": "current repository protocol reference and owner Git content only",
+  "owner": {
+    "repository": "https://github.com/full-aigc-plugins/artcraft-plugin.git",
+    "ref": "v0.1.0-dev.107",
+    "sha": "caa4317a68d9e122deb6f3aaf3790b5afa5a8fd9"
+  },
+  "referenceSha256": "6de6864f3b896b82b846cb70dc1f65346a82781c5c2106350a709ef21dd5fa0e",
+  "checkerSha256": "442a6ceb3a1b03251a6d15cac5eef22536df08ee3fa52d86cdbbd04ac96118ff",
+  "testSha256": "9a0a27ce81b79be857bc0553161e6f4a8b1064ce25d6f29caf1751ecac219276",
+  "targetedTests": 5,
+  "checks": [
+    "reject floating and foreign identities",
+    "reject invalid path/digest/URL",
+    "reject missing authority files or unknown protocol version",
+    "reject content digest mismatch and moved tag",
+    "all four pinned Git object digests match verified owner tag"
+  ],
+  "unverified": [
+    "new immutable domain plugin release and installed-host reference",
+    "full task protocol acceptance; no OpenSpec task closed"
+  ],
+  "runtimeOrSkillBytesChanged": false
+}
