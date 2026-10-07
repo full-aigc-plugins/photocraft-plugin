@@ -102,3 +102,15 @@ Malformed/nonfinite JSON, non-object or missing/ambiguous responses, invalid too
 先保留整个失败目录并读取回执，检查原生文件是否已写出。若存在可信工程，使用新输出目录、--input 登记工程，在新的会话只打开／检查原工程；核验摘要、实际对象与所需修改，再明确建立新的修订计划。不能直接重跑原计划、删除失败目录或把输出文件存在当作全部任务成功。
 
 Keep the failed directory and inspect its receipts and any native file. When a trustworthy project exists, copy it with --input into a new output and open/inspect it in a fresh session. Check hashes and actual objects before constructing an explicit revision. File existence alone does not establish successful completion, and the original plan must not be blindly replayed.
+
+## 9. 首次使用桌面会话 / First-use owned desktop session
+
+需要 GUI 上下文而尚未运行桌面应用时，读取本技能自带 [桌面安装与执行指南](desktop-install.md)。使用独立入口安装固定桌面与 CLI，在同一拥有的桌面会话执行真实命令，并在结束时关闭本次启动的进程：
+
+```bash
+python3 -I -B "$SKILL_DIR/scripts/desktop.py" run "$SKILL_DIR/examples/desktop-first-use.json" --output /absolute/new-desktop-result
+```
+
+该入口采用相同 craft-command-plan/v1 格式；先用 commands.py describe 查阅命令及前置状态，再组织真实计划。desktop-session.json 记录桌面身份、监听进程身份和会话退出结果，逐步命令结果仍在 journal.json、success.json 或 failure.json。固定桌面安装不等于所有 GUI 指令可在空工程运行；禁用项须根据原生原因建立所需文档、对象、选择或界面状态，不能绕过检查。
+
+For GUI prerequisites, use the skill-owned desktop.py entry and its pinned installation guide. It executes the same command-plan protocol, verifies the owned listener process, preserves command receipts, and closes the processes it started. Establish native prerequisites explicitly; installation or representative execution does not establish acceptance of every GUI command.

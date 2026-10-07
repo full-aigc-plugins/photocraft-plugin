@@ -75,3 +75,7 @@ Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that 
 #### Scenario: Ambiguous JSON plan
 - **WHEN** a plan contains duplicate object keys or nonfinite numeric values
 - **THEN** the runner rejects it before installing or starting a desktop
+
+#### Scenario: Workflow metadata cannot be overwritten
+- **WHEN** a command plan names desktop-session.json, desktop.log, .desktop-data or artcraft-domain-command.json as a root deliverable through $output
+- **THEN** validation rejects the plan before installation or editing, preserving workflow receipts and owned desktop configuration

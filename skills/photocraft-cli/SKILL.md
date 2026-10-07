@@ -61,7 +61,7 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关源候选见 [使用说明](references/native-workflow.md)。固定版本尚待发布及安装验收；GUI与全量逐命令仍独立验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。领域分发固定版本为 0.1.0-dev.21；该版本的独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 可编辑局部调整与源返工见 [蒙版调整使用说明](references/adjustment-mask.md)；成对计划在本技能 examples 中，源候选与固定安装证据分开。
 
