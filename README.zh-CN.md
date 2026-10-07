@@ -1,3 +1,5 @@
+PhotoCraft 插件21／技能源19的十二项实际安装副本完成冷启动、可编辑蒙版调整、保存重开与源返工；Art87仍锁定Photo18，升级复验待完成。 [Evidence](docs/evidence/codex-photocraft-adjustment-mask-first-use-20261007.json).
+
 PhotoCraft 十二个独立技能源候选通过可编辑调整层／选区蒙版／原生返工验收；固定安装和 Art 分发复验仍待完成。 [Evidence](docs/evidence/photocraft-adjustment-mask-candidate-20261007.json). [Architecture](docs/PhotoCraft-Adjustment-Mask-Architecture.md).
 
 当前固定版本的 58 个技能全部通过独立冷启动：单技能目录、空运行环境、公开安装、版本查询及完整命令发现。此证据不代表 2639 条命令全部执行通过或完整场景验收。 [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).

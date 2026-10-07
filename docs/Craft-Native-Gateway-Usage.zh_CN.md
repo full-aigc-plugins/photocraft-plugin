@@ -6,7 +6,7 @@
 |---|---:|---:|---|---|
 | FilmCraft | 666 | 18 | dev.19 | dev.21 |
 | EffectCraft | 640 | 22 | dev.19 | dev.21 |
-| PhotoCraft | 748 | 33 | dev.18 | dev.20 |
+| PhotoCraft | 748 | 33 | dev.19 | dev.21 |
 | VectorCraft | 585 | 28 | dev.19 | dev.21 |
 | ArtCraft | 2639 个领域目录条目 | 编排上述领域节点 | dev.60 | dev.87，runtime dev.83 |
 

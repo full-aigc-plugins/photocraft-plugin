@@ -1,8 +1,10 @@
+PhotoCraft plugin21/source19: all12 actual installed copies pass cold native editable mask/adjustment creation, save/reopen and source revision. Art87 still pins Photo18; updated distribution remains pending. [Evidence](docs/evidence/codex-photocraft-adjustment-mask-first-use-20261007.json).
+
 PhotoCraft twelve independent source skill candidates pass editable adjustment/selection-mask/native revision acceptance. Fixed installed and Art distribution retests remain open. [Evidence](docs/evidence/photocraft-adjustment-mask-candidate-20261007.json). [Architecture](docs/PhotoCraft-Adjustment-Mask-Architecture.md).
 
 All 58 current pinned skills pass independent cold CLI first use: one skill directory, empty runtime, public installation, version query and complete command discovery. This proves installation/discovery, not exhaustive execution of 2639 commands or full creative acceptance. [Evidence](docs/evidence/codex-current58-cold-cli-first-use-20261007.json).
 
-Current first-use entry: plugin `0.1.0-dev.20`, skill source `0.1.0-dev.18`. Installation and command guides are checked against the current pinned releases; historical evidence retains its original version scope. [Guide](docs/Craft-Native-Gateway-Usage.md).
+Current first-use entry: plugin `0.1.0-dev.21`, skill source `0.1.0-dev.19`. Twelve fixed installed adjustment/mask cases pass; Art87 still pins Photo18.
 
 Fixed native gateway first use passes:48 independently installed domain skills and ten Art85/source58 public workflows cold-install, create/reopen/export, revise and preserve original deliveries. Art public Brief, all four gateway domains, five child nodes, selective Logo revision/icon reuse, moved package, native cancellation and six unknown faults pass. All58 installed identities are unchanged. Full2639-command/GUI/model/generic Skills CLI/V1 gates remain open. [Usage](docs/Craft-Native-Gateway-Usage.md) · [Fixed evidence](docs/evidence/codex-native-gateway-first-use-20261007.json).
 

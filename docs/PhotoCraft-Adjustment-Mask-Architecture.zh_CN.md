@@ -48,3 +48,5 @@ sequenceDiagram
 沿用插件 OpenSpec establish-v1-plugin 的 PC-CM-001，新增8.13源候选、8.14固定安装、8.15 Art分发验收。完整8.3和PC-DM-002全部场景门禁保持开放。此证据不支持全部748条命令、PSD保真、GUI、模型分派、其他平台或完整V1。
 
 测试入口：tests/test_adjustment_mask_first_use.py；原生测试需显式 CRAFT_PHOTO_ADJUSTMENT_FIRST_USE=1，可通过 CRAFT_PHOTO_ADJUSTMENT_SKILL 指定待测副本，CRAFT_PHOTO_ADJUSTMENT_REPORT 输出证据。生成器 build_command_coverage.py 将实际使用命令与 paired recipes 关联，并维持完整逐命令状态 NOT_RUN。
+
+Fixed plugin21/source19 passes all12 installed independent cold native mask/adjustment cases. All58 installed identities are unchanged; both public ZIPs match tagged Git archives and four tag CI checks pass. Art87/Photo18 distribution update remains open. [Evidence](evidence/codex-photocraft-adjustment-mask-first-use-20261007.json).

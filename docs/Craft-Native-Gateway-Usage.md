@@ -6,7 +6,7 @@ The four pinned reflected registries own the complete native command catalog. Do
 |---|---:|---:|---|---|
 | FilmCraft | 666 | 18 | dev.19 | dev.21 |
 | EffectCraft | 640 | 22 | dev.19 | dev.21 |
-| PhotoCraft | 748 | 33 | dev.18 | dev.20 |
+| PhotoCraft | 748 | 33 | dev.19 | dev.21 |
 | VectorCraft | 585 | 28 | dev.19 | dev.21 |
 | ArtCraft | 2639 domain entries | Domain DAG orchestration | dev.60 | dev.87 / runtime83 |
 

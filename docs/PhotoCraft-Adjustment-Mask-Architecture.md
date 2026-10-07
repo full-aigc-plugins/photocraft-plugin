@@ -30,3 +30,5 @@ Each test copies exactly one skill into .agents/skills and uses an empty runtime
 The existing plugin OpenSpec establish-v1-plugin remains authoritative. PC-CM-001 task8.13 covers the source candidate;8.14 fixed installed acceptance;8.15 Art distribution. Full8.3 and PC-DM-002 gates stay open. This sample does not prove exhaustive748 commands, PSD fidelity, GUI, model dispatch, other platforms or fullV1.
 
 Run tests/test_adjustment_mask_first_use.py with CRAFT_PHOTO_ADJUSTMENT_FIRST_USE=1; CRAFT_PHOTO_ADJUSTMENT_SKILL selects the independent copy and CRAFT_PHOTO_ADJUSTMENT_REPORT writes evidence. The command coverage generator links exercised IDs to paired recipes while retaining full per-command NOT_RUN status.
+
+Fixed plugin21/source19 passes all12 installed independent cold native mask/adjustment cases. All58 installed identities are unchanged; both public ZIPs match tagged Git archives and four tag CI checks pass. Art87/Photo18 distribution update remains open. [Evidence](evidence/codex-photocraft-adjustment-mask-first-use-20261007.json).
