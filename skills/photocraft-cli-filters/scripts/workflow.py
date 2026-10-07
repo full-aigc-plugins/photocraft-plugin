@@ -144,6 +144,7 @@ def load_module(name):
 def execute(plan, output, runtime_home=None, source=None):
     validate(plan)
     output = Path(output).absolute()
+    output = output.parent.resolve()/output.name
     if output.exists() or output.is_symlink():
         raise ValueError('output_exists')
     if 'protectedRegions' in plan and not source:raise ValueError('protected_source_required')
@@ -174,7 +175,10 @@ def execute(plan, output, runtime_home=None, source=None):
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     output.parent.mkdir(parents=True, exist_ok=True)
     recovery_state = {}
-    with load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:
+    execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest(),
+                         'inputHashes': {name: asset['sha256'] for name, asset in {**inherited_assets, **plan.get('assets', {})}.items()},
+                         'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
+    with load_module('output_guard').claim(output, execution_identity), load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:
         stage = Path(temporary)
         assets = {}
         for name, entry in inherited_assets.items():

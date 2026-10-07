@@ -76,3 +76,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 产品局部滤镜、背景虚化与输出锐化任务，读取 [滤镜场景](references/filter-scene.md)，区分可编辑滤镜与烘焙像素，并核验选区、图层和非目标内容。
 
 尺寸、色彩模式或自动像素调整任务，读取本技能自带 [图像变换指南](references/image-transform-scene.md)，先核对保留图层要求和转换影响。
+
+## 同目标执行保护
+
+调用公开工作流前阅读本技能的 [执行登记与中断处理](references/output-execution.md)。竞争或未知状态不得删除登记、自动重放或换目标绕过核对。

@@ -1,0 +1,83 @@
+{
+  "schema": "photocraft-output-execution-candidate/v1",
+  "result": "PASS",
+  "sourceVersion": "0.1.0-dev.30",
+  "sourceBaseline": "f88bf3be1de975253926c28882273fb26021fdac",
+  "red": "public workflow starts native session before claiming a competing output; RuntimeError(native_started_without_claim) reproduced before implementation",
+  "guards": {
+    "passed": 7,
+    "cases": [
+      "public conflict blocks session",
+      "different targets independent",
+      "owned subprocess SIGKILL blocks replay",
+      "exception reconciling",
+      "invalid record preserved",
+      "symlink preserved",
+      "user output preserved"
+    ]
+  },
+  "sourceRegression": {
+    "total": 140,
+    "passed": 111,
+    "skipped": 29
+  },
+  "coldNative": {
+    "passed": 1,
+    "seconds": 8.743,
+    "scope": "source candidate with default public runtime downloads; create/reopen/revise/export and record effective-plan/source/runtime binding",
+    "evidence": {
+      "domain": "photocraft",
+      "result": "PASS",
+      "guardRecords": [
+        {
+          "identity": {
+            "inputHashes": {},
+            "planHash": "6b5432785929fbb6c0b104d778626ad72b06e1a26c13f18be01aed4ef3dce75a",
+            "projectRevision": "240e03f21672076cc4003d6a9c2ef77bd38c8cff8c696ae34bbfbddcf758c5da",
+            "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+          },
+          "ownerPid": 11235,
+          "replayAllowed": false,
+          "schema": "photocraft-output-execution/v1",
+          "state": "finished",
+          "targetHash": "349c30d31faf42c619a323eb22a216519b2a90b37648f0c53f48c133f4c23d93"
+        },
+        {
+          "identity": {
+            "inputHashes": {},
+            "planHash": "9526322d00be3fa6c9950384e9280b429c38428395a2d8830cf903e2463dee99",
+            "projectRevision": null,
+            "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+          },
+          "ownerPid": 10884,
+          "replayAllowed": false,
+          "schema": "photocraft-output-execution/v1",
+          "state": "finished",
+          "targetHash": "3444fc325c725b44dffb56872318487ff4bcbd12fe9ec87713faf755788623c2"
+        }
+      ],
+      "workflowSha256": "d261e265aca476fc2f0f066f8a6fe71d05d7c27be1c815622b9f7691129b43e1",
+      "guardSha256": "52a24556afed5e38ef6d14861bf0609a5d3aa383bbc1b1e144b0cf5e0d1f72ed",
+      "entrySha256": "290108267b948b6ddda6f0865e20f1bdfadd7558442fb1d617125a1ed25eb116",
+      "projectSha256": "240e03f21672076cc4003d6a9c2ef77bd38c8cff8c696ae34bbfbddcf758c5da",
+      "revisionSha256": "e0d36955ff92e46c905e9fa3597c42d7e15c9de5214a4223feec845fab4d2b57",
+      "scope": "source candidate single-skill cold native workflow delivery/revision; no full DAG acceptance"
+    }
+  },
+  "sourceFingerprints": {
+    "workflow.py": "d261e265aca476fc2f0f066f8a6fe71d05d7c27be1c815622b9f7691129b43e1",
+    "output_guard.py": "52a24556afed5e38ef6d14861bf0609a5d3aa383bbc1b1e144b0cf5e0d1f72ed"
+  },
+  "testFingerprints": {
+    "test_output_execution_guard.py": "72d213e7140b62ad644c6aa010521dc8d16856e58b5f35987827fbdb0724e314",
+    "test_native_workflow_first_use.py": "054e7878c34ab8a17de3dcb23fb2e9b12933ec69058b461c369957e97ea45c77"
+  },
+  "mirroredSkills": 13,
+  "unverified": [
+    "fixed plugin publication and installation",
+    "Art pinned domain bundle upgrade",
+    "raw CLI execution leases",
+    "complete authorization/idempotency/cancellation/budget contracts",
+    "creative acceptance and full V1"
+  ]
+}

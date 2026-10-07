@@ -1,3 +1,5 @@
+PhotoCraft source dev.30 candidate protects public workflow output before native sessions:7 guard tests, 111 source regressions (29 explicit-environment skips), and1 actual cold native create/revise/reopen/export test pass. Completed records bind effective plans, source revisions and runtime SHA. Fixed plugin installation and Art bundle integration remain separate gates. [Evidence](docs/evidence/photocraft-output-execution-candidate-20261007.json) · [Architecture](docs/PhotoCraft-Output-Execution-Architecture.md).
+
 Domain scene acceptance now has **43 passed native tests / all 42 distinct domain scene skills**. The fixed-installed tracking case passed with supported H.264 High; the earlier lossless input is unsupported by the native decoder and its failed evidence remains historical. Art role-specific tasks, generic Skills CLI and complete V1 remain open. [Evidence / 证据](docs/evidence/craft-fixed-tracking-supported-input-20261007.json).
 
 Additional scene acceptance: **42 native tests passed / 41 of 42 domain scene skills**. Multicam, timed transcript import, filters and Puppet passed. Effect tracking video texture is absent from its expected preview pixels, and analysis produced zero actual keys and remains unaccepted. All64 installed identities remain unchanged. Art role-specific tasks, automatic ASR, generic Skills CLI installation and complete V1 remain open. [Evidence](docs/evidence/craft-fixed-additional-task-scenes-20261007.json).
@@ -8,7 +10,7 @@ Current fixed V1 representative native baseline: four installed domain workflows
 
 Every-skill cold first use: **64/64 passed** on macOS arm64 / Python3.13.5 (620.155s). Each single skill used its own empty runtime and default public downloads; locked native version and command discovery passed, installed hashes unchanged. Generic Skills CLI installation and complete V1 remain open. [Evidence](docs/evidence/craft-fixed64-every-skill-cold-first-use-20261007.json).
 
-Current plugin: `0.1.0-dev.31`; skill source: `0.1.0-dev.29`; Strict command-plan JSON snapshot is vendored. Source regression and standalone-copy plan tests pass; fixed installed plan guards and representative native save/reopen/render checks pass. Exhaustive commands and full V1 remain open.
+Current plugin: `0.1.0-dev.32`; skill source: `0.1.0-dev.30`. Output execution protection is vendored; source cold native creation/revision and guard tests passed. Fixed installation remains pending; full V1 and Art bundle integration remain open.
 
 Fixed publication/installation proof: PhotoCraft plugin dev.30 / source dev.28 and ArtCraft plugin dev.96 / source dev.70. Isolated Codex 0.147.0 discovers all 64 skills with no loading errors; 64 standalone-copy CLI probes and 161 parameter queries across all 23 Photo/Art skills pass. Both installed entry points execute the added commands from fresh caches and preserve presets, original projects, layers and pixels; all installed skill hashes remain unchanged. The classified domain catalog contains 2,646 IDs. Exhaustive contexts, generic Skills CLI installation and full V1 remain open. [Evidence](docs/evidence/craft-photo30-art96-fixed-first-use-20261007.json).
 
@@ -115,9 +117,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.31 |
+| Metadata version | 0.1.0-dev.32 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / v0.1.0-dev.29 |
+| Skills source | photocraft-skills / v0.1.0-dev.30 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
