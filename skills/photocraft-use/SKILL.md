@@ -53,7 +53,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | 技能 | 触发任务 |
 | :--- | :--- |
-| **photocraft-cli** | 查询实际命令参数和能力，调用公开 CLI、MCP 与诊断 |
+| **photocraft-cli** | 查询 PhotoCraft 原生命令和参数，或处理局部滤镜、背景虚化与输出锐化；首次使用安装固定 CLI。 |
 | **photocraft-cli-setup** | 首次安装、摘要校验、版本检查与缺失运行时排障 |
 | **photocraft-cli-project** | 创建、打开和保存 pcraft，检查尺寸、深度和色彩模式 |
 | **photocraft-cli-layers** | 组织产品、背景、文本与图层组，调整混合和层级 |
@@ -64,6 +64,8 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 | **photocraft-cli-text** | 创建和修改文字图层、字体、段落和布局 |
 | **photocraft-cli-resize** | 调整画布和图像尺寸，制作海报封面变体 |
 | **photocraft-cli-export** | 从原生图层工程输出 PSD、PNG 或其他交换文件 |
+
+| **photocraft-cli-filters** | 使用 PhotoCraft 处理局部滤镜、背景虚化、颗粒与输出锐化，保留可编辑设计；首次使用安装固定 CLI。 |
 
 缺少技能：`npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
 
@@ -81,7 +83,7 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。领域分发固定版本为 0.1.0-dev.21；该版本的独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 可编辑局部调整与源返工见 [蒙版调整使用说明](references/adjustment-mask.md)；成对计划在本技能 examples 中，源候选与固定安装证据分开。
 
@@ -90,3 +92,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 业务任务从 [场景操作手册](references/business-scenes.md) 开始，按输入检查、模板适配、原生交付、局部返工和结果核验执行。
 
 安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。
+
+产品局部滤镜、背景虚化与输出锐化任务，读取 [滤镜场景](references/filter-scene.md)，区分可编辑滤镜与烘焙像素，并核验选区、图层和非目标内容。

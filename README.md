@@ -1,4 +1,6 @@
-Current plugin: `0.1.0-dev.27`; skill source: `0.1.0-dev.25`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+Current plugin: `0.1.0-dev.28`; skill source: `0.1.0-dev.26`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
+
+Historical release record: Current plugin: `0.1.0-dev.27`; skill source: `0.1.0-dev.25`. Standalone skills include pinned desktop+CLI installation, owned startup, full-command bridge plans and lifecycle receipts. Previous fixed releases passed 58 basic cold cases; current source passed four advanced desktop cases. Acceptance of this new fixed installed release is pending. Exhaustive commands and full V1 remain open. [Usage](docs/Craft-Desktop-First-Use-Architecture.md).
 
 Fixed installed diagnostics: 58 skills discovered and 184 scoped checks passed. The four frozen domain copies still lack the additional missing-bootstrap-script repair; acceptance remains partial. Art plugin dev.92 pins source dev.66. [Evidence](docs/evidence/craft-first-use-diagnostics-installed-20261007.json).
 
@@ -95,9 +97,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.27 |
+| Metadata version | 0.1.0-dev.28 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.25 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.26 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

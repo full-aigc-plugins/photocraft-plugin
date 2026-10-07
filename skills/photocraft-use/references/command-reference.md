@@ -1586,8 +1586,8 @@ Clear Layer Style
 
 Gaussian Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.gaussianBlur`；按原生参数构造计划后执行 run。
@@ -1603,8 +1603,8 @@ Gaussian Blur…
 
 Blur
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.blur`；按原生参数构造计划后执行 run。
@@ -1620,8 +1620,8 @@ Blur
 
 Blur More
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.blurMore`；按原生参数构造计划后执行 run。
@@ -1637,8 +1637,8 @@ Blur More
 
 Sharpen
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.sharpen`；按原生参数构造计划后执行 run。
@@ -1654,8 +1654,8 @@ Sharpen
 
 Sharpen More
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.sharpenMore`；按原生参数构造计划后执行 run。
@@ -1671,8 +1671,8 @@ Sharpen More
 
 Sharpen Edges
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.sharpenEdges`；按原生参数构造计划后执行 run。
@@ -1688,8 +1688,8 @@ Sharpen Edges
 
 Despeckle
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.despeckle`；按原生参数构造计划后执行 run。
@@ -1705,8 +1705,8 @@ Despeckle
 
 Box Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.boxBlur`；按原生参数构造计划后执行 run。
@@ -1722,8 +1722,8 @@ Box Blur…
 
 Motion Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.motionBlur`；按原生参数构造计划后执行 run。
@@ -1739,8 +1739,8 @@ Motion Blur…
 
 Radial Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.radialBlur`；按原生参数构造计划后执行 run。
@@ -1756,8 +1756,8 @@ Radial Blur…
 
 Surface Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.surfaceBlur`；按原生参数构造计划后执行 run。
@@ -1773,8 +1773,8 @@ Surface Blur…
 
 Unsharp Mask…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.unsharpMask`；按原生参数构造计划后执行 run。
@@ -1790,8 +1790,8 @@ Unsharp Mask…
 
 Smart Sharpen…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.smartSharpen`；按原生参数构造计划后执行 run。
@@ -1807,8 +1807,8 @@ Smart Sharpen…
 
 Add Noise…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.addNoise`；按原生参数构造计划后执行 run。
@@ -1824,8 +1824,8 @@ Add Noise…
 
 Median…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.median`；按原生参数构造计划后执行 run。
@@ -1841,8 +1841,8 @@ Median…
 
 Dust & Scratches…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.dustAndScratches`；按原生参数构造计划后执行 run。
@@ -1858,8 +1858,8 @@ Dust & Scratches…
 
 Mosaic…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.mosaic`；按原生参数构造计划后执行 run。
@@ -1875,8 +1875,8 @@ Mosaic…
 
 Emboss…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.emboss`；按原生参数构造计划后执行 run。
@@ -1892,8 +1892,8 @@ Emboss…
 
 Find Edges
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.findEdges`；按原生参数构造计划后执行 run。
@@ -1909,8 +1909,8 @@ Find Edges
 
 Solarize
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.solarize`；按原生参数构造计划后执行 run。
@@ -1926,8 +1926,8 @@ Solarize
 
 Twirl…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.twirl`；按原生参数构造计划后执行 run。
@@ -1943,8 +1943,8 @@ Twirl…
 
 Pinch…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.pinch`；按原生参数构造计划后执行 run。
@@ -1960,8 +1960,8 @@ Pinch…
 
 Spherize…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.spherize`；按原生参数构造计划后执行 run。
@@ -1977,8 +1977,8 @@ Spherize…
 
 Wave…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.wave`；按原生参数构造计划后执行 run。
@@ -1994,8 +1994,8 @@ Wave…
 
 Ripple…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.ripple`；按原生参数构造计划后执行 run。
@@ -2011,8 +2011,8 @@ Ripple…
 
 Polar Coordinates…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.polarCoordinates`；按原生参数构造计划后执行 run。
@@ -2028,8 +2028,8 @@ Polar Coordinates…
 
 High Pass…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.highPass`；按原生参数构造计划后执行 run。
@@ -2045,8 +2045,8 @@ High Pass…
 
 Minimum…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.minimum`；按原生参数构造计划后执行 run。
@@ -2062,8 +2062,8 @@ Minimum…
 
 Maximum…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.maximum`；按原生参数构造计划后执行 run。
@@ -2079,8 +2079,8 @@ Maximum…
 
 Offset…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.offset`；按原生参数构造计划后执行 run。
@@ -2096,8 +2096,8 @@ Offset…
 
 Last Filter
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.lastFilter`；按原生参数构造计划后执行 run。
@@ -2113,8 +2113,8 @@ Last Filter
 
 Color Halftone…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.colorHalftone`；按原生参数构造计划后执行 run。
@@ -2130,8 +2130,8 @@ Color Halftone…
 
 Crystallize…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.crystallize`；按原生参数构造计划后执行 run。
@@ -2147,8 +2147,8 @@ Crystallize…
 
 Facet
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.facet`；按原生参数构造计划后执行 run。
@@ -2164,8 +2164,8 @@ Facet
 
 Fragment
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.fragment`；按原生参数构造计划后执行 run。
@@ -2181,8 +2181,8 @@ Fragment
 
 Mezzotint…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.mezzotint`；按原生参数构造计划后执行 run。
@@ -2198,8 +2198,8 @@ Mezzotint…
 
 Pointillize…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.pointillize`；按原生参数构造计划后执行 run。
@@ -2215,8 +2215,8 @@ Pointillize…
 
 Diffuse…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.diffuse`；按原生参数构造计划后执行 run。
@@ -2232,8 +2232,8 @@ Diffuse…
 
 Extrude…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.extrude`；按原生参数构造计划后执行 run。
@@ -2249,8 +2249,8 @@ Extrude…
 
 Oil Paint…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.oilPaint`；按原生参数构造计划后执行 run。
@@ -2266,8 +2266,8 @@ Oil Paint…
 
 Tiles…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.tiles`；按原生参数构造计划后执行 run。
@@ -2283,8 +2283,8 @@ Tiles…
 
 Trace Contour…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.traceContour`；按原生参数构造计划后执行 run。
@@ -2300,8 +2300,8 @@ Trace Contour…
 
 Wind…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.wind`；按原生参数构造计划后执行 run。
@@ -2317,8 +2317,8 @@ Wind…
 
 Displace…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.displace`；按原生参数构造计划后执行 run。
@@ -2334,8 +2334,8 @@ Displace…
 
 Shear…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.shear`；按原生参数构造计划后执行 run。
@@ -2351,8 +2351,8 @@ Shear…
 
 ZigZag…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.zigZag`；按原生参数构造计划后执行 run。
@@ -2368,8 +2368,8 @@ ZigZag…
 
 Fibers…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.fibers`；按原生参数构造计划后执行 run。
@@ -2385,8 +2385,8 @@ Fibers…
 
 Lens Flare…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.lensFlare`；按原生参数构造计划后执行 run。
@@ -2402,8 +2402,8 @@ Lens Flare…
 
 Lighting Effects…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.lightingEffects`；按原生参数构造计划后执行 run。
@@ -2419,8 +2419,8 @@ Lighting Effects…
 
 Reduce Noise…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.reduceNoise`；按原生参数构造计划后执行 run。
@@ -2436,8 +2436,8 @@ Reduce Noise…
 
 Smart Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.smartBlur`；按原生参数构造计划后执行 run。
@@ -2453,8 +2453,8 @@ Smart Blur…
 
 Lens Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.lensBlur`；按原生参数构造计划后执行 run。
@@ -2470,8 +2470,8 @@ Lens Blur…
 
 Shape Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.shapeBlur`；按原生参数构造计划后执行 run。
@@ -2487,8 +2487,8 @@ Shape Blur…
 
 Tilt-Shift…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.tiltShift`；按原生参数构造计划后执行 run。
@@ -2504,8 +2504,8 @@ Tilt-Shift…
 
 Iris Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.irisBlur`；按原生参数构造计划后执行 run。
@@ -2521,8 +2521,8 @@ Iris Blur…
 
 Field Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.fieldBlur`；按原生参数构造计划后执行 run。
@@ -2538,8 +2538,8 @@ Field Blur…
 
 Spin Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.spinBlur`；按原生参数构造计划后执行 run。
@@ -2555,8 +2555,8 @@ Spin Blur…
 
 Path Blur…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.pathBlur`；按原生参数构造计划后执行 run。
@@ -2572,8 +2572,8 @@ Path Blur…
 
 Custom…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.custom`；按原生参数构造计划后执行 run。
@@ -2589,8 +2589,8 @@ Custom…
 
 HSB/HSL
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.hsbHsl`；按原生参数构造计划后执行 run。
@@ -2606,8 +2606,8 @@ HSB/HSL
 
 De-Interlace…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.video.deInterlace`；按原生参数构造计划后执行 run。
@@ -2623,8 +2623,8 @@ De-Interlace…
 
 NTSC Colors
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.video.ntscColors`；按原生参数构造计划后执行 run。
@@ -2640,8 +2640,8 @@ NTSC Colors
 
 Filter Gallery…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.filterGallery`；按原生参数构造计划后执行 run。
@@ -2657,8 +2657,8 @@ Filter Gallery…
 
 Colored Pencil
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.coloredPencil`；按原生参数构造计划后执行 run。
@@ -2674,8 +2674,8 @@ Colored Pencil
 
 Cutout
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.cutout`；按原生参数构造计划后执行 run。
@@ -2691,8 +2691,8 @@ Cutout
 
 Dry Brush
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.dryBrush`；按原生参数构造计划后执行 run。
@@ -2708,8 +2708,8 @@ Dry Brush
 
 Film Grain
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.filmGrain`；按原生参数构造计划后执行 run。
@@ -2725,8 +2725,8 @@ Film Grain
 
 Fresco
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.fresco`；按原生参数构造计划后执行 run。
@@ -2742,8 +2742,8 @@ Fresco
 
 Neon Glow
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.neonGlow`；按原生参数构造计划后执行 run。
@@ -2759,8 +2759,8 @@ Neon Glow
 
 Paint Daubs
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.paintDaubs`；按原生参数构造计划后执行 run。
@@ -2776,8 +2776,8 @@ Paint Daubs
 
 Palette Knife
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.paletteKnife`；按原生参数构造计划后执行 run。
@@ -2793,8 +2793,8 @@ Palette Knife
 
 Plastic Wrap
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.plasticWrap`；按原生参数构造计划后执行 run。
@@ -2810,8 +2810,8 @@ Plastic Wrap
 
 Poster Edges
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.posterEdges`；按原生参数构造计划后执行 run。
@@ -2827,8 +2827,8 @@ Poster Edges
 
 Rough Pastels
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.roughPastels`；按原生参数构造计划后执行 run。
@@ -2844,8 +2844,8 @@ Rough Pastels
 
 Smudge Stick
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.smudgeStick`；按原生参数构造计划后执行 run。
@@ -2861,8 +2861,8 @@ Smudge Stick
 
 Sponge
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.sponge`；按原生参数构造计划后执行 run。
@@ -2878,8 +2878,8 @@ Sponge
 
 Underpainting
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.underpainting`；按原生参数构造计划后执行 run。
@@ -2895,8 +2895,8 @@ Underpainting
 
 Watercolor
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.watercolor`；按原生参数构造计划后执行 run。
@@ -2912,8 +2912,8 @@ Watercolor
 
 Accented Edges
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.accentedEdges`；按原生参数构造计划后执行 run。
@@ -2929,8 +2929,8 @@ Accented Edges
 
 Angled Strokes
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.angledStrokes`；按原生参数构造计划后执行 run。
@@ -2946,8 +2946,8 @@ Angled Strokes
 
 Crosshatch
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.crosshatch`；按原生参数构造计划后执行 run。
@@ -2963,8 +2963,8 @@ Crosshatch
 
 Dark Strokes
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.darkStrokes`；按原生参数构造计划后执行 run。
@@ -2980,8 +2980,8 @@ Dark Strokes
 
 Ink Outlines
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.inkOutlines`；按原生参数构造计划后执行 run。
@@ -2997,8 +2997,8 @@ Ink Outlines
 
 Spatter
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.spatter`；按原生参数构造计划后执行 run。
@@ -3014,8 +3014,8 @@ Spatter
 
 Sprayed Strokes
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.sprayedStrokes`；按原生参数构造计划后执行 run。
@@ -3031,8 +3031,8 @@ Sprayed Strokes
 
 Sumi-e
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.sumiE`；按原生参数构造计划后执行 run。
@@ -3048,8 +3048,8 @@ Sumi-e
 
 Diffuse Glow
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.diffuseGlow`；按原生参数构造计划后执行 run。
@@ -3065,8 +3065,8 @@ Diffuse Glow
 
 Glass
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.glass`；按原生参数构造计划后执行 run。
@@ -3082,8 +3082,8 @@ Glass
 
 Ocean Ripple
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.oceanRipple`；按原生参数构造计划后执行 run。
@@ -3099,8 +3099,8 @@ Ocean Ripple
 
 Bas Relief
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.basRelief`；按原生参数构造计划后执行 run。
@@ -3116,8 +3116,8 @@ Bas Relief
 
 Chalk & Charcoal
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.chalkCharcoal`；按原生参数构造计划后执行 run。
@@ -3133,8 +3133,8 @@ Chalk & Charcoal
 
 Charcoal
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.charcoal`；按原生参数构造计划后执行 run。
@@ -3150,8 +3150,8 @@ Charcoal
 
 Chrome
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.chrome`；按原生参数构造计划后执行 run。
@@ -3167,8 +3167,8 @@ Chrome
 
 Conté Crayon
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.conteCrayon`；按原生参数构造计划后执行 run。
@@ -3184,8 +3184,8 @@ Conté Crayon
 
 Graphic Pen
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.graphicPen`；按原生参数构造计划后执行 run。
@@ -3201,8 +3201,8 @@ Graphic Pen
 
 Halftone Pattern
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.halftonePattern`；按原生参数构造计划后执行 run。
@@ -3218,8 +3218,8 @@ Halftone Pattern
 
 Note Paper
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.notePaper`；按原生参数构造计划后执行 run。
@@ -3235,8 +3235,8 @@ Note Paper
 
 Photocopy
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.photocopy`；按原生参数构造计划后执行 run。
@@ -3252,8 +3252,8 @@ Photocopy
 
 Plaster
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.plaster`；按原生参数构造计划后执行 run。
@@ -3269,8 +3269,8 @@ Plaster
 
 Reticulation
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.reticulation`；按原生参数构造计划后执行 run。
@@ -3286,8 +3286,8 @@ Reticulation
 
 Stamp
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.stamp`；按原生参数构造计划后执行 run。
@@ -3303,8 +3303,8 @@ Stamp
 
 Torn Edges
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.tornEdges`；按原生参数构造计划后执行 run。
@@ -3320,8 +3320,8 @@ Torn Edges
 
 Water Paper
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.waterPaper`；按原生参数构造计划后执行 run。
@@ -3337,8 +3337,8 @@ Water Paper
 
 Glowing Edges
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.glowingEdges`；按原生参数构造计划后执行 run。
@@ -3354,8 +3354,8 @@ Glowing Edges
 
 Craquelure
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.craquelure`；按原生参数构造计划后执行 run。
@@ -3371,8 +3371,8 @@ Craquelure
 
 Grain
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.grain`；按原生参数构造计划后执行 run。
@@ -3388,8 +3388,8 @@ Grain
 
 Mosaic Tiles
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.mosaicTiles`；按原生参数构造计划后执行 run。
@@ -3405,8 +3405,8 @@ Mosaic Tiles
 
 Patchwork
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.patchwork`；按原生参数构造计划后执行 run。
@@ -3422,8 +3422,8 @@ Patchwork
 
 Stained Glass
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.stainedGlass`；按原生参数构造计划后执行 run。
@@ -3439,8 +3439,8 @@ Stained Glass
 
 Texturizer
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.texturizer`；按原生参数构造计划后执行 run。
@@ -5940,8 +5940,8 @@ Show Layers
 
 Average
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.average`；按原生参数构造计划后执行 run。
@@ -5957,8 +5957,8 @@ Average
 
 Clouds
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.clouds`；按原生参数构造计划后执行 run。
@@ -5974,8 +5974,8 @@ Clouds
 
 Difference Clouds
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.differenceClouds`；按原生参数构造计划后执行 run。
@@ -7215,8 +7215,8 @@ Convert to Smart Object
 
 Convert for Smart Filters
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.convertForSmartFilters`；按原生参数构造计划后执行 run。
@@ -8694,8 +8694,8 @@ Crop and Straighten Photos
 
 Lens Correction…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.lensCorrection`；按原生参数构造计划后执行 run。
@@ -8711,8 +8711,8 @@ Lens Correction…
 
 Adaptive Wide Angle…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.adaptiveWideAngle`；按原生参数构造计划后执行 run。
@@ -8728,8 +8728,8 @@ Adaptive Wide Angle…
 
 Camera Raw Filter…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.cameraRaw`；按原生参数构造计划后执行 run。
@@ -8762,8 +8762,8 @@ Lens Correction…
 
 Vanishing Point…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.vanishingPoint`；按原生参数构造计划后执行 run。
@@ -10479,8 +10479,8 @@ Artboards to PDF…
 
 Liquify…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.liquify`；按原生参数构造计划后执行 run。
@@ -11635,8 +11635,8 @@ Clone Source Overlay
 
 Flame…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.flame`；按原生参数构造计划后执行 run。
@@ -11652,8 +11652,8 @@ Flame…
 
 Picture Frame…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.pictureFrame`；按原生参数构造计划后执行 run。
@@ -11669,8 +11669,8 @@ Picture Frame…
 
 Tree…
 
-- 技能 / Owner: `photocraft-cli`。
-- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
+- 技能 / Owner: `photocraft-cli-filters`。
+- 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
 - 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.tree`；按原生参数构造计划后执行 run。

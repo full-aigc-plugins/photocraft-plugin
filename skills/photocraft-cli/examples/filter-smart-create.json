@@ -1,0 +1,74 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "command": "file.new",
+      "params": {
+        "name": "Coverage",
+        "width": 96,
+        "height": 64,
+        "mode": "rgb",
+        "depth": 8
+      }
+    },
+    {
+      "command": "shape.create",
+      "params": {
+        "kind": "rect",
+        "rect": [
+          16,
+          16,
+          32,
+          32
+        ],
+        "fill": "#ff0000",
+        "name": "Subject"
+      },
+      "as": "subject"
+    },
+    {
+      "command": "layer.select",
+      "params": {
+        "layer": {
+          "$ref": "subject.layer"
+        }
+      }
+    },
+    {
+      "command": "filter.convertForSmartFilters",
+      "params": {
+        "layer": {
+          "$ref": "subject.layer"
+        }
+      }
+    },
+    {
+      "command": "filter.blur.gaussianBlur",
+      "params": {
+        "radius": 2
+      }
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "inspect"
+    },
+    {
+      "tool": "doc_save",
+      "params": {
+        "path": {
+          "$output": "project.pcraft"
+        }
+      }
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "preview.png"
+        },
+        "format": "png"
+      }
+    }
+  ]
+}

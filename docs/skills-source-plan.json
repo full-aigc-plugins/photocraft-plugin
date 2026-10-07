@@ -14,11 +14,12 @@
     "photocraft-cli-retouch",
     "photocraft-cli-text",
     "photocraft-cli-resize",
-    "photocraft-cli-export"
+    "photocraft-cli-export",
+    "photocraft-cli-filters"
   ],
   "sourceOfTruth": "independent skills repository",
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
   "suiteManifest": "https://github.com/full-aigc-skills/photocraft-skills/blob/main/skill-suite.json",
-  "sourceRef": "v0.1.0-dev.25",
-  "sourceSha": "caea1dde4a5a57925de145d15a24fea633cb5a2f"
+  "sourceRef": "v0.1.0-dev.26",
+  "sourceSha": "664a964fd994d3e2da55aa3883649af811f4cdab"
 }

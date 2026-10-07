@@ -1,0 +1,27 @@
+{
+  "schema": "craft-command-plan/v1",
+  "operations": [
+    {
+      "tool": "doc_open",
+      "params": {
+        "path": {
+          "$ref": "project.path"
+        }
+      }
+    },
+    {
+      "tool": "doc_inspect",
+      "params": {},
+      "as": "reopened"
+    },
+    {
+      "tool": "doc_export",
+      "params": {
+        "path": {
+          "$output": "reopened.png"
+        },
+        "format": "png"
+      }
+    }
+  ]
+}
