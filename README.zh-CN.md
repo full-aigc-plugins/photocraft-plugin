@@ -268,3 +268,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 ## 桌面安装组件（候选源码）
 
 每个领域技能自带固定桌面安装、自动启动与完整命令工作流入口。使用当前技能实际目录运行 desktop.py run PLAN --output NEW_DIRECTORY；保留原生工程、命令与生命周期回执。源码48项冷启动已有证据，本次固定版本的实际安装复验仍待完成。见 [桌面使用架构](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+
+命令计划 JSON 源候选：重复键在安装和创建输出前被拒绝，全部 13 个领域技能的独立副本拒绝测试与有效计划校验通过，3 项专项测试通过。固定插件发布和安装后复验仍为 NOT_RUN。[证据](docs/evidence/command-plan-json-candidate-20261007.json)。

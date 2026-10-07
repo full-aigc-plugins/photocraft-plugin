@@ -177,3 +177,9 @@ Photocraft SHALL 为锁定反射目录每条命令保留完整参数原文、场
 - **THEN** 系统 SHALL 核对固定摘要与实时enabled、使用真实对象引用，严格处理回复
 - **AND** 系统 SHALL 保持依赖收集、原生保存重开、导出与交换损失合同；unknown保留原暂存工程且不重放
 - **AND** 固定安装与逐命令验收 SHALL 单独完成，候选不得自动关闭8.3或8.12
+
+#### Scenario: [PC-CM-001-PLAN-JSON] 计划 JSON 禁止重复键
+
+- **WHEN** 命令计划的顶层、操作或嵌套参数 JSON 对象包含重复键
+- **THEN** 公开 check／run 入口 SHALL 报告 duplicate_json_key，拒绝后值静默覆盖前值
+- **AND** 在创建输出目录、安装运行时和调用任何原生命令之前停止；有效的唯一键计划保持兼容
