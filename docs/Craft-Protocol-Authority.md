@@ -1,6 +1,6 @@
 # Fixed public protocol authority
 
-The four domain plugins consume the ArtCraft-owned craft-task/v1 and craft-artifact/v1 contracts. `contracts-reference.json` pins release v0.1.0-dev.107, its commit, and SHA-256 for both specifications and schemas. ArtCraft remains the sole authority; domain plugins do not maintain schema copies.
+The four domain plugins consume the ArtCraft-owned craft-task/v1 and craft-artifact/v1 contracts. `contracts-reference.json` pins release v0.1.0-dev.109, its commit, and SHA-256 for both specifications and schemas. ArtCraft remains the sole authority; domain plugins do not maintain schema copies.
 
 The documentation gate rejects floating identities, unexpected versions, missing files, and inconsistent URLs. Offline structural validation does not authenticate source bytes. Maintainers separately run the verifier against an ArtCraft checkout containing the pinned tag:
 
