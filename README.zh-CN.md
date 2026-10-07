@@ -1,8 +1,10 @@
+当前插件：`0.1.0-dev.26`；技能源：`0.1.0-dev.24`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定版本58技能首次使用通过，当前源码四领域进阶桌面通过；本次新固定发布安装复验待完成，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+
 本次固定版本追加原生验收：Art十项冷启动、四领域四项GUI编辑与保存重开，以及品牌色局部返工、依赖更新和交付打包通过；全量命令、全部GUI和创作质量仍待验收。[证据](docs/evidence/craft-fixed-scene-guidance-20261007.json)。
 
 固定安装场景指引验收：五插件58技能发现与内容摘要、示例引用及完整命令查询通过；四领域运行脚本与锁和示例保持原固定版本身份。Art新分发十项实际冷启动复验通过，全量命令和完整V1仍开放。[证据](docs/evidence/craft-fixed-scene-guidance-20261007.json)。
 
-当前插件：`0.1.0-dev.25`；技能源：`0.1.0-dev.23`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定版本58技能首次使用通过，当前源码四领域进阶桌面通过；本次固定安装发现、场景资料与代表原生任务复验通过，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
+历史发行记录：当前插件：`0.1.0-dev.25`；技能源：`0.1.0-dev.23`。独立技能现提供固定桌面与 CLI 安装、自动启动、同会话全命令入口及退出回执。此前固定版本58技能首次使用通过，当前源码四领域进阶桌面通过；本次固定安装发现、场景资料与代表原生任务复验通过，全量命令及完整V1仍开放。[使用指南](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
 
 历史发行记录：当前插件：`0.1.0-dev.24`；技能源：`0.1.0-dev.22`。完整反射命令入口、独立CLI与桌面安装已提供；固定版本58项独立冷启动、四领域进阶GUI保存／重开／渲染及Art混合返工通过。逐条原生命令执行验收与完整V1保持开放。[固定验收记录](docs/evidence/craft-full-command-fixed-first-use-20261007.json)。
 
@@ -89,9 +91,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.25 |
+| Metadata version | 0.1.0-dev.26 |
 | Stage | implementation-in-progress |
-| Skills source | Independent photocraft-skills / published v0.1.0-dev.23 |
+| Skills source | Independent photocraft-skills / published v0.1.0-dev.24 |
 | Execution | 上游 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

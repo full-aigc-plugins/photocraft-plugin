@@ -19,6 +19,6 @@
   "sourceOfTruth": "independent skills repository",
   "packaging": "immutable vendored snapshot with tag, commit and whole-tree checksums",
   "suiteManifest": "https://github.com/full-aigc-skills/photocraft-skills/blob/main/skill-suite.json",
-  "sourceRef": "v0.1.0-dev.23",
-  "sourceSha": "ccd623a561dae5840afe0b3c9c146da04496a873"
+  "sourceRef": "v0.1.0-dev.24",
+  "sourceSha": "41e415bbe9e599cf306c2e5c70278d1413497eb6"
 }

@@ -88,3 +88,5 @@ python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands
 GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-install.md)；安装、启动与实际GUI编辑分别核验。
 
 业务任务从 [场景操作手册](references/business-scenes.md) 开始，按输入检查、模板适配、原生交付、局部返工和结果核验执行。
+
+安装失败时读取 [首次使用诊断](references/first-use-failures.md)，按回执定位当前技能自身的 setup 入口；安装失败与原生调用失败分别处理。

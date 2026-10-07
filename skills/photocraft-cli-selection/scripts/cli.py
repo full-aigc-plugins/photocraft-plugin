@@ -17,12 +17,16 @@ def main():
  args=parser.parse_args();argv=args.arguments
  if argv[:1]==['--']:argv=argv[1:]
  if not argv or argv[0] not in ALLOWED:parser.error('unsupported_cli_subcommand: put the native subcommand first after --')
+ installation_completed=False
  try:
   path=Path(__file__).with_name('bootstrap.py');spec=importlib.util.spec_from_file_location('craft_bootstrap',path)
   module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
   installed=module.install(json.loads(path.with_name('runtime.lock.json').read_text()),args.runtime_home,args.archive)
+  installation_completed=True
   result=subprocess.run([installed['executable'],*argv],timeout=600)
   return result.returncode
  except (ValueError,OSError,subprocess.SubprocessError) as error:
-  print(json.dumps({'error':str(error),'result':'unknown' if isinstance(error,subprocess.TimeoutExpired) else 'failed'}));return 1
+  reply={'error':str(error),'result':'unknown' if isinstance(error,subprocess.TimeoutExpired) else 'failed'}
+  if not installation_completed and 'module' in locals():reply['dependencySetup']=module.setup_failure(args.runtime_home)
+  print(json.dumps(reply));return 1
 if __name__=='__main__':raise SystemExit(main())
