@@ -142,6 +142,8 @@ Deselect
 {}
 ```
 
+场景 / Recipes: [examples/adjustment-mask-create.json](../examples/adjustment-mask-create.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
+
 ## select.inverse
 
 Inverse
@@ -175,6 +177,8 @@ Rectangular Selection
 ```text
 {"x":i32,"y":i32,"width":u32,"height":u32,"mode":"replace|add|subtract|intersect"="replace","ellipse":bool=false,"antiAlias":bool=true,"feather":px=0}
 ```
+
+场景 / Recipes: [examples/adjustment-mask-create.json](../examples/adjustment-mask-create.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
 
 ## layer.new.layer
 
@@ -277,6 +281,8 @@ Select Layer
 ```text
 {"layer":id,"mode":"replace|toggle|range|add"="replace"} (toggle = ⌘-click, range = ⇧-click)
 ```
+
+场景 / Recipes: [examples/adjustment-mask-revise.json](../examples/adjustment-mask-revise.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
 
 ## layer.setProps
 
@@ -448,6 +454,8 @@ Reveal Selection
 {"layer":id?}
 ```
 
+场景 / Recipes: [examples/adjustment-mask-create.json](../examples/adjustment-mask-create.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
+
 ## layer.layerMask.delete
 
 Delete
@@ -549,6 +557,8 @@ Adjustment Properties
 ```text
 {"layer":id?, …params of that adjustment kind}
 ```
+
+场景 / Recipes: [examples/adjustment-mask-revise.json](../examples/adjustment-mask-revise.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
 
 ## layer.moveTo
 
@@ -855,6 +865,8 @@ Brightness/Contrast…
 ```text
 {"brightness":-150..150=0,"contrast":-50..100=0,"legacy":bool=false}
 ```
+
+场景 / Recipes: [examples/adjustment-mask-create.json](../examples/adjustment-mask-create.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
 
 ## image.adjustments.brightnessContrast
 
@@ -3575,6 +3587,8 @@ New Shape Layer
 ```text
 {"kind":"rect|roundedRect|ellipse|polygon|star|line|path"="rect","rect":[x,y,w,h] (rect/roundedRect/ellipse/polygon/star),"radii":[tl,tr,br,bl]|r (roundedRect=10),"sides":3..100=5,"starRatio":0..1 (star=0.5),"from":[x,y],"to":[x,y],"weight":px=1 (line),"path":{…} (kind path),"fill":"#rrggbb"|[r,g,b,a]|{"gradient":{"stops":[[t,"#hex"]],"angle":deg,"scale":%,"style":"linear|radial|angle|reflected|diamond","reverse":bool}}|{"pattern":name}|null (no fill)=foreground,"stroke":{"width":px,"color":"#rrggbb"|fill,"opacity":0..100,"align":"inside|center|outside","cap":"butt|round|square","join":"miter|round|bevel","miterLimit":n,"dashes":[multiples of width],"dashOffset":n}|null=none,"name":str?,"addTo":layerId? + "op":"combine|subtract|intersect|exclude" (append to an existing shape layer)} → shape.info. path: {"subpaths":[{"closed":bool=true,"op":"combine|subtract|intersect|exclude","knots":[[x,y] | {"anchor":[x,y],"in":[x,y],"out":[x,y],"smooth":bool}]}],"fillRule":"nonzero|evenodd","inverted":bool}
 ```
+
+场景 / Recipes: [examples/adjustment-mask-create.json](../examples/adjustment-mask-create.json)；前置条件见 [调整蒙版](adjustment-mask.md)。
 
 ## shape.edit
 
