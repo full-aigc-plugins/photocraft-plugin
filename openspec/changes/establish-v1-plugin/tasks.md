@@ -204,4 +204,4 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 2026-10-08 固定安装复验完成：当前矩阵64技能零加载错误；六个有变更技能在自身目录与空缓存中使用固定公开原生CLI，通过准确版本、实时目录及自带参数查询，目录／用户文件保全。完整SK-003与通用Skills CLI不由此关闭。证据 `docs/evidence/craft-scenario-paths-fixed-first-use-20261008.json`。
 
-- [ ] [PC-CM-001-SAVED-SELECTION] 补齐羽化选区保存／重开恢复／蒙版局部返工实例、完整选区通道命令分类和真实首用测试；验证灰度覆盖、通道与对照保全、错误停止及固定发行单技能复验；不据此关闭全部选择、AI及印刷上下文。
+- [x] [PC-CM-001-SAVED-SELECTION] 补齐羽化选区保存／重开恢复／蒙版局部返工实例、完整选区通道命令分类和真实首用测试；验证灰度覆盖、通道与对照保全、错误停止及固定发行单技能复验；不据此关闭全部选择、AI及印刷上下文。 证据：`docs/evidence/photocraft-saved-selection-fixed-first-use-20261008.json`。

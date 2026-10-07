@@ -43,4 +43,6 @@ flowchart TD
 
 测试直接读取 `.pcraft` 的 manifest，比较非目标图层和备用通道，并逐块比较引用的压缩 tile 字节。检查原工程和技能树摘要，防止新增／删除图层被遗漏。无文档、未知通道和非法 operation 三类失败均停止后续保存；非法 operation 用例先成功恢复活动选区，确保触发原生参数拒绝，而非被缺失选区提前拦截。
 
-[当前候选证据](evidence/photocraft-saved-selection-candidate-20261008.json)记录源码候选测试。固定发行、插件 vendor 同步及实际宿主安装副本复验是后续门禁，目前 `NOT_RUN`。未完成前不勾选有界任务，不关闭完整 `PC-CM-001`、AI 选择、多模式／位深、专色印刷、PSD 保真、GUI 或创作质量验收。
+[当前候选证据](evidence/photocraft-saved-selection-candidate-20261008.json)记录源码候选测试。源码候选阶段的固定发行、插件 vendor 同步及实际宿主安装副本复验当时为 `NOT_RUN`，后续固定验收单独记录。未完成前不勾选有界任务，不关闭完整 `PC-CM-001`、AI 选择、多模式／位深、专色印刷、PSD 保真、GUI 或创作质量验收。
+
+固定插件 dev.35／技能源 dev.33 现已通过 13 项独立公开空缓存原生场景及 CLI 查询、64 项宿主身份／发现与文件保全，以及四个公开 ZIP 资产摘要核对。仅关闭 PC-CM-001-SAVED-SELECTION，完整领域及首版仍开放。

@@ -270,3 +270,5 @@ Fixed strict-plan installed verification passes: 64 CLI probes, 324 duplicate-ke
 Scenario installation examples now name the loaded skill itself. Source paths/layout checks pass; fixed installed runtime acceptance is recorded separately. [Architecture / 架构](docs/Scenario-Own-Path-Architecture.md).
 
 Fixed installed own-directory acceptance passes for the updated scenario skills; 64 host identities match. Complete V1 remains open. [Evidence / 证据](docs/evidence/craft-scenario-paths-fixed-first-use-20261008.json).
+
+Fixed PhotoCraft plugin dev.35 / source dev.33 passes 64 installed skill identities/discovery, and 13 fresh standalone Photo public cold native save/reopen/targeted revision/error cases plus CLI command/parameter queries. The other 51 cold records are retained byte-identical historical runs. Full V1 remains open. [Fixed saved-selection evidence](docs/evidence/photocraft-saved-selection-fixed-first-use-20261008.json).
