@@ -54,3 +54,16 @@
 - **WHEN** 首用下载锁定原生CLI制品发生SSL EOF、超时、连接中断、短读或408／429／5xx
 - **THEN** 安装器 SHALL 丢弃半包并最多执行三次只读下载，之后仍执行原摘要／安全解压／版本检查，不重试原生编辑
 - **AND** 证书、权限、磁盘、大小限制、摘要及非临时HTTP拒绝错误 SHALL 不被重试或放宽；固定发行及安装首用另行验收
+
+### Requirement: Owned standalone desktop workflow
+Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
+
+#### Scenario: First use without a running desktop
+- **WHEN** a standalone skill runs a valid plan against empty runtime caches
+- **THEN** fixed desktop and CLI are installed, an owned bridge is started and the workflow receipt plus desktop lifecycle receipt are preserved
+
+#### Scenario: Invalid plan or startup failure
+- **WHEN** the plan is invalid
+- **THEN** no installation or desktop launch occurs
+- **WHEN** owned desktop startup or MCP initialization fails
+- **THEN** only owned processes are closed, logs and failure receipts are retained, and edits are not retried
