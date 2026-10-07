@@ -266,3 +266,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 严格计划解析的固定安装复验通过：64 个 CLI 探测、54 个独立安装领域技能的 324 次重复键拒绝、54 次有效计划结构检查，以及四领域空缓存原生保存／重开／渲染实例通过；执行后全部 64 个安装技能摘要不变。仅关闭本次修复的发布门禁；通用 Skills CLI、Art 领域包升级、全部命令上下文和完整首版仍开放。[证据](docs/evidence/command-plan-json-fixed-first-use-20261007.json)。
 
 场景安装示例已使用实际加载的技能自身目录。源路径／布局检查通过；固定安装运行时验收另行记录。 [Architecture / 架构](docs/Scenario-Own-Path-Architecture.zh_CN.md).
+
+新场景自身目录已通过固定安装复验；64项宿主身份匹配。完整V1仍开放。 [Evidence / 证据](docs/evidence/craft-scenario-paths-fixed-first-use-20261008.json).
