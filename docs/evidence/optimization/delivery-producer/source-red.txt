@@ -1,0 +1,41 @@
+.....FFFF.
+======================================================================
+FAIL: test_task_binding_requires_hash_covered_exact_producer_identity (test_delivery_integrity.DeliveryIntegrityTests.test_task_binding_requires_hash_covered_exact_producer_identity) (case='missing-file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_delivery_integrity.py", line 31, in test_task_binding_requires_hash_covered_exact_producer_identity
+    with self.assertRaisesRegex(ValueError,'delivery_task_binding'):module('delivery').validate_delivery(root)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_task_binding_requires_hash_covered_exact_producer_identity (test_delivery_integrity.DeliveryIntegrityTests.test_task_binding_requires_hash_covered_exact_producer_identity) (case='changed-binding')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_delivery_integrity.py", line 31, in test_task_binding_requires_hash_covered_exact_producer_identity
+    with self.assertRaisesRegex(ValueError,'delivery_task_binding'):module('delivery').validate_delivery(root)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_task_binding_requires_hash_covered_exact_producer_identity (test_delivery_integrity.DeliveryIntegrityTests.test_task_binding_requires_hash_covered_exact_producer_identity) (case='invalid-epoch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_delivery_integrity.py", line 31, in test_task_binding_requires_hash_covered_exact_producer_identity
+    with self.assertRaisesRegex(ValueError,'delivery_task_binding'):module('delivery').validate_delivery(root)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_task_binding_requires_hash_covered_exact_producer_identity (test_delivery_integrity.DeliveryIntegrityTests.test_task_binding_requires_hash_covered_exact_producer_identity) (case='extra-field')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_delivery_integrity.py", line 31, in test_task_binding_requires_hash_covered_exact_producer_identity
+    with self.assertRaisesRegex(ValueError,'delivery_task_binding'):module('delivery').validate_delivery(root)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.216s
+
+FAILED (failures=4)

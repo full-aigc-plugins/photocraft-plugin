@@ -1,0 +1,22 @@
+{
+  "schema": "photocraft-delivery-producer-candidate/v1",
+  "status": "PARTIAL_CANDIDATE",
+  "sourceVersion": "0.1.0-dev.46",
+  "pluginVersion": "0.1.0-dev.57",
+  "sourceTests": 294,
+  "harness": {
+    "tests": 88,
+    "pass": 88,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 9,
+  "pythonTests": 48,
+  "fixedInstallation": "NOT_RUN",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Full-delivery original producer matching; full SIGKILL/restart matrix and V1 remain open"
+}

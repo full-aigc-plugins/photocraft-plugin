@@ -171,11 +171,11 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.45",
-    "pluginWorkingVersion": "0.1.0-dev.56",
-    "fixedSkillSourceVersion": "0.1.0-dev.45",
+    "skillsVersion": "0.1.0-dev.46",
+    "pluginWorkingVersion": "0.1.0-dev.57",
+    "fixedSkillSourceVersion": "0.1.0-dev.46",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_CHECKPOINT_RECOVERY_FIXED_NATIVE",
+    "publication": "PARTIAL_DELIVERY_PRODUCER_CANDIDATE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -183,7 +183,7 @@
       "open": 24,
       "newlyCompleted": 71
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/checkpoint-revision/source-validation.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/delivery-producer/source-validation.json",
     "publicationEvidence": "docs/evidence/optimization/checkpoint-revision/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
@@ -326,5 +326,22 @@
       "complete V1"
     ],
     "publicationEvidence": "docs/evidence/optimization/checkpoint-revision/publication.json"
+  },
+  "deliveryProducerCandidate": {
+    "status": "PARTIAL_CANDIDATE",
+    "pluginVersion": "0.1.0-dev.57",
+    "skillSourceVersion": "0.1.0-dev.46",
+    "evidence": "docs/evidence/optimization/delivery-producer/",
+    "fixedInstallation": "NOT_RUN",
+    "closedTasks": [],
+    "remainingTasks": [
+      "3.6",
+      "10.9"
+    ],
+    "remainingAcceptance": [
+      "full crash/restart matrix",
+      "durable progress after hard SIGKILL before failure record",
+      "complete V1"
+    ]
   }
 }

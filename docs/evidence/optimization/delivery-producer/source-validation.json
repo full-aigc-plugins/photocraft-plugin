@@ -1,0 +1,45 @@
+{
+  "schema": "photocraft-supervised-source-regression/v1",
+  "status": "PASS",
+  "startedAt": "2026-10-08T20:02:50.077963+00:00",
+  "finishedAt": "2026-10-08T20:08:06.295800+00:00",
+  "tests": {
+    "tests": 294,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sourceUnchanged": true,
+  "layers": {
+    "currentLockedRuntimeRegression": true,
+    "candidateSupervisedRuntime": true,
+    "desktop": true,
+    "fixedInstallation": "NOT_RUN",
+    "publicCliSupervisorIntegration": "NOT_RUN",
+    "candidateBatch": true,
+    "candidateConvert": true,
+    "candidateDroplet": true,
+    "runtimeCapabilityGate": true,
+    "integerLiteralOverflowGate": true,
+    "streaming": "NOT_RUN",
+    "nestedAggregateCommands": "NOT_RUN",
+    "allCommands": "NOT_RUN"
+  },
+  "postRegressionDocumentationChanges": [
+    "skills/photocraft-cli-selection/references/delivery-integrity.md",
+    "skills/photocraft-cli-retouch/references/delivery-integrity.md",
+    "skills/photocraft-cli-resize/references/delivery-integrity.md",
+    "skills/photocraft-cli/references/delivery-integrity.md",
+    "skills/photocraft-cli-export/references/delivery-integrity.md",
+    "skills/photocraft-cli-adjustments/references/delivery-integrity.md",
+    "skills/photocraft-cli-filters/references/delivery-integrity.md",
+    "skills/photocraft-cli-masks/references/delivery-integrity.md",
+    "skills/photocraft-cli-text/references/delivery-integrity.md",
+    "skills/photocraft-cli-layers/references/delivery-integrity.md",
+    "skills/photocraft-cli-setup/references/delivery-integrity.md",
+    "skills/photocraft-cli-project/references/delivery-integrity.md"
+  ],
+  "postRegressionDocumentationValidation": "PASS: synchronized reference prose only, exact executable/test bytes unchanged, suite/check-release-identity/links/line-limit checks passed",
+  "testedSourceSha256": "dbe341bc495edd6a27452849aa388a0be43f0cc645a6d1e1f541f02f3e9a6f25",
+  "publicationFilesSha256": "b338210ba1076677b06d3d30c65af36094cc797d5f3796ca2582ee61b9920f82"
+}

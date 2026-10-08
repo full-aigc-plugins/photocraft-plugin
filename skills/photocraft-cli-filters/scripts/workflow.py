@@ -316,6 +316,9 @@ def preflight(plan, output=None, source=None, checkpoint=None, write_root=None):
 
 
 def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write_root=None):
+    task_binding = None
+    if 'PHOTOCRAFT_TASK_BINDING' in os.environ:
+        task_binding = load_module('delivery').validate_task_binding(load_module('commands').reply_json(os.environ['PHOTOCRAFT_TASK_BINDING']))
     output, source, source_project, source_hash, source_manifest_hash, bindings, inherited_assets = preflight(plan, output, source, checkpoint, write_root)
     installed = load_module('bootstrap').install(
         json.loads(Path(__file__).with_name('runtime.lock.json').read_text()),
@@ -361,7 +364,6 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
         argv = [installed['executable'], 'mcp', '--automation-read-root', str(stage), '--automation-write-root', str(stage)]
         receipts = []
         recovery_state['operations'] = receipts
-        task_binding=load_module('commands').reply_json(os.environ['PHOTOCRAFT_TASK_BINDING']) if os.environ.get('PHOTOCRAFT_TASK_BINDING') else None
         recovery_state['recoveryContext']={'taskBinding':task_binding,'schema':'photocraft-recovery-context/v1','plan':plan,'executionIdentity':execution_identity,'bindings':bindings,'assets':assets,'capability':None}
         with load_module('mcp_session').Session(argv) as session:
             gate=load_module('capabilities').Gate(session,load_module('commands'),installed['binarySha256'],runtime_identity=installed.get('runtimeIdentity'))
@@ -502,11 +504,15 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
         exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
         if checkpoint:
             (stage/'checkpoint-origin.json').write_text(json.dumps({'schema':'photocraft-checkpoint-origin/v1','recordSha256':plan['expectedCheckpointSha256'],'planSha256':plan['expectedCheckpointPlanSha256'],'projectSha256':source_hash},indent=2)+'\n')
+        if task_binding is not None:
+            (stage / 'task-binding.json').write_text(json.dumps(task_binding, ensure_ascii=False, indent=2) + '\n')
         manifest = {'schema': 'photocraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'assets': assets,
                     'outputs': outputs, 'nativeWarnings': saved.get('warnings', []),
                     'files': {f.name: sha(f) for f in stage.iterdir() if f.is_file()},
                     'lossReport': {'path':'exchange-loss.json','sha256':sha(stage/'exchange-loss.json')}, 'acceptance': 'requires-domain-and-visual-review'}
+        if task_binding is not None:
+            manifest['taskBinding'] = task_binding
         if 'variant' in plan:
             manifest['layoutVariant'] = {'path':'layout-variant.json','sha256':sha(stage/'layout-variant.json')}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')

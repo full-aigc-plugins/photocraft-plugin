@@ -27,3 +27,7 @@ flowchart LR
 检查点不是technical PASS的父产物。新产物使用现有craft-artifact/v1的sourceRefs引用`photocraft-checkpoint:<原任务ID>`及工程摘要，并把来源证明列入evidenceRefs，不伪造父交付manifest或父artifact。新产物技术通过后creative和acceptance仍为NOT_RUN，须独立评审与接受。
 
 验证：候选源测试`tests/test_checkpoint_source.py`涵盖保存回复丢失后修改现有标题、原文件保全、计划／记录／工程／资产身份拒绝；插件`tests/checkpoint-revision.test.ts`涵盖原退出证明、授权／预算／提案幂等与新产物血缘。开启插件原生测试时需`PHOTOCRAFT_NATIVE_TEST=1`、`PHOTOCRAFT_SKILL_ROOT`、`PHOTOCRAFT_SOURCE_ROOT`（包含不可变测试代理fixture的源仓快照）及`PHOTOCRAFT_PYTHON`。这些候选测试不替代公开安装、完整重启矩阵、宿主模型、GUI或完整V1验收。
+
+## 完整交付生产者候选
+
+成功交付将监督器提供的 taskId、taskIdentity、epoch、workerToken、sourceSha256 写入摘要覆盖的 `task-binding.json` 和清单。Harness 核对原账本身份后才重开工程；旧无绑定交付仍可独立只读核验，但不能恢复当前任务接受状态。相同计划外来包与自洽篡改必须拒绝。此候选尚未公开发布或固定安装；完整 SIGKILL／重启矩阵与创作接受仍开放。

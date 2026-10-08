@@ -1,0 +1,28 @@
+✖ same-plan package with missing or foreign producer is refused before native reopen (7.369167ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.211292
+
+✖ failing tests:
+
+test at tests/recovery-identity.test.ts:69:1
+✖ same-plan package with missing or foreign producer is refused before native reopen (7.369167ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /task_delivery_producer_mismatch/. Input:
+  
+  'Error: native reopening reached'
+  
+      at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/recovery-identity.test.ts:77:56)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Error: native reopening reached',
+    expected: /task_delivery_producer_mismatch/,
+    operator: 'match',
+    diff: 'simple'
+  }

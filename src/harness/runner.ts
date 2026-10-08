@@ -193,6 +193,8 @@ export class Runner {
   if(!object(manifest) || !object(manifest.files) || integrity.manifestSha256!==manifestSha256
      || integrity.nativeSha256!==manifest.files['project.pcraft'] || integrity.files!==Object.keys(manifest.files).length)throw invalidVerification();
   if(!manifest.files['plan.json'] || canonical(readJson(join(output,'plan.json')))!==canonical(task.request.plan))throw new OperationError('task_delivery_plan_mismatch',{code:'task_delivery_plan_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
+  const expectedProducer={taskId:task.id,taskIdentity:task.identity,epoch:task.epoch,workerToken:task.worker?.token,sourceSha256:task.executionIdentity.sha256};
+  if(!task.worker?.token || !object(manifest.taskBinding) || canonical(manifest.taskBinding)!==canonical(expectedProducer))throw new OperationError('task_delivery_producer_mismatch',{code:'task_delivery_producer_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
   const expectedSource=task.request.source || task.request.checkpoint?task.request.plan.expectedProjectSha256:null;
   if(manifest.sourceProjectSha256!==expectedSource)throw new OperationError('task_delivery_source_mismatch',{code:'task_delivery_source_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
   for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new OperationError('reference_identity_mismatch',{code:'reference_identity_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});

@@ -12,3 +12,7 @@ python3 -I -B "$SKILL_DIR/scripts/delivery.py" /absolute/moved-delivery --expect
 源工程返工自动在安装运行时之前检查完整源包，并在发布新包前重查源包与新包。可选expectedManifestSha256将源清单绑定此前回执；默认仍保留expectedProjectSha256版本保护，并在同次调用中固定源清单摘要。移动包只要相对引用与文件未改变仍可检查及返工。先前不完整或被改动的包必须恢复原文件或经重新交付获取新清单，不能直接改写摘要绕过。
 
 Read-only verification checks every listed file, registered asset and native/inspection/export/loss-report identity without installing a runtime. Source revisions verify the complete source before installation and both packages before publication. Optional expectedManifestSha256 binds a previously recorded manifest; the existing native-project revision remains required. Paths stay relative so intact packages remain movable. Hashes do not authenticate authorship: an attacker replacing the files and manifest together requires an independently recorded manifest digest to detect. PASS is integrity evidence, not native reopening or creative acceptance.
+
+## 监督任务生产者身份
+
+由监督器传入的 `PHOTOCRAFT_TASK_BINDING` 必须包含且仅包含 taskId、taskIdentity、epoch、workerToken、sourceSha256。无效身份在预检和安装前拒绝；有效身份同时保存在摘要覆盖的 `task-binding.json` 与清单。独立只读核验检查结构和一致性，不证明外部作者身份；Harness 另与原持久任务核对。无绑定的旧包仍可只读核验，不能被当作当前监督任务的成功结果。

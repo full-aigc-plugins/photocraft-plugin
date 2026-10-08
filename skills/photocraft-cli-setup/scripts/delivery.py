@@ -36,6 +36,17 @@ def file_path(root, location):
     return path
 
 
+def validate_task_binding(value):
+    """核对监督执行身份结构；不将自报身份视为外部来源证明。"""
+    if (not isinstance(value, dict)
+            or set(value) != {'taskId', 'taskIdentity', 'epoch', 'workerToken', 'sourceSha256'}
+            or any(not isinstance(value.get(key), str) or not value[key] for key in ('taskId', 'workerToken'))
+            or type(value.get('epoch')) is not int or value['epoch'] < 1
+            or any(not isinstance(value.get(key), str) or not HEX.fullmatch(value[key]) for key in ('taskIdentity', 'sourceSha256'))):
+        raise ValueError('delivery_task_binding_invalid')
+    return value
+
+
 def validate_delivery(root, expected_manifest_sha256=None):
     """返回核验后的原清单；外部清单摘要可绑定已记录的版本，未提供时不证明来源真实性。"""
     root = Path(root).absolute()
@@ -62,6 +73,12 @@ def validate_delivery(root, expected_manifest_sha256=None):
             raise ValueError('delivery_digest_invalid')
         if sha(path) != digest:
             raise ValueError('delivery_file_checksum_mismatch: ' + name)
+    if 'taskBinding' in manifest or 'task-binding.json' in files:
+        binding = validate_task_binding(manifest.get('taskBinding'))
+        if 'task-binding.json' not in files:
+            raise ValueError('delivery_task_binding_missing')
+        if validate_task_binding(read_json(root / 'task-binding.json')) != binding:
+            raise ValueError('delivery_task_binding_conflict')
     for asset in manifest.get('assets', {}).values():
         if (not isinstance(asset, dict) or not isinstance(asset.get('path'), str) or asset.get('path') not in files
                 or asset.get('sha256') != files[asset['path']]):
