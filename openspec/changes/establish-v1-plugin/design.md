@@ -196,3 +196,5 @@ tasks 第 9–13 节细化原未完成总任务，不建立第二套规格或重
 ## Integer literal overflow before installation — 2026-10-09
 
 落实PC-TX-005既有任意深度数值溢出门禁，不引入64位限制。原生JSON有限f64边界在构造Python数值前按数值文本检查，避免Python整数字符串长度限制掩盖准确字段路径；有限大整数类型保持兼容。统一解析器同时作用于公开计划、MCP及工具内层回复，静态无效输入保持validation／not_executed、nonfinite_json_value、retryable=false、correct_plan，已发送工具的未知回复仍不重放。全部13个单独安装技能必须具备相同资源，固定来源及安装验收独立记录。
+
+2026-10-09产物血缘验收：复用固定ArtCraft schema及源dev.43；旧包完整性必须先满足既有交付的必需文件和引用合同，空清单不得通过。真实创建／标题修订及移动后脱离原路径重开、串用／篡改拒绝由公开bundle-check验证；评估fixture与创作NOT_RUN明确分离，固定安装前不关闭5.3／11.9。见docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md。

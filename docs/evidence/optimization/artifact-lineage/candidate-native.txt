@@ -1,0 +1,10 @@
+✔ legacy bundle inspection refuses empty, malformed and incomplete delivery manifests (3.207416ms)
+✔ real native creation revision and moved bundle preserve lineage and refuse mixed identities (2642.765958ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2730.656375

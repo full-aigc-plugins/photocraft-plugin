@@ -168,10 +168,10 @@
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
     "skillsVersion": "0.1.0-dev.43",
-    "pluginWorkingVersion": "0.1.0-dev.49",
+    "pluginWorkingVersion": "0.1.0-dev.50",
     "fixedSkillSourceVersion": "0.1.0-dev.43",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_INTEGER_OVERFLOW_BOUNDED_FIXED_EXISTING_RUNTIME_REGRESSION",
+    "publication": "LINEAGE_CANDIDATE_FIXED_PENDING",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -265,5 +265,11 @@
     "fixedInstallation": "PASS_52_PUBLIC_ENTRY_REFUSALS",
     "closedTasks": [],
     "publicationEvidence": "docs/evidence/optimization/integer-overflow/publication.json"
+  },
+  "artifactLineageCandidate": {
+    "evidence": "docs/evidence/optimization/artifact-lineage/candidate-native.json",
+    "status": "PASS_NATIVE_CANDIDATE_FIXED_PENDING",
+    "fixedInstallation": "NOT_RUN",
+    "closedTasks": []
   }
 }

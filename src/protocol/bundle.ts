@@ -59,7 +59,17 @@ export function verifyBundle(directory:string,expectedSha256?:string):any {
  const root=safePath(directory);const manifestPath=join(root,'bundle-manifest.json');
  if(!existsSync(manifestPath)) {
   if(expectedSha256)throw new Error('bundle_anchor_missing');
-  const legacy=readJson(join(root,'manifest.json'));checkFiles(root,legacy.files);
+  const legacyPath=join(root,'manifest.json');const anchor=fileDigest(legacyPath);const legacy=readJson(legacyPath);
+  // 旧版不具备完整血缘，但仍须满足原交付清单的最小文件与引用合同。
+  if(!legacy || legacy.schema!=='photocraft-delivery/v1' || !legacy.files || Array.isArray(legacy.files) || typeof legacy.files!=='object' || !Array.isArray(legacy.outputs) || !legacy.assets || Array.isArray(legacy.assets) || typeof legacy.assets!=='object')throw new Error('legacy_delivery_invalid');
+  for(const name of ['project.pcraft','native.json','plan.json','operations.json','exchange-loss.json'])if(!Object.hasOwn(legacy.files,name))throw new Error('legacy_required_file_missing');
+  checkFiles(root,legacy.files);
+  const outputs=new Set();
+  for(const output of legacy.outputs) {
+   if(!output || typeof output.path!=='string' || !Object.hasOwn(legacy.files,output.path) || outputs.has(output.path))throw new Error('legacy_delivery_invalid');outputs.add(output.path);
+  }
+  for(const asset of Object.values(legacy.assets) as any[])if(!asset || typeof asset.path!=='string' || !Object.hasOwn(legacy.files,asset.path) || asset.sha256!==legacy.files[asset.path])throw new Error('legacy_delivery_invalid');
+  if(fileDigest(legacyPath)!==anchor)throw new Error('bundle_changed_during_verify');
   return {result:'PASS',fileIntegrity:'PASS',lineage:'UNKNOWN',technicalAcceptance:'NOT_RUN',creativeAcceptance:'NOT_RUN',acceptance:'NOT_RUN',missing:['task-lineage','review-binding']};
  }
  const anchor=fileDigest(manifestPath);
