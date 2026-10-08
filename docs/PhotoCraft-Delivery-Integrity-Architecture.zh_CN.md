@@ -18,3 +18,5 @@ flowchart TD
 ```
 
 [Source evidence](evidence/photocraft-delivery-integrity-source-20261008.json).
+
+[固定安装证据](evidence/craft-photo-delivery-integrity-fixed-first-use-20261008.json)：插件38／源34通过64安装身份与发现，13个Photo技能分别冷安装并执行公开交付校验，51整树相同项复用历史证明，原生创建／移动／返工／篡改拒绝5.141秒通过。完整素材血缘仍开放；Art113混合运行时仍固定Photo33。

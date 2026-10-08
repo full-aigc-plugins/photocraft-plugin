@@ -280,3 +280,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 本次插件固定协议引用升级至 ArtCraft dev.109；技能快照保持原固定来源，新的实际宿主安装矩阵正在验证。完整首版与运行时协议验收仍开放。
 
 固定发行 Film38／Effect38／Photo37／Vector35／Art109 已通过实际隔离 Codex 安装和发现 64 项技能、16 项安装副本协议文件摘要核对、五个全新领域缓存下的 64 项 CLI 探测。十项 ArtCraft 技能分别从空缓存完成原生 Photo 蒙版调整、源工程返工与迁移打包；另外 54 项技能仅复用整个技能摘要一致的历史原生证据。默认维护验收矩阵已更新；通用 Skills CLI 安装、模型调度、GUI 和完整 V1／协议验收仍开放。[本次固定证据](docs/evidence/craft-archive-prefix-fixed-first-use-20261008.json)。
+
+[完整交付校验](docs/PhotoCraft-Delivery-Integrity-Architecture.zh_CN.md)：13个独立技能均提供只读入口；固定原生海报移动／返工及同名替换拒绝通过，完整V1仍开放。

@@ -18,3 +18,5 @@ flowchart TD
 ```
 
 [Source evidence](evidence/photocraft-delivery-integrity-source-20261008.json).
+
+[Fixed installed proof](evidence/craft-photo-delivery-integrity-fixed-first-use-20261008.json): plugin38/source34 passes64 installed identities/discovery,13 independently cold-installed Photo skills with public delivery verification,51 whole-tree-equal historical cases, and native creation/move/revision/tamper refusal in5.141seconds. Full artifact lineage remains open. Art113 mixed runtime still uses Photo33.

@@ -11,7 +11,12 @@
   "nativeSeconds": 5.165,
   "red": "Source preview replacement reached bootstrap; new verifier was absent. Layout reference mismatch then separately failed.",
   "native": "single copied export skill cold public runtime, four editable layers/mask, moved package after original asset deletion, text revision, source/non-target preservation, same-name preview refused before runtime install",
-  "fixedPluginInstallation": "NOT_RUN",
+  "fixedPluginInstallation": {
+    "result": "PASS",
+    "version": "0.1.0-dev.38",
+    "seconds": 5.141,
+    "evidence": "craft-photo-delivery-integrity-fixed-first-use-20261008.json"
+  },
   "hashes": {
     "red.log": "60089dae0aeb407e9f0dc92ff313c29e259470e974125d19ffdbdd930b208adb",
     "reference-red.log": "1401cfa69ddd09b1973d7cfa366c54c129312c140ceabb6fd931aa9e545d6ef0",
