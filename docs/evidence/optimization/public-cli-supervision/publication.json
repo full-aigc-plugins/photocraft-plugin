@@ -1,0 +1,59 @@
+{
+  "schema": "photocraft-public-cli-supervision-publication/v1",
+  "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.65",
+    "commit": "42af6781a1d54b03b9f3c51307949a655e9c9655",
+    "assetSha256": "aebe88acb4715e90a95985e0523c7762dff5290628619ea78c63eb8edfe607f9",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.65",
+    "prerelease": true
+  },
+  "skills": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.50",
+    "commit": "34269cbbe1530a8d861340bd67bd14c3e69c0bf0",
+    "assetSha256": "aa49672bc9d8245538a3bf626f3fde8559f6a42400b10796f2c99c0aa9a1c7a6",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.50",
+    "prerelease": true
+  },
+  "runtimeVersion": "0.2.0-craft.5",
+  "sourceTests": {
+    "tests": 314,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "fixedHarness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "pluginPythonTests": 48,
+  "installedTreeUnchanged": true,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 138,
+    "open": 19
+  },
+  "streaming": "NOT_RUN",
+  "nestedAggregateCommands": "NOT_RUN",
+  "fullV1": "NOT_RUN",
+  "files": {
+    "release-ci.json": "90d710002abd619b3eafcd314b8f5859c3ddbe31d11efb983e5cba2e6a82780a",
+    "fixed-public-supervision.json": "dac73c31e5da5ab52dcf28dad9705fbe5f8239678c4ec97d0a51b09cea02175a",
+    "source-validation.json": "47410fad83be265b2247f977661711a224eaebf3246cce9a215c93126a09cc0a",
+    "fixed-host-public.json": "3e4d365b81a6a0b280ae9b9c9a7f294d42d577c05cb74a75c442ace2321fc62a",
+    "fixed-summary.json": "a31f1d8797ee829f8f7ac1718c139ecd670a4db7cfb6c9ae6f68de1e5a93562c",
+    "plugin-validation.json": "6877a1269467449ae06b1a28e0ac2a543eb92d7f25c317b46abf8613cbe0fff5",
+    "source-release.json": "2f1e2df26006631dd53afbed1472de9eb49b040338753a82501d05608473b767",
+    "public-plugin.json": "d2bb3dc939e7ce4a2470148245f1102d2d28bd4f7bb6a4a7fdbf97b29914b0bc"
+  }
+}

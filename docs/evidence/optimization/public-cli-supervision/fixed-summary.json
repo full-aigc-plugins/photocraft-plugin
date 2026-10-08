@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.65",
+  "skillSourceRef": "v0.1.0-dev.50",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "2f14f5d01abaac253508b32fb00f0a29493db2b013bb6858bb82b3d23f4bd190",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native plus15 real native public argv post-save faults; streaming and nested aggregates remain open"
+}

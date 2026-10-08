@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Development dev.65 locks source dev.50 with supervised public run / batch / convert / droplet on craft.5. Streaming and nested aggregates remain open; task9.6 stays unchecked and the total remains138/157. [Contract](docs/PhotoCraft-Public-CLI-Supervision.md).
+Published dev.65 / source dev.50:314 source tests,110 installed Harness tests (15 native),15 actual native public-CLI post-save fault cases and four release CI runs pass. Isolated Codex discovers14 skills; installed bytes remain unchanged. Streaming and nested aggregates keep task9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/public-cli-supervision/publication.json). [Contract](docs/PhotoCraft-Public-CLI-Supervision.md).
 
 Published dev.64: actual public installation passes110 Harness tests (15 native), two signed-desktop saved/unsaved revision refusal cases and unchanged installed bytes. Saved stale plans now return typed revision_conflict before preflight/intent; unreadable versions request inspection. Shared mutable writing and tasks3.3/10.6 remain open;138/157 complete,19 open. [Publication](docs/evidence/optimization/project-ownership/publication.json). [Contract](docs/PhotoCraft-Project-Ownership.md).
 

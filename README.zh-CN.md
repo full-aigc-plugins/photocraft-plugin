@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-开发版dev.65锁定源dev.50：公开 run／batch／convert／droplet 接入 craft.5 逐步监督。流式与嵌套聚合继续开放，9.6不勾选，总计仍138/157。[合同](docs/PhotoCraft-Public-CLI-Supervision.zh_CN.md)。
+dev.65／源dev.50已发布：314项源测试、110项固定安装Harness（15项原生）、15例真实原生公开CLI保存后故障及四项发行CI通过。隔离Codex发现14技能，安装字节不变。流式与嵌套聚合使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/public-cli-supervision/publication.json)。[合同](docs/PhotoCraft-Public-CLI-Supervision.zh_CN.md)。
 
 dev.64已发布：实际公开安装110项Harness（15项原生）、签名桌面已保存／未保存两项版本拒绝复验通过，安装树不变。旧计划面对已保存新工程，在预检／意图前返回结构化revision_conflict；不可观察版本要求检查。共享可变写入及3.3／10.6仍开放，现138/157完成、19开放。[发行证据](docs/evidence/optimization/project-ownership/publication.json)。[合同](docs/PhotoCraft-Project-Ownership.zh_CN.md)。
 

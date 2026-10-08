@@ -360,3 +360,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09工程版本冲突增量：插件dev.64／源dev.49公开固定安装110项Harness（15项原生）及真实签名桌面已保存／未保存两项版本拒绝通过，四项发行CI通过。结构化revision_conflict在预检／意图前保全新工程，不可观察返回project_revision_unavailable；同摘要仍拒绝未证明安全的共享桌面写入。没有新增完成任务，仍138/157、19开放，3.3／10.6完整写入权及竞争矩阵保持开放。证据：`docs/evidence/optimization/project-ownership/publication.json`。
 
 2026-10-09 公开CLI监督增量：源dev.50／插件dev.65接入run、batch、convert、droplet；实际固定安装验收另记。流式、TCP/port与嵌套聚合仍开放，9.6不勾选，本次关闭0项，仍138/157。
+
+2026-10-09公开CLI固定验收：源dev.50／插件dev.65公开ZIP、标签提交与摘要一致；314项源码测试、110项固定安装Harness（15项原生）及15例真实原生公开CLI保存后故障通过，安装字节不变，发行4项CI通过。流式及嵌套聚合仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/public-cli-supervision/publication.json`。

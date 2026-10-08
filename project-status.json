@@ -450,5 +450,20 @@
       "10.6"
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
+  },
+  "publicCliSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
+    "entries": [
+      "run",
+      "batch",
+      "convert",
+      "droplet"
+    ],
+    "publicNativeFaultCases": 15,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
   }
 }
