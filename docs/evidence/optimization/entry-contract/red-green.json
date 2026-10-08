@@ -1,0 +1,40 @@
+{
+  "schema": "photocraft-entry-red-green/v1",
+  "status": "PASS",
+  "red": {
+    "preflight-red.log": "f203f29368c19820906790845aa18110e3343e20890034f53d43d0ac3319422f",
+    "semantic-red.log": "4f598976fae47e11cea630dd1e2259cb3e82705d2a4c8e4885e12836bb5b7cab",
+    "new-document-red.log": "aa287c9152c481f8739d87fb9d56c3427a65e405c2da1fbbf6fa74dbafa77f89",
+    "known-replies-red.log": "8d831903a8775ffa78a862c94e9048c2c30881715899d54972607f795be5aaad"
+  },
+  "defects": [
+    "validation errors lacked category/fieldPath",
+    "list command leaked unhandled TypeError",
+    "null save result was recorded as success"
+  ],
+  "green": {
+    "tests": 39,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "d6ef52e00cd8a1e0f95f930127108eb08c9f6d037de0025e6ab9b304c47a4a67"
+  },
+  "compatibilityRegression": {
+    "tests": 41,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "b13fc4cd12058552cbe6a0941b165cb2e9e7dda3cbc979b0192431859b8d44d6",
+    "initialFullFailureSha256": "933d6fe2765d6a00f9723f7aa429def11435760e04d1a87beea4dd13ee1f8ee2",
+    "repaired": [
+      "partial batch diagnostic preserved without success or alias",
+      "legacy smart validation error priority preserved"
+    ]
+  },
+  "finalReplyRegression": {
+    "tests": 42,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "01c47e469664aee706e93e3d8e455f326ba7f87eeece46f3bc75d80170916d6c"
+  },
+  "sourceVersion": "0.1.0-dev.39",
+  "scope": "actual red logs before implementation; target regression after repair, full source and fixed installed evidence separate"
+}

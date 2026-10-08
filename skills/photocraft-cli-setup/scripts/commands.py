@@ -84,22 +84,30 @@ def references(value, aliases, path='$'):
             references(child, aliases,path+'['+str(index)+']')
 
 def validate(plan, input_names=()):
-    if (not isinstance(plan, dict) or set(plan) != {"schema", "operations"}
-            or plan["schema"] != "craft-command-plan/v1"
-            or not isinstance(plan["operations"], list)
-            or not 1 <= len(plan["operations"]) <= 1000):
-        raise ValueError("invalid_command_plan")
+    if not isinstance(plan, dict):
+        raise ValueError('invalid_command_plan: $')
+    unknown = set(plan) - {'schema', 'operations'}
+    if unknown:
+        raise ValueError('invalid_command_plan: $.' + sorted(unknown)[0])
+    if plan.get('schema') != 'craft-command-plan/v1':
+        raise ValueError('invalid_command_plan: $.schema')
+    if not isinstance(plan.get('operations'), list) or not 1 <= len(plan['operations']) <= 1000:
+        raise ValueError('invalid_command_plan: $.operations')
     rows = {r["id"]: r for r in catalog()["commands"]}
     tools = set(catalog()["nativeTools"])
     aliases = {"output", *input_names}
     for index, step in enumerate(plan["operations"]):
-        if not isinstance(step, dict) or set(step) - {"command", "tool", "params", "as"}:
-            raise ValueError("invalid_operation: " + str(index))
+        location = '$.operations[' + str(index) + ']'
+        if not isinstance(step, dict):
+            raise ValueError('invalid_operation: ' + location)
+        unknown = set(step) - {'command', 'tool', 'params', 'as'}
+        if unknown:
+            raise ValueError('invalid_operation: ' + location + '.' + sorted(unknown)[0])
         if ("command" in step) == ("tool" in step) or not isinstance(step.get("params"), dict):
-            raise ValueError("command_or_tool_and_params_required: " + str(index))
+            raise ValueError('command_or_tool_and_params_required: ' + location + '.params')
         key = "command" if "command" in step else "tool"
         if not isinstance(step[key], str) or step[key] not in (rows if key == "command" else tools):
-            raise ValueError("unknown_" + key + ": " + str(step[key]))
+            raise ValueError('unknown_' + key + ': ' + location + '.' + key)
         try:
             json.dumps(step["params"], allow_nan=False)
         except (ValueError, TypeError):
@@ -112,7 +120,7 @@ def validate(plan, input_names=()):
         alias = step.get("as")
         if alias is not None:
             if not isinstance(alias, str) or not re.fullmatch(r"[a-zA-Z][\w-]*", alias) or alias in aliases:
-                raise ValueError("invalid_or_duplicate_alias")
+                raise ValueError('invalid_or_duplicate_alias: ' + location + '.as')
             aliases.add(alias)
     return plan
 
@@ -142,6 +150,27 @@ def reply_json(text):
     return load('strict_json').loads(text)
 
 def validate_tool_reply(identifier,result,params):
+    if identifier in {'doc_new', 'doc_open'}:
+        indices = [result[key] for key in ('index', 'document') if isinstance(result, dict) and key in result]
+        # 桌面 doc_open 返回路径与警告，headless 返回索引；两者都是真实合法合同。
+        path_reply = (identifier == 'doc_open' and isinstance(result, dict)
+                      and isinstance(result.get('path'), str) and bool(result['path'])
+                      and ('warnings' not in result or isinstance(result['warnings'], list)))
+        if ((not indices and not path_reply) or any(type(value) is not int or value < 0 for value in indices)
+                or indices and len(set(indices)) != 1):
+            raise load('operation_errors').error('outcome_unknown: invalid_document_reply')
+    if identifier == 'doc_inspect':
+        if (not isinstance(result, dict)
+                or any(type(result.get(key)) is not int or result[key] <= 0 for key in ('width', 'height'))
+                or not isinstance(result.get('layers'), list)
+                or any(not isinstance(layer, dict) for layer in result['layers'])):
+            raise load('operation_errors').error('outcome_unknown: invalid_inspection_reply')
+    # 保存回执必须证明具体返回路径；标量、空对象或附件不是已确认的保存结果。
+    # 扩展字段保持兼容，未知结果不能绑定为下一项编辑的输入。
+    if identifier in {'doc_save', 'doc_export'}:
+        if (not isinstance(result, dict) or not isinstance(result.get('path'), str)
+                or not result['path'] or ('warnings' in result and not isinstance(result['warnings'], list))):
+            raise load('operation_errors').error('outcome_unknown: invalid_save_reply')
     if identifier=='command_batch':
         counts=('completed','failed')
         if (not isinstance(result,dict) or any(type(result.get(k)) is not int or result[k]<0 for k in counts)
@@ -149,7 +178,10 @@ def validate_tool_reply(identifier,result,params):
                 or result['completed']+result['failed']!=len(result['results']) or result['failed']!=sum(not row['ok'] for row in result['results'])
                 or len(result['results'])>len(params['steps'])):
             raise load('operation_errors').error('outcome_unknown: invalid_batch_reply')
-        if result['failed'] or result['completed']!=len(params['steps']):raise load('operation_errors').error('outcome_unknown: partial_batch; inspect completed steps, no replay')
+        if result['failed'] or result['completed'] != len(params['steps']):
+            error = load('operation_errors').error('outcome_unknown: partial_batch; inspect completed steps, no replay')
+            error.partialResult = result
+            raise error
     return result
 
 
@@ -353,11 +385,18 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                 else:
                     tool, args = step["tool"], params
                 receipt["steps"].append(record)
+                record['phase'] = 'submitted'
                 write(output / "journal.json", receipt)
                 result = parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
                                      output if "tool" in step else None, index)
+                try:
+                    validate_tool_reply(tool, result, args)
+                except RuntimeError as error:
+                    # 保留结构已验证的部分批次诊断，继续保持未知状态且不绑定别名。
+                    if hasattr(error, 'partialResult'):
+                        record['result'] = error.partialResult
+                    raise
                 record["result"] = result
-                validate_tool_reply(tool,result,args)
                 record["state"] = "succeeded"
                 record['phase']='reply_validated'
                 if "as" in step:

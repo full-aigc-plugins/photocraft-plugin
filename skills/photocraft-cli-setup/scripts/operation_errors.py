@@ -29,7 +29,10 @@ def describe(exception, phase='validation'):
                 'outcome': exception.outcome, 'retryable': False, 'recoveryAction': exception.recoveryAction}
     message=str(exception);code=message.partition(':')[0]
     # 旧公开重复键错误码保持不变；新增定位字段避免消费方解析展示文案。
-    location={'fieldPath':message.split(': ',1)[1].split(' expected ',1)[0]} if ': $' in message else {}
+    location={'fieldPath':message.split(': ',1)[1].split(' expected ',1)[0].split(' => ',1)[0]} if ': $' in message else {}
+    if phase == 'validation':
+        location.setdefault('fieldPath', '$')
+        location['category'] = 'validation_failed'
     if phase=='validation' and code=='duplicate_json_key':location['message']=message
     return {'error':code if phase=='validation' and code=='duplicate_json_key' else message, 'code':code, 'phase': phase,**location,
             'outcome': 'not_executed' if phase == 'validation' else 'unknown',

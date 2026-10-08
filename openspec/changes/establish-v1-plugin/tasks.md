@@ -220,7 +220,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.4 [PC-TX-005] 覆盖所有公开入口的重复键、NaN／Infinity／溢出、错误容器／未知字段、素材与引用依赖；用安装／会话调用计数确认提前拒绝，并复现普通工作流回复与网关语义差异。责任：Skills owner；前置：读取全入口合同与现有 JSON／MCP 故障回归；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/entry-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.5 [PC-TX-005] 在独立技能源统一严格计划解析、静态预检、动态引用检查、工具回复与结构化错误；验证通过才写成功回执，保持文字／图片合法回复及失败保全兼容。责任：Skills owner；前置：9.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前三类计划入口局部验收见 `docs/evidence/optimization/entry-contract/`；原生argv透传预检缺口及Harness入口审计仍未完成，不以局部通过关闭本项。
 
 - [x] 9.7 [PC-RL-003] 建立同一版本声明冲突、活动锁误指历史锁、维护版误称上游官方、旧标签被替换等发行拒绝 fixture；合法独立版本映射通过。责任：Release owner；前置：读取当前插件、技能、套件、运行时与公共协议身份；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/release-identity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 9.8 [PC-RL-003] 在各事实源增加当前组合一致性检查及生成说明，明确上游与维护版、套件版本语义和非活动根锁；同步双语当前说明，保留历史证据原值。责任：Release owner；前置：9.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。

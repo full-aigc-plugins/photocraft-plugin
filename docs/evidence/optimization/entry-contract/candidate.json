@@ -1,0 +1,1684 @@
+{
+  "schema": "photocraft-entry-contract-acceptance/v1",
+  "status": "PASS",
+  "scope": "candidate",
+  "platform": "darwin-arm64",
+  "driverSha256": "d02e1d58e0ba651cf56650ac24ad7f02ee726803fde672d025ff84c551a73e1d",
+  "skillFilesSha256": "f8b028a3b3316f9a2d132d0f1d80629be522446c0411ab1d2d204e6f43c39ef6",
+  "testResources": {
+    "test_entry_contract.py": "a041e7ab6972e230f0dca8471f2c17578b456f9d860b19fe4f26107cc1bfd6ca",
+    "fixtures/protocol_proxy.py": "43ff14a478bdc93d941dd8726126cc729abd94213d6e7cdd886e8e8bb69246cf"
+  },
+  "preflight": [
+    {
+      "entry": "workflow",
+      "case": "unknown-root",
+      "inputSha256": "ab3ae13857707b67e4f477caaa3d1fe717c01974ee68279d58a7667f3974ea14",
+      "fieldPath": "$.typo",
+      "code": "unknown_plan_field",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "container",
+      "inputSha256": "5c5b362ca787c8aa64db9d94ed7c97be622e185b461bbfb7ece46c5dd8d0ca83",
+      "fieldPath": "$.operations",
+      "code": "operations_required",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "operation",
+      "inputSha256": "b65006ed16b13fcf61cd7b5dc98eefd557ab0db770fda2aa93420be21619db1d",
+      "fieldPath": "$.operations[0]",
+      "code": "invalid_operation",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "unknown-operation",
+      "inputSha256": "1e75f922ca89cb5000d12067d95ffc178a2e4ac7e047b529e2aed23f224646c6",
+      "fieldPath": "$.operations[0].typo",
+      "code": "invalid_operation",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "command-type",
+      "inputSha256": "33354b5cbed9a90bf7acaeac11bdc07ddc591554771b86bd23c970d9ea0fa245",
+      "fieldPath": "$.operations[0].command",
+      "code": "unsupported_command",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "params-container",
+      "inputSha256": "54c8feb9bd4d04ade04b3dbbd8d08f48b25b0f070d5ee5f1a6cc6487580285de",
+      "fieldPath": "$.operations[0].params",
+      "code": "invalid_params",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "field-type",
+      "inputSha256": "903726312804ca18fae2ae707fd60e42636b01f90ecbee482fbe72089f498324",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "parameter_type",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "unknown-param",
+      "inputSha256": "22d870831f6b886912337c3d632f4f0669543730dc343593b2bc4ef63712a6c8",
+      "fieldPath": "$.operations[0].params.typo",
+      "code": "parameter_unknown_field",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "bad-reference",
+      "inputSha256": "1116040e964d56fb9fa863403ce409c016e3444fb40e6d6e8d9f408e1b5988b7",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "invalid_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "missing-root",
+      "inputSha256": "a1ac1db0c448fece63ed8229069fb60b9c65c5417da394960c3b0e437385de00",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "forward_or_unknown_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "future-alias",
+      "inputSha256": "9e2a4a07d1c71233a28d6d62e1d963f086ad0a04a862af8225fbcb39213530b3",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "forward_or_unknown_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "alias-type",
+      "inputSha256": "19128fdbfdaddaa1e9b115ada48d4f067a755b0fd30e2a3b291dc461eba8738b",
+      "fieldPath": "$.operations[0].as",
+      "code": "invalid_alias",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "duplicate-nested",
+      "inputSha256": "17562ca005d702c5f08e1840a8b528fe5a1ea0aaaadea5dbaf7d1fbbf4b33b13",
+      "fieldPath": "$.nested.x",
+      "code": "duplicate_json_key",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "nan",
+      "inputSha256": "082c31bd686d4124d7d9ac23db928ce2c8c11a62963203abf0e179651d27eed9",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "infinity",
+      "inputSha256": "743865d39058b58fa76001c72e124dc1eac5ce84090c2a571e92cbaf3f6546fd",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "negative-infinity",
+      "inputSha256": "f17e529a87a84f65fb285a57419dd5850ac4e166a81d840bdb534d7083285188",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "overflow",
+      "inputSha256": "81aea09ed8015b7cf5831c22de13e9abf5f3f359fd8a5da86274b685ddd35be0",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "workflow",
+      "case": "undeclared-asset",
+      "inputSha256": "d6bbc07652adbc2bf19f78ae01f023296c7db1e93ca544f2b4bcfc286d667b92",
+      "fieldPath": "$.operations[0].params.asset",
+      "code": "unregistered_asset_path",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "unknown-root",
+      "inputSha256": "155a475c61a537e85ee559c01456d546b78ec8f609f4b028bac1cf6d4870ffda",
+      "fieldPath": "$.typo",
+      "code": "invalid_command_plan",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "container",
+      "inputSha256": "c71a06eb421058a32e041342b989eb38d4a1fa50fc9beb8d0f23aff24e485f1e",
+      "fieldPath": "$.operations",
+      "code": "invalid_command_plan",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "operation",
+      "inputSha256": "5c101256ec8d8d3f03cb2e471578dcc816a78310246e84bc4f714b429a9eb595",
+      "fieldPath": "$.operations[0]",
+      "code": "invalid_operation",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "unknown-operation",
+      "inputSha256": "5aea0a07f1cc7b70da0c1f36234cd2cc8b9ae81a95a3fb9ab1c8f9ec5e4bfd50",
+      "fieldPath": "$.operations[0].typo",
+      "code": "invalid_operation",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "command-type",
+      "inputSha256": "baf6ec3e0a61ed1104a7e55907f210b63c9ddcc9f781b7012116527a37baebc1",
+      "fieldPath": "$.operations[0].command",
+      "code": "unknown_command",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "params-container",
+      "inputSha256": "ebf717c0b0038d3001140336829f94cf7db4882e3546a41b1a8faebdacf09f38",
+      "fieldPath": "$.operations[0].params",
+      "code": "command_or_tool_and_params_required",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "field-type",
+      "inputSha256": "b7791e62c3de2d23d7c753635f55942075ab98e1499deb5063875185e18b1023",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "parameter_type",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "unknown-param",
+      "inputSha256": "6c874904de8818e3d8c4ffe3126e862cdd0fa82dc3730a2da2977b95d819b120",
+      "fieldPath": "$.operations[0].params.typo",
+      "code": "parameter_unknown_field",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "bad-reference",
+      "inputSha256": "4f86d89fb4562e9232679fa2d8f7a6391962911ec5e879b5124be7f951cd711e",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "invalid_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "missing-root",
+      "inputSha256": "de7d699d96157ec160329abda89b2ff674b5aace1c2082b4f3bf2968be97ad31",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "forward_or_unknown_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "future-alias",
+      "inputSha256": "6766a84f401981dc9be69cbeda97b6dc2dae5084e82a8aa9a2532f1d722ec0dd",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "forward_or_unknown_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "alias-type",
+      "inputSha256": "0301d00652afebde77bc7a7e252daa12c0ff155fa313edebe9697a90d369bf9a",
+      "fieldPath": "$.operations[0].as",
+      "code": "invalid_or_duplicate_alias",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "duplicate-nested",
+      "inputSha256": "06d54a6ee06e7ce2a161adecee7c236b59557913c3bd741b14ad1a66fa515aaa",
+      "fieldPath": "$.nested.x",
+      "code": "duplicate_json_key",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "nan",
+      "inputSha256": "dd32f0f9ac3e81000cf7e24d885bc2976406f620aba584419271ab38ede05c35",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "infinity",
+      "inputSha256": "5be46cb252f2ea3ad1fcf6c184a0d7c49bb791cef7c3b8fae945cba28f5f48cf",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "negative-infinity",
+      "inputSha256": "5057d8d595412655bba5d7b416c3da6fe6d4abf54066a00abcf9b48c4d92cd7a",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "commands",
+      "case": "overflow",
+      "inputSha256": "533a267441d62af0295aaf3dad3c922c50dade9c8a30816e5fb36ef7103983e9",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "unknown-root",
+      "inputSha256": "155a475c61a537e85ee559c01456d546b78ec8f609f4b028bac1cf6d4870ffda",
+      "fieldPath": "$.typo",
+      "code": "invalid_command_plan",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "container",
+      "inputSha256": "c71a06eb421058a32e041342b989eb38d4a1fa50fc9beb8d0f23aff24e485f1e",
+      "fieldPath": "$.operations",
+      "code": "invalid_command_plan",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "operation",
+      "inputSha256": "5c101256ec8d8d3f03cb2e471578dcc816a78310246e84bc4f714b429a9eb595",
+      "fieldPath": "$.operations[0]",
+      "code": "invalid_operation",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "unknown-operation",
+      "inputSha256": "5aea0a07f1cc7b70da0c1f36234cd2cc8b9ae81a95a3fb9ab1c8f9ec5e4bfd50",
+      "fieldPath": "$.operations[0].typo",
+      "code": "invalid_operation",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "command-type",
+      "inputSha256": "baf6ec3e0a61ed1104a7e55907f210b63c9ddcc9f781b7012116527a37baebc1",
+      "fieldPath": "$.operations[0].command",
+      "code": "unknown_command",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "params-container",
+      "inputSha256": "ebf717c0b0038d3001140336829f94cf7db4882e3546a41b1a8faebdacf09f38",
+      "fieldPath": "$.operations[0].params",
+      "code": "command_or_tool_and_params_required",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "field-type",
+      "inputSha256": "b7791e62c3de2d23d7c753635f55942075ab98e1499deb5063875185e18b1023",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "parameter_type",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "unknown-param",
+      "inputSha256": "6c874904de8818e3d8c4ffe3126e862cdd0fa82dc3730a2da2977b95d819b120",
+      "fieldPath": "$.operations[0].params.typo",
+      "code": "parameter_unknown_field",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "bad-reference",
+      "inputSha256": "4f86d89fb4562e9232679fa2d8f7a6391962911ec5e879b5124be7f951cd711e",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "invalid_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "missing-root",
+      "inputSha256": "de7d699d96157ec160329abda89b2ff674b5aace1c2082b4f3bf2968be97ad31",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "forward_or_unknown_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "future-alias",
+      "inputSha256": "6766a84f401981dc9be69cbeda97b6dc2dae5084e82a8aa9a2532f1d722ec0dd",
+      "fieldPath": "$.operations[0].params.layer",
+      "code": "forward_or_unknown_reference",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "alias-type",
+      "inputSha256": "0301d00652afebde77bc7a7e252daa12c0ff155fa313edebe9697a90d369bf9a",
+      "fieldPath": "$.operations[0].as",
+      "code": "invalid_or_duplicate_alias",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "duplicate-nested",
+      "inputSha256": "06d54a6ee06e7ce2a161adecee7c236b59557913c3bd741b14ad1a66fa515aaa",
+      "fieldPath": "$.nested.x",
+      "code": "duplicate_json_key",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "nan",
+      "inputSha256": "dd32f0f9ac3e81000cf7e24d885bc2976406f620aba584419271ab38ede05c35",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "infinity",
+      "inputSha256": "5be46cb252f2ea3ad1fcf6c184a0d7c49bb791cef7c3b8fae945cba28f5f48cf",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "negative-infinity",
+      "inputSha256": "5057d8d595412655bba5d7b416c3da6fe6d4abf54066a00abcf9b48c4d92cd7a",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    },
+    {
+      "entry": "desktop",
+      "case": "overflow",
+      "inputSha256": "533a267441d62af0295aaf3dad3c922c50dade9c8a30816e5fb36ef7103983e9",
+      "fieldPath": "$.nested.x",
+      "code": "nonfinite_json_value",
+      "calls": {
+        "install": 0,
+        "session": 0,
+        "download": 0
+      },
+      "userAndCacheUnchanged": true,
+      "outputAndRecoveryAbsent": true
+    }
+  ],
+  "native": [
+    {
+      "entry": "workflow",
+      "fault": "none",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 8,
+      "ownedProcessesStopped": true,
+      "legalLegacyShapeParameterAccepted": true,
+      "sourceManifestBindingsReused": true,
+      "sourceDeliveryUnchanged": true,
+      "revisionProjectSha256": "8108590d5b0e120f5673b803856967fba4f5ca45e2e83fd9a6948c31d69769e5"
+    },
+    {
+      "entry": "workflow",
+      "fault": "dynamic-missing",
+      "inputSha256": "f2f77fc3d1310f1e0888c82ff7c5e50b33bf16c28b9eaf625741f854a3e6f023",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 2,
+      "ownedProcessesStopped": true,
+      "dynamicFieldNotGuessed": true,
+      "missingFieldStopsBeforeUse": true
+    },
+    {
+      "entry": "workflow",
+      "fault": "malformed",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "scalar",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "missing",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "ambiguous",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "nonfinite",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "duplicate",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "overflow",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "tool-content",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "inner-duplicate",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "inner-nonfinite",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "inner-overflow",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "inner-ambiguous",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "outcome_unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "inner-semantic-error",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "semantic_error",
+        "phase": "submitted",
+        "outcome": "failed",
+        "retryable": false,
+        "recoveryAction": "inspect"
+      }
+    },
+    {
+      "entry": "workflow",
+      "fault": "explicit-tool-error",
+      "inputSha256": "920d39baa632c8cb6c67d301616de96c08ff7ea79484c609d9abf7019eb794e6",
+      "projectSha256": "9b4cf78235257eba634bb61a5f3a485a8416fc3e1f31db0bf0867f7f4fa07295",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 5,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "command_failed",
+        "phase": "submitted",
+        "outcome": "failed",
+        "retryable": false,
+        "recoveryAction": "inspect"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "none",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 6,
+      "ownedProcessesStopped": true,
+      "sourceInputBindingsReused": true,
+      "sourceDeliveryUnchanged": true,
+      "revisionProjectSha256": "c4575c4833ce5d40d05cbf1d37bcb984eff1c5ef8cddc716f3f6230b975781f8",
+      "renderedImageDimensions": [
+        32,
+        32
+      ],
+      "previewScope": "document"
+    },
+    {
+      "entry": "commands",
+      "fault": "dynamic-missing",
+      "inputSha256": "b5ad2cbdce6121bb954ac3534b039dcba546889dae7f6108daf9aa4a25665038",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "dynamicFieldNotGuessed": true,
+      "missingFieldStopsBeforeUse": true
+    },
+    {
+      "entry": "commands",
+      "fault": "malformed",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "scalar",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "missing",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "ambiguous",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "nonfinite",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "duplicate",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "overflow",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "tool-content",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "inner-duplicate",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "inner-nonfinite",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "inner-overflow",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "inner-ambiguous",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "inner-semantic-error",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "semantic_error",
+        "phase": "submitted",
+        "outcome": "failed",
+        "retryable": false,
+        "recoveryAction": "inspect"
+      }
+    },
+    {
+      "entry": "commands",
+      "fault": "explicit-tool-error",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "95a57f518aeca1294c49719438e2b554d0a9b569521c5f684369b29d470266aa",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "command_failed",
+        "phase": "submitted",
+        "outcome": "failed",
+        "retryable": false,
+        "recoveryAction": "inspect"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "none",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 6,
+      "ownedProcessesStopped": true,
+      "sourceInputBindingsReused": true,
+      "sourceDeliveryUnchanged": true,
+      "revisionProjectSha256": "b2575f9b95276534936f1ededf2fa61df1b56b482e929daaf2e374f7e27f6e9e",
+      "renderedImageDimensions": [
+        1024,
+        640
+      ],
+      "previewScope": "owned application window"
+    },
+    {
+      "entry": "desktop",
+      "fault": "dynamic-missing",
+      "inputSha256": "b5ad2cbdce6121bb954ac3534b039dcba546889dae7f6108daf9aa4a25665038",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "dynamicFieldNotGuessed": true,
+      "missingFieldStopsBeforeUse": true
+    },
+    {
+      "entry": "desktop",
+      "fault": "malformed",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "scalar",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "missing",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "ambiguous",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "nonfinite",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "duplicate",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "overflow",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "tool-content",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "inner-duplicate",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "inner-nonfinite",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "inner-overflow",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "inner-ambiguous",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "outcome_unknown",
+        "phase": "submitted",
+        "outcome": "unknown",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "inner-semantic-error",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "semantic_error",
+        "phase": "submitted",
+        "outcome": "failed",
+        "retryable": false,
+        "recoveryAction": "inspect"
+      }
+    },
+    {
+      "entry": "desktop",
+      "fault": "explicit-tool-error",
+      "inputSha256": "c988d7aff84bb1c2dd1c0b1c9f217e1b44d25f7e89a55680d34b05d990603b76",
+      "projectSha256": "e2816a7d2bf4b053e1ba4b402e281683d371e040c08de8a709a36ca61d54893d",
+      "freshNativeReopen": true,
+      "originalProjectUnchanged": true,
+      "completedReceipts": 3,
+      "ownedProcessesStopped": true,
+      "nativeSaveCount": 1,
+      "laterCalls": 0,
+      "replayCalls": 0,
+      "structuredError": {
+        "code": "command_failed",
+        "phase": "submitted",
+        "outcome": "failed",
+        "retryable": false,
+        "recoveryAction": "inspect"
+      }
+    }
+  ],
+  "fullV1": "INCOMPLETE",
+  "creativeAcceptance": "NOT_RUN",
+  "runtime": {
+    "binarySha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+    "runtimeIdentity": {
+      "version": "0.2.0-craft.1",
+      "versionOutput": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "platform": "darwin-arm64"
+    }
+  },
+  "skillUnchanged": true,
+  "nativeCases": 48,
+  "preflightCases": 52,
+  "injectionScope": "Test-only stdio proxy replaces replies only after native save succeeds; fixed clients and binaries unchanged. Not spontaneous native faults or full command acceptance."
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "photocraft-entry-coverage-audit/v1",
+  "status": "PARTIAL",
+  "requirement": "PC-TX-005",
+  "closedTasks": [],
+  "openTasks": [
+    "9.6"
+  ],
+  "pluginVersion": "0.1.0-dev.44",
+  "skillsRef": "v0.1.0-dev.39",
+  "skillsCommit": "e17da3eeee17790aa4783f0d0109f79f95f8d5ff",
+  "verifiedCandidatePlanRunners": [
+    "workflow.py",
+    "commands.py",
+    "desktop.py"
+  ],
+  "candidateCases": {
+    "preflight": 52,
+    "native": 48
+  },
+  "fixedInstalled": "PENDING",
+  "normativeScenarios": [
+    "PC-TX-005-P",
+    "PC-TX-005-PLAN",
+    "PC-TX-005-REPLY"
+  ],
+  "scenariosOverall": "PARTIAL across all public entries",
+  "remaining": [
+    "cli.py native argv passthrough reaches installer before duplicate-key rejection",
+    "Public Harness editing/revision entry coverage audit"
+  ],
+  "evidence": [
+    "candidate.json",
+    "red-green.json",
+    "passthrough-gap.json"
+  ],
+  "sourceRegression": "../entry-source-validation.json",
+  "sourceRegressionStatus": "PASS",
+  "fullV1": "INCOMPLETE",
+  "marketplaceEligible": false
+}

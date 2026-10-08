@@ -1,0 +1,39 @@
+{
+  "schema": "photocraft-entry-coverage-gap/v1",
+  "status": "FAIL",
+  "requirement": "PC-TX-005",
+  "task": "9.6",
+  "entry": "cli.py native argv passthrough",
+  "sourceVersion": "0.1.0-dev.39",
+  "scriptSha256": "7d0f0b4f953b30a0ed418effca7be34d0ba67f632ca538a56cb6d79410aa4e6f",
+  "input": {
+    "command": "run",
+    "engineCommand": "type.create",
+    "paramsJson": "{\"text\":\"a\",\"text\":\"b\"}"
+  },
+  "expected": {
+    "installerCalls": 0,
+    "sessionCalls": 0,
+    "structuredValidationError": true
+  },
+  "actual": {
+    "calls": {
+      "install": 1,
+      "session": 0,
+      "download": 0
+    },
+    "structuredValidationError": false,
+    "outputAbsent": true
+  },
+  "stderrSha256": "4dea4dde3606a4283de9bbab6602ee95819bfd121ced8de36cbba3c8918f0e42",
+  "method": "Read-only observation wrapper blocks and counts installer invocation before any real installation; duplicate JSON should be rejected first",
+  "planRunnerCoverage": "workflow.py, commands.py and desktop.py have separate candidate/fixed native matrices; cannot substitute for this passthrough entry",
+  "remaining": [
+    "Native argv editing preflight/result semantics with legal legacy argv compatibility",
+    "Public Harness editing/revision entry coverage audit"
+  ],
+  "notExecuted": [
+    "No native editing call for this invalid passthrough case",
+    "No actual download or installation after the observer blocked the call"
+  ]
+}

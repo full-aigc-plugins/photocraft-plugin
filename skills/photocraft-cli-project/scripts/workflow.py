@@ -111,9 +111,10 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
         raise ValueError('unknown_plan_field: $.' + sorted(set(plan) - allowed)[0])
     # 保留旧的片段校验入口；完整 execute 总会传入已核验的绑定再严格检查。
     check_references = check_references and (bindings is not None or 'document' in plan or 'assets' in plan)
+    # 智能对象的旧错误码保持稳定；先检查字符串类型，避免集合查询泄漏 TypeError。
     for operation in plan['operations']:
-        if isinstance(operation, dict):
-            validate_smart(operation.get('command'), operation.get('params', {}))
+        if isinstance(operation, dict) and isinstance(operation.get('command'), str):
+            validate_smart(operation['command'], operation.get('params', {}))
     try:
         json.dumps(plan, allow_nan=False)
     except (ValueError, TypeError):
@@ -151,8 +152,14 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
     rows = {row['id']: row for row in commands.catalog()['commands']}
     if check_references and 'variant' in plan:commands.references(plan['variant']['roles'],available,'$.variant.roles')
     for operation_index,operation in enumerate(plan['operations']):
-        if not isinstance(operation, dict) or set(operation) - {'command', 'params', 'as'}:
-            raise ValueError('invalid_operation: $.operations['+str(operation_index)+']')
+        location = '$.operations[' + str(operation_index) + ']'
+        if not isinstance(operation, dict):
+            raise ValueError('invalid_operation: ' + location)
+        unknown = set(operation) - {'command', 'params', 'as'}
+        if unknown:
+            raise ValueError('invalid_operation: ' + location + '.' + sorted(unknown)[0])
+        if not isinstance(operation.get('command'), str) or operation['command'] not in ALLOWED:
+            raise ValueError('unsupported_command: ' + location + '.command')
         params = operation.get('params', {})
         if not isinstance(params, dict):
             raise ValueError('invalid_params: $.operations['+str(operation_index)+'].params')
@@ -161,14 +168,12 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
             if operation.get('command')=='native.command' and str(params.get('command','')).startswith('filter.') and 'filterContract' in plan:commands.references(plan['filterContract'],available,'$.filterContract')
         if operation.get('command') == 'native.command':
             native_module().validate(operation.get('params'))
-        if operation.get('command') not in ALLOWED:
-            raise ValueError('unsupported_command')
         alias = operation.get('as')
         if alias is not None:
-            if alias in aliases:
-                raise ValueError('duplicate_alias')
             if not isinstance(alias, str) or not re.fullmatch(r'[a-zA-Z][\w-]*', alias):
-                raise ValueError('invalid_alias')
+                raise ValueError('invalid_alias: ' + location + '.as')
+            if alias in aliases:
+                raise ValueError('duplicate_alias: ' + location + '.as')
             aliases.add(alias)
             available.add(alias)
         validate_smart(operation['command'], params)
@@ -178,7 +183,7 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
         if command in {'asset.place', 'asset.placeSmart', *SMART_SOURCE}:
             asset = params.get('asset')
             if not isinstance(asset, str) or (check_references and asset not in set(assets) | set(inherited_assets)):
-                raise ValueError('unregistered_asset_path')
+                raise ValueError('unregistered_asset_path: ' + location + '.params.asset')
         if command == 'asset.place' and set(params) - {'asset', 'center', 'name'}:
             raise ValueError('unregistered_asset_path')
         if command in rows and command not in SMART_LAYER:
@@ -230,7 +235,9 @@ def call_tool(session, name, args, state, receipts):
     if os.environ.get('CRAFT_STOP_FILE') and Path(os.environ['CRAFT_STOP_FILE']).exists():raise load_module('operation_errors').error('outcome_unknown: stop_requested; reconcile preserved work')
     state['lastAttempt'] = {'tool': name, 'arguments': args, 'phase': 'submitted'}
     reply = session.request('tools/call', {'name': name, 'arguments': args})
-    value = load_module('commands').parse_reply(reply)
+    commands = load_module('commands')
+    value = commands.parse_reply(reply)
+    commands.validate_tool_reply(name, value, args)
     state['lastAttempt']['phase'] = 'reply_validated'
     receipts.append({'tool': name, 'arguments': args, 'result': value})
     return value

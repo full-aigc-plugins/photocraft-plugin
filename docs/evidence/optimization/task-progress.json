@@ -122,8 +122,8 @@
       "requirements": [
         "PC-TX-005"
       ],
-      "candidate": "strict JSON with nested field paths, descriptive known-parameter types/ranges, actual MCP schema subset, static/resolved references and batch reply validation",
-      "remaining": "formal per-command schemas are not provided by the native descriptions; fixed candidate installation and full entry acceptance remain open"
+      "candidate": "Source39 adds stable validation field paths and safe command/alias types, validates document/save/inspect semantics, preserves batch diagnostics and native/desktop open reply forms; candidate52 preflight/48 native cases pass",
+      "remaining": "cli.py native argv passthrough duplicate-key case still reaches installer first; public Harness editing/revision coverage audit pending; task9.6 open"
     },
     {
       "requirements": [
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Fixed release identity and standalone routing/resource/native task scenarios verified; 28 full V1 gates remain open. Model dispatch, creative acceptance and all command contexts remain separate.",
+  "scope": "Source39 repairs public plan-runner preflight and validated document/save replies; candidate/native/desktop scenarios pass, all-entry9.6 remains open for native argv passthrough and Harness audit. No task count reduction.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -207,10 +207,7 @@
     "PC-SK-003-PATH-SELF",
     "PC-CM-001-SAVED-SELECTION"
   ],
-  "latestCompletedTaskIds": [
-    "9.3",
-    "9.9"
-  ],
+  "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
     "skills": 226,
