@@ -1,0 +1,26 @@
+{
+  "schema": "photocraft-preintent-restart-candidate/v1",
+  "status": "PARTIAL_CANDIDATE",
+  "pluginVersion": "0.1.0-dev.58",
+  "sourceRef": "v0.1.0-dev.46",
+  "harness": {
+    "tests": 91,
+    "pass": 91,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 10,
+  "sourceRegressionReuse": {
+    "sourceCommit": "c1691aa8182966d50032ba740bb45371c0da2ca6",
+    "tests": 294,
+    "evidence": "docs/evidence/optimization/delivery-producer/source-validation.json",
+    "reason": "skill source and vendored bytes unchanged; plugin-only pinning change"
+  },
+  "fixedInstallation": "NOT_RUN",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "SIGKILL before claim and budget refusal recover the original unattempted task; full worker crash/restart matrix remains open"
+}

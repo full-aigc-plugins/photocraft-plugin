@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { confirmedWorkerReceipt } from './worker_receipt.ts';
+import { pinPlan } from './pinned_plan.ts';
 import { canonical, digest, fileDigest, readJson, safePath, within } from '../protocol/files.ts';
 import { Ledger } from './ledger.ts';
 import { observeLateArtifacts } from './late_artifacts.ts';
@@ -54,7 +55,7 @@ export class Runner {
   const args=[planPath,'--output',task.request.output];
   if(task.request.source) args.push('--source',task.request.source);
   if(task.request.checkpoint)args.push('--checkpoint',task.request.checkpoint.output,'--write-root',task.request.authorization.writeRoot);
-  writeFileSync(planPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
+  pinPlan(planPath,task.request.plan);
   const epoch=this.ledger.claim(id);
   this.ledger.update(id,epoch,current=>{current.executionIdentity=identity;current.preflight={status:'PASS'};});
   if(this.options.runtimeHome) args.push('--runtime-home',safePath(this.options.runtimeHome));

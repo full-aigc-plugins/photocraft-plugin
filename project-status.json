@@ -172,10 +172,10 @@
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
     "skillsVersion": "0.1.0-dev.46",
-    "pluginWorkingVersion": "0.1.0-dev.57",
+    "pluginWorkingVersion": "0.1.0-dev.58",
     "fixedSkillSourceVersion": "0.1.0-dev.46",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_DELIVERY_PRODUCER_FIXED_NATIVE",
+    "publication": "PARTIAL_PREINTENT_RESTART_CANDIDATE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -344,5 +344,22 @@
       "complete V1"
     ],
     "publicationEvidence": "docs/evidence/optimization/delivery-producer/publication.json"
+  },
+  "preintentRestartCandidate": {
+    "status": "PARTIAL_CANDIDATE",
+    "pluginVersion": "0.1.0-dev.58",
+    "skillSourceVersion": "0.1.0-dev.46",
+    "evidence": "docs/evidence/optimization/preintent-restart/",
+    "fixedInstallation": "NOT_RUN",
+    "closedTasks": [],
+    "remainingTasks": [
+      "3.6",
+      "10.9"
+    ],
+    "remainingAcceptance": [
+      "durable progress after hard worker SIGKILL before failure record",
+      "complete crash/restart matrix",
+      "complete V1"
+    ]
   }
 }

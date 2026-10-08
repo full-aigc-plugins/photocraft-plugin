@@ -1,0 +1,16 @@
+{
+  "schema": "photocraft-preintent-native/v1",
+  "status": "PASS",
+  "taskId": "94048775-de7e-407f-a367-6ea46aba2e07",
+  "taskIdentity": "e4b17129c06040ae03612aab62ece0d661fa877e816b0432614f5f57bf3a8080",
+  "originalPlanSha256": "e50d98060211db1a3192244696ae0d45b31b02899b3b2857e3858eef7c148154",
+  "retainedPlanInode": true,
+  "originalEpoch": 0,
+  "finalEpoch": 1,
+  "intentsPersisted": 1,
+  "repeatedRunRefused": true,
+  "typeLayerCount": 1,
+  "budgetUnchanged": true,
+  "sourceSha256": "18a56e5b572a9386c75c145ce7ed3022b1620d8cdb4ffab1eb5088d7a3b58daa",
+  "creative": "NOT_RUN"
+}

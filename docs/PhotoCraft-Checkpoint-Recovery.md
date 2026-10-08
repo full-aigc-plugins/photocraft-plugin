@@ -31,3 +31,20 @@ Candidate tests: `test_checkpoint_source.py` and `checkpoint-revision.test.ts`, 
 ## Full-delivery producer candidate
 
 Successful supervised deliveries retain taskId, taskIdentity, epoch, workerToken and sourceSha256 in hash-covered `task-binding.json` and the manifest. Harness verification matches the original ledger before native reopening. Legacy unbound packages remain independently readable but cannot restore current task acceptance. Same-plan foreign packages and self-consistent identity substitutions must be refused. This candidate is not published or fixed-install accepted; the full SIGKILL/restart matrix and creative acceptance remain open.
+
+## Pre-intent interruption candidate
+
+The runner pins and flushes the plan before claiming execution. An exact regular single-link file is reused only while the original ledger task remains planned and unattempted. Budget, idempotency identity and original bytes remain unchanged. Truncated, foreign, linked or directory placeholders are preserved and refused. Tasks with persisted intent still require reconcile; plan reuse grants no replay permission.
+
+```mermaid
+flowchart LR
+  A[Original task preflight] --> B[Pin and flush plan]
+  B --> C[Persist original intent]
+  C --> D[Supervised worker]
+  B -->|Crash before claim| E[Restart finds unattempted task]
+  E -->|Exact original plan| C
+  E -->|File or identity conflict| F[Preserve and refuse]
+  D -->|Unknown result| G[Reconcile without replay]
+```
+
+This covers the pre-intent window only. Durable progress before a hard worker interruption and the complete recovery matrix remain open.
