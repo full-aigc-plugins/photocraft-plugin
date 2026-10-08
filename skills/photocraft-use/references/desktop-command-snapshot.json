@@ -1,7 +1,7 @@
 {
   "schema": "photocraft-desktop-command-snapshot/v1",
   "backend": "bridge",
-  "cliBinarySha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
   "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
   "commands": [
     {

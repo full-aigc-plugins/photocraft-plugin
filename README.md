@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.63 candidate pins published source49/craft.5. Actual different-binary craft.1 → craft.5 → craft.1 and separate desktop probes pass, with108 Harness tests. Source regression uses305 full-suite passes plus one unchanged-source cold-download recheck; full-run failure retained. Fixed public plugin installation and complete task2.6 audit are pending. [Candidate](docs/evidence/optimization/runtime-version/candidate.json).
+
 dev.62 published: fixed public installation passes107 Harness tests (14 native) with unchanged installed bytes. Explicit per-ledger runtime combination upgrade/rollback, draining, backups and claim fencing implemented; tasks2.4/2.5 complete,137/157 complete,20 open. Native transitions use the same craft.1 binary; different-version and full PC-RT-002 task2.6 remain open. [Publication](docs/evidence/optimization/runtime-transition/publication.json). [Lifecycle](docs/PhotoCraft-Runtime-Transition.md).
 
 Published dev.61 / source dev.48: all nine PC-TX-002 scenarios pass on the fixed public macOS arm64 installation, including six actual interruption windows, missing-supervisor proof refusal, readonly status and corrupt-state preservation. Tasks3.6/10.9 complete; at that release135/157 were complete,22 open. Creative/model and full V1 remain unverified. [Audit](docs/evidence/optimization/task-recovery/acceptance-audit.json).
@@ -60,7 +62,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.62`; skill source: `0.1.0-dev.48`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.63`; skill source: `0.1.0-dev.49`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -155,9 +157,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.62 |
+| Metadata version | 0.1.0-dev.63 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.48 |
+| Skills source | photocraft-skills / 0.1.0-dev.49 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

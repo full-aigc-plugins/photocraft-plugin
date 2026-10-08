@@ -1,0 +1,22 @@
+{
+  "schema": "photocraft-runtime-version-candidate/v1",
+  "status": "PASS_CANDIDATE",
+  "pluginVersion": "0.1.0-dev.63",
+  "sourceRef": "v0.1.0-dev.49",
+  "runtimeVersion": "0.2.0-craft.5",
+  "harness": {
+    "tests": 108,
+    "pass": 108,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "nativeVersionEvidence": "native-version-current.json",
+  "sourceRegressionEvidence": "source-validation.json",
+  "closedTaskIds": [],
+  "openTaskIds": [
+    "2.6"
+  ],
+  "fixedInstallation": "NOT_RUN",
+  "fullV1": "NOT_RUN"
+}

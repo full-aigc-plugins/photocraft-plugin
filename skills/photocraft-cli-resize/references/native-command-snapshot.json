@@ -1,7 +1,7 @@
 {
   "schema": "craft-native-command-snapshot/v1",
   "pluginId": "photocraft",
-  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
   "mode": "headless-empty",
   "scope": "registered commands and empty-session state only; no command execution acceptance",
   "tools": [

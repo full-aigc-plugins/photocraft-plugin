@@ -1,20 +1,21 @@
 {
   "schema": "craft-runtime-lock/v1",
   "artifact": "photocraft-cli",
-  "resolvedVersion": "0.2.0-craft.1",
-  "releaseRef": "runtime-v0.2.0-craft.1",
+  "resolvedVersion": "0.2.0-craft.5",
+  "releaseRef": "runtime-v0.2.0-craft.5",
   "repository": "https://github.com/full-aigc-skills/photocraft-skills",
   "artifacts": {
     "darwin-arm64": {
-      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/download/runtime-v0.2.0-craft.1/photocraft-cli-0.2.0-craft.1-macos-arm64.zip",
-      "archiveSha256": "02f38c95b7f700d7c26774be93065b86776b71dc5d866345614b51289875969c",
-      "binarySha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
-      "versionOutput": "photocraft-cli 0.2.0-craft.1 (dev build)",
-      "evidenceScope": "candidate maintained runtime; native workflow and fixed installation pending"
+      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/download/runtime-v0.2.0-craft.5/photocraft-cli-0.2.0-craft.5-macos-arm64.zip",
+      "archiveSha256": "d3367fd25fe4977d88547623156b54bcbe8056b4b31e42032cd5c05644a2b294",
+      "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+      "evidenceScope": "maintained runtime; native, fixed installation and complete acceptance evidence recorded separately",
+      "provenanceSha256": "263bfa101d8462022c2f5da0dd1483dda13432975fde6baffafd1ffc3565e329"
     }
   },
   "supportedPluginWorkflows": [],
   "upstreamRepository": "https://github.com/storytold/photocraft",
   "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
-  "runtimeVariant": "maintained-capability-scoped-smart-content"
+  "runtimeVariant": "maintained-capability-scoped-smart-content-supervised"
 }

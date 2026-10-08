@@ -13,7 +13,7 @@ import {join,resolve} from 'node:path';
 import {Ledger} from '../src/harness/ledger.ts';
 import {RuntimeManager,probeRuntime} from '../src/harness/runtime_manager.ts';
 import {skillIdentity,runtimePlatformKey} from '../src/harness/preflight.ts';
-import {canonical,digest,fileDigest} from '../src/protocol/files.ts';
+import {canonical,digest,fileDigest,safePath} from '../src/protocol/files.ts';
 
 function fixture(){
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-runtime-transition-')));const state=join(root,'state'),ledger=new Ledger(state);
@@ -101,6 +101,32 @@ test('native lifecycle drains saved tasks, fences old claims and reopens retaine
 });
 
 import {spawn} from 'node:child_process';
+
+test('different native binary upgrade preserves saved projects and rollback executes the original version',{
+ skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1' || !process.env.PHOTOCRAFT_UPGRADE_SKILL_ROOT
+},async()=>{
+ const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-version-upgrade-'))),ledger=new Ledger(join(root,'state'));
+ const skillRoot=process.env.PHOTOCRAFT_UPGRADE_BASELINE_SKILL_ROOT??process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-use'),next=safePath(process.env.PHOTOCRAFT_UPGRADE_SKILL_ROOT!),runtimeHome=safePath(process.env.PHOTOCRAFT_UPGRADE_RUNTIME_HOME!);
+ const options={skillRoot,python:process.env.PHOTOCRAFT_PYTHON??'python3',runtimeHome};
+ const oldLock=JSON.parse(readFileSync(join(skillRoot,'scripts/runtime.lock.json'),'utf8')),newLock=JSON.parse(readFileSync(join(next,'scripts/runtime.lock.json'),'utf8'));
+ const oldSha=oldLock.artifacts[runtimePlatformKey()].binarySha256,newSha=newLock.artifacts[runtimePlatformKey()].binarySha256;
+ assert.notEqual(oldLock.resolvedVersion,newLock.resolvedVersion);assert.notEqual(oldSha,newSha);
+ try{
+  const request={idempotencyKey:'old-project',brief:'Retain title across different native versions',plan:{document:{width:32,height:32,background:'#ffffff'},operations:[{command:'type.create',params:{text:'KEEP',font:'Arial',size:12,x:1,y:16}}],exports:[{format:'png'}]},output:join(root,'old-project'),authorization:{ref:'user',writeRoot:root},budget:{deadline:Date.now()+240000,maxRevisions:0,reserveBytes:0}};
+  const runner=new Runner(ledger,options),task=ledger.create(request);assert.equal((await runner.run(task.id)).technical.status,'PASS');
+  const project=join(task.request.output,'project.pcraft'),original=fileDigest(project),source=skillIdentity(options).sha256,target=skillIdentity({...options,skillRoot:next}).sha256,manager=new RuntimeManager(ledger,options);
+  const proposal={authorizationRef:'user',expectedGeneration:0,expectedActiveSourceSha256:source,candidateSkillRoot:next,candidateSourceSha256:target,backend:'headless',stateSchema:1};
+  assert.throws(()=>manager.upgrade(proposal),/runtime_tasks_not_drained/);ledger.stop(task.id);assert.equal((await runner.reconcile(task.id)).state,'cancelled');
+  const upgraded=manager.upgrade(proposal);assert.equal(upgraded.active.runtimeVersion,newLock.resolvedVersion);assert.equal(upgraded.active.probe.runtimeSha256,newSha);assert.equal(upgraded.history[0].previousProbe.runtimeSha256,oldSha);assert.equal(fileDigest(project),original);
+  const selectedRunner=new Runner(ledger,{...options,skillRoot:upgraded.active.skillRoot}),selected=ledger.create({...request,idempotencyKey:'new-project',output:join(root,'new-project')});
+  assert.equal((await selectedRunner.run(selected.id)).technical.status,'PASS');const selectedProject=join(selected.request.output,'project.pcraft'),selectedSha=fileDigest(selectedProject);ledger.stop(selected.id);assert.equal((await selectedRunner.reconcile(selected.id)).state,'cancelled');
+  const stateBefore=canonical(manager.status());assert.throws(()=>manager.rollback({authorizationRef:'user',expectedGeneration:1,expectedActiveSourceSha256:target,stateSchema:2}),/runtime_state_schema_incompatible/);assert.equal(canonical(manager.status()),stateBefore);
+  const back=manager.rollback({authorizationRef:'user',expectedGeneration:1,expectedActiveSourceSha256:target,stateSchema:1});assert.equal(back.active.runtimeVersion,oldLock.resolvedVersion);assert.equal(back.active.probe.runtimeSha256,oldSha);assert.equal(back.history[1].projects[selectedProject],selectedSha);assert.equal(fileDigest(project),original);assert.equal(fileDigest(selectedProject),selectedSha);
+  const final=ledger.create({...request,idempotencyKey:'restored-project',output:join(root,'restored-project')});assert.equal((await new Runner(ledger,{...options,skillRoot:back.active.skillRoot}).run(final.id)).technical.status,'PASS');ledger.stop(final.id);assert.equal((await new Runner(ledger,{...options,skillRoot:back.active.skillRoot}).reconcile(final.id)).state,'cancelled');
+  const receipts:any[]=[];for(const [name,path]of [['old',skillRoot],['new',next]]){const output=join(root,name+'-desktop-probe');mkdirSync(output);receipts.push(probeRuntime({...options,skillRoot:path},'bridge',output));}
+  if(process.env.PHOTOCRAFT_RUNTIME_VERSION_REPORT)writeFileSync(process.env.PHOTOCRAFT_RUNTIME_VERSION_REPORT,JSON.stringify({schema:'photocraft-runtime-version-native/v1',status:'PASS',platform:runtimePlatformKey(),versions:[oldLock.resolvedVersion,newLock.resolvedVersion,back.active.runtimeVersion],binarySha256:[oldSha,newSha,back.active.probe.runtimeSha256],sources:[source,target,back.active.sourceSha256],generations:[1,2],sameBinaryOnly:false,pendingTaskRefused:true,incompatibleStateRefused:true,oldProjectUnchanged:fileDigest(project)===original,newProjectReopenedWithOldBinary:true,oldProjectSha256:original,newProjectSha256:selectedSha,restoredExecutionPassed:true,bridgeProbes:receipts,editingDuringProbes:0,fullV1:'NOT_RUN'},null,2)+'\n');
+ }finally{ledger.close();rmSync(root,{recursive:true,force:true});}
+});
 
 test('independent process creation waits for the transition transaction and cannot claim the retired source',async()=>{
  const f=fixture();let child:ReturnType<typeof spawn>|undefined;

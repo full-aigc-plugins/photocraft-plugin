@@ -4500,7 +4500,7 @@
       "params": "{\"name\":string,\"newName\":string} → {name}",
       "enabledAtEmptySession": true,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     },
     {
       "id": "brush.presets.move",
@@ -4508,7 +4508,7 @@
       "params": "{\"name\":string,\"group\":string?=its group (\"\" = ungrouped),\"before\":name? (preset to land before) | \"index\":n? (position in the group)=end} → {name, group, index}",
       "enabledAtEmptySession": true,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     },
     {
       "id": "brush.presets.moveGroup",
@@ -4516,7 +4516,7 @@
       "params": "{\"group\":string,\"before\":group? | \"index\":n? (group position)=end} → {group, index}",
       "enabledAtEmptySession": true,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     },
     {
       "id": "brush.presets.renameGroup",
@@ -4524,7 +4524,7 @@
       "params": "{\"group\":string,\"newName\":string} → {group}",
       "enabledAtEmptySession": true,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     },
     {
       "id": "brush.presets.deleteGroup",
@@ -4532,7 +4532,7 @@
       "params": "{\"group\":string} → {deleted, count}",
       "enabledAtEmptySession": true,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     },
     {
       "id": "layer.setExpanded",
@@ -4540,7 +4540,7 @@
       "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every group; not an undo step)",
       "enabledAtEmptySession": false,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     },
     {
       "id": "layer.setEffectsExpanded",
@@ -4548,7 +4548,7 @@
       "params": "{\"layer\":id?,\"expanded\":bool?,\"all\":bool?} (no expanded: toggle; all: every layer with effects; view state, not an undo step)",
       "enabledAtEmptySession": false,
       "provenance": "pinned-native-command-snapshot",
-      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
     }
   ]
 }

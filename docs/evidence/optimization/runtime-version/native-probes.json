@@ -1,0 +1,62 @@
+{
+  "schema": "photocraft-runtime-probes-native/v1",
+  "status": "PASS",
+  "receipts": [
+    {
+      "schema": "photocraft-runtime-probe/v1",
+      "backend": "headless",
+      "runtimeVersion": "0.2.0-craft.5",
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+      "snapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "17cac5ed-d3b8-49c5-9281-c22e66d1ab9c",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "snapshotSha256": "5f90a80157caa94a815b00f166c5eca8815109aaa09e156233e489c4bc86ebb4",
+      "editingCalls": 0
+    },
+    {
+      "schema": "photocraft-runtime-probe/v1",
+      "backend": "bridge",
+      "runtimeVersion": "0.2.0-craft.5",
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+      "snapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "53161194-7146-485f-94d9-56b14ce25b9e",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "snapshotSha256": "0f173c0c8aba2d8cfca89fef67e619a3cc9e94de069f160ba267c0960c89bc61",
+      "editingCalls": 0
+    }
+  ],
+  "scope": "Actual unchanged craft.1 binary; readonly headless and owned desktop registry discovery. Different-version upgrade and rollback fixed acceptance remain open."
+}

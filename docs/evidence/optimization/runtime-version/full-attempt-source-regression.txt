@@ -1,0 +1,34 @@
+.........................................F.............................. [ 23%]
+........................................................................ [ 47%]
+........................................................................ [ 70%]
+........................................................................ [ 94%]
+..................                                                       [100%]
+=================================== FAILURES ===================================
+_ AdjustmentMaskNative.test_saved_mask_local_pixels_revision_and_wrong_kind_rejection _
+
+self = <test_adjustment_mask_first_use.AdjustmentMaskNative testMethod=test_saved_mask_local_pixels_revision_and_wrong_kind_rejection>
+
+    def test_saved_mask_local_pixels_revision_and_wrong_kind_rejection(self):
+     from PIL import Image
+     original=Path(os.environ.get('CRAFT_PHOTO_ADJUSTMENT_SKILL',ROOT/'skills/photocraft-cli-adjustments'));before=hashes(original)
+     with tempfile.TemporaryDirectory() as td:
+      root=Path(td);skill=root/'.agents/skills'/original.name;shutil.copytree(original,skill,ignore=shutil.ignore_patterns('__pycache__'));copied=hashes(skill);runtime=root/'empty-runtime';self.assertFalse(runtime.exists())
+      def run(plan,out,source=None,ok=True):
+       p=root/(out.name+'.json');p.write_text(json.dumps(plan));args=[sys.executable,'-I','-B',str(skill/'scripts/workflow.py'),str(p),'--output',str(out),'--runtime-home',str(runtime)]
+       if source:args+=['--source',str(source)]
+       r=subprocess.run(args,capture_output=True,text=True,env=dict(os.environ,PATH='/usr/bin:/bin'),timeout=600)
+       if not ok:self.assertNotEqual(r.returncode,0);self.assertFalse((out/'manifest.json').exists());return r.stdout+r.stderr
+       self.assertEqual(r.returncode,0,r.stdout+r.stderr);m=json.loads((out/'manifest.json').read_text());self.assertTrue((out/'project.pcraft').is_file());self.assertTrue((out/'exchange-loss.json').is_file())
+       for f,sha in m['files'].items():self.assertEqual(hashlib.sha256((out/f).read_bytes()).hexdigest(),sha)
+       return m,json.loads((out/'native.json').read_text())
+>     plan=json.loads((skill/'examples/adjustment-mask-create.json').read_text());first=root/'original';m,n=run(plan,first);old=hashes(first)
+
+tests/test_adjustment_mask_first_use.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_adjustment_mask_first_use.py:31: in run
+    self.assertEqual(r.returncode,0,r.stdout+r.stderr);m=json.loads((out/'manifest.json').read_text());self.assertTrue((out/'project.pcraft').is_file());self.assertTrue((out/'exchange-loss.json').is_file())
+E   AssertionError: 1 != 0 : {"error": "HTTP Error 404: Not Found", "code": "HTTP Error 404", "phase": "execution", "outcome": "unknown", "retryable": false, "recoveryAction": "reconcile"}
+- generated xml file: <workspace>/artifacts/photocraft-runtime-version-20261009/source-junit.xml -
+=========================== short test summary info ============================
+FAILED tests/test_adjustment_mask_first_use.py::AdjustmentMaskNative::test_saved_mask_local_pixels_revision_and_wrong_kind_rejection
+1 failed, 305 passed in 303.75s (0:05:03)
