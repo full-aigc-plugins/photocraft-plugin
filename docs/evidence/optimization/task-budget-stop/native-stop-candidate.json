@@ -1,0 +1,43 @@
+{
+  "schema": "photocraft-native-stop-evidence/v1",
+  "platform": "darwin-arm64",
+  "node": "v24.18.0",
+  "runtimeVersion": "0.2.0-craft.1",
+  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "sourceSha256": "8ddc32e2169521c82da5fed0b1c5cf43d7c494237ff7cd43f7436d6d8996e88a",
+  "taskId": "64ebe7d1-084f-46a9-912d-10af02f166e2",
+  "taskIdentity": "35727bb123a256931916a6d08e36a1189dc46348f0a3dab1e3a40094128d5f20",
+  "parentTask": "1c885805-b8fe-458f-9b84-fb799626bba5",
+  "planSha256": "fb51bee99c10e1d592493510e18b2c4cf3eca20e3a33c4b2c8ab739076d2209b",
+  "sourceProjectSha256": "b60ee9c72ec592ed5e7ebce0415f3fc08e096c1fd113a3a1fa93f749ad088195",
+  "retainedProjectSha256": "b60ee9c72ec592ed5e7ebce0415f3fc08e096c1fd113a3a1fa93f749ad088195",
+  "observedNative": {
+    "pid": 68546,
+    "parent": 66617,
+    "group": 66617
+  },
+  "workerExitReceipt": {
+    "epoch": 1,
+    "exitCode": null,
+    "finishedAt": 1791486531759,
+    "launchSha256": "a24f11c95963ced074ca7b3ce7d7c5cfdbfb9a2c6e8e249d864c85e51e48b0df",
+    "outputTruncated": false,
+    "processGroupGone": true,
+    "schema": "photocraft-worker-exit/v1",
+    "signal": "SIGTERM",
+    "sourceSha256": "8ddc32e2169521c82da5fed0b1c5cf43d7c494237ff7cd43f7436d6d8996e88a",
+    "spawnError": "",
+    "stoppedAt": 1791486531708,
+    "supervisorPid": 66560,
+    "taskId": "64ebe7d1-084f-46a9-912d-10af02f166e2",
+    "taskIdentity": "35727bb123a256931916a6d08e36a1189dc46348f0a3dab1e3a40094128d5f20",
+    "workerToken": "2744a7e6-9436-46d8-b31f-54d9030d0291",
+    "workflowPid": 66617
+  },
+  "childState": "cancelled",
+  "parentState": "cancelled",
+  "technical": "NOT_RUN",
+  "creative": "NOT_RUN",
+  "replayAllowed": false,
+  "scope": "real native child process cancellation and runner interruption; synthetic review only establishes parent-child contract; fixed installed release not verified"
+}

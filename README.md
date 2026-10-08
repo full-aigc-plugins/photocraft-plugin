@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.53 adds independent worker supervision, bound restart stop receipts and late-file observations. Local native parent/child cancellation passes; fixed public installation is pending. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
+
 Published dev.52 / source dev.44: all PC-AR-001 scenarios pass on actual fixed macOS arm64 native copies and the immutable ArtCraft109 consumer.17 indexed-file replacements refuse; old dev.50 remains read-only. Tasks5.3/11.9 complete;131/157 complete,26 open. Creative acceptance and source authenticity remain unproven. [Audit](docs/evidence/optimization/artifact-lineage/acceptance-audit.json).
 
 dev.52 targets source dev.44: preserve the PSD gate in public-schema observations. Actual pinned ArtCraft109 consumption and all17 indexed-file replacements pass on the source candidate; fixed publication proof is pending. [Contract](docs/PhotoCraft-Artifact-Lineage-Acceptance.md).
@@ -54,7 +56,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.52`; skill source: `0.1.0-dev.44`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.53`; skill source: `0.1.0-dev.44`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -149,7 +151,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.52 |
+| Metadata version | 0.1.0-dev.53 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.44 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |

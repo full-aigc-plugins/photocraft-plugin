@@ -2,6 +2,8 @@ import { spawn } from 'node:child_process';
 import { existsSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
+import { confirmedWorkerReceipt } from './worker_receipt.ts';
 import { canonical, digest, fileDigest, readJson, safePath, within } from '../protocol/files.ts';
 import { Ledger } from './ledger.ts';
 import { observeLateArtifacts } from './late_artifacts.ts';
@@ -47,44 +49,38 @@ export class Runner {
   this.ledger.update(id,epoch,current=>{current.executionIdentity=identity;current.preflight={status:'PASS'};});
   if(this.options.runtimeHome) args.push('--runtime-home',safePath(this.options.runtimeHome));
   const workerToken=randomUUID();
-  const child=spawn(this.options.python,['-I','-B',join(this.options.skillRoot,'scripts/workflow.py'),...args],{detached:process.platform!=='win32',stdio:['ignore','pipe','pipe'],env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',CRAFT_STOP_FILE:join(this.ledger.root,id+'.stop')}});
-  this.ledger.update(id,epoch,current=>{current.worker={pid:process.pid,childPid:child.pid,token:workerToken,startedAt:Date.now()};});
-  let bytes=0;let output='';let cancelled=false;let stopStarted=0;let spawnError='';
-  child.stdout.setEncoding('utf8');
-  child.stdout.on('data',(data:string)=>{bytes+=Buffer.byteLength(data);if(bytes<=2*1024*1024)output+=data;});
-  child.stderr.on('data',()=>{});
-  child.on('error',error=>{spawnError=error.message;});
-  const timer=setInterval(()=>{
-   const latest=this.ledger.status(id);
-   if(latest.state==='cancel_requested' || Date.now()>=latest.request.budget.deadline) {
-    if(!cancelled) {
-     cancelled=true;
-     stopStarted=Date.now();
-     if(latest.state!=='cancel_requested')this.ledger.stop(id);
-     // 只向本进程持有的 ChildProcess 发信号；重启核对绝不按账本 PID 杀进程。
-     try { if(process.platform!=='win32' && child.pid)process.kill(-child.pid,'SIGTERM');else child.kill('SIGTERM'); }catch{}
-    }
-    else if(Date.now()-stopStarted>=2000) {
-     // 宽限期后仍只终止本次持有的进程组；重启后的核对没有此权限。
-     try {if(process.platform!=='win32' && child.pid)process.kill(-child.pid,'SIGKILL');else child.kill('SIGKILL');}catch{}
-    }
-   }
-  },100);
+  const launchPath=safePath(join(this.ledger.root,id+'-worker-launch.json'));
+  const launch={schema:'photocraft-worker-launch/v1',taskId:id,taskIdentity:task.identity,epoch,workerToken,sourceSha256:identity.sha256,python:this.options.python,args:['-I','-B',join(this.options.skillRoot,'scripts/workflow.py'),...args],stopFile:join(this.ledger.root,id+'.stop'),deadline:task.request.budget.deadline,receipt:join(this.ledger.root,id+'-worker-exit.json')};
+  writeFileSync(launchPath,canonical(launch),{flag:'wx',mode:0o600});const launchSha256=fileDigest(launchPath);
+  this.ledger.update(id,epoch,current=>{current.worker={pid:process.pid,childPid:null,token:workerToken,startedAt:Date.now(),supervisor:true,launchSha256};});
+  const child=spawn(process.execPath,[fileURLToPath(new URL('./worker_supervisor.ts',import.meta.url)),launchPath,launchSha256],{detached:process.platform!=='win32',stdio:['ignore','pipe','pipe'],env:{...process.env,PYTHONDONTWRITEBYTECODE:'1'}});
+  this.ledger.update(id,epoch,current=>{current.worker.childPid=child.pid??null;});
+  let bytes=0;let output='';let spawnError='';
+  child.stdout.setEncoding('utf8');child.stdout.on('data',(data:string)=>{bytes+=Buffer.byteLength(data);if(bytes<=2*1024*1024)output+=data;});
+  child.stderr.on('data',()=>{});child.on('error',error=>{spawnError=error.message;});
+  // 独立监督进程是唯一停止责任层；父执行器只持久化截止时间触发，不发送第二轮信号。
+  const timer=setInterval(()=>{const latest=this.ledger.status(id);if(Date.now()>=latest.request.budget.deadline && !latest.stopRequestedAt)this.ledger.stop(id);},100);
   const exit=await new Promise<number|null>(resolve=>child.once('close',resolve));clearInterval(timer);
-  task=this.ledger.status(id);
-  let processGroupGone=false;try{if(child.pid && process.platform!=='win32')process.kill(-child.pid,0);else processGroupGone=child.exitCode!==null || child.signalCode!==null;}catch(error){processGroupGone=(error as any).code==='ESRCH';}
-  this.ledger.update(id,epoch,current=>{current.worker.exited=true;current.worker.processGroupGone=processGroupGone;current.executionResult={exitCode:exit,outputSha256:digest(output),outputTruncated:bytes>2*1024*1024,spawnError,phase:'submitted',outcome:exit===0?'reply_received':'unknown'};});
-  if(cancelled) {
-   let groupGone=false;try{if(child.pid && process.platform!=='win32')process.kill(-child.pid,0);else groupGone=child.exitCode!==null || child.signalCode!==null;}catch(error){groupGone=(error as any).code==='ESRCH';}
-   this.ledger.update(id,epoch,current=>{current.stopEvidence={processGroupGone:groupGone,ownedWorkerToken:workerToken,exitCode:exit,signal:child.signalCode,at:Date.now(),lateArtifacts:existsSync(join(current.request.output,'manifest.json'))};});
-   this.ledger.transition(id,epoch,'reconciling');
+  task=this.ledger.status(id);let receipt:any;
+  try{receipt=confirmedWorkerReceipt(this.ledger.root,task);}catch{}
+  const processGroupGone=!!receipt;
+  this.ledger.update(id,epoch,current=>{current.worker.exited=true;current.worker.processGroupGone=processGroupGone;current.executionResult={exitCode:exit,outputSha256:digest(output),outputTruncated:bytes>2*1024*1024 || receipt?.outputTruncated===true,spawnError,phase:'submitted',outcome:exit===0?'reply_received':'unknown'};if(receipt)current.workerExitReceipt=receipt;});
+  if(receipt?.stoppedAt && !task.stopRequestedAt){this.ledger.stop(id);task=this.ledger.status(id);}
+  if(task.stopRequestedAt) {
+   this.ledger.update(id,epoch,current=>{current.stopEvidence={processGroupGone,ownedWorkerToken:workerToken,exitCode:receipt?.exitCode??exit,signal:receipt?.signal??child.signalCode,at:Date.now(),lateArtifacts:existsSync(join(current.request.output,'manifest.json'))};});
+   if(this.ledger.status(id).state!=='reconciling')this.ledger.transition(id,epoch,'reconciling');
    this.registerLateArtifacts(id);
-   if(groupGone)return this.ledger.transition(id,epoch,'cancelled');
+   const descendants=(this.ledger.db.prepare('SELECT data FROM tasks').all() as any[]).map(row=>JSON.parse(row.data)).filter(value=>value.request.parentTask===id);
+   if(processGroupGone && descendants.every(value=>['cancelled','failed','completed'].includes(value.state)))return this.ledger.transition(id,epoch,'cancelled');
    return this.ledger.status(id);
+  }
+  if(!receipt) {
+   this.ledger.transition(id,epoch,'reconciling');
+   return this.ledger.update(id,epoch,current=>{current.replayAllowed=false;current.recoveryAction='confirm_owned_workers_stopped';});
   }
   let reply:any;
   try {
-   if(spawnError || bytes>2*1024*1024)throw new Error('worker_reply_unavailable');
+   if(spawnError || bytes>2*1024*1024 || receipt.outputTruncated)throw new Error('worker_reply_unavailable');
    reply=strictJson(output);
    const failure=reportedError(reply);if(failure)throw failure;
    if(exit!==0)throw new Error('worker_failed_without_contract');
@@ -127,7 +123,15 @@ export class Runner {
   let task=this.ledger.status(id);
   if(task.state==='cancelled')return this.registerLateArtifacts(id);
   if(['completed','failed','review_ready','planned'].includes(task.state))return task;
+  if(task.worker?.supervisor && !task.stopRequestedAt && (existsSync(safePath(join(this.ledger.root,id+'.stop'))) || Date.now()>=task.request.budget.deadline)){this.ledger.stop(id);task=this.ledger.status(id);}
   if(task.state!=='reconciling')task=this.ledger.transition(id,task.epoch,'reconciling');
+  if(task.worker?.supervisor && !task.worker.processGroupGone) {
+   let receipt:any;
+   try{receipt=confirmedWorkerReceipt(this.ledger.root,task);}catch(error){return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='inspect_worker_receipt';current.reconcileError=String(error);});}
+   if(!receipt)return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='confirm_owned_workers_stopped';});
+   task=this.ledger.update(id,task.epoch,current=>{current.worker.exited=true;current.worker.processGroupGone=true;current.workerExitReceipt=receipt;});
+   if(receipt.stoppedAt && !task.stopRequestedAt){this.ledger.stop(id);task=this.ledger.status(id);}
+  }
   // 活跃执行器仍有写入权；状态核对不能与它并行验收。
   if(task.stopRequestedAt) {
    this.registerLateArtifacts(id);
@@ -162,6 +166,7 @@ export class Runner {
  async verify(id: string) {
   let task=this.ledger.status(id);
   if(!['running','reconciling','verifying'].includes(task.state))throw new Error('verification_not_ready');
+  if(task.stopRequestedAt || Date.now()>=task.request.budget.deadline || existsSync(safePath(join(this.ledger.root,id+'.stop'))))throw new Error('stopped_task_verification_forbidden');
   if(!task.executionIdentity || task.executionIdentity.sha256!==this.identity().sha256)throw new Error('skill_source_changed');
   const output=safePath(task.request.output);
   const integrity=this.python('delivery.py',[output]);

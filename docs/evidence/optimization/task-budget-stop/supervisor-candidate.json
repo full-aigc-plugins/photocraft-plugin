@@ -1,0 +1,40 @@
+{
+  "schema": "photocraft-supervised-cancellation-candidate/v1",
+  "status": "PASS_LOCAL_NATIVE_FIXED_PENDING",
+  "pluginVersion": "0.1.0-dev.53",
+  "sourceRef": "v0.1.0-dev.44",
+  "files": {
+    "src/harness/runner.ts": "90f26b921625de481e12e4bd1bc80de9befa04a4ada490e3e402c1e478f0617f",
+    "src/harness/worker_supervisor.ts": "600bc4be2021467aab97b7f2784ef925810338c4b0efb590e64d2f39ca7b0cd9",
+    "src/harness/worker_receipt.ts": "cce93fa3af760ecb1d53d4e2643a97ac16ee45e0d5f3de949ca0c7b943b265c1",
+    "src/harness/late_artifacts.ts": "d56b55969bfadda3c114a095e9e52694fe630d1a5dffaabb80c7e624d37455ab",
+    "tests/supervisor.test.ts": "ac1c8ed5cf3a49eabc59c012b76d9db0c9f11a63e26dc355abb58e2be130413e",
+    "tests/runner.test.ts": "1ea3ea727910ff9f9ca328276fae90f3a2a9fd45a37d50e37b44c3a667698e72"
+  },
+  "red": {
+    "test": "interrupted runner retains supervisor ownership and restart confirms stop without resetting budgets",
+    "result": "FAIL",
+    "assertion": "running.worker.supervisor was undefined on old direct-runner implementation"
+  },
+  "harness": {
+    "tests": 78,
+    "pass": 78,
+    "skip": 0,
+    "nativeEnabled": true
+  },
+  "python": {
+    "tests": 48,
+    "pass": 48
+  },
+  "normativeCoverage": {
+    "PC-TX-003-P": "bound worker launch/exit identity and no promotion",
+    "PC-TX-003-N": "real native child active, parent retains occupancy; both stop after confirmation",
+    "PC-TX-003-PERSIST": "runner interruption, fresh ledger stop/deadline, root revision count and resource refusal tests",
+    "PC-TX-003-STOP": "owned signal sender, original native source unchanged, late files independently registered, explicit verify forbidden after stop"
+  },
+  "fixedInstallation": "NOT_RUN",
+  "tasksRemainOpen": [
+    "3.9",
+    "10.12"
+  ]
+}
