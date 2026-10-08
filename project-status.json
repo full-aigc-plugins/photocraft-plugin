@@ -175,7 +175,7 @@
     "pluginWorkingVersion": "0.1.0-dev.58",
     "fixedSkillSourceVersion": "0.1.0-dev.46",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PREINTENT_RESTART_CANDIDATE",
+    "publication": "PARTIAL_PUBLISHED_PREINTENT_RESTART_FIXED_NATIVE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -184,7 +184,7 @@
       "newlyCompleted": 71
     },
     "currentRegressionEvidence": "docs/evidence/optimization/delivery-producer/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/delivery-producer/publication.json"
+    "publicationEvidence": "docs/evidence/optimization/preintent-restart/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -346,11 +346,11 @@
     "publicationEvidence": "docs/evidence/optimization/delivery-producer/publication.json"
   },
   "preintentRestartCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "pluginVersion": "0.1.0-dev.58",
     "skillSourceVersion": "0.1.0-dev.46",
     "evidence": "docs/evidence/optimization/preintent-restart/",
-    "fixedInstallation": "NOT_RUN",
+    "fixedInstallation": "PASS_91_HARNESS_10_NATIVE",
     "closedTasks": [],
     "remainingTasks": [
       "3.6",
@@ -360,6 +360,7 @@
       "durable progress after hard worker SIGKILL before failure record",
       "complete crash/restart matrix",
       "complete V1"
-    ]
+    ],
+    "publicationEvidence": "docs/evidence/optimization/preintent-restart/publication.json"
   }
 }

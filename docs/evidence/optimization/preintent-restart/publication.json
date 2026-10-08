@@ -1,0 +1,62 @@
+{
+  "schema": "photocraft-preintent-restart-publication/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.58",
+    "commit": "0e27b2b049308a649df40ac0215c5793799acd3e",
+    "assetSha256": "49c9f0bf91857205c709734acc1d23228a148bbbaea17e4cedd954ae4c08c9e5",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.58",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.46",
+    "commit": "c1691aa8182966d50032ba740bb45371c0da2ca6",
+    "assetSha256": "c9465e3b127d994d69de7916de679683876a37780273f33d02159177451067c2",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.46",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37838266885,
+      "headSha": "0e27b2b049308a649df40ac0215c5793799acd3e",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37838266939,
+      "headSha": "0e27b2b049308a649df40ac0215c5793799acd3e",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37838262435,
+      "headSha": "0e27b2b049308a649df40ac0215c5793799acd3e",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37838262438,
+      "headSha": "0e27b2b049308a649df40ac0215c5793799acd3e",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    }
+  ],
+  "fixedSummarySha256": "5f732cf9b2667563b78e461daa2bfdcf892865e9ba18e977208ef4ccb71c4084",
+  "fixedNativeSha256": "088e0caffd5841252341b0dca9ed1703c0ecdea7bd31666fa69be98fedde94f3",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Exact pinned-plan reuse after actual pre-intent SIGKILL and ledger reopening, unchanged original budget and single intent/native title. Full hard-worker-kill durable progress/restart, model/creative and V1 remain open."
+}
