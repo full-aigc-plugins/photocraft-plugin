@@ -1,6 +1,6 @@
 # Checkpoint sources and explicit recovery revisions
 
-This is a PC-TX-002 candidate. Fixed publication and the full crash matrix remain unverified; tasks3.6/10.9 stay open. The active runtime is still0.2.0-craft.1.
+All nine PC-TX-002 scenarios pass on public fixed plugin dev.61 / source dev.48 for macOS arm64; tasks3.6/10.9 complete. The six-window audit includes lost supervision without a receipt, which remains reconciling and refuses revision even when process groups disappear. The active runtime remains0.2.0-craft.1. Creative/model and full V1 gates remain separate. [Current audit](evidence/optimization/task-recovery/acceptance-audit.json).
 
 Failed stages retain their original paths and now include a hash-covered `recovery-context.json`: original plan, execution identity, validated bindings, registered assets and capability snapshot. Legacy stages without this context remain eligible for read-only reopening but cannot acquire revision rights through a fabricated delivery manifest.
 
@@ -26,13 +26,13 @@ The standalone workflow accepts `--checkpoint <failed-output> --write-root <auth
 
 A checkpoint is not a technically accepted parent artifact. New craft-artifact/v1 sourceRefs identify `photocraft-checkpoint:<original-id>` and the saved project digest; evidenceRefs include the checkpoint origin. No successful parent manifest/artifact is fabricated. Creative and acceptance states remain NOT_RUN after technical success and require independent review and acceptance.
 
-Candidate tests: `test_checkpoint_source.py` and `checkpoint-revision.test.ts`, including actual native save-reply loss, retained original files, explicit title repair, process proof, authority, budget, proposal idempotency and lineage. Native plugin tests require PHOTOCRAFT_NATIVE_TEST=1, PHOTOCRAFT_SKILL_ROOT, PHOTOCRAFT_SOURCE_ROOT (an immutable source snapshot containing injection fixtures) and PHOTOCRAFT_PYTHON. Fixed installation, full restart coverage, host model, GUI and full V1 require separate evidence.
+Candidate tests: `test_checkpoint_source.py` and `checkpoint-revision.test.ts`, including actual native save-reply loss, retained original files, explicit title repair, process proof, authority, budget, proposal idempotency and lineage. Native plugin tests require PHOTOCRAFT_NATIVE_TEST=1, PHOTOCRAFT_SKILL_ROOT, PHOTOCRAFT_SOURCE_ROOT (an immutable source snapshot containing injection fixtures) and PHOTOCRAFT_PYTHON. Current fixed installation and all PC-TX-002 scenarios are linked in the audit above; host model, mutable GUI ownership and full V1 require separate evidence.
 
-## Full-delivery producer candidate
+## Full-delivery producer binding
 
-Successful supervised deliveries retain taskId, taskIdentity, epoch, workerToken and sourceSha256 in hash-covered `task-binding.json` and the manifest. Harness verification matches the original ledger before native reopening. Legacy unbound packages remain independently readable but cannot restore current task acceptance. Same-plan foreign packages and self-consistent identity substitutions must be refused. This candidate is not published or fixed-install accepted; the full SIGKILL/restart matrix and creative acceptance remain open.
+Successful supervised deliveries retain taskId, taskIdentity, epoch, workerToken and sourceSha256 in hash-covered `task-binding.json` and the manifest. Harness verification matches the original ledger before native reopening. Legacy unbound packages remain independently readable but cannot restore current task acceptance. Same-plan foreign packages and self-consistent identity substitutions must be refused. The public fixed dev.61 / source dev.48 installation passes the producer and six-window PC-TX-002 audit; creative acceptance remains independent.
 
-## Pre-intent interruption candidate
+## Pre-intent interruption
 
 The runner pins and flushes the plan before claiming execution. An exact regular single-link file is reused only while the original ledger task remains planned and unattempted. Budget, idempotency identity and original bytes remain unchanged. Truncated, foreign, linked or directory placeholders are preserved and refused. Tasks with persisted intent still require reconcile; plan reuse grants no replay permission.
 
@@ -47,9 +47,9 @@ flowchart LR
   D -->|Unknown result| G[Reconcile without replay]
 ```
 
-This covers the pre-intent window only. Durable progress before a hard worker interruption and the complete recovery matrix remain open.
+The pre-intent case is one of the nine current scenarios. The public fixed audit also covers hard-worker progress and the six interruption windows.
 
-## Hard worker interruption progress candidate
+## Hard worker interruption progress
 
 status observes the original plan, inputs, source version, runtime, worker token and stage inode without writing. Foreign or changing snapshots are refused. Owned exit receipts and process-group confirmation remain separate. Observation creates no checkpoint and promotes no technical or creative status. reconcile may return inspect_interrupted_stage while retaining the unknown outcome and original epoch. A stage without failure.json is neither fabricated as failed nor directly eligible for recover.
 

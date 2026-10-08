@@ -1,0 +1,197 @@
+{
+  "schema": "photocraft-requirement-acceptance/v1",
+  "requirement": "PC-TX-002",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.61",
+    "commit": "a08a85fbadd9e920b1e74e023b7f5d9dbe5da0fe",
+    "assetSha256": "f3e5e31f8e1bcfa0d664cbbc710c103d1beebde7c2e691f07f55eb655894211e",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.61",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.48",
+    "commit": "9c43af2d0a820fb0bacf60571112a31099c8e4fb",
+    "assetSha256": "49968334b8cc19548bc6c69e78e2dbb8f77b4da4094e2a42f66d50ec197786ee",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.48",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "publicRuntimeVersion": "0.2.0-craft.1",
+  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "skillExecutorSha256": "a06d96691b879db98d570d52b5def1809f056dbced23ac72d446a571ee7b449b",
+  "specSha256": "ebdef98aae61651aa954fbbff0932ba07ab261dfe166f19d6e195bb85e0e54ed",
+  "normativeScenarios": [
+    {
+      "id": "PC-TX-002-P",
+      "result": "PASS",
+      "evidence": [
+        "fixed-interrupted-restart.json",
+        "fixed-preintent-native.json"
+      ],
+      "assertion": "Same persisted identity and exactly one intent; successful observed delivery or explicitly authorized child, no unknown replay"
+    },
+    {
+      "id": "PC-TX-002-N",
+      "result": "PASS",
+      "evidence": [
+        "fixed-interrupted-restart.json",
+        "fixed-checkpoint-native.json"
+      ],
+      "assertion": "Actual post-save lost replies/runner and worker SIGKILL preserve original epoch/files, one original save, no duplicate edit"
+    },
+    {
+      "id": "PC-TX-002-STATUS",
+      "result": "PASS",
+      "evidence": [
+        "fixed-interrupted-restart.json",
+        "fixed-progress-native.json"
+      ],
+      "assertion": "Fresh independent CLI query preserves task and original file bytes; same key returns original, different input refuses; original capability/plan/runtime fenced"
+    },
+    {
+      "id": "PC-TX-002-RECONCILE",
+      "result": "PASS",
+      "evidence": [
+        "fixed-checkpoint-native.json",
+        "fixed-recovery-native.json",
+        "fixed-interrupted-restart.json"
+      ],
+      "assertion": "Fresh readonly reopen, exact original files and process proof; valid delivery verifies, explicit checkpoint child retains cumulative budget; absent supervisor proof stays reconciling"
+    },
+    {
+      "id": "PC-TX-002-PROGRESS",
+      "result": "PASS",
+      "evidence": [
+        "fixed-progress-native.json",
+        "fixed-interrupted-restart.json"
+      ],
+      "assertion": "Submitted save remains unknown and observable without invented failure; live worker observation does not confer permission"
+    },
+    {
+      "id": "PC-TX-002-INTERRUPTED",
+      "result": "PASS",
+      "evidence": [
+        "fixed-interrupted-restart.json",
+        "fixed-checkpoint-native.json"
+      ],
+      "assertion": "Six actual parent runner/process windows, original stage and masked smart asset retained, input/project/extra-file changes refuse; versioned plan identity cross-language tests pass"
+    },
+    {
+      "id": "PC-TX-002-PREINTENT",
+      "result": "PASS",
+      "evidence": [
+        "fixed-preintent-native.json",
+        "fixed-harness.txt"
+      ],
+      "assertion": "Actual SIGKILL before intent resumes same pinned inode/epoch0 task once; truncated/foreign/linked/nonregular plans refuse in current fixed tests"
+    },
+    {
+      "id": "PC-TX-002-PRODUCER",
+      "result": "PASS",
+      "evidence": [
+        "fixed-producer-native.json",
+        "fixed-recovery-native.json"
+      ],
+      "assertion": "Foreign complete delivery including same-plan and five self-consistent producer substitutions refuses before native reopen; original restoration revalidates without replay"
+    },
+    {
+      "id": "PC-TX-002-CORRUPT",
+      "result": "PASS",
+      "evidence": [
+        "fixed-interrupted-restart.json",
+        "fixed-harness.txt"
+      ],
+      "assertion": "Real saved native project and progress preserved while missing intent, malformed SQLite and unsupported metadata schema refuse; no migration or silent reconstruction"
+    }
+  ],
+  "closedTaskIds": [
+    "3.6",
+    "10.9"
+  ],
+  "sourceRegression": {
+    "tests": 306,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "evidence": "../interrupted-checkpoint/source-validation.json",
+    "reused": true,
+    "reason": "Exact published source dev.48 source/test fingerprint unchanged; no source or runtime changes in dev.61"
+  },
+  "fixedInstallation": {
+    "status": "PASS",
+    "pluginVersion": "0.1.0-dev.61",
+    "skillSourceRef": "v0.1.0-dev.48",
+    "harness": {
+      "tests": 97,
+      "pass": 97,
+      "fail": 0,
+      "skipped": 0
+    },
+    "nativeHarnessTests": 12,
+    "readonlyNativeFaults": 14,
+    "healthyReadonlyPaths": 2,
+    "installedTreeUnchanged": true,
+    "installedTreeSha256": "63077fbcc4e1b867a92f975038d88282b61e46557e7a5a232d694c90ece5632d",
+    "harnessLogSha256": "ac50f024caea0562e0f9cbb7de29f55f34e636957077beaf64875d43e369c3dc",
+    "integerOverflowMethods": 3,
+    "integerOverflowPublicRefusals": 52,
+    "integerOverflowInstallCalls": 0,
+    "integerOverflowSessionCalls": 0,
+    "lineageNativeCases": 17,
+    "lineageNativeReportSha256": "b1247eaa4993ec4a331dc2ab015c95c0abf6b52fa3892ad4aeaf53acb2e02fd1",
+    "closedTasks": [],
+    "scope": "Actual public-tag installed canonical skill,97 Harness tests and52 independent-entry integer refusals; native craft.5 supervision is not activated or accepted; not complete raw/streaming/entry/counter/model/creative acceptance"
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37847023963,
+      "headSha": "a08a85fbadd9e920b1e74e023b7f5d9dbe5da0fe",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37847024001,
+      "headSha": "a08a85fbadd9e920b1e74e023b7f5d9dbe5da0fe",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37847019245,
+      "headSha": "a08a85fbadd9e920b1e74e023b7f5d9dbe5da0fe",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37847018899,
+      "headSha": "a08a85fbadd9e920b1e74e023b7f5d9dbe5da0fe",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    }
+  ],
+  "evidenceSha256": {
+    "fixed-summary.json": "7671318835e3fdc525530d3bcc9921d519d6710aa556249a8cbf184c0693f339",
+    "fixed-host-public.json": "1b950ff7b07275d6ba5f8f73cfe2f93a4da60d52abc22a607cdd48e8845ddf55",
+    "fixed-interrupted-restart.json": "ac5444a3dc78114fb751e39bcaf892f680362dd3c62f6954d4115f21db2a041f",
+    "fixed-progress-native.json": "e9ac3620ba56a7532b8f184e31321e77a1f47263e2bd44371f13104940e655e9",
+    "fixed-preintent-native.json": "b27f55ac5f70eb2c852d0d3ab05536d9d5cc7e523c802e7fbae4658aeb64a36e",
+    "fixed-producer-native.json": "e4eb8647c3b501ddd9c207e79408cfce023dc79f6ea7dfd09d02bca04758f409",
+    "fixed-checkpoint-native.json": "7be0b0c711c7981819d71edc6b1d5a463d86682f8ce22f24d87b665aa1352aef",
+    "fixed-recovery-native.json": "d266dbdba98e915bf12b1def9d17000d06f82d9bf124f45d8ec44619f5dba6df",
+    "fixed-harness.txt": "ac50f024caea0562e0f9cbb7de29f55f34e636957077beaf64875d43e369c3dc"
+  },
+  "testImplementationSha256": "f61868e153fbc3a6070c796e7f7c8c01b6625756b0713cc2ca41af19d8be06bc",
+  "creativeAcceptance": "NOT_RUN",
+  "fullV1": "NOT_RUN",
+  "scope": "All nine current PC-TX-002 scenarios for public macOS arm64 local native workflow. No cloud submitId invented; no unknown operation replay. Full command matrix, GUI mutable-owner contract, raw/streaming/craft.5, model/creative/permissions and other open requirements are separate. Native fixture reports retain their local-only fixedInstallation fields; actual fixed execution is established by public tag host receipt, installed tree digest and captured installed test run."
+}

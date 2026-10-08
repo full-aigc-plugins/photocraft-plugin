@@ -1,10 +1,10 @@
 # PhotoCraft Agent Plugin
 
-dev.61候选逐场景审计PC-TX-002，锁定源dev.48，补充监督进程丢失且无退出回执的真实边界。固定公开安装待完成，3.6／10.9在逐场景证据核验前保持开放。
+dev.61／源dev.48已发布：固定公开macOS arm64安装通过全部9个PC-TX-002规范场景，包括真实六窗口、监督丢失无回执拒绝、独立只读查询及损坏状态保全。3.6／10.9完成；现135/157完成、22开放。创作／模型及完整V1仍未验收。[验收](docs/evidence/optimization/task-recovery/acceptance-audit.json)。
 
-dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。公开固定macOS arm64安装通过全部PC-TX-003场景，3.9／10.12完成；现133/157完成、24开放。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
+dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。公开固定macOS arm64安装通过全部PC-TX-003场景，3.9／10.12完成；当时133/157完成、24开放。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
 
-dev.52／源dev.44已发布：实际固定macOS arm64原生副本及不可变ArtCraft109消费者通过全部PC-AR-001规范场景，17项逐文件替换拒绝、旧dev.50只读兼容。5.3／11.9完成，现131/157完成、26开放；创作接受及来源真实性未证明。[验收](docs/evidence/optimization/artifact-lineage/acceptance-audit.json)。
+dev.52／源dev.44已发布：实际固定macOS arm64原生副本及不可变ArtCraft109消费者通过全部PC-AR-001规范场景，17项逐文件替换拒绝、旧dev.50只读兼容。5.3／11.9完成，当时131/157完成、26开放；创作接受及来源真实性未证明。[验收](docs/evidence/optimization/artifact-lineage/acceptance-audit.json)。
 
 dev.52目标技能源dev.44：PSD门禁保留在公共schema允许的观察字段。源候选已通过实际固定ArtCraft109消费及17项逐文件替换拒绝；固定发行证明待完成。[合同](docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md)。
 

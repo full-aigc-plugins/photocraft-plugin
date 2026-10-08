@@ -1,6 +1,6 @@
 # 检查点来源与显式恢复修订
 
-本轮为PC-TX-002候选实现，固定发布与完整崩溃矩阵尚未验收，任务3.6／10.9保持开放。活动运行时仍为0.2.0-craft.1。
+公开固定插件dev.61／源dev.48在macOS arm64通过全部9个PC-TX-002规范场景，3.6／10.9完成。六窗口包含监督丢失且无退出回执：即使进程组消失仍保持reconciling并拒绝修订。活动运行时仍为0.2.0-craft.1；创作／模型与完整V1门禁保持独立。[当前验收](evidence/optimization/task-recovery/acceptance-audit.json)。
 
 失败暂存保留原位置的工程、素材、回执，并新增受failure文件清单摘要保护的`recovery-context.json`：原计划、执行身份、已验证绑定、登记资产及能力快照。缺少上下文的旧暂存仍可只读重开，但不能补造manifest获得恢复写入权。
 
@@ -26,13 +26,13 @@ flowchart LR
 
 检查点不是technical PASS的父产物。新产物使用现有craft-artifact/v1的sourceRefs引用`photocraft-checkpoint:<原任务ID>`及工程摘要，并把来源证明列入evidenceRefs，不伪造父交付manifest或父artifact。新产物技术通过后creative和acceptance仍为NOT_RUN，须独立评审与接受。
 
-验证：候选源测试`tests/test_checkpoint_source.py`涵盖保存回复丢失后修改现有标题、原文件保全、计划／记录／工程／资产身份拒绝；插件`tests/checkpoint-revision.test.ts`涵盖原退出证明、授权／预算／提案幂等与新产物血缘。开启插件原生测试时需`PHOTOCRAFT_NATIVE_TEST=1`、`PHOTOCRAFT_SKILL_ROOT`、`PHOTOCRAFT_SOURCE_ROOT`（包含不可变测试代理fixture的源仓快照）及`PHOTOCRAFT_PYTHON`。这些候选测试不替代公开安装、完整重启矩阵、宿主模型、GUI或完整V1验收。
+验证：候选源测试`tests/test_checkpoint_source.py`涵盖保存回复丢失后修改现有标题、原文件保全、计划／记录／工程／资产身份拒绝；插件`tests/checkpoint-revision.test.ts`涵盖原退出证明、授权／预算／提案幂等与新产物血缘。开启插件原生测试时需`PHOTOCRAFT_NATIVE_TEST=1`、`PHOTOCRAFT_SKILL_ROOT`、`PHOTOCRAFT_SOURCE_ROOT`（包含不可变测试代理fixture的源仓快照）及`PHOTOCRAFT_PYTHON`。当前公开安装及全部PC-TX-002场景证据见上方验收；宿主模型、可变GUI写入权及完整V1仍另行验收。
 
-## 完整交付生产者候选
+## 完整交付生产者绑定
 
-成功交付将监督器提供的 taskId、taskIdentity、epoch、workerToken、sourceSha256 写入摘要覆盖的 `task-binding.json` 和清单。Harness 核对原账本身份后才重开工程；旧无绑定交付仍可独立只读核验，但不能恢复当前任务接受状态。相同计划外来包与自洽篡改必须拒绝。此候选尚未公开发布或固定安装；完整 SIGKILL／重启矩阵与创作接受仍开放。
+成功交付将监督器提供的 taskId、taskIdentity、epoch、workerToken、sourceSha256 写入摘要覆盖的 `task-binding.json` 和清单。Harness 核对原账本身份后才重开工程；旧无绑定交付仍可独立只读核验，但不能恢复当前任务接受状态。相同计划外来包与自洽篡改必须拒绝。公开固定dev.61／源dev.48已通过生产者和六窗口PC-TX-002审计；创作接受保持独立。
 
-## 认领前中断候选
+## 认领前中断
 
 执行器在认领前固定并刷盘计划。只有账本仍为 planned／未尝试时，才复用与原请求字节完全一致的普通单链接文件；预算、幂等身份和原文件不变。截断、外来、链接或目录占位保全并拒绝。已登记意图的任务继续走 reconcile，不因计划可复用而重放。
 
@@ -47,9 +47,9 @@ flowchart LR
   D -->|结果未知| G[reconcile 禁止重放]
 ```
 
-这只覆盖认领前窗口；工作进程硬中断前的进度持久化和完整恢复矩阵仍开放。
+认领前窗口是当前9个规范场景之一；固定公开审计也覆盖工作进程硬中断持久进度及六个中断窗口。
 
-## 原工作进程硬中断进度候选
+## 原工作进程硬中断进度
 
 status 只读关联原计划、输入、源版本、运行时、工作令牌及暂存 inode，拒绝外来或变化中的快照。监督回执及原进程组确认另外显示；观察本身不创建检查点或升级技术／创作状态。reconcile 可以返回 inspect_interrupted_stage，仍保留未知结果和原 epoch。缺少 failure.json 的暂存不能补造失败记录或直接 recover。
 

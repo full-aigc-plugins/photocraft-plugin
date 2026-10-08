@@ -38,7 +38,7 @@
 - [ ] 3.3 [PC-TX-001] 完成“版本绑定与单写”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.2。产物：evidence/pc-tx-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
 - [x] 3.4 [PC-TX-002] 编写能暴露“幂等与不明确结果恢复”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 3.5 [PC-TX-002] 在 src/harness/ 账本、租约与恢复 实现“幂等与不明确结果恢复”的最小行为，不扩大支持范围。责任：Harness owner；前置：3.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 3.6 [PC-TX-002] 完成“幂等与不明确结果恢复”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.5。产物：evidence/pc-tx-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 3.6 [PC-TX-002] 完成“幂等与不明确结果恢复”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.5。产物：evidence/pc-tx-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定插件dev.61／源dev.48的全部9个PC-TX-002规范场景及真实六窗口通过；证据：`docs/evidence/optimization/task-recovery/acceptance-audit.json`。其他V1门禁保持独立。
 - [x] 3.7 [PC-TX-003] 编写能暴露“取消与预算边界”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 3.8 [PC-TX-003] 在 src/harness/ 账本、租约与恢复 实现“取消与预算边界”的最小行为，不扩大支持范围。责任：Harness owner；前置：3.7。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 3.9 [PC-TX-003] 完成“取消与预算边界”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.8。产物：evidence/pc-tx-003/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 2026-10-09固定技能源dev.44／插件dev.54在macOS arm64通过全部PC-TX-003规范场景：真实原生父子中断取消、原截止时间、预算／占用保留、独立迟到原生回复登记及原生源文件保全；证据：`docs/evidence/optimization/task-budget-stop/acceptance-audit.json`。未知停止仍核对；完整恢复、GUI所有权及创作验收另计。
@@ -238,7 +238,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 10.7 [PC-TX-002] 建立提交前后崩溃、丢失回执、进程已退出但产物存在、损坏／旧账本、同键不同输入和查询无副作用的失败测试。责任：Harness owner；前置：10.5；关联原 3.4–3.6；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/task-recovery/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 10.8 [PC-TX-002] 实现插件本地 photocraft-harness 与持久化 status／reconcile，关联任务、意图、回执和检查点；保全旧记录，核清后按授权恢复为检查或关联新修订，不重放未知编辑。责任：Harness owner；前置：10.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 10.9 [PC-TX-002] 验证真实保存后中断、进程与文件核对、独立查询、损坏状态拒绝和可核验检查点恢复；记录重复编辑次数为零及证据不足时持续 reconciling。责任：QA owner；前置：10.8 及对应固定来源可用；产物：docs/evidence/optimization/task-recovery/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 10.9 [PC-TX-002] 验证真实保存后中断、进程与文件核对、独立查询、损坏状态拒绝和可核验检查点恢复；记录重复编辑次数为零及证据不足时持续 reconciling。责任：QA owner；前置：10.8 及对应固定来源可用；产物：docs/evidence/optimization/task-recovery/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定插件dev.61／源dev.48的全部9个PC-TX-002规范场景及真实六窗口通过；证据：`docs/evidence/optimization/task-recovery/acceptance-audit.json`。其他V1门禁保持独立。
 
 - [x] 10.10 [PC-TX-003] 建立重启预算归零、父子重复重试、取消后迟到结果、非任务进程误终止及磁盘预留不足测试。责任：Harness owner；前置：10.8；关联原 3.7–3.9；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/task-budget-stop/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 10.11 [PC-TX-003] 实现持久时间／截止时间／并发／磁盘与修订计数、stop 对 cancel 合同的映射；只控制自有进程，未核清前保留占用并停止新操作。责任：Harness owner；前置：10.10；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
@@ -350,3 +350,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09独立中断检查点发行核验：源dev.48／插件dev.60公开ZIP摘要与标签一致；306项源回归零跳过，97项Harness及48项Python通过。隔离Codex发现14技能，实际安装副本97项Harness（含12项原生）、14例只读故障、52例整数拒绝及原生血缘通过，安装树不变；发布提交与标签四项CI通过。真实父CLI与工作进程SIGKILL、账本重开五窗口通过；独立检查点只读核对、显式标题副本恢复、蒙版智能素材及原文件保全通过，未知操作不重放。完整逐场景验收及其他V1门禁未完成，3.6／10.9保持开放，总计133/157完成、24开放，本次关闭0项。证据：`docs/evidence/optimization/interrupted-checkpoint/publication.json`。
 
 2026-10-09恢复验收候选dev.61：锁定源dev.48，源306项原生／桌面全回归按未变化文件摘要复用。97项Harness零跳过通过，真实父CLI／监督／工作进程全部消失且无回执仍保持reconciling、禁止检查点和修订；同一保存工程上的独立status不改文件、同键返回原任务、异输入冲突、损坏意图／SQLite／未知metadata版本原样拒绝。六窗口候选通过，规范9场景将对公开安装逐项审计；固定发行之前3.6／10.9不勾选，总计133/157完成、24开放。测试初稿误用SQLite user_version而非项目metadata.version，已修正fixture并重跑通过，无运行时实现变更。证据：`docs/evidence/optimization/task-recovery/audit-plan.json`。
+
+2026-10-09恢复逐场景验收：公开固定dev.61／源dev.48的全部9个PC-TX-002场景通过，97项Harness（12项原生）零跳过及安装树不变；实际监督丢失无回执仍禁止写入，独立status、幂等冲突、原生检查点／显式副本、同计划外来生产者和损坏／旧状态保全均有当前证据。3.6／10.9完成，总计135/157完成、22开放。源306项回归按原发行未变化摘要复用；创作／模型、逐命令、raw／streaming、可变GUI写入权和完整V1未由此验收。证据：`docs/evidence/optimization/task-recovery/acceptance-audit.json`。

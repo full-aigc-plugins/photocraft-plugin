@@ -1,10 +1,10 @@
 # PhotoCraft Agent Plugin
 
-dev.61 candidate audits all PC-TX-002 scenarios against pinned source dev.48, including supervisor loss without an exit receipt. Fixed public installation is pending; tasks3.6/10.9 stay open until scenario evidence is verified.
+Published dev.61 / source dev.48: all nine PC-TX-002 scenarios pass on the fixed public macOS arm64 installation, including six actual interruption windows, missing-supervisor proof refusal, readonly status and corrupt-state preservation. Tasks3.6/10.9 complete;135/157 complete,22 open. Creative/model and full V1 remain unverified. [Audit](docs/evidence/optimization/task-recovery/acceptance-audit.json).
 
-dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. All PC-TX-003 scenarios pass on public fixed macOS arm64 installation; tasks3.9/10.12 complete.133/157 complete,24 open. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
+dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. All PC-TX-003 scenarios pass on public fixed macOS arm64 installation; tasks3.9/10.12 complete. At that release133/157 were complete,24 open. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
 
-Published dev.52 / source dev.44: all PC-AR-001 scenarios pass on actual fixed macOS arm64 native copies and the immutable ArtCraft109 consumer.17 indexed-file replacements refuse; old dev.50 remains read-only. Tasks5.3/11.9 complete;131/157 complete,26 open. Creative acceptance and source authenticity remain unproven. [Audit](docs/evidence/optimization/artifact-lineage/acceptance-audit.json).
+Published dev.52 / source dev.44: all PC-AR-001 scenarios pass on actual fixed macOS arm64 native copies and the immutable ArtCraft109 consumer.17 indexed-file replacements refuse; old dev.50 remains read-only. Tasks5.3/11.9 complete; at that release131/157 were complete,26 open. Creative acceptance and source authenticity remain unproven. [Audit](docs/evidence/optimization/artifact-lineage/acceptance-audit.json).
 
 dev.52 targets source dev.44: preserve the PSD gate in public-schema observations. Actual pinned ArtCraft109 consumption and all17 indexed-file replacements pass on the source candidate; fixed publication proof is pending. [Contract](docs/PhotoCraft-Artifact-Lineage-Acceptance.md).
 
@@ -42,7 +42,7 @@ PSD required-feature delivery now refuses unaccepted observed losses and require
 
 Development release dev.48 includes SQLite task control, bound review and bounded revisions, with standalone dev.42 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
-Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 129/157 complete, with 28 gates open.
+Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). At that release,129/157 were complete, with28 gates open.
 
 
 Fixed-installation domain acceptance closes seven more tasks: 16 normative scenarios for recursive layers, mask protection, CJK text and complex layout/filters pass. Unavailable layout metrics, editable smart filters and non-RGB8 protection explicitly refuse; PSD required-feature gating is verified separately below; other gates remain open. See [acceptance and rerun instructions](docs/PhotoCraft-Fixed-Domain-Acceptance.md).
