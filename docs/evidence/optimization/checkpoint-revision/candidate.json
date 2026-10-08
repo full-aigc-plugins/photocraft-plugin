@@ -1,0 +1,17 @@
+{
+  "schema": "photocraft-checkpoint-revision-candidate/v1",
+  "status": "PARTIAL_CANDIDATE",
+  "harness": {
+    "tests": 86,
+    "pass": 86,
+    "fail": 0,
+    "skipped": 0
+  },
+  "sourceRegression": "PASS_292_ZERO_SKIP",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Saved failed-stage fork, bound explicit recovery, preserved original intent and files; full crash/restart and fixed publication remain open"
+}

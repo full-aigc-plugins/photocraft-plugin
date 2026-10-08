@@ -8,6 +8,7 @@ import importlib.util
 import json
 import math
 import os
+import platform
 from pathlib import Path
 import re
 import shutil
@@ -106,7 +107,7 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required: $.operations')
     allowed = {'document', 'operations', 'assets', 'exports', 'minimumLayers',
-               'expectedProjectSha256', 'expectedManifestSha256', 'protectedRegions', 'variant', 'assertions', 'preserveObjects', 'filterContract','acceptedFontSubstitutions','psdPolicy','flatExport','assetProvenance'}
+               'expectedProjectSha256', 'expectedManifestSha256', 'expectedCheckpointSha256', 'expectedCheckpointPlanSha256', 'protectedRegions', 'variant', 'assertions', 'preserveObjects', 'filterContract','acceptedFontSubstitutions','psdPolicy','flatExport','assetProvenance'}
     if set(plan) - allowed:
         raise ValueError('unknown_plan_field: $.' + sorted(set(plan) - allowed)[0])
     # 保留旧的片段校验入口；完整 execute 总会传入已核验的绑定再严格检查。
@@ -121,7 +122,7 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
         raise ValueError('invalid_json_parameters') from None
     if 'minimumLayers' in plan and (type(plan['minimumLayers']) is not int or plan['minimumLayers'] < 0):
         raise ValueError('invalid_minimum_layers')
-    for key in ('expectedProjectSha256', 'expectedManifestSha256'):
+    for key in ('expectedProjectSha256', 'expectedManifestSha256', 'expectedCheckpointSha256', 'expectedCheckpointPlanSha256'):
         if key in plan and (not isinstance(plan[key], str) or not re.fullmatch(r'[a-f0-9]{64}', plan[key])):
             raise ValueError('invalid_expected_digest: ' + key)
     assets = plan.get('assets', {})
@@ -243,11 +244,22 @@ def call_tool(session, name, args, state, receipts):
     return value
 
 
-def preflight(plan, output=None, source=None):
+def preflight(plan, output=None, source=None, checkpoint=None, write_root=None):
+    validate(plan,check_references=False)
+    if checkpoint and ('expectedManifestSha256' in plan or source or not write_root):raise ValueError('checkpoint_source_options_invalid')
+    checkpoint_data=load_module('checkpoint_source').snapshot(checkpoint,write_root,plan) if checkpoint else None
+    if checkpoint_data:
+        source=checkpoint_data['stage']
+        runtime_lock=load_module('delivery').read_json(Path(__file__).with_name('runtime.lock.json'))
+        runtime_key=platform.system().lower()+'-'+platform.machine().lower()
+        expected_runtime=runtime_lock.get('artifacts',{}).get(runtime_key,{}).get('binarySha256')
+        if expected_runtime is None or checkpoint_data['context']['executionIdentity']['runtimeSha256']!=expected_runtime:raise ValueError('checkpoint_runtime_conflict')
+    elif 'expectedCheckpointSha256' in plan or 'expectedCheckpointPlanSha256' in plan:raise ValueError('checkpoint_source_required')
     validate(plan, check_references=not bool(source))
     if output is not None:
         output = Path(output).absolute()
         output = output.parent.resolve()/output.name
+        if checkpoint:load_module('checkpoint_source').safe(output,write_root)
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
     if 'protectedRegions' in plan and not source:raise ValueError('protected_source_required')
@@ -263,12 +275,12 @@ def preflight(plan, output=None, source=None):
         source_project = source / 'project.pcraft'
         if source_project.is_symlink():
             raise ValueError('invalid_source')
-        source_manifest_hash = sha(source / 'manifest.json')
-        prior = load_module('delivery').read_json(source / 'manifest.json')
+        source_manifest_hash = checkpoint_data['recordSha256'] if checkpoint_data else sha(source / 'manifest.json')
+        prior = {'files':{'project.pcraft':checkpoint_data['projectSha256']},**checkpoint_data['context']} if checkpoint_data else load_module('delivery').read_json(source / 'manifest.json')
         source_hash = sha(source_project)
         if source_hash != prior['files']['project.pcraft'] or source_hash != plan.get('expectedProjectSha256'):
             raise ValueError('revision_conflict')
-        load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
+        if not checkpoint_data:load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
         if 'document' in plan:
             raise ValueError('revision_cannot_recreate_document')
         bindings = prior['bindings']
@@ -276,7 +288,7 @@ def preflight(plan, output=None, source=None):
     elif 'document' not in plan:
         raise ValueError('document_required')
     validate(plan, bindings, inherited_assets=inherited_assets)
-    if source:
+    if source and not checkpoint_data:
         source_model=load_module('delivery').read_json(source/'native.json')
         if 'protectedRegions' in plan and (source_model.get('mode')!='Rgb' or source_model.get('depth')!=8):raise ValueError('protected_pixel_mode_unsupported: RGB8 native source required')
         known=set(load_module('domain_assertions').index(source_model))
@@ -287,8 +299,9 @@ def preflight(plan, output=None, source=None):
             if operation['command'].startswith(('layer.new','asset.place','type.create','shape.create')) or operation['command']=='native.command':creates=True
     load_module('flat_export').provenance_preflight(plan,inherited_assets,source)
     if 'flatExport' in plan:
-        model=source_model if source else plan['document']
-        if model.get('depth',8)!=8 or model.get('mode','rgb').lower() not in ('rgb',):raise ValueError('flat_source_mode_unsupported: RGB8 required')
+        if not checkpoint_data:
+            model=source_model if source else plan['document']
+            if model.get('depth',8)!=8 or model.get('mode','rgb').lower() not in ('rgb',):raise ValueError('flat_source_mode_unsupported: RGB8 required')
     registered=set(inherited_assets)|set(plan.get('assets',{}))
     for operation in plan['operations']:
         if operation['command'] in SMART_SOURCE | {'asset.placeSmart'} and operation['params']['asset'] not in registered:raise ValueError('unregistered_asset_path')
@@ -302,14 +315,17 @@ def preflight(plan, output=None, source=None):
     return output, source, source_project, source_hash, source_manifest_hash, bindings, inherited_assets
 
 
-def execute(plan, output, runtime_home=None, source=None):
-    output, source, source_project, source_hash, source_manifest_hash, bindings, inherited_assets = preflight(plan, output, source)
+def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write_root=None):
+    output, source, source_project, source_hash, source_manifest_hash, bindings, inherited_assets = preflight(plan, output, source, checkpoint, write_root)
     installed = load_module('bootstrap').install(
         json.loads(Path(__file__).with_name('runtime.lock.json').read_text()),
         runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
+    if checkpoint:
+        load_module('checkpoint_source').snapshot(checkpoint,write_root,plan,installed['binarySha256'])
+        load_module('checkpoint_verify').verify(checkpoint,write_root,runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     output.parent.mkdir(parents=True, exist_ok=True)
     recovery_state = {}
-    execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()).hexdigest(),
+    execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode()).hexdigest(),
                          'inputHashes': {name: asset['sha256'] for name, asset in {**inherited_assets, **plan.get('assets', {})}.items()},
                          'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
     with load_module('output_guard').claim(output, execution_identity), load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:
@@ -345,9 +361,12 @@ def execute(plan, output, runtime_home=None, source=None):
         argv = [installed['executable'], 'mcp', '--automation-read-root', str(stage), '--automation-write-root', str(stage)]
         receipts = []
         recovery_state['operations'] = receipts
+        task_binding=load_module('commands').reply_json(os.environ['PHOTOCRAFT_TASK_BINDING']) if os.environ.get('PHOTOCRAFT_TASK_BINDING') else None
+        recovery_state['recoveryContext']={'taskBinding':task_binding,'schema':'photocraft-recovery-context/v1','plan':plan,'executionIdentity':execution_identity,'bindings':bindings,'assets':assets,'capability':None}
         with load_module('mcp_session').Session(argv) as session:
             gate=load_module('capabilities').Gate(session,load_module('commands'),installed['binarySha256'],runtime_identity=installed.get('runtimeIdentity'))
             capability=gate.check()
+            recovery_state['recoveryContext']['capability']=capability
             def call(name, args):
                 if name=='command_run':
                     load_module('commands').validate_parameters(args['id'],args['params'],'$.native.'+args['id'],True)
@@ -355,7 +374,8 @@ def execute(plan, output, runtime_home=None, source=None):
                 return call_tool(session, name, args, recovery_state, receipts)
             opened = call('doc_open', {'path': 'source.pcraft'}) if source_project else call('doc_new', plan['document'])
             target_index = opened.get('index', opened.get('document'))
-            initial_inspection = call('doc_inspect', {}) if 'variant' in plan or 'preserveObjects' in plan else None
+            initial_inspection = call('doc_inspect', {}) if checkpoint or 'variant' in plan or 'preserveObjects' in plan else None
+            if checkpoint and ('protectedRegions' in plan or 'flatExport' in plan) and (initial_inspection.get('mode')!='Rgb' or initial_inspection.get('depth')!=8):raise ValueError('checkpoint_pixel_mode_unsupported')
             facts_before=load_module('native_facts').collect(stage/'source.pcraft',initial_inspection,call) if source_project and 'preserveObjects' in plan and load_module('native_facts').required(plan) else None
             variant_before = initial_inspection if 'variant' in plan else None
             variant_roles = resolve(plan['variant']['roles'], bindings) if 'variant' in plan else None
@@ -366,6 +386,7 @@ def execute(plan, output, runtime_home=None, source=None):
             for operation in plan['operations']:
                 if os.environ.get('CRAFT_STOP_FILE') and Path(os.environ['CRAFT_STOP_FILE']).exists():raise load_module('operation_errors').error('outcome_unknown: stop_requested')
                 params = resolve(operation.get('params', {}), bindings)
+                if checkpoint and type(params.get('layer')) is int and str(params['layer']) not in load_module('domain_assertions').index(call('doc_inspect',{})):raise ValueError('unknown_source_layer: '+str(params['layer']))
                 if operation['command']=='asset.place':validate_asset(params,'$.asset.place.params',True)
                 validate_smart(operation['command'],params,True)
                 if operation['command']=='shape.create' and 'shape' in params:
@@ -479,6 +500,8 @@ def execute(plan, output, runtime_home=None, source=None):
             (stage / 'psd-inspection.json').write_text(json.dumps(psd, ensure_ascii=False, indent=2) + '\n')
         load_module('flat_export').write_provenance(stage,plan,assets,source)
         exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
+        if checkpoint:
+            (stage/'checkpoint-origin.json').write_text(json.dumps({'schema':'photocraft-checkpoint-origin/v1','recordSha256':plan['expectedCheckpointSha256'],'planSha256':plan['expectedCheckpointPlanSha256'],'projectSha256':source_hash},indent=2)+'\n')
         manifest = {'schema': 'photocraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'assets': assets,
                     'outputs': outputs, 'nativeWarnings': saved.get('warnings', []),
@@ -488,8 +511,8 @@ def execute(plan, output, runtime_home=None, source=None):
             manifest['layoutVariant'] = {'path':'layout-variant.json','sha256':sha(stage/'layout-variant.json')}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         load_module('delivery').validate_delivery(stage)
-        if source:
-            load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
+        if checkpoint:load_module('checkpoint_source').snapshot(checkpoint,write_root,plan,installed['binarySha256'])
+        elif source:load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
         stage.rename(output)
@@ -502,6 +525,8 @@ def main():
     parser.add_argument('--output', type=Path)
     parser.add_argument('--check', action='store_true', help='仅验证计划、素材和源包，不安装或编辑')
     parser.add_argument('--source', type=Path)
+    parser.add_argument('--checkpoint', type=Path, help='显式从已核验的失败保存工程创建副本，不重放原计划')
+    parser.add_argument('--write-root', type=Path, help='检查点及依赖必须位于已有授权根')
     parser.add_argument('--runtime-home', type=Path)
     parser.add_argument('--asset', action='append', default=[], metavar='NAME=PATH', help='登记实际素材并计算 SHA-256')
     args = parser.parse_args()
@@ -519,13 +544,13 @@ def main():
                 raise ValueError('invalid_asset_path')
             plan.setdefault('assets', {})[name] = {'path': str(path), 'sha256': sha(path)}
         if args.check:
-            preflight(plan,args.output,args.source)
+            preflight(plan,args.output,args.source,args.checkpoint,args.write_root)
             result={'result':'PASS','scope':'strict plan, input files and source delivery integrity','nativeExecution':'NOT_RUN'}
         else:
             if args.output is None:raise ValueError('output_required')
-            preflight(plan,args.output,args.source)
+            preflight(plan,args.output,args.source,args.checkpoint,args.write_root)
             phase='execution'
-            result=execute(plan,args.output,args.runtime_home,args.source)
+            result=execute(plan,args.output,args.runtime_home,args.source,args.checkpoint,args.write_root)
         print(json.dumps(result,ensure_ascii=False))
     except (ValueError, RuntimeError, OSError) as error:
         print(json.dumps(load_module('operation_errors').describe(error, phase), ensure_ascii=False))

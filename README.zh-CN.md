@@ -56,7 +56,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.55`；技能源：`0.1.0-dev.44`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.56`；技能源：`0.1.0-dev.45`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -151,9 +151,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.55 |
+| Metadata version | 0.1.0-dev.56 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.44 |
+| Skills source | photocraft-skills / 0.1.0-dev.45 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -336,3 +336,5 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 固定发行 Film38／Effect38／Photo37／Vector35／Art109 已通过实际隔离 Codex 安装和发现 64 项技能、16 项安装副本协议文件摘要核对、五个全新领域缓存下的 64 项 CLI 探测。十项 ArtCraft 技能分别从空缓存完成原生 Photo 蒙版调整、源工程返工与迁移打包；另外 54 项技能仅复用整个技能摘要一致的历史原生证据。默认维护验收矩阵已更新；通用 Skills CLI 安装、模型调度、GUI 和完整 V1／协议验收仍开放。[本次固定证据](docs/evidence/craft-archive-prefix-fixed-first-use-20261008.json)。
 
 [完整交付校验](docs/PhotoCraft-Delivery-Integrity-Architecture.zh_CN.md)：13个独立技能均提供只读入口；固定原生海报移动／返工及同名替换拒绝通过，完整V1仍开放。
+
+检查点恢复候选：已实现摘要绑定的保存工程副本及显式Harness恢复修订；完整恢复验收保持开放。[合同](docs/PhotoCraft-Checkpoint-Recovery.zh_CN.md)。

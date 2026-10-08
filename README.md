@@ -56,7 +56,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.55`; skill source: `0.1.0-dev.44`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.56`; skill source: `0.1.0-dev.45`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -151,9 +151,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.55 |
+| Metadata version | 0.1.0-dev.56 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.44 |
+| Skills source | photocraft-skills / 0.1.0-dev.45 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
@@ -338,3 +338,5 @@ This plugin pins protocol authority to ArtCraft dev.109 and retains its locked s
 Fixed releases Film38/Effect38/Photo37/Vector35/Art109 pass actual isolated Codex installation/discovery of 64 skills, 16 installed protocol file digests, and 64 CLI probes using five fresh domain caches. Each of ten Art skills freshly passes its own empty-public-runtime native Photo mask/adjustment creation, source revision and moved package verification. The remaining 54 skills reuse historical native proof only when the entire skill hash matches. Maintainer defaults now select this matrix; generic Skills CLI installation, model dispatch, GUI and complete V1/protocol acceptance remain open. [Fixed evidence](docs/evidence/craft-archive-prefix-fixed-first-use-20261008.json).
 
 [Complete delivery integrity](docs/PhotoCraft-Delivery-Integrity-Architecture.md): all13 standalone skills provide read-only verification; fixed native poster move/revision and same-name replacement refusal pass. Full V1 remains open.
+
+Checkpoint recovery candidate: hash-bound saved-project forks and explicit Harness recovery revisions; full recovery acceptance remains open. [Contract](docs/PhotoCraft-Checkpoint-Recovery.md).

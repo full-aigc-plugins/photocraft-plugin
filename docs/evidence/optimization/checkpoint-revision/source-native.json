@@ -1,0 +1,14 @@
+{
+  "schema": "photocraft-checkpoint-fork-native/v1",
+  "status": "PASS",
+  "sourceRecordSha256": "30adcfe31de315e7c06463f3fd292d9b8f702ceb4eccf5f30bbe1f160f210751",
+  "sourcePlanSha256": "739b9986e33de2707db6e6314d43f273d46a797eccfa733ba2c298d27688ad4c",
+  "sourceProjectSha256": "b1f25688cbfd50cb459535b3b47f931eddebc0346f70a3fa3c0416854e774d82",
+  "newProjectSha256": "5197ebec6f0bb4d3982ac6785c35c22539a02f3978fe1528f719880a82aad67b",
+  "originalSaveCount": 1,
+  "originalFilesUnchanged": true,
+  "typeLayerCount": 1,
+  "newText": "RECOVERED",
+  "creative": "NOT_RUN",
+  "scope": "candidate standalone fork only; harness process proof and fixed publication remain open"
+}

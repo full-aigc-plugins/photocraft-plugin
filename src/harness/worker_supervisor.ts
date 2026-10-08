@@ -7,7 +7,7 @@ const launchPath=safePath(process.argv[2]);
 if(fileDigest(launchPath)!==process.argv[3])throw new Error('worker_launch_changed');
 const launch=readJson(launchPath);
 const blocked=existsSync(safePath(launch.stopFile)) || Date.now()>=launch.deadline;
-const child=blocked?undefined:spawn(launch.python,launch.args,{detached:process.platform!=='win32',stdio:['ignore','pipe','pipe'],env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',CRAFT_STOP_FILE:launch.stopFile}});
+const child=blocked?undefined:spawn(launch.python,launch.args,{detached:process.platform!=='win32',stdio:['ignore','pipe','pipe'],env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',CRAFT_STOP_FILE:launch.stopFile,PHOTOCRAFT_TASK_BINDING:JSON.stringify({taskId:launch.taskId,taskIdentity:launch.taskIdentity,epoch:launch.epoch,workerToken:launch.workerToken,sourceSha256:launch.sourceSha256})}});
 let closed=blocked;let exitCode:number|null=blocked?1:null;let signal:string|null=null;let stoppedAt:number|null=blocked?Date.now():null;let spawnError='';let bytes=0;let output='';
 process.stdout.on('error',()=>{});process.stderr.on('error',()=>{});
 child?.stdout.setEncoding('utf8');child?.stdout.on('data',(data:string)=>{bytes+=Buffer.byteLength(data);if(bytes<=2*1024*1024)output+=data;});

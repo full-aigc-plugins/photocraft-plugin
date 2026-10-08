@@ -31,8 +31,9 @@ export function validateArtifact(artifact:any) {validate(artifact,contract());re
 
 /** 映射已有技术通过候选；位置变化不改变内容版本，旧包血缘不会补造。 */
 export function mapArtifact(task:any,parent?:any,location?:string) {
+ if(task.request.checkpoint)parent=undefined;
  if(task.technical?.status!=='PASS')throw new Error('technical_verification_required');
- if(task.request.parentTask && (!parent || parent.producerTaskId!==task.request.parentTask))throw new Error('parent_artifact_required');
+ if(task.request.parentTask && !task.request.checkpoint && (!parent || parent.producerTaskId!==task.request.parentTask))throw new Error('parent_artifact_required');
  if(parent)validateArtifact(parent);
  if(parent && task.request.plan?.expectedProjectSha256!==parent.sha256)throw new Error('parent_version_conflict');
  const directory=safePath(location??task.request.output);const manifestPath=join(directory,'manifest.json');
@@ -44,12 +45,17 @@ export function mapArtifact(task:any,parent?:any,location?:string) {
  const assetId=parent?.assetId??'photocraft:'+task.id;const version=files['project.pcraft'];
  const ref=(name:string,id=assetId+':'+name)=>({assetId:id,version:files[name],sha256:files[name],location:name});
  const native=readJson(join(directory,'native.json'));const sources:any[]=[];
+ if(task.request.checkpoint) {
+  const checkpoint=task.request.checkpoint,origin=readJson(join(directory,'checkpoint-origin.json'));
+  if(origin.schema!=='photocraft-checkpoint-origin/v1' || origin.recordSha256!==checkpoint.recordSha256 || origin.planSha256!==checkpoint.planSha256 || origin.projectSha256!==checkpoint.projectSha256 || manifest.sourceProjectSha256!==checkpoint.projectSha256)throw new Error('checkpoint_origin_conflict');
+  sources.push({assetId:'photocraft-checkpoint:'+task.request.parentTask,version:checkpoint.projectSha256,sha256:checkpoint.projectSha256});
+ }
  if(parent)sources.push({assetId:parent.assetId,version:parent.version,sha256:parent.sha256});
  const dependencies=Object.entries(manifest.assets??{}).map(([name,entry]:[string,any])=>{
   if(files[entry.path]!==entry.sha256)throw new Error('artifact_dependency_mismatch');
   const assetRef={assetId:'photocraft-input:'+name,version:entry.sha256,sha256:entry.sha256};sources.push(assetRef);return {assetRef,kind:'media',packaged:true,missingReason:null};
  });
- const artifact={protocolVersion:'craft-artifact/v1',assetId,version,sha256:version,bytes:statSync(join(directory,'project.pcraft')).size,mediaType:'application/octet-stream',producerTaskId:task.id,sourceRefs:sources,nativeProjectRef:{assetId,version,sha256:version,location:'project.pcraft'},renditions:manifest.outputs.map((output:any)=>ref(output.path)),dependencies,technicalMetadata:{width:native.width,height:native.height},lossReportRef:ref('exchange-loss.json'),evidenceRefs:['native.json','plan.json','operations.json','capabilities.json','capability-checks.json','object-preservation.json','object-assertions.json','native-facts.json','native-facts-preservation.json','font-substitutions.json'].filter(name=>files[name]).map(name=>ref(name)),location:'project.pcraft'};
+ const artifact={protocolVersion:'craft-artifact/v1',assetId,version,sha256:version,bytes:statSync(join(directory,'project.pcraft')).size,mediaType:'application/octet-stream',producerTaskId:task.id,sourceRefs:sources,nativeProjectRef:{assetId,version,sha256:version,location:'project.pcraft'},renditions:manifest.outputs.map((output:any)=>ref(output.path)),dependencies,technicalMetadata:{width:native.width,height:native.height},lossReportRef:ref('exchange-loss.json'),evidenceRefs:['native.json','checkpoint-origin.json','plan.json','operations.json','capabilities.json','capability-checks.json','object-preservation.json','object-assertions.json','native-facts.json','native-facts-preservation.json','font-substitutions.json'].filter(name=>files[name]).map(name=>ref(name)),location:'project.pcraft'};
  validateArtifact(artifact);
  for(const [name,sha]of Object.entries(files))if(fileDigest(within(join(directory,name),directory))!==sha)throw new Error('artifact_file_mismatch: '+name);
  if(fileDigest(manifestPath)!==task.technical.manifestSha256)throw new Error('artifact_manifest_mismatch');

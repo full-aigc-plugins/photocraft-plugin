@@ -63,6 +63,7 @@ export function preflightRequest(request:any,options:AdapterOptions,execute:(scr
  try {
   const path=join(temporary,'plan.json');writeFileSync(path,canonical(request.plan),{flag:'wx',mode:0o600});
   const args=[path,'--output',request.output,'--check'];if(request.source)args.push('--source',request.source);
+  if(request.checkpoint)args.push('--checkpoint',request.checkpoint.output,'--write-root',request.authorization.writeRoot);
   const reply=execute('workflow.py',args);
   if(!reply || typeof reply!=='object' || Array.isArray(reply) || reply.result!=='PASS'
      || Object.keys(reply).some(key=>!['result','scope','nativeExecution'].includes(key))

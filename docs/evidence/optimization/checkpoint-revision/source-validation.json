@@ -1,0 +1,31 @@
+{
+  "schema": "photocraft-supervised-source-regression/v1",
+  "status": "PASS",
+  "startedAt": "2026-10-08T19:46:55.736824+00:00",
+  "finishedAt": "2026-10-08T19:53:28.106889+00:00",
+  "tests": {
+    "tests": 292,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sourceUnchanged": true,
+  "layers": {
+    "currentLockedRuntimeRegression": true,
+    "candidateSupervisedRuntime": true,
+    "desktop": true,
+    "fixedInstallation": "NOT_RUN",
+    "publicCliSupervisorIntegration": "NOT_RUN",
+    "candidateBatch": true,
+    "candidateConvert": true,
+    "candidateDroplet": true,
+    "runtimeCapabilityGate": true,
+    "integerLiteralOverflowGate": true,
+    "streaming": "NOT_RUN",
+    "nestedAggregateCommands": "NOT_RUN",
+    "allCommands": "NOT_RUN"
+  },
+  "sourceSha256": "cb3d035b4e5efb8526471bf0f3e6d1b363eccc12e0addab8c98a0a8d5549f529",
+  "sourceRef": "v0.1.0-dev.45",
+  "sourceCommit": "62a70bad1e891dace22b991a9ed9e2c398b3b0d5"
+}

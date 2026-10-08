@@ -1,0 +1,32 @@
+test_bound_snapshot_returns_partial_source_and_never_creates_manifest (test_checkpoint_source.CheckpointSourceTests.test_bound_snapshot_returns_partial_source_and_never_creates_manifest) ... ERROR
+test_failure_preserves_verified_execution_context_as_a_hashed_file (test_checkpoint_source.CheckpointSourceTests.test_failure_preserves_verified_execution_context_as_a_hashed_file) ... FAIL
+test_wrong_binding_changed_files_missing_context_and_escaping_stage_are_refused (test_checkpoint_source.CheckpointSourceTests.test_wrong_binding_changed_files_missing_context_and_escaping_stage_are_refused) ... ok
+
+======================================================================
+ERROR: test_bound_snapshot_returns_partial_source_and_never_creates_manifest (test_checkpoint_source.CheckpointSourceTests.test_bound_snapshot_returns_partial_source_and_never_creates_manifest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_checkpoint_source.py", line 28, in test_bound_snapshot_returns_partial_source_and_never_creates_manifest
+    root=Path(tmp).resolve();output,stage,record,context,contract=self.fixture(root);result=load('checkpoint_source').snapshot(output,root,contract)
+                                                                                            ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_checkpoint_source.py", line 7, in load
+    spec=importlib.util.spec_from_file_location('test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: 'WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/checkpoint_source.py'
+
+======================================================================
+FAIL: test_failure_preserves_verified_execution_context_as_a_hashed_file (test_checkpoint_source.CheckpointSourceTests.test_failure_preserves_verified_execution_context_as_a_hashed_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_checkpoint_source.py", line 25, in test_failure_preserves_verified_execution_context_as_a_hashed_file
+    record=json.loads((output/'failure.json').read_text());self.assertIn('recovery-context.json',record['files']);self.assertEqual(json.loads((stage/'recovery-context.json').read_text()),context)
+                                                           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'recovery-context.json' not found in {'project.pcraft': {'sha256': 'd81c55f49c5bb0d36bc11e3966ec4efab66f8dfefbbc1761161ca9d230e5466a', 'bytes': 5}, 'recovery-operations.json': {'sha256': '37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570', 'bytes': 3}}
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.012s
+
+FAILED (failures=1, errors=1)

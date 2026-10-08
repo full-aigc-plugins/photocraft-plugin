@@ -1,6 +1,6 @@
 import { lstatSync } from 'node:fs';
 import { isAbsolute, join, normalize } from 'node:path';
-import { canonical, fileDigest, readJson, within } from '../protocol/files.ts';
+import { canonical, digest, fileDigest, readJson, within } from '../protocol/files.ts';
 import { OperationError } from '../protocol/operation_error.ts';
 
 const object=(v:any)=>v!==null && typeof v==='object' && !Array.isArray(v);
@@ -39,7 +39,13 @@ export function checkpointSnapshot(output:string,writeRoot:string) {
   const operations=readJson(join(stage,'recovery-operations.json'));
   if(!Array.isArray(operations) || operations.length!==record.completedOperations)throw checkpointError();
   if(fileDigest(recordPath)!==recordSha256)throw checkpointError();
-  return {stage,recordSha256,stageRecordSha256:fileDigest(stageRecord),projectSha256:files['project.pcraft'].sha256,
+  let origin:any;
+  if(files['recovery-context.json']) {
+   const context=readJson(join(stage,'recovery-context.json'));const identity=context?.executionIdentity;
+   if(context?.schema!=='photocraft-recovery-context/v1' || !object(context.plan) || !object(identity) || identity.planHash!==digest(canonical(context.plan)) || !object(identity.inputHashes) || !object(context.bindings) || !object(context.assets))throw checkpointError();
+   origin={taskBinding:context.taskBinding??null,planSha256:identity.planHash,projectRevision:identity.projectRevision,inputHashes:identity.inputHashes,bindingsSha256:digest(canonical(context.bindings)),capabilitySha256:digest(canonical(context.capability))};
+  }
+  return {...(origin?{origin}:{}),stage,recordSha256,stageRecordSha256:fileDigest(stageRecord),projectSha256:files['project.pcraft'].sha256,
           files,lastAttempt:record.lastAttempt??null,completedOperations:record.completedOperations};
  }catch {throw checkpointError();}
 }
@@ -47,7 +53,7 @@ export function checkpointSnapshot(output:string,writeRoot:string) {
 /** 只接受对当前原记录、工程、已验证操作及锁定运行时的部分重开证明。 */
 export function validateCheckpointReply(reply:any,before:ReturnType<typeof checkpointSnapshot>,after:ReturnType<typeof checkpointSnapshot>,runtimeSha256:string) {
  if(reply?.result==='FAIL' && typeof reply.error==='string')throw new OperationError(reply.error,{code:'technical_verification_failed',phase:'verification',outcome:'failed',recoveryAction:'inspect'});
- const keys=new Set(['schema','result','stage','recordSha256','projectSha256','files','lastAttempt','completedOperations','nativeReopened','objectCount','runtimeSha256','replayAllowed','technical','creative','scope']);
+ const keys=new Set(['schema','result','stage','recordSha256','projectSha256','files','lastAttempt','completedOperations','nativeReopened','objectCount','runtimeSha256','replayAllowed','technical','creative','scope','origin','nativeDocument']);
  if(!object(reply) || Object.keys(reply).some(key=>!keys.has(key)) || (Object.hasOwn(reply,'scope') && typeof reply.scope!=='string')
     || reply.schema!=='photocraft-checkpoint-verification/v1' || reply.result!=='PASS'
     || Object.hasOwn(reply,'error') || reply.replayAllowed!==false || reply.nativeReopened!==true
@@ -55,5 +61,6 @@ export function validateCheckpointReply(reply:any,before:ReturnType<typeof check
     || !Number.isSafeInteger(reply.objectCount) || reply.objectCount<0 || !hex(runtimeSha256) || reply.runtimeSha256!==runtimeSha256
     || reply.stage!==before.stage || reply.recordSha256!==before.recordSha256 || reply.projectSha256!==before.projectSha256
     || reply.completedOperations!==before.completedOperations || canonical(reply.lastAttempt??null)!==canonical(before.lastAttempt)
+    || (before.origin ? canonical(reply.origin??null)!==canonical(before.origin) || !object(reply.nativeDocument) || !Array.isArray(reply.nativeDocument.layers) : Object.hasOwn(reply,'origin') || Object.hasOwn(reply,'nativeDocument'))
     || !object(reply.files) || canonical(reply.files)!==canonical(before.files) || canonical(before)!==canonical(after))throw checkpointError();
 }

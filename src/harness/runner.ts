@@ -18,6 +18,14 @@ const object=(value:any)=>value!==null && typeof value==='object' && !Array.isAr
 const hex=(value:any)=>typeof value==='string' && /^[a-f0-9]{64}$/.test(value);
 const invalidVerification=()=>new OperationError('unexpected_verification_result',{code:'unexpected_verification_result',phase:'verification',outcome:'unknown',recoveryAction:'reconcile'});
 
+/** 部分工程或核验失败使旧的当前接受失效，历史通过证据仍保留。 */
+function invalidateCurrentAcceptance(task:any,reason:string) {
+ if(task.technical?.status==='PASS'){task.invalidatedTechnical??=[];task.invalidatedTechnical.push({technical:task.technical,artifact:task.artifact??null,reason,at:Date.now()});}
+ if(task.reviewRequest || task.reviewReceipt){task.invalidatedReviews??=[];task.invalidatedReviews.push({request:task.reviewRequest??null,receipt:task.reviewReceipt??null,reason,at:Date.now()});}
+ for(const key of ['reviewRequest','reviewReceipt','reviewConsumed','reviewRevisionReserved'])delete task[key];
+ task.technical={status:'NOT_RUN'};task.creative={status:'NOT_RUN'};task.acceptance={status:'NOT_RUN'};delete task.artifact;
+}
+
 /** 所有编辑复用独立技能执行器；账本先登记意图，断连后只核对。 */
 export class Runner {
  ledger: Ledger;
@@ -41,9 +49,11 @@ export class Runner {
   let task=this.ledger.status(id);
   if(task.state!=='planned' || task.attempted) throw new Error('reconcile_required');
   if(task.request.mutableProject) throw new Error('mutable_desktop_execution_not_supported');
+  if(task.request.checkpoint)this.checkRecoverySource(task);
   const identity=this.preflight(task.request);const planPath=join(this.ledger.root,id+'-plan.json');
   const args=[planPath,'--output',task.request.output];
   if(task.request.source) args.push('--source',task.request.source);
+  if(task.request.checkpoint)args.push('--checkpoint',task.request.checkpoint.output,'--write-root',task.request.authorization.writeRoot);
   writeFileSync(planPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
   const epoch=this.ledger.claim(id);
   this.ledger.update(id,epoch,current=>{current.executionIdentity=identity;current.preflight={status:'PASS'};});
@@ -147,7 +157,7 @@ export class Runner {
    if(alive)return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='wait_for_owned_worker_or_inspect';});
   }
   if(existsSync(join(task.request.output,'manifest.json')) && task.executionIdentity) {
-   try{return await this.verify(id);}catch(error){return this.ledger.update(id,task.epoch,current=>{if(current.technical?.status==='PASS'){current.invalidatedTechnical??=[];current.invalidatedTechnical.push({technical:current.technical,artifact:current.artifact??null,reason:String(error),at:Date.now()});}current.technical={status:'NOT_RUN'};current.creative={status:'NOT_RUN'};current.acceptance={status:'NOT_RUN'};delete current.artifact;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'technical_verification_unproven',phase:'verification',outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';});}
+   try{return await this.verify(id);}catch(error){return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,String(error));current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'technical_verification_unproven',phase:'verification',outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';});}
   }
   if(existsSync(join(task.request.output,'failure.json')) && task.executionIdentity) {
    try {
@@ -157,11 +167,16 @@ export class Runner {
     const args=[task.request.output,'--write-root',task.request.authorization.writeRoot];if(this.options.runtimeHome)args.push('--runtime-home',safePath(this.options.runtimeHome));
     const checkpoint=this.python('checkpoint_verify.py',args);
     validateCheckpointReply(checkpoint,before,checkpointSnapshot(task.request.output,task.request.authorization.writeRoot),runtime.artifacts?.[runtimePlatformKey()]?.binarySha256);
+    if(before.origin && before.origin.planSha256!==digest(canonical(task.request.plan)))throw new Error('task_checkpoint_plan_mismatch');
+    if(before.origin && canonical(before.origin.taskBinding)!==canonical({taskId:task.id,taskIdentity:task.identity,epoch:task.epoch,workerToken:task.worker?.token,sourceSha256:task.executionIdentity.sha256}))throw new Error('checkpoint_task_binding_mismatch');
+    if(before.origin && before.origin.projectRevision!==((task.request.source || task.request.checkpoint)?task.request.plan.expectedProjectSha256:null))throw new Error('checkpoint_source_conflict');
+    for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new Error('reference_identity_mismatch');
+    for(const [name,entry]of Object.entries(task.request.plan.assets??{}) as [string,any][])if(before.origin && before.origin.inputHashes[name]!==entry.sha256)throw new Error('checkpoint_input_mismatch');
     if(this.identity().sha256!==task.executionIdentity.sha256)throw new OperationError('skill_source_changed',{code:'skill_source_changed',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
-    return this.ledger.update(id,task.epoch,current=>{current.checkpoint=checkpoint;delete current.verificationError;delete current.reconcileError;current.replayAllowed=false;current.recoveryAction='inspect_checkpoint_before_explicit_revision';current.technical={status:'NOT_RUN'};});
-   }catch(error){return this.ledger.update(id,task.epoch,current=>{delete current.checkpoint;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'checkpoint_verification_failed',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});}
+    return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,'partial_checkpoint_only');current.checkpoint=checkpoint;delete current.verificationError;delete current.reconcileError;current.replayAllowed=false;current.recoveryAction='inspect_checkpoint_before_explicit_revision';current.technical={status:'NOT_RUN'};});
+   }catch(error){return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,String(error));delete current.checkpoint;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'checkpoint_verification_failed',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});}
   }
-  return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});
+  return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='inspect_preserved_artifacts';invalidateCurrentAcceptance(current,'delivery_evidence_missing');});
  }
  async verify(id: string) {
   let task=this.ledger.status(id);
@@ -178,7 +193,7 @@ export class Runner {
   if(!object(manifest) || !object(manifest.files) || integrity.manifestSha256!==manifestSha256
      || integrity.nativeSha256!==manifest.files['project.pcraft'] || integrity.files!==Object.keys(manifest.files).length)throw invalidVerification();
   if(!manifest.files['plan.json'] || canonical(readJson(join(output,'plan.json')))!==canonical(task.request.plan))throw new OperationError('task_delivery_plan_mismatch',{code:'task_delivery_plan_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
-  const expectedSource=task.request.source?task.request.plan.expectedProjectSha256:null;
+  const expectedSource=task.request.source || task.request.checkpoint?task.request.plan.expectedProjectSha256:null;
   if(manifest.sourceProjectSha256!==expectedSource)throw new OperationError('task_delivery_source_mismatch',{code:'task_delivery_source_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
   for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new OperationError('reference_identity_mismatch',{code:'reference_identity_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
   for(const [name,entry]of Object.entries(task.request.plan.assets??{}) as [string,any][])if(manifest.assets?.[name]?.sha256!==entry.sha256)throw new OperationError('task_delivery_input_mismatch',{code:'task_delivery_input_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
@@ -199,8 +214,72 @@ export class Runner {
   const evidence={status:'PASS',projectSha256:manifest.files['project.pcraft'],previewSha256:manifest.files['design.png'],manifestSha256:files[join(output,'manifest.json')],files,nativeReopen:reopened,sourceSha256:task.executionIdentity.sha256};
   const parent=task.request.parentTask?this.ledger.status(task.request.parentTask):undefined;
   if(parent && parent.technical.projectSha256===evidence.projectSha256)throw new Error('revision_no_improvement');
+  if(task.request.checkpoint)this.checkRecoverySource(task);
   const artifact=mapArtifact({...task,technical:evidence},parent?.artifact);
   return this.ledger.recordTechnical(id,task.epoch,evidence,artifact);
+ }
+ /** 检查点修订必须绑定原任务、原记录与已停止的原执行者；旧文件不补造父产物。 */
+ checkRecoverySource(task:any) {
+  const source=task.request.checkpoint,parent=this.ledger.status(task.request.parentTask);
+  if(parent.executionIdentity?.sha256!==this.identity().sha256)throw new Error('skill_source_changed');
+  if(this.ledger.lineage(parent).some(ancestor=>ancestor.stopRequestedAt || ['cancel_requested','cancelled','failed'].includes(ancestor.state)))throw new Error('parent_task_stopped');
+  if(!source || parent.request.output!==source.output || parent.checkpoint?.recordSha256!==source.recordSha256 || parent.checkpoint?.projectSha256!==source.projectSha256 || parent.checkpoint?.origin?.planSha256!==source.planSha256)throw new Error('checkpoint_parent_conflict');
+  if(parent.stopRequestedAt || ['cancel_requested','cancelled','failed'].includes(parent.state))throw new Error('parent_task_stopped');
+  if(!confirmedWorkerReceipt(this.ledger.root,parent))throw new Error('worker_resolution_required');
+  const snapshot=checkpointSnapshot(source.output,parent.request.authorization.writeRoot);
+  if(snapshot.recordSha256!==source.recordSha256 || snapshot.projectSha256!==source.projectSha256 || snapshot.origin?.planSha256!==source.planSha256 || source.planSha256!==digest(canonical(parent.request.plan)))throw new Error('checkpoint_changed');
+  if(task.request.plan.expectedCheckpointSha256!==source.recordSha256 || task.request.plan.expectedCheckpointPlanSha256!==source.planSha256 || task.request.plan.expectedProjectSha256!==source.projectSha256)throw new Error('checkpoint_plan_conflict');
+  return snapshot;
+ }
+ /** 显式新修订从已保存工程开始，不重复原计划；累计预算在调度前保留。 */
+ async recover(id:string,proposal:any) {
+  let task=this.ledger.status(id);
+  if(!confirmedWorkerReceipt(this.ledger.root,task))throw new Error('worker_resolution_required');
+  if(!object(proposal) || Object.keys(proposal).some(key=>!['baseProjectSha256','checkpointRecordSha256','authorizationRef','reason','operations'].includes(key)) || typeof proposal.reason!=='string' || !proposal.reason.trim() || !Array.isArray(proposal.operations) || !proposal.operations.length || proposal.operations.length>100)throw new Error('recovery_proposal_invalid');
+  const proposalSha256=digest(canonical(proposal));
+  if(task.recoveryRevision) {
+   if(task.recoveryRevision.proposalSha256!==proposalSha256)throw new Error('recovery_revision_already_reserved');
+   return this.ledger.status(task.recoveryRevision.taskId);
+  }
+  task=await this.reconcile(id);
+  const checkpoint=task.checkpoint;
+  if(task.state!=='reconciling' || task.stopRequestedAt || !checkpoint?.origin || !checkpoint.nativeDocument)throw new Error('verified_checkpoint_required');
+  if(proposal.baseProjectSha256!==checkpoint.projectSha256 || proposal.checkpointRecordSha256!==checkpoint.recordSha256)throw new Error('checkpoint_changed');
+  if(proposal.authorizationRef!==task.request.authorization.ref)throw new Error('authorization_scope_changed');
+  const allowed:Record<string,string[]>={'type.edit':['text'],'type.setStyle':['font','size'],'layer.renameLayer':['name']};
+  const objects=new Map<number,any>();
+  const walk=(layers:any[])=>{for(const row of layers){if(!object(row) || !Number.isSafeInteger(row.id) || objects.has(row.id))throw new Error('checkpoint_objects_invalid');objects.set(row.id,row);if(row.children){if(!Array.isArray(row.children))throw new Error('checkpoint_objects_invalid');walk(row.children);}}};walk(checkpoint.nativeDocument.layers);
+  const changes:Record<string,string[]>={};
+  for(const operation of proposal.operations) {
+   const fields=object(operation) && Object.hasOwn(allowed,operation.command)?allowed[operation.command]:undefined,params=operation?.params;
+   if(!fields || Object.keys(operation).some(key=>!['command','params'].includes(key)) || !object(params) || !Number.isSafeInteger(params.layer) || !objects.has(params.layer) || Object.keys(params).some(key=>key!=='layer' && !fields.includes(key)))throw new Error('recovery_scope_violation');
+   const row=objects.get(params.layer),changed=Object.keys(params).filter(key=>key!=='layer');
+   if(!changed.length || operation.command.startsWith('type.') && row.kind!=='Type')throw new Error('recovery_scope_violation');
+   if(task.request.authorization.objects && !task.request.authorization.objects.includes(params.layer))throw new Error('authorization_scope_changed');
+   if(changed.every(key=>(operation.command.startsWith('type.')?row.text?.[key==='size'?'sizePt':key]:row[key])===params[key]))throw new Error('revision_no_improvement');
+   const key=String(params.layer);changes[key]=[...new Set([...(changes[key]??[]),...changed.map(field=>operation.command.startsWith('type.')?'text.'+(field==='size'?'sizePt':field):field),...(operation.command.startsWith('type.')?['bounds']:[])])];
+  }
+  if(this.ledger.lineage(task).some(ancestor=>ancestor.stopRequestedAt || ['cancel_requested','cancelled','failed'].includes(ancestor.state)))throw new Error('parent_task_stopped');
+  const round=task.revisions+1,root=this.ledger.revisionRoot(task),output=join(task.request.authorization.writeRoot,id+'-recovery-'+round);
+  if(root.revisions>=root.request.budget.maxRevisions || Date.now()>=root.request.budget.deadline)throw new Error('budget_exhausted');
+  const operations=proposal.operations.flatMap((operation:any)=>operation.command==='layer.renameLayer'?[{command:'layer.select',params:{layer:operation.params.layer}},{command:operation.command,params:{name:operation.params.name}}]:[operation]);
+  const source={output:task.request.output,recordSha256:checkpoint.recordSha256,planSha256:checkpoint.origin.planSha256,projectSha256:checkpoint.projectSha256};
+  const plan:any={operations,exports:task.request.plan.exports?.length?task.request.plan.exports:[{format:'png'}],expectedProjectSha256:source.projectSha256,expectedCheckpointSha256:source.recordSha256,expectedCheckpointPlanSha256:source.planSha256,preserveObjects:changes};
+  if(task.request.plan.protectedRegions)plan.protectedRegions=task.request.plan.protectedRegions;
+  for(const key of ['minimumLayers','acceptedFontSubstitutions','flatExport','assetProvenance'])if(task.request.plan[key]!==undefined)plan[key]=JSON.parse(canonical(task.request.plan[key]));
+  if(task.request.plan.psdPolicy){plan.psdPolicy=JSON.parse(canonical(task.request.plan.psdPolicy));if(plan.psdPolicy.acceptedForSourceSha256!==source.projectSha256){delete plan.psdPolicy.acceptedLosses;delete plan.psdPolicy.acceptedForSourceSha256;}}
+  const request:any={...task.request,idempotencyKey:task.request.idempotencyKey+':recovery:'+round,parentTask:id,checkpoint:source,output,plan,budget:{...task.request.budget,maxRevisions:root.request.budget.maxRevisions-root.revisions-1}};delete request.source;
+  const normalized=Ledger.validateRequest(request).normalized;
+  this.preflight(normalized);
+  return this.ledger.transaction(()=>{
+   const current=this.ledger.status(id),currentRoot=this.ledger.revisionRoot(current);
+   if(current.recoveryRevision || current.revisions!==task.revisions || current.stopRequestedAt || current.checkpoint?.recordSha256!==source.recordSha256 || currentRoot.revisions>=currentRoot.request.budget.maxRevisions || Date.now()>=currentRoot.request.budget.deadline)throw new Error('recovery_revision_conflict');
+   const next={schema:'photocraft-task/v1',id:randomUUID(),identity:digest(canonical(normalized)),request:normalized,state:'planned',epoch:0,createdAt:Date.now(),revisions:0,attempted:false,technical:{status:'NOT_RUN'},creative:{status:'NOT_RUN'},acceptance:{status:'NOT_RUN'}};
+   this.checkRecoverySource(next);
+   if(currentRoot.id!==id){currentRoot.revisions++;this.ledger.save(currentRoot,'descendant_recovery_reserved');}
+   current.revisions=round;current.recoveryRevision={taskId:next.id,proposalSha256,reason:proposal.reason};current.replayAllowed=false;this.ledger.save(current,'checkpoint_revision_reserved');
+   this.ledger.db.prepare('INSERT INTO tasks VALUES(?,?,?,?)').run(next.id,request.idempotencyKey,next.identity,canonical(next));this.ledger.save(next,'revision_created');return next;
+  });
  }
  async revise(id: string,proposal: any) {
   const task=this.ledger.status(id);const contract=new Review(this.ledger).propose(id,proposal);

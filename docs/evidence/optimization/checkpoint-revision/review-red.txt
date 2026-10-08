@@ -1,0 +1,52 @@
+✔ checkpoint reply binds original record, saved files, runtime and partial acceptance (12.486084ms)
+✔ checkpoint refuses missingSchema without replay or checkpoint acceptance (8.094125ms)
+✔ checkpoint refuses wrongStage without replay or checkpoint acceptance (7.157875ms)
+✔ checkpoint refuses wrongRecord without replay or checkpoint acceptance (5.867416ms)
+✔ checkpoint refuses wrongProject without replay or checkpoint acceptance (5.651875ms)
+✔ checkpoint refuses wrongRuntime without replay or checkpoint acceptance (6.278542ms)
+✔ checkpoint refuses missingFiles without replay or checkpoint acceptance (6.49175ms)
+✔ checkpoint refuses wrongCompleted without replay or checkpoint acceptance (5.9695ms)
+✔ checkpoint refuses wrongAttempt without replay or checkpoint acceptance (5.924834ms)
+✔ checkpoint refuses notReopened without replay or checkpoint acceptance (5.388542ms)
+✔ checkpoint refuses invalidCount without replay or checkpoint acceptance (5.716ms)
+✔ checkpoint refuses technicalPass without replay or checkpoint acceptance (5.439375ms)
+✔ checkpoint refuses creativePass without replay or checkpoint acceptance (5.53225ms)
+✔ checkpoint refuses contradictoryError without replay or checkpoint acceptance (6.7685ms)
+✔ checkpoint refuses extraStatus without replay or checkpoint acceptance (6.540125ms)
+✔ checkpoint refuses failedResult without replay or checkpoint acceptance (5.65725ms)
+✔ checkpoint verification refuses source drift before calling native checker (4.391916ms)
+✔ checkpoint verification refuses files changed during checker and revokes stale current acceptance (7.511917ms)
+✔ checkpoint verification rejects corrupt records and escaping dependencies before native dispatch (22.760625ms)
+✔ checkpoint source identity is checked again after native observation (5.373458ms)
+✖ partial checkpoint observation revokes stale delivery and creative acceptance (6.552625ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 243.00975
+
+✖ failing tests:
+
+test at tests/checkpoint-contract.test.ts:64:1
+✖ partial checkpoint observation revokes stale delivery and creative acceptance (6.552625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   id: 'stale-review'
+  + }
+  - undefined
+  
+      at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-contract.test.ts:67:294)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'stale-review' },
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

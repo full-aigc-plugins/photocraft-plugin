@@ -1,0 +1,55 @@
+✖ checkpoint revision cannot dispatch from merely observed process disappearance (7.5325ms)
+✖ checkpoint request cannot be created without an original parent task (5.049167ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 106.148458
+
+✖ failing tests:
+
+test at tests/checkpoint-revision.test.ts:18:1
+✖ checkpoint revision cannot dispatch from merely observed process disappearance (7.5325ms)
+  TypeError: f.runner.recover is not a function
+      at file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-revision.test.ts:18:153
+      at waitForActual (node:assert:632:21)
+      at strict.rejects (node:assert:769:31)
+      at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-revision.test.ts:18:132)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/checkpoint-revision.test.ts:19:1
+✖ checkpoint request cannot be created without an original parent task (5.049167ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /checkpoint_requires_revision/. Input:
+  
+  'OperationError: invalid_task_request'
+  
+      at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-revision.test.ts:19:111)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: OperationError: invalid_task_request
+        at validationError (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/protocol/operation_error.ts:20:9)
+        at keys (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/harness/ledger.ts:98:36)
+        at Ledger.validateRequest (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/harness/ledger.ts:104:5)
+        at Ledger.create (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/harness/ledger.ts:154:40)
+        at file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-revision.test.ts:19:131
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-revision.test.ts:19:111)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1325:25),
+    expected: /checkpoint_requires_revision/,
+    operator: 'throws',
+    diff: 'simple'
+  }

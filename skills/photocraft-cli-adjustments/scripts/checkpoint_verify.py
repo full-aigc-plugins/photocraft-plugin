@@ -41,7 +41,12 @@ def verify(output,write_root,runtime_home):
    call('doc_open',{'path':'project.pcraft'})
    native=call('doc_inspect',{})
  check()
- return {'schema':'photocraft-checkpoint-verification/v1','result':'PASS','stage':str(stage),'recordSha256':record_sha,'projectSha256':delivery.sha(project),'files':record['files'],'lastAttempt':record.get('lastAttempt'),'completedOperations':record.get('completedOperations'),'nativeReopened':True,'objectCount':len(load('domain_assertions').index(native)),'runtimeSha256':installed['binarySha256'],'replayAllowed':False,'technical':'NOT_RUN','creative':'NOT_RUN','scope':'partial saved project only; unknown operations are not replayed'}
+ result={'schema':'photocraft-checkpoint-verification/v1','result':'PASS','stage':str(stage),'recordSha256':record_sha,'projectSha256':delivery.sha(project),'files':record['files'],'lastAttempt':record.get('lastAttempt'),'completedOperations':record.get('completedOperations'),'nativeReopened':True,'objectCount':len(load('domain_assertions').index(native)),'runtimeSha256':installed['binarySha256'],'replayAllowed':False,'technical':'NOT_RUN','creative':'NOT_RUN','scope':'partial saved project only; unknown operations are not replayed'}
+ if 'recovery-context.json' in record['files']:
+  context=delivery.read_json(stage/'recovery-context.json');source=load('checkpoint_source');bound=source.snapshot(output,write_root,{'expectedCheckpointSha256':record_sha,'expectedCheckpointPlanSha256':context['executionIdentity']['planHash'],'expectedProjectSha256':result['projectSha256']},installed['binarySha256'])
+  result['origin']={'taskBinding':context['taskBinding'],'planSha256':context['executionIdentity']['planHash'],'projectRevision':context['executionIdentity']['projectRevision'],'inputHashes':context['executionIdentity']['inputHashes'],'bindingsSha256':source.canonical_sha(context['bindings']),'capabilitySha256':source.canonical_sha(context['capability'])}
+  result['nativeDocument']=native
+ return result
 
 if __name__=='__main__':
  import json

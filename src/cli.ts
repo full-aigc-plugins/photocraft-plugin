@@ -12,7 +12,7 @@ import { preflightRequest, skillIdentity } from './harness/preflight.ts';
 import { OperationError, validationError } from './protocol/operation_error.ts';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const actions=['create','run','status','reconcile','verify','judge','review-import','import-judge','revise','stop','accept','artifact','bundle-export','bundle-check'];
+const actions=['create','run','status','reconcile','verify','judge','review-import','import-judge','revise','recover','stop','accept','artifact','bundle-export','bundle-check'];
 let ledger:Ledger|undefined;
 try {
  const [action,...args]=process.argv.slice(2);
@@ -28,7 +28,7 @@ try {
   if(action==='bundle-check') {console.log(JSON.stringify(verifyBundle(options['--bundle'],options['--expected-sha256'])));}
   else {
   if(!options['--state-dir'])throw new Error('state_directory_required');
-  const input=action==='create'?readJson(options['--request']):['review-import','import-judge'].includes(action)?readJson(options['--receipt']):action==='revise'?readJson(options['--proposal']):undefined;
+  const input=action==='create'?readJson(options['--request']):['review-import','import-judge'].includes(action)?readJson(options['--receipt']):['revise','recover'].includes(action)?readJson(options['--proposal']):undefined;
   const state=safePath(options['--state-dir']);
   if(action!=='create' && !options['--task'])throw validationError('task_id_required','$.task');
   if(action!=='create' && !existsSync(join(state,'tasks.sqlite')))throw new Error('ledger_missing');
@@ -68,6 +68,7 @@ try {
    case 'import-judge':
    case 'review-import':result=new Review(ledger).import(id,input);break;
    case 'accept':result=new Review(ledger).accept(id,options['--review-id']);break;
+   case 'recover':result=await runner.recover(id,input);break;
    case 'revise':result=await runner.revise(id,input);break;
    case 'stop':result=ledger.stop(id);break;
   }

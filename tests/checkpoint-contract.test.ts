@@ -60,3 +60,10 @@ test('checkpoint verification rejects corrupt records and escaping dependencies 
 test('checkpoint source identity is checked again after native observation',async()=>{
  const f=fixture();try{f.runner.python=()=>{f.runner.identity=()=>({sha256:'changed',files:{},runtimeLockSha256:'changed'});return f.reply;};const result=await f.runner.reconcile(f.task.id);assert.equal(result.checkpoint,undefined);assert.equal(result.verificationError.code,'skill_source_changed');}finally{f.close();}
 });
+
+test('partial checkpoint observation revokes stale delivery and creative acceptance',async()=>{
+ const f=fixture();try{
+  f.ledger.update(f.task.id,f.task.epoch+1,current=>{current.technical={status:'PASS',projectSha256:'a'.repeat(64)};current.creative={status:'PASS'};current.acceptance={status:'PASS'};current.artifact={producerTaskId:f.task.id};current.reviewRequest={id:'stale-review'};current.reviewReceipt={requestId:'stale-review'};});
+  const result=await f.runner.reconcile(f.task.id);assert.equal(result.technical.status,'NOT_RUN');assert.equal(result.creative.status,'NOT_RUN');assert.equal(result.acceptance.status,'NOT_RUN');assert.equal(result.artifact,undefined);assert.equal(result.invalidatedTechnical.length,1);assert.equal(result.reviewRequest,undefined);assert.equal(result.reviewReceipt,undefined);assert.equal(result.invalidatedReviews.length,1);
+ }finally{f.close();}
+});

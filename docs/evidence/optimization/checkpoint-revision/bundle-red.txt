@@ -1,0 +1,30 @@
+✔ checkpoint revision cannot dispatch from merely observed process disappearance (7.131542ms)
+✔ checkpoint request cannot be created without an original parent task (4.208958ms)
+✖ native checkpoint recovery binds a child, retains intent and budget, and does not replay unknown edits (2901.831583ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2992.978625
+
+✖ failing tests:
+
+test at tests/checkpoint-revision.test.ts:22:1
+✖ native checkpoint recovery binds a child, retains intent and budget, and does not replay unknown edits (2901.831583ms)
+  Error: ENOENT: no such file or directory, open 'TEMPORARY_WORKSPACE'
+      at readFileSync (node:fs:441:20)
+      at readJson (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/protocol/files.ts:19:54)
+      at verifyBundle (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/protocol/bundle.ts:84:39)
+      at exportBundle (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/src/protocol/bundle.ts:52:59)
+      at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/checkpoint-revision.test.ts:40:16)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'TEMPORARY_WORKSPACE'
+  }

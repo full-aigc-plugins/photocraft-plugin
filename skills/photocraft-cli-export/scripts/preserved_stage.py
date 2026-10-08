@@ -38,6 +38,8 @@ def preserved_stage(output, prefix, state=None):
         try:
             operations = state.get('operations', [])
             _write_record(stage / 'recovery-operations.json', operations)
+            if state.get('recoveryContext') is not None:
+                _write_record(stage / 'recovery-context.json', state['recoveryContext'])
             files = {}
             for path in sorted(stage.rglob('*')):
                 if path.is_file() and not path.is_symlink() and path.name != 'failure.json':

@@ -171,9 +171,9 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.44",
-    "pluginWorkingVersion": "0.1.0-dev.55",
-    "fixedSkillSourceVersion": "0.1.0-dev.44",
+    "skillsVersion": "0.1.0-dev.45",
+    "pluginWorkingVersion": "0.1.0-dev.56",
+    "fixedSkillSourceVersion": "0.1.0-dev.45",
     "evidence": "docs/evidence/optimization/task-progress.json",
     "publication": "PUBLISHED_PC_TX_003_FIXED_NATIVE",
     "fullAcceptance": "NOT_RUN",
@@ -183,7 +183,7 @@
       "open": 24,
       "newlyCompleted": 71
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/artifact-lineage/source-validation.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/checkpoint-revision/source-validation.json",
     "publicationEvidence": "docs/evidence/optimization/task-budget-stop/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
@@ -307,5 +307,23 @@
     "remainingAcceptance": "Verified checkpoint to bound revision and full restart matrix remain open",
     "publicationEvidence": "docs/evidence/optimization/recovery-identity/publication.json",
     "fixedInstallation": "PASS_82_HARNESS_7_NATIVE"
+  },
+  "checkpointRecoveryCandidate": {
+    "status": "PARTIAL_CANDIDATE",
+    "pluginVersion": "0.1.0-dev.56",
+    "skillSourceVersion": "0.1.0-dev.45",
+    "evidence": "docs/evidence/optimization/checkpoint-revision/",
+    "fixedInstallation": "NOT_RUN",
+    "closedTasks": [],
+    "remainingTasks": [
+      "3.6",
+      "10.9"
+    ],
+    "remainingAcceptance": [
+      "full crash/restart matrix",
+      "same-plan foreign full-delivery producer binding",
+      "durable progress after hard SIGKILL before failure record",
+      "complete V1"
+    ]
   }
 }

@@ -101,7 +101,7 @@ export class Ledger {
       try {action();} catch(error) {const message=error instanceof Error?error.message:String(error);throw validationError(message.split(':',1)[0],path,message);}
     };
     if(!object(request))throw validationError('invalid_task_request');
-    keys(request,['idempotencyKey','brief','plan','output','authorization','budget','source','mutableProject','expectedProjectSha256','parentTask','references'],'$','invalid_task_request');
+    keys(request,['idempotencyKey','brief','plan','output','authorization','budget','source','mutableProject','expectedProjectSha256','parentTask','references','checkpoint'],'$','invalid_task_request');
     if(typeof request.idempotencyKey!=='string' || !request.idempotencyKey)throw validationError('task_identity_required','$.idempotencyKey');
     if(typeof request.brief!=='string' || !request.brief.trim())throw validationError('task_identity_required','$.brief');
     if(!object(request.plan))throw validationError('plan_required','$.plan');
@@ -116,6 +116,15 @@ export class Ledger {
       request.authorization.objects.forEach((id:any,index:number)=>{if(!Number.isSafeInteger(id) || id<=0)throw validationError('invalid_authorization_objects','$.authorization.objects['+index+']');});
     }
     if(Object.hasOwn(request,'source'))pathCheck(()=>safePath(request.source),'$.source');
+    if(Object.hasOwn(request,'checkpoint')) {
+      const checkpoint=request.checkpoint;
+      if(!request.parentTask)throw validationError('checkpoint_requires_revision','$.checkpoint');
+      if(!object(checkpoint))throw validationError('invalid_checkpoint_source','$.checkpoint');
+      keys(checkpoint,['output','recordSha256','planSha256','projectSha256'],'$.checkpoint','invalid_checkpoint_source');
+      pathCheck(()=>within(checkpoint.output,request.authorization.writeRoot),'$.checkpoint.output');
+      for(const field of ['recordSha256','planSha256','projectSha256'])if(typeof checkpoint[field]!=='string' || !/^[a-f0-9]{64}$/.test(checkpoint[field]))throw validationError('invalid_checkpoint_source','$.checkpoint.'+field);
+      if(request.source)throw validationError('conflicting_source','$.source');
+    }
     if(Object.hasOwn(request,'mutableProject')) {
       pathCheck(()=>safePath(request.mutableProject),'$.mutableProject');
       if(typeof request.expectedProjectSha256!=='string' || !/^[a-f0-9]{64}$/.test(request.expectedProjectSha256))throw validationError('project_revision_required','$.expectedProjectSha256');

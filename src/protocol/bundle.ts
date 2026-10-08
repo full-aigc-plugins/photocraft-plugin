@@ -25,6 +25,7 @@ function checkReview(task:any) {
 
 /** 导出额外的本地证据文件，公共 artifact 只使用固定协议既有 evidenceRefs。 */
 export function exportBundle(task:any,destination:string,parent?:any) {
+ if(task.request.checkpoint)parent=undefined;
  if(['cancel_requested','cancelled','failed','reconciling'].includes(task.state))throw new Error('bundle_task_not_verified');
  if(task.identity!==digest(canonical(task.request)) || !/^[a-f0-9]{64}$/.test(task.executionIdentity?.sha256??'') || task.technical.sourceSha256!==task.executionIdentity?.sha256)throw new Error('bundle_task_identity_mismatch');
  checkReview(task);
@@ -81,7 +82,7 @@ export function verifyBundle(directory:string,expectedSha256?:string):any {
  const task=readJson(join(root,'harness/task.json'));
  if(task.id!==manifest.taskId || task.identity!==manifest.requestSha256 || digest(canonical(task.request))!==task.identity || !/^[a-f0-9]{64}$/.test(task.executionIdentity?.sha256??'') || task.technical.sourceSha256!==task.executionIdentity?.sha256)throw new Error('bundle_task_identity_mismatch');
  if(['cancel_requested','cancelled','failed','reconciling'].includes(task.state))throw new Error('bundle_task_not_verified');
- const parent=task.request.parentTask?readJson(pathAt(root,'harness/parent-artifact.json')):undefined;
+ const parent=task.request.parentTask && !task.request.checkpoint?readJson(pathAt(root,'harness/parent-artifact.json')):undefined;
  if(parent && !Object.hasOwn(manifest.files,'harness/parent-artifact.json'))throw new Error('bundle_required_file_missing');
  const base=mapArtifact(task,parent,root);checkReview(task);
  if(canonical(readJson(join(root,'plan.json')))!==canonical(task.request.plan))throw new Error('bundle_plan_binding_mismatch');

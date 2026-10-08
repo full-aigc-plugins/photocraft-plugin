@@ -101,6 +101,12 @@ def validate_delivery(root, expected_manifest_sha256=None):
                 or output.get('role') != 'derivative' or output.get('nativeSubstitute') is not False):
             raise ValueError('delivery_loss_identity_mismatch')
         observed.add(location)
+    plan = read_json(root / 'plan.json')
+    if 'expectedCheckpointSha256' in plan:
+        if 'checkpoint-origin.json' not in files:raise ValueError('checkpoint_origin_missing')
+        origin=read_json(root/'checkpoint-origin.json')
+        expected={'schema':'photocraft-checkpoint-origin/v1','recordSha256':plan['expectedCheckpointSha256'],'planSha256':plan.get('expectedCheckpointPlanSha256'),'projectSha256':plan.get('expectedProjectSha256')}
+        if origin!=expected or manifest.get('sourceProjectSha256')!=expected['projectSha256']:raise ValueError('checkpoint_origin_conflict')
     spec = importlib.util.spec_from_file_location('delivery_psd_policy', Path(__file__).with_name('psd_policy.py'))
     policy = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(policy)
