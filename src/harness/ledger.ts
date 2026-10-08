@@ -33,6 +33,13 @@ export class Ledger {
       this.db = new DatabaseSync(databaseFile, { readOnly: !!options.readOnly });
       if(existed && !this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='metadata'").get())throw new Error('unsupported_ledger_schema');
       if (existed && this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='metadata'").get() && (this.db.prepare('SELECT version FROM metadata').get() as any)?.version !== 1)throw new Error('unsupported_ledger_schema');
+      if(existed) {
+        const required:Record<string,string[]>={metadata:['version'],tasks:['id','key','identity','data'],resources:['name','owner','epoch'],events:['sequence','task','data']};
+        for(const [table,columns] of Object.entries(required)) {
+          const actual=(this.db.prepare('PRAGMA table_info('+table+')').all() as any[]).map(column=>column.name);
+          if(columns.some(column=>!actual.includes(column)))throw new Error('ledger_schema_incomplete');
+        }
+      }
       if (!options.readOnly) {
         chmodSync(file, 0o600);
         this.db.exec(`PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA busy_timeout=5000;
@@ -63,6 +70,16 @@ export class Ledger {
     if (!row) throw new Error('task_missing');
     const task = strictJson(row.data);
     if (task.schema !== 'photocraft-task/v1' || !Object.hasOwn(transitions,task.state) || !Number.isSafeInteger(task.epoch) || task.id!==row.id || task.identity!==row.identity || digest(canonical(task.request))!==row.identity) throw new Error('task_state_invalid');
+    // 请求身份正确也不足以恢复写入权；尝试标记必须与持久意图事件一致。
+    try {
+      const events=(this.db.prepare('SELECT data FROM events WHERE task=? ORDER BY sequence').all(id) as any[]).map(value=>strictJson(value.data));
+      const intents=events.filter(event=>event.event==='intent_persisted');
+      if(typeof task.attempted!=='boolean' || task.epoch<0 || !events.some(event=>['created','revision_created'].includes(event.event) && event.epoch===0 && event.state==='planned'))throw new Error('task_intent_invalid');
+      if(task.attempted) {
+        if(task.epoch<1 || task.state==='planned' || !Number.isSafeInteger(task.startedAt) || task.startedAt<task.createdAt || intents.length!==1
+          || intents[0].epoch!==task.epoch || intents[0].state!=='running' || intents[0].at<task.startedAt)throw new Error('task_intent_invalid');
+      }else if(task.epoch!==0 || task.startedAt!==undefined || intents.length || !['planned','cancelled'].includes(task.state))throw new Error('task_intent_invalid');
+    }catch{throw new Error('task_intent_invalid');}
     return task;
   }
 
@@ -216,6 +233,7 @@ export class Ledger {
           || !['projectSha256', 'previewSha256', 'manifestSha256'].every(key => /^[a-f0-9]{64}$/.test(evidence[key] ?? ''))) throw new Error('invalid_technical_evidence');
       if(artifact)task.artifact=artifact;
       task.technical = evidence; task.creative = { status: 'NOT_RUN' }; task.acceptance = { status: 'NOT_RUN' };
+      delete task.reconcileError;delete task.verificationError;task.recoveryAction='request_independent_review';
     });
   }
 

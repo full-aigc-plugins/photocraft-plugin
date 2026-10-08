@@ -1,0 +1,18 @@
+{
+  "schema": "photocraft-recovery-identity-evidence/v1",
+  "status": "PASS",
+  "originalTaskId": "491ad24f-59af-4e32-b15a-60824435acfe",
+  "foreignTaskId": "49a11f3c-dfa4-4757-9b06-52618b11922e",
+  "originalPlanSha256": "d3c8b51be83769b6dd2d9f7f885d7eb7769828267611aa47392ac4d08bc95574",
+  "foreignPlanSha256": "32b53b0cab4bb37acdf8d25177036665f50445e019eefe5fa96089fc90cd0204",
+  "originalProjectSha256": "7ffd60d71757b6707b675df86537af097c29d0196565433e0aee0ad49786eaac",
+  "foreignProjectSha256": "be88dc106d9e0be20497e1dae99920efa047926539dcfa3c06e2cd7e0402bc06",
+  "sourceSha256": "8ddc32e2169521c82da5fed0b1c5cf43d7c494237ff7cd43f7436d6d8996e88a",
+  "foreignPackageRefused": true,
+  "staleTechnicalRevoked": true,
+  "staleArtifactRevoked": true,
+  "originalRestored": true,
+  "repeatedEdits": 0,
+  "epoch": 1,
+  "creative": "NOT_RUN"
+}

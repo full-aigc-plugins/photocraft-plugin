@@ -147,7 +147,7 @@ export class Runner {
    if(alive)return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='wait_for_owned_worker_or_inspect';});
   }
   if(existsSync(join(task.request.output,'manifest.json')) && task.executionIdentity) {
-   try{return await this.verify(id);}catch(error){return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.reconcileError=String(error);current.recoveryAction='inspect_preserved_artifacts';});}
+   try{return await this.verify(id);}catch(error){return this.ledger.update(id,task.epoch,current=>{if(current.technical?.status==='PASS'){current.invalidatedTechnical??=[];current.invalidatedTechnical.push({technical:current.technical,artifact:current.artifact??null,reason:String(error),at:Date.now()});}current.technical={status:'NOT_RUN'};current.creative={status:'NOT_RUN'};current.acceptance={status:'NOT_RUN'};delete current.artifact;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'technical_verification_unproven',phase:'verification',outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';});}
   }
   if(existsSync(join(task.request.output,'failure.json')) && task.executionIdentity) {
    try {
@@ -177,6 +177,11 @@ export class Runner {
   const manifest=readJson(join(output,'manifest.json'));const manifestSha256=fileDigest(join(output,'manifest.json'));
   if(!object(manifest) || !object(manifest.files) || integrity.manifestSha256!==manifestSha256
      || integrity.nativeSha256!==manifest.files['project.pcraft'] || integrity.files!==Object.keys(manifest.files).length)throw invalidVerification();
+  if(!manifest.files['plan.json'] || canonical(readJson(join(output,'plan.json')))!==canonical(task.request.plan))throw new OperationError('task_delivery_plan_mismatch',{code:'task_delivery_plan_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
+  const expectedSource=task.request.source?task.request.plan.expectedProjectSha256:null;
+  if(manifest.sourceProjectSha256!==expectedSource)throw new OperationError('task_delivery_source_mismatch',{code:'task_delivery_source_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
+  for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new OperationError('reference_identity_mismatch',{code:'reference_identity_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
+  for(const [name,entry]of Object.entries(task.request.plan.assets??{}) as [string,any][])if(manifest.assets?.[name]?.sha256!==entry.sha256)throw new OperationError('task_delivery_input_mismatch',{code:'task_delivery_input_mismatch',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
   const nativeArgs=[output];if(this.options.runtimeHome)nativeArgs.push('--runtime-home',safePath(this.options.runtimeHome));
   const reopened=this.python('native_verify.py',nativeArgs);
   if(reopened?.result==='FAIL' && typeof reopened.error==='string')throw new OperationError(reopened.error,{code:'technical_verification_failed',phase:'verification',outcome:'failed',recoveryAction:'inspect'});
