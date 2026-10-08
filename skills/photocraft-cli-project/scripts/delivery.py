@@ -105,6 +105,9 @@ def validate_delivery(root, expected_manifest_sha256=None):
     policy = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(policy)
     policy.validate_saved(root, read_json(root / 'plan.json'), loss, files)
+    spec = importlib.util.spec_from_file_location('delivery_flat_export', Path(__file__).with_name('flat_export.py'))
+    flat = importlib.util.module_from_spec(spec); spec.loader.exec_module(flat)
+    flat.validate_saved(root, read_json(root / 'plan.json'), manifest)
     if sha(manifest_file) != manifest_digest:
         raise ValueError('delivery_manifest_changed')
     return manifest

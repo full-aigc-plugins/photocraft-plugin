@@ -1,10 +1,12 @@
 # PhotoCraft Agent Plugin
 
+Dev.41 adds actual flat-export color/ICC/alpha checks and bound existing provider receipts; revisions retain the export requirements. Fixed-installation acceptance is pending. [Contract and evidence boundaries](docs/PhotoCraft-Flat-Export-Acceptance.md).
+
 Published [skills dev.36](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36) and [plugin dev.40](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40): public ZIP hashes and commits verified, both main/tag CI workflows pass. Fixed Codex discovers 14 skills; single-skill cold PSD acceptance and all 28 installed harness tests pass. Tasks 4.15, 5.6 and 12.12 close with explicit unknown fidelity limits. [Release evidence](docs/evidence/optimization/psd-release-publication.json) · [Scenario audit](docs/evidence/optimization/psd-acceptance-audit.json).
 
 PSD required-feature delivery now refuses unaccepted observed losses and required unknowns; revisions retain the policy with source-bound acceptance. [Policy and verification](docs/PhotoCraft-PSD-Policy-Architecture.md). The public dev.40 installation passes all seven current PSD/native exchange scenarios.
 
-Development release dev.40 includes SQLite task control, bound review and bounded revisions, with standalone dev.36 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
+Development release dev.41 includes SQLite task control, bound review and bounded revisions, with standalone dev.37 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
 Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 123/157 complete, with 34 gates open.
 
@@ -22,7 +24,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.40`; skill source: `0.1.0-dev.36`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.41`; skill source: `0.1.0-dev.37`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -117,9 +119,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.40 |
+| Metadata version | 0.1.0-dev.41 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.36 |
+| Skills source | photocraft-skills / 0.1.0-dev.37 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

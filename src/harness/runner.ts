@@ -145,6 +145,7 @@ export class Runner {
   }
   const operations=contract.operations.flatMap((operation:any)=>operation.command==='layer.renameLayer'?[{command:'layer.select',params:{layer:operation.params.layer}},{command:operation.command,params:{name:operation.params.name}}]:operation.command==='layer.setAdjustment'?[{command:'layer.select',params:{layer:operation.params.layer}},{command:'native.command',params:{command:operation.command,params:operation.params}}]:[operation]);
   const plan:any={operations,exports:task.request.plan.exports??[{format:'png'}],expectedProjectSha256:contract.baseProjectSha256,expectedManifestSha256:contract.baseManifestSha256,preserveObjects:allowedChanges};
+  if(task.request.plan.flatExport)plan.flatExport=JSON.parse(canonical(task.request.plan.flatExport));
   if(task.request.plan.psdPolicy){
    const policy=JSON.parse(canonical(task.request.plan.psdPolicy));
    // 必要特性继续约束新候选；旧源的损失接受不能授权不同源版本。

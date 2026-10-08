@@ -106,7 +106,7 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required: $.operations')
     allowed = {'document', 'operations', 'assets', 'exports', 'minimumLayers',
-               'expectedProjectSha256', 'expectedManifestSha256', 'protectedRegions', 'variant', 'assertions', 'preserveObjects', 'filterContract','acceptedFontSubstitutions','psdPolicy'}
+               'expectedProjectSha256', 'expectedManifestSha256', 'protectedRegions', 'variant', 'assertions', 'preserveObjects', 'filterContract','acceptedFontSubstitutions','psdPolicy','flatExport','assetProvenance'}
     if set(plan) - allowed:
         raise ValueError('unknown_plan_field: $.' + sorted(set(plan) - allowed)[0])
     # 保留旧的片段校验入口；完整 execute 总会传入已核验的绑定再严格检查。
@@ -133,6 +133,8 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
                 or not isinstance(entry['path'], str) or not entry['path']
                 or not isinstance(entry['sha256'], str) or not re.fullmatch(r'[a-f0-9]{64}', entry['sha256'])):
             raise ValueError('invalid_asset: ' + name)
+    load_module('flat_export').validate_provenance(plan)
+    if 'flatExport' in plan:load_module('flat_export').validate(plan['flatExport'])
     if 'filterContract' in plan:load_module('filter_contract').validate(plan['filterContract'])
     if 'assertions' in plan:load_module('domain_assertions').validate_assertions(plan['assertions'])
     if 'preserveObjects' in plan:
@@ -200,6 +202,7 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
         formats.append(item['format'])
     if len(formats) != len(set(formats)):
         raise ValueError('duplicate_export')
+    if 'flatExport' in plan and not set(formats) & load_module('flat_export').FORMATS:raise ValueError('flat_export_format_required')
     if 'psdPolicy' in plan:
         load_module('psd_policy').validate(plan['psdPolicy'])
         if 'psd' not in formats:
@@ -275,6 +278,10 @@ def preflight(plan, output=None, source=None):
             layer=operation.get('params',{}).get('layer')
             if type(layer) is int and not creates and str(layer) not in known:raise ValueError('unknown_source_layer: '+str(layer))
             if operation['command'].startswith(('layer.new','asset.place','type.create','shape.create')) or operation['command']=='native.command':creates=True
+    load_module('flat_export').provenance_preflight(plan,inherited_assets,source)
+    if 'flatExport' in plan:
+        model=source_model if source else plan['document']
+        if model.get('depth',8)!=8 or model.get('mode','rgb').lower() not in ('rgb',):raise ValueError('flat_source_mode_unsupported: RGB8 required')
     registered=set(inherited_assets)|set(plan.get('assets',{}))
     for operation in plan['operations']:
         if operation['command'] in SMART_SOURCE | {'asset.placeSmart'} and operation['params']['asset'] not in registered:raise ValueError('unregistered_asset_path')
@@ -447,6 +454,7 @@ def execute(plan, output, runtime_home=None, source=None):
                 call('doc_export', {'path':'protection-after.png','format':'png'})
                 protection = load_module('pixel_guard').compare(stage/'protection-before.png',stage/'protection-after.png',plan['protectedRegions'])
                 (stage/'pixel-protection.json').write_text(json.dumps(protection,ensure_ascii=False,indent=2)+'\n')
+            load_module('flat_export').collect(stage,plan,call,native)
             psd = None
             if any(item['format'] == 'psd' for item in plan.get('exports', [])):
                 call('doc_open', {'path': 'design.psd'})
@@ -461,6 +469,7 @@ def execute(plan, output, runtime_home=None, source=None):
             (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
         if psd is not None:
             (stage / 'psd-inspection.json').write_text(json.dumps(psd, ensure_ascii=False, indent=2) + '\n')
+        load_module('flat_export').write_provenance(stage,plan,assets,source)
         exchange_report(stage,[item['path'] for item in outputs],{item['path']:item['warnings'] for item in outputs})
         manifest = {'schema': 'photocraft-delivery/v1', 'sourceProjectSha256': source_hash,
                     'runtimeSha256': installed['binarySha256'], 'bindings': bindings, 'assets': assets,
