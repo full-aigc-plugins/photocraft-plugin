@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "PUBLISHED_RUNTIME_TRANSITION_IMPLEMENTATION_FULL_PLAN_INCOMPLETE",
+  "status": "PUBLISHED_RUNTIME_ACCEPTED_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -77,16 +77,16 @@
     "3.6",
     "10.9",
     "2.4",
-    "2.5"
+    "2.5",
+    "2.6"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 137,
-    "open": 20,
-    "newlyCompleted": 75
+    "completed": 138,
+    "open": 19,
+    "newlyCompleted": 76
   },
   "openTaskIds": [
-    "2.6",
     "3.3",
     "6.3",
     "6.6",
@@ -107,7 +107,7 @@
     "13.5",
     "13.6"
   ],
-  "greenEvidence": "runtime-transition/publication.json",
+  "greenEvidence": "runtime-version/acceptance-audit.json",
   "baselineRedReconstruction": "baseline-red.json",
   "observedRegressionFixes": "additional-red-green.json",
   "groups": [
@@ -136,8 +136,8 @@
       "requirements": [
         "PC-RT-002"
       ],
-      "candidate": "dev.62 fixed107 tests pass, including14 native: explicit per-ledger source combination activation/rollback, transactional draining, backups and claim fencing; actual headless/owned desktop probes and saved/failed project reopening.",
-      "remaining": "Task2.6 different-binary upgrade and all PC-RT-002 scenarios remain open; native transition uses same craft.1 binary, no state migration."
+      "candidate": "All six PC-RT-002 scenarios pass on fixed plugin63/source49 with actual craft1/craft5/craft1 and independent bridge probes",
+      "remaining": "No remaining scenario in current declared macOS arm64 runtime scope; GUI ownership, raw/streaming supervision, other platforms and fullV1 are separate gates"
     },
     {
       "requirements": [
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Source44/plugin54 immutable installed PC-TX-003 scenarios pass. Only3.9/10.12 close;133/157 complete,24 open; full recovery, GUI ownership, creative acceptance and host/model routing remain separate.",
+  "scope": "Fixed plugin63/source49/craft5 all six PC-RT-002 scenarios accepted on macOS arm64;138/157 complete,19 open; full V1 NOT_RUN",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -207,16 +207,18 @@
     "PC-SK-003-PATH-SELF",
     "PC-CM-001-SAVED-SELECTION"
   ],
-  "latestCompletedTaskIds": [],
+  "latestCompletedTaskIds": [
+    "2.6"
+  ],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 240,
-    "skillsReusedFrom": "readonly-reply-source-validation.json",
-    "skillsReuse": "240 local tests run once; exact source and equal layers reused for plugin rechecks",
-    "pluginTypeScript": 70,
+    "skills": 306,
+    "skillsReusedFrom": "runtime-version/source-validation.json",
+    "skillsReuse": "305 full-suite passes plus one unchanged-source targeted recheck; full HTTP404 attempt retained",
+    "pluginTypeScript": 108,
     "pluginPython": 48,
+    "nativeHarness": 15,
     "skipped": 0,
-    "checks": 14,
     "sourceUnchanged": true
   },
   "commandAcceptanceIndex": {
@@ -267,12 +269,23 @@
     "evidence": "harness-entry-publication.json"
   },
   "closedThisRun": [
-    "3.9",
-    "10.12"
+    "2.6"
   ],
   "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json",
   "checkpointCandidateEvidence": "checkpoint-contract-candidate.json",
   "fixedReadonlyReplyEvidence": "readonly-reply-fixed-native-faults.json",
   "fixedArtifactLineageEvidence": "artifact-lineage/acceptance-audit.json",
-  "fixedCancellationBudgetEvidence": "task-budget-stop/acceptance-audit.json"
+  "fixedCancellationBudgetEvidence": "task-budget-stop/acceptance-audit.json",
+  "runtimeTransitionAcceptance": {
+    "status": "PASS",
+    "evidence": "docs/evidence/optimization/runtime-version/acceptance-audit.json",
+    "closedTaskIds": [
+      "2.6"
+    ],
+    "pluginVersion": "0.1.0-dev.63",
+    "skillSourceVersion": "0.1.0-dev.49",
+    "platform": "darwin-arm64",
+    "sameBinaryOnly": false,
+    "fullV1": "NOT_RUN"
+  }
 }

@@ -1,6 +1,6 @@
 # Explicit runtime combination lifecycle
 
-PC-RT-002 fixed public implementation, plugin dev.62 / source dev.48. Tasks2.4/2.5 complete; [publication evidence](evidence/optimization/runtime-transition/publication.json). The public binary remains craft.1. Different-binary version upgrade and full scenario acceptance2.6 remain open. These controls operate on one existing task ledger and do not change PATH, the global plugin installation or the published skill snapshot.
+PC-RT-002 accepted for fixed public plugin dev.63 / source dev.49 on macOS arm64. All six scenarios, actual craft.1 → craft.5 → craft.1,108 Harness tests (15 native), independent headless/owned desktop probes, scoped external-link refusal and download boundaries pass; task2.6 complete. [Audit](evidence/optimization/runtime-version/acceptance-audit.json). Full V1, raw/streaming supervision and GUI editing ownership remain open. Controls operate on an existing ledger without changing PATH or global installations.
 
 Use `node src/cli.ts runtime-status --state-dir <absolute-state>` to inspect the selected combination without initializing state or installing a runtime. Generation0 means the historical fixed entry remains unmanaged. `runtime-upgrade` and `runtime-rollback` take `--request <absolute-json>`. The first upgrade also takes the original `--skill-root`; subsequent ordinary CLI tasks use the retained active source by default. Explicit foreign sources cannot bypass claim fencing.
 
@@ -41,3 +41,6 @@ Headless and bridge probes use their own real capability snapshots. Bridge start
 Only existing ledger schema1 and photocraft-task/v1 are supported. No migration is implemented: unsupported state schemas fail with preservation, never downgrade or silently rebuild. Backups contain the database and applicable WAL/journal bytes plus digests. Rollback repeats draining, source, binary, backend, state and readonly project checks; it is not a version-string assignment.
 
 Tests cover source/generation conflicts, state incompatibility, failed probes, binary changes after probe, independent-process transaction contention, readonly status, retained backup reopening and claim fencing. Native evidence additionally creates and saves an editable project, drains it by explicit cancellation, activates an independently retained source combination, rejects old-source dispatch, runs the selected source and rolls back while retaining project bytes. That native test deliberately uses the same craft.1 binary; mock different-version tests and source identity changes do not establish real different-version acceptance.
+
+
+Historical dev.62 evidence used the same craft.1 binary and closed implementation tasks2.4/2.5 only. Current dev.63 acceptance above supersedes that version limitation; both immutable release records remain preserved.

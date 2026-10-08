@@ -1,0 +1,467 @@
+{
+  "schema": "photocraft-capability-first-use/v1",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "cases": [
+    {
+      "backend": "headless",
+      "fault": "none",
+      "result": "PASS",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "06fc144c-85b9-4302-bfb0-4232ee55bb36",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 0,
+      "checkpointSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 1,
+      "receiptSha256": "6fa7480b444267f0966441d7b062887d27e50c25e236f2ceacaa6ab19ff43169",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "headless",
+      "fault": "initial-missing",
+      "result": "FAIL",
+      "errorCode": "capability_missing",
+      "steps": 0,
+      "faultCount": 1,
+      "laterEditCalls": 0,
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "receiptSha256": "83d155ecf88458dee1e85d02e0b56e26d77bd8357962aaee29f4993677a06264",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "headless",
+      "fault": "params",
+      "result": "FAIL",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "fc0cc2cb-8ff0-4dbe-8ff9-4fc7f095c8de",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 2,
+      "checkpointSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 0,
+      "receiptSha256": "e29135fc9f448e2b1f8ddbca75780b715be0e8a270ada69e7583d417df413303",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "headless",
+      "fault": "tool-schema",
+      "result": "FAIL",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "10467662-41df-4328-a98b-fc0d10dd0674",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 1,
+      "checkpointSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 0,
+      "receiptSha256": "77d7e1f092366ba7164c1933ae712b61dae4efa80baaf0e41f0035b4040cbf91",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "headless",
+      "fault": "missing",
+      "result": "FAIL",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "d32abc6c-3fae-4844-a457-2a3c12425c9a",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 1,
+      "checkpointSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 0,
+      "receiptSha256": "078c23b9a9039fc781bc9f11d713e32ce3325ada1f050753b45000edad30e682",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "headless",
+      "fault": "unrelated-params",
+      "result": "PASS",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "9557bc7b-16bb-47fe-beb6-d48c494bdd92",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 5,
+      "checkpointSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 1,
+      "receiptSha256": "52b150238c637e65f792d77ecede84681b0aae48d216ea0b179818ad754fba82",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "headless",
+      "fault": "unrelated-tool",
+      "result": "PASS",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": null,
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "a5dff62c-2e76-4960-b91a-b78e6f6f4469",
+        "backend": "headless",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "12c2fab4d96a856077c4dccffbb00069c77659b6b6611a091db476db3ef47517",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 755,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 2,
+      "checkpointSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 1,
+      "receiptSha256": "7cbee95ad10e59774a531198ade6e99a10326b59b5227f0eacdb5376bcbc242a",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "none",
+      "result": "PASS",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "bccbdda4-147d-45ac-99c5-a6a3a84ff9d5",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 0,
+      "checkpointSha256": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 1,
+      "receiptSha256": "44fa54c784d778a88303b0951cc21839d4264c5a6218f4c1f6397893a3a6175d",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "initial-missing",
+      "result": "FAIL",
+      "errorCode": "capability_missing",
+      "steps": 0,
+      "faultCount": 2,
+      "laterEditCalls": 0,
+      "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "receiptSha256": "e18cdc3e578b7e083d795b9a01922b76f432d2e43076e0f082b6fbb0e4cb6a7f",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "params",
+      "result": "FAIL",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "ecdbf078-d4e4-412e-b33f-c1eadc6a155c",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 2,
+      "checkpointSha256": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 0,
+      "receiptSha256": "a5ebee9b4881345a5beae74f5605da7d6768329027c0746a766628bbf68defb1",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "tool-schema",
+      "result": "FAIL",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "85eee126-9d26-45eb-bc05-7a998c098c69",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 1,
+      "checkpointSha256": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 0,
+      "receiptSha256": "631ff986707ec6fa057d9a8444908d145661e255f9c5ae17bb772ffb624ff5c6",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "missing",
+      "result": "FAIL",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "d04faa65-84be-44ad-b6fb-42e0da66854a",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 1,
+      "checkpointSha256": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 0,
+      "receiptSha256": "eb2de3a7f5ffafca6ce7b96f02a310388f3fb9eebc5fc54c5338327ef8276827",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "unrelated-params",
+      "result": "PASS",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "d5a07a93-8021-4294-a602-e85c8f15b116",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 5,
+      "checkpointSha256": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 1,
+      "receiptSha256": "4a4bf1a81bc87dc88cab68633602965badadc73a5ebd953854891dd587d74185",
+      "ownedProcessesStopped": true
+    },
+    {
+      "backend": "bridge",
+      "fault": "unrelated-tool",
+      "result": "PASS",
+      "capabilitySnapshot": {
+        "runtimeIdentity": {
+          "version": "0.2.0-craft.5",
+          "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+          "platform": "darwin-arm64"
+        },
+        "desktopIdentity": {
+          "version": "0.2.0",
+          "binarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31"
+        },
+        "schema": "photocraft-capabilities/v1",
+        "sessionId": "b6c2be01-65a4-4228-9425-2c3d26dbe1f7",
+        "backend": "bridge",
+        "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+        "commandsSha256": "cb3d59f364baa6d09a99c40ece81a1a8b034df259621a3f100f58d4f660789be",
+        "toolsSha256": "47813ff2f729e56246f7bfd32888aaa3b65670d11d49c8e31c75160349ccc001",
+        "commandCount": 748,
+        "toolCount": 18,
+        "parameterContract": "runtime parameter descriptions plus MCP tool schemas; not per-command JSON Schema"
+      },
+      "faultCount": 2,
+      "checkpointSha256": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+      "checkpointFreshReopenAndUnchanged": true,
+      "laterEditCalls": 1,
+      "receiptSha256": "1e13c5f95f92e3ea54b08804a466d9a244fe743048bf488529cee94ffac820f4",
+      "ownedProcessesStopped": true
+    }
+  ],
+  "skillUnchanged": true,
+  "skillFilesSha256": "77f7451a7baf01145ddaa5d162eb367060674e2c972983e66927b4846d06aa37",
+  "driverSha256": "e9de6e5c19116029bc6d57c04953439a6629334c59bfca366fa25d6b69c81718",
+  "artifacts": {
+    "bridge-params/desktop-session.json": "beea5ea780d066f6d5e7d0ea266b498e0129e6fae91d4a4d682982e377ac8094",
+    "bridge-params/checkpoint.pcraft": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+    "bridge-params/journal.json": "a5ebee9b4881345a5beae74f5605da7d6768329027c0746a766628bbf68defb1",
+    "bridge-params/failure.json": "a5ebee9b4881345a5beae74f5605da7d6768329027c0746a766628bbf68defb1",
+    "bridge-params/desktop.log": "2157abb99c59d9bfa41a638ac7fbba5a67393f01d50a69254743652dd5a82c8c",
+    "bridge-missing/desktop-session.json": "08e72d348596c4cd42eb39254390f6f631d48be397e146480c74806facca0e20",
+    "bridge-missing/checkpoint.pcraft": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+    "bridge-missing/journal.json": "eb2de3a7f5ffafca6ce7b96f02a310388f3fb9eebc5fc54c5338327ef8276827",
+    "bridge-missing/failure.json": "eb2de3a7f5ffafca6ce7b96f02a310388f3fb9eebc5fc54c5338327ef8276827",
+    "bridge-missing/desktop.log": "8a451b4451c8fb72738447d82c260350e9c3befdca61a609d8a7c471cd622cad",
+    "bridge-unrelated-params/success.json": "4a4bf1a81bc87dc88cab68633602965badadc73a5ebd953854891dd587d74185",
+    "bridge-unrelated-params/desktop-session.json": "6f1c105cd9f31403fc06e74eb982777ebe6c1fa5f2fc71d238c66fbb59717e07",
+    "bridge-unrelated-params/checkpoint.pcraft": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+    "bridge-unrelated-params/journal.json": "4a4bf1a81bc87dc88cab68633602965badadc73a5ebd953854891dd587d74185",
+    "bridge-unrelated-params/final.pcraft": "543464fb9a9f86d3822f54dfdee6e900e717fee4dcf7ba258ce42bb9669c641a",
+    "bridge-unrelated-params/desktop.log": "f62ea68cde2e1a278b4918483f1844e9ffa5a27752aee1271df6b5f465fb8183",
+    "bridge-none/success.json": "44fa54c784d778a88303b0951cc21839d4264c5a6218f4c1f6397893a3a6175d",
+    "bridge-none/desktop-session.json": "890a9038730939a6f1323e556d3159e553bfd6953f4bcd877070e61b6e7c70db",
+    "bridge-none/checkpoint.pcraft": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+    "bridge-none/journal.json": "44fa54c784d778a88303b0951cc21839d4264c5a6218f4c1f6397893a3a6175d",
+    "bridge-none/final.pcraft": "543464fb9a9f86d3822f54dfdee6e900e717fee4dcf7ba258ce42bb9669c641a",
+    "bridge-none/desktop.log": "af70bc05212681de971cd4d2fa577171c3363a2fb0f198de7871abdbac0266b0",
+    "bridge-tool-schema/desktop-session.json": "d4566169d92ca4489195cbf9aac1ff3c742365882ac1650a127b9e978ddb861b",
+    "bridge-tool-schema/checkpoint.pcraft": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+    "bridge-tool-schema/journal.json": "631ff986707ec6fa057d9a8444908d145661e255f9c5ae17bb772ffb624ff5c6",
+    "bridge-tool-schema/failure.json": "631ff986707ec6fa057d9a8444908d145661e255f9c5ae17bb772ffb624ff5c6",
+    "bridge-tool-schema/desktop.log": "eef5e0228252043040ecb5b7d4e047a3c28ca4fd1d8a1e2f5bed0c08df6f1a44",
+    "headless-params/checkpoint.pcraft": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+    "headless-params/journal.json": "e29135fc9f448e2b1f8ddbca75780b715be0e8a270ada69e7583d417df413303",
+    "headless-params/failure.json": "e29135fc9f448e2b1f8ddbca75780b715be0e8a270ada69e7583d417df413303",
+    "headless-unrelated-params/success.json": "52b150238c637e65f792d77ecede84681b0aae48d216ea0b179818ad754fba82",
+    "headless-unrelated-params/checkpoint.pcraft": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+    "headless-unrelated-params/journal.json": "52b150238c637e65f792d77ecede84681b0aae48d216ea0b179818ad754fba82",
+    "headless-unrelated-params/final.pcraft": "bf3959bd74bc20d59b75efc72937310121203c30b2f8a6642c1764e87be638a0",
+    "headless-none/success.json": "6fa7480b444267f0966441d7b062887d27e50c25e236f2ceacaa6ab19ff43169",
+    "headless-none/checkpoint.pcraft": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+    "headless-none/journal.json": "6fa7480b444267f0966441d7b062887d27e50c25e236f2ceacaa6ab19ff43169",
+    "headless-none/final.pcraft": "bf3959bd74bc20d59b75efc72937310121203c30b2f8a6642c1764e87be638a0",
+    "bridge-unrelated-tool/success.json": "1e13c5f95f92e3ea54b08804a466d9a244fe743048bf488529cee94ffac820f4",
+    "bridge-unrelated-tool/desktop-session.json": "c4dd7a4c2d63ee5babf77b01c34a4c3d241ca68628091e0fdba3a2f61a56ef20",
+    "bridge-unrelated-tool/checkpoint.pcraft": "95e752fc5a229e5abeafed2cc8d34d605cc72447fdba0427733cc500a4fec4e5",
+    "bridge-unrelated-tool/journal.json": "1e13c5f95f92e3ea54b08804a466d9a244fe743048bf488529cee94ffac820f4",
+    "bridge-unrelated-tool/final.pcraft": "543464fb9a9f86d3822f54dfdee6e900e717fee4dcf7ba258ce42bb9669c641a",
+    "bridge-unrelated-tool/desktop.log": "3b3b294de8ef9ef4ce44cef53d33e8abf2fa4ddfe31ba1a26b4a7dd6e11d28e6",
+    "headless-initial-missing/journal.json": "83d155ecf88458dee1e85d02e0b56e26d77bd8357962aaee29f4993677a06264",
+    "headless-initial-missing/failure.json": "83d155ecf88458dee1e85d02e0b56e26d77bd8357962aaee29f4993677a06264",
+    "headless-tool-schema/checkpoint.pcraft": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+    "headless-tool-schema/journal.json": "77d7e1f092366ba7164c1933ae712b61dae4efa80baaf0e41f0035b4040cbf91",
+    "headless-tool-schema/failure.json": "77d7e1f092366ba7164c1933ae712b61dae4efa80baaf0e41f0035b4040cbf91",
+    "headless-unrelated-tool/success.json": "7cbee95ad10e59774a531198ade6e99a10326b59b5227f0eacdb5376bcbc242a",
+    "headless-unrelated-tool/checkpoint.pcraft": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+    "headless-unrelated-tool/journal.json": "7cbee95ad10e59774a531198ade6e99a10326b59b5227f0eacdb5376bcbc242a",
+    "headless-unrelated-tool/final.pcraft": "bf3959bd74bc20d59b75efc72937310121203c30b2f8a6642c1764e87be638a0",
+    "headless-missing/checkpoint.pcraft": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+    "headless-missing/journal.json": "078c23b9a9039fc781bc9f11d713e32ce3325ada1f050753b45000edad30e682",
+    "headless-missing/failure.json": "078c23b9a9039fc781bc9f11d713e32ce3325ada1f050753b45000edad30e682",
+    "bridge-initial-missing/desktop-session.json": "0fbfec0bb419854c5528599d6a90e0a3bbf236a13f63087e5e79b66986082054",
+    "bridge-initial-missing/journal.json": "e18cdc3e578b7e083d795b9a01922b76f432d2e43076e0f082b6fbb0e4cb6a7f",
+    "bridge-initial-missing/failure.json": "e18cdc3e578b7e083d795b9a01922b76f432d2e43076e0f082b6fbb0e4cb6a7f",
+    "bridge-initial-missing/desktop.log": "14bf0356f758a0afcfc91912349121f129b15a5f34d0c3f84a82585038cac80a",
+    "runtime/photocraft-desktop/.install.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/photocraft/.install.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/photocraft/0.2.0-craft.5/LICENSE-APACHE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+    "runtime/photocraft/0.2.0-craft.5/installation.json": "cb0cde4940be6da6ababf6c661297522dc54d7dcaee7751d581ee7a6cc363905",
+    "runtime/photocraft/0.2.0-craft.5/LICENSE-OFL-JetBrainsMono.txt": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697",
+    "runtime/photocraft/0.2.0-craft.5/LICENSE-ATTRIBUTION.md": "98af8b34f7b05873104cf5659255a0e4e778e0a3f28fbfd23ae6d713c513c338",
+    "runtime/photocraft/0.2.0-craft.5/photocraft-cli": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+    "runtime/photocraft/0.2.0-craft.5/LICENSE-OFL-Inter.txt": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+    "runtime/photocraft/0.2.0-craft.5/LICENSE-MIT": "1a8f66d8a86b146f5336fa0d4b1186576c8aa98e60823080c85c7811cfd810af",
+    "runtime/photocraft-desktop/0.2.0/receipt.json": "97f8d537b322670c83c72b4c62de5f452db799959c2e10bf563b23c18b95693c",
+    "runtime/photocraft-desktop/0.2.0/PhotoCraft.app/Contents/CodeResources": "892e1b16ac2c76fd4d8a25fe62225f336f53abca0a4a694cae50c866672c1e0b",
+    "runtime/photocraft-desktop/0.2.0/PhotoCraft.app/Contents/Info.plist": "b7d4ddd6d6050f0db8f49e58f9ee1aa1fc6645fc4ac6da7bd1444d1bbec5ea7b",
+    "runtime/photocraft-desktop/0.2.0/PhotoCraft.app/Contents/PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+    "runtime/photocraft-desktop/0.2.0/PhotoCraft.app/Contents/_CodeSignature/CodeResources": "cfaadb02375f7124dba439e59092e17ae92e009faeb664128dccc7e2e8769355",
+    "runtime/photocraft-desktop/0.2.0/PhotoCraft.app/Contents/MacOS/PhotoCraft": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+    "runtime/photocraft-desktop/0.2.0/PhotoCraft.app/Contents/Resources/PhotoCraft.icns": "b7f27e45d0da9f25f32e04d8ea4998c237c8ac0d49d2097f67cb769d22f1c664"
+  },
+  "scope": "fixed native headless and owned signed desktop, with explicitly injected discovery-reply faults after real save; no claim that native servers spontaneously drifted; full upgrade/rollback, creative and exhaustive commands separate"
+}

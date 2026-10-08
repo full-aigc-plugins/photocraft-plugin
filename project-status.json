@@ -134,7 +134,8 @@
     "3.6": "docs/evidence/optimization/task-recovery/acceptance-audit.json",
     "10.9": "docs/evidence/optimization/task-recovery/acceptance-audit.json",
     "2.4": "docs/evidence/optimization/runtime-transition/publication.json",
-    "2.5": "docs/evidence/optimization/runtime-transition/publication.json"
+    "2.5": "docs/evidence/optimization/runtime-transition/publication.json",
+    "2.6": "docs/evidence/optimization/runtime-version/acceptance-audit.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -179,16 +180,16 @@
     "pluginWorkingVersion": "0.1.0-dev.63",
     "fixedSkillSourceVersion": "0.1.0-dev.49",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_CANDIDATE_DIFFERENT_NATIVE_VERSION",
+    "publication": "PARTIAL_PUBLISHED_RUNTIME_ACCEPTED",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 137,
-      "open": 20,
-      "newlyCompleted": 75
+      "completed": 138,
+      "open": 19,
+      "newlyCompleted": 76
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/interrupted-checkpoint/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/runtime-transition/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/runtime-version/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/runtime-version/acceptance-audit.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -197,7 +198,7 @@
   "fixedFlatAcceptanceEvidence": "docs/evidence/optimization/flat-acceptance-audit.json",
   "fixedFlatAcceptanceStatus": "Both PC-DM-006 scenarios passed on fixed dev.41 macOS arm64 RGB8 fixtures; live generation, billing authenticity, external print and full V1 remain unverified",
   "fixedCapabilityAcceptanceEvidence": "docs/evidence/optimization/capability-acceptance-audit.json",
-  "fixedCapabilityAcceptanceStatus": "Task10.3 passed, fourteen fixed macOS arm64 headless/owned desktop cases; full upgrade/drain/state-compatible rollback2.6 remains open",
+  "fixedCapabilityAcceptanceStatus": "Task10.3 and full PC-RT-002 task2.6 accepted for fixed macOS arm64 scope; GUI ownership and complete V1 remain open",
   "fixedReleaseIdentityEvidence": "docs/evidence/optimization/identity-acceptance-audit.json",
   "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json",
   "entryContractEvidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
@@ -422,8 +423,21 @@
       "2.4",
       "2.5"
     ],
-    "openAcceptanceTask": "2.6",
+    "openAcceptanceTask": null,
     "sameBinaryOnly": true,
+    "fullV1": "NOT_RUN",
+    "scope": "Historical dev.62 implementation only; different-version acceptance recorded separately"
+  },
+  "runtimeTransitionAcceptance": {
+    "status": "PASS",
+    "evidence": "docs/evidence/optimization/runtime-version/acceptance-audit.json",
+    "closedTaskIds": [
+      "2.6"
+    ],
+    "pluginVersion": "0.1.0-dev.63",
+    "skillSourceVersion": "0.1.0-dev.49",
+    "platform": "darwin-arm64",
+    "sameBinaryOnly": false,
     "fullV1": "NOT_RUN"
   }
 }

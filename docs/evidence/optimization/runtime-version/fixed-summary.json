@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.63",
+  "skillSourceRef": "v0.1.0-dev.49",
+  "harness": {
+    "tests": 108,
+    "pass": 108,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "readonlyNativeFaults": 14,
+  "healthyReadonlyPaths": 2,
+  "integerOverflowPublicRefusals": 52,
+  "lineageNativeCases": 17,
+  "capabilityCases": 14,
+  "smartPathRefusals": 9,
+  "smartColdFirstUse": true,
+  "bootstrapTests": 15,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "b99b8f208ee3acde3892b9486945f53f96b5f71440515125ca8239b48bbc6e58",
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public-tag installed resources and native craft.1/craft.5 transition; signed desktop engine remains0.2.0, raw/streaming supervision and creative/model acceptance remain open"
+}

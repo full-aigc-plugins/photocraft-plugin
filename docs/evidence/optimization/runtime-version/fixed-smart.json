@@ -1,0 +1,19 @@
+{
+  "schema": "photocraft-smart-candidate-first-use/v1",
+  "result": "PASS",
+  "scope": "single copied skill; empty runtime public downloads; editable embedded smart replacement and relink collection",
+  "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "smartLayerId": 6,
+  "pixelChecks": 3,
+  "sourcePreserved": true,
+  "movedPackagePreserved": true,
+  "skillPreserved": true,
+  "invalidPathRejected": true,
+  "driverSha256": "fa98f7a28ed9059ea36b8fb1232021ea51ae2d59c2194b4632567b4e9f7294fd",
+  "excluded": [
+    "persistent external linked delivery",
+    "all smart filters",
+    "external PSD editor",
+    "creative acceptance"
+  ]
+}

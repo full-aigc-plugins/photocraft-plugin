@@ -1,0 +1,6 @@
+test_actual_native_reopen_faults_preserve_files_and_stop (installed_readonly_faults.ReadonlyNativeFaults.test_actual_native_reopen_faults_preserve_files_and_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.160s
+
+OK

@@ -1,0 +1,55 @@
+{
+  "schema": "photocraft-smart-directory-guard/v1",
+  "status": "PASS",
+  "runtimeVersion": "0.2.0-craft.5",
+  "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "cases": [
+    {
+      "command": "file.placeEmbedded",
+      "pathClass": "absolute",
+      "refused": true
+    },
+    {
+      "command": "file.placeEmbedded",
+      "pathClass": "traversal",
+      "refused": true
+    },
+    {
+      "command": "file.placeEmbedded",
+      "pathClass": "symlink",
+      "refused": true
+    },
+    {
+      "command": "layer.smartObjects.replaceContents",
+      "pathClass": "absolute",
+      "refused": true
+    },
+    {
+      "command": "layer.smartObjects.replaceContents",
+      "pathClass": "traversal",
+      "refused": true
+    },
+    {
+      "command": "layer.smartObjects.replaceContents",
+      "pathClass": "symlink",
+      "refused": true
+    },
+    {
+      "command": "layer.smartObjects.relinkToFile",
+      "pathClass": "absolute",
+      "refused": true
+    },
+    {
+      "command": "layer.smartObjects.relinkToFile",
+      "pathClass": "traversal",
+      "refused": true
+    },
+    {
+      "command": "layer.smartObjects.relinkToFile",
+      "pathClass": "symlink",
+      "refused": true
+    }
+  ],
+  "outputsCreated": 0,
+  "scope": "Actual installed CLI MCP rejects absolute, escaping and symlink smart paths in a registered read/write root"
+}

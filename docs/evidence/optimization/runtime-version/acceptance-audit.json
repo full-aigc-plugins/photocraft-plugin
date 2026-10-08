@@ -1,0 +1,188 @@
+{
+  "schema": "photocraft-runtime-acceptance-audit/v1",
+  "status": "PASS",
+  "requirement": "PC-RT-002",
+  "closedTaskIds": [
+    "2.6"
+  ],
+  "platform": "darwin-arm64",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.63",
+    "commit": "5d0b12c0ae19ccfa4b4cd58a661d50ed6977134c",
+    "assetSha256": "68c2c293a5455e09a231444758cdaa637672213a23a589e34601cbf69940f19c",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.63",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "skills": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.49",
+    "commit": "83789a74a85e3f58801b9d9adff7067dbbcfa746",
+    "assetSha256": "b1ebc1b0c3184d91306f5e81c7ac42ef2ac5413aa5c3a2203dd8ca2b97289326",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.49",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "runtimeVersion": "0.2.0-craft.5",
+  "previousRuntimeVersion": "0.2.0-craft.1",
+  "desktopEngineVersion": "0.2.0",
+  "spec": {
+    "path": "openspec/changes/establish-v1-plugin/specs/runtime-distribution/spec.md",
+    "sha256": "7258722e1ecc2040a177c09411a4023daa06816e8965ab6233405db2b747ed5b"
+  },
+  "scenarios": [
+    {
+      "id": "PC-RT-002-P",
+      "status": "PASS",
+      "evidence": [
+        "fixed-runtime-version.json",
+        "fixed-harness.txt"
+      ],
+      "verified": [
+        "Actual craft.1 -> craft.5 -> craft.1 binaries and saved editable projects",
+        "Pending-task refusal, explicit drain, source claim fences, DB/WAL backup and schema2 rollback refusal",
+        "Rollback reopens both old and new projects unchanged, then executes old runtime"
+      ],
+      "limits": [
+        "Lifecycle native editing is headless; bridge evidence is separate read-only probing, not GUI ownership acceptance"
+      ]
+    },
+    {
+      "id": "PC-RT-002-N",
+      "status": "PASS",
+      "evidence": [
+        "fixed-capability.json",
+        "fixed-harness.txt"
+      ],
+      "verified": [
+        "Both actual backends: initial required capability missing returns capability_missing before started steps",
+        "Missing affected capability after native save preserves checkpoint and stops subsequent editing"
+      ],
+      "limits": [
+        "Missing capability is injected in discovery responses; no claim of a naturally incomplete server"
+      ]
+    },
+    {
+      "id": "PC-RT-002-SMART",
+      "status": "PASS",
+      "evidence": [
+        "fixed-smart.json",
+        "fixed-smart-paths.json",
+        "fixed-smart-external-link.json",
+        "runtime-release.json",
+        "source-validation.json"
+      ],
+      "verified": [
+        "Actual embedded placement/replacement/relink, editable output, three pixel assertions and moved package preservation",
+        "Nine absolute/traversal/symlink native refusals; old unregistered external link refuses embedding, embedded control passes",
+        "Valid external source converts in trusted local control; scoped refusal leaves in-memory state and native bytes unchanged",
+        "Pinned upstream, patch, runtime build, archive and installed binary hashes are distinct; craft.1 retained"
+      ],
+      "limits": [
+        "Persistent externally linked delivery, all filters and external PSD editor remain outside this scenario"
+      ]
+    },
+    {
+      "id": "PC-RT-002-DOWNLOAD-RECOVERY",
+      "status": "PASS",
+      "evidence": [
+        "fixed-bootstrap.txt",
+        "fixed-download-matrix.json",
+        "fixed-smart.json"
+      ],
+      "verified": [
+        "15 actual installed bootstrap checks plus22 fault-boundary cases",
+        "SSL EOF, timeout, connection, short read, HTTP408/429/5xx recover; final certificate, permission, ENOSPC, nontransient HTTP refuse",
+        "Three-attempt exhaustion discards partial download; digest, size and safe extraction fences preserved",
+        "Actual fixed public cold download and smart first use pass"
+      ],
+      "limits": [
+        "Network failure classes use mocked transport against actual installed module; live public download is separately observed"
+      ]
+    },
+    {
+      "id": "PC-RT-002-SNAPSHOT",
+      "status": "PASS",
+      "evidence": [
+        "fixed-runtime-version.json",
+        "fixed-capability.json",
+        "fixed-harness.txt",
+        "source-validation.json"
+      ],
+      "verified": [
+        "Actual binary/version/platform/backend/session/schema snapshots are bound to fixed receipts",
+        "Source test_capability_snapshot verifies session/content drift, dynamic enabled checks and operation scope",
+        "Fixed Harness authorization/write-root tests keep permission separate from enabled state"
+      ],
+      "limits": [
+        "Parameters use actual engine parameter descriptions and MCP tool JSON Schema, not invented per-command JSON Schema"
+      ]
+    },
+    {
+      "id": "PC-RT-002-SCHEMA-DRIFT",
+      "status": "PASS",
+      "evidence": [
+        "fixed-capability.json",
+        "source-validation.json"
+      ],
+      "verified": [
+        "Fourteen headless/owned desktop cases independently prove affected params/tool-schema drift refusal after actual save",
+        "Unrelated params/tool drift permits unaffected operation after scoped validation",
+        "Saved project fresh reopen and hash preservation; no silent runtime upgrade"
+      ],
+      "limits": [
+        "Fault proxy modifies discovery replies after actual native save; does not claim actual production schema mutation"
+      ]
+    }
+  ],
+  "regression": {
+    "fixedHarness": 108,
+    "nativeHarness": 15,
+    "pluginPython": 48,
+    "fixedBootstrap": 15,
+    "downloadBoundaries": 22,
+    "sourceFinalCoverage": 306,
+    "sourceVerificationMode": "305 full-suite passes plus one unchanged-source targeted native recheck; full attempt HTTP404 failure retained"
+  },
+  "fullV1": "NOT_RUN",
+  "remaining": [
+    "raw/streaming public supervision and full entry matrix task9.6",
+    "GUI editing ownership",
+    "creative/provider/model acceptance",
+    "exhaustive command-context acceptance",
+    "other platforms and hosts not verified"
+  ],
+  "historicalEvidenceLimit": "dev.62 same-binary evidence is implementation history; old native-probes scope labels are not used for this different-version acceptance",
+  "files": {
+    "native-version-current.json": "d2b0afe2e13cea01432a94fd45d7cc197d7ec743754edfefacf62169d7fdde72",
+    "release-ci.json": "367a42059e735e41cc14b8af15c7139b6bcf0d1ce9d7d722e82feb483483df59",
+    "full-attempt-source-regression.txt": "86da96776ca2f9cdba0ba66f5b96328d1a585823c231c5f0a7ffa9c30d47f5d4",
+    "fixed-download-matrix.json": "5f6082ef9788fd9baf7264c04ae07e17dd530d819315796d864f915ce581f81d",
+    "source-validation.json": "793b14eae00308b911e8da391ef6fbf884873678262b167d5adc4ebfd6fdf0dc",
+    "fixed-smart-paths.json": "37909a3e96e7047cb6ee5ffbc5a6e2807300edc7752704bd5c81f33d70b6f008",
+    "candidate.json": "e2a9dd6d89ab587f8f60e0a3564b50b23171a41d58ca9f38cfa378d57610f798",
+    "fixed-host-public.json": "18a1b81483c7ca20b15594caf757b3d7991db5dd6cde29ae588ddede51d3262f",
+    "fixed-capability.json": "7e5c7dec30528f7857faad356e4274e3a4389b4ed71c6f378fa74ef73aed002e",
+    "fixed-smart-external-link.json": "1658045adb9d2793993924338f529aa2106ba5c8dc3674f33b35d80e3a3e3006",
+    "fixed-summary.json": "18bb66c5bea7d249b7ac7350d1147481f0a33d7ca4a265cd992f4e68b0922980",
+    "source-recheck.txt": "2ad0fea73a1e19c69340dc3cafd58171873fe713be10d0cc4b1b4e40f3c83a48",
+    "fixed-smart.json": "9a76a91ace43df61dd4fce431a815b7bfba3dad015e858db44351c44462db4ba",
+    "fixed-runtime-version.json": "b9dca5a5ce3ddb4f0cb5cba0a6cf60cbeb892d35106fbf40d6a40510abd8d496",
+    "public-source.json": "d7c2bd7c6ccb1569e7cb96a2579c4104ec7ac1f1c6a8155533b1e58c628d1bd9",
+    "runtime-release.json": "3c5fac5a8e662f40acf27b4846f483c01aaf3edc85c6f1d57388b36a95208dae",
+    "fixed-bootstrap.txt": "0354c14e989824b9acd37a77a72218424564b2f28a4f564ea4f11415899ab6f1",
+    "plugin-validation.json": "c653cef8dc4f2dc64ccd6e1c9a8c263342350400ede2d20ef1ae93764bc6d67a",
+    "source-recheck.xml": "8d6ea873a1e43a52eaf1b8d76455f90808539136745257d4c3eaa72f9a411e74",
+    "public-plugin.json": "2d0a36aa784c1bd2f36afb8575d17adef04787037605ecacc0865b2984f56642",
+    "native-probes.json": "29f11ae7cedff778b5c5487f7430f8309523751b8e9d014b869c655c9cda74f3",
+    "fixed-harness.txt": "8ad437d717c47a59e19312079991080947814ef1d4aa86d02448fb077e83f917",
+    "fixed-readonly.txt": "8be6463e90f3b0c5df5150b7e539face95f8c8bef2b7975efff0001e11abfdd8"
+  },
+  "drivers": {
+    "scripts/verify_runtime_linked_guard.py": "7d002fccb5ee90cf916cb50ed52359463ee404ba885217221cfadc75d3848c1e",
+    "scripts/verify_runtime_download_matrix.py": "b80f0c20ab5ff6a10daeaf11cafa85a75b3046e787becbbde059779c980871dd"
+  }
+}

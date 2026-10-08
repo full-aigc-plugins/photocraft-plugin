@@ -1,0 +1,31 @@
+{
+  "installedSkillUnchanged": true,
+  "schema": "photocraft-smart-external-link-guard/v1",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0-craft.5",
+  "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "cases": [
+    {
+      "sourceKind": "linked",
+      "scopedConversion": "REFUSED",
+      "inMemoryStateUnchanged": true,
+      "projectBytesUnchanged": true,
+      "externalAssetUnchanged": true,
+      "trustedLocalControlPassed": true,
+      "projectSha256": "e32f77d7283aac41a1bfc73d72172c8bd67c2ab6a3bc4705768b6aa480e33dcb"
+    },
+    {
+      "sourceKind": "embedded",
+      "scopedConversion": "PASS",
+      "inMemoryStateUnchanged": true,
+      "projectBytesUnchanged": true,
+      "externalAssetUnchanged": true,
+      "trustedLocalControlPassed": null,
+      "projectSha256": "36684d50ea5a8dc1ea02acdd705844d6cd5981a2e6e32f7c933d76c5ce25af1b"
+    }
+  ],
+  "scope": "Actual old linked native fixture outside registered root refused by fixed installed MCP; embedded fixture accepted; trusted local control proves valid external source",
+  "fullV1": "NOT_RUN",
+  "driverSha256": "7d002fccb5ee90cf916cb50ed52359463ee404ba885217221cfadc75d3848c1e"
+}

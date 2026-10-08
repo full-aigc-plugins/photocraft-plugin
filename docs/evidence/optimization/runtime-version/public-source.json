@@ -1,0 +1,10 @@
+{
+  "repository": "full-aigc-skills/photocraft-skills",
+  "tag": "v0.1.0-dev.49",
+  "commit": "83789a74a85e3f58801b9d9adff7067dbbcfa746",
+  "assetSha256": "b1ebc1b0c3184d91306f5e81c7ac42ef2ac5413aa5c3a2203dd8ca2b97289326",
+  "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.49",
+  "prerelease": true,
+  "publicDownloadMatches": true,
+  "archiveCommitMatchesTag": true
+}

@@ -1,8 +1,8 @@
 # PhotoCraft Agent Plugin
 
-dev.63候选锁定已发布源49／craft.5，真实不同二进制craft.1 → craft.5 → craft.1及独立桌面探测、108项Harness通过。源回归采用全量305项通过加唯一下载失败项的同源码复验，保留全量失败记录。插件公开固定安装与完整2.6审计待完成。[候选](docs/evidence/optimization/runtime-version/candidate.json)。
+dev.63／源dev.49／craft.5已发布：固定公开macOS arm64安装通过全部6个PC-RT-002场景，真实craft.1 → craft.5 → craft.1、108项Harness（15项原生）、双后端14例、外链拒绝及下载边界均有证据。源回归为全量305项通过＋唯一HTTP404失败项同源码复验通过，保留失败记录。2.6完成，现138/157完成、19开放；完整V1仍未验收。[验收](docs/evidence/optimization/runtime-version/acceptance-audit.json)。
 
-dev.62已发布：固定公开安装107项Harness（14项原生）通过，安装树不变。单账本显式运行时组合切换／回退、排空、备份与认领隔离已实施，2.4／2.5完成，现137/157完成、20开放。原生切换仍为相同craft.1二进制；不同版本及完整PC-RT-002任务2.6保持开放。[发行证据](docs/evidence/optimization/runtime-transition/publication.json)。[生命周期](docs/PhotoCraft-Runtime-Transition.zh_CN.md)。
+dev.62已发布：固定公开安装107项Harness（14项原生）通过，安装树不变。单账本显式运行时组合切换／回退、排空、备份与认领隔离已实施，2.4／2.5完成，当时137/157完成、20开放。原生切换仍为相同craft.1二进制；不同版本及完整PC-RT-002任务2.6当时保持开放。[发行证据](docs/evidence/optimization/runtime-transition/publication.json)。[生命周期](docs/PhotoCraft-Runtime-Transition.zh_CN.md)。
 
 dev.61／源dev.48已发布：固定公开macOS arm64安装通过全部9个PC-TX-002规范场景，包括真实六窗口、监督丢失无回执拒绝、独立只读查询及损坏状态保全。3.6／10.9完成；当时135/157完成、22开放。创作／模型及完整V1仍未验收。[验收](docs/evidence/optimization/task-recovery/acceptance-audit.json)。
 

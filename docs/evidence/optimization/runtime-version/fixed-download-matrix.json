@@ -1,0 +1,152 @@
+{
+  "schema": "photocraft-download-boundary-matrix/v1",
+  "status": "PASS",
+  "bootstrapSha256": "065231567b6d0c2bab9504ee49b630c14b05db0a29508021166caa58b123c7cc",
+  "cases": [
+    {
+      "class": "timeout",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "connection",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "ssl-eof",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "wrapped-timeout",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "short-read",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "http-408",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "http-429",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "http-500",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "http-503",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "http-599",
+      "expectedAttempts": 2,
+      "actualAttempts": 2,
+      "partialReplaced": true,
+      "result": "PASS"
+    },
+    {
+      "class": "certificate",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "wrapped-certificate",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "permission",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "disk-full",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-400",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-401",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-403",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-404",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-409",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-422",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "http-600",
+      "expectedAttempts": 1,
+      "actualAttempts": 1,
+      "result": "PASS"
+    },
+    {
+      "class": "retry-exhaustion",
+      "actualAttempts": 3,
+      "partialDiscarded": true,
+      "result": "PASS"
+    }
+  ],
+  "scope": "Actual fixed installed Python module with mocked transport faults; live public cold-download proof recorded separately; integrity/extraction/install checks covered by fixed-bootstrap15",
+  "nativeEdits": 0,
+  "driverSha256": "b80f0c20ab5ff6a10daeaf11cafa85a75b3046e787becbbde059779c980871dd"
+}

@@ -1,0 +1,20 @@
+test_busy_installer_timeout_preserves_existing_install (fixed_bootstrap.BootstrapTests.test_busy_installer_timeout_preserves_existing_install) ... ok
+test_busy_installer_waits_for_other_process_and_reuses_verified_install (fixed_bootstrap.BootstrapTests.test_busy_installer_waits_for_other_process_and_reuses_verified_install) ... ok
+test_clean_install_and_reuse_without_network (fixed_bootstrap.BootstrapTests.test_clean_install_and_reuse_without_network) ... ok
+test_corrupt_download_never_runs (fixed_bootstrap.BootstrapTests.test_corrupt_download_never_runs) ... ok
+test_maintained_version_installs_without_replacing_official (fixed_bootstrap.BootstrapTests.test_maintained_version_installs_without_replacing_official) ... ok
+test_native_download_retry_bound_and_nonnetwork_errors (fixed_bootstrap.BootstrapTests.test_native_download_retry_bound_and_nonnetwork_errors) ... ok
+test_only_pinned_photo_release_urls_trusted (fixed_bootstrap.BootstrapTests.test_only_pinned_photo_release_urls_trusted) ... ok
+test_pinned_build_metadata_is_accepted (fixed_bootstrap.BootstrapTests.test_pinned_build_metadata_is_accepted) ... ok
+test_short_download_retries_but_size_limit_is_final (fixed_bootstrap.BootstrapTests.test_short_download_retries_but_size_limit_is_final) ... ok
+test_ssl_eof_download_retries_and_discards_partial_bytes (fixed_bootstrap.BootstrapTests.test_ssl_eof_download_retries_and_discards_partial_bytes) ... ok
+test_symlink_archive_rejected (fixed_bootstrap.BootstrapTests.test_symlink_archive_rejected) ... ok
+test_tampered_installed_binary_is_not_overwritten (fixed_bootstrap.BootstrapTests.test_tampered_installed_binary_is_not_overwritten) ... ok
+test_traversal_rejected_before_extract (fixed_bootstrap.BootstrapTests.test_traversal_rejected_before_extract) ... ok
+test_two_processes_first_install_once_and_share_verified_result (fixed_bootstrap.BootstrapTests.test_two_processes_first_install_once_and_share_verified_result) ... ok
+test_unknown_platform_fails_without_download (fixed_bootstrap.BootstrapTests.test_unknown_platform_fails_without_download) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 3.636s
+
+OK
