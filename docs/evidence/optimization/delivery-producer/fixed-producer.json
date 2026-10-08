@@ -1,0 +1,32 @@
+{
+  "schema": "photocraft-installed-producer-proof/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "executionContext": {
+    "pluginRelease": "v0.1.0-dev.57",
+    "skillSourceRelease": "v0.1.0-dev.46",
+    "hostEvidence": "fixed-host.json",
+    "regressionEvidence": "fixed-summary.json"
+  },
+  "nativeTestReport": {
+    "schema": "photocraft-delivery-producer-native/v1",
+    "status": "PASS",
+    "samePlanForeignRefused": true,
+    "boundFields": [
+      "taskId",
+      "taskIdentity",
+      "epoch",
+      "workerToken",
+      "sourceSha256"
+    ],
+    "selfConsistentForeignBindingsRefused": 5,
+    "nativeReopenBeforeProducerValidation": 0,
+    "originalRestored": true,
+    "originalEpoch": 1,
+    "restoredEpoch": 1,
+    "replayedOperations": 0,
+    "sourceSha256": "18a56e5b572a9386c75c145ce7ed3022b1620d8cdb4ffab1eb5088d7a3b58daa",
+    "creative": "NOT_RUN",
+    "fixedInstallation": "NOT_RUN"
+  },
+  "scope": "Native test report does not self-attest host installation; the separate verified public-tag install and unchanged installed tree bind this execution. No model/creative/full-restart acceptance."
+}

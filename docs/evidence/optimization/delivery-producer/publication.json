@@ -1,0 +1,63 @@
+{
+  "schema": "photocraft-delivery-producer-publication/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.46",
+    "commit": "c1691aa8182966d50032ba740bb45371c0da2ca6",
+    "assetSha256": "c9465e3b127d994d69de7916de679683876a37780273f33d02159177451067c2",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.46",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.57",
+    "commit": "196d79735e87a965e9967028e292aad977ece49f",
+    "assetSha256": "3c0fafaf8a9c50b020f0fba5b9d2cebbeeaf7dcd17b208ae53ef924e199b5d5a",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.57",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37837385894,
+      "headSha": "196d79735e87a965e9967028e292aad977ece49f",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37837385764,
+      "headSha": "196d79735e87a965e9967028e292aad977ece49f",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37837378842,
+      "headSha": "196d79735e87a965e9967028e292aad977ece49f",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37837378844,
+      "headSha": "196d79735e87a965e9967028e292aad977ece49f",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    }
+  ],
+  "sourceCI": [],
+  "fixedSummarySha256": "f04dde7d7712303ae305322702feff9536fa0073a1a2622e9ba896bc39ee23d2",
+  "fixedProducerSha256": "55958a4b8ac023ae87ae172dc6412027acf2502b96e776c84112967f72fd81e0",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Same-plan producer matching and restoration passed in actual public-tag installed copy. Full hard-kill progress/restart matrix, model/creative and V1 remain open."
+}
