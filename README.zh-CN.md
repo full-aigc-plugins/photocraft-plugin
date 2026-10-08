@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.64候选补齐技能预检／任务意图前的结构化已保存工程版本冲突。真实签名桌面进程区分未保存内存修改（磁盘摘要不变，执行仍拒绝）与已保存用户修改（revision_conflict，保全新字节）。共享可变写入及3.3／10.6仍开放，固定安装待验收。[合同](docs/PhotoCraft-Project-Ownership.zh_CN.md)。
+dev.64已发布：实际公开安装110项Harness（15项原生）、签名桌面已保存／未保存两项版本拒绝复验通过，安装树不变。旧计划面对已保存新工程，在预检／意图前返回结构化revision_conflict；不可观察版本要求检查。共享可变写入及3.3／10.6仍开放，现138/157完成、19开放。[发行证据](docs/evidence/optimization/project-ownership/publication.json)。[合同](docs/PhotoCraft-Project-Ownership.zh_CN.md)。
 
 dev.63／源dev.49／craft.5已发布：固定公开macOS arm64安装通过全部6个PC-RT-002场景，真实craft.1 → craft.5 → craft.1、108项Harness（15项原生）、双后端14例、外链拒绝及下载边界均有证据。源回归为全量305项通过＋唯一HTTP404失败项同源码复验通过，保留失败记录。2.6完成，现138/157完成、19开放；完整V1仍未验收。[验收](docs/evidence/optimization/runtime-version/acceptance-audit.json)。
 

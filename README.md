@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.64 candidate adds typed saved-project revision conflicts before preflight/intent. Actual signed desktop probes distinguish unsaved memory changes (disk hash unchanged; dispatch refused) from saved user changes (revision_conflict; user bytes preserved). Shared mutable writing and tasks3.3/10.6 remain open; fixed installation pending. [Contract](docs/PhotoCraft-Project-Ownership.md).
+Published dev.64: actual public installation passes110 Harness tests (15 native), two signed-desktop saved/unsaved revision refusal cases and unchanged installed bytes. Saved stale plans now return typed revision_conflict before preflight/intent; unreadable versions request inspection. Shared mutable writing and tasks3.3/10.6 remain open;138/157 complete,19 open. [Publication](docs/evidence/optimization/project-ownership/publication.json). [Contract](docs/PhotoCraft-Project-Ownership.md).
 
 Published dev.63 / source dev.49 / craft.5: all six PC-RT-002 scenarios pass on the fixed public macOS arm64 installation. Actual craft.1 → craft.5 → craft.1,108 Harness tests (15 native),14 independent backend cases, external-link refusal and download boundaries verified. Source coverage is305 full-suite passes plus one unchanged-source HTTP404 recheck; the failed full attempt is retained. Task2.6 complete;138/157 complete,19 open; full V1 remains unverified. [Audit](docs/evidence/optimization/runtime-version/acceptance-audit.json).
 

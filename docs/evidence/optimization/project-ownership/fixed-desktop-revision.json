@@ -1,0 +1,50 @@
+{
+  "schema": "photocraft-desktop-project-revision/v1",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0-craft.5",
+  "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "desktopVersion": "0.2.0",
+  "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+  "cases": [
+    {
+      "case": "unsaved-user-edit",
+      "diskBytesUnchanged": true,
+      "desktopRevisionBefore": 2,
+      "desktopRevisionAfter": 3,
+      "desktopDirty": true,
+      "userMemoryPreserved": true,
+      "result": "PASS",
+      "code": "mutable_desktop_execution_not_supported",
+      "projectSha256": "d0c2af25ba0c69c585e2b92653e54f589f6c25499064e1058122fd7d439ca994",
+      "preflightCalls": 0,
+      "nativeSessionsStarted": 0,
+      "taskAndEventsUnchanged": true,
+      "outputCreated": false,
+      "attempted": false
+    },
+    {
+      "case": "saved-user-edit",
+      "previousProjectSha256": "d0c2af25ba0c69c585e2b92653e54f589f6c25499064e1058122fd7d439ca994",
+      "newProjectSha256": "3c6070e07b855acbc1432da3db0364d0b2a6a201e2bda4d517ee87ed2369e275",
+      "desktopDirty": false,
+      "userMemoryPreserved": true,
+      "result": "PASS",
+      "code": "revision_conflict",
+      "projectSha256": "3c6070e07b855acbc1432da3db0364d0b2a6a201e2bda4d517ee87ed2369e275",
+      "preflightCalls": 0,
+      "nativeSessionsStarted": 0,
+      "taskAndEventsUnchanged": true,
+      "outputCreated": false,
+      "attempted": false
+    }
+  ],
+  "ownedProcessesStopped": true,
+  "listenerOwnedByPID": true,
+  "installedSkillUnchanged": true,
+  "scope": "Real signed desktop GUI engine edited through existing control API, not human pointer interaction; saved revision conflict and unsaved-state refusal only",
+  "sharedMutableWriting": "NOT_RUN",
+  "closedTaskIds": [],
+  "fullV1": "NOT_RUN",
+  "driverSha256": "48b6869b52ccc18e72fdecebf53997de2f229df1e10f3725829d2fdb329cad45"
+}

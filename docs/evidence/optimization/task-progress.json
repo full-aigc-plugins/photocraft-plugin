@@ -213,7 +213,7 @@
     "skills": 306,
     "skillsReusedFrom": "runtime-version/source-validation.json",
     "skillsReuse": "305 full-suite passes plus one unchanged-source targeted recheck; full HTTP404 attempt retained",
-    "pluginTypeScript": 108,
+    "pluginTypeScript": 110,
     "pluginPython": 48,
     "nativeHarness": 15,
     "skipped": 0,
@@ -285,13 +285,15 @@
     "fullV1": "NOT_RUN"
   },
   "projectOwnershipCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "evidence": "docs/evidence/optimization/project-ownership/candidate.json",
-    "fixedInstallation": "NOT_RUN",
+    "fixedInstallation": "PASS_BOUNDED_REVISION_REFUSAL",
     "closedTaskIds": [],
     "remainingTaskIds": [
       "3.3",
       "10.6"
-    ]
-  }
+    ],
+    "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
+  },
+  "latestRegressionEvidence": "project-ownership/publication.json"
 }

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.64",
+  "skillSourceRef": "v0.1.0-dev.49",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "desktopProjectRevisionCases": 2,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "47c853021f422e8dd02218dd942dc8a0f92ca67af93a326f8ba2faa315c6f3e1",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "3.3",
+    "10.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native plus signed desktop saved/unsaved refusal; shared mutable writes remain unsupported"
+}

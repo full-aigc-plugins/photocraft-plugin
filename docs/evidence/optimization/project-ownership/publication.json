@@ -1,0 +1,58 @@
+{
+  "schema": "photocraft-project-ownership-publication/v1",
+  "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.64",
+    "commit": "b95b98a06c53c303c7dc0118f0023d9c722824dd",
+    "assetSha256": "7636e59849bc98d776169376cbb5b65a5f3f9f0af6359cbbdb2d0fbad5efeccc",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.64",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "skills": {
+    "ref": "v0.1.0-dev.49",
+    "commit": "83789a74a85e3f58801b9d9adff7067dbbcfa746",
+    "unchanged": true
+  },
+  "runtimeVersion": "0.2.0-craft.5",
+  "platform": "darwin-arm64",
+  "fixedHarness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "desktopProjectRevisionCases": 2,
+  "pluginPythonTests": 48,
+  "fixedInstallation": "PASS_BOUNDED_REVISION_REFUSAL",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "3.3",
+    "10.6"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 138,
+    "open": 19
+  },
+  "sharedMutableWriting": "NOT_RUN",
+  "fullV1": "NOT_RUN",
+  "scope": "Saved native version conflict and unreadable observation fail before preflight/intent; actual desktop unsaved memory changes remain refused and preserved; no shared desktop write or all-scenario claim",
+  "files": {
+    "release-ci.json": "59d631ad80d7a6d07e873a8b26e45bd47daeaaca0d863129899e37cc37bec44a",
+    "desktop-revision.json": "ede3ad222178e965781efabf940675da2fbd19a5a90c01eae5748435fca6d17f",
+    "revision-green.txt": "c74d33d774ad52c3b0dd4e4a1a39cfa784fdfac8760aaaba910900863448421b",
+    "runner-regression.txt": "d24b281c977c76314c4abf5d7faef8f7b233d4b2b539066549cba31c2e7f0ded",
+    "fixed-harness.txt": "2d278d308fb8b5384df9a403979d24d802ad6ccfc854ea68966f9800d2f44bbd",
+    "fixed-host-public.json": "ab976175ab43f9b2c4dc91757a238d44f0676113a81c220c1484a8f79ef70591",
+    "fixed-summary.json": "fd6f6ead8b3c1737cace32c0b427b7fc0273b2fadf26a3cb0471895b50fe2353",
+    "revision-red.txt": "4ae5f87b4222c885e984a8e3f0b145c18775c9c93976e44ad4ab7e3947018096",
+    "harness-regression.txt": "87618a30eac07476f879531ad7e36392c7521fd0a856044d955d5ab4859b0b8c",
+    "plugin-validation.json": "f480d4e60fb0d6dc368aed7a9e8b5cc80835198bfd18f547ef1826a4e316c847",
+    "fixed-desktop-revision.json": "ede3ad222178e965781efabf940675da2fbd19a5a90c01eae5748435fca6d17f",
+    "public-plugin.json": "14d6b765d1c0d16e4ef364402aa4974afc7c7abf6ae08c13b76120c986230ee7"
+  }
+}

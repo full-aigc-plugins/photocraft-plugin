@@ -180,7 +180,7 @@
     "pluginWorkingVersion": "0.1.0-dev.64",
     "fixedSkillSourceVersion": "0.1.0-dev.49",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_CANDIDATE_PROJECT_REVISION",
+    "publication": "PARTIAL_PUBLISHED_PROJECT_REVISION",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -189,7 +189,7 @@
       "newlyCompleted": 76
     },
     "currentRegressionEvidence": "docs/evidence/optimization/runtime-version/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/runtime-version/acceptance-audit.json"
+    "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -441,13 +441,14 @@
     "fullV1": "NOT_RUN"
   },
   "projectOwnershipCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "evidence": "docs/evidence/optimization/project-ownership/candidate.json",
-    "fixedInstallation": "NOT_RUN",
+    "fixedInstallation": "PASS_BOUNDED_REVISION_REFUSAL",
     "closedTaskIds": [],
     "remainingTaskIds": [
       "3.3",
       "10.6"
-    ]
+    ],
+    "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   }
 }
