@@ -1,0 +1,25 @@
+{
+  "schema": "photocraft-recovery-audit-plan/v1",
+  "status": "PENDING_FIXED_ACCEPTANCE",
+  "pluginVersion": "0.1.0-dev.61",
+  "sourceRef": "v0.1.0-dev.48",
+  "normativeScenarios": [
+    "PC-TX-002-P",
+    "PC-TX-002-N",
+    "PC-TX-002-STATUS",
+    "PC-TX-002-RECONCILE",
+    "PC-TX-002-PROGRESS",
+    "PC-TX-002-INTERRUPTED",
+    "PC-TX-002-PREINTENT",
+    "PC-TX-002-PRODUCER",
+    "PC-TX-002-CORRUPT"
+  ],
+  "specSha256": "ebdef98aae61651aa954fbbff0932ba07ab261dfe166f19d6e195bb85e0e54ed",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "3.6",
+    "10.9"
+  ],
+  "sourceRegressionReusedFrom": "../interrupted-checkpoint/source-validation.json",
+  "reason": "Source dev.48 exact published source/test fingerprints unchanged; this candidate only extends plugin acceptance tests and documentation"
+}

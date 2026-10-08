@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.61 candidate audits all PC-TX-002 scenarios against pinned source dev.48, including supervisor loss without an exit receipt. Fixed public installation is pending; tasks3.6/10.9 stay open until scenario evidence is verified.
+
 dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. All PC-TX-003 scenarios pass on public fixed macOS arm64 installation; tasks3.9/10.12 complete.133/157 complete,24 open. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
 
 Published dev.52 / source dev.44: all PC-AR-001 scenarios pass on actual fixed macOS arm64 native copies and the immutable ArtCraft109 consumer.17 indexed-file replacements refuse; old dev.50 remains read-only. Tasks5.3/11.9 complete;131/157 complete,26 open. Creative acceptance and source authenticity remain unproven. [Audit](docs/evidence/optimization/artifact-lineage/acceptance-audit.json).
@@ -56,7 +58,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.60`; skill source: `0.1.0-dev.48`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.61`; skill source: `0.1.0-dev.48`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -151,7 +153,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.60 |
+| Metadata version | 0.1.0-dev.61 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.48 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
