@@ -33,12 +33,24 @@ def main():
  try:
   path=Path(__file__).with_name('bootstrap.py');spec=importlib.util.spec_from_file_location('craft_bootstrap',path)
   module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-  installed=module.install(json.loads(path.with_name('runtime.lock.json').read_text()),args.runtime_home,args.archive)
+  lock=json.loads(path.with_name('runtime.lock.json').read_text())
+  installed=module.install(lock,args.runtime_home,args.archive)
   installation_completed=True
+  if argv[0] in {'run','batch','droplet','convert'}:
+   path=Path(__file__).with_name('cli_supervisor.py');spec=importlib.util.spec_from_file_location('craft_public_cli_supervisor',path)
+   supervisor=importlib.util.module_from_spec(spec);spec.loader.exec_module(supervisor)
+   supervisor.execute(installed['executable'],argv,sys.stdout,runtime_version=lock['resolvedVersion'])
+   return 0
   result=subprocess.run([installed['executable'],*argv],timeout=600)
   return result.returncode
- except (ValueError,OSError,subprocess.SubprocessError) as error:
+ except (ValueError,OSError,RuntimeError,subprocess.SubprocessError) as error:
   reply={'error':str(error),'result':'unknown' if isinstance(error,subprocess.TimeoutExpired) else 'failed'}
   if not installation_completed:reply['dependencySetup']=setup_failure(args.runtime_home)
+  elif argv[0] in {'run','batch','droplet','convert'}:
+   path=Path(__file__).with_name('operation_errors.py');spec=importlib.util.spec_from_file_location('craft_public_cli_errors',path)
+   errors=importlib.util.module_from_spec(spec);spec.loader.exec_module(errors)
+   reply.update(errors.describe(error,phase='submitted'))
+   reply['result']='unknown' if reply['outcome']=='unknown' else 'failed'
+   reply.update(replayAllowed=False,runtimeSha256=installed['binarySha256'],receipts=getattr(error,'receipts',[]),lastAttempt=getattr(error,'lastAttempt',None))
   print(json.dumps(reply));return 1
 if __name__=='__main__':raise SystemExit(main())

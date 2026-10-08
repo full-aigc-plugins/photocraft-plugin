@@ -1,7 +1,7 @@
 """维护版 run／batch／convert／droplet 的逐回复监督器；确认前停止，不重放命令。
 
-候选内部接口：仅匹配显式 supervised-run 协议的维护运行时。
-公开 cli.py 仍绑定原发行，待候选及固定安装验收后切换。
+公开argv编辑入口与内部测试共用；仅匹配显式 supervised-run 协议的固定维护运行时。
+流式mcp／serve和嵌套聚合合同仍单独验收。
 """
 import importlib.util
 import json
@@ -197,7 +197,7 @@ def droplet_plan(argv):
     return events,checks,lines
 
 
-def execute(executable, argv, output, timeout=600, stderr=None):
+def execute(executable, argv, output, timeout=600, stderr=None, runtime_version=None):
     """运行固定候选并逐项校验；异常附带已核验回执和最后请求，绝不重试。
 
     executable 必须由调用方完成锁校验；output 接收原公开 JSON 命令行。
@@ -208,6 +208,8 @@ def execute(executable, argv, output, timeout=600, stderr=None):
     receipts = []; last_attempt = None
     deadline = time.monotonic() + timeout
     supervision = supervision_info(executable,argv[0],timeout)
+    if runtime_version is not None and supervision['runtimeVersion'] != runtime_version:
+        raise capability_error('runtime_version_mismatch')
     if time.monotonic() >= deadline:
         raise capability_error('deadline_expired')
     process = subprocess.Popen([str(executable), argv[0], '--supervised', *argv[1:]],
@@ -234,7 +236,9 @@ def execute(executable, argv, output, timeout=600, stderr=None):
         for sequence, (tool, arguments, visible) in enumerate(expected, 1):
             last_attempt = {'tool':tool, 'arguments':arguments, 'sequence':sequence, 'phase':'submitted'}
             try:
-                event = load('strict_json').loads(line())
+                raw = line()
+                last_attempt['phase'] = 'reply_received'
+                event = load('strict_json').loads(raw)
             except (ValueError, UnicodeError) as error:
                 raise unknown('invalid_supervised_json') from error
             # 原生此时正在等待确认，不可能合法发送下一帧；不能先确认再发现额外回复。
@@ -289,6 +293,8 @@ def execute(executable, argv, output, timeout=600, stderr=None):
             raise unknown('supervised_exit_nonzero')
         return {'result':'PASS', 'receipts':receipts, 'lastAttempt':last_attempt, 'replay':False, 'supervision':supervision}
     except BaseException as error:
+        if getattr(error,'phase',None)=='submitted' and last_attempt and last_attempt['phase']=='reply_received':
+            error.phase='reply_received'
         error.receipts = receipts
         error.lastAttempt = last_attempt
         raise

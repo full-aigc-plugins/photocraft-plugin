@@ -114,3 +114,5 @@ PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知�
 运行时／后端身份与能力漂移问题，读取本技能 [能力快照与拒绝合同](references/capabilities.md)。
 
 保存后回复未知且需要显式局部恢复时，阅读本技能[检查点修订合同](references/checkpoint-recovery.md)；先核对原执行者与工程，禁止重放原计划。
+
+公开 run／batch／convert／droplet 使用固定原生逐步监督，失败不自动重放；流式及嵌套聚合仍开放。参见 [公开 CLI 监督](references/public-cli-supervision.md)。
