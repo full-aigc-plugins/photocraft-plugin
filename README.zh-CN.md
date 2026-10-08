@@ -2,6 +2,7 @@
 
 开发版本 dev.39 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.35。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
+开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划仍为113/157项完成，44项门禁开放。
 
 ## 2026-10-08 优化规划
 

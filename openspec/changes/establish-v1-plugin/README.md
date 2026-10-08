@@ -16,7 +16,7 @@
 已新增完成 51 项测试／最小实现任务；当前 113/157 项勾选，44 项仍开放。技能 201 项完整本地回归含原生／桌面首用通过且零跳过；最近复验仅在技能源摘要及验证层完全相同时复用该记录，插件 TypeScript 27／Python 36 项重新执行通过且零跳过。13 项分层检查通过，原记录与复用摘要均保留。
 
 - [逐组进展及剩余门禁](../../../docs/evidence/optimization/task-progress.json)
-- [绑定当前源码的候选证据](../../../docs/evidence/optimization/candidate-validation.json)
+- [绑定发行源码的回归证据](../../../docs/evidence/optimization/release-candidate-validation.json)
 - [候选架构与使用限制](../../../docs/PhotoCraft-Harness-Candidate.zh_CN.md)
 
-已获授权提交与发布；插件通过 vendor 工具锁定 dev.35 固定来源，准备发布 dev.39。发行与安装结果另存版本绑定证据；44 项未完成门禁保持开放，未执行 sync/archive。
+已发布独立技能源 dev.35 与插件 dev.39，固定来源经 vendor 锁定。两条 CI、隔离安装14技能发现、13技能冷启动及安装副本原生执行通过；见[版本绑定证据](../../../docs/evidence/optimization/release-publication.json)。44项完整场景与其他未完成门禁保持开放，未执行 sync/archive。

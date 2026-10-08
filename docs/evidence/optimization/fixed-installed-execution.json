@@ -1,0 +1,268 @@
+{
+  "schema": "photocraft-fixed-installed-execution/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.39",
+  "skillSourceRef": "v0.1.0-dev.35",
+  "skillSourceSha": "47eac4287b8b577ac36c4629edd4504ebbd6f0e5",
+  "platform": "Darwin-arm64",
+  "coldSkillProbes": [
+    {
+      "skill": "photocraft-use",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.754,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 5.527,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.855,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.833,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 5.098,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.965,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.808,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 5.058,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.784,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.659,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.713,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.996,
+      "sourceUnchanged": true
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "version": "photocraft-cli 0.2.0-craft.1 (dev build)",
+      "commandCount": 755,
+      "emptyRuntimeBefore": true,
+      "publicDownload": true,
+      "seconds": 4.852,
+      "sourceUnchanged": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "installed-plugin-typescript-including-native",
+      "status": "PASS",
+      "tests": {
+        "tests": 27,
+        "pass": 27,
+        "fail": 0,
+        "skipped": 0
+      },
+      "seconds": 45.649,
+      "outputSha256": "5af8c38aac45f47d56f23cfa969d1115bd0632c6d2062c375a1b2b9bf7b73ddb"
+    },
+    {
+      "name": "installed-plugin-python",
+      "status": "PASS",
+      "passed": 36,
+      "outputSha256": "073e250a4f6616d5741449b6d8103d0250f3c2522339f32e478eac4b701e6397"
+    },
+    {
+      "name": "installed-default-public-cli-create-run-verify-status-relocated-bundle",
+      "status": "PASS",
+      "technical": "PASS",
+      "creative": "NOT_RUN",
+      "sourceProjectSha256": "721c4a8ebdf2f03bf2603ae1b99d7b8c934674778c71b5318a4ed84870c9571a",
+      "bundleSha256": "b2245a589282574254083ad0db6be5c470b2d8b70d784a670f7c18a9013d55d7",
+      "bundleVerification": {
+        "result": "PASS",
+        "fileIntegrity": "PASS",
+        "lineage": "VERIFIED",
+        "bundleSha256": "b2245a589282574254083ad0db6be5c470b2d8b70d784a670f7c18a9013d55d7",
+        "externallyAnchored": true,
+        "sourceAuthenticity": "NOT_PROVEN",
+        "artifact": {
+          "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1",
+          "bytes": 11409,
+          "dependencies": [],
+          "evidenceRefs": [
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:native.json",
+              "location": "native.json",
+              "sha256": "2459a97d9695322df464b4ecdd3e097dff29b8ef508963e7969cde01c848cb5a",
+              "version": "2459a97d9695322df464b4ecdd3e097dff29b8ef508963e7969cde01c848cb5a"
+            },
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:plan.json",
+              "location": "plan.json",
+              "sha256": "f01431773829c7bcbb11814ed85aba09f6f4215674b33a8e8188af90221c0560",
+              "version": "f01431773829c7bcbb11814ed85aba09f6f4215674b33a8e8188af90221c0560"
+            },
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:operations.json",
+              "location": "operations.json",
+              "sha256": "ce20c5d04a57a53e68c61e3e1d930abab6252d3f0004e881b37eef3785aa2b48",
+              "version": "ce20c5d04a57a53e68c61e3e1d930abab6252d3f0004e881b37eef3785aa2b48"
+            },
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:capabilities.json",
+              "location": "capabilities.json",
+              "sha256": "206cfb984eda88af0d02ef40404102783f61e3f2b69ea0de396ecc9c112dd6e0",
+              "version": "206cfb984eda88af0d02ef40404102783f61e3f2b69ea0de396ecc9c112dd6e0"
+            },
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:harness/task.json",
+              "location": "harness/task.json",
+              "sha256": "b083abe05a029da64ed51897e0084534ca13e4d5977265a0a2122d428e12e7a9",
+              "version": "b083abe05a029da64ed51897e0084534ca13e4d5977265a0a2122d428e12e7a9"
+            }
+          ],
+          "location": "project.pcraft",
+          "lossReportRef": {
+            "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:exchange-loss.json",
+            "location": "exchange-loss.json",
+            "sha256": "abf81769ca135a21b66505df021830d22b7050509a2187ecb46c4d8455a0cd89",
+            "version": "abf81769ca135a21b66505df021830d22b7050509a2187ecb46c4d8455a0cd89"
+          },
+          "mediaType": "application/x-photocraft",
+          "nativeProjectRef": {
+            "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1",
+            "location": "project.pcraft",
+            "sha256": "721c4a8ebdf2f03bf2603ae1b99d7b8c934674778c71b5318a4ed84870c9571a",
+            "version": "721c4a8ebdf2f03bf2603ae1b99d7b8c934674778c71b5318a4ed84870c9571a"
+          },
+          "producerTaskId": "3da0a884-8d0b-470e-bbf7-b8c64893e4e1",
+          "protocolVersion": "craft-artifact/v1",
+          "renditions": [
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:design.png",
+              "location": "design.png",
+              "sha256": "3e0848ac8d9430d949669d1f2f209b4d1220fbd0d29d96fa5d07b6ad21fc08f5",
+              "version": "3e0848ac8d9430d949669d1f2f209b4d1220fbd0d29d96fa5d07b6ad21fc08f5"
+            },
+            {
+              "assetId": "photocraft:3da0a884-8d0b-470e-bbf7-b8c64893e4e1:design.psd",
+              "location": "design.psd",
+              "sha256": "cd06a7ec1d90f75554af9e0540290764d49efb1fc77edd1ef43d145350456a90",
+              "version": "cd06a7ec1d90f75554af9e0540290764d49efb1fc77edd1ef43d145350456a90"
+            }
+          ],
+          "sha256": "721c4a8ebdf2f03bf2603ae1b99d7b8c934674778c71b5318a4ed84870c9571a",
+          "sourceRefs": [],
+          "technicalMetadata": {
+            "height": 64,
+            "width": 64
+          },
+          "version": "721c4a8ebdf2f03bf2603ae1b99d7b8c934674778c71b5318a4ed84870c9571a"
+        },
+        "technicalAcceptance": "PASS",
+        "creativeAcceptance": "NOT_RUN",
+        "acceptance": "NOT_RUN",
+        "evaluatorIsolation": "NOT_RUN"
+      }
+    }
+  ],
+  "excluded": [
+    "host model dispatch",
+    "independent creative acceptance",
+    "all755 business contexts",
+    "full V1",
+    "external PSD editor",
+    "other platforms"
+  ],
+  "installedSkillHashesUnchanged": true,
+  "skillHashes": {
+    "photocraft-use": "24becb53f3be20256352359e94bb001f1b3d037b521529e924d9bf57bf56c7c4",
+    "photocraft-cli": "99422e2e30004b99e12afa2ae380d6b65b17e2a5849827562ee7bdbd47e32c48",
+    "photocraft-cli-setup": "a63923e9ee68f3d2549a516b5ebe0952f4edf987313831d9c69042fdfe26da49",
+    "photocraft-cli-project": "33296ee5b2527a254b53d5869a4ded7f658e7f6a9d90d628263420a871147b82",
+    "photocraft-cli-layers": "c201690a6b31fc7fc2b8ef6908be14e9ac2dcccbd2388b20c35bcefb7cc7672a",
+    "photocraft-cli-selection": "686e876e4e0dbccc2382b585366e6bbfd524a3371589bb7462fe1f0997bf3fd0",
+    "photocraft-cli-masks": "3312083bbb975cf8d11ed388ce2459f3f8224d97cee67ed10d04b4c2a8d0c60e",
+    "photocraft-cli-adjustments": "1b57b7c46401eaab34138597cc9946147286360812c1dfe5e083b8f38c2dbe38",
+    "photocraft-cli-retouch": "49f7d07b65c07be11f1595478c1e7bc777482338039fda71a212eb7af70b658f",
+    "photocraft-cli-text": "657353f814dd58cefd6abfce73ed40ca4a109dd173846a338e65dab4aa3a3143",
+    "photocraft-cli-resize": "a5e508b82c2869235d7a06786795d0fc89ed223e7ff3ec653c8af9e524c60c02",
+    "photocraft-cli-export": "e7f43f47054e0ea14810f83fad7b0dddd7a6a683deb671aa5586873bed0ac3b0",
+    "photocraft-cli-filters": "1d91e20afa347d890bdad2cb32cd0e474bc6bf6662bb14bfd36c6270cd2cffc2",
+    "photocraft-harness": "e2577bedac0c9fa938039dc4c8dcd3371a9e84038ec2506ef1b02ea8752c910f"
+  },
+  "managedSkills": 13,
+  "localSkills": 1
+}

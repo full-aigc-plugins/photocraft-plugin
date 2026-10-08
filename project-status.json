@@ -155,13 +155,14 @@
     "pluginWorkingVersion": "0.1.0-dev.39",
     "fixedSkillSourceVersion": "0.1.0-dev.35",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "READY_TO_PUBLISH",
+    "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
       "completed": 113,
       "open": 44,
       "newlyCompleted": 51
-    }
+    },
+    "publicationEvidence": "docs/evidence/optimization/release-publication.json"
   }
 }

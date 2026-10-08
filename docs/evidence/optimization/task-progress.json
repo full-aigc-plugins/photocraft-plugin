@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "CANDIDATE_VERIFIED_FULL_PLAN_INCOMPLETE",
+  "status": "DEVELOPMENT_RELEASE_VERIFIED_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -107,7 +107,7 @@
     "13.5",
     "13.6"
   ],
-  "greenEvidence": "candidate-validation.json",
+  "greenEvidence": "release-candidate-validation.json",
   "baselineRedReconstruction": "baseline-red.json",
   "observedRegressionFixes": "additional-red-green.json",
   "groups": [
@@ -190,7 +190,7 @@
       "remaining": "per-command context review, all 755 applicable command executions, package-resource integration of the acceptance index, repeated actual host/model routing, host permission adapters and fixed candidate installation"
     }
   ],
-  "scope": "candidate tests/minimum implementations only; no sync/archive, publication, fixed candidate installation, host support or creative acceptance claim",
+  "scope": "Source tests/minimum implementations and bounded fixed-release installation/native execution verified; remaining full-scenario, model, creative and platform gates stay open; no sync/archive or full host support claim.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -223,7 +223,7 @@
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
     "skills": 201,
-    "skillsReusedFrom": "mask-adjustment-full-green.json",
+    "skillsReusedFrom": "release-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 27,
     "pluginPython": 36,
@@ -244,5 +244,6 @@
     ]
   },
   "releaseCandidateEvidence": "release-candidate-validation.json",
-  "publication": "READY_TO_PUBLISH_PLUGIN"
+  "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
+  "publicationEvidence": "release-publication.json"
 }

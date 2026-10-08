@@ -2,6 +2,7 @@
 
 Development release dev.39 includes SQLite task control, bound review and bounded revisions, with standalone dev.35 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
+Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The plan remains 113/157 complete, with 44 gates open.
 
 ## Optimization plan — 2026-10-08
 
