@@ -178,7 +178,7 @@
     "source-recheck.xml": "8d6ea873a1e43a52eaf1b8d76455f90808539136745257d4c3eaa72f9a411e74",
     "public-plugin.json": "2d0a36aa784c1bd2f36afb8575d17adef04787037605ecacc0865b2984f56642",
     "native-probes.json": "29f11ae7cedff778b5c5487f7430f8309523751b8e9d014b869c655c9cda74f3",
-    "fixed-harness.txt": "8ad437d717c47a59e19312079991080947814ef1d4aa86d02448fb077e83f917",
+    "fixed-harness.txt": "9c02395aa52e9bbae46f4232d0c6c68d46ae0f013c2a211eb2bb05c4d11aeb51",
     "fixed-readonly.txt": "8be6463e90f3b0c5df5150b7e539face95f8c8bef2b7975efff0001e11abfdd8"
   },
   "drivers": {
