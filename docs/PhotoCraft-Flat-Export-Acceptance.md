@@ -1,6 +1,6 @@
 # PhotoCraft flat export acceptance
 
-The dev.37 source candidate implements PC-DM-006 through an optional `flatExport` contract and bound existing provider receipts. Native projects remain authoritative. Fixed dev.41 acceptance is pending; actual provider service/billing, external print fidelity and full V1 are not claimed.
+The published dev.37 source implements PC-DM-006 through an optional `flatExport` contract and bound existing provider receipts. Native projects remain authoritative. Fixed dev.41 installation passes both normative scenarios; actual provider service/billing, external print fidelity and full V1 are not claimed.
 
 ```mermaid
 flowchart TD
@@ -24,3 +24,7 @@ The unit suite verifies invalid-contract zero-install/output refusal, whole-alph
 Run the released source `tests/test_flat_export_first_use.py` with `CRAFT_FLAT_EXPORT_FIRST_USE=1`, `CRAFT_INSTALLED_FLAT_EXPORT_SKILL` set to the actual installed export skill, and optional fresh owned `CRAFT_FLAT_EXPORT_OUTPUT` / `CRAFT_FLAT_EXPORT_REPORT` paths. Source and installed hashes, provider-fixture identity, native/runtime versions and each retained input/output digest are required for fixed evidence. Read the self-contained `references/flat-export.md` contract inside the loaded skill.
 
 Malformed saved observations return `flat_report_invalid` during source preflight rather than an uncaught type/key error. The target test failed with KeyError before the guard and passes afterward.
+
+Fixed acceptance: isolated Codex 0.147.0 on macOS arm64 installs the public dev.41 tag and discovers 14 skills with zero loading errors. The actual installed export skill passes cold native acceptance; all 28 installed harness tests pass and installed files remain unchanged. Source regression passes 218 tests, plugin TypeScript 28 and Python 41, with zero skips. The plan is 126/157 complete; 31 gates remain open.
+
+[Scenario audit](evidence/optimization/flat-acceptance-audit.json) · [Fixed native proof](evidence/optimization/flat-fixed-first-use.json) · [Installed harness](evidence/optimization/flat-fixed-harness.json) · [Publication](evidence/optimization/flat-release-publication.json).

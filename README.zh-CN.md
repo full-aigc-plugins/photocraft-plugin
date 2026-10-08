@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供应方回执保全，返工继承导出要求。固定安装验收待完成。[合同与证据边界](docs/PhotoCraft-Flat-Export-Acceptance.zh_CN.md)。
+dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供应方回执保全，返工继承导出要求。dev.41 固定安装、原生重开与安装副本全部28项插件测试通过。[合同与证据边界](docs/PhotoCraft-Flat-Export-Acceptance.zh_CN.md)。
 
 已发布 [技能源 dev.36](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36) 与 [插件 dev.40](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40)：公开压缩包摘要与提交一致，main／标签两条 CI 均通过。固定 Codex 发现14个技能；独立单技能冷启动 PSD 验收及28项安装副本测试通过。任务4.15、5.6、12.12完成，未知保真边界保持明确。[发布证据](docs/evidence/optimization/psd-release-publication.json) · [场景审计](docs/evidence/optimization/psd-acceptance-audit.json)。
 
@@ -8,7 +8,7 @@ PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；�
 
 开发版本 dev.41 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.37。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
-开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为123/157项完成，34项门禁开放。
+开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为126/157项完成，31项门禁开放。
 
 
 固定安装领域验收新增关闭7项任务：递归图层、蒙版保护、中文文字及复杂布局／滤镜的16个规范场景通过。不可获取的布局指标、可编辑智能滤镜和非 RGB8 保护明确拒绝；PSD 必要功能损失等门禁仍开放。见[验收与复验方式](docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。
@@ -136,7 +136,7 @@ Intent + assets
 | 文字排版与字体依赖 | 保存文本内容、字体、尺寸、行距和布局；缺少字体时阻止需要精确排版的交付或显式接受替代。 | 待完整验收 |
 | 海报封面尺寸变体 | 从源工程创建独立画幅变体，记录裁切、留白和安全区；尺寸变化不覆盖源工程。 | 待完整验收 |
 | 原生与 PSD 保真 | 将 .pcraft 作为原生事实源；PSD 交付逐项验证所用图层功能并记录兼容损失；不宣称所有 PSD 无损兼容。 | 待完整验收 |
-| 平面导出与来源 | 输出绑定源文档版本、ICC 或颜色空间与透明要求；外部生成素材保留来源回执，生成服务与图层编辑分开计量。 | 待完整验收 |
+| 平面导出与来源 | 输出绑定源文档版本、ICC 或颜色空间与透明要求；外部生成素材保留来源回执，生成服务与图层编辑分开计量。 | 固定 RGB8 合同已验收；真实生成／计费未验收 |
 
 不重写上游编辑引擎，不暗中改变原生交付格式，不宣称 GUI 或跨平台验收完成。
 

@@ -360,8 +360,15 @@
         "4.18"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json"
+      "status": "verified-current-fixed-scenarios",
+      "evidence": "docs/evidence/optimization/flat-acceptance-audit.json",
+      "completedTasks": [
+        "4.16",
+        "4.17",
+        "4.18"
+      ],
+      "openTasks": [],
+      "scope": "Both normative scenarios on the immutable fixed macOS arm64 installation; optional RGB8 contract and explicitly labeled provider receipt fixture. No live generation or billing authentication."
     },
     {
       "requirement": "PC-AR-001",

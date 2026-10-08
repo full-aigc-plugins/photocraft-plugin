@@ -1,0 +1,77 @@
+{
+  "schema": "photocraft-flat-acceptance-audit/v1",
+  "status": "PASS_CURRENT_FIXED_RUNTIME_SCENARIOS",
+  "date": "2026-10-08",
+  "specAuthority": "openspec/changes/establish-v1-plugin/specs/",
+  "specFiles": {
+    "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "82929b0ece1f25c7fc44fd3c1de562db76b3ff64987f5724b11cfdc48c5d2896"
+  },
+  "pluginVersion": "0.1.0-dev.41",
+  "pluginCommit": "a2eca8744a4c3f612cbc7e1217232aa9677d8fae",
+  "skillsRef": "v0.1.0-dev.37",
+  "skillsCommit": "b965941ee86766ad2531a94380069413ac0a32fa",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0-craft.1",
+  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "evidenceSha256": {
+    "flat-fixed-first-use.json": "84377bcdb83970cd70ce3f6b73634090d7bb67ba58e914e2b924f4eaf89e7d1c",
+    "flat-fixed-host.json": "70b6727e35524be06bc8d331e900afdc40a6c88896c16a249ce848f2d9737143",
+    "flat-fixed-harness.json": "f3485fb02f3a80abf5ddc742cee0b139757a5395f9a8e3b55710ee597f43a66b",
+    "flat-source-first-use.json": "0a34652044472639c78d0e5bfa07f464492cef27d6a4da1253cd86758ec8aada",
+    "flat-source-final.json": "67a57aec899714e130732a6912c462922070fdcb43ddd7158f7647c2694da7ee",
+    "flat-release-candidate.json": "f98ad13f3c794cc4a324997d1bfdb9d5a3590edef3406f75b1a0268a78a65740"
+  },
+  "driverSha256": "59248502c37c173117f1183d666fdd0565dc604c5885d4682cca3401c9c3fe4f",
+  "scenarioInventoryMatched": true,
+  "scenarios": [
+    {
+      "requirement": "PC-DM-006",
+      "scenario": "PC-DM-006-P 正常交付",
+      "status": "PASS",
+      "fixedEvidence": "flat-fixed-first-use.json",
+      "checks": [
+        "coldSingleSkill",
+        "nativeAndFlatFreshReopen",
+        "opaqueJpegAccepted",
+        "wrongIccRefused",
+        "badReceiptZeroRuntimeAndOutput",
+        "replacementDoesNotInheritOldReceipt",
+        "sourceAndSkillUnchanged",
+        "failedNativeStageFreshReopenAndUnchanged",
+        "coherentForgedObservationRefusedByFreshReopen"
+      ],
+      "observed": "native/source and flat-file identities; actual RGB8/color/ICC/whole alpha; byte-identical inherited fixture receipt; separate upstream usage and local operations",
+      "additionalFixedEvidence": "flat-fixed-harness.json",
+      "additionalChecks": [
+        "native title revision inherits and reopens flatExport requirements"
+      ]
+    },
+    {
+      "requirement": "PC-DM-006",
+      "scenario": "PC-DM-006-N 异常或不保真",
+      "status": "PASS",
+      "fixedEvidence": "flat-fixed-first-use.json",
+      "checks": [
+        "movedDeliveryAndSameNameReplacement"
+      ]
+    }
+  ],
+  "closedTasks": [
+    "4.16",
+    "4.17",
+    "4.18"
+  ],
+  "scope": "Both normative scenarios on the immutable fixed macOS arm64 installation; optional RGB8 contract and explicitly labeled provider receipt fixture. No live generation or billing authentication.",
+  "limits": {
+    "nonRgb8FlatContract": "UNSUPPORTED",
+    "liveProviderGeneration": "NOT_RUN",
+    "billingAuthenticity": "NOT_PROVEN",
+    "sourceAuthenticity": "NOT_PROVEN",
+    "externalPrintFidelity": "NOT_RUN",
+    "independentCreativeAcceptance": "NOT_RUN",
+    "genericHostModelRouting": "NOT_RUN",
+    "all755CommandContexts": "NOT_RUN",
+    "otherPlatforms": "NOT_RUN",
+    "fullV1": "INCOMPLETE"
+  }
+}

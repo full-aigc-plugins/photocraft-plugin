@@ -1,0 +1,92 @@
+{
+  "schema": "photocraft-flat-publication/v1",
+  "status": "PASS",
+  "recordedAt": "2026-10-08T13:22:26.257430+00:00",
+  "releases": [
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "ref": "v0.1.0-dev.37",
+      "commit": "b965941ee86766ad2531a94380069413ac0a32fa",
+      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.37",
+      "prerelease": true,
+      "publishedAt": "2026-10-08T13:16:17Z",
+      "asset": "photocraft-skills-0.1.0-dev.37.zip",
+      "assetSha256": "c9923d171529610b4836a445f8ea59f78f0a203a7ed2981ed39ec9524a411aaa",
+      "size": 5039418,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true,
+      "remoteTagMatches": true,
+      "noRuntimeBinaryOrUserProjectInArchive": true
+    },
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "ref": "v0.1.0-dev.41",
+      "commit": "a2eca8744a4c3f612cbc7e1217232aa9677d8fae",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.41",
+      "prerelease": true,
+      "publishedAt": "2026-10-08T13:17:48Z",
+      "asset": "photocraft-plugin-0.1.0-dev.41.zip",
+      "assetSha256": "d2f37362c5eef0a630c048b075cc4c5469e46b3dfa199b8eaae1f79f5501db43",
+      "size": 6284268,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true,
+      "remoteTagMatches": true,
+      "noRuntimeBinaryOrUserProjectInArchive": true
+    }
+  ],
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37783165377,
+      "headBranch": "v0.1.0-dev.41",
+      "headSha": "a2eca8744a4c3f612cbc7e1217232aa9677d8fae",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37783165377"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37783165326,
+      "headBranch": "v0.1.0-dev.41",
+      "headSha": "a2eca8744a4c3f612cbc7e1217232aa9677d8fae",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37783165326"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37783164715,
+      "headBranch": "main",
+      "headSha": "a2eca8744a4c3f612cbc7e1217232aa9677d8fae",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37783164715"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37783164641,
+      "headBranch": "main",
+      "headSha": "a2eca8744a4c3f612cbc7e1217232aa9677d8fae",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37783164641"
+    }
+  ],
+  "fixedHost": "docs/evidence/optimization/flat-fixed-host.json",
+  "fixedFirstUse": "docs/evidence/optimization/flat-fixed-first-use.json",
+  "fixedHarness": "docs/evidence/optimization/flat-fixed-harness.json",
+  "scenarioAudit": "docs/evidence/optimization/flat-acceptance-audit.json",
+  "taskCounts": {
+    "total": 157,
+    "completed": 126,
+    "open": 31,
+    "newlyCompleted": 64
+  },
+  "marketplaceEligible": false,
+  "fullV1": "INCOMPLETE",
+  "liveGeneration": "NOT_RUN",
+  "billingAuthenticity": "NOT_PROVEN",
+  "externalPrint": "NOT_RUN",
+  "postReleaseRegression": "docs/evidence/optimization/flat-post-release-validation.json",
+  "postReleaseRegressionSha256": "1543dc7e5af8946f4cf04851bfadca4b0f919e5cd2bcb1681f45be4845b8bbab"
+}

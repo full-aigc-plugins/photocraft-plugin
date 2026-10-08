@@ -1,6 +1,6 @@
 # PhotoCraft 平面导出验收
 
-技能源 dev.37 候选通过可选 `flatExport` 与已有供应方回执实现 PC-DM-006。原生工程保持权威，dev.41 固定安装验收待完成；真实生成服务／计费、外部印刷保真及完整首版不在当前通过声明中。
+已发布技能源 dev.37 通过可选 `flatExport` 与已有供应方回执实现 PC-DM-006。原生工程保持权威，dev.41 固定安装已通过两项规范场景；真实生成服务／计费、外部印刷保真及完整首版不在当前通过声明中。
 
 ```mermaid
 flowchart TD
@@ -24,3 +24,7 @@ flowchart TD
 从已发布技能源运行 `tests/test_flat_export_first_use.py`：设置 `CRAFT_FLAT_EXPORT_FIRST_USE=1`、实际安装的 `CRAFT_INSTALLED_FLAT_EXPORT_SKILL`，可选新的自有 `CRAFT_FLAT_EXPORT_OUTPUT` 和 `CRAFT_FLAT_EXPORT_REPORT`。固定证据须绑定来源／安装摘要、供应方夹具身份、运行时版本及实际保留的输入输出摘要。技能内 `references/flat-export.md` 自包含合同。
 
 畸形已保存观察在源预检阶段返回 `flat_report_invalid`，不再抛出未捕获的类型／键异常。目标测试在修复前出现KeyError、修复后通过。
+
+固定验收：隔离 Codex 0.147.0 在 macOS arm64 从公开 dev.41 标签安装并发现14项技能，零加载错误。实际安装导出技能从空运行时完成原生验收；全部28项安装副本插件测试通过，所有安装文件保持不变。全量来源回归218项、插件TypeScript 28项与Python 41项通过，零跳过；当前计划126/157项完成，31项开放。
+
+[Scenario audit](evidence/optimization/flat-acceptance-audit.json) · [Fixed native proof](evidence/optimization/flat-fixed-first-use.json) · [Installed harness](evidence/optimization/flat-fixed-harness.json) · [Publication](evidence/optimization/flat-release-publication.json).

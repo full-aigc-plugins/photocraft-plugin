@@ -67,9 +67,9 @@
 - [x] 4.13 [PC-DM-005] 编写能暴露“原生与 PSD 保真”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 4.14 [PC-DM-005] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“原生与 PSD 保真”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.13。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 4.15 [PC-DM-005] 完成“原生与 PSD 保真”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.14。产物：evidence/pc-dm-005/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定 dev.40／技能源 dev.36 场景验收：`docs/evidence/optimization/psd-acceptance-audit.json`；未验证外部编辑器及完整保真保持未知。
-- [ ] 4.16 [PC-DM-006] 编写能暴露“平面导出与来源”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
-- [ ] 4.17 [PC-DM-006] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“平面导出与来源”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.16。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
-- [ ] 4.18 [PC-DM-006] 完成“平面导出与来源”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.17。产物：evidence/pc-dm-006/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 4.16 [PC-DM-006] 编写能暴露“平面导出与来源”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 验收证据：`docs/evidence/optimization/flat-acceptance-audit.json`（固定 dev.41／技能源 dev.37，RGB8 与供应方回执夹具；真实生成及计费未验收）。
+- [x] 4.17 [PC-DM-006] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“平面导出与来源”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.16。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 验收证据：`docs/evidence/optimization/flat-acceptance-audit.json`（固定 dev.41／技能源 dev.37，RGB8 与供应方回执夹具；真实生成及计费未验收）。
+- [x] 4.18 [PC-DM-006] 完成“平面导出与来源”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.17。产物：evidence/pc-dm-006/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 验收证据：`docs/evidence/optimization/flat-acceptance-audit.json`（固定 dev.41／技能源 dev.37，RGB8 与供应方回执夹具；真实生成及计费未验收）。
 
 - [x] 4.19 [PC-DM-003] 补充固定宿主安装单文字技能全新公开缓存中文海报创建和定点改字验收；核验原生/PSD Type 字体与内容、保护像素、原文件、PSD 解码、未知图层和缺失字体拒绝，登记有界证据。
 

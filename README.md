@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Dev.41 adds actual flat-export color/ICC/alpha checks and bound existing provider receipts; revisions retain the export requirements. Fixed-installation acceptance is pending. [Contract and evidence boundaries](docs/PhotoCraft-Flat-Export-Acceptance.md).
+Dev.41 adds actual flat-export color/ICC/alpha checks and bound existing provider receipts; revisions retain the export requirements. Fixed dev.41 installation, native reopening and all 28 installed harness tests pass. [Contract and evidence boundaries](docs/PhotoCraft-Flat-Export-Acceptance.md).
 
 Published [skills dev.36](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36) and [plugin dev.40](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40): public ZIP hashes and commits verified, both main/tag CI workflows pass. Fixed Codex discovers 14 skills; single-skill cold PSD acceptance and all 28 installed harness tests pass. Tasks 4.15, 5.6 and 12.12 close with explicit unknown fidelity limits. [Release evidence](docs/evidence/optimization/psd-release-publication.json) · [Scenario audit](docs/evidence/optimization/psd-acceptance-audit.json).
 
@@ -8,7 +8,7 @@ PSD required-feature delivery now refuses unaccepted observed losses and require
 
 Development release dev.41 includes SQLite task control, bound review and bounded revisions, with standalone dev.37 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
-Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 123/157 complete, with 34 gates open.
+Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 126/157 complete, with 31 gates open.
 
 
 Fixed-installation domain acceptance closes seven more tasks: 16 normative scenarios for recursive layers, mask protection, CJK text and complex layout/filters pass. Unavailable layout metrics, editable smart filters and non-RGB8 protection explicitly refuse; PSD required-feature gating is verified separately below; other gates remain open. See [acceptance and rerun instructions](docs/PhotoCraft-Fixed-Domain-Acceptance.md).
@@ -136,7 +136,7 @@ Intent + assets
 | Typography and font dependencies | Preserve text, font, size, leading and layout; block typography-sensitive delivery when fonts are missing unless substitution is explicitly accepted. | Full scope pending |
 | Poster and cover variants | Derive separate aspect-ratio variants from the source project, recording crops, spacing and safe areas without overwriting the source. | Full scope pending |
 | Native and PSD fidelity | Use .pcraft as native authority; validate the PSD features used and record compatibility losses rather than promising universal lossless PSD support. | Full scope pending |
-| Flat export and provenance | Bind flat exports to source revisions, color profiles and transparency requirements; preserve receipts for generated inputs and account for generation separately from layer editing. | Full scope pending |
+| Flat export and provenance | Bind flat exports to source revisions, color profiles and transparency requirements; preserve receipts for generated inputs and account for generation separately from layer editing. | Fixed RGB8 contract verified; live generation/billing unverified |
 
 Does not rewrite upstream editors, silently change native deliverable formats, or claim GUI/cross-platform acceptance.
 

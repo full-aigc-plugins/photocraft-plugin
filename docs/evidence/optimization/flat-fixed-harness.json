@@ -1,0 +1,15 @@
+{
+  "schema": "photocraft-flat-fixed-harness/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.41",
+  "tests": {
+    "tests": 28,
+    "pass": 28,
+    "fail": 0,
+    "skipped": 0
+  },
+  "installedFilesUnchanged": true,
+  "outputSha256": "a39c7da02cbea14a90305c86d22d38a1dc74211464ade8e5d12070a370c23c6d",
+  "summary": "✔ artifact mapping binds files and parent, survives relocation, rejects mixed preview (42.535666ms)\n✔ fixed public contract rejects unknown keys rather than adding competing schema (1.08025ms)\n✔ portable lineage binds task, input, capability and review without live ledger or old path (65.961208ms)\n✔ public status is read-only and never initializes a missing ledger (112.5505ms)\n✔ public request rejects duplicate JSON keys before any ledger creation (83.049083ms)\n✔ task survives reopening and a key cannot be reused for a different plan (38.769042ms)\n✔ shared writable project has one owner and old epochs cannot commit (9.270833ms)\n✔ independent processes race for the same project and only one intent commits (99.613167ms)\n✔ stop and restart retain deadline and revision budget (5.506959ms)\n✔ expired tasks and output paths outside authorization fail before claiming (2.964916ms)\n✔ parent links cannot bypass revision scheduling or revive a cancelled lineage (6.7505ms)\n✔ judge receipts are candidate-bound, consumed once and cannot override technical failure (7.776167ms)\n✔ strict request JSON rejects duplicate keys and numeric overflow (0.739375ms)\n✔ creative receipts reject executor self-review and missing evaluator version (4.088583ms)\n✔ real native task, fresh readonly reopening, bounded title revision, source retention and restart reconcile (2778.669625ms)\n✔ real masked local adjustment revision preserves mask tiles and every protected pixel (1836.536708ms)\n✔ revision retains PSD requirements and scopes accepted losses to the exact base source (28.763625ms)\n✔ unknown native completion is reconciled by observation, never replayed (6.904458ms)\n✔ corrupt ledger is preserved, never silently recreated (0.86575ms)\n✔ reconcile records a verified retained checkpoint without replay or technical acceptance (6.358625ms)\n✔ revision proposal cannot edit unrelated layers or reset revision budget (10.021667ms)\n✔ unsupported ledger schema is refused without changing original bytes (4.997209ms)\n✔ active tasks retain aggregate disk and process reservations (7.213875ms)\n✔ descendant revisions spend the root budget once and parent stop waits for children (22.364125ms)\n✔ disk shortage refuses intent and mutable GUI writes refuse before execution (10.520958ms)\n✔ stop confirms only the owned worker and leaves unrelated process alive (301.775625ms)\n✔ local adjustment revision is bound to the editable enabled mask and exact changed properties (11.374458ms)\n✔ JSON accepts only grammar whitespace and own prototype-named keys (0.998334ms)\nℹ tests 28\nℹ suites 0\nℹ pass 28\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 4765.141458\n\n",
+  "scope": "installed harness and native title revision inherit and recheck flat/PSD contracts; test-review fixture is not creative acceptance"
+}

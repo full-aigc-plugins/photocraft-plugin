@@ -63,13 +63,16 @@
     "12.15",
     "4.15",
     "5.6",
-    "12.12"
+    "12.12",
+    "4.16",
+    "4.17",
+    "4.18"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 123,
-    "open": 34,
-    "newlyCompleted": 61
+    "completed": 126,
+    "open": 31,
+    "newlyCompleted": 64
   },
   "openTaskIds": [
     "2.4",
@@ -78,9 +81,6 @@
     "3.3",
     "3.6",
     "3.9",
-    "4.16",
-    "4.17",
-    "4.18",
     "5.3",
     "6.3",
     "6.6",
@@ -188,9 +188,16 @@
       ],
       "candidate": "755-command inventory with 1510 backend contexts, stale-source/snapshot refusal, context/result/save/revision proof binding and zero automatic catalog-to-PASS promotion; native/desktop test layers and exact-source reuse guard",
       "remaining": "per-command context review, all 755 applicable command executions, package-resource integration of the acceptance index, repeated actual host/model routing, host permission adapters and fixed candidate installation"
+    },
+    {
+      "requirements": [
+        "PC-DM-006"
+      ],
+      "candidate": "Both current fixed runtime scenarios, RGB8 color/ICC/alpha, receipt retention, separate declared generation usage, inherited requirements and replacement refusal verified",
+      "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Source tests/minimum implementations, published fixed installation and PC-DM-001/002/003/007 current runtime scenarios verified; 37 full V1 gates remain open. No sync/archive or general host support claim.",
+  "scope": "Published fixed installation and current PC-DM-006 RGB8/provenance-fixture scenarios verified; 31 full V1 gates remain open. No sync/archive or general host support claim.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -201,14 +208,14 @@
     "PC-CM-001-SAVED-SELECTION"
   ],
   "latestCompletedTaskIds": [
-    "4.15",
-    "5.6",
-    "12.12"
+    "4.16",
+    "4.17",
+    "4.18"
   ],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 210,
-    "skillsReusedFrom": "psd-source-validation.json",
+    "skills": 218,
+    "skillsReusedFrom": "flat-source-final.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 28,
     "pluginPython": 41,
@@ -228,9 +235,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "psd-post-release-validation.json",
+  "releaseCandidateEvidence": "flat-post-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "psd-release-publication.json",
+  "publicationEvidence": "flat-release-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -242,14 +249,15 @@
     "installedSkillsUnchanged": true
   },
   "previousReleaseVerification": {
-    "skills": 201,
-    "skillsReusedFrom": "release-source-validation.json",
+    "skills": 210,
+    "skillsReusedFrom": "psd-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
-    "pluginTypeScript": 27,
-    "pluginPython": 36,
+    "pluginTypeScript": 28,
+    "pluginPython": 41,
     "skipped": 0,
     "checks": 13,
     "sourceUnchanged": true
   },
-  "fixedPsdAcceptanceEvidence": "psd-acceptance-audit.json"
+  "fixedPsdAcceptanceEvidence": "psd-acceptance-audit.json",
+  "fixedFlatAcceptanceEvidence": "flat-acceptance-audit.json"
 }

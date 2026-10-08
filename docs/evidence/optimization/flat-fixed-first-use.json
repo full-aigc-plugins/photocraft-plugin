@@ -1,0 +1,396 @@
+{
+  "schema": "photocraft-flat-export-first-use/v1",
+  "status": "PASS",
+  "coldSingleSkill": true,
+  "nativeAndFlatFreshReopen": true,
+  "flatReport": {
+    "schema": "photocraft-flat-export/v1",
+    "status": "PASS",
+    "policy": {
+      "colorSpace": "Rgb",
+      "transparency": "preserve"
+    },
+    "nativeSha256": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "sourceProjectSha256": null,
+    "source": {
+      "width": 16,
+      "height": 16,
+      "mode": "Rgb",
+      "depth": 8,
+      "profile": {
+        "bytes": 652,
+        "class": "Display",
+        "colorSpace": "Rgb",
+        "description": "sRGB IEC61966-2.1",
+        "embedded": true,
+        "intents": [
+          "perceptual",
+          "relative",
+          "saturation",
+          "absolute"
+        ],
+        "lut": false,
+        "version": "4.3"
+      },
+      "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9",
+      "alphaSha256": "84e7c5b7999e83b8512193b5e7939344d87f55a73c250643f32ff207462cc60c",
+      "transparentPixels": 255,
+      "rgba8Sha256": "be78306925dcae43b4b9042323afcacd9df484ff90b2bf586ac940d070565533"
+    },
+    "outputs": [
+      {
+        "path": "design.png",
+        "sha256": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+        "proof": "flat-png.png",
+        "proofSha256": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+        "observation": {
+          "width": 16,
+          "height": 16,
+          "mode": "Rgb",
+          "depth": 8,
+          "profile": {
+            "bytes": 652,
+            "class": "Display",
+            "colorSpace": "Rgb",
+            "description": "sRGB IEC61966-2.1",
+            "embedded": true,
+            "intents": [
+              "perceptual",
+              "relative",
+              "saturation",
+              "absolute"
+            ],
+            "lut": false,
+            "version": "4.3"
+          },
+          "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9",
+          "alphaSha256": "84e7c5b7999e83b8512193b5e7939344d87f55a73c250643f32ff207462cc60c",
+          "transparentPixels": 255,
+          "rgba8Sha256": "be78306925dcae43b4b9042323afcacd9df484ff90b2bf586ac940d070565533"
+        }
+      },
+      {
+        "path": "design.tif",
+        "sha256": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+        "proof": "flat-tif.png",
+        "proofSha256": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+        "observation": {
+          "width": 16,
+          "height": 16,
+          "mode": "Rgb",
+          "depth": 8,
+          "profile": {
+            "bytes": 652,
+            "class": "Display",
+            "colorSpace": "Rgb",
+            "description": "sRGB IEC61966-2.1",
+            "embedded": true,
+            "intents": [
+              "perceptual",
+              "relative",
+              "saturation",
+              "absolute"
+            ],
+            "lut": false,
+            "version": "4.3"
+          },
+          "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9",
+          "alphaSha256": "84e7c5b7999e83b8512193b5e7939344d87f55a73c250643f32ff207462cc60c",
+          "transparentPixels": 255,
+          "rgba8Sha256": "be78306925dcae43b4b9042323afcacd9df484ff90b2bf586ac940d070565533"
+        }
+      },
+      {
+        "path": "design.webp",
+        "sha256": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+        "proof": "flat-webp.png",
+        "proofSha256": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+        "observation": {
+          "width": 16,
+          "height": 16,
+          "mode": "Rgb",
+          "depth": 8,
+          "profile": {
+            "bytes": 652,
+            "class": "Display",
+            "colorSpace": "Rgb",
+            "description": "sRGB IEC61966-2.1",
+            "embedded": true,
+            "intents": [
+              "perceptual",
+              "relative",
+              "saturation",
+              "absolute"
+            ],
+            "lut": false,
+            "version": "4.3"
+          },
+          "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9",
+          "alphaSha256": "84e7c5b7999e83b8512193b5e7939344d87f55a73c250643f32ff207462cc60c",
+          "transparentPixels": 255,
+          "rgba8Sha256": "be78306925dcae43b4b9042323afcacd9df484ff90b2bf586ac940d070565533"
+        }
+      }
+    ],
+    "scope": "actual reopened color metadata and normalized RGBA8/alpha; no external print/visual fidelity claim"
+  },
+  "provenance": {
+    "schema": "photocraft-asset-provenance/v1",
+    "nativeSha256": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "sourceProjectSha256": null,
+    "assets": {
+      "art": {
+        "kind": "generated",
+        "provider": "test-fixture-not-live-provider",
+        "model": "fixture-v1",
+        "requestId": "fixture-only-no-service-call",
+        "assetSha256": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+        "receipt": {
+          "path": "generation-art.json",
+          "sha256": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80"
+        },
+        "usage": {
+          "quantity": 1,
+          "unit": "images"
+        }
+      }
+    },
+    "generationUsage": [
+      {
+        "asset": "art",
+        "provider": "test-fixture-not-live-provider",
+        "quantity": 1,
+        "unit": "images"
+      }
+    ],
+    "localEditing": {
+      "executedPlanOperations": 2,
+      "cloudGenerationCalls": 0
+    },
+    "sourceAuthenticity": "NOT_PROVEN",
+    "billing": "upstream recorded usage only; no payment or billing verification"
+  },
+  "transparentJpegRefused": {
+    "schema": "photocraft-flat-export/v1",
+    "status": "FAIL",
+    "policy": {
+      "colorSpace": "Rgb",
+      "transparency": "preserve",
+      "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9"
+    },
+    "nativeSha256": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "sourceProjectSha256": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "source": {
+      "width": 16,
+      "height": 16,
+      "mode": "Rgb",
+      "depth": 8,
+      "profile": {
+        "bytes": 652,
+        "class": "Display",
+        "colorSpace": "Rgb",
+        "description": "sRGB IEC61966-2.1",
+        "embedded": true,
+        "intents": [
+          "perceptual",
+          "relative",
+          "saturation",
+          "absolute"
+        ],
+        "lut": false,
+        "version": "4.3"
+      },
+      "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9",
+      "alphaSha256": "84e7c5b7999e83b8512193b5e7939344d87f55a73c250643f32ff207462cc60c",
+      "transparentPixels": 255,
+      "rgba8Sha256": "be78306925dcae43b4b9042323afcacd9df484ff90b2bf586ac940d070565533"
+    },
+    "outputs": [
+      {
+        "path": "design.jpg",
+        "sha256": "c7aaf5db40c0122962bb3f5bdbd10b2cff87a587e3d55c6419e215b9494ee472",
+        "proof": "flat-jpg.png",
+        "proofSha256": "8847b83fb5808e114991fe999a2dd30bf3e910f324742279f9ae6fb85e2c57d2",
+        "observation": {
+          "width": 16,
+          "height": 16,
+          "mode": "Rgb",
+          "depth": 8,
+          "profile": {
+            "bytes": 652,
+            "class": "Display",
+            "colorSpace": "Rgb",
+            "description": "sRGB IEC61966-2.1",
+            "embedded": true,
+            "intents": [
+              "perceptual",
+              "relative",
+              "saturation",
+              "absolute"
+            ],
+            "lut": false,
+            "version": "4.3"
+          },
+          "iccSha256": "17127858886f0b0feef23989b1b78a6c3ec6e423bac03ab4aca9ba38992714d9",
+          "alphaSha256": "3d6876a0146de8576eb2395a858de1213d1b92c65b779df3a331cfd5a4584546",
+          "transparentPixels": 0,
+          "rgba8Sha256": "f956db1aadd52a7bba3695e533fc88c3ec570d614fc4df8f0c6ceb26a0acad53"
+        }
+      }
+    ],
+    "scope": "actual reopened color metadata and normalized RGBA8/alpha; no external print/visual fidelity claim",
+    "error": "flat_transparency_changed"
+  },
+  "opaqueJpegAccepted": true,
+  "wrongIccRefused": true,
+  "badReceiptZeroRuntimeAndOutput": true,
+  "movedDeliveryAndSameNameReplacement": true,
+  "replacementDoesNotInheritOldReceipt": true,
+  "sourceAndSkillUnchanged": true,
+  "failedNativeStageFreshReopenAndUnchanged": true,
+  "coherentForgedObservationRefusedByFreshReopen": true,
+  "driverSha256": "59248502c37c173117f1183d666fdd0565dc604c5885d4682cca3401c9c3fe4f",
+  "scope": "fixed installed RGB8 native export/import and provider-fixture receipt preservation; live generation, billing authenticity, external print and creative acceptance NOT_RUN",
+  "fixedInstallation": "PASS",
+  "pluginVersion": "0.1.0-dev.41",
+  "sourceVersion": "0.1.0-dev.37",
+  "installedFilesUnchanged": true,
+  "installedFilesSha256": "17243349e8aae5daa7012f20447fa0de10db7c850d887feeb8700780b153f39f",
+  "execution": {
+    "exitCode": 0,
+    "passed": 1,
+    "skipped": 0,
+    "outputSha256": "aa471ff898e8f42e644f62d4ba67197d1c8e797f38ba7208e59ad5fc3db8342b"
+  },
+  "retainedFiles": {
+    ".photocraft-execution-2121e1192a79632eb1c0eecf71806d0c3db0d3e6fbb4bd65c4a79c050150bdc4.json": "a18c7c79e1a0fb0b25d86a4d854b04519973d39de7e564c37edcc5303f971159",
+    ".photocraft-execution-2b4505a6875a0f71a178cd8dae948631a9603695e0b903cdca1c91a8af94c973.json": "0529f3b6cfabb7d0cf8ba1174d02e2c0e8c4c8a4cf6132b92fb2286c1b43aae8",
+    ".photocraft-execution-4c32329499ae145d75c037040bab229e2df4e18e45ce66f9f7cbee21708ddd42.json": "15db68438f85a4a50710563efa517b37e3cfb223eacac03ed985631acf7bf5f3",
+    ".photocraft-execution-6c2c8fbed119eb09c8d1cd8c0d3e09d415f5bbff39f6c407125924d629c3cbbd.json": "6455e8883f6ef27020ebcaf178c5dc6d709e2b7e6042444388728370aa21d344",
+    ".photocraft-execution-ad5b2626565ad80ab6c6555aba82b2609871d40b6c4aa38f0f97cfa90ed46084.json": "1eafd0e59789e147db3f9640ee6f0433e6130b713ce1568da773e894fea73705",
+    ".photocraft-execution-bf646b7340e97dde02b962b3c811153df00b59ac6cf5a1e9ea50da5ceb80e990.json": "287a5e29349d43291329a43f201284028867a9bb54c3179c5f400b26556bd236",
+    ".photocraft-o5iwzs97/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    ".photocraft-o5iwzs97/design.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    ".photocraft-o5iwzs97/design.tif": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+    ".photocraft-o5iwzs97/design.webp": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+    ".photocraft-o5iwzs97/failure.json": "2d713b1b4cbe0579441e294dc89feeafef6f1d9e428a4723ce5016f256471cca",
+    ".photocraft-o5iwzs97/flat-export.json": "04450248a49ce450e274aa2a8a8aac33b88f17df5ab9d6f15d1568ba441acaf3",
+    ".photocraft-o5iwzs97/flat-png.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    ".photocraft-o5iwzs97/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    ".photocraft-o5iwzs97/project.pcraft": "af67199589c897279d91d2da1233a39d032cd7fd986c148f5c7819af5e9a7b01",
+    ".photocraft-o5iwzs97/recovery-operations.json": "5b71cf234bb3e6925071b1bd67f5b3e10582461c19c565717847c7accae230b6",
+    ".photocraft-o5iwzs97/source.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    ".photocraft-zp6_dn72/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    ".photocraft-zp6_dn72/design.jpg": "c7aaf5db40c0122962bb3f5bdbd10b2cff87a587e3d55c6419e215b9494ee472",
+    ".photocraft-zp6_dn72/failure.json": "15590cdd4f5f5fa8c551930b5a21ce55854bf81db494732f7c90f721118bc3c1",
+    ".photocraft-zp6_dn72/flat-export.json": "998cdada1377a4ec9b7f0ce42da1da46a35db263a8dc18f694c5be5c3798d8d4",
+    ".photocraft-zp6_dn72/flat-jpg.png": "8847b83fb5808e114991fe999a2dd30bf3e910f324742279f9ae6fb85e2c57d2",
+    ".photocraft-zp6_dn72/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    ".photocraft-zp6_dn72/project.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    ".photocraft-zp6_dn72/recovery-operations.json": "7256b2f14ee07f3db0202f40f5d767c05a1af90056bdf56cfe42456a151206c4",
+    ".photocraft-zp6_dn72/source.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "forged-profile/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    "forged-profile/asset-provenance.json": "6765473276f8621bfec40743264fccbb06fab450319dff5b341d14b8d10d23e4",
+    "forged-profile/capabilities.json": "3f66502f8861af6b5676daab3981e9a24eb8d2b0d786f83622405f0eb843f3eb",
+    "forged-profile/design.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "forged-profile/design.tif": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+    "forged-profile/design.webp": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+    "forged-profile/exchange-loss.json": "4cf7266039e4c370f8d4ef1d9718170bc902ce0f12ed073eb4d2005345a9a26a",
+    "forged-profile/flat-export.json": "7787ca44ea7ea8ecca50c27f99e811f637a7f86ad8f0834496fe4f17904bdad5",
+    "forged-profile/flat-png.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "forged-profile/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "forged-profile/flat-tif.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "forged-profile/flat-webp.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "forged-profile/generation-art.json": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80",
+    "forged-profile/manifest.json": "04ef46b38f82ed581dd7a93d80c4c51e81838ce724b0dce49653015f05c3693a",
+    "forged-profile/native.json": "838aceec788375e2a62d8d8a2a8eabd3a80b30703b8cfa2be8160cb235a20de5",
+    "forged-profile/operations.json": "b33a40bae1c64b3c5ac03887ea9d6c474d6e73d321f71a9d34a66c1971cfed03",
+    "forged-profile/plan.json": "c322b40ceec63f0d27626f6246904d7c42353c9874b74c67916fbfd453f2bc54",
+    "forged-profile/project.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "generated-fixture.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    "icc-refused/failure.json": "2d713b1b4cbe0579441e294dc89feeafef6f1d9e428a4723ce5016f256471cca",
+    "jpeg-opaque/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    "jpeg-opaque/asset-provenance.json": "1741b14dc42ad7ffcef7b7544d7ad1e56799ec00549f6fde1240282377c81ca0",
+    "jpeg-opaque/capabilities.json": "8f7f104c02df4cd3818d1047f72230c1c0badbf755140cee4d5782992e01c4c8",
+    "jpeg-opaque/design.jpg": "c7aaf5db40c0122962bb3f5bdbd10b2cff87a587e3d55c6419e215b9494ee472",
+    "jpeg-opaque/exchange-loss.json": "12fc628bdf936597de2145ecdf079f563d2b536979dcdf2819a9b339961e43dc",
+    "jpeg-opaque/flat-export.json": "3160f29cf96ca60ff4f5d351b89d87766ee96cff046dc909e45317c5eacca583",
+    "jpeg-opaque/flat-jpg.png": "8847b83fb5808e114991fe999a2dd30bf3e910f324742279f9ae6fb85e2c57d2",
+    "jpeg-opaque/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "jpeg-opaque/generation-art.json": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80",
+    "jpeg-opaque/manifest.json": "0048de1ad81ced721e0bec760cd8eec484e0c56cd863e996fdb8b3bfc64f4938",
+    "jpeg-opaque/native.json": "838aceec788375e2a62d8d8a2a8eabd3a80b30703b8cfa2be8160cb235a20de5",
+    "jpeg-opaque/operations.json": "7256b2f14ee07f3db0202f40f5d767c05a1af90056bdf56cfe42456a151206c4",
+    "jpeg-opaque/plan.json": "6595673b2a4ac6cd2a600b75e82644154328068c94c54c7044e6c5cd9d06f155",
+    "jpeg-opaque/project.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "jpeg-refused/failure.json": "15590cdd4f5f5fa8c551930b5a21ce55854bf81db494732f7c90f721118bc3c1",
+    "provider-fixture.json": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80",
+    "replacement/asset-art.png": "63171b0ec283725bf4c252dd5123aad0efaed7d18fea8ce31507dea054ca4b9f",
+    "replacement/asset-provenance.json": "7556afe6db8f4667c3ecb5d212ee2e51776dbf709ea990f4efaa789a01997867",
+    "replacement/capabilities.json": "09a4fb50b65fe40fd3abd3ce274dde723dcb489e81b3553f85aeb0a4c3a634e4",
+    "replacement/design.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "replacement/design.tif": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+    "replacement/design.webp": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+    "replacement/exchange-loss.json": "4cf7266039e4c370f8d4ef1d9718170bc902ce0f12ed073eb4d2005345a9a26a",
+    "replacement/manifest.json": "4f88b33bdc543e0bf4f9810b48863adf47dd9ce88675add8dd1df759d67ee3f0",
+    "replacement/native.json": "838aceec788375e2a62d8d8a2a8eabd3a80b30703b8cfa2be8160cb235a20de5",
+    "replacement/operations.json": "df18334020cdc287c8a64c4d46207ccd847ae79c44939da4da1fa4b6873eef58",
+    "replacement/plan.json": "1a367445d50fb79532c54080348bd40b621091d55bfdad62daa9fc9f41429373",
+    "replacement/project.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "replacement.png": "63171b0ec283725bf4c252dd5123aad0efaed7d18fea8ce31507dea054ca4b9f",
+    "revision/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    "revision/asset-provenance.json": "8dd31ba67e00f30ce41457e08b63470305d9f2dcaf00e3e47bcf0745dc1a2914",
+    "revision/capabilities.json": "f895ea64ecc815dd7b5be34e6b475ead3200d22676996f04eb986e9f8d141b29",
+    "revision/design.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "revision/design.tif": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+    "revision/design.webp": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+    "revision/exchange-loss.json": "72c32da912707dd409db62609cfffc3d25be50478291b61ac2b5c33c8a0b4d3e",
+    "revision/flat-export.json": "6b30ccf15ad8c3e4111dff735b3e8d9f18dbfe1e7d1b6fc979a58914ebc28d0e",
+    "revision/flat-png.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "revision/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "revision/flat-tif.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "revision/flat-webp.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "revision/generation-art.json": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80",
+    "revision/manifest.json": "e84bbae8e5b57bb90fc679c6e80c6fda7ec45495425765a442a69d72f93bcf20",
+    "revision/native.json": "48667b89c63f97be53d7e82d3b3a1388cdd666618db0542993b0573b11c9c86c",
+    "revision/operations.json": "6b7466bbb1eb62422e4aa2faf4481fd0b07e43b854c37802ea328fab1a1d6d8b",
+    "revision/plan.json": "19463e43104459d676d8ab196703529354f3e543db2fa901f7355f1b77ee715a",
+    "revision/project.pcraft": "af67199589c897279d91d2da1233a39d032cd7fd986c148f5c7819af5e9a7b01",
+    "source/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    "source/asset-provenance.json": "6765473276f8621bfec40743264fccbb06fab450319dff5b341d14b8d10d23e4",
+    "source/capabilities.json": "3f66502f8861af6b5676daab3981e9a24eb8d2b0d786f83622405f0eb843f3eb",
+    "source/design.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "source/design.tif": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+    "source/design.webp": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+    "source/exchange-loss.json": "4cf7266039e4c370f8d4ef1d9718170bc902ce0f12ed073eb4d2005345a9a26a",
+    "source/flat-export.json": "1e11b90f54b335ccd8a204245d5d720be49ee4e950eaad03806813a37eaa3a4a",
+    "source/flat-png.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "source/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "source/flat-tif.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "source/flat-webp.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "source/generation-art.json": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80",
+    "source/manifest.json": "b6455e313062eeee97e966c516663bdb25e4f3de1f94d819de30d9a4bd07c2b4",
+    "source/native.json": "838aceec788375e2a62d8d8a2a8eabd3a80b30703b8cfa2be8160cb235a20de5",
+    "source/operations.json": "b33a40bae1c64b3c5ac03887ea9d6c474d6e73d321f71a9d34a66c1971cfed03",
+    "source/plan.json": "c322b40ceec63f0d27626f6246904d7c42353c9874b74c67916fbfd453f2bc54",
+    "source/project.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4",
+    "移动 交付/asset-art.png": "d757d74f0752d25632cf18ea7467f19daecc96e417959b0924e7d3669f212908",
+    "移动 交付/asset-provenance.json": "6765473276f8621bfec40743264fccbb06fab450319dff5b341d14b8d10d23e4",
+    "移动 交付/capabilities.json": "3f66502f8861af6b5676daab3981e9a24eb8d2b0d786f83622405f0eb843f3eb",
+    "移动 交付/design.png": "6c1aa50442a93e42c0eb2907cf4e017cd19547891fa190f3ea473582b0479290",
+    "移动 交付/design.tif": "329ee1ab5c572031b513d90f62a66636da10c85593d18c8a8c44e7f37c853ae4",
+    "移动 交付/design.webp": "76b4ba5b9661ea2e1ce32adcb57a986ce150ca3357a1a74cf96d88a8a3001101",
+    "移动 交付/exchange-loss.json": "4cf7266039e4c370f8d4ef1d9718170bc902ce0f12ed073eb4d2005345a9a26a",
+    "移动 交付/flat-export.json": "1e11b90f54b335ccd8a204245d5d720be49ee4e950eaad03806813a37eaa3a4a",
+    "移动 交付/flat-png.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "移动 交付/flat-source.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "移动 交付/flat-tif.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "移动 交付/flat-webp.png": "6202255405bec528f49e438d797e1e10c37445e93cd82fb11c02c435b767e220",
+    "移动 交付/generation-art.json": "864de90880efa648af33385b9bcc2cb545467d8406b16b5347d297250d531b80",
+    "移动 交付/manifest.json": "b6455e313062eeee97e966c516663bdb25e4f3de1f94d819de30d9a4bd07c2b4",
+    "移动 交付/native.json": "838aceec788375e2a62d8d8a2a8eabd3a80b30703b8cfa2be8160cb235a20de5",
+    "移动 交付/operations.json": "b33a40bae1c64b3c5ac03887ea9d6c474d6e73d321f71a9d34a66c1971cfed03",
+    "移动 交付/plan.json": "c322b40ceec63f0d27626f6246904d7c42353c9874b74c67916fbfd453f2bc54",
+    "移动 交付/project.pcraft": "972b3d5cff29d6d968ba461584fae1e031428e6b9d0b12b329773215ec9cc4f4"
+  }
+}
