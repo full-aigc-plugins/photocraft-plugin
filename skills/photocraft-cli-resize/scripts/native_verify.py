@@ -24,7 +24,9 @@ def verify(root,runtime_home):
  with tempfile.TemporaryDirectory(prefix='photocraft-readonly-') as temporary:
   with load('mcp_session').Session([installed['executable'],'mcp','--automation-read-root',str(root),'--automation-write-root',temporary]) as session:
    commands=load('commands')
-   def call(name,args):return commands.parse_reply(session.request('tools/call',{'name':name,'arguments':args}))
+   def call(name,args):
+    result=commands.parse_reply(session.request('tools/call',{'name':name,'arguments':args}))
+    return commands.validate_tool_reply(name,result,args)
    call('doc_open',{'path':'project.pcraft'});actual=call('doc_inspect',{})
    if 'native-facts.json' in manifest['files']:
     facts=load('native_facts').collect(root/'project.pcraft',actual,call)
@@ -43,4 +45,5 @@ def verify(root,runtime_home):
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('delivery');parser.add_argument('--runtime-home',default=os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')));args=parser.parse_args()
  try:print(json.dumps(verify(args.delivery,args.runtime_home),ensure_ascii=False))
- except (ValueError,OSError,RuntimeError,KeyError) as error:print(json.dumps({'result':'FAIL','error':str(error)},ensure_ascii=False));raise SystemExit(1)
+ except (ValueError,OSError,RuntimeError,KeyError,TypeError) as error:
+  print(json.dumps({'result':'FAIL',**load('operation_errors').describe(error,'verification'),'phase':'verification'},ensure_ascii=False));raise SystemExit(1)

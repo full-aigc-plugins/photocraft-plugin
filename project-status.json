@@ -167,11 +167,11 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.40",
-    "pluginWorkingVersion": "0.1.0-dev.46",
-    "fixedSkillSourceVersion": "0.1.0-dev.40",
+    "skillsVersion": "0.1.0-dev.41",
+    "pluginWorkingVersion": "0.1.0-dev.47",
+    "fixedSkillSourceVersion": "0.1.0-dev.41",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_DEV46_WITH_UNPUBLISHED_CHECKPOINT_CANDIDATE",
+    "publication": "READONLY_REPLY_DEVELOPMENT_RELEASE_PREPARATION",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,

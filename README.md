@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+Dev.47 pins source dev.41 with read-only inner reply semantics and Harness checkpoint record/file/runtime binding. The source candidate passes240 tests;14 actual read-only faults preserve original files and stop subsequent calls. Fixed publication acceptance is recorded separately. Task9.6 raw per-command, streaming editing and full-entry matrix remain open. [Source contract](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.md).
+
 Dev.46 pins source dev.40 and adds Harness create/revise preflight, strict bound replies and read-only ledger snapshots. Candidate validation passes49 TypeScript tests (including3 native cases) and48 Python tests; the fixed public copy also passes49 Harness tests without installed-tree changes, and all4 release/main CI runs pass. [Publication evidence](docs/evidence/optimization/harness-entry-publication.json). Task9.6, streaming entries, per-command replies and full V1 remain open. [Scope and evidence](docs/PhotoCraft-Harness-Entry-Contract.md).
 
 Dev.45 pins source dev.40 with native argv pre-install validation and preserves tasks, events and persistent plans on Harness preflight failure. Task9.6, streaming replies, create/revise and full V1 acceptance remain open. [Scope and verification](docs/PhotoCraft-Native-Argv-Preflight.md).
@@ -16,7 +18,7 @@ Published [skills dev.36](https://github.com/full-aigc-skills/photocraft-skills/
 
 PSD required-feature delivery now refuses unaccepted observed losses and required unknowns; revisions retain the policy with source-bound acceptance. [Policy and verification](docs/PhotoCraft-PSD-Policy-Architecture.md). The public dev.40 installation passes all seven current PSD/native exchange scenarios.
 
-Development release dev.46 includes SQLite task control, bound review and bounded revisions, with standalone dev.40 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
+Development release dev.47 includes SQLite task control, bound review and bounded revisions, with standalone dev.41 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
 Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 129/157 complete, with 28 gates open.
 
@@ -34,7 +36,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.46`; skill source: `0.1.0-dev.40`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.47`; skill source: `0.1.0-dev.41`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -129,9 +131,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.46 |
+| Metadata version | 0.1.0-dev.47 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.40 |
+| Skills source | photocraft-skills / 0.1.0-dev.41 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

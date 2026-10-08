@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.47 固定技能源dev.41，加入只读重开内层语义校验，并接入Harness检查点记录／文件／运行时绑定。候选技能源240项测试通过，14例真实只读故障保持原文件且停止后续调用；固定发行副本验收单独记录。任务9.6的raw逐命令、流式编辑及完整入口矩阵仍开放。[源码合同](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.zh_CN.md)。
+
 dev.46 固定技能源dev.40，补齐 Harness 创建／修订预检、严格回执绑定与只读账本快照。候选本地49项 TypeScript（含3项真实原生）和48项 Python 测试通过；公开固定副本49项Harness测试通过，安装树不变；发布提交及标签4项CI通过。[发行证据](docs/evidence/optimization/harness-entry-publication.json)。任务9.6、流式入口、逐命令回执及完整V1仍开放。[范围与证据](docs/PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
 
 dev.45 固定技能源dev.40，加入原生argv安装前预检，并保全Harness失败预检的任务、事件和持久计划状态。任务9.6、流式回复、创建／修订及完整首版验收仍开放。[范围与验证](docs/PhotoCraft-Native-Argv-Preflight.zh_CN.md)。
@@ -16,7 +18,7 @@ dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供�
 
 PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；返工继承策略，接受记录绑定源版本。[门禁与验证](docs/PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。公开 dev.40 固定安装通过当前原生／PSD 交换的全部7个规范场景。
 
-开发版本 dev.46 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.40。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
+开发版本 dev.47 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.41。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
 开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为129/157项完成，28项门禁开放。
 
@@ -34,7 +36,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.46`；技能源：`0.1.0-dev.40`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.47`；技能源：`0.1.0-dev.41`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -129,9 +131,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.46 |
+| Metadata version | 0.1.0-dev.47 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.40 |
+| Skills source | photocraft-skills / 0.1.0-dev.41 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

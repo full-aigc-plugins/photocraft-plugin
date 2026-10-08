@@ -99,3 +99,7 @@ After staged failure, retain both the output recovery record and its original si
 蒙版保全事实除绑定、启用、链接、密度和羽化外，还绑定保存格式中的 surface 描述与实际压缩瓦片 SHA-256。仅蒙版元数据相同不能通过保全；缺失瓦片或超过 64 MiB 的蒙版瓦片核验范围会明确拒绝。该摘要验证内容保全，不证明创作质量。
 
 每次操作核对实际使用的命令／工具与发现工具，未使用合同变化不会阻止当前操作；完整发现摘要仍记录在 `capabilityChecks` 或 `capability-checks.json`。若以后使用已变化合同，按原会话基线拒绝，不把无关变化静默接受为新基线。
+
+## 只读重开回执
+
+`native_verify.py` 与 `checkpoint_verify.py` 复用工具语义校验：`doc_open` 必须返回合法索引或路径／警告合同；`doc_inspect` 必须包含合法宽高与图层列表。不明确的回复停止后续调用，输出 code、phase=verification、outcome、retryable=false 和 recoveryAction；不能据此重放原编辑。明确工具失败保持failed，未知回复保持unknown。检查点仍是部分工程证据，technical／creative均为NOT_RUN。

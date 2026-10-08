@@ -1,11 +1,11 @@
 {
   "schema": "photocraft-command-acceptance/v1",
   "scope": "candidate command-context evidence index; fixed installation, host/model and creative acceptance remain separate",
-  "sourceSha256": "5db221c48d8eec1cf767f9383ccbdd3b759b4cef8ab2bc8648d34430f2aeaf3f",
+  "sourceSha256": "634bc26082b2f1f483d30d0bc339327ea39530a9cd3759268230cda39b96065a",
   "sourceFiles": {
     "scripts/bootstrap.py": "065231567b6d0c2bab9504ee49b630c14b05db0a29508021166caa58b123c7cc",
     "scripts/capabilities.py": "4248ff7fe3d675ef69bc8c28109e2f0145a5b83ceaaf4a565cf1eaf3087ba96d",
-    "scripts/checkpoint_verify.py": "e5b093635fd046c4041592b37866223575ecab33ccb5fa13e5067e5a641bddb9",
+    "scripts/checkpoint_verify.py": "602cfa9009aa09928bf5cb2611bc2d282da71865c97c3440932b8277ba0f4bc2",
     "scripts/cli.py": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
     "scripts/cli_contract.py": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
     "scripts/commands.py": "1be6883f89bbc6624af1d69098871bb4138c0c35355a7745ccc01404ad96ccfd",
@@ -20,7 +20,7 @@
     "scripts/layout_variant.py": "7b0865514548b6363d0ccde56ddeef25a03d9b00c5e60c854730dd62d598f384",
     "scripts/mcp_session.py": "95f515d4195f4fb382766a7c693dc6183c11441a96f98df51bd180e12dff1fc5",
     "scripts/native_facts.py": "734fa9346e7df5d23e4187c93698e8d25544c44ccfff0685ab62fc41163d90e8",
-    "scripts/native_verify.py": "585fe3fa600d9d867c6cefbf1ef82a00761162fdfec8503b34a1b2ac49941ed4",
+    "scripts/native_verify.py": "4ce51f4651ab3f7a02a855a1f7ad103936dd2f0fddbf8869abdb2e95dc37ca10",
     "scripts/native_workflow.py": "69586883f2148e2d733166acbf1905edf8c7e7d343276743a9f4712f6fc0b10a",
     "scripts/operation_errors.py": "2cd2965e1173b9ffbdcd449905e9789acbb177a94dbc65cbd804553c3cc5dcd2",
     "scripts/output_guard.py": "52a24556afed5e38ef6d14861bf0609a5d3aa383bbc1b1e144b0cf5e0d1f72ed",
