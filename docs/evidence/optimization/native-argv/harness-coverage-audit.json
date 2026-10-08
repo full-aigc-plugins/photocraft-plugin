@@ -1,0 +1,44 @@
+{
+  "schema": "photocraft-harness-entry-audit/v1",
+  "status": "PARTIAL",
+  "requirement": "PC-TX-005",
+  "closedTasks": [],
+  "observations": {
+    "create": {
+      "status": "FAIL",
+      "invalidSemanticPlanAccepted": true,
+      "ledgerCreatedBeforePlanValidation": true
+    },
+    "run": {
+      "status": "PARTIAL",
+      "taskAndEventsUnchanged": true,
+      "persistentPlanAbsent": true,
+      "outputAndRuntimeAbsent": true,
+      "topLevelStructuredValidationFieldsMissing": [
+        "phase",
+        "outcome",
+        "category",
+        "fieldPath"
+      ],
+      "reply": {
+        "result": "FAIL",
+        "code": "adapter_failed",
+        "error": "adapter_failed: {\"error\": \"parameter_unknown_field: $.operations[0].params.typo expected declared field\", \"code\": \"parameter_unknown_field\", \"phase\": \"validation\", \"fieldPath\": \"$.operations[0].params.typo\", \"category\": \"validation_failed\", \"outcome\": \"not_executed\", \"retryable\": false, \"recoveryAction\": \"correct_plan\"}\n",
+        "retryable": false,
+        "recoveryAction": "reconcile"
+      }
+    }
+  },
+  "remaining": [
+    "create plan validation before creating ledger",
+    "run structured preflight error propagation",
+    "revision preflight before spending budget",
+    "strict subprocess response validation",
+    "streaming native editing transport and per-command reply stopping"
+  ],
+  "sourceFiles": {
+    "src/cli.ts": "83efbb315674a79e5441885d24ffd34bf34f457bd18c9e8f43199cd116b34fd9",
+    "src/harness/runner.ts": "24f44787a9526692f1371ac674ac7e967903cfa19798aad2d312ec8605035a87",
+    "src/harness/ledger.ts": "008610e520d5af5d8b4494fdefcf79edd6cc93eece655253225b692450362719"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "status": "PASS",
+  "scope": "candidate13 independent source skills; observer denies all actual installation/session calls; not fixed plugin snapshots",
+  "cases": [
+    {
+      "skill": "photocraft-use",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "cliSha256": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+      "contractSha256": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+      "calls": {
+        "install": 0,
+        "session": 0
+      },
+      "reply": {
+        "error": "duplicate_json_key",
+        "code": "duplicate_json_key",
+        "phase": "validation",
+        "fieldPath": "$argv[5].text",
+        "category": "validation_failed",
+        "message": "duplicate_json_key: $argv[5].text",
+        "outcome": "not_executed",
+        "retryable": false,
+        "recoveryAction": "correct_plan"
+      }
+    }
+  ],
+  "closedTasks": []
+}

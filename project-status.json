@@ -194,5 +194,12 @@
   "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json",
   "entryContractEvidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
   "entryContractAcceptance": "PARTIAL: fixed workflow/commands/desktop pass; native argv preflight and Harness audit remain open",
-  "fixedReleaseCombinationEvidence": "docs/evidence/optimization/entry-contract/fixed-release-combination.json"
+  "fixedReleaseCombinationEvidence": "docs/evidence/optimization/entry-contract/fixed-release-combination.json",
+  "unreleasedEntryCandidate": {
+    "status": "PARTIAL_CANDIDATE",
+    "evidence": "docs/evidence/optimization/native-argv/candidate.json",
+    "published": false,
+    "closedTasks": [],
+    "remainingTask": "9.6"
+  }
 }

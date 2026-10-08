@@ -25,3 +25,5 @@ flowchart LR
 任务9.6保持未完成。三个计划入口的矩阵不能代表所有公开编辑入口：cli.py 原生argv透传收到重复JSON键时先尝试安装，安装调用计数为1（测试观察器已阻止实际安装），未返回结构化预检错误。还需补齐透传入口的合法旧argv、静态拒绝和结果语义，并审计公开Harness执行／修订入口。
 
 公开dev.44／源39固定安装：Codex发现14项技能，加载错误0。候选与固定矩阵分别通过52项预检、48项原生／桌面场景；固定13项独立空缓存探测及13项合同／原生测试也通过，整个安装树摘要保持不变。实际安装仍复现透传缺口，因此9.6保持未完成。发布提交1e1a22d24e27b8537d51fd74e1f41d06c5050c7e对应4项标签／主分支CI通过；技能源231项本地测试不冒充源仓CI。见[局部覆盖](evidence/optimization/entry-contract/coverage-audit.json)和[发行证据](evidence/optimization/entry-release-publication.json)。
+
+未发布的[原生argv／Runner候选](PhotoCraft-Native-Argv-Preflight.zh_CN.md)单独保留证据，任务9.6保持未完成。

@@ -1,6 +1,7 @@
 import { spawn, spawnSync } from 'node:child_process';
-import { existsSync, writeFileSync, readdirSync } from 'node:fs';
+import { existsSync, writeFileSync, readdirSync, mkdtempSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
 import { canonical, digest, fileDigest, readJson, safePath } from '../protocol/files.ts';
 import { Ledger } from './ledger.ts';
@@ -30,13 +31,17 @@ export class Runner {
   if(task.state!=='planned' || task.attempted) throw new Error('reconcile_required');
   if(task.request.mutableProject) throw new Error('mutable_desktop_execution_not_supported');
   const identity=this.identity();const planPath=join(this.ledger.root,id+'-plan.json');
-  writeFileSync(planPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
   const args=[planPath,'--output',task.request.output];
   if(task.request.source) args.push('--source',task.request.source);
-  // --check 必须在 claim、下载和原生进程之前完成。
-  try { this.python('workflow.py',[...args,'--check']); }
-  catch(error) { this.ledger.update(id,task.epoch,current=>{current.preflight={status:'FAIL',code:'preflight_failed',outcome:'not_executed'};}); throw error; }
+  // 预检文件只存在于本次私有临时目录；拒绝时不写任务、事件或恢复记录。
+  const temporary=mkdtempSync(join(tmpdir(),'photocraft-plan-check-'));
+  try {
+   const checkPath=join(temporary,'plan.json');
+   writeFileSync(checkPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
+   this.python('workflow.py',[checkPath,...args.slice(1),'--check']);
+  } finally {rmSync(temporary,{recursive:true,force:true});}
   if(this.identity().sha256!==identity.sha256) throw new Error('skill_source_changed');
+  writeFileSync(planPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
   const epoch=this.ledger.claim(id);
   this.ledger.update(id,epoch,current=>{current.executionIdentity=identity;current.preflight={status:'PASS'};});
   if(this.options.runtimeHome) args.push('--runtime-home',safePath(this.options.runtimeHome));

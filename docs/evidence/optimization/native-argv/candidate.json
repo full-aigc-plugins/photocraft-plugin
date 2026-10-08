@@ -1,0 +1,73 @@
+{
+  "schema": "photocraft-native-argv-candidate/v1",
+  "status": "PARTIAL_CANDIDATE",
+  "requirement": "PC-TX-005",
+  "closedTasks": [],
+  "openTasks": [
+    "9.6"
+  ],
+  "baselinePublicSource": "v0.1.0-dev.39",
+  "baselinePublicPlugin": "v0.1.0-dev.44",
+  "candidateIsPublished": false,
+  "rawCliRefusals": {
+    "cases": 13,
+    "installerCalls": 0,
+    "nativeSessionCalls": 0,
+    "structuredError": true,
+    "allIndependentSkillsDuplicateKeyRefusals": 13
+  },
+  "rawCliTests": {
+    "passed": 3,
+    "skipped": 0,
+    "native": true,
+    "covered": [
+      "creation",
+      "alternate-save revision",
+      "source original retained",
+      "batch object/actions wrapper",
+      "droplet action formats",
+      "native line-oriented/text/empty stdout compatibility",
+      "convert actual32x32PNG"
+    ]
+  },
+  "harnessUnit": {
+    "passed": 1,
+    "taskAndEventsUnchanged": true,
+    "persistentPlanAbsent": true
+  },
+  "sourceContract": "Maintained0.2.0-craft.1 and upstream f114f621799a96dc9f28ffb8faa01da680b64947; newer research checkout4526727 is not the locked runtime",
+  "redGreenSha256": {
+    "argv-red.log": "5ed9ad8ddbb786d8b1bca05149ef03e974c16fab16cc00ef03cc3b7737cf3d03",
+    "argv-green.log": "56e7397174e535f71bd981241347fa403dcc8ff313f9cbc64bf39bc298b93f68",
+    "harness-red.log": "a98e9cc3a9a54811134fe3ab38beb9b60172ef08d5d50f0ff32204a4d26645ad",
+    "harness-green.log": "8862390aac8dc6eabef25763b455d05402e917bf960581ae42264d9d09c11c5c"
+  },
+  "codeSha256": {
+    "cli.py": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
+    "cli_contract.py": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+    "test_native_cli_preflight.py": "3f34cb73b6dfd8dc0b0d09d8b74aea1fbca831eff6468c54873027e436279aae",
+    "runner.ts": "24f44787a9526692f1371ac674ac7e967903cfa19798aad2d312ec8605035a87",
+    "runner.test.ts": "9b8d2113f1e1534181c72f29291242a10cb3ecebd8124aa601f6731f40c165d3"
+  },
+  "remaining": [
+    "Native argv streaming MCP/serve request and reply contract",
+    "Native raw run/batch/droplet per-command semantic reply stopping",
+    "Harness create before ledger initialization",
+    "Harness run structured preflight propagation and strict subprocess replies",
+    "Harness revision preflight before budget reservation",
+    "Immutable fixed installation acceptance after complete entry implementation"
+  ],
+  "fullV1": "INCOMPLETE",
+  "fullCandidateRegression": {
+    "status": "PASS",
+    "skillsPassed": 234,
+    "pluginTypeScriptPassed": 29,
+    "pluginPythonPassed": 48,
+    "skipped": 0,
+    "checks": 13,
+    "sourceUnchanged": true,
+    "evidence": "../native-argv-candidate-validation.json",
+    "evidenceSha256": "a64483c52967eeedfe05330a10ecd8f13e3ff5f0e5483c1d82385c7ad1095574"
+  },
+  "candidateSourceCommit": "6bca506614217c5b187794be38ee04f02420ee50"
+}

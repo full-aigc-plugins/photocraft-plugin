@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, realpathSync, rmSync, writeFileSync, mkdirSync, readFileSync } from 'node:fs';
+import { mkdtempSync, realpathSync, rmSync, writeFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Ledger } from '../src/harness/ledger.ts';
@@ -11,6 +11,17 @@ function fixture() {
  const request={idempotencyKey:'one',brief:'Edit the title only',plan:{document:{width:32,height:32},operations:[],exports:[{format:'png'}]},output:join(root,'delivery'),authorization:{ref:'user',writeRoot:root},budget:{deadline:Date.now()+60000,maxRevisions:1,reserveBytes:1024}};
  return {root,request,close:()=>rmSync(root,{recursive:true,force:true})};
 }
+test('invalid preflight preserves every task/event and writes no persistent plan or recovery record',async()=>{
+ const {Runner}=await import('../src/harness/runner.ts');const f=fixture();
+ try{
+  const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);
+  const before=JSON.stringify(ledger.status(task.id));const events=JSON.stringify(ledger.db.prepare('SELECT * FROM events').all());const files=readdirSync(ledger.root).sort();
+  const runner=new Runner(ledger,{skillRoot:f.root,python:'python3'});runner.identity=()=>({sha256:'unchanged',runtimeLockSha256:'lock',files:{}});
+  let checks=0;runner.python=(script,args)=>{checks++;assert.equal(script,'workflow.py');assert.ok(args.includes('--check'));throw new Error('invalid fixture plan');};
+  await assert.rejects(()=>runner.run(task.id),/invalid fixture plan/);
+  assert.equal(checks,1);assert.equal(JSON.stringify(ledger.status(task.id)),before);assert.equal(JSON.stringify(ledger.db.prepare('SELECT * FROM events').all()),events);assert.deepEqual(readdirSync(ledger.root).sort(),files);ledger.close();
+ }finally{f.close();}
+});
 test('revision retains PSD requirements and scopes accepted losses to the exact base source',async()=>{
  const {Runner}=await import('../src/harness/runner.ts');
  for(const matchingSource of [false,true]){
