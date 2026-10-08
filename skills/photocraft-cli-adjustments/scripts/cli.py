@@ -29,6 +29,18 @@ def main():
    if 'contract' in locals():reply=contract.load('operation_errors').describe(error)
    else:reply={'error':str(error),'code':'cli_contract_unavailable','phase':'validation','outcome':'not_executed','category':'validation_failed','fieldPath':'$argv','retryable':False,'recoveryAction':'restore_skill_resources'}
    print(json.dumps(reply));return 1
+ if argv[0]=='mcp':
+  path=Path(__file__).with_name('mcp_stream.py');spec=importlib.util.spec_from_file_location('craft_public_mcp_stream',path)
+  stream=importlib.util.module_from_spec(spec);spec.loader.exec_module(stream)
+  def install_stream():
+   try:
+    path=Path(__file__).with_name('bootstrap.py');spec=importlib.util.spec_from_file_location('craft_stream_bootstrap',path)
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    lock=json.loads(path.with_name('runtime.lock.json').read_text());installed=module.install(lock,args.runtime_home,args.archive)
+   except (ValueError,OSError,RuntimeError,subprocess.SubprocessError) as error:
+    error.dependencySetup=setup_failure(args.runtime_home);raise
+   return dict(installed,expectedRuntimeVersion=lock['resolvedVersion'])
+  return stream.run(argv,install_stream)
  installation_completed=False
  try:
   path=Path(__file__).with_name('bootstrap.py');spec=importlib.util.spec_from_file_location('craft_bootstrap',path)
