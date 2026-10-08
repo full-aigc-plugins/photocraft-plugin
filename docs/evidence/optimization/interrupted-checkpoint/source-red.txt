@@ -1,0 +1,19 @@
+test_new_interrupted_record_is_a_distinct_bound_checkpoint_source (test_interrupted_checkpoint.InterruptedCheckpointTests.test_new_interrupted_record_is_a_distinct_bound_checkpoint_source) ... ERROR
+
+======================================================================
+ERROR: test_new_interrupted_record_is_a_distinct_bound_checkpoint_source (test_interrupted_checkpoint.InterruptedCheckpointTests.test_new_interrupted_record_is_a_distinct_bound_checkpoint_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_interrupted_checkpoint.py", line 21, in test_new_interrupted_record_is_a_distinct_bound_checkpoint_source
+    with patch('os.kill',side_effect=ProcessLookupError()):result=load('checkpoint_source').snapshot(checkpoint,root,contract)
+                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/checkpoint_source.py", line 35, in snapshot
+    record_file = delivery.file_path(output, 'failure.json')
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/delivery.py", line 35, in file_path
+    raise ValueError('delivery_file_missing_or_escaping: ' + location)
+ValueError: delivery_file_missing_or_escaping: failure.json
+
+----------------------------------------------------------------------
+Ran 1 test in 0.017s
+
+FAILED (errors=1)

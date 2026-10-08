@@ -1,0 +1,31 @@
+{
+  "schema": "photocraft-progress-harness-native/v1",
+  "status": "PASS",
+  "taskId": "838c13cb-542c-4bf9-a47b-ed61e5fa7eb8",
+  "taskIdentity": "44fa8881866a7730a0698e6fbf58b88b966bebff65779ad690498186baf5cbaf",
+  "sourceSha256": "a06d96691b879db98d570d52b5def1809f056dbced23ac72d446a571ee7b449b",
+  "progressRecordSha256": "114ee8dc0e87f856ac7562eac9079f31d4041a4c1fc595e74a64936b1264e49e",
+  "savedProjectSha256": "b60ee9c72ec592ed5e7ebce0415f3fc08e096c1fd113a3a1fa93f749ad088195",
+  "phase": "submitted",
+  "lastAttempt": {
+    "tool": "doc_save",
+    "arguments": {
+      "path": "project.pcraft"
+    },
+    "phase": "submitted"
+  },
+  "originalEpoch": 1,
+  "originalFilesUnchanged": true,
+  "liveStatusReadOnly": true,
+  "workerStoppedConfirmed": true,
+  "failureRecordInvented": false,
+  "failureCheckpointInvented": false,
+  "interruptedCheckpointCreated": true,
+  "explicitRevisionProjectSha256": "8b56769be594b6900f5d8636b1bfeae6e2a1c101c78d658a6cc4160560ca979b",
+  "typeLayerCount": 1,
+  "newText": "RECOVERED",
+  "replayRefused": true,
+  "technical": "NOT_RUN",
+  "creative": "NOT_RUN",
+  "scope": "Actual saved native and hard workflow SIGKILL; original progress observed, Explicit title revision from separately verified interrupted checkpoint passed; full restart matrix remains open."
+}

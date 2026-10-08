@@ -1,0 +1,25 @@
+{
+  "schema": "photocraft-durable-progress-native/v1",
+  "status": "PASS",
+  "recordSha256": "aeb11d77678d2b2a565f2a5cbe85b3f75d33588cf5e1be81f898ee7d60c72e8c",
+  "planSha256": "e19a1536c27756617cb7f37d2beac63af987c29d8aa244b185a1cb4f39968f56",
+  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "savedProjectSha256": "b60ee9c72ec592ed5e7ebce0415f3fc08e096c1fd113a3a1fa93f749ad088195",
+  "phase": "submitted",
+  "lastAttempt": {
+    "tool": "doc_save",
+    "arguments": {
+      "path": "project.pcraft"
+    },
+    "phase": "submitted"
+  },
+  "completedOperations": 4,
+  "saveConfirmed": false,
+  "savedNativeExists": true,
+  "failureRecordExists": false,
+  "originalFilesUnchanged": true,
+  "replayRefused": true,
+  "technical": "NOT_RUN",
+  "creative": "NOT_RUN",
+  "scope": "Actual native save then SIGKILL; read-only progress only, no owned-worker proof or checkpoint recovery acceptance."
+}

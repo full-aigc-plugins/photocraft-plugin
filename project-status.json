@@ -171,11 +171,11 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.47",
-    "pluginWorkingVersion": "0.1.0-dev.59",
-    "fixedSkillSourceVersion": "0.1.0-dev.47",
+    "skillsVersion": "0.1.0-dev.48",
+    "pluginWorkingVersion": "0.1.0-dev.60",
+    "fixedSkillSourceVersion": "0.1.0-dev.48",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_DURABLE_PROGRESS_FIXED_NATIVE",
+    "publication": "PARTIAL_CANDIDATE_INTERRUPTED_CHECKPOINT",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -183,7 +183,7 @@
       "open": 24,
       "newlyCompleted": 71
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/durable-progress/source-validation.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/interrupted-checkpoint/source-validation.json",
     "publicationEvidence": "docs/evidence/optimization/durable-progress/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
@@ -380,5 +380,21 @@
       "complete V1"
     ],
     "publicationEvidence": "docs/evidence/optimization/durable-progress/publication.json"
+  },
+  "interruptedCheckpointCandidate": {
+    "status": "PARTIAL_CANDIDATE",
+    "pluginVersion": "0.1.0-dev.60",
+    "skillSourceVersion": "0.1.0-dev.48",
+    "evidence": "docs/evidence/optimization/interrupted-checkpoint/",
+    "fixedInstallation": "NOT_RUN",
+    "closedTasks": [],
+    "remainingTasks": [
+      "3.6",
+      "10.9"
+    ],
+    "remainingAcceptance": [
+      "immutable public installed scenario audit",
+      "full V1"
+    ]
   }
 }

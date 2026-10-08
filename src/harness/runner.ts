@@ -1,6 +1,7 @@
+import {planDigest} from '../protocol/plan_identity.ts';
 import { spawn } from 'node:child_process';
 import { existsSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { confirmedWorkerReceipt } from './worker_receipt.ts';
@@ -182,7 +183,7 @@ export class Runner {
     const args=[task.request.output,'--write-root',task.request.authorization.writeRoot];if(this.options.runtimeHome)args.push('--runtime-home',safePath(this.options.runtimeHome));
     const checkpoint=this.python('checkpoint_verify.py',args);
     validateCheckpointReply(checkpoint,before,checkpointSnapshot(task.request.output,task.request.authorization.writeRoot),runtime.artifacts?.[runtimePlatformKey()]?.binarySha256);
-    if(before.origin && before.origin.planSha256!==digest(canonical(task.request.plan)))throw new Error('task_checkpoint_plan_mismatch');
+    if(before.origin && before.origin.planSha256!==planDigest(task.request.plan,before.origin.planHashAlgorithm))throw new Error('task_checkpoint_plan_mismatch');
     if(before.origin && canonical(before.origin.taskBinding)!==canonical({taskId:task.id,taskIdentity:task.identity,epoch:task.epoch,workerToken:task.worker?.token,sourceSha256:task.executionIdentity.sha256}))throw new Error('checkpoint_task_binding_mismatch');
     if(before.origin && before.origin.projectRevision!==((task.request.source || task.request.checkpoint)?task.request.plan.expectedProjectSha256:null))throw new Error('checkpoint_source_conflict');
     for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new Error('reference_identity_mismatch');
@@ -192,6 +193,30 @@ export class Runner {
    }catch(error){return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,String(error));delete current.checkpoint;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'checkpoint_verification_failed',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});}
   }
   const observed=this.status(id).progressObservation;
+  if(observed?.status==='OBSERVED' && observed.workerStoppedConfirmed && task.executionIdentity) {
+   try {
+    const checkInputs=()=>{
+     for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new Error('reference_identity_mismatch');
+     for(const entry of Object.values(task.request.plan.assets??{}) as any[])if(fileDigest(entry.path)!==entry.sha256)throw new Error('checkpoint_input_mismatch');
+     if(task.request.source && fileDigest(join(task.request.source,'project.pcraft'))!==task.request.plan.expectedProjectSha256)throw new Error('checkpoint_source_conflict');
+     if(task.request.checkpoint)this.checkRecoverySource(task);
+    };
+    checkInputs();
+    const output=within(join(dirname(task.request.output),'.photocraft-checkpoint-'+digest(task.request.output)),task.request.authorization.writeRoot);
+    const args=[task.request.output,'--write-root',task.request.authorization.writeRoot,'--checkpoint-output',output,'--progress-sha256',observed.recordSha256,'--worker-receipt',join(this.ledger.root,id+'-worker-exit.json'),'--worker-launch',join(this.ledger.root,id+'-worker-launch.json')];
+    const capture=this.python('interrupted_checkpoint.py',args),before=checkpointSnapshot(output,task.request.authorization.writeRoot);
+    if(!object(capture) || Object.keys(capture).some(key=>!['schema','result','recordSha256','replayAllowed'].includes(key)) || capture.schema!=='photocraft-interrupted-capture/v1' || capture.result!=='PASS' || capture.replayAllowed!==false || capture.recordSha256!==before.recordSha256)throw new Error('interrupted_capture_unproven');
+    const record=readJson(join(output,'checkpoint.json'));
+    if(record.progressOutput!==task.request.output || record.progressSha256!==observed.recordSha256 || canonical(record.context)!==canonical(observed.record.context))throw new Error('interrupted_origin_conflict');
+    const runtime=readJson(join(this.options.skillRoot,'scripts/runtime.lock.json'));
+    const verifyArgs=[output,'--write-root',task.request.authorization.writeRoot];if(this.options.runtimeHome)verifyArgs.push('--runtime-home',safePath(this.options.runtimeHome));
+    const checkpoint=this.python('checkpoint_verify.py',verifyArgs);
+    validateCheckpointReply(checkpoint,before,checkpointSnapshot(output,task.request.authorization.writeRoot),runtime.artifacts?.[runtimePlatformKey()]?.binarySha256);
+    if(!confirmedWorkerReceipt(this.ledger.root,task) || this.identity().sha256!==task.executionIdentity.sha256 || this.status(id).progressObservation?.recordSha256!==observed.recordSha256)throw new Error('interrupted_snapshot_changed');
+    checkInputs();
+    return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,'partial_interrupted_checkpoint_only');current.progressObservation=observed;current.checkpoint={...checkpoint,output};delete current.reconcileError;delete current.verificationError;current.replayAllowed=false;current.recoveryAction='inspect_checkpoint_before_explicit_revision';});
+   }catch(error){return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,String(error));delete current.checkpoint;current.progressObservation=observed;current.reconcileError=String(error);current.replayAllowed=false;current.recoveryAction='inspect_interrupted_stage';});}
+  }
   return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction=observed?.status==='OBSERVED'?'inspect_interrupted_stage':'inspect_preserved_artifacts';if(observed)current.progressObservation=observed;invalidateCurrentAcceptance(current,'delivery_evidence_missing');});
  }
  async verify(id: string) {
@@ -241,11 +266,11 @@ export class Runner {
   const source=task.request.checkpoint,parent=this.ledger.status(task.request.parentTask);
   if(parent.executionIdentity?.sha256!==this.identity().sha256)throw new Error('skill_source_changed');
   if(this.ledger.lineage(parent).some(ancestor=>ancestor.stopRequestedAt || ['cancel_requested','cancelled','failed'].includes(ancestor.state)))throw new Error('parent_task_stopped');
-  if(!source || parent.request.output!==source.output || parent.checkpoint?.recordSha256!==source.recordSha256 || parent.checkpoint?.projectSha256!==source.projectSha256 || parent.checkpoint?.origin?.planSha256!==source.planSha256)throw new Error('checkpoint_parent_conflict');
+  if(!source || (parent.checkpoint?.output??parent.request.output)!==source.output || parent.checkpoint?.recordSha256!==source.recordSha256 || parent.checkpoint?.projectSha256!==source.projectSha256 || parent.checkpoint?.origin?.planSha256!==source.planSha256)throw new Error('checkpoint_parent_conflict');
   if(parent.stopRequestedAt || ['cancel_requested','cancelled','failed'].includes(parent.state))throw new Error('parent_task_stopped');
   if(!confirmedWorkerReceipt(this.ledger.root,parent))throw new Error('worker_resolution_required');
   const snapshot=checkpointSnapshot(source.output,parent.request.authorization.writeRoot);
-  if(snapshot.recordSha256!==source.recordSha256 || snapshot.projectSha256!==source.projectSha256 || snapshot.origin?.planSha256!==source.planSha256 || source.planSha256!==digest(canonical(parent.request.plan)))throw new Error('checkpoint_changed');
+  if(snapshot.recordSha256!==source.recordSha256 || snapshot.projectSha256!==source.projectSha256 || snapshot.origin?.planSha256!==source.planSha256 || source.planSha256!==planDigest(parent.request.plan,parent.checkpoint?.origin?.planHashAlgorithm))throw new Error('checkpoint_changed');
   if(task.request.plan.expectedCheckpointSha256!==source.recordSha256 || task.request.plan.expectedCheckpointPlanSha256!==source.planSha256 || task.request.plan.expectedProjectSha256!==source.projectSha256)throw new Error('checkpoint_plan_conflict');
   return snapshot;
  }
@@ -281,7 +306,7 @@ export class Runner {
   const round=task.revisions+1,root=this.ledger.revisionRoot(task),output=join(task.request.authorization.writeRoot,id+'-recovery-'+round);
   if(root.revisions>=root.request.budget.maxRevisions || Date.now()>=root.request.budget.deadline)throw new Error('budget_exhausted');
   const operations=proposal.operations.flatMap((operation:any)=>operation.command==='layer.renameLayer'?[{command:'layer.select',params:{layer:operation.params.layer}},{command:operation.command,params:{name:operation.params.name}}]:[operation]);
-  const source={output:task.request.output,recordSha256:checkpoint.recordSha256,planSha256:checkpoint.origin.planSha256,projectSha256:checkpoint.projectSha256};
+  const source={output:checkpoint.output??task.request.output,recordSha256:checkpoint.recordSha256,planSha256:checkpoint.origin.planSha256,projectSha256:checkpoint.projectSha256};
   const plan:any={operations,exports:task.request.plan.exports?.length?task.request.plan.exports:[{format:'png'}],expectedProjectSha256:source.projectSha256,expectedCheckpointSha256:source.recordSha256,expectedCheckpointPlanSha256:source.planSha256,preserveObjects:changes};
   if(task.request.plan.protectedRegions)plan.protectedRegions=task.request.plan.protectedRegions;
   for(const key of ['minimumLayers','acceptedFontSubstitutions','flatExport','assetProvenance'])if(task.request.plan[key]!==undefined)plan[key]=JSON.parse(canonical(task.request.plan[key]));

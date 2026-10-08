@@ -52,3 +52,19 @@ This covers the pre-intent window only. Durable progress before a hard worker in
 ## Hard worker interruption progress candidate
 
 status observes the original plan, inputs, source version, runtime, worker token and stage inode without writing. Foreign or changing snapshots are refused. Owned exit receipts and process-group confirmation remain separate. Observation creates no checkpoint and promotes no technical or creative status. reconcile may return inspect_interrupted_stage while retaining the unknown outcome and original epoch. A stage without failure.json is neither fabricated as failed nor directly eligible for recover.
+
+
+A separate interrupted checkpoint can be captured by `reconcile` only after the original supervisor receipt and both process groups prove termination. The new `checkpoint.json` sidecar binds original progress, plan/token, stage inode, every retained file and dependency, and launch/exit digests. Read-only reopening checks these again before and after the session. It never rewrites the original stage, progress, claim, unknown request, or fabricates `failure.json`. Missing projects, active workers, input conflicts and changed files remain reconciling. Explicit `recover` creates a new copy within original authorization and cumulative budget; original operations are never replayed. Verification origin `photocraft-checkpoint-context-origin/v2` compares bindings and capabilities as JSON content, while whole-record/context SHA-256 protects original bytes; this avoids Python/JavaScript `100.0` versus `100` digest mismatches. Existing failure records remain readable; verification replies must match the current executor version.
+
+```mermaid
+flowchart LR
+  P[Original durable progress] --> S{Original supervisor and groups stopped}
+  S -->|No| R[Remain reconciling]
+  S -->|Yes| C[Separate checkpoint.json]
+  C --> V[Digest and dependency checks / readonly reopen]
+  V -->|Failure| R
+  V -->|Pass| E[Explicit recover / cumulative budget]
+  E --> N[Revision copy / new technical and creative review]
+```
+
+New executions mark `executionIdentity.planHashAlgorithm` as `photocraft-json-f64/v2`: finite JSON numbers use native binary64 big-endian bits, signed zero is normalized, JSON values are type tagged, keys use UTF-16 ordering, and strings use ASCII UTF-16 escapes before SHA-256. Decimal/scientific/integer spellings and Unicode therefore agree across Python and JavaScript. Unknown algorithms and nonfinite numbers are refused. Historical records without algorithm metadata keep their original verification format; old identities are never rewritten and executor digests still fence tasks across source versions.

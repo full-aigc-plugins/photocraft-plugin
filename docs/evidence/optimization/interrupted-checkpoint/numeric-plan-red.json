@@ -1,0 +1,10 @@
+{
+  "status": "FAIL_EXPECTED_IDENTITY_GAP",
+  "pythonSha256": "35e31286e611015c87281c1dfd625211becd3b97d9413d14dc55df4714ba4988",
+  "nodeSha256": "17ee8a51d871a699e48e863ace8b21d5bb3eca5b9aeb28f71aeac2a3d262804b",
+  "pythonCanonical": "{\"operations\":[{\"command\":\"type.create\",\"params\":{\"font\":\"Arial\",\"size\":12,\"text\":\"KEEP\",\"x\":1e-06,\"y\":20}}]}",
+  "nodeCanonical": "{\"operations\":[{\"command\":\"type.create\",\"params\":{\"font\":\"Arial\",\"size\":12,\"text\":\"KEEP\",\"x\":0.000001,\"y\":20}}]}",
+  "scope": "Existing source canonical_sha(plan) uses Python JSON formatting while task plan identity uses ECMAScript formatting; valid small finite coordinates remain a recovery identity gap. Not closed by direct binding-content comparison.",
+  "resolution": "Versioned finite-binary64 typed plan identity; direct binding/capability content under original file-digest protection; current full regression and real tiny-coordinate restart pass",
+  "currentStatus": "RESOLVED_CANDIDATE"
+}

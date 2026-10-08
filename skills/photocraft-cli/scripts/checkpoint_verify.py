@@ -18,11 +18,12 @@ def safe(path, root):
  return path
 
 def verify(output,write_root,runtime_home):
- delivery=load('delivery');output=safe(output,write_root);record_path=output/'failure.json';record_sha=delivery.sha(record_path);record=delivery.read_json(record_path)
- if record.get('schema')!='craft-failed-stage/v1' or record.get('replayAllowed') is not False:raise ValueError('checkpoint_record_invalid')
+ delivery=load('delivery');output=safe(output,write_root);interrupted=(output/'checkpoint.json').exists();captured=load('interrupted_checkpoint').read(output,write_root) if interrupted else None;record_path=output/('checkpoint.json' if interrupted else 'failure.json');record_sha=delivery.sha(record_path);record=delivery.read_json(record_path)
+ if record.get('schema')!=('photocraft-interrupted-checkpoint/v1' if interrupted else 'craft-failed-stage/v1') or record.get('replayAllowed') is not False:raise ValueError('checkpoint_record_invalid')
  stage=safe(output/record['stage'],write_root)
- if delivery.read_json(stage/'failure.json')!=record:raise ValueError('checkpoint_record_conflict')
+ if not interrupted and delivery.read_json(stage/'failure.json')!=record:raise ValueError('checkpoint_record_conflict')
  def check():
+  if interrupted and load('interrupted_checkpoint').read(output,write_root)['recordSha256']!=record_sha:raise ValueError('checkpoint_changed')
   if delivery.sha(record_path)!=record_sha:raise ValueError('checkpoint_changed')
   for name,entry in record['files'].items():
    path=delivery.file_path(stage,name)
@@ -42,9 +43,9 @@ def verify(output,write_root,runtime_home):
    native=call('doc_inspect',{})
  check()
  result={'schema':'photocraft-checkpoint-verification/v1','result':'PASS','stage':str(stage),'recordSha256':record_sha,'projectSha256':delivery.sha(project),'files':record['files'],'lastAttempt':record.get('lastAttempt'),'completedOperations':record.get('completedOperations'),'nativeReopened':True,'objectCount':len(load('domain_assertions').index(native)),'runtimeSha256':installed['binarySha256'],'replayAllowed':False,'technical':'NOT_RUN','creative':'NOT_RUN','scope':'partial saved project only; unknown operations are not replayed'}
- if 'recovery-context.json' in record['files']:
-  context=delivery.read_json(stage/'recovery-context.json');source=load('checkpoint_source');bound=source.snapshot(output,write_root,{'expectedCheckpointSha256':record_sha,'expectedCheckpointPlanSha256':context['executionIdentity']['planHash'],'expectedProjectSha256':result['projectSha256']},installed['binarySha256'])
-  result['origin']={'taskBinding':context['taskBinding'],'planSha256':context['executionIdentity']['planHash'],'projectRevision':context['executionIdentity']['projectRevision'],'inputHashes':context['executionIdentity']['inputHashes'],'bindingsSha256':source.canonical_sha(context['bindings']),'capabilitySha256':source.canonical_sha(context['capability'])}
+ if interrupted or 'recovery-context.json' in record['files']:
+  context=captured['context'] if interrupted else delivery.read_json(stage/'recovery-context.json');source=load('checkpoint_source');bound=source.snapshot(output,write_root,{'expectedCheckpointSha256':record_sha,'expectedCheckpointPlanSha256':context['executionIdentity']['planHash'],'expectedProjectSha256':result['projectSha256']},installed['binarySha256'])
+  result['origin']={'taskBinding':context['taskBinding'],'planSha256':context['executionIdentity']['planHash'],'projectRevision':context['executionIdentity']['projectRevision'],'inputHashes':context['executionIdentity']['inputHashes'],'schema':'photocraft-checkpoint-context-origin/v2','planHashAlgorithm':context['executionIdentity'].get('planHashAlgorithm'),'bindings':context['bindings'],'capability':context['capability']}
   result['nativeDocument']=native
  return result
 

@@ -52,3 +52,19 @@ flowchart LR
 ## 原工作进程硬中断进度候选
 
 status 只读关联原计划、输入、源版本、运行时、工作令牌及暂存 inode，拒绝外来或变化中的快照。监督回执及原进程组确认另外显示；观察本身不创建检查点或升级技术／创作状态。reconcile 可以返回 inspect_interrupted_stage，仍保留未知结果和原 epoch。缺少 failure.json 的暂存不能补造失败记录或直接 recover。
+
+
+独立中断检查点：原监督退出回执及两个进程组确认结束后，`reconcile` 可在授权根中创建新的 `checkpoint.json` 旁车。它绑定原进度、原计划／令牌、暂存 inode、落盘工程与全部依赖、原启动和退出摘要；只读重开前后重新核对。原暂存、进度、认领和未知请求不改写，不补造 `failure.json`。缺少工程、活跃执行者、输入冲突或文件变化保持 reconciling。显式 `recover` 仅创建原授权及累计预算内的新副本，不重放原计划。检查点回执的 `origin.schema=photocraft-checkpoint-context-origin/v2` 直接比较绑定及能力内容，完整原记录／上下文仍由文件 SHA-256 保护，避免 Python／JavaScript 的 `100.0` 与 `100` 摘要分歧。旧失败记录仍可读取；新的核验回执须与当前执行器版本配套。
+
+```mermaid
+flowchart LR
+  P[原持久进度] --> S{原监督与进程组均结束}
+  S -->|否| R[保持 reconciling]
+  S -->|是| C[独立 checkpoint.json]
+  C --> V[摘要与依赖核对 / 只读重开]
+  V -->|失败| R
+  V -->|通过| E[显式 recover / 累计预算]
+  E --> N[修订副本 / 重新技术与创作评估]
+```
+
+新执行的 `executionIdentity.planHashAlgorithm` 为 `photocraft-json-f64/v2`：所有有限 JSON 数值按原生 binary64 大端位编码，零与负零统一；JSON 值使用类型标签，键按 UTF-16 排序，字符串使用 ASCII UTF-16 转义后计算 SHA-256。这样小数／科学计数／整数形式和 Unicode 在 Python／JavaScript 中一致；未知算法、非有限数值拒绝。历史记录无算法字段时仍按旧格式核对，不改写旧身份；跨技能源版本的原任务仍受执行器摘要围栏约束。

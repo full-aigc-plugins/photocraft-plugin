@@ -1,0 +1,8 @@
+{
+  "status": "RESOLVED_CANDIDATE",
+  "failure": "Native masked smart asset checkpoint reopened in Python but plugin rejected origin because Python 100.0 and ECMAScript 100 produced different binding digests",
+  "originalFailureLogSha256": "4387d1e651d9a897bf5f4b488f77056658736bbca518e3ff4b17d9ed4eab02ff",
+  "originalReplySha256": "d9aaf6902bd910fc2b190d341613a66a1cc26af8417c0c7d3d43a60a5a0e9ad2",
+  "resolution": "Origin v2 compares binding/capability content and preserves whole original record/context file-digest checks",
+  "currentProof": "native-restart.json after_reply masked smart object, red pixel, original input change refusal and explicit title fork"
+}

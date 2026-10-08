@@ -1,3 +1,4 @@
+import {planDigest} from '../protocol/plan_identity.ts';
 import {existsSync,lstatSync} from 'node:fs';
 import {dirname,join} from 'node:path';
 import {canonical,digest,fileDigest,readJson,within} from '../protocol/files.ts';
@@ -27,7 +28,7 @@ export function observeProgress(task:any,options:any,execute:(script:string,args
  if(!task.worker?.supervisor || !task.worker.token || !object(context.taskBinding) || canonical(context.taskBinding)!==canonical(expected))throw new Error('progress_task_binding_mismatch');
  const runtime=readJson(join(options.skillRoot,'scripts/runtime.lock.json'));
  const identity=context.executionIdentity,project=task.request.source||task.request.checkpoint?task.request.plan.expectedProjectSha256:null;
- if(canonical(context.plan)!==canonical(task.request.plan) || identity.planHash!==digest(canonical(task.request.plan)) || identity.projectRevision!==project
+ if(canonical(context.plan)!==canonical(task.request.plan) || identity.planHash!==planDigest(task.request.plan,identity.planHashAlgorithm) || identity.projectRevision!==project
   || identity.runtimeSha256!==runtime.artifacts?.[runtimePlatformKey()]?.binarySha256 || !object(identity.inputHashes))throw new Error('progress_execution_identity_mismatch');
  for(const [name,entry]of Object.entries(task.request.plan.assets??{}) as [string,any][])if(identity.inputHashes[name]!==entry.sha256)throw new Error('progress_input_identity_mismatch');
  return {status:'OBSERVED',...reply};

@@ -116,8 +116,8 @@ def read_progress(output, write_root):
             or context['capability'] is not None and not isinstance(context['capability'], dict)):
         raise ValueError('progress_context_invalid')
     identity = context['executionIdentity']
-    if (not isinstance(identity, dict) or set(identity) != {'planHash', 'inputHashes', 'projectRevision', 'runtimeSha256'}
-            or identity['planHash'] != canonical_sha(context['plan']) or not isinstance(identity['inputHashes'], dict)
+    if (not isinstance(identity, dict) or set(identity) != ({'planHash', 'inputHashes', 'projectRevision', 'runtimeSha256'} | ({'planHashAlgorithm'} if 'planHashAlgorithm' in identity else set()))
+            or identity['planHash'] != load('plan_identity').sha(context['plan'], identity.get('planHashAlgorithm')) or not isinstance(identity['inputHashes'], dict)
             or any(not isinstance(value, str) or not HEX.fullmatch(value) for value in identity['inputHashes'].values())
             or not isinstance(identity['runtimeSha256'], str) or not HEX.fullmatch(identity['runtimeSha256'])
             or identity['projectRevision'] is not None and (not isinstance(identity['projectRevision'], str) or not HEX.fullmatch(identity['projectRevision']))):

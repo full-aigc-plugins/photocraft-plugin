@@ -330,7 +330,8 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
         load_module('checkpoint_verify').verify(checkpoint,write_root,runtime_home or os.environ.get('CRAFT_RUNTIME_HOME', str(Path.home() / '.local/share/craft-runtimes')))
     output.parent.mkdir(parents=True, exist_ok=True)
     recovery_state = {}
-    execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode()).hexdigest(),
+    execution_identity = {'planHash': load_module('plan_identity').sha(plan, load_module('plan_identity').ALGORITHM),
+                         'planHashAlgorithm': load_module('plan_identity').ALGORITHM,
                          'inputHashes': {name: asset['sha256'] for name, asset in {**inherited_assets, **plan.get('assets', {})}.items()},
                          'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
     with load_module('output_guard').claim(output, execution_identity) as execution_claim, load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:

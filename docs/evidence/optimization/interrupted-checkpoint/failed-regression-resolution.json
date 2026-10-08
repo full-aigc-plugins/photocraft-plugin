@@ -1,0 +1,19 @@
+{
+  "originalTests": 306,
+  "originalPassed": 304,
+  "originalFailures": 2,
+  "logSha256": "d8b285c6e3be578cd3ac44674b48f5103dcd64a45276d9262f4b9caaa89110a4",
+  "failures": [
+    {
+      "test": "OwnedDesktopPublicFirstUse",
+      "reason": "No space left on device during cold installation",
+      "resolution": "Reclaimed reconstructible completed acceptance copies after archive and open-handle verification; target and full suite rerun"
+    },
+    {
+      "test": "NativeFirstUse",
+      "reason": "Legacy plan hash assertion incompatible with explicit v2 algorithm",
+      "resolution": "Assert explicit v2 algorithm and compare actual copied skill plan identity; native delivery and revision checks retained"
+    }
+  ],
+  "currentFullRegression": "source-validation.json"
+}

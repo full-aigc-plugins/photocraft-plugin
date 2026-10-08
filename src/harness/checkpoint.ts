@@ -1,4 +1,5 @@
-import { lstatSync } from 'node:fs';
+import {planDigest} from '../protocol/plan_identity.ts';
+import { existsSync, lstatSync } from 'node:fs';
 import { isAbsolute, join, normalize } from 'node:path';
 import { canonical, digest, fileDigest, readJson, within } from '../protocol/files.ts';
 import { OperationError } from '../protocol/operation_error.ts';
@@ -14,9 +15,10 @@ export function checkpointError() {
 export function checkpointSnapshot(output:string,writeRoot:string) {
  try {
   output=within(output,writeRoot);
-  const recordPath=within(join(output,'failure.json'),output);
+  const interrupted=existsSync(join(output,'checkpoint.json'));
+  const recordPath=within(join(output,interrupted?'checkpoint.json':'failure.json'),output);
   const recordSha256=fileDigest(recordPath),record=readJson(recordPath);
-  if(!object(record) || record.schema!=='craft-failed-stage/v1' || record.status!=='failed'
+  if(!object(record) || record.schema!==(interrupted?'photocraft-interrupted-checkpoint/v1':'craft-failed-stage/v1') || record.status!==(interrupted?'interrupted':'failed')
      || record.replayAllowed!==false || !['failed','outcome_unknown'].includes(record.outcome)
      || typeof record.stage!=='string' || isAbsolute(record.stage) || !object(record.files)
      || !Number.isSafeInteger(record.completedOperations) || record.completedOperations<0)throw checkpointError();
@@ -24,8 +26,9 @@ export function checkpointSnapshot(output:string,writeRoot:string) {
      || !record.lastAttempt.tool || !object(record.lastAttempt.arguments)
      || !['submitted','reply_validated'].includes(record.lastAttempt.phase)))throw checkpointError();
   const stage=within(join(output,record.stage),writeRoot);
-  const stageRecord=within(join(stage,'failure.json'),stage);
-  if(canonical(readJson(stageRecord))!==canonical(record))throw checkpointError();
+  const stageRecord=interrupted?recordPath:within(join(stage,'failure.json'),stage);
+  if(!interrupted && canonical(readJson(stageRecord))!==canonical(record))throw checkpointError();
+  if(interrupted){const info=lstatSync(stage,{bigint:true});if(!info.isDirectory() || canonical(record.stageIdentity)!==canonical([String(info.dev),String(info.ino)]))throw checkpointError();}
   const files:Record<string,{sha256:string;bytes:number}>={};
   for(const [name,value]of Object.entries(record.files) as [string,any][]) {
    if(!name || isAbsolute(name) || normalize(name)!==name || name.split(/[\\/]/).includes('..')
@@ -35,15 +38,15 @@ export function checkpointSnapshot(output:string,writeRoot:string) {
    if(!stat.isFile() || stat.size!==value.bytes || fileDigest(path)!==value.sha256)throw checkpointError();
    Object.defineProperty(files,name,{value:{sha256:value.sha256,bytes:value.bytes},enumerable:true});
   }
-  if(!Object.hasOwn(files,'project.pcraft') || !Object.hasOwn(files,'recovery-operations.json'))throw checkpointError();
-  const operations=readJson(join(stage,'recovery-operations.json'));
+  if(!Object.hasOwn(files,'project.pcraft') || !interrupted && !Object.hasOwn(files,'recovery-operations.json'))throw checkpointError();
+  const operations=interrupted?record.operations:readJson(join(stage,'recovery-operations.json'));
   if(!Array.isArray(operations) || operations.length!==record.completedOperations)throw checkpointError();
   if(fileDigest(recordPath)!==recordSha256)throw checkpointError();
   let origin:any;
-  if(files['recovery-context.json']) {
-   const context=readJson(join(stage,'recovery-context.json'));const identity=context?.executionIdentity;
-   if(context?.schema!=='photocraft-recovery-context/v1' || !object(context.plan) || !object(identity) || identity.planHash!==digest(canonical(context.plan)) || !object(identity.inputHashes) || !object(context.bindings) || !object(context.assets))throw checkpointError();
-   origin={taskBinding:context.taskBinding??null,planSha256:identity.planHash,projectRevision:identity.projectRevision,inputHashes:identity.inputHashes,bindingsSha256:digest(canonical(context.bindings)),capabilitySha256:digest(canonical(context.capability))};
+  if(interrupted || files['recovery-context.json']) {
+   const context=interrupted?record.context:readJson(join(stage,'recovery-context.json'));const identity=context?.executionIdentity;
+   if(context?.schema!=='photocraft-recovery-context/v1' || !object(context.plan) || !object(identity) || identity.planHash!==planDigest(context.plan,identity.planHashAlgorithm) || !object(identity.inputHashes) || !object(context.bindings) || !object(context.assets))throw checkpointError();
+   origin={taskBinding:context.taskBinding??null,planSha256:identity.planHash,projectRevision:identity.projectRevision,inputHashes:identity.inputHashes,schema:'photocraft-checkpoint-context-origin/v2',planHashAlgorithm:identity.planHashAlgorithm??null,bindings:context.bindings,capability:context.capability};
   }
   return {...(origin?{origin}:{}),stage,recordSha256,stageRecordSha256:fileDigest(stageRecord),projectSha256:files['project.pcraft'].sha256,
           files,lastAttempt:record.lastAttempt??null,completedOperations:record.completedOperations};
