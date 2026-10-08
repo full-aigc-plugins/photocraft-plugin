@@ -1,0 +1,64 @@
+test_fixed_codec_selection_and_plan_never_write_output (test_supervised_batch.BatchPlanning.test_fixed_codec_selection_and_plan_never_write_output) ... ok
+test_invalid_actions_never_scan_input_launch_or_emit_output (test_supervised_batch.BatchPlanning.test_invalid_actions_never_scan_input_launch_or_emit_output) ... ok
+test_empty_inputs_and_legacy_relative_path_spelling_remain_valid (test_supervised_batch.SupervisedBatch.test_empty_inputs_and_legacy_relative_path_spelling_remain_valid) ... ok
+test_eof_after_actual_first_save_stops_before_second_file (test_supervised_batch.SupervisedBatch.test_eof_after_actual_first_save_stops_before_second_file) ... ok
+test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) ... error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_healthy_supervisor_keeps_original_stdout_and_format_quality (test_supervised_batch.SupervisedBatch.test_healthy_supervisor_keeps_original_stdout_and_format_quality) ... warning: 2 layer(s) flattened; layers, masks and blend modes are not kept
+warning: lossy compression
+warning: 2 layer(s) flattened; layers, masks and blend modes are not kept
+warning: lossy compression
+ok
+test_invalid_or_incomplete_native_plan_never_creates_output (test_supervised_batch.SupervisedBatch.test_invalid_or_incomplete_native_plan_never_creates_output) ... error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_known_native_failure_stops_supervision_but_legacy_keeps_continuation (test_supervised_batch.SupervisedBatch.test_known_native_failure_stops_supervision_but_legacy_keeps_continuation) ... ok
+test_native_sorted_fresh_sessions_and_full_confirmation (test_supervised_batch.SupervisedBatch.test_native_sorted_fresh_sessions_and_full_confirmation) ... ok
+test_unconfirmed_plan_never_creates_output_or_starts_document (test_supervised_batch.SupervisedBatch.test_unconfirmed_plan_never_creates_output_or_starts_document) ... ok
+test_explicit_format_precedence_and_legacy_pixels_are_preserved (test_supervised_convert.NativeConvert.test_explicit_format_precedence_and_legacy_pixels_are_preserved) ... warning: 2 layer(s) flattened; layers, masks and blend modes are not kept
+ok
+test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) ... warning: 2 layer(s) flattened; layers, masks and blend modes are not kept
+warning: 2 layer(s) flattened; layers, masks and blend modes are not kept
+warning: lossy compression
+ok
+test_known_save_failure_is_failed_and_never_claims_unexecuted (test_supervised_convert.NativeConvert.test_known_save_failure_is_failed_and_never_claims_unexecuted) ... error: unknown file format: unknown
+ok
+test_malformed_actual_open_never_saves (test_supervised_convert.NativeConvert.test_malformed_actual_open_never_saves) ... error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_open_requires_confirmation_before_saving (test_supervised_convert.NativeConvert.test_open_requires_confirmation_before_saving) ... ok
+test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) ... error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_confirmed_run_saves_and_preserves_legacy_output (test_supervised_run.SupervisedRun.test_confirmed_run_saves_and_preserves_legacy_output) ... ok
+test_eof_after_creation_stops_before_edit_and_save (test_supervised_run.SupervisedRun.test_eof_after_creation_stops_before_edit_and_save) ... ok
+test_native_failure_has_request_identity_and_stops (test_supervised_run.SupervisedRun.test_native_failure_has_request_identity_and_stops) ... ok
+test_rejected_or_wrong_confirmation_stops_after_current_command (test_supervised_run.SupervisedRun.test_rejected_or_wrong_confirmation_stops_after_current_command) ... ok
+test_unacknowledged_save_preserves_actual_file_without_replay (test_supervised_run.SupervisedRun.test_unacknowledged_save_preserves_actual_file_without_replay) ... ok
+test_invalid_input_never_queries_runtime (test_supervision_gate.GateContracts.test_invalid_input_never_queries_runtime) ... ok
+test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) ... ok
+test_actual_candidate_metadata_has_no_document_or_file_effects (test_supervision_gate.NativeGate.test_actual_candidate_metadata_has_no_document_or_file_effects) ... ok
+test_old_public_runtime_never_creates_output (test_supervision_gate.NativeGate.test_old_public_runtime_never_creates_output) ... ok
+test_actual_native_reply_fault_stops_before_next_command_and_save (test_supervisor.NativeSupervision.test_actual_native_reply_fault_stops_before_next_command_and_save) ... error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_healthy_create_aside_revision_preserves_source_and_public_lines (test_supervisor.NativeSupervision.test_healthy_create_aside_revision_preserves_source_and_public_lines) ... ok
+test_malformed_actual_save_retains_file_and_previous_receipts (test_supervisor.NativeSupervision.test_malformed_actual_save_retains_file_and_previous_receipts) ... error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_invalid_input_never_starts_process_or_emits_output (test_supervisor.SupervisionPlanning.test_invalid_input_never_starts_process_or_emits_output) ... ok
+test_original_flag_order_last_parameters_and_format_are_bound (test_supervisor.SupervisionPlanning.test_original_flag_order_last_parameters_and_format_are_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 4.590s
+
+OK

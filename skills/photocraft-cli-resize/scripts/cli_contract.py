@@ -63,11 +63,9 @@ def actions(value, path, batch=False):
         command(identifier, params, param_path, id_path)
 
 
-def preflight(argv):
-    """不写目录、不安装、不启动会话，使用当前技能登记的完整命令参数合同。"""
+def parse_argv(argv):
+    """保留原生标志顺序及最后值，供预检与逐命令回复身份核对共用。"""
     sub = argv[0]
-    if sub not in EDITING:
-        return
     values, bare = FLAGS[sub]; positional = []; flags = []; index = 1
     while index < len(argv):
         token = argv[index]; path = '$argv[' + str(index) + ']'
@@ -88,6 +86,15 @@ def preflight(argv):
             positional.append((token, path)); index += 1; continue
         flags.append((key, value, path)); index += 1
     last = {key: (value, path) for key, value, path in flags}
+    return positional, flags, last
+
+
+def preflight(argv):
+    """不写目录、不安装、不启动会话，使用当前技能登记的完整命令参数合同。"""
+    sub = argv[0]
+    if sub not in EDITING:
+        return
+    positional, flags, last = parse_argv(argv)
     if '--quality' in last:
         value, path = last['--quality']
         if not re.fullmatch(r'\+?[0-9]+', value) or not 1 <= int(value) <= 100:

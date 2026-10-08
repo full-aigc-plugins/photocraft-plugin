@@ -314,3 +314,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09 原生 run 监督候选：独立技能源维护补丁在原始 trusted-local 会话中增加逐条回复确认，严格匹配序号后才执行下一项。候选 craft.2 的58项Rust测试与10项监督定向测试通过；旧 craft.1 未确认仍执行／保存的红灯已重建。真实 PSD 保存后重复键／语义错误两例证明后续编辑及最终保存为零，源工程和已写文件保全。公开 cli.py 尚未切换，craft.1／源dev.41／插件dev.47的锁与受管理快照保持不变；持久恢复回执、batch／droplet、流式与固定副本仍开放，9.6不勾选，关闭0项。候选证据：`docs/evidence/optimization/supervised-run/candidate.json`。
 
 2026-10-09 原生 batch 监督候选：craft.3 在目录写入前绑定完整输入／目标／动作清单，每文件独立会话，逐条确认打开／动作／保存，最终计数核验后保持健康批处理旧输出。20项run／batch定向测试及58项Rust测试通过；真实保存后六种故障均保全工程和源文件，不进入后续文件，不重放；普通batch的失败后继续语义另作兼容比较。正常回复附带额外帧的红灯已重建并修复，错保存路径也拒绝确认。公开接入的运行时能力／来源绑定、持久恢复、droplet／流式、固定安装及完整矩阵仍开放；9.6不勾选，关闭0项。证据：`docs/evidence/optimization/supervised-batch/candidate.json`。
+
+2026-10-09转换监督候选及开发发布：craft.4增加编辑前只读能力元数据门禁，旧公开运行时被拒绝且零编辑；convert保留原生files打开／保存并逐条确认，30项定向及58项Rust测试通过。源dev.42／插件dev.48仅打包候选模块，公开cli.py与craft.1锁不变。四种格式及六类真实保存后故障保全已验证；完整源回归另记。候选固定安装、公开入口接入、持久恢复、droplet／流式和完整矩阵仍开放，9.6不勾选，关闭0项。证据：`docs/evidence/optimization/supervised-convert/candidate.json`。

@@ -1,0 +1,39 @@
+{
+  "schema": "photocraft-supervised-convert-candidate/v1",
+  "status": "PASS_BOUNDED_CANDIDATE",
+  "candidateRuntimeVersion": "0.2.0-craft.4",
+  "publicRuntimeVersion": "0.2.0-craft.1",
+  "focusedTests": {
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0
+  },
+  "rustTests": {
+    "passed": 58,
+    "failed": 0,
+    "ignored": 0
+  },
+  "closedTasks": [],
+  "remainingTask": "9.6",
+  "fixedCandidateInstallation": "NOT_RUN",
+  "publicCliSupervisorIntegration": "NOT_RUN",
+  "dropletStreaming": "NOT_RUN",
+  "sourceRelease": "v0.1.0-dev.42",
+  "pluginRelease": "v0.1.0-dev.48",
+  "postSaveFaults": [
+    "duplicate",
+    "nonfinite",
+    "semantic",
+    "save-array",
+    "wrong-save-path",
+    "extra-frame"
+  ],
+  "scope": "actual native conversion and metadata gate; public cli and runtime lock unchanged; saved outputs retained, no replay",
+  "remaining": [
+    "persistent recovery receipts",
+    "public runtime source binding and integration",
+    "fixed candidate installation",
+    "droplet and streaming",
+    "complete entry and per-command matrix"
+  ]
+}

@@ -1,13 +1,14 @@
 {
   "schema": "photocraft-command-acceptance/v1",
   "scope": "candidate command-context evidence index; fixed installation, host/model and creative acceptance remain separate",
-  "sourceSha256": "634bc26082b2f1f483d30d0bc339327ea39530a9cd3759268230cda39b96065a",
+  "sourceSha256": "3bf4f2a2407e341ef8c5c0032a9b6d0f1918f118104bc27c171ae83a65b785c6",
   "sourceFiles": {
     "scripts/bootstrap.py": "065231567b6d0c2bab9504ee49b630c14b05db0a29508021166caa58b123c7cc",
     "scripts/capabilities.py": "4248ff7fe3d675ef69bc8c28109e2f0145a5b83ceaaf4a565cf1eaf3087ba96d",
     "scripts/checkpoint_verify.py": "602cfa9009aa09928bf5cb2611bc2d282da71865c97c3440932b8277ba0f4bc2",
     "scripts/cli.py": "b6d7eaef3232dba6605b3e33a8567bcf10daf4c72db4472d3ec3dda1e79f825d",
-    "scripts/cli_contract.py": "dfd7fba37ab55ce991d76cb6ad460a3938e5e398119a4e59d6e861227cf92bbf",
+    "scripts/cli_contract.py": "b52dce24ca1cb4465f2f041fc4f56a489bb3076fc8ba6547012d0f66346e4e1e",
+    "scripts/cli_supervisor.py": "3928d3a42fa4bd03ef49bbc5596cfed3291948e313112abbeddaa4ca8124a21a",
     "scripts/commands.py": "1be6883f89bbc6624af1d69098871bb4138c0c35355a7745ccc01404ad96ccfd",
     "scripts/delivery.py": "6494f413fed6ba157af3d4b416a671caf65e0b1a34fd741b2aaa14654e7af6e1",
     "scripts/desktop.lock.json": "3733aebe2603516028e895bfa6d0fce739ab1e5ea5cbae4c4e20a956bda2c5f2",

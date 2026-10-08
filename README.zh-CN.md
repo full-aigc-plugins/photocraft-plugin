@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.48锁定技能源dev.42，打包内部run／batch／convert监督候选及只读能力门禁。公开cli.py及craft.1锁保持不变。[候选范围](docs/PhotoCraft-Supervised-Convert-Candidate.zh_CN.md)。候选固定安装、任务9.6与完整首版仍开放。
+
 dev.47 固定技能源dev.41，加入只读重开内层语义校验，并接入Harness检查点记录／文件／运行时绑定。候选技能源240项测试通过，14例真实只读故障保持原文件且停止后续调用；固定副本70项Harness及14例真实只读故障通过，安装树不变；[固定验收](docs/PhotoCraft-Readonly-Reply-Acceptance.zh_CN.md)。任务9.6的raw逐命令、流式编辑及完整入口矩阵仍开放。[源码合同](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.zh_CN.md)。
 
 dev.46 固定技能源dev.40，补齐 Harness 创建／修订预检、严格回执绑定与只读账本快照。候选本地49项 TypeScript（含3项真实原生）和48项 Python 测试通过；公开固定副本49项Harness测试通过，安装树不变；发布提交及标签4项CI通过。[发行证据](docs/evidence/optimization/harness-entry-publication.json)。任务9.6、流式入口、逐命令回执及完整V1仍开放。[范围与证据](docs/PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
@@ -36,7 +38,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.47`；技能源：`0.1.0-dev.41`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.48`；技能源：`0.1.0-dev.42`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -131,9 +133,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.47 |
+| Metadata version | 0.1.0-dev.48 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.41 |
+| Skills source | photocraft-skills / 0.1.0-dev.42 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

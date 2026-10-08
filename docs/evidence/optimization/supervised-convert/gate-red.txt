@@ -1,0 +1,144 @@
+test_invalid_input_never_queries_runtime (test_supervision_gate.GateContracts.test_invalid_input_never_queries_runtime) ... ok
+test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) ... 
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='[]') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["batch"], "acknowledgment": "continue <sequence>\\n"}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "run"], "acknowledgment": "continue <sequence>\\n"}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "other", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n"}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n", "extra": 1}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n","schema":"duplicate"}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n","extra":NaN}') ... FAIL
+  test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n"}') ... FAIL
+test_actual_candidate_metadata_has_no_document_or_file_effects (test_supervision_gate.NativeGate.test_actual_candidate_metadata_has_no_document_or_file_effects) ... FAIL
+test_old_public_runtime_never_creates_output (test_supervision_gate.NativeGate.test_old_public_runtime_never_creates_output) ... FAIL
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='[]')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["batch"], "acknowledgment": "continue <sequence>\\n"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "run"], "acknowledgment": "continue <sequence>\\n"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "other", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n", "extra": 1}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n","schema":"duplicate"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n","extra":NaN}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_malformed_missing_or_failed_capabilities_never_launch_edit (test_supervision_gate.GateContracts.test_malformed_missing_or_failed_capabilities_never_launch_edit) (reply='{"schema": "photocraft-supervision-info/v1", "protocol": "photocraft-supervised-run/v1", "runtimeVersion": "0.2.0-craft.4", "subcommands": ["run", "batch", "convert"], "acknowledgment": "continue <sequence>\\n"}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 35, in test_malformed_missing_or_failed_capabilities_never_launch_edit
+    self.assertEqual(getattr(caught.exception,'outcome',None),'not_executed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'not_executed'
+
+======================================================================
+FAIL: test_actual_candidate_metadata_has_no_document_or_file_effects (test_supervision_gate.NativeGate.test_actual_candidate_metadata_has_no_document_or_file_effects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 53, in test_actual_candidate_metadata_has_no_document_or_file_effects
+    self.assertEqual(result.returncode,0,result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : error: unknown command `--supervision-info`
+
+photocraft-cli: headless Photocraft
+
+USAGE:
+  photocraft-cli convert <in> <out> [--format <ext>] [--quality <1-100>]
+      Convert between formats (.pcraft, .psd, .png, .jpg, .tif, .webp, .exr, …).
+  photocraft-cli info <file> [--compact]
+      Print the document as JSON (size, mode, depth, layer tree).
+  photocraft-cli run (<file> | --new <json>) --cmd <id> [--params <json>] [--cmd …] [--out <file>] [--format <ext>]
+      Open a file, run engine commands in order, save the result. Each --params
+      applies to the preceding --cmd. Prints each command's JSON result.
+  photocraft-cli batch --actions <actions.json> --in <dir> --out <dir> [--format <ext>]
+      Apply an action list ([{"command": id, "params": {…}}, …]) to every image in a directory.
+  photocraft-cli droplet <file.pcdroplet> <file-or-dir>… [--out <dir>]
+      Run a droplet (File › Automate › Create Droplet) on images and folders.
+  photocraft-cli commands [--json] [--filter <text>]
+      List the engine command registry.
+  photocraft-cli mcp [--bridge <127.0.0.1:port>] [--control-token <64-hex> | --control-token-file <path>]
+      [--automation-read-root <dir>] [--automation-write-root <dir>]
+      Run the MCP server on stdio (headless engine, or bridge to a running `photocraft --control <port>`).
+  photocraft-cli serve [--port <port>] [--control-token <64-hex> | --control-token-file <path>]
+      [--automation-read-root <dir>] [--automation-write-root <dir>]
+      Keep one headless session open and answer JSON lines ({"id","method","params"}) on stdio,
+      or on 127.0.0.1:<port>. Methods: engine.execute, engine.commands, doc.open/new/save/inspect/render/
+      select/close, session.list, batch, methods (docs/control-protocol.md#headless-server).
+
+
+
+======================================================================
+FAIL: test_old_public_runtime_never_creates_output (test_supervision_gate.NativeGate.test_old_public_runtime_never_creates_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervision_gate.py", line 47, in test_old_public_runtime_never_creates_output
+    self.assertFalse(output.exists(),'old native CLI ignored supervision flag and wrote the project')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false : old native CLI ignored supervision flag and wrote the project
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.207s
+
+FAILED (failures=11)

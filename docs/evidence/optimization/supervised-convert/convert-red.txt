@@ -1,0 +1,168 @@
+test_explicit_format_precedence_and_legacy_pixels_are_preserved (test_supervised_convert.NativeConvert.test_explicit_format_precedence_and_legacy_pixels_are_preserved) ... ERROR
+test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) ... 
+  test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='pcraft') ... ERROR
+  test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='psd') ... ERROR
+  test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='png') ... ERROR
+  test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='jpg') ... ERROR
+test_known_save_failure_is_failed_and_never_claims_unexecuted (test_supervised_convert.NativeConvert.test_known_save_failure_is_failed_and_never_claims_unexecuted) ... ERROR
+test_malformed_actual_open_never_saves (test_supervised_convert.NativeConvert.test_malformed_actual_open_never_saves) ... ERROR
+test_open_requires_confirmation_before_saving (test_supervised_convert.NativeConvert.test_open_requires_confirmation_before_saving) ... FAIL
+test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) ... 
+  test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='duplicate') ... ERROR
+  test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='nonfinite') ... ERROR
+  test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='semantic') ... ERROR
+  test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='save-array') ... ERROR
+  test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='wrong-save-path') ... ERROR
+  test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='extra-frame') ... ERROR
+
+======================================================================
+ERROR: test_explicit_format_precedence_and_legacy_pixels_are_preserved (test_supervised_convert.NativeConvert.test_explicit_format_precedence_and_legacy_pixels_are_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 57, in test_explicit_format_precedence_and_legacy_pixels_are_preserved
+    text=io.StringIO();s.execute(BINARY,['convert',str(original),str(actual),'--format=png'],text)
+                       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 111, in execute
+    expected, checks, lines = batch_plan(argv) if argv and argv[0] == 'batch' else (expected_events(argv), {}, {})
+                                                                                    ~~~~~~~~~~~~~~~^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 30, in expected_events
+    raise ValueError('unsupported_supervised_subcommand: $argv')
+ValueError: unsupported_supervised_subcommand: $argv
+
+======================================================================
+ERROR: test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='pcraft')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 40, in test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source
+    result=s.execute(BINARY,['convert',str(original),str(output),'--quality=+010'],text)
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 111, in execute
+    expected, checks, lines = batch_plan(argv) if argv and argv[0] == 'batch' else (expected_events(argv), {}, {})
+                                                                                    ~~~~~~~~~~~~~~~^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 30, in expected_events
+    raise ValueError('unsupported_supervised_subcommand: $argv')
+ValueError: unsupported_supervised_subcommand: $argv
+
+======================================================================
+ERROR: test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='psd')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 40, in test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source
+    result=s.execute(BINARY,['convert',str(original),str(output),'--quality=+010'],text)
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 111, in execute
+    expected, checks, lines = batch_plan(argv) if argv and argv[0] == 'batch' else (expected_events(argv), {}, {})
+                                                                                    ~~~~~~~~~~~~~~~^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 30, in expected_events
+    raise ValueError('unsupported_supervised_subcommand: $argv')
+ValueError: unsupported_supervised_subcommand: $argv
+
+======================================================================
+ERROR: test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='png')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 40, in test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source
+    result=s.execute(BINARY,['convert',str(original),str(output),'--quality=+010'],text)
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 111, in execute
+    expected, checks, lines = batch_plan(argv) if argv and argv[0] == 'batch' else (expected_events(argv), {}, {})
+                                                                                    ~~~~~~~~~~~~~~~^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 30, in expected_events
+    raise ValueError('unsupported_supervised_subcommand: $argv')
+ValueError: unsupported_supervised_subcommand: $argv
+
+======================================================================
+ERROR: test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source (test_supervised_convert.NativeConvert.test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source) (extension='jpg')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 40, in test_healthy_native_psd_and_png_conversion_keeps_empty_stdout_and_source
+    result=s.execute(BINARY,['convert',str(original),str(output),'--quality=+010'],text)
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 111, in execute
+    expected, checks, lines = batch_plan(argv) if argv and argv[0] == 'batch' else (expected_events(argv), {}, {})
+                                                                                    ~~~~~~~~~~~~~~~^^^^^^
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/cli_supervisor.py", line 30, in expected_events
+    raise ValueError('unsupported_supervised_subcommand: $argv')
+ValueError: unsupported_supervised_subcommand: $argv
+
+======================================================================
+ERROR: test_known_save_failure_is_failed_and_never_claims_unexecuted (test_supervised_convert.NativeConvert.test_known_save_failure_is_failed_and_never_claims_unexecuted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 97, in test_known_save_failure_is_failed_and_never_claims_unexecuted
+    self.assertEqual(caught.exception.outcome,'failed');self.assertEqual(caught.exception.phase,'submitted')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_malformed_actual_open_never_saves (test_supervised_convert.NativeConvert.test_malformed_actual_open_never_saves)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 67, in test_malformed_actual_open_never_saves
+    self.assertEqual(caught.exception.outcome,'unknown');self.assertEqual(caught.exception.receipts,[])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='duplicate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 80, in test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='nonfinite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 80, in test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='semantic')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 80, in test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='save-array')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 80, in test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='wrong-save-path')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 80, in test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay (test_supervised_convert.NativeConvert.test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay) (fault='extra-frame')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 80, in test_post_save_faults_preserve_original_and_reopen_saved_project_without_replay
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+FAIL: test_open_requires_confirmation_before_saving (test_supervised_convert.NativeConvert.test_open_requires_confirmation_before_saving)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_convert.py", line 29, in test_open_requires_confirmation_before_saving
+    self.assertNotEqual(result.returncode,0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.132s
+
+FAILED (failures=1, errors=13)

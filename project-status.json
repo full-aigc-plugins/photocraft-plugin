@@ -167,11 +167,11 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.41",
-    "pluginWorkingVersion": "0.1.0-dev.47",
-    "fixedSkillSourceVersion": "0.1.0-dev.41",
+    "skillsVersion": "0.1.0-dev.42",
+    "pluginWorkingVersion": "0.1.0-dev.48",
+    "fixedSkillSourceVersion": "0.1.0-dev.42",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_READONLY_REPLY_PARTIAL_ENTRY_ACCEPTANCE",
+    "publication": "SUPERVISED_CANDIDATE_PACKAGED_PUBLIC_RUNTIME_UNCHANGED",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -179,8 +179,7 @@
       "open": 28,
       "newlyCompleted": 67
     },
-    "publicationEvidence": "docs/evidence/optimization/readonly-reply-publication.json",
-    "currentRegressionEvidence": "docs/evidence/optimization/readonly-reply-release-validation.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/supervised-convert/source-validation.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -234,6 +233,12 @@
     "pluginRef": "v0.1.0-dev.47",
     "sourceRef": "v0.1.0-dev.41",
     "evidence": "docs/evidence/optimization/readonly-reply-publication.json",
+    "closedTasks": []
+  },
+  "supervisedConvertCandidate": {
+    "evidence": "docs/evidence/optimization/supervised-convert/candidate.json",
+    "fixedCandidateInstallation": "NOT_RUN",
+    "publicCliIntegration": "NOT_RUN",
     "closedTasks": []
   }
 }
