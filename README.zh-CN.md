@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-开发版dev.66目标源dev.51，接入MCP stdio回复监督；完整9.6、serve／TCP及聚合内部逐项确认继续开放。[合同](docs/PhotoCraft-MCP-Stream-Supervision.zh_CN.md)。
+dev.66／源dev.51已发布：326项源测试、110项固定安装Harness（15项原生）、15例公开argv故障、6例真实MCP保存后故障、健康MCP预览及四项发行CI通过。隔离Codex发现14技能，安装字节不变。serve／TCP及聚合内部逐项确认使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/mcp-stream/publication.json)。[合同](docs/PhotoCraft-MCP-Stream-Supervision.zh_CN.md)。
 
 dev.65／源dev.50已发布：314项源测试、110项固定安装Harness（15项原生）、15例真实原生公开CLI保存后故障及四项发行CI通过。隔离Codex发现14技能，安装字节不变。流式与嵌套聚合使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/public-cli-supervision/publication.json)。[合同](docs/PhotoCraft-Public-CLI-Supervision.zh_CN.md)。
 

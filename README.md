@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Development dev.66 targets source dev.51 with supervised MCP stdio replies. Full9.6, serve/TCP and aggregate interiors remain open. [Contract](docs/PhotoCraft-MCP-Stream-Supervision.md).
+Published dev.66 / source dev.51:326 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 actual MCP post-save faults, healthy MCP preview and four release CI runs pass. Isolated Codex discovers14 skills; installed bytes remain unchanged. Serve/TCP and aggregate interiors keep task9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/mcp-stream/publication.json). [Contract](docs/PhotoCraft-MCP-Stream-Supervision.md).
 
 Published dev.65 / source dev.50:314 source tests,110 installed Harness tests (15 native),15 actual native public-CLI post-save fault cases and four release CI runs pass. Isolated Codex discovers14 skills; installed bytes remain unchanged. Streaming and nested aggregates keep task9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/public-cli-supervision/publication.json). [Contract](docs/PhotoCraft-Public-CLI-Supervision.md).
 

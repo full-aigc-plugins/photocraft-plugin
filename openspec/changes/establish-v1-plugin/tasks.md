@@ -362,3 +362,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09 公开CLI监督增量：源dev.50／插件dev.65接入run、batch、convert、droplet；实际固定安装验收另记。流式、TCP/port与嵌套聚合仍开放，9.6不勾选，本次关闭0项，仍138/157。
 
 2026-10-09公开CLI固定验收：源dev.50／插件dev.65公开ZIP、标签提交与摘要一致；314项源码测试、110项固定安装Harness（15项原生）及15例真实原生公开CLI保存后故障通过，安装字节不变，发行4项CI通过。流式及嵌套聚合仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/public-cli-supervision/publication.json`。
+
+2026-10-09 MCP stdio固定验收：源dev.51／插件dev.66公开ZIP、标签提交与摘要一致；326项源码测试、110项固定安装Harness（15项原生）、15例argv故障及6例MCP保存后故障、健康图像预览通过，安装字节不变，发行4项CI通过。serve／TCP及聚合内部逐项确认仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/mcp-stream/publication.json`。

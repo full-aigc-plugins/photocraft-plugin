@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.66",
+  "skillSourceRef": "v0.1.0-dev.51",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "mcpPostSaveFaultCases": 6,
+  "mcpHealthyCases": 1,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "01b5b89057ad4186f3171bbe97688e45a241162ff26efda3f56dabf7ef8135af",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native plus15 public argv and6 MCP stdio post-save faults, actual preview; serve/TCP and aggregate interiors remain open"
+}

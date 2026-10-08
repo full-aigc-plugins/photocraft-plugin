@@ -210,14 +210,14 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 306,
-    "skillsReusedFrom": "runtime-version/source-validation.json",
-    "skillsReuse": "305 full-suite passes plus one unchanged-source targeted recheck; full HTTP404 attempt retained",
+    "skills": 326,
     "pluginTypeScript": 110,
     "pluginPython": 48,
     "nativeHarness": 15,
     "skipped": 0,
-    "sourceUnchanged": true
+    "sourceUnchanged": true,
+    "mcpNativeFaultCases": 6,
+    "mcpHealthyCases": 1
   },
   "commandAcceptanceIndex": {
     "file": "command-acceptance-index.json",
@@ -295,7 +295,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "project-ownership/publication.json",
+  "latestRegressionEvidence": "mcp-stream/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -306,6 +306,19 @@
       "droplet"
     ],
     "publicNativeFaultCases": 15,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
+  },
+  "mcpStreamSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/mcp-stream/publication.json",
+    "entries": [
+      "mcp-stdio"
+    ],
+    "publicNativeFaultCases": 6,
+    "healthyNativeCases": 1,
     "closedTaskIds": [],
     "remainingTaskIds": [
       "9.6"

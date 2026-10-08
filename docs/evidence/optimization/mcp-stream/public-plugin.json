@@ -1,0 +1,10 @@
+{
+  "repository": "full-aigc-plugins/photocraft-plugin",
+  "tag": "v0.1.0-dev.66",
+  "commit": "2044a42bd9c3dc073055a747ed00f0333f6493ef",
+  "assetSha256": "bcf0c7dd5bd3ee36423ce962529df84bce954acf0b1459c0eedf33e2623d89cd",
+  "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.66",
+  "prerelease": true,
+  "publicDownloadMatches": true,
+  "archiveCommitMatchesTag": true
+}
