@@ -1,0 +1,23 @@
+✔ invalid preflight preserves every task/event and writes no persistent plan or recovery record (11.314834ms)
+✔ revision retains PSD requirements and scopes accepted losses to the exact base source (13.664292ms)
+✔ unknown native completion is reconciled by observation, never replayed (3.532375ms)
+✔ corrupt ledger is preserved, never silently recreated (0.681917ms)
+✔ reconcile refuses an unbound checkpoint without replay or technical acceptance (3.953125ms)
+✔ revision proposal cannot edit unrelated layers or reset revision budget (4.518333ms)
+✔ unsupported ledger schema is refused without changing original bytes (2.76375ms)
+✔ active tasks retain aggregate disk and process reservations (3.098875ms)
+✔ descendant revisions spend the root budget once and parent stop waits for children (21.513375ms)
+✔ disk shortage refuses intent and mutable GUI writes refuse before execution (7.656125ms)
+✔ stop confirms only the owned worker and leaves unrelated process alive (209.233875ms)
+✔ local adjustment revision is bound to the editable enabled mask and exact changed properties (12.181ms)
+✔ cancelled tasks register late files after ledger restart without acceptance or replay (8.217167ms)
+✔ stale mutable project revision reports conflict before unsupported desktop dispatch without changing intent (3.431833ms)
+✔ unavailable mutable project observation refuses before native work without claiming a revision (2.904ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 383.835833

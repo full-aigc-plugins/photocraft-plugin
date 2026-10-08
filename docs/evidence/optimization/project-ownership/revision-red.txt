@@ -1,0 +1,34 @@
+✖ stale mutable project revision reports conflict before unsupported desktop dispatch without changing intent (13.708625ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 92.4755
+
+✖ failing tests:
+
+test at full-aigc-plugins-repositories/photocraft-plugin/tests/runner.test.ts:174:1
+✖ stale mutable project revision reports conflict before unsupported desktop dispatch without changing intent (13.708625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'revision_conflict'
+  
+      at Object.<anonymous> (file://<workspace>/full-aigc-plugins-repositories/photocraft-plugin/tests/runner.test.ts:181:69)
+      at expectedException (node:assert:578:17)
+      at expectsError (node:assert:703:21)
+      at strict.rejects (node:assert:769:3)
+      at async TestContext.<anonymous> (file://<workspace>/full-aigc-plugins-repositories/photocraft-plugin/tests/runner.test.ts:181:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'revision_conflict',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

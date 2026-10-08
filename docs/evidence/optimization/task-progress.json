@@ -207,9 +207,7 @@
     "PC-SK-003-PATH-SELF",
     "PC-CM-001-SAVED-SELECTION"
   ],
-  "latestCompletedTaskIds": [
-    "2.6"
-  ],
+  "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
     "skills": 306,
@@ -268,9 +266,7 @@
     "skillsReused": 234,
     "evidence": "harness-entry-publication.json"
   },
-  "closedThisRun": [
-    "2.6"
-  ],
+  "closedThisRun": [],
   "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json",
   "checkpointCandidateEvidence": "checkpoint-contract-candidate.json",
   "fixedReadonlyReplyEvidence": "readonly-reply-fixed-native-faults.json",
@@ -287,5 +283,15 @@
     "platform": "darwin-arm64",
     "sameBinaryOnly": false,
     "fullV1": "NOT_RUN"
+  },
+  "projectOwnershipCandidate": {
+    "status": "PARTIAL_CANDIDATE",
+    "evidence": "docs/evidence/optimization/project-ownership/candidate.json",
+    "fixedInstallation": "NOT_RUN",
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "3.3",
+      "10.6"
+    ]
   }
 }

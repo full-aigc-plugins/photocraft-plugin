@@ -1,0 +1,32 @@
+{
+  "schema": "photocraft-project-ownership-candidate/v1",
+  "status": "PARTIAL_CANDIDATE",
+  "pluginVersion": "0.1.0-dev.64",
+  "skillSourceVersion": "0.1.0-dev.49",
+  "runtimeVersion": "0.2.0-craft.5",
+  "platform": "darwin-arm64",
+  "fixedInstallation": "NOT_RUN",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "3.3",
+    "10.6"
+  ],
+  "redGreen": {
+    "red": "revision-red.txt",
+    "green": "revision-green.txt",
+    "reason": "Previously stale saved mutable project reported generic unsupported dispatch, not required revision_conflict"
+  },
+  "nativeEvidence": "desktop-revision.json",
+  "files": {
+    "src/harness/runner.ts": "a58d4063fce95c7117ca7b1b2a6a595b54317aa4f9a9eb2608f57d95ccaa81e2",
+    "tests/runner.test.ts": "fb82eed7d46b7fddf8c14095313c5403d68e5fbb3d160813d728a5345d1efeda",
+    "scripts/verify_project_revision.ts": "89f893a4cee1d271dda4cb85de3511ca3bdb6826376c6bc99e78a485009a52ae",
+    "scripts/verify_desktop_project_revision.py": "48b6869b52ccc18e72fdecebf53997de2f229df1e10f3725829d2fdb329cad45"
+  },
+  "remaining": [
+    "Shared mutable project and backend session ownership execution",
+    "Concurrent actual writers, lease replacement and late publication fencing",
+    "Complete normative scenario and fixed installation audit"
+  ],
+  "fullV1": "NOT_RUN"
+}

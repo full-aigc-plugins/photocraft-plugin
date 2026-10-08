@@ -1,0 +1,10 @@
+✔ disk shortage refuses intent and mutable GUI writes refuse before execution (20.173708ms)
+✔ stale mutable project revision reports conflict before unsupported desktop dispatch without changing intent (7.620292ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 103.274125

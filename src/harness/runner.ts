@@ -64,7 +64,14 @@ export class Runner {
  async run(id: string) {
   let task=this.ledger.status(id);
   if(task.state!=='planned' || task.attempted) throw new Error('reconcile_required');
-  if(task.request.mutableProject) throw new Error('mutable_desktop_execution_not_supported');
+  if(task.request.mutableProject) {
+   // 磁盘版本冲突优先报告；摘要相同不证明 GUI 未保存状态安全。
+   let current:string;
+   try {current=fileDigest(task.request.mutableProject);}
+   catch {throw new OperationError('project_revision_unavailable',{code:'project_revision_unavailable',phase:'validation',outcome:'not_executed',category:'validation_failed',fieldPath:'$.mutableProject',recoveryAction:'inspect'});}
+   if(current!==task.request.expectedProjectSha256)throw new OperationError('revision_conflict',{code:'revision_conflict',phase:'validation',outcome:'not_executed',category:'validation_failed',fieldPath:'$.expectedProjectSha256',recoveryAction:'correct_plan'});
+   throw new Error('mutable_desktop_execution_not_supported');
+  }
   if(task.request.checkpoint)this.checkRecoverySource(task);
   const identity=this.preflight(task.request);const planPath=join(this.ledger.root,id+'-plan.json');
   const args=[planPath,'--output',task.request.output];

@@ -169,3 +169,26 @@ test('cancelled tasks register late files after ledger restart without acceptanc
   await assert.rejects(()=>reopened.run(task.id),/reconcile_required/);ledger.close();
  }finally{f.close();}
 });
+
+
+test('stale mutable project revision reports conflict before unsupported desktop dispatch without changing intent',async()=>{
+ const {Runner}=await import('../src/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const f=fixture();
+ try{
+  const ledger=new Ledger(join(f.root,'state'));const project=join(f.root,'mutable.pcraft');writeFileSync(project,'original native fixture');
+  const task=ledger.create({...f.request,mutableProject:project,expectedProjectSha256:fileDigest(project)});
+  writeFileSync(project,'new user-saved native fixture');const before=JSON.stringify(ledger.status(task.id));const events=JSON.stringify(ledger.db.prepare('SELECT * FROM events').all());const files=readdirSync(ledger.root).sort();
+  const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});runner.preflight=()=>assert.fail('stale revision reached skill preflight');
+  await assert.rejects(()=>runner.run(task.id),(error:any)=>{assert.equal(error.code,'revision_conflict');assert.equal(error.phase,'validation');assert.equal(error.outcome,'not_executed');assert.equal(error.fieldPath,'$.expectedProjectSha256');return true;});
+  assert.equal(readFileSync(project,'utf8'),'new user-saved native fixture');assert.equal(JSON.stringify(ledger.status(task.id)),before);assert.equal(JSON.stringify(ledger.db.prepare('SELECT * FROM events').all()),events);assert.deepEqual(readdirSync(ledger.root).sort(),files);assert.equal(existsSync(task.request.output),false);ledger.close();
+ }finally{f.close();}
+});
+
+
+test('unavailable mutable project observation refuses before native work without claiming a revision',async()=>{
+ const {Runner}=await import('../src/harness/runner.ts');const f=fixture();
+ try{
+  const ledger=new Ledger(join(f.root,'state'));const task=ledger.create({...f.request,mutableProject:join(f.root,'missing.pcraft'),expectedProjectSha256:'a'.repeat(64)});const before=JSON.stringify(ledger.status(task.id));
+  const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});runner.preflight=()=>assert.fail('missing project reached preflight');
+  await assert.rejects(()=>runner.run(task.id),(error:any)=>{assert.equal(error.code,'project_revision_unavailable');assert.equal(error.phase,'validation');assert.equal(error.outcome,'not_executed');assert.equal(error.recoveryAction,'inspect');return true;});assert.equal(JSON.stringify(ledger.status(task.id)),before);assert.equal(existsSync(task.request.output),false);ledger.close();
+ }finally{f.close();}
+});
