@@ -1,0 +1,65 @@
+{
+  "schema": "photocraft-requirement-acceptance/v1",
+  "requirement": "PC-AR-001",
+  "status": "PASS",
+  "sourceRef": "v0.1.0-dev.44",
+  "sourceCommit": "70e6dfe56afa23257feb343bf4b51727c220e303",
+  "pluginRef": "v0.1.0-dev.52",
+  "pluginCommit": "a8407ff2a55c9905b9b298d02e3502f9906d0d39",
+  "platform": "darwin-arm64",
+  "publicRuntimeVersion": "0.2.0-craft.1",
+  "normativeScenarios": [
+    {
+      "id": "PC-AR-001-P",
+      "result": "PASS",
+      "evidence": "fixed-native.json",
+      "authorityConsumerEvidence": "owner-consumer.json"
+    },
+    {
+      "id": "PC-AR-001-N",
+      "result": "PASS",
+      "evidence": "fixed-native.json",
+      "authorityConsumerEvidence": null
+    },
+    {
+      "id": "PC-AR-001-LINEAGE",
+      "result": "PASS",
+      "evidence": "fixed-native.json",
+      "authorityConsumerEvidence": "owner-consumer.json"
+    },
+    {
+      "id": "PC-AR-001-MIXED",
+      "result": "PASS",
+      "evidence": "fixed-native.json",
+      "authorityConsumerEvidence": null
+    },
+    {
+      "id": "PC-AR-001-INTEGRITY",
+      "result": "PASS",
+      "evidence": "fixed-native.json",
+      "authorityConsumerEvidence": "owner-consumer.json"
+    }
+  ],
+  "originalRedEvidence": [
+    "legacy-red.txt",
+    "media-type-red.txt",
+    "owner-consumer-red.txt",
+    "owner-consumer-psd-red.txt",
+    "exchange-gate-red.txt"
+  ],
+  "closedTaskIds": [
+    "5.3",
+    "11.9"
+  ],
+  "fileIntegrity": "PASS",
+  "lineage": "VERIFIED",
+  "creativeAcceptance": "NOT_RUN",
+  "sourceAuthenticity": "NOT_PROVEN",
+  "remaining": [
+    "Full Art workflow/host/model routing13.6",
+    "PC-TX-0059.6",
+    "all other open task gates"
+  ],
+  "scope": "Current exact fixed macOS arm64 scenarios for artifact lineage; no claim of full creative acceptance, authorship or full V1",
+  "legacyPublicPsdReadOnlyEvidence": "legacy-psd-readonly.json"
+}

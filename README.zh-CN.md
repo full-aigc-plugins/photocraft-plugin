@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.52／源dev.44已发布：实际固定macOS arm64原生副本及不可变ArtCraft109消费者通过全部PC-AR-001规范场景，17项逐文件替换拒绝、旧dev.50只读兼容。5.3／11.9完成，现131/157完成、26开放；创作接受及来源真实性未证明。[验收](docs/evidence/optimization/artifact-lineage/acceptance-audit.json)。
+
 dev.52目标技能源dev.44：PSD门禁保留在公共schema允许的观察字段。源候选已通过实际固定ArtCraft109消费及17项逐文件替换拒绝；固定发行证明待完成。[合同](docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md)。
 
 dev.51将保留的原生.pcraft映射至固定消费者已有二进制类型合同；既有x-photocraft包保持只读检查并明确消费者尚不支持。固定消费验收待完成。[合同](docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md)。

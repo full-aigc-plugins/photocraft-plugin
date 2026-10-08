@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "open-array",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "open-index-bool",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "open-duplicate",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "inspect-missing",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "doc_inspect"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "inspect-nonfinite",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "doc_inspect"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "open-error",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "command_failed",
+      "outcome": "failed",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "checkpoint_verify",
+      "fault": "inspect-error",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "doc_inspect"
+      ],
+      "code": "command_failed",
+      "outcome": "failed",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "open-array",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "open-index-bool",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "open-duplicate",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "inspect-missing",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "doc_inspect"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "inspect-nonfinite",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "doc_inspect"
+      ],
+      "code": "outcome_unknown",
+      "outcome": "unknown",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "open-error",
+      "status": "PASS",
+      "calls": [
+        "doc_open"
+      ],
+      "code": "command_failed",
+      "outcome": "failed",
+      "filesUnchanged": true
+    },
+    {
+      "verifier": "native_verify",
+      "fault": "inspect-error",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "doc_inspect"
+      ],
+      "code": "command_failed",
+      "outcome": "failed",
+      "filesUnchanged": true
+    }
+  ],
+  "healthyVerifiers": 2,
+  "platform": "darwin-arm64",
+  "filesUnchanged": true,
+  "scope": "Real native read-only call then injected reply; not raw edit-streaming or creative acceptance"
+}

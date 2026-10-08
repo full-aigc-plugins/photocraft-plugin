@@ -1,0 +1,17 @@
+{
+  "repository": "full-aigc-plugins/artcraft-plugin",
+  "commit": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b",
+  "files": {
+    "schemas/craft-artifact-v1.json": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+    "schemas/craft-exchange-loss-v1.json": "483670333c2ddb6515abe61fc30b9160bbe097b6abc01bda6c1ba73fc1832858",
+    "schemas/craft-task-v1.json": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+    "src/protocol/contracts.ts": "ecfdb1a4a30b1cbe13977ef09bc875fbf2146e73bf4d0a4eb2409fc0a9e7e0e9",
+    "src/protocol/dependency_graph.ts": "73454afd86310c7107b333a92520fd07f06a97612f6d539aa84031e987e76c43",
+    "src/protocol/image_sequence.ts": "e63b178aa61abf0e0bee6d407bf747acf947b880352138be70b2c26e4a3bcc56",
+    "src/protocol/jpeg_inspection.ts": "5dc20a65aed1311dd05bccd70a2a610ac9380d2254d4ebf1ef2ba3d4eb48e865",
+    "src/protocol/png_inspection.ts": "86b6d604ca3660cf2bd76fab96a266e06406bd9269e1cfa2e76e7cff0ea22265",
+    "src/protocol/task_error.ts": "ac2f4e43ab13a20e57822036de009209f64ab496a0ba2463a5ebdcc43f3ddd10",
+    "src/protocol/wav_inspection.ts": "6ec1968f2c4a52f43ea4129ad6334158e696f9eebef981477cff803ad642e645"
+  },
+  "mode": "immutable git object extraction; original checkout unchanged"
+}

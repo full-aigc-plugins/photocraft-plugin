@@ -1,0 +1,40 @@
+{
+  "schema": "photocraft-legacy-psd-readonly/v1",
+  "status": "PASS",
+  "readerSourceRef": "v0.1.0-dev.44",
+  "installedPluginRef": "v0.1.0-dev.52",
+  "legacyProducerPluginRef": "v0.1.0-dev.50",
+  "legacySourceRef": "v0.1.0-dev.43",
+  "legacyGateLocation": "top-level psdGate",
+  "expectedManifestSha256": "1dcc3d7f7e35b4ad644e02b7e3003cd927001b418ff431aebedb6b637bb79d47",
+  "legacyBundleSha256": "17ead2177ddedd309ccbe298f2d8f93c9aa6dfd36058314f65ed2d98811831d9",
+  "legacyFiles": {
+    "design.png": "d46e8c1f57915a3877b3ef94569d878c9a3a1b5343e31c9b519197cf73bc06ba",
+    "plan.json": "05e6b599ca04e9bcbf952c289e5e85828a2252a144c8cbc0f95fd880a6d7afb0",
+    "design.psd": "26d78816d3481f52c35881a0a1c2c6220871b81c477c79a9a2770ed743acdbac",
+    "capabilities.json": "9c308f7c994255d91bece541cf47b4ba6c6296ee9ae9a07407c64ca871045a8c",
+    "exchange-loss.json": "8bc3873ae274331cb5b79da4a58a2ff3eb9a55a9503dc9d8a1c50d6f00dcfd78",
+    "object-preservation.json": "92b02960e71cde2a8a326b45545a3b1102cc4423622261f680e60c0fbd0f266f",
+    "psd-inspection.json": "a9d7cce33c6c657aa75059ab1a245fc6e2518b908c391ec0332d9736a4496ded",
+    "capability-checks.json": "82e6ed3724d21c8e735ba17f075deb22f7891d6370a8aec3285f07086eaf585d",
+    "native.json": "66498a83fa02f0df38ce60f1eba18206238297d02c4d1fc860db9549a018b543",
+    "project.pcraft": "125333b27cf04d4c4a70e6790cab0d20e52f61688591257c74156cefb5e1bef4",
+    "manifest.json": "1dcc3d7f7e35b4ad644e02b7e3003cd927001b418ff431aebedb6b637bb79d47",
+    "bundle-manifest.json": "17ead2177ddedd309ccbe298f2d8f93c9aa6dfd36058314f65ed2d98811831d9",
+    "psd-acceptance.json": "6c4f23a826462f4743858c2207d012d5dfc502dce3d1954bc032ecba9edc68b8",
+    "operations.json": "6c09e891ac66497a371b8fe670efcc2c52880f6aa404d47f56d6678095405ba8",
+    "harness/task.json": "8e06ac887ba29166f7af50cf6b7af8a9faeed07f9e8ba1e2b9d2b18123084ea5",
+    "harness/parent-artifact.json": "533a71faf4c71720f2a22b567d584262b172b2d3305fec96541d91465374b67a",
+    "harness/artifact.json": "ab6aecca3dc2dfe0f8666d7099b0e1a68fbe3751f2eb88853faa05ee16f7fc8f"
+  },
+  "legacyTreeUnchanged": true,
+  "reply": {
+    "schema": "photocraft-delivery-integrity/v1",
+    "result": "PASS",
+    "manifestSha256": "1dcc3d7f7e35b4ad644e02b7e3003cd927001b418ff431aebedb6b637bb79d47",
+    "nativeSha256": "125333b27cf04d4c4a70e6790cab0d20e52f61688591257c74156cefb5e1bef4",
+    "files": 12,
+    "scope": "File and exchange identity only; not native reopening, external authorship or creative acceptance."
+  },
+  "scope": "Actual previous public native PSD package readonly validation; no creative or authorship claim"
+}

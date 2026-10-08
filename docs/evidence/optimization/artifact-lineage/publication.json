@@ -1,0 +1,115 @@
+{
+  "schema": "photocraft-artifact-lineage-publication/v1",
+  "status": "PASS_PC_AR_001_FIXED_NATIVE_AND_AUTHORITY_CONSUMER",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.44",
+    "commit": "70e6dfe56afa23257feb343bf4b51727c220e303",
+    "assetSha256": "1bf264baf1eb714a17458d47f045d39db063562fbe94ec861ad7f0b9f2495709",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.44",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.52",
+    "commit": "a8407ff2a55c9905b9b298d02e3502f9906d0d39",
+    "assetSha256": "b98bfcf5abf8d4f2115a87b57416f11e816b63b776aa878e8281f6fbd2944080",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.52",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "sourceRegression": {
+    "tests": 287,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pluginHarnessTests": 72,
+  "pluginPythonTests": 48,
+  "fixedInstallation": {
+    "status": "PASS",
+    "pluginVersion": "0.1.0-dev.52",
+    "skillSourceRef": "v0.1.0-dev.44",
+    "harness": {
+      "tests": 72,
+      "pass": 72,
+      "fail": 0,
+      "skipped": 0
+    },
+    "nativeHarnessTests": 5,
+    "readonlyNativeFaults": 14,
+    "healthyReadonlyPaths": 2,
+    "installedTreeUnchanged": true,
+    "installedTreeSha256": "24214f32ddefe771b2ba6b12151586973e69f8c7b08cc68160bdae3cae776a11",
+    "harnessLogSha256": "f8d557ab0f109fecec1b01a46c39e5ee5c71ccbc02e4b30456539f866d88ee18",
+    "integerOverflowMethods": 3,
+    "integerOverflowPublicRefusals": 52,
+    "integerOverflowInstallCalls": 0,
+    "integerOverflowSessionCalls": 0,
+    "lineageNativeCases": 17,
+    "lineageNativeReportSha256": "1d8ed2e23ebd358504085bea1e60b8989147b25d512c693d9383f9f808c5c28c",
+    "closedTasks": [],
+    "scope": "Actual public-tag installed canonical skill,72 Harness tests and52 independent-entry integer refusals; native craft.5 supervision is not activated or accepted; not complete raw/streaming/entry/counter/model/creative acceptance"
+  },
+  "consumer": {
+    "authorityCommit": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b",
+    "acceptedNativeBundles": 2,
+    "tamperedIndexedFilesRefused": 17,
+    "legacyPublicDev50ReadOnly": "PASS",
+    "installedTreeUnchangedAfterConsumer": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37827318396,
+      "headBranch": "v0.1.0-dev.52",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37827318396"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37827318484,
+      "headBranch": "v0.1.0-dev.52",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37827318484"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37827308750,
+      "headBranch": "main",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37827308750"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37827308823,
+      "headBranch": "main",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37827308823"
+    }
+  ],
+  "sourceCi": [],
+  "sourceCiStatus": "NO_RUNS",
+  "closedTasks": [
+    "5.3",
+    "11.9"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 131,
+    "open": 26
+  },
+  "creativeAcceptance": "NOT_RUN",
+  "sourceAuthenticity": "NOT_PROVEN",
+  "fullV1": "NOT_RUN",
+  "supervisedCraft5PublicIntegration": "NOT_RUN",
+  "marketplaceEligible": false,
+  "legacyPublicPsdReadOnlyEvidence": "legacy-psd-readonly.json"
+}

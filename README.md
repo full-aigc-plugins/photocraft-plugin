@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+Published dev.52 / source dev.44: all PC-AR-001 scenarios pass on actual fixed macOS arm64 native copies and the immutable ArtCraft109 consumer.17 indexed-file replacements refuse; old dev.50 remains read-only. Tasks5.3/11.9 complete;131/157 complete,26 open. Creative acceptance and source authenticity remain unproven. [Audit](docs/evidence/optimization/artifact-lineage/acceptance-audit.json).
+
 dev.52 targets source dev.44: preserve the PSD gate in public-schema observations. Actual pinned ArtCraft109 consumption and all17 indexed-file replacements pass on the source candidate; fixed publication proof is pending. [Contract](docs/PhotoCraft-Artifact-Lineage-Acceptance.md).
 
 dev.51 maps the retained native .pcraft artifact to the pinned consumer binary media contract. Existing x-photocraft bundles remain read-only with an explicit unsupported-consumer status. Fixed consumer acceptance is pending. [Contract](docs/PhotoCraft-Artifact-Lineage-Acceptance.md).

@@ -81,7 +81,7 @@
 
 - [x] 5.1 [PC-AR-001] 编写能暴露“产物血缘与包完整性”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 5.2 [PC-AR-001] 在独立技能源 exchange_loss.py 与公开交付校验 实现“产物血缘与包完整性”的最小行为，不扩大支持范围。责任：Harness owner；前置：5.1。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选进展：独立只读包校验及返工前后完整源校验已实现，固定发行38已通过13技能冷安装与校验、原生海报移动／返工／篡改拒绝；完整血缘身份与全部场景仍开放，见docs/evidence/craft-photo-delivery-integrity-fixed-first-use-20261008.json。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 5.3 [PC-AR-001] 完成“产物血缘与包完整性”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：5.2。产物：evidence/pc-ar-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 5.3 [PC-AR-001] 完成“产物血缘与包完整性”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：5.2。产物：evidence/pc-ar-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定源dev.44／插件dev.52的全部PC-AR-001规范场景与实际ArtCraft109消费者通过；证据：`docs/evidence/optimization/artifact-lineage/acceptance-audit.json`。来源真实性、创作接受和13.6完整宿主流程不由此关闭。
 - [x] 5.4 [PC-AR-002] 编写能暴露“原生工程与交换损失”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
 - [x] 5.5 [PC-AR-002] 在独立技能源 exchange_loss.py 与公开交付校验 实现“原生工程与交换损失”的最小行为，不扩大支持范围。责任：Harness owner；前置：5.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
 - [x] 5.6 [PC-AR-002] 完成“原生工程与交换损失”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：5.5。产物：evidence/pc-ar-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定 dev.40／技能源 dev.36 场景验收：`docs/evidence/optimization/psd-acceptance-audit.json`；未验证外部编辑器及完整保真保持未知。
@@ -220,7 +220,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.4 [PC-TX-005] 覆盖所有公开入口的重复键、NaN／Infinity／溢出、错误容器／未知字段、素材与引用依赖；用安装／会话调用计数确认提前拒绝，并复现普通工作流回复与网关语义差异。责任：Skills owner；前置：读取全入口合同与现有 JSON／MCP 故障回归；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/entry-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.5 [PC-TX-005] 在独立技能源统一严格计划解析、静态预检、动态引用检查、工具回复与结构化错误；验证通过才写成功回执，保持文字／图片合法回复及失败保全兼容。责任：Skills owner；前置：9.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前固定源dev.42／插件dev.48已验证argv预检、Harness及只读重开回复；raw逐命令停止、流式编辑及完整入口矩阵仍未完成，不以局部通过关闭本项。
+- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前固定源dev.44／插件dev.52已验证argv预检、Harness及只读重开回复；raw逐命令停止、流式编辑及完整入口矩阵仍未完成，不以局部通过关闭本项。
 
 - [x] 9.7 [PC-RL-003] 建立同一版本声明冲突、活动锁误指历史锁、维护版误称上游官方、旧标签被替换等发行拒绝 fixture；合法独立版本映射通过。责任：Release owner；前置：读取当前插件、技能、套件、运行时与公共协议身份；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/release-identity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 9.8 [PC-RL-003] 在各事实源增加当前组合一致性检查及生成说明，明确上游与维护版、套件版本语义和非活动根锁；同步双语当前说明，保留历史证据原值。责任：Release owner；前置：9.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
@@ -256,7 +256,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 11.7 [PC-AR-001] 建立混合轮次预览／评估、父版本冲突、移动包和旧包缺少血缘字段的兼容与拒绝测试。责任：Harness owner；前置：11.5；关联原 5.1–5.3；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/artifact-lineage/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 11.8 [PC-AR-001] 实现本地交付到固定 craft-artifact/v1 的映射，关联逻辑资产、不可变版本、父版本、任务、计划、输入、能力及评估；公共字段需求回权威仓，不另造协议。责任：Harness owner；前置：11.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 11.9 [PC-AR-001] 验证真实创建、修订和移动包全链身份与旧包只读兼容；篡改及串用证据拒绝；安装副本复验，完整性与来源真实性／创作接受分开。责任：QA owner；前置：11.8 及对应固定来源可用；产物：docs/evidence/optimization/artifact-lineage/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 11.9 [PC-AR-001] 验证真实创建、修订和移动包全链身份与旧包只读兼容；篡改及串用证据拒绝；安装副本复验，完整性与来源真实性／创作接受分开。责任：QA owner；前置：11.8 及对应固定来源可用；产物：docs/evidence/optimization/artifact-lineage/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定源dev.44／插件dev.52的全部PC-AR-001规范场景与实际ArtCraft109消费者通过；证据：`docs/evidence/optimization/artifact-lineage/acceptance-audit.json`。来源真实性、创作接受和13.6完整宿主流程不由此关闭。
 
 ## 12. P2：领域结果与复杂场景验收
 
@@ -324,3 +324,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09整数溢出候选：独立源统一解析器先检查原生有限f64数值文本，再构造Python整数；超长字面量保留字段路径，有限大整数旧类型不变。3项定向及13技能52例公开拒绝通过，安装／会话次数为零；原缺陷红灯与5000位路径红灯分别留存。共享解析器改动后完整源回归和固定发行验收独立重跑，不复用前述280项证明新源码；9.6继续开放，关闭0项。证据：`docs/evidence/optimization/integer-overflow/candidate.json`。
 
 2026-10-09整数溢出发行核验：源dev.43／插件dev.49公开ZIP及标签提交一致，283项源回归零跳过、70项Harness及48项Python通过；发布提交／标签4项CI通过。隔离Codex发现14技能，实际安装副本70项Harness／14例只读故障及13独立入口52例整数拒绝通过，安装树不变。公开运行时仍craft.1；craft.5 droplet监督候选未接入及固定验收，9.6继续开放，129/157完成、28开放，关闭0项。证据：`docs/evidence/optimization/integer-overflow/publication.json`。
+
+2026-10-09产物血缘验收：源dev.44／插件dev.52公开ZIP／标签摘要一致；287项源回归零跳过，72项Harness／48项Python通过，固定副本17例原生血缘、14例只读故障及52例整数拒绝通过。实际固定ArtCraft109消费两个原生父子包并拒绝全部17项登记文件替换，旧dev.50包只读身份不变；安装树不变。5.3／11.9按全部PC-AR-001规范场景关闭，现131/157完成、26开放。评估fixture不证明创作接受；来源真实性、完整Art宿主／模型流程13.6、raw监督9.6及V1保持开放。证据：`docs/evidence/optimization/artifact-lineage/acceptance-audit.json`。

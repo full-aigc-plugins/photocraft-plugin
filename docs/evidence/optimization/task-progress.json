@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "PUBLISHED_READONLY_REPLY_PARTIAL_ENTRY_FULL_PLAN_INCOMPLETE",
+  "status": "PUBLISHED_PC_AR_001_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -69,13 +69,15 @@
     "4.18",
     "10.3",
     "9.3",
-    "9.9"
+    "9.9",
+    "5.3",
+    "11.9"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 129,
-    "open": 28,
-    "newlyCompleted": 67
+    "completed": 131,
+    "open": 26,
+    "newlyCompleted": 69
   },
   "openTaskIds": [
     "2.4",
@@ -84,7 +86,6 @@
     "3.3",
     "3.6",
     "3.9",
-    "5.3",
     "6.3",
     "6.6",
     "7.1",
@@ -100,14 +101,13 @@
     "10.12",
     "11.3",
     "11.6",
-    "11.9",
     "13.2",
     "13.3",
     "13.4",
     "13.5",
     "13.6"
   ],
-  "greenEvidence": "fixed-domain-regression.json",
+  "greenEvidence": "artifact-lineage/publication.json",
   "baselineRedReconstruction": "baseline-red.json",
   "observedRegressionFixes": "additional-red-green.json",
   "groups": [
@@ -167,7 +167,7 @@
         "PC-AR-001"
       ],
       "candidate": "portable public-contract bundle with packaged plan, inputs, source/capability and review bindings, parent identity, relocation verification, legacy readonly UNKNOWN and tamper/mixed-review refusal",
-      "remaining": "fixed candidate installation, cross-repository consumer proof and any source authenticity or creative acceptance claim"
+      "remaining": "Fixed native and authority consumer evidence passed. Full Art host/model workflow13.6 remains open; source authenticity and creative acceptance are not claimed."
     },
     {
       "requirements": [
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Published source40/plugin45 remain immutable. Unpublished plugin-owned Harness candidate covers create before ledger, run propagation, revise before budget, strict and bound replies, and actual native post-save stdout fault without automatic verification/replay. No tasks closed; full9.6 and28 total gates remain open.",
+  "scope": "Source44/plugin52 current fixed native artifact-lineage and immutable ArtCraft109 consumer scenarios pass. Only5.3/11.9 close;131/157 complete,26 open. Creative acceptance, source authenticity, full host/model routing and PC-TX-005 remain separate.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -266,8 +266,12 @@
     "skillsReused": 234,
     "evidence": "harness-entry-publication.json"
   },
-  "closedThisRun": [],
+  "closedThisRun": [
+    "5.3",
+    "11.9"
+  ],
   "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json",
   "checkpointCandidateEvidence": "checkpoint-contract-candidate.json",
-  "fixedReadonlyReplyEvidence": "readonly-reply-fixed-native-faults.json"
+  "fixedReadonlyReplyEvidence": "readonly-reply-fixed-native-faults.json",
+  "fixedArtifactLineageEvidence": "artifact-lineage/acceptance-audit.json"
 }

@@ -126,7 +126,9 @@
     "4.18": "docs/evidence/optimization/flat-acceptance-audit.json",
     "10.3": "docs/evidence/optimization/capability-acceptance-audit.json",
     "9.3": "docs/evidence/optimization/routing-acceptance-audit.json",
-    "9.9": "docs/evidence/optimization/identity-acceptance-audit.json"
+    "9.9": "docs/evidence/optimization/identity-acceptance-audit.json",
+    "5.3": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json",
+    "11.9": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -171,16 +173,16 @@
     "pluginWorkingVersion": "0.1.0-dev.52",
     "fixedSkillSourceVersion": "0.1.0-dev.44",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "LINEAGE_EXCHANGE_SOURCE_CANDIDATE_FIXED_PENDING",
+    "publication": "PUBLISHED_PC_AR_001_FIXED_NATIVE_AND_AUTHORITY_CONSUMER",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 129,
-      "open": 28,
-      "newlyCompleted": 67
+      "completed": 131,
+      "open": 26,
+      "newlyCompleted": 69
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/integer-overflow/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/integer-overflow/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/artifact-lineage/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/artifact-lineage/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -268,9 +270,13 @@
   },
   "artifactLineageCandidate": {
     "evidence": "docs/evidence/optimization/artifact-lineage/candidate-native.json",
-    "status": "PASS_NATIVE_CONSUMER_CANDIDATE_FIXED52_PENDING",
-    "fixedInstallation": "PASS_NATIVE_DEV51_EXCHANGE_FIX_PENDING",
-    "closedTasks": [],
-    "consumerAcceptance": "PASS_SOURCE44_CANDIDATE"
-  }
+    "status": "PASS_FIXED52_AND_AUTHORITY_CONSUMER",
+    "fixedInstallation": "PASS_17_NATIVE_CASES_DEV52",
+    "closedTasks": [
+      "5.3",
+      "11.9"
+    ],
+    "consumerAcceptance": "PASS_FIXED_SOURCE44_PLUGIN52"
+  },
+  "artifactLineageAcceptanceEvidence": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json"
 }
