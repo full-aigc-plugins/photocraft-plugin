@@ -1,0 +1,36 @@
+{
+  "schema": "photocraft-supervised-save-stop/v1",
+  "status": "PASS",
+  "binarySha256": "a6163f0d29ed3ef5a3f04dfc00fa3affe9538d8a5b065d61055b9360b72fc7ee",
+  "cases": [
+    {
+      "fault": "duplicate",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "command_run"
+      ],
+      "nativeSavedPsdSha256": "317de0741fa0a6ec7650a0d0d8172618a5f7a6dd15681361faa4c676ce9e4691",
+      "originalProjectSha256": "693994f51fc7b158b6a21e6443a89b88dc92df7335d8e95ac56c25ce62a633e2",
+      "originalUnchanged": true,
+      "savedFileReopenedUnchanged": true,
+      "laterEditCalls": 0,
+      "replays": 0
+    },
+    {
+      "fault": "semantic",
+      "status": "PASS",
+      "calls": [
+        "doc_open",
+        "command_run"
+      ],
+      "nativeSavedPsdSha256": "317de0741fa0a6ec7650a0d0d8172618a5f7a6dd15681361faa4c676ce9e4691",
+      "originalProjectSha256": "693994f51fc7b158b6a21e6443a89b88dc92df7335d8e95ac56c25ce62a633e2",
+      "originalUnchanged": true,
+      "savedFileReopenedUnchanged": true,
+      "laterEditCalls": 0,
+      "replays": 0
+    }
+  ],
+  "scope": "candidate raw run with actual file.saveACopy PSD write, mutated native reply, no later command or final save; fixed install NOT_RUN"
+}

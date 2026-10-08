@@ -1,0 +1,74 @@
+{
+  "schema": "photocraft-supervised-run-candidate/v1",
+  "status": "PASS",
+  "scope": "candidate run reply acknowledgment only; not public integration, fixed installation or full PC-TX-005 acceptance",
+  "skillsSource": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "commit": "dc3275e476b036b81cdaef99d5278ba36ae7b453",
+    "executionSourceSha256": "b6483e5565280497e95f8b8e7b9b09e06853bb31a39784d319d349dd75420b4d"
+  },
+  "candidateRuntime": {
+    "version": "0.2.0-craft.2",
+    "platform": "darwin-arm64",
+    "binarySha256": "a6163f0d29ed3ef5a3f04dfc00fa3affe9538d8a5b065d61055b9360b72fc7ee",
+    "archiveSha256": "ac8d4572368111d091866bb735299a12c28fe1de5cc2864ac6436fcb39a58f37",
+    "patchSha256": "ffd66fafb8b4a4482ca51d9494189dc5a7496b9a6c67883d2e6658a63a436044",
+    "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947"
+  },
+  "red": {
+    "runtimeVersion": "0.2.0-craft.1",
+    "tests": 5,
+    "failures": 8,
+    "errors": 1,
+    "reason": "prior native CLI ignores supervision flag and continues editing/saving without confirmation",
+    "rawLogSha256": "b77d2d710ac3c07c10b8f199d34ca8160b313712a372a56f25673328ca4f9a7e"
+  },
+  "checks": {
+    "rustTests": {
+      "passed": 58,
+      "failed": 0,
+      "ignored": 0
+    },
+    "focusedSupervisionTests": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    "fullSourceTests": {
+      "tests": 250,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "actualSaveBeforeStop": {
+      "passed": 2,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "originalUnchanged": true,
+      "savedFileReopenedUnchanged": true
+    }
+  },
+  "publicState": {
+    "skillsVersion": "0.1.0-dev.41",
+    "pluginVersion": "0.1.0-dev.47",
+    "lockedRuntimeVersion": "0.2.0-craft.1",
+    "cliPyIntegration": "NOT_RUN",
+    "fixedInstallation": "NOT_RUN",
+    "managedSnapshotChanged": false,
+    "newReleasePublished": false
+  },
+  "open": [
+    "public CLI integration and durable recovery records",
+    "batch/droplet internal command boundaries",
+    "MCP/serve streaming contracts",
+    "fixed release installation and complete entry matrix",
+    "all-command native acceptance"
+  ],
+  "taskStatus": {
+    "closedThisTurn": 0,
+    "completed": 129,
+    "total": 157,
+    "open": 28,
+    "task9_6": "OPEN"
+  }
+}

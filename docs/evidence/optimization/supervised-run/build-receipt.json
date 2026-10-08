@@ -1,0 +1,25 @@
+{
+  "schema": "craft-maintained-runtime-build/v1",
+  "runtimeVersion": "0.2.0-craft.2",
+  "platform": "darwin-arm64",
+  "archive": "photocraft-cli-0.2.0-craft.2-macos-arm64.zip",
+  "archiveSha256": "ac8d4572368111d091866bb735299a12c28fe1de5cc2864ac6436fcb39a58f37",
+  "binarySha256": "a6163f0d29ed3ef5a3f04dfc00fa3affe9538d8a5b065d61055b9360b72fc7ee",
+  "versionOutput": "photocraft-cli 0.2.0-craft.2 (dev build)",
+  "provenance": {
+    "schema": "craft-maintained-runtime-patch/v1",
+    "upstreamRepository": "https://github.com/storytold/photocraft",
+    "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+    "patch": "runtime/patches/supervised-run.patch",
+    "patchSha256": "ffd66fafb8b4a4482ca51d9494189dc5a7496b9a6c67883d2e6658a63a436044",
+    "scope": "Existing scoped smart content plus opt-in run reply acknowledgment in the original trusted local session; batch, droplet and streaming supervision not implemented",
+    "runtimeVersion": "0.2.0-craft.2",
+    "status": "built-maintained-runtime",
+    "binarySha256": "a6163f0d29ed3ef5a3f04dfc00fa3affe9538d8a5b065d61055b9360b72fc7ee",
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "platform": "darwin-arm64",
+    "cargoLockSha256": "b1ac0735e645726c9efce449e6a74d05122d6ef699fec7b775e342b8ca325b4c",
+    "sourceArchiveSha256": "a4d50f6954702a23721ab4d4ef3d12ee858f93be163f8f24455b579ae286d06c"
+  },
+  "provenanceSha256": "f4182aa87bb257be76581487d083f196e6f18c13d6ca565f19f51f8240da73da"
+}

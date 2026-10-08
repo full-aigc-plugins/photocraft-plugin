@@ -310,3 +310,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09检查点候选：插件自有reconcile现绑定失败暂存、文件摘要、运行时及最后请求，并在只读重开前后核对；错误回执撤销当前检查点接受状态，原执行结果不变。20项合同测试、真实保存后JPEG拒绝及部分检查点重开通过；最终70项TypeScript／48项Python／14项检查通过，234项源测试按相同指纹复用。源快照和公开dev.46不变，新候选尚未固定安装。原生逐命令、流式、源检查点内层语义及全入口矩阵未完，9.6仍开放，关闭0项。证据：`docs/evidence/optimization/checkpoint-contract-candidate.json`。
 
 2026-10-09只读回执固定发行：源dev.41／插件dev.47公开包提交及摘要已核验。240项本地源测试、70项插件TypeScript／48项Python通过；实际固定副本发现14项技能并通过70项Harness及14例真实只读故障、两条健康重开，安装树不变；发布提交与标签4项CI通过。命令索引只更新来源绑定，1510上下文仍NOT_RUN。9.6及总计28项门禁仍开放，关闭0项。证据：`docs/evidence/optimization/readonly-reply-publication.json`。
+
+2026-10-09 原生 run 监督候选：独立技能源维护补丁在原始 trusted-local 会话中增加逐条回复确认，严格匹配序号后才执行下一项。候选 craft.2 的58项Rust测试与10项监督定向测试通过；旧 craft.1 未确认仍执行／保存的红灯已重建。真实 PSD 保存后重复键／语义错误两例证明后续编辑及最终保存为零，源工程和已写文件保全。公开 cli.py 尚未切换，craft.1／源dev.41／插件dev.47的锁与受管理快照保持不变；持久恢复回执、batch／droplet、流式与固定副本仍开放，9.6不勾选，关闭0项。候选证据：`docs/evidence/optimization/supervised-run/candidate.json`。
