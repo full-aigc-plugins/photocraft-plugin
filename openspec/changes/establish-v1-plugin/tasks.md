@@ -66,7 +66,7 @@
 - [x] 4.12 [PC-DM-004] 完成“海报封面尺寸变体”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.11。产物：evidence/pc-dm-004/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 证据：`docs/evidence/photocraft-complete-variant-contract-20261008.json`；历史失败本轮重建，固定Photo38／源34尺寸技能原生三变体、重开、PSD图层、安全区／尺寸／覆盖拒绝与失败暂存保全通过，仅完整PC-DM-004。
 - [x] 4.13 [PC-DM-005] 编写能暴露“原生与 PSD 保真”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 4.14 [PC-DM-005] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“原生与 PSD 保真”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.13。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 4.15 [PC-DM-005] 完成“原生与 PSD 保真”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.14。产物：evidence/pc-dm-005/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 4.15 [PC-DM-005] 完成“原生与 PSD 保真”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.14。产物：evidence/pc-dm-005/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定 dev.40／技能源 dev.36 场景验收：`docs/evidence/optimization/psd-acceptance-audit.json`；未验证外部编辑器及完整保真保持未知。
 - [ ] 4.16 [PC-DM-006] 编写能暴露“平面导出与来源”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
 - [ ] 4.17 [PC-DM-006] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“平面导出与来源”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.16。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
 - [ ] 4.18 [PC-DM-006] 完成“平面导出与来源”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.17。产物：evidence/pc-dm-006/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
@@ -84,7 +84,7 @@
 - [ ] 5.3 [PC-AR-001] 完成“产物血缘与包完整性”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：5.2。产物：evidence/pc-ar-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
 - [x] 5.4 [PC-AR-002] 编写能暴露“原生工程与交换损失”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
 - [x] 5.5 [PC-AR-002] 在独立技能源 exchange_loss.py 与公开交付校验 实现“原生工程与交换损失”的最小行为，不扩大支持范围。责任：Harness owner；前置：5.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
-- [ ] 5.6 [PC-AR-002] 完成“原生工程与交换损失”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：5.5。产物：evidence/pc-ar-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 5.6 [PC-AR-002] 完成“原生工程与交换损失”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：5.5。产物：evidence/pc-ar-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定 dev.40／技能源 dev.36 场景验收：`docs/evidence/optimization/psd-acceptance-audit.json`；未验证外部编辑器及完整保真保持未知。
 
 ## 6. quality-review
 
@@ -274,7 +274,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 12.10 [PC-DM-005] 建立 PSD 重开但文字／蒙版／效果丢失、图层数相同但属性降级的负例和真实使用功能矩阵。责任：Domain owner；前置：12.2、11.8；关联原 4.13–4.15 与 5.6；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/psd-feature-fidelity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 12.11 [PC-DM-005] 按工程实际使用功能生成保留／降级／丢失／未知及绑定证据，兼容既有 exchange-loss 的 lost／observed／unknown，不把 observed 自动等同保真。责任：Domain owner；前置：12.10；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 12.12 [PC-DM-005] 验证原生与 PSD 功能矩阵及未接受有损替代拒绝；声明外部编辑器兼容时记录实际版本和独立复验，未运行项保持未知。责任：QA owner；前置：12.11 及对应固定来源可用；产物：docs/evidence/optimization/psd-feature-fidelity/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 12.12 [PC-DM-005] 验证原生与 PSD 功能矩阵及未接受有损替代拒绝；声明外部编辑器兼容时记录实际版本和独立复验，未运行项保持未知。责任：QA owner；前置：12.11 及对应固定来源可用；产物：docs/evidence/optimization/psd-feature-fidelity/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定 dev.40／技能源 dev.36 场景验收：`docs/evidence/optimization/psd-acceptance-audit.json`；未验证外部编辑器及完整保真保持未知。
 
 - [x] 12.13 [PC-DM-007] 建立嵌套角色变换／重复或歧义映射／安全区越界，以及背景滤镜侵入产品／烘焙伪称可编辑的失败用例。责任：Domain owner；前置：12.5、12.8；复用 PC-DM-004 原有合同；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/complex-layout-filters/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 12.14 [PC-DM-007] 实现递归布局角色变体与滤镜目标／选择／蒙版合同，明确可编辑和烘焙路径及支持能力，保持现有简单尺寸变体兼容。责任：Domain owner；前置：12.13；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。

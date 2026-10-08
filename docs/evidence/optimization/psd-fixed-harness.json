@@ -1,0 +1,19 @@
+{
+  "schema": "photocraft-fixed-psd-harness/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.40",
+  "tests": {
+    "tests": 28,
+    "pass": 28,
+    "fail": 0,
+    "skipped": 0
+  },
+  "installedFilesUnchanged": true,
+  "outputSha256": "0badf238034c3a32546dd8fddc6686fea34d4213221fcef2900a0cd3cb516bb9",
+  "summary": "✔ artifact mapping binds files and parent, survives relocation, rejects mixed preview (40.377792ms)\n✔ fixed public contract rejects unknown keys rather than adding competing schema (0.642083ms)\n✔ portable lineage binds task, input, capability and review without live ledger or old path (51.758ms)\n✔ public status is read-only and never initializes a missing ledger (91.907041ms)\n✔ public request rejects duplicate JSON keys before any ledger creation (75.119125ms)\n✔ task survives reopening and a key cannot be reused for a different plan (27.824583ms)\n✔ shared writable project has one owner and old epochs cannot commit (7.248291ms)\n✔ independent processes race for the same project and only one intent commits (94.980667ms)\n✔ stop and restart retain deadline and revision budget (6.809875ms)\n✔ expired tasks and output paths outside authorization fail before claiming (3.892167ms)\n✔ parent links cannot bypass revision scheduling or revive a cancelled lineage (6.626458ms)\n✔ judge receipts are candidate-bound, consumed once and cannot override technical failure (8.142834ms)\n✔ strict request JSON rejects duplicate keys and numeric overflow (0.923375ms)\n✔ creative receipts reject executor self-review and missing evaluator version (4.057917ms)\n✔ real native task, fresh readonly reopening, bounded title revision, source retention and restart reconcile (2116.953625ms)\n✔ real masked local adjustment revision preserves mask tiles and every protected pixel (1721.88775ms)\n✔ revision retains PSD requirements and scopes accepted losses to the exact base source (28.02875ms)\n✔ unknown native completion is reconciled by observation, never replayed (6.584875ms)\n✔ corrupt ledger is preserved, never silently recreated (1.255125ms)\n✔ reconcile records a verified retained checkpoint without replay or technical acceptance (7.08975ms)\n✔ revision proposal cannot edit unrelated layers or reset revision budget (6.451708ms)\n✔ unsupported ledger schema is refused without changing original bytes (4.877708ms)\n✔ active tasks retain aggregate disk and process reservations (4.057542ms)\n✔ descendant revisions spend the root budget once and parent stop waits for children (13.656166ms)\n✔ disk shortage refuses intent and mutable GUI writes refuse before execution (6.173834ms)\n✔ stop confirms only the owned worker and leaves unrelated process alive (252.163917ms)\n✔ local adjustment revision is bound to the editable enabled mask and exact changed properties (10.663ms)\n✔ JSON accepts only grammar whitespace and own prototype-named keys (0.722125ms)\nℹ tests 28\nℹ suites 0\nℹ pass 28\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 3972.399542\n\n",
+  "previousAttempt": {
+    "status": "FAIL",
+    "reason": "test runner used unrelated working directory; two CLI tests could not locate relative src/cli.ts; all 26 other tests passed"
+  },
+  "scope": "installed plugin tests with expected plugin cwd including native PSD inheritance/reopen and masked revision; synthetic review fixtures do not establish creative acceptance"
+}

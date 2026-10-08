@@ -1,10 +1,12 @@
 # PhotoCraft Agent Plugin
 
-PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；返工继承策略，接受记录绑定源版本。[门禁与验证](docs/PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。dev.40 固定安装证据待完成。
+已发布 [技能源 dev.36](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36) 与 [插件 dev.40](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40)：公开压缩包摘要与提交一致，main／标签两条 CI 均通过。固定 Codex 发现14个技能；独立单技能冷启动 PSD 验收及28项安装副本测试通过。任务4.15、5.6、12.12完成，未知保真边界保持明确。[发布证据](docs/evidence/optimization/psd-release-publication.json) · [场景审计](docs/evidence/optimization/psd-acceptance-audit.json)。
+
+PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；返工继承策略，接受记录绑定源版本。[门禁与验证](docs/PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。公开 dev.40 固定安装通过当前原生／PSD 交换的全部7个规范场景。
 
 开发版本 dev.40 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.36。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
-开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为120/157项完成，37项门禁开放。
+开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为123/157项完成，34项门禁开放。
 
 
 固定安装领域验收新增关闭7项任务：递归图层、蒙版保护、中文文字及复杂布局／滤镜的16个规范场景通过。不可获取的布局指标、可编辑智能滤镜和非 RGB8 保护明确拒绝；PSD 必要功能损失等门禁仍开放。见[验收与复验方式](docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。

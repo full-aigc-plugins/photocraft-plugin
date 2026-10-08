@@ -1,0 +1,139 @@
+{
+  "schema": "photocraft-psd-acceptance-audit/v1",
+  "status": "PASS_CURRENT_FIXED_RUNTIME_SCENARIOS",
+  "date": "2026-10-08",
+  "specAuthority": "openspec/changes/establish-v1-plugin/specs/",
+  "specFiles": {
+    "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md": "82929b0ece1f25c7fc44fd3c1de562db76b3ff64987f5724b11cfdc48c5d2896",
+    "openspec/changes/establish-v1-plugin/specs/artifact-delivery/spec.md": "0ddd4e36804e3ae56e71290cb31c5d1a7ad09d7a2d024ca7699c839f63673059"
+  },
+  "pluginVersion": "0.1.0-dev.40",
+  "pluginCommit": "8d685e8d11817ff56506c6eb691f7b9283236a75",
+  "skillsRef": "v0.1.0-dev.36",
+  "skillsCommit": "603ac545a5705d3c1f2b75f57788e3b55ac6fb06",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0-craft.1",
+  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "evidenceSha256": {
+    "psd-fixed-first-use.json": "08c0165afb556e2907e38853f9aca56303bcf49b64664a3e26cfe61cc85543cd",
+    "psd-fixed-host.json": "2be8189643932cd5fae13d5a291b4aa475a9407801f9e6fd857ae7b446493dca",
+    "psd-fixed-harness.json": "a64ef8390e553ca3fcb11e8d90e188437ae15393ede5e21b61de4bca9f29dfa2",
+    "psd-release-final.json": "7425df3ea298dda21201c7d79c3cef04caf0509e2c434d8a75d0e2a66afc3871",
+    "psd-source-validation.json": "06055a4fe0dd5e8427ecdf48180f93d8d8250f17d5ac273ceb44812d7aa0c1ac",
+    "psd-fixed-integrity.json": "374a7306478acb32f11a81c5eab499731aaa2ead9cca41438ce0e46d74e38509"
+  },
+  "driverSha256": "acb6e8edc5e33e6959eb6f52e3fe9dc2ec52c32ccf1513345de35b8dcf733c3f",
+  "scenarioInventoryMatched": true,
+  "scenarios": [
+    {
+      "requirement": "PC-DM-005",
+      "scenario": "PC-DM-005-P 正常交付",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "positiveFeatureMatrix",
+        "nativeAndPsdFreshReopen"
+      ]
+    },
+    {
+      "requirement": "PC-DM-005",
+      "scenario": "PC-DM-005-N 异常或不保真",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "actualLossMatrix",
+        "failedStageReopenedAndUnchanged"
+      ]
+    },
+    {
+      "requirement": "PC-DM-005",
+      "scenario": "PC-DM-005-FEATURE 所用交换功能逐项验收",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "positiveFeatureMatrix",
+        "actualLossMatrix",
+        "actualFilterEffectUnknownRefused",
+        "acceptedLossMatrix",
+        "staleAcceptanceRefused",
+        "wrongSourceRefusedBeforeExecution"
+      ]
+    },
+    {
+      "requirement": "PC-AR-002",
+      "scenario": "PC-AR-002-P 合同条件满足",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "positiveFeatureMatrix",
+        "nativeAndPsdFreshReopen",
+        "sourceUnchanged"
+      ]
+    },
+    {
+      "requirement": "PC-AR-002",
+      "scenario": "PC-AR-002-N 边界条件",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "actualFilterEffectUnknownRefused",
+        "actualLossMatrix",
+        "failedStageReopenedAndUnchanged"
+      ]
+    },
+    {
+      "requirement": "PC-AR-002",
+      "scenario": "绑定原生工程的交换损失报告",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "positiveFeatureMatrix",
+        "actualLossMatrix",
+        "acceptedLossMatrix"
+      ],
+      "additionalFixedEvidence": "psd-fixed-integrity.json",
+      "additionalChecks": [
+        "mixed-loss-identity",
+        "native-substitute"
+      ]
+    },
+    {
+      "requirement": "PC-AR-002",
+      "scenario": "PC-AR-001-INTEGRITY 只读交付完整性与源返工前置",
+      "status": "PASS",
+      "fixedEvidence": "psd-fixed-first-use.json",
+      "checks": [
+        "coherentHashTamperedPsdRefusedByNativeReopen",
+        "sourceUnchanged",
+        "staleAcceptanceRefused"
+      ],
+      "additionalFixedEvidence": "psd-fixed-integrity.json",
+      "additionalChecks": [
+        "moved-package-external-manifest",
+        "external-anchor",
+        "replaced-preview",
+        "missing-native",
+        "path-escape",
+        "symlink",
+        "duplicate-key",
+        "mixed-loss-identity"
+      ]
+    }
+  ],
+  "closedTasks": [
+    "4.15",
+    "5.6",
+    "12.12"
+  ],
+  "scope": "all seven current PC-DM-005 and PC-AR-002 scenarios on immutable fixed installation; native and PSD fresh reopen, exact source-bound loss acceptance, nine moved/integrity/refusal cases and 28 installed harness tests; full text style, mask pixel and external-editor PSD fidelity remain unknown",
+  "limits": {
+    "externalEditor": "NOT_RUN",
+    "completePsdFidelity": "NOT_CLAIMED",
+    "maskPixelFidelityInPsd": "UNKNOWN",
+    "textStyleAndFontEngineFidelity": "UNKNOWN",
+    "independentCreativeAcceptance": "NOT_RUN",
+    "genericHostModelRouting": "NOT_RUN",
+    "all755CommandContexts": "NOT_RUN",
+    "otherPlatforms": "NOT_RUN"
+  }
+}

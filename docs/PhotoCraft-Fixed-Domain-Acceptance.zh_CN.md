@@ -35,3 +35,5 @@ python3 -B scripts/verify_fixed_domain.py \
 验收包含明确的拒绝边界：无法取得的缺字／溢出指标、可编辑智能滤镜和非 RGB8 保护不宣称支持。PSD 检查覆盖本轮实际使用的特性，必要功能损失门禁和外部编辑器保真仍开放。模型路由、独立创作接受、逐命令执行及其他平台分别验收。OpenSpec 变更保持活跃，不执行同步／归档，不提升市场资格或通用宿主支持状态。
 
 证据：[首次运行](evidence/optimization/fixed-domain-first-run.json)、[最终原生用例](evidence/optimization/fixed-domain-acceptance.json)、[预检与依赖补充](evidence/optimization/fixed-domain-boundary-supplement.json)、[蒙版调整](evidence/optimization/fixed-mask-native.json)。
+
+后续 dev.40／技能源 dev.36 已补齐 PSD 必要特性门禁的固定安装验收，见[PSD 验收](PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。上文 dev.39 的120/157及37项开放属于该轮历史结果；当前计划为123/157、34项开放。

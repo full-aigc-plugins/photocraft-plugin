@@ -1,0 +1,863 @@
+{
+  "schema": "photocraft-psd-policy-first-use/v1",
+  "status": "PASS",
+  "singleSkillColdInstall": true,
+  "nativeAndPsdFreshReopen": true,
+  "positiveFeatureMatrix": {
+    "schema": "photocraft-psd-acceptance/v1",
+    "status": "PASS",
+    "native": {
+      "location": "project.pcraft",
+      "sha256": "1fe438f3afbbc931d43df095211d0f3cc6c39d3cf8a19d0c66eafd821d856a34"
+    },
+    "inspection": {
+      "location": "native.json",
+      "sha256": "e3d8ce52cf0a8b59b50ccc4d395c795b391eca16cb8c02be178ab683c8eca7da"
+    },
+    "psdInspection": {
+      "location": "psd-inspection.json",
+      "sha256": "754d0a0e50a285d2ac464f6f16293b2550152ee8130c11cad762260981a9843b"
+    },
+    "psd": {
+      "location": "design.psd",
+      "sha256": "24360713c5d14a20e247ee0a391d1992c2faee49f21aa4f1e1ed4a8df876a3ad"
+    },
+    "planSha256": "3e212584bdaf6e901dce3820cde77da995cffe86faadd4c99cd9bbd5f963f0de",
+    "sourceProjectSha256": null,
+    "policy": {
+      "requiredFeatures": [
+        "structure",
+        "text",
+        "mask",
+        "adjustment",
+        "blend",
+        "opacity"
+      ]
+    },
+    "features": {
+      "0:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Brightness/Contrast 1",
+          "kind": "Adjustment"
+        },
+        "psd": {
+          "name": "Brightness/Contrast 1",
+          "kind": "Adjustment"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "8cb52351d21dda2bc514e77341e9a36ce50ec432d9e2607179939b9419715bc2"
+      },
+      "0:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "f9416e6ab4d25dbdb0cfe50f43a0877230d0b0c18dce4d6aacae1e452435d023"
+      },
+      "0:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "a3edff9fe6400e97db7a94a349fc9468d3969f8057042dee74496742391d36b5"
+      },
+      "0:adjustment": {
+        "status": "retained",
+        "native": {
+          "BrightnessContrast": {
+            "brightness": 5.0,
+            "contrast": 0.0,
+            "legacy": false
+          }
+        },
+        "psd": {
+          "BrightnessContrast": {
+            "brightness": 5.0,
+            "contrast": 0.0,
+            "legacy": false
+          }
+        },
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "dee51394bf5d51a559c772cf55a26c4cd4ebb34b841a0c5af27d6474007f2e86"
+      },
+      "1:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Caption",
+          "kind": "Type"
+        },
+        "psd": {
+          "name": "Caption",
+          "kind": "Type"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "92d5091ae5c5015a33443176e25eeac5f70ac84ee53252699216e1ff425903f9"
+      },
+      "1:text": {
+        "status": "retained",
+        "native": {
+          "font": "Arial",
+          "sizePt": 15.0,
+          "text": "Everyday essentials"
+        },
+        "psd": {
+          "font": "Arial",
+          "sizePt": 15.0,
+          "text": "Everyday essentials"
+        },
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "c78de21c208c332a94cdedaa42acd61037ab72a7314f97db21f6cf68c3944154"
+      },
+      "1:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "69a149d41b35f3801753cd1d451245389d7fc49cea6c327233c8989b08fc46b6"
+      },
+      "1:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "0e4fbe4a5bc7cb137c2ea4935af63154801b3336dffda2d856d79a80fef31421"
+      },
+      "2:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Headline",
+          "kind": "Type"
+        },
+        "psd": {
+          "name": "Headline",
+          "kind": "Type"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "3c3b0103791dcbed49f672264968c70081b03718d50c84d591c211b65b06ab67"
+      },
+      "2:text": {
+        "status": "retained",
+        "native": {
+          "font": "Arial",
+          "sizePt": 32.0,
+          "text": "NOVA"
+        },
+        "psd": {
+          "font": "Arial",
+          "sizePt": 32.0,
+          "text": "NOVA"
+        },
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "4c3b3818ca728bdcf9e9babe30740a4525e09cd7c53ac8f5bfe1054b9f09861b"
+      },
+      "2:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "572f58befa695de75421f9453f380b6c58cd03df355c22eeec71e645c134bb52"
+      },
+      "2:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "93b341bd6ebc01d280595a4209e526ba8dd577dc63c8c49b7730c8241087e552"
+      },
+      "3:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Product",
+          "kind": "Pixel"
+        },
+        "psd": {
+          "name": "Product",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "7f9a8cb1e89b65724ee9ee65d49d7f03f297a3b5e67d055ee1796aa717397ee9"
+      },
+      "3:mask": {
+        "status": "retained",
+        "native": true,
+        "psd": true,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "91c7b6a3113d20451248a039c3431e6880fd18558137c723d02323c30fdaae2e"
+      },
+      "3:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "7283e6cb8f7da3e8c45e3252fe6a2822891899f59eaaf870dff153062dc1a592"
+      },
+      "3:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "87490e3a67b42e340479d54757d49f6a9708a70bc53f7bb67c64d3628156b2a0"
+      },
+      "4:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "psd": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "16cc074b121e7b77ef24d95479f03b9dbd640d4115af84ff08a14d408c1ce999"
+      },
+      "4:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "39a2aeba53f8213bf2c55bf271b850690dbbacac4d6a1aa1b3594b57f37190f9"
+      },
+      "4:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "8e8fce45c3312a5d8ad00f7b96381794de1f70ed18810ca801c2ce610d3c79a3"
+      }
+    },
+    "unaccepted": [],
+    "unobservedRequired": [],
+    "unusedAcceptances": [],
+    "acceptedLosses": {},
+    "completeFidelity": false,
+    "scope": "Required observed PSD properties and exact accepted losses only; independent visual/editor fidelity and creative acceptance NOT_RUN."
+  },
+  "actualLossMatrix": {
+    "schema": "photocraft-psd-acceptance/v1",
+    "status": "FAIL",
+    "native": {
+      "location": "project.pcraft",
+      "sha256": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884"
+    },
+    "inspection": {
+      "location": "native.json",
+      "sha256": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0"
+    },
+    "psdInspection": {
+      "location": "psd-inspection.json",
+      "sha256": "bde79fa4aa17906cac64bedc2503e0e2688ba3b4f4484aa889565861902d3c6f"
+    },
+    "psd": {
+      "location": "design.psd",
+      "sha256": "c4f02b66fadaf5fd944fff0a7e58c69d4e1c1edb60d354dd8634fd0699edc98c"
+    },
+    "planSha256": "0fb1b0dc630cb23653da2515b7d426c84956969669965cdfc1da7f42fd24cfb5",
+    "sourceProjectSha256": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    "policy": {
+      "requiredFeatures": [
+        "structure",
+        "smartSourceKind",
+        "smartTransform"
+      ]
+    },
+    "features": {
+      "0:structure": {
+        "status": "lost",
+        "native": {
+          "name": "asset-product",
+          "kind": "Smart Object"
+        },
+        "psd": {
+          "name": "asset-product",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "9ee219466048764d1521a6a51838242d59d01e678ce38671fb1dc2ca7b5a1d82"
+      },
+      "0:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "f9416e6ab4d25dbdb0cfe50f43a0877230d0b0c18dce4d6aacae1e452435d023"
+      },
+      "0:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "a3edff9fe6400e97db7a94a349fc9468d3969f8057042dee74496742391d36b5"
+      },
+      "0:smartSourceKind": {
+        "status": "unknown",
+        "native": "embedded",
+        "psd": null,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "d283d1092f16e80c544ffc51020a61aac737693e38cbfa7facb06aaeeaaee680"
+      },
+      "0:smartTransform": {
+        "status": "unknown",
+        "native": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          -28.0,
+          -48.0
+        ],
+        "psd": null,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "7ecaa9715ae466e18ed22efe1652654a1828406695dfc15c75beac5d8d409aa6"
+      },
+      "1:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "psd": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "e18fbc00af04276ec7cb13a67418256cce26204650c8b2745af7788491509392"
+      },
+      "1:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "69a149d41b35f3801753cd1d451245389d7fc49cea6c327233c8989b08fc46b6"
+      },
+      "1:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "0e4fbe4a5bc7cb137c2ea4935af63154801b3336dffda2d856d79a80fef31421"
+      }
+    },
+    "unaccepted": [
+      "0:smartSourceKind",
+      "0:smartTransform",
+      "0:structure"
+    ],
+    "unobservedRequired": [],
+    "unusedAcceptances": [],
+    "acceptedLosses": {},
+    "completeFidelity": false,
+    "scope": "Required observed PSD properties and exact accepted losses only; independent visual/editor fidelity and creative acceptance NOT_RUN."
+  },
+  "actualFilterEffectUnknownRefused": {
+    "schema": "photocraft-psd-acceptance/v1",
+    "status": "FAIL",
+    "native": {
+      "location": "project.pcraft",
+      "sha256": "4696e7593be46ff5183a770410485bc0a5c3baac9eca848945af2ecfb39406d9"
+    },
+    "inspection": {
+      "location": "native.json",
+      "sha256": "e3d8ce52cf0a8b59b50ccc4d395c795b391eca16cb8c02be178ab683c8eca7da"
+    },
+    "psdInspection": {
+      "location": "psd-inspection.json",
+      "sha256": "754d0a0e50a285d2ac464f6f16293b2550152ee8130c11cad762260981a9843b"
+    },
+    "psd": {
+      "location": "design.psd",
+      "sha256": "8f79bb2385fd92a71f51be34a9b441fc8c81932b0aaf3370988f957cb741fca8"
+    },
+    "planSha256": "71010b3cfeed7a27f3aa2d24497f64f8f42a207e09128974f66836dd15c60d36",
+    "sourceProjectSha256": "1fe438f3afbbc931d43df095211d0f3cc6c39d3cf8a19d0c66eafd821d856a34",
+    "policy": {
+      "requiredFeatures": [
+        "effects"
+      ]
+    },
+    "features": {
+      "0:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Brightness/Contrast 1",
+          "kind": "Adjustment"
+        },
+        "psd": {
+          "name": "Brightness/Contrast 1",
+          "kind": "Adjustment"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "8cb52351d21dda2bc514e77341e9a36ce50ec432d9e2607179939b9419715bc2"
+      },
+      "0:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "f9416e6ab4d25dbdb0cfe50f43a0877230d0b0c18dce4d6aacae1e452435d023"
+      },
+      "0:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "a3edff9fe6400e97db7a94a349fc9468d3969f8057042dee74496742391d36b5"
+      },
+      "0:adjustment": {
+        "status": "retained",
+        "native": {
+          "BrightnessContrast": {
+            "brightness": 5.0,
+            "contrast": 0.0,
+            "legacy": false
+          }
+        },
+        "psd": {
+          "BrightnessContrast": {
+            "brightness": 5.0,
+            "contrast": 0.0,
+            "legacy": false
+          }
+        },
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "dee51394bf5d51a559c772cf55a26c4cd4ebb34b841a0c5af27d6474007f2e86"
+      },
+      "1:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Caption",
+          "kind": "Type"
+        },
+        "psd": {
+          "name": "Caption",
+          "kind": "Type"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "92d5091ae5c5015a33443176e25eeac5f70ac84ee53252699216e1ff425903f9"
+      },
+      "1:text": {
+        "status": "retained",
+        "native": {
+          "font": "Arial",
+          "sizePt": 15.0,
+          "text": "Everyday essentials"
+        },
+        "psd": {
+          "font": "Arial",
+          "sizePt": 15.0,
+          "text": "Everyday essentials"
+        },
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "c78de21c208c332a94cdedaa42acd61037ab72a7314f97db21f6cf68c3944154"
+      },
+      "1:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "69a149d41b35f3801753cd1d451245389d7fc49cea6c327233c8989b08fc46b6"
+      },
+      "1:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "0e4fbe4a5bc7cb137c2ea4935af63154801b3336dffda2d856d79a80fef31421"
+      },
+      "2:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Headline",
+          "kind": "Type"
+        },
+        "psd": {
+          "name": "Headline",
+          "kind": "Type"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "3c3b0103791dcbed49f672264968c70081b03718d50c84d591c211b65b06ab67"
+      },
+      "2:text": {
+        "status": "retained",
+        "native": {
+          "font": "Arial",
+          "sizePt": 32.0,
+          "text": "NOVA"
+        },
+        "psd": {
+          "font": "Arial",
+          "sizePt": 32.0,
+          "text": "NOVA"
+        },
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "4c3b3818ca728bdcf9e9babe30740a4525e09cd7c53ac8f5bfe1054b9f09861b"
+      },
+      "2:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "572f58befa695de75421f9453f380b6c58cd03df355c22eeec71e645c134bb52"
+      },
+      "2:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "93b341bd6ebc01d280595a4209e526ba8dd577dc63c8c49b7730c8241087e552"
+      },
+      "3:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Product",
+          "kind": "Pixel"
+        },
+        "psd": {
+          "name": "Product",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "7f9a8cb1e89b65724ee9ee65d49d7f03f297a3b5e67d055ee1796aa717397ee9"
+      },
+      "3:mask": {
+        "status": "retained",
+        "native": true,
+        "psd": true,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "91c7b6a3113d20451248a039c3431e6880fd18558137c723d02323c30fdaae2e"
+      },
+      "3:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "7283e6cb8f7da3e8c45e3252fe6a2822891899f59eaaf870dff153062dc1a592"
+      },
+      "3:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "87490e3a67b42e340479d54757d49f6a9708a70bc53f7bb67c64d3628156b2a0"
+      },
+      "4:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "psd": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "16cc074b121e7b77ef24d95479f03b9dbd640d4115af84ff08a14d408c1ce999"
+      },
+      "4:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "39a2aeba53f8213bf2c55bf271b850690dbbacac4d6a1aa1b3594b57f37190f9"
+      },
+      "4:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "8e8fce45c3312a5d8ad00f7b96381794de1f70ed18810ca801c2ce610d3c79a3"
+      },
+      "effects": {
+        "status": "unknown",
+        "reason": "Inspection does not expose a complete editable filter/effect graph.",
+        "observationSha256": "8d7ad9cd3160e315f88f1e14993cf4171ffcbf3794e8b47f15ec11595f996d29"
+      }
+    },
+    "unaccepted": [
+      "effects"
+    ],
+    "unobservedRequired": [],
+    "unusedAcceptances": [],
+    "acceptedLosses": {},
+    "completeFidelity": false,
+    "scope": "Required observed PSD properties and exact accepted losses only; independent visual/editor fidelity and creative acceptance NOT_RUN."
+  },
+  "acceptedLossMatrix": {
+    "schema": "photocraft-psd-acceptance/v1",
+    "status": "ACCEPTED_LOSS",
+    "native": {
+      "location": "project.pcraft",
+      "sha256": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884"
+    },
+    "inspection": {
+      "location": "native.json",
+      "sha256": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0"
+    },
+    "psdInspection": {
+      "location": "psd-inspection.json",
+      "sha256": "bde79fa4aa17906cac64bedc2503e0e2688ba3b4f4484aa889565861902d3c6f"
+    },
+    "psd": {
+      "location": "design.psd",
+      "sha256": "c4f02b66fadaf5fd944fff0a7e58c69d4e1c1edb60d354dd8634fd0699edc98c"
+    },
+    "planSha256": "0e7b3c8235cbe917724fa9f4b14e3527782b5bf6c948e33429234cab4e9c3cd4",
+    "sourceProjectSha256": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    "policy": {
+      "requiredFeatures": [
+        "structure",
+        "smartSourceKind",
+        "smartTransform"
+      ],
+      "acceptedLosses": {
+        "0:smartSourceKind": {
+          "status": "unknown",
+          "observationSha256": "d283d1092f16e80c544ffc51020a61aac737693e38cbfa7facb06aaeeaaee680",
+          "reason": "Test fixture explicitly accepts the observed smart-to-PSD limitation"
+        },
+        "0:smartTransform": {
+          "status": "unknown",
+          "observationSha256": "7ecaa9715ae466e18ed22efe1652654a1828406695dfc15c75beac5d8d409aa6",
+          "reason": "Test fixture explicitly accepts the observed smart-to-PSD limitation"
+        },
+        "0:structure": {
+          "status": "lost",
+          "observationSha256": "9ee219466048764d1521a6a51838242d59d01e678ce38671fb1dc2ca7b5a1d82",
+          "reason": "Test fixture explicitly accepts the observed smart-to-PSD limitation"
+        }
+      },
+      "acceptedForSourceSha256": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884"
+    },
+    "features": {
+      "0:structure": {
+        "status": "lost",
+        "native": {
+          "name": "asset-product",
+          "kind": "Smart Object"
+        },
+        "psd": {
+          "name": "asset-product",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "9ee219466048764d1521a6a51838242d59d01e678ce38671fb1dc2ca7b5a1d82"
+      },
+      "0:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "f9416e6ab4d25dbdb0cfe50f43a0877230d0b0c18dce4d6aacae1e452435d023"
+      },
+      "0:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "a3edff9fe6400e97db7a94a349fc9468d3969f8057042dee74496742391d36b5"
+      },
+      "0:smartSourceKind": {
+        "status": "unknown",
+        "native": "embedded",
+        "psd": null,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "d283d1092f16e80c544ffc51020a61aac737693e38cbfa7facb06aaeeaaee680"
+      },
+      "0:smartTransform": {
+        "status": "unknown",
+        "native": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          -28.0,
+          -48.0
+        ],
+        "psd": null,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "7ecaa9715ae466e18ed22efe1652654a1828406695dfc15c75beac5d8d409aa6"
+      },
+      "1:structure": {
+        "status": "retained",
+        "native": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "psd": {
+          "name": "Background",
+          "kind": "Pixel"
+        },
+        "evidence": "native and PSD reopened trees at the same sibling position",
+        "observationSha256": "e18fbc00af04276ec7cb13a67418256cce26204650c8b2745af7788491509392"
+      },
+      "1:blend": {
+        "status": "retained",
+        "native": "Normal",
+        "psd": "Normal",
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "69a149d41b35f3801753cd1d451245389d7fc49cea6c327233c8989b08fc46b6"
+      },
+      "1:opacity": {
+        "status": "retained",
+        "native": 1.0,
+        "psd": 1.0,
+        "evidence": "reopened inspection properties; external editor NOT_RUN",
+        "observationSha256": "0e4fbe4a5bc7cb137c2ea4935af63154801b3336dffda2d856d79a80fef31421"
+      }
+    },
+    "unaccepted": [],
+    "unobservedRequired": [],
+    "unusedAcceptances": [],
+    "acceptedLosses": {
+      "0:smartSourceKind": {
+        "status": "unknown",
+        "observationSha256": "d283d1092f16e80c544ffc51020a61aac737693e38cbfa7facb06aaeeaaee680",
+        "reason": "Test fixture explicitly accepts the observed smart-to-PSD limitation"
+      },
+      "0:smartTransform": {
+        "status": "unknown",
+        "observationSha256": "7ecaa9715ae466e18ed22efe1652654a1828406695dfc15c75beac5d8d409aa6",
+        "reason": "Test fixture explicitly accepts the observed smart-to-PSD limitation"
+      },
+      "0:structure": {
+        "status": "lost",
+        "observationSha256": "9ee219466048764d1521a6a51838242d59d01e678ce38671fb1dc2ca7b5a1d82",
+        "reason": "Test fixture explicitly accepts the observed smart-to-PSD limitation"
+      }
+    },
+    "completeFidelity": false,
+    "scope": "Required observed PSD properties and exact accepted losses only; independent visual/editor fidelity and creative acceptance NOT_RUN."
+  },
+  "sourceUnchanged": true,
+  "failedStageReopenedAndUnchanged": true,
+  "staleAcceptanceRefused": true,
+  "wrongSourceRefusedBeforeExecution": true,
+  "coherentHashTamperedPsdRefusedByNativeReopen": true,
+  "installedAndCopiedSkillUnchanged": true,
+  "driverSha256": "acb6e8edc5e33e6959eb6f52e3fe9dc2ec52c32ccf1513345de35b8dcf733c3f",
+  "scope": "Pinned native and PSD property/pixel tests; no Photoshop/external editor, full glyph coverage, creative or full V1 acceptance.",
+  "fixedInstallation": "PASS",
+  "pluginVersion": "0.1.0-dev.40",
+  "sourceVersion": "0.1.0-dev.36",
+  "installedFilesUnchanged": true,
+  "installedFilesSha256": "9b302e281349c39d57c8f004941e06eb5ea78b667fda34e0f379383dd5f2252d",
+  "discoveredSkills": 14,
+  "sourceTestSha256": "acb6e8edc5e33e6959eb6f52e3fe9dc2ec52c32ccf1513345de35b8dcf733c3f",
+  "execution": {
+    "exitCode": 0,
+    "passed": 1,
+    "skipped": 0,
+    "outputSha256": "03ec3aa8e59832baf50462cec45902fd29fb1c90cdfaaaa0489ab2db1311cdaf"
+  },
+  "retainedFiles": {
+    ".photocraft-1duoeqyk/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    ".photocraft-1duoeqyk/capabilities.json": "edda7468549efac18d42ae7b2962687695476e2d8b2ac9bcc4bc1dc4a492a177",
+    ".photocraft-1duoeqyk/design.png": "eaebb57e36e4063413282b4ed5fa6b00691ae4a8b940cdab7e3d2c22f706ff27",
+    ".photocraft-1duoeqyk/design.psd": "c4f02b66fadaf5fd944fff0a7e58c69d4e1c1edb60d354dd8634fd0699edc98c",
+    ".photocraft-1duoeqyk/exchange-loss.json": "5016449930ab1717a296b228e6c3ebc8f16aadafedcfc5a76abfd0c5a69378e1",
+    ".photocraft-1duoeqyk/failure.json": "c9f713ac3ed2aba233d1f1cada6f51a9382acc749614d68a2224952009364c30",
+    ".photocraft-1duoeqyk/native.json": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0",
+    ".photocraft-1duoeqyk/operations.json": "852ec29de37d0972080d0da1d8ce943350296f5d2eaa8aae6460868c573335c5",
+    ".photocraft-1duoeqyk/plan.json": "b2bc8c2abc215e81e31d7eadfb03d0eca1d0983102ab7ed50404886c6438f513",
+    ".photocraft-1duoeqyk/project.pcraft": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    ".photocraft-1duoeqyk/psd-acceptance.json": "b70ba32d0770c8fde4e8ef7c8f7d72a6df749c68970a4429958b4d61cfdb6931",
+    ".photocraft-1duoeqyk/psd-inspection.json": "bde79fa4aa17906cac64bedc2503e0e2688ba3b4f4484aa889565861902d3c6f",
+    ".photocraft-1duoeqyk/recovery-operations.json": "852ec29de37d0972080d0da1d8ce943350296f5d2eaa8aae6460868c573335c5",
+    ".photocraft-execution-1830b4e8bdc7e9047a448a08ccbf6c7e09aa58884b49abb52bd4a70f72a7cead.json": "98b9d88b348fe3b9d134c65ce1cffb5e422ed6990b3de9c67e805bbc9fecadb2",
+    ".photocraft-execution-7e79db7e37a6ab77794404b7b96e2643fd99e55e53eaabbb9587a2655b7117de.json": "f66104c77aaaf912a62002de4f8d6ec6226e4497315db53b3afe7baf45f69109",
+    ".photocraft-execution-911e16fc13641281101abcd54468cbe29e5f5e93b18a86224e9f0a28c9577866.json": "eb4674e0608f578826949d881c570cefbbe456841bca05ace26563ee9ddb1e2e",
+    ".photocraft-execution-c510d5bdb520e8b74ff3578ac8aaf40b27f86be5cee2247ab6693e84abe6dbe1.json": "3ee7380507534177c42601b7ecbaf6108630b9ec042aa0f7b1705e0a8b244f41",
+    ".photocraft-execution-cabdfca4684d6c387ff079fcd35352c01651fed2bf689dbb541b480e4c196129.json": "f8bcd0fc8806f6de4e1f3b542ddb6e98039ea7c9ffb8c53390ee3827ffd1adaf",
+    ".photocraft-execution-f3c656ce5cb5e39110b472a72d2ae4b20b1564da3acf0ab5b415ec08e1a9a405.json": "b503c1b31dc1ff8ee11573f3463aa131076b4fe39202f8fbeec3ba3e67c201ae",
+    ".photocraft-execution-f826172ec4b3a0bb9c5aec6916ad748f0ebf49136e2954e1f9c5205c6f4f4274.json": "3544e48f74e3d75b3e2c95cc1d235b2bdd04a44562444666ddc2b1119016ca54",
+    ".photocraft-o2lehx0_/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    ".photocraft-o2lehx0_/capabilities.json": "5352972f539c655abc0bed47aba80e287d38295c2b6a3b68406c07af49f8e9d8",
+    ".photocraft-o2lehx0_/design.png": "eaebb57e36e4063413282b4ed5fa6b00691ae4a8b940cdab7e3d2c22f706ff27",
+    ".photocraft-o2lehx0_/design.psd": "c4f02b66fadaf5fd944fff0a7e58c69d4e1c1edb60d354dd8634fd0699edc98c",
+    ".photocraft-o2lehx0_/exchange-loss.json": "e2b6ff8e1c16614fc90b0465d1e6402359c36f654e3629db77c57cef5e6f3f45",
+    ".photocraft-o2lehx0_/failure.json": "14f6dafa9d662a77e451d854f2a55ace71704bd0f21968e0f2da20a496806d2e",
+    ".photocraft-o2lehx0_/native.json": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0",
+    ".photocraft-o2lehx0_/operations.json": "852ec29de37d0972080d0da1d8ce943350296f5d2eaa8aae6460868c573335c5",
+    ".photocraft-o2lehx0_/plan.json": "0fb1b0dc630cb23653da2515b7d426c84956969669965cdfc1da7f42fd24cfb5",
+    ".photocraft-o2lehx0_/project.pcraft": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    ".photocraft-o2lehx0_/psd-acceptance.json": "324fa8514ea070fb6813d5894d6d232051d85e9f349d3651cd40b9afee9ee174",
+    ".photocraft-o2lehx0_/psd-inspection.json": "bde79fa4aa17906cac64bedc2503e0e2688ba3b4f4484aa889565861902d3c6f",
+    ".photocraft-o2lehx0_/recovery-operations.json": "852ec29de37d0972080d0da1d8ce943350296f5d2eaa8aae6460868c573335c5",
+    ".photocraft-xbamea0y/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    ".photocraft-xbamea0y/capabilities.json": "7d20d89395c73e798473a91d8c052a054a87a3bb8f504c11d39f7407a1955e48",
+    ".photocraft-xbamea0y/design.png": "4ebaa5180afab72357ef942aa6f6bc64fde5614ff7214921629cb933dfa585b0",
+    ".photocraft-xbamea0y/design.psd": "8f79bb2385fd92a71f51be34a9b441fc8c81932b0aaf3370988f957cb741fca8",
+    ".photocraft-xbamea0y/exchange-loss.json": "156cffcb1f4a3541b613c77a7001e9355eb3c699082bda29661cc71e6791877c",
+    ".photocraft-xbamea0y/failure.json": "34d4390a8590b158a462c7b61263f9a64e86f09ce037b9434062011c4f49df7b",
+    ".photocraft-xbamea0y/native.json": "e3d8ce52cf0a8b59b50ccc4d395c795b391eca16cb8c02be178ab683c8eca7da",
+    ".photocraft-xbamea0y/operations.json": "0e6cffa2193314fcaa41f99e4f663c7eb60cf8719eaddda88dcf65afb9434380",
+    ".photocraft-xbamea0y/plan.json": "71010b3cfeed7a27f3aa2d24497f64f8f42a207e09128974f66836dd15c60d36",
+    ".photocraft-xbamea0y/project.pcraft": "4696e7593be46ff5183a770410485bc0a5c3baac9eca848945af2ecfb39406d9",
+    ".photocraft-xbamea0y/psd-acceptance.json": "545a3387d9c96b4843fab59dcb22ca507a278263135a732b44af02f57d72e3b7",
+    ".photocraft-xbamea0y/psd-inspection.json": "754d0a0e50a285d2ac464f6f16293b2550152ee8130c11cad762260981a9843b",
+    ".photocraft-xbamea0y/recovery-operations.json": "0e6cffa2193314fcaa41f99e4f663c7eb60cf8719eaddda88dcf65afb9434380",
+    "effect-required-unknown/failure.json": "34d4390a8590b158a462c7b61263f9a64e86f09ce037b9434062011c4f49df7b",
+    "poster/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "poster/capabilities.json": "faf7e017371ed7b5a652a0fd6fa5e7f1a3c2da78cc4925c5505b232199c5e675",
+    "poster/design.png": "2fdbfe840c14c37ebb75f03e18e12df46e60178eb31fd22256c9e9bfa611febb",
+    "poster/design.psd": "24360713c5d14a20e247ee0a391d1992c2faee49f21aa4f1e1ed4a8df876a3ad",
+    "poster/exchange-loss.json": "9c8c0f91914ecf91103e4eeb80a933765e9e479bf3de15ff00978a7f4d31d223",
+    "poster/manifest.json": "7108d65827ca19041124adc120e1a46040f4984ba0d462ee1d06d83641737718",
+    "poster/native.json": "e3d8ce52cf0a8b59b50ccc4d395c795b391eca16cb8c02be178ab683c8eca7da",
+    "poster/operations.json": "a73a4ab8deffc036d6234e2abc893908b327f0c039560b13999804ae8106982d",
+    "poster/plan.json": "3e212584bdaf6e901dce3820cde77da995cffe86faadd4c99cd9bbd5f963f0de",
+    "poster/project.pcraft": "1fe438f3afbbc931d43df095211d0f3cc6c39d3cf8a19d0c66eafd821d856a34",
+    "poster/psd-acceptance.json": "c94d90b87389d0b1209f20a4e7a18ddfaa2ccba5537cd1bc848f126cfcb9ea40",
+    "poster/psd-inspection.json": "754d0a0e50a285d2ac464f6f16293b2550152ee8130c11cad762260981a9843b",
+    "poster-revised/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "poster-revised/capabilities.json": "c837f9cdb6db68d945ecbf695a3128711025aac1fb11d9dd5be2cbb957eb6909",
+    "poster-revised/design.png": "793487cdac2ef55dde877ae8272e9354d7afc4598c1f863d4718a4de33532f92",
+    "poster-revised/design.psd": "0d83282b7525812d725d14ea4956bac42916f50b07e489cfbf49e8195458f9fd",
+    "poster-revised/exchange-loss.json": "5aace3c6603c05ce928d2f53c5afb73f620106fbb7498f27f7719dfa077aad4f",
+    "poster-revised/manifest.json": "dfc0ea42554e8ed9c2af20d2f670b393ec14a23b26953aa4da40aded7903b5e9",
+    "poster-revised/native.json": "3bd426f83166e7639addb6f3f80b2a314f028f2d9f44bd4d53257fb7829b1b34",
+    "poster-revised/object-preservation.json": "7676d1131d7788d39eb0fede007261df811bfbb7fc719528f40eec0f3f0e4c89",
+    "poster-revised/operations.json": "a1839cb84bbd3b3d0eb0dd58d84244238cd7849653abe5c40fb5f84c3dff0542",
+    "poster-revised/plan.json": "5bd00c407e9d17ed3054320aaeb0442aa0633bccd77b20052f5c5d3c19d86e46",
+    "poster-revised/project.pcraft": "9a7a469296c29e68b11ef45b98e553ce43aac7205492bfb32ec233b154ebe7af",
+    "poster-revised/psd-acceptance.json": "a1de9ba7458bbe5cdf02e8b9f23a541ca4d91b34f4868be32ebcc55290b548d6",
+    "poster-revised/psd-inspection.json": "0e47e0fe0d8941eb89ffb41ecc5c18a57eb251595c1a922d0be9beb508f2c8bc",
+    "product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "smart-accepted/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "smart-accepted/capabilities.json": "dce4494f05185bd8a9f2404a6becd4c371606b2eb10718e0c32f617c9a8b5d40",
+    "smart-accepted/design.png": "eaebb57e36e4063413282b4ed5fa6b00691ae4a8b940cdab7e3d2c22f706ff27",
+    "smart-accepted/design.psd": "c4f02b66fadaf5fd944fff0a7e58c69d4e1c1edb60d354dd8634fd0699edc98c",
+    "smart-accepted/exchange-loss.json": "ae9f8747ff766b2c4979a58a45cba2c7a401492658bf5a7eb235de7d424c2f4d",
+    "smart-accepted/manifest.json": "a94497a552ae3a0f64f3c1bd9a30067d2a578c66878042bc2bbcb5836fee78d1",
+    "smart-accepted/native.json": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0",
+    "smart-accepted/operations.json": "852ec29de37d0972080d0da1d8ce943350296f5d2eaa8aae6460868c573335c5",
+    "smart-accepted/plan.json": "0e7b3c8235cbe917724fa9f4b14e3527782b5bf6c948e33429234cab4e9c3cd4",
+    "smart-accepted/project.pcraft": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    "smart-accepted/psd-acceptance.json": "5b270fbb1797ff3119ddd2e662719d66f77c09f3e4610c2a2cdca71647ff6fd3",
+    "smart-accepted/psd-inspection.json": "bde79fa4aa17906cac64bedc2503e0e2688ba3b4f4484aa889565861902d3c6f",
+    "smart-rejected/failure.json": "14f6dafa9d662a77e451d854f2a55ace71704bd0f21968e0f2da20a496806d2e",
+    "smart-source/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "smart-source/capabilities.json": "01b0f3a25181e8ba86381bc8e0dc47ee1be8ae808bc2e729410dbd5d5f347b15",
+    "smart-source/design.png": "eaebb57e36e4063413282b4ed5fa6b00691ae4a8b940cdab7e3d2c22f706ff27",
+    "smart-source/exchange-loss.json": "aabbfe5e12c193249a190bacac15a481114e65aa714e641e3bdd89a37af175f1",
+    "smart-source/manifest.json": "65745e7c82a4d03ea58ab3d0ac5b7926fab341200341779442e8c7ed77ff3a4f",
+    "smart-source/native.json": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0",
+    "smart-source/operations.json": "e6a0d107377c2ee1b5e180790ba63f0b9950ef9a2bc78612687dfb55f7c84722",
+    "smart-source/plan.json": "f4494051522388b2d5d51eb51a37386bec18090b7a89fc1d09ecae60f796e08e",
+    "smart-source/project.pcraft": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    "stale-acceptance/failure.json": "c9f713ac3ed2aba233d1f1cada6f51a9382acc749614d68a2224952009364c30",
+    "tampered/asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+    "tampered/capabilities.json": "dce4494f05185bd8a9f2404a6becd4c371606b2eb10718e0c32f617c9a8b5d40",
+    "tampered/design.png": "eaebb57e36e4063413282b4ed5fa6b00691ae4a8b940cdab7e3d2c22f706ff27",
+    "tampered/design.psd": "24360713c5d14a20e247ee0a391d1992c2faee49f21aa4f1e1ed4a8df876a3ad",
+    "tampered/exchange-loss.json": "03918b0b41c481cfd18f77c2599d6ceba22dfe13249b674ab20da9a55e5fcb81",
+    "tampered/manifest.json": "120ca6627d9979ee862a7013b341bfdbb616cc15a3a17612846b30209b67b823",
+    "tampered/native.json": "d8a6ce73ba3cc5607ab66a1a1401a84f47954f4776ab7712c78f677de048a8f0",
+    "tampered/operations.json": "852ec29de37d0972080d0da1d8ce943350296f5d2eaa8aae6460868c573335c5",
+    "tampered/plan.json": "0e7b3c8235cbe917724fa9f4b14e3527782b5bf6c948e33429234cab4e9c3cd4",
+    "tampered/project.pcraft": "20cca06970c63d273b4858fa28bdfc781b2844d70463e503be02c7b54d55c884",
+    "tampered/psd-acceptance.json": "390ed8b233f837609b2917cca883248cbeaa97b889d192c820b2139cd751f00b",
+    "tampered/psd-inspection.json": "bde79fa4aa17906cac64bedc2503e0e2688ba3b4f4484aa889565861902d3c6f"
+  }
+}

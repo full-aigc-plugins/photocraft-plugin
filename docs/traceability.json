@@ -326,11 +326,11 @@
         "12.12"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "status": "verified",
+      "evidence": "docs/evidence/optimization/psd-acceptance-audit.json",
       "optimizationScope": {
         "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
+        "status": "verified-current-fixed-scenarios",
         "tasks": [
           "12.10",
           "12.11",
@@ -339,17 +339,17 @@
         "evidenceTarget": "docs/evidence/optimization/psd-feature-fidelity/",
         "completedTasks": [
           "12.10",
-          "12.11"
-        ],
-        "openTasks": [
+          "12.11",
           "12.12"
         ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "openTasks": [],
+        "evidence": "docs/evidence/optimization/psd-acceptance-audit.json"
       },
       "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
+        "status": "verified-current-fixed-scenarios",
+        "evidence": "docs/evidence/optimization/psd-acceptance-audit.json"
+      },
+      "scope": "all current scenarios at fixed dev.40 on macOS arm64; complete PSD fidelity and external editors unknown"
     },
     {
       "requirement": "PC-DM-006",
@@ -408,7 +408,9 @@
         "5.6"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "verified",
+      "evidence": "docs/evidence/optimization/psd-acceptance-audit.json",
+      "scope": "all current scenarios at fixed dev.40 on macOS arm64; complete PSD fidelity and external editors unknown"
     },
     {
       "requirement": "PC-QA-001",

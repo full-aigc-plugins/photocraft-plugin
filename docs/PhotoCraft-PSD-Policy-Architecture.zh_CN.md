@@ -22,3 +22,11 @@ flowchart TD
 单元测试覆盖丢失／未知拒绝、过期状态或观察、错误源、多余接受、缺失门禁和语义重开。原生测试将导出技能单独复制，从空运行时启动，核对文字／蒙版／调整／混合属性与 PSD 合成 RGB 像素、改字、真实智能对象结构损失及效果未知的拒绝，重开保留暂存，再验证明确接受的损失。即使包内摘要全部自洽，串入其他 PSD 也会在新原生会话中拒绝。PSD 可重分配 ID，核对递归位置、完整持久图层属性和画幅；原生工程身份仍严格保留。
 
 使用说明见独立技能自带的[交换政策](../skills/photocraft-use/references/exchange-loss.md)。源码测试设置 `CRAFT_PHOTO_PSD_FIRST_USE=1`；`CRAFT_INSTALLED_PHOTO_EXPORT_SKILL` 可指定实际安装技能，`CRAFT_PHOTO_PSD_POLICY_OUTPUT`／`CRAFT_PHOTO_PSD_POLICY_REPORT` 可保留新的自有测试目录和回执。用户媒体、下载运行时及原始测试工程不提交 Git。
+
+## 固定发行验收
+
+插件 dev.40／技能源 dev.36 的公开标签在隔离 Codex 0.147.0 中发现14个技能且摘要一致。独立导出技能空运行时执行全部 PSD 门禁场景；108份原生、导出、输入及回执摘要保留在证据中，安装与单技能副本不变。安装副本28项 TypeScript 测试（含原生标题策略继承及蒙版调整）通过；41项 Python 维护检查与210项当前技能源测试通过。对应任务4.15、5.6、12.12关闭，计划123/157完成、34开放。
+
+[逐场景证据](evidence/optimization/psd-acceptance-audit.json)与[公开发布核验](evidence/optimization/psd-release-publication.json)明确绑定版本、平台和摘要。真实 Smart Object 导出出现结构丢失，滤镜可编辑图未知，均按必要门禁拒绝；损失接受仅是测试夹具，不代表实际用户授权。外部编辑器、PSD 蒙版像素／完整文字样式、独立创作与完整 V1 保持未知或未验收。OpenSpec 保持实施中，不同步或归档，不加入正式市场。
+
+固定安装额外通过搬迁、外部清单锚点、替换预览、缺失原生、路径逃逸、符号链接、重复键、交换身份错配及原生替代的9项只读检查。[证据](evidence/optimization/psd-fixed-integrity.json)。

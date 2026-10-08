@@ -117,7 +117,10 @@
     "12.3": "docs/evidence/optimization/domain-acceptance-audit.json",
     "12.6": "docs/evidence/optimization/domain-acceptance-audit.json",
     "12.9": "docs/evidence/optimization/domain-acceptance-audit.json",
-    "12.15": "docs/evidence/optimization/domain-acceptance-audit.json"
+    "12.15": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "4.15": "docs/evidence/optimization/psd-acceptance-audit.json",
+    "5.6": "docs/evidence/optimization/psd-acceptance-audit.json",
+    "12.12": "docs/evidence/optimization/psd-acceptance-audit.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -162,17 +165,19 @@
     "pluginWorkingVersion": "0.1.0-dev.40",
     "fixedSkillSourceVersion": "0.1.0-dev.36",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "CANDIDATE_PENDING_FIXED_INSTALLATION",
+    "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 120,
-      "open": 37,
-      "newlyCompleted": 58
+      "completed": 123,
+      "open": 34,
+      "newlyCompleted": 61
     },
-    "publicationEvidence": "docs/evidence/optimization/release-publication.json",
-    "currentRegressionEvidence": "docs/evidence/optimization/psd-candidate-final.json"
+    "publicationEvidence": "docs/evidence/optimization/psd-release-publication.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/psd-post-release-validation.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
-  "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open"
+  "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
+  "fixedPsdAcceptanceEvidence": "docs/evidence/optimization/psd-acceptance-audit.json",
+  "fixedPsdAcceptanceStatus": "current fixed macOS arm64 required-feature refusal and source-bound loss acceptance passed; external editor and complete fidelity unknown"
 }

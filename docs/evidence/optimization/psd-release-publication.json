@@ -1,0 +1,80 @@
+{
+  "schema": "photocraft-psd-publication/v1",
+  "status": "PASS",
+  "recordedAt": "2026-10-08T12:52:18.204889+00:00",
+  "releases": [
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "ref": "v0.1.0-dev.36",
+      "commit": "603ac545a5705d3c1f2b75f57788e3b55ac6fb06",
+      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36",
+      "prerelease": true,
+      "publishedAt": "2026-10-08T12:47:05Z",
+      "asset": "photocraft-skills-0.1.0-dev.36.zip",
+      "assetSha256": "25278e58817e081af8f1c8c4c7023fc032b2a9ea6945780dd37f373dafea7974",
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true
+    },
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "ref": "v0.1.0-dev.40",
+      "commit": "8d685e8d11817ff56506c6eb691f7b9283236a75",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40",
+      "prerelease": true,
+      "publishedAt": "2026-10-08T12:48:52Z",
+      "asset": "photocraft-plugin-0.1.0-dev.40.zip",
+      "assetSha256": "ad8804e304018462a28b69dfe3f68fd8d992806754467b45d2388098b16dce98",
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true
+    }
+  ],
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37779538603,
+      "headSha": "8d685e8d11817ff56506c6eb691f7b9283236a75",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37779538603",
+      "workflowName": "Skill snapshots and implementation units"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37779538591,
+      "headSha": "8d685e8d11817ff56506c6eb691f7b9283236a75",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37779538591",
+      "workflowName": "Documentation and specification integrity"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37779537968,
+      "headSha": "8d685e8d11817ff56506c6eb691f7b9283236a75",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37779537968",
+      "workflowName": "Skill snapshots and implementation units"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37779537851,
+      "headSha": "8d685e8d11817ff56506c6eb691f7b9283236a75",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37779537851",
+      "workflowName": "Documentation and specification integrity"
+    }
+  ],
+  "fixedHost": "docs/evidence/optimization/psd-fixed-host.json",
+  "fixedFirstUse": "docs/evidence/optimization/psd-fixed-first-use.json",
+  "fixedHarness": "docs/evidence/optimization/psd-fixed-harness.json",
+  "scenarioAudit": "docs/evidence/optimization/psd-acceptance-audit.json",
+  "taskCounts": {
+    "total": 157,
+    "completed": 123,
+    "open": 34
+  },
+  "marketplaceEligible": false,
+  "fullV1": "INCOMPLETE",
+  "externalEditor": "NOT_RUN",
+  "fixedIntegrity": "docs/evidence/optimization/psd-fixed-integrity.json",
+  "postReleaseRegression": "docs/evidence/optimization/psd-post-release-validation.json",
+  "postReleaseRegressionSha256": "5ece6f4de29e017a936deade56022e8722aebbb6aa28729eaccea207cb66fcaa"
+}

@@ -60,13 +60,16 @@
     "12.3",
     "12.6",
     "12.9",
-    "12.15"
+    "12.15",
+    "4.15",
+    "5.6",
+    "12.12"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 120,
-    "open": 37,
-    "newlyCompleted": 58
+    "completed": 123,
+    "open": 34,
+    "newlyCompleted": 61
   },
   "openTaskIds": [
     "2.4",
@@ -75,12 +78,10 @@
     "3.3",
     "3.6",
     "3.9",
-    "4.15",
     "4.16",
     "4.17",
     "4.18",
     "5.3",
-    "5.6",
     "6.3",
     "6.6",
     "7.1",
@@ -100,7 +101,6 @@
     "11.3",
     "11.6",
     "11.9",
-    "12.12",
     "13.2",
     "13.3",
     "13.4",
@@ -201,21 +201,17 @@
     "PC-CM-001-SAVED-SELECTION"
   ],
   "latestCompletedTaskIds": [
-    "4.3",
-    "4.6",
-    "4.9",
-    "12.3",
-    "12.6",
-    "12.9",
-    "12.15"
+    "4.15",
+    "5.6",
+    "12.12"
   ],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 201,
-    "skillsReusedFrom": "release-source-validation.json",
+    "skills": 210,
+    "skillsReusedFrom": "psd-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
-    "pluginTypeScript": 27,
-    "pluginPython": 40,
+    "pluginTypeScript": 28,
+    "pluginPython": 41,
     "skipped": 0,
     "checks": 13,
     "sourceUnchanged": true
@@ -232,9 +228,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "release-candidate-validation.json",
+  "releaseCandidateEvidence": "psd-post-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "release-publication.json",
+  "publicationEvidence": "psd-release-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -254,5 +250,6 @@
     "skipped": 0,
     "checks": 13,
     "sourceUnchanged": true
-  }
+  },
+  "fixedPsdAcceptanceEvidence": "psd-acceptance-audit.json"
 }

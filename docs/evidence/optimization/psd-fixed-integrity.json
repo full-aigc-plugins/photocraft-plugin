@@ -1,0 +1,57 @@
+{
+  "schema": "photocraft-fixed-psd-integrity/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.40",
+  "sourceVersion": "0.1.0-dev.36",
+  "cases": [
+    {
+      "id": "moved-package-external-manifest",
+      "status": "PASS"
+    },
+    {
+      "id": "external-anchor",
+      "status": "PASS",
+      "observedError": "delivery_manifest_checksum_mismatch"
+    },
+    {
+      "id": "replaced-preview",
+      "status": "PASS",
+      "observedError": "delivery_file_checksum_mismatch: design.png"
+    },
+    {
+      "id": "missing-native",
+      "status": "PASS",
+      "observedError": "delivery_file_missing_or_escaping: project.pcraft"
+    },
+    {
+      "id": "path-escape",
+      "status": "PASS",
+      "observedError": "delivery_path_invalid"
+    },
+    {
+      "id": "symlink",
+      "status": "PASS",
+      "observedError": "delivery_file_missing_or_escaping: design.png"
+    },
+    {
+      "id": "duplicate-key",
+      "status": "PASS",
+      "observedError": "duplicate_json_key: $.schema"
+    },
+    {
+      "id": "mixed-loss-identity",
+      "status": "PASS",
+      "observedError": "delivery_loss_identity_mismatch"
+    },
+    {
+      "id": "native-substitute",
+      "status": "PASS",
+      "observedError": "delivery_loss_identity_mismatch"
+    }
+  ],
+  "installedFilesUnchanged": true,
+  "sourceUnchanged": true,
+  "sourceManifestSha256": "7108d65827ca19041124adc120e1a46040f4984ba0d462ee1d06d83641737718",
+  "driverSha256": "c837d43aa82d527a2db110a3b5d719574b3ba3e91adf454757578adab2388496",
+  "scope": "fixed installed readonly validator on actual native/PSD delivery and new owned negative copies; no runtime install or editing; native and PSD reopen separately proven"
+}
