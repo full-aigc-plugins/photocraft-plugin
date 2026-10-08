@@ -70,5 +70,15 @@
     "total": 157,
     "open": 28,
     "task9_6": "OPEN"
+  },
+  "logs": {
+    "red": {
+      "path": "red.txt",
+      "sha256": "c6907a3a77cc29135f270ddc816d38928e86bc6a866520cdc93628e79efcc8a2"
+    },
+    "green": {
+      "path": "green.txt",
+      "sha256": "5c6060e99d711d6646a35ca5f987dc84e5ec9c8980675e72eb6afe54f4b118ce"
+    }
   }
 }
