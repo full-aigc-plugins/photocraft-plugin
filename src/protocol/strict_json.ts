@@ -27,7 +27,7 @@ export function strictJson(text: string): any {
         const key = string(path);const child=/^[A-Za-z_][A-Za-z0-9_]*$/.test(key)?path+'.'+key:path+'['+JSON.stringify(key)+']';
         if (seen.has(key)) throw validationError('duplicate_json_key',child,'duplicate_json_key: '+key);
         seen.add(key); space(); if (text[offset++] !== ':') throw validationError('invalid_json_object',child);
-        Object.defineProperty(result, key, { value: value(depth + 1,child), enumerable: true, writable: true });
+        Object.defineProperty(result, key, { value: value(depth + 1,child), enumerable: true, writable: true, configurable: true });
         space(); const delimiter = text[offset++];
         if (delimiter === '}') return result;
         if (delimiter !== ',') throw validationError('invalid_json_object',path);

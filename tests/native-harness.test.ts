@@ -7,6 +7,7 @@ import { Ledger } from '../src/harness/ledger.ts';
 import { Runner } from '../src/harness/runner.ts';
 import { Review } from '../src/evaluation/review.ts';
 import { exportBundle,verifyBundle } from '../src/protocol/bundle.ts';
+import { fileDigest } from '../src/protocol/files.ts';
 
 test('real native task, fresh readonly reopening, bounded title revision, source retention and restart reconcile', {skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},async()=>{
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-native-harness-')));
@@ -41,6 +42,24 @@ test('real native task, fresh readonly reopening, bounded title revision, source
   const sourceDigest=readFileSync(join(revised.request.output,'project.pcraft'));const parallel=await Promise.all(copies.map(copy=>runner.run(copy.id)));assert.ok(parallel.every(copy=>copy.technical.status==='PASS'));assert.deepEqual(readFileSync(join(revised.request.output,'project.pcraft')),sourceDigest);
   ledger.transition(child.id,revised.epoch,'reconciling');ledger.close();ledger=new Ledger(join(root,'state'));runner=new Runner(ledger,options);
   const recovered=await runner.reconcile(child.id);assert.equal(recovered.state,'verifying');assert.equal(recovered.attempted,true);assert.equal(recovered.epoch,revised.epoch);assert.equal(recovered.creative.status,'NOT_RUN');ledger.close();
+ }finally{rmSync(root,{recursive:true,force:true});}
+});
+
+test('actual failed JPEG export retains a bound partial native checkpoint and refuses a mismatched reopen receipt', {skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},async()=>{
+ const {existsSync,readdirSync}=await import('node:fs');const {resolve}=await import('node:path');
+ const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-checkpoint-native-')));
+ try {
+  const ledger=new Ledger(join(root,'state'));const runner=new Runner(ledger,{skillRoot:process.env.PHOTOCRAFT_SKILL_ROOT!,python:process.env.PHOTOCRAFT_PYTHON??'python3'});
+  const task=ledger.create({idempotencyKey:'failed-jpeg',brief:'Retain transparency and inspect failed JPEG delivery',plan:{document:{width:64,height:64,background:'transparent'},operations:[{command:'type.create',params:{text:'R',font:'Arial',size:12,x:8,y:20}}],exports:[{format:'jpg'}],flatExport:{colorSpace:'Rgb',transparency:'preserve'}},output:join(root,'delivery'),authorization:{ref:'fixture',writeRoot:root},budget:{deadline:Date.now()+120000,maxRevisions:1,reserveBytes:1024}});
+  const failed=await runner.run(task.id);assert.equal(failed.state,'reconciling');assert.equal(existsSync(join(task.request.output,'failure.json')),true);assert.equal(existsSync(join(task.request.output,'manifest.json')),false);
+  const record=JSON.parse(readFileSync(join(task.request.output,'failure.json'),'utf8'));const stage=resolve(task.request.output,record.stage);assert.match(record.error,/flat_transparency_changed/);
+  function files(){return Object.fromEntries(readdirSync(stage,{recursive:true}).map(n=>String(n)).filter(n=>{try{return readFileSync(join(stage,n)).length>=0;}catch{return false;}}).map(n=>[n,fileDigest(join(stage,n))]));}
+  const before=files();const python=runner.python.bind(runner);let checkpointCalls=0;
+  runner.python=(script,args)=>{const reply=python(script,args);if(script==='checkpoint_verify.py'){checkpointCalls++;return {...reply,runtimeSha256:'0'.repeat(64)};}return reply;};
+  const refused=await runner.reconcile(task.id);assert.equal(refused.checkpoint,undefined);assert.equal(refused.verificationError.outcome,'unknown');assert.equal(refused.technical.status,'NOT_RUN');assert.deepEqual(files(),before);
+  runner.python=(script,args)=>{if(script==='checkpoint_verify.py')checkpointCalls++;return python(script,args);};
+  const checked=await runner.reconcile(task.id);assert.equal(checked.state,'reconciling');assert.equal(checked.checkpoint.nativeReopened,true);assert.equal(checked.checkpoint.recordSha256,fileDigest(join(task.request.output,'failure.json')));assert.equal(checked.checkpoint.projectSha256,fileDigest(join(stage,'project.pcraft')));assert.equal(checked.technical.status,'NOT_RUN');assert.equal(checked.replayAllowed,false);assert.equal(checked.verificationError,undefined);assert.deepEqual(checked.executionResult,failed.executionResult);assert.deepEqual(files(),before);assert.equal(checkpointCalls,2);
+  await assert.rejects(()=>runner.run(task.id),/reconcile_required/);assert.deepEqual(files(),before);ledger.close();
  }finally{rmSync(root,{recursive:true,force:true});}
 });
 

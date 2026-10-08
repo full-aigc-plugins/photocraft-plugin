@@ -9,6 +9,7 @@ import { Review } from '../evaluation/review.ts';
 import { preflightRequest, pythonReply, reportedError, skillIdentity, runtimePlatformKey } from './preflight.ts';
 import { strictJson } from '../protocol/strict_json.ts';
 import { OperationError } from '../protocol/operation_error.ts';
+import { checkpointSnapshot, validateCheckpointReply } from './checkpoint.ts';
 
 const object=(value:any)=>value!==null && typeof value==='object' && !Array.isArray(value);
 const hex=(value:any)=>typeof value==='string' && /^[a-f0-9]{64}$/.test(value);
@@ -131,11 +132,15 @@ export class Runner {
   }
   if(existsSync(join(task.request.output,'failure.json')) && task.executionIdentity) {
    try {
+    if(this.identity().sha256!==task.executionIdentity.sha256)throw new OperationError('skill_source_changed',{code:'skill_source_changed',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
+    const before=checkpointSnapshot(task.request.output,task.request.authorization.writeRoot);
+    const runtime=readJson(join(this.options.skillRoot,'scripts/runtime.lock.json'));
     const args=[task.request.output,'--write-root',task.request.authorization.writeRoot];if(this.options.runtimeHome)args.push('--runtime-home',safePath(this.options.runtimeHome));
     const checkpoint=this.python('checkpoint_verify.py',args);
-    if(checkpoint.result!=='PASS' || checkpoint.replayAllowed!==false)throw new Error('checkpoint_verification_failed');
-    return this.ledger.update(id,task.epoch,current=>{current.checkpoint=checkpoint;current.replayAllowed=false;current.recoveryAction='inspect_checkpoint_before_explicit_revision';current.technical={status:'NOT_RUN'};});
-   }catch(error){return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.reconcileError=String(error);current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});}
+    validateCheckpointReply(checkpoint,before,checkpointSnapshot(task.request.output,task.request.authorization.writeRoot),runtime.artifacts?.[runtimePlatformKey()]?.binarySha256);
+    if(this.identity().sha256!==task.executionIdentity.sha256)throw new OperationError('skill_source_changed',{code:'skill_source_changed',phase:'verification',outcome:'unknown',recoveryAction:'inspect'});
+    return this.ledger.update(id,task.epoch,current=>{current.checkpoint=checkpoint;delete current.verificationError;delete current.reconcileError;current.replayAllowed=false;current.recoveryAction='inspect_checkpoint_before_explicit_revision';current.technical={status:'NOT_RUN'};});
+   }catch(error){return this.ledger.update(id,task.epoch,current=>{delete current.checkpoint;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'checkpoint_verification_failed',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});}
   }
   return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});
  }

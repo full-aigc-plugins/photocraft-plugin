@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "PUBLISHED_HARNESS_ENTRY_FULL_PLAN_INCOMPLETE",
+  "status": "UNPUBLISHED_CHECKPOINT_CANDIDATE_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -213,7 +213,7 @@
     "skills": 234,
     "skillsReusedFrom": "native-argv-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
-    "pluginTypeScript": 49,
+    "pluginTypeScript": 70,
     "pluginPython": 48,
     "skipped": 0,
     "checks": 14,
@@ -231,7 +231,7 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "harness-entry-release-validation.json",
+  "releaseCandidateEvidence": "checkpoint-contract-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
   "publicationEvidence": "harness-entry-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
@@ -259,16 +259,14 @@
   "fixedCapabilityAcceptanceEvidence": "capability-acceptance-audit.json",
   "entryContractEvidence": "harness-entry/candidate.json",
   "previousPublishedVerification": {
-    "skills": 234,
-    "pluginTypeScript": 29,
-    "pluginPython": 48,
-    "checks": 14,
-    "skipped": 0,
-    "sourceUnchanged": true,
-    "pluginRef": "v0.1.0-dev.45",
+    "pluginRef": "v0.1.0-dev.46",
     "skillsRef": "v0.1.0-dev.40",
-    "evidence": "native-argv-release-validation.json"
+    "pluginTypeScript": 49,
+    "pluginPython": 48,
+    "skillsReused": 234,
+    "evidence": "harness-entry-publication.json"
   },
   "closedThisRun": [],
-  "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json"
+  "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json",
+  "checkpointCandidateEvidence": "checkpoint-contract-candidate.json"
 }

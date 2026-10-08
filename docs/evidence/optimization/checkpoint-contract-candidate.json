@@ -1,0 +1,78 @@
+{
+  "schema": "photocraft-checkpoint-contract-candidate/v1",
+  "recordedAt": "2026-10-08T16:35:27.394804+00:00",
+  "status": "PARTIAL_UNPUBLISHED_CANDIDATE",
+  "published": false,
+  "baseCommit": "f3724e987e3afa057421d52eb0e270a197008563",
+  "publicPluginRef": "v0.1.0-dev.46",
+  "fixedSkillSourceRef": "v0.1.0-dev.40",
+  "managedSnapshotChanged": false,
+  "codeSha256": {
+    "src/harness/checkpoint.ts": "992f5a653907151f8876459a253dd72a1a7f88abfd67a06539791f58bbe75943",
+    "src/harness/runner.ts": "b82dd2198c7f14092755681b127d54e1928432fb5143df3e6a40f2201ced80c1",
+    "src/protocol/strict_json.ts": "4e77f4a88242bb63b7a10485f142042b8bb1288e7b97419b374599e4fee85775",
+    "tests/checkpoint-contract.test.ts": "36e82d65813d4757510869d5e7a7e1aee273e766b4dc1e81dc9d05b1111d80ef",
+    "tests/native-harness.test.ts": "ca1a677816c2765f7208195408fde73a5567decdfbf94e9ec9449d8dd6029f0a",
+    "tests/runner.test.ts": "ea39b09234be6e5b0a727effbce0655ba9d34c7348528234580511868afab84e"
+  },
+  "sourceFingerprint": "9b2209cc9df7c92c08e38ba8ab94f2f6afef63739cb1f8bbb662d6dd1fdcf633",
+  "validation": "checkpoint-contract-validation.json",
+  "validationSha256": "7b140ebda89da401695ae38a1c4a6dc4fab30d8653cc4d7c76cc24c8a93d54a1",
+  "validationCounts": {
+    "checks": 14,
+    "pluginTypeScript": 70,
+    "pluginPython": 48,
+    "nativeTypeScript": 4,
+    "skillsTestsReused": 234,
+    "skillsReuse": "Exact fingerprint and equal native/desktop layers",
+    "skipped": 0
+  },
+  "redEvidence": {
+    "red.log": "2b5e0b283082ab26ac49e6d22f2c8d106f3f19adfdb31f8f53612e00890b674a",
+    "record-red.log": "b7963e6003cae553511ceeecee1c9cc7b6b8a81e73d9362d8fed9ae347f15f24",
+    "extra-reply-red.log": "f7883a8ca0986780980180519c1dc4f66704940d341f08cd69be67e71681fec7"
+  },
+  "intermediateFailures": [
+    {
+      "logSha256": "79f02297b653bae8b5e3f7bc331aa0d8592a2db689298c1a39179ec66272a580",
+      "reason": "Empty native layer hit editable_layer_gate_failed before the intended export gate; replaced fixture with actual visible text, unchanged acceptance"
+    },
+    {
+      "logSha256": "2b9353aef97e48d4e0fe54f425b06869ab62710f95b6d0f2adde816cf9ed6a29",
+      "reason": "Record-conflict test rewrote identical records; corrected fixture to create an actual conflict"
+    }
+  ],
+  "nativeCheckpoint": {
+    "platform": "darwin-arm64",
+    "realTransparentJpegFailure": true,
+    "savedNativeProjectRetained": true,
+    "mismatchedRuntimeReplyRefused": true,
+    "freshReadOnlyReopenAcceptedAsPartialCheckpoint": true,
+    "fileBytesUnchanged": true,
+    "originalExecutionResultPreserved": true,
+    "repeatRunRefused": true,
+    "nativeCheckerCalls": 2,
+    "technical": "NOT_RUN",
+    "creative": "NOT_RUN"
+  },
+  "fixedCandidateInstallation": "NOT_RUN",
+  "scope": "Plugin-owned checkpoint wrapper bindings and original-file integrity; does not prove every native MCP inner reply semantic",
+  "remaining": [
+    "Raw native run/batch/droplet per-command semantic stopping",
+    "MCP/serve streaming editing requests and outgoing replies",
+    "Pinned source checkpoint doc_open/doc_inspect inner semantic strengthening",
+    "All-entry fixed candidate installation matrix and installer/session counters",
+    "Other OpenSpec command, host-model and creative gates"
+  ],
+  "openTasks": [
+    "9.6"
+  ],
+  "closedTasks": [],
+  "taskCounts": {
+    "total": 157,
+    "completed": 129,
+    "open": 28
+  },
+  "marketplaceEligible": false,
+  "supportedPluginHosts": []
+}

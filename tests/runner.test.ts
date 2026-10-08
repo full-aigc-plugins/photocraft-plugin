@@ -47,7 +47,7 @@ test('unknown native completion is reconciled by observation, never replayed',as
 test('corrupt ledger is preserved, never silently recreated',()=>{
  const f=fixture();try{const dir=join(f.root,'state');mkdirSync(dir);const file=join(dir,'tasks.sqlite');writeFileSync(file,'not sqlite');assert.throws(()=>new Ledger(dir),/ledger_invalid/);}finally{f.close();}
 });
-test('reconcile records a verified retained checkpoint without replay or technical acceptance',async()=>{
+test('reconcile refuses an unbound checkpoint without replay or technical acceptance',async()=>{
  const { Runner }=await import('../src/harness/runner.ts');const f=fixture();
  try {
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);const epoch=ledger.claim(task.id);
@@ -55,7 +55,7 @@ test('reconcile records a verified retained checkpoint without replay or technic
   const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});
   runner.python=(script,args)=>{assert.equal(script,'checkpoint_verify.py');return {result:'PASS',nativeReopened:true,projectSha256:'a'.repeat(64),replayAllowed:false};};
   ledger.update(task.id,epoch,current=>{current.executionIdentity={sha256:'original'};});
-  const state=await runner.reconcile(task.id);assert.equal(state.state,'reconciling');assert.equal(state.checkpoint.nativeReopened,true);assert.equal(state.technical.status,'NOT_RUN');assert.equal(state.replayAllowed,false);ledger.close();
+  const state=await runner.reconcile(task.id);assert.equal(state.state,'reconciling');assert.equal(state.checkpoint,undefined);assert.equal(state.technical.status,'NOT_RUN');assert.equal(state.replayAllowed,false);ledger.close();
  }finally{f.close();}
 });
 test('revision proposal cannot edit unrelated layers or reset revision budget',async()=>{
