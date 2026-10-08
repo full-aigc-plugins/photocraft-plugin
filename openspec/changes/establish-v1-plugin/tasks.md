@@ -220,7 +220,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.4 [PC-TX-005] 覆盖所有公开入口的重复键、NaN／Infinity／溢出、错误容器／未知字段、素材与引用依赖；用安装／会话调用计数确认提前拒绝，并复现普通工作流回复与网关语义差异。责任：Skills owner；前置：读取全入口合同与现有 JSON／MCP 故障回归；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/entry-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.5 [PC-TX-005] 在独立技能源统一严格计划解析、静态预检、动态引用检查、工具回复与结构化错误；验证通过才写成功回执，保持文字／图片合法回复及失败保全兼容。责任：Skills owner；前置：9.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前三类计划入口局部验收见 `docs/evidence/optimization/entry-contract/`；原生argv透传预检缺口及Harness入口审计仍未完成，不以局部通过关闭本项。
+- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前源dev.41／插件dev.47已验证argv预检、Harness及只读重开回复；raw逐命令停止、流式编辑及完整入口矩阵仍未完成，不以局部通过关闭本项。
 
 - [x] 9.7 [PC-RL-003] 建立同一版本声明冲突、活动锁误指历史锁、维护版误称上游官方、旧标签被替换等发行拒绝 fixture；合法独立版本映射通过。责任：Release owner；前置：读取当前插件、技能、套件、运行时与公共协议身份；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/release-identity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 9.8 [PC-RL-003] 在各事实源增加当前组合一致性检查及生成说明，明确上游与维护版、套件版本语义和非活动根锁；同步双语当前说明，保留历史证据原值。责任：Release owner；前置：9.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
@@ -308,3 +308,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09发行补充：插件dev.46／技能源dev.40公开身份与附件摘要已核验，发布提交与标签4项CI通过；隔离Codex发现14项技能，固定安装副本49项Harness测试（含3项原生）全部通过，安装树不变。未关闭任何任务；9.6的流式、逐命令回执、检查点语义和完整入口矩阵仍待验收。证据：`docs/evidence/optimization/harness-entry-publication.json`。
 
 2026-10-09检查点候选：插件自有reconcile现绑定失败暂存、文件摘要、运行时及最后请求，并在只读重开前后核对；错误回执撤销当前检查点接受状态，原执行结果不变。20项合同测试、真实保存后JPEG拒绝及部分检查点重开通过；最终70项TypeScript／48项Python／14项检查通过，234项源测试按相同指纹复用。源快照和公开dev.46不变，新候选尚未固定安装。原生逐命令、流式、源检查点内层语义及全入口矩阵未完，9.6仍开放，关闭0项。证据：`docs/evidence/optimization/checkpoint-contract-candidate.json`。
+
+2026-10-09只读回执固定发行：源dev.41／插件dev.47公开包提交及摘要已核验。240项本地源测试、70项插件TypeScript／48项Python通过；实际固定副本发现14项技能并通过70项Harness及14例真实只读故障、两条健康重开，安装树不变；发布提交与标签4项CI通过。命令索引只更新来源绑定，1510上下文仍NOT_RUN。9.6及总计28项门禁仍开放，关闭0项。证据：`docs/evidence/optimization/readonly-reply-publication.json`。

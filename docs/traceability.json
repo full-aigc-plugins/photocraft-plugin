@@ -677,7 +677,7 @@
         "9.6"
       ],
       "owner": "Skills owner",
-      "status": "unpublished-checkpoint-binding-candidate-all-entry-acceptance-partial",
+      "status": "fixed-readonly-reply-and-harness-partial-all-entry-acceptance-open",
       "optimizationScope": {
         "date": "2026-10-08",
         "status": "candidate-implemented-partial-acceptance",
@@ -702,7 +702,8 @@
       },
       "evidence": "docs/evidence/optimization/harness-entry/candidate.json",
       "scope": "Published dev.45/source40 unchanged. New Harness create/run/revise preflight and reply candidate passes49 TypeScript/48 Python checks with3 actual native tests; raw/streaming/checkpoint and fixed-candidate matrix remain open;9.6 unchecked.",
-      "checkpointCandidateEvidence": "docs/evidence/optimization/checkpoint-contract-candidate.json"
+      "checkpointCandidateEvidence": "docs/evidence/optimization/checkpoint-contract-candidate.json",
+      "readonlyReplyEvidence": "docs/evidence/optimization/readonly-reply-publication.json"
     },
     {
       "requirement": "PC-RL-003",

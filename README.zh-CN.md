@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.47 固定技能源dev.41，加入只读重开内层语义校验，并接入Harness检查点记录／文件／运行时绑定。候选技能源240项测试通过，14例真实只读故障保持原文件且停止后续调用；固定发行副本验收单独记录。任务9.6的raw逐命令、流式编辑及完整入口矩阵仍开放。[源码合同](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.zh_CN.md)。
+dev.47 固定技能源dev.41，加入只读重开内层语义校验，并接入Harness检查点记录／文件／运行时绑定。候选技能源240项测试通过，14例真实只读故障保持原文件且停止后续调用；固定副本70项Harness及14例真实只读故障通过，安装树不变；[固定验收](docs/PhotoCraft-Readonly-Reply-Acceptance.zh_CN.md)。任务9.6的raw逐命令、流式编辑及完整入口矩阵仍开放。[源码合同](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.zh_CN.md)。
 
 dev.46 固定技能源dev.40，补齐 Harness 创建／修订预检、严格回执绑定与只读账本快照。候选本地49项 TypeScript（含3项真实原生）和48项 Python 测试通过；公开固定副本49项Harness测试通过，安装树不变；发布提交及标签4项CI通过。[发行证据](docs/evidence/optimization/harness-entry-publication.json)。任务9.6、流式入口、逐命令回执及完整V1仍开放。[范围与证据](docs/PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
 

@@ -171,7 +171,7 @@
     "pluginWorkingVersion": "0.1.0-dev.47",
     "fixedSkillSourceVersion": "0.1.0-dev.41",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "READONLY_REPLY_DEVELOPMENT_RELEASE_PREPARATION",
+    "publication": "PUBLISHED_READONLY_REPLY_PARTIAL_ENTRY_ACCEPTANCE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -179,8 +179,8 @@
       "open": 28,
       "newlyCompleted": 67
     },
-    "publicationEvidence": "docs/evidence/optimization/harness-entry-publication.json",
-    "currentRegressionEvidence": "docs/evidence/optimization/checkpoint-contract-validation.json"
+    "publicationEvidence": "docs/evidence/optimization/readonly-reply-publication.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/readonly-reply-release-validation.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -193,7 +193,7 @@
   "fixedReleaseIdentityEvidence": "docs/evidence/optimization/identity-acceptance-audit.json",
   "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json",
   "entryContractEvidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
-  "entryContractAcceptance": "PARTIAL: public dev.46 create/run/revise preflight and main reply binding;49 installed Harness tests including3 native cases pass. Raw/streaming/checkpoint/all-entry matrix remain open",
+  "entryContractAcceptance": "PARTIAL: public dev.47/source dev.41 passes70 installed Harness tests and14 native readonly reply faults; raw per-command, streaming and full-entry matrix remain open",
   "fixedReleaseCombinationEvidence": "docs/evidence/optimization/entry-contract/fixed-release-combination.json",
   "unreleasedEntryCandidate": {
     "status": "PARTIAL_PUBLISHED",
@@ -218,12 +218,22 @@
     "fixedInstallation": "PASS_BOUNDED_HARNESS_REGRESSION"
   },
   "checkpointContractCandidate": {
-    "status": "PARTIAL_UNPUBLISHED_CANDIDATE",
-    "published": false,
+    "status": "PARTIAL_PUBLISHED",
+    "published": true,
     "evidence": "docs/evidence/optimization/checkpoint-contract-candidate.json",
     "regressionEvidence": "docs/evidence/optimization/checkpoint-contract-validation.json",
-    "fixedCandidateInstallation": "NOT_RUN",
+    "fixedCandidateInstallation": "PASS_BOUNDED_HARNESS_AND_READONLY_REPLY_CONTRACT",
     "closedTasks": [],
-    "remainingTask": "9.6"
+    "remainingTask": "9.6",
+    "pluginRef": "v0.1.0-dev.47",
+    "sourceRef": "v0.1.0-dev.41",
+    "publicationEvidence": "docs/evidence/optimization/readonly-reply-publication.json"
+  },
+  "readonlyReplyAcceptance": {
+    "published": true,
+    "pluginRef": "v0.1.0-dev.47",
+    "sourceRef": "v0.1.0-dev.41",
+    "evidence": "docs/evidence/optimization/readonly-reply-publication.json",
+    "closedTasks": []
   }
 }

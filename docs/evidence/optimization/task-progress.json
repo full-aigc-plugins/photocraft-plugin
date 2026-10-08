@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "UNPUBLISHED_CHECKPOINT_CANDIDATE_FULL_PLAN_INCOMPLETE",
+  "status": "PUBLISHED_READONLY_REPLY_PARTIAL_ENTRY_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -210,9 +210,9 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 234,
-    "skillsReusedFrom": "native-argv-source-validation.json",
-    "skillsReuse": "exact source and equal native/desktop layers",
+    "skills": 240,
+    "skillsReusedFrom": "readonly-reply-source-validation.json",
+    "skillsReuse": "240 local tests run once; exact source and equal layers reused for plugin rechecks",
     "pluginTypeScript": 70,
     "pluginPython": 48,
     "skipped": 0,
@@ -231,9 +231,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "checkpoint-contract-validation.json",
+  "releaseCandidateEvidence": "readonly-reply-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "harness-entry-publication.json",
+  "publicationEvidence": "readonly-reply-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -268,5 +268,6 @@
   },
   "closedThisRun": [],
   "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json",
-  "checkpointCandidateEvidence": "checkpoint-contract-candidate.json"
+  "checkpointCandidateEvidence": "checkpoint-contract-candidate.json",
+  "fixedReadonlyReplyEvidence": "readonly-reply-fixed-native-faults.json"
 }
