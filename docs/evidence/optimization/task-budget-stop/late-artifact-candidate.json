@@ -1,0 +1,52 @@
+{
+  "schema": "photocraft-candidate-evidence/v1",
+  "requirement": "PC-TX-003-STOP",
+  "status": "CANDIDATE_ONLY",
+  "sourceFiles": {
+    "src/harness/runner.ts": "e69d5194ff3b1b012faff05260e36161ed665effd580a8fc14b4160a58b43d31",
+    "src/harness/late_artifacts.ts": "d56b55969bfadda3c114a095e9e52694fe630d1a5dffaabb80c7e624d37455ab",
+    "tests/runner.test.ts": "1ea3ea727910ff9f9ca328276fae90f3a2a9fd45a37d50e37b44c3a667698e72"
+  },
+  "red": {
+    "command": "node --test --test-name-pattern='cancelled tasks register late' tests/runner.test.ts",
+    "result": "FAIL",
+    "failure": "cancelled task did not persist replayAllowed=false; late file registry absent",
+    "syntheticFixture": true
+  },
+  "fullRegression": {
+    "tests": 73,
+    "pass": 73,
+    "skip": 0,
+    "nativeEnabled": true,
+    "scope": "full harness including existing native regressions; does not prove native cancellation",
+    "note": "Full suite preceded additional assertion-only changes; final runner tests rerun 13/13."
+  },
+  "targetedRegression": {
+    "tests": 13,
+    "pass": 13,
+    "skip": 0,
+    "log": "targeted.txt"
+  },
+  "limitations": [
+    "real native cancellation not accepted",
+    "interrupted native worker recovery not accepted",
+    "fixed published installation unchanged",
+    "tasks 3.9 and 10.12 remain open"
+  ],
+  "taskCounts": {
+    "complete": 131,
+    "open": 26
+  },
+  "pythonRegression": {
+    "tests": 48,
+    "pass": 48
+  },
+  "vendorCheck": "PASS",
+  "sourceCombination": {
+    "localWorkingTree": "FAIL: source_skill_digest_mismatch: photocraft-use; ignored __pycache__ exists",
+    "immutablePublicSourceArchive": "PASS",
+    "sourceRef": "v0.1.0-dev.44",
+    "sourceCommit": "70e6dfe56afa23257feb343bf4b51727c220e303",
+    "scope": "source archive combination only; candidate not publicly released"
+  }
+}

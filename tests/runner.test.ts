@@ -122,7 +122,7 @@ test('stop confirms only the owned worker and leaves unrelated process alive',as
   for(let i=0;i<100 && !ledger.status(task.id).worker;i++)await new Promise(resolve=>setTimeout(resolve,10));
   await new Promise(resolve=>setTimeout(resolve,100));ledger.stop(task.id);const stopped=await running;
   assert.equal(stopped.state,'cancelled');assert.equal(stopped.stopEvidence.processGroupGone,true);assert.equal(stopped.technical.status,'NOT_RUN');assert.equal(outsider.exitCode,null);ledger.close();
-  assert.equal(stopped.stopEvidence.lateArtifacts,true);
+  assert.equal(stopped.stopEvidence.lateArtifacts,true);assert.equal(stopped.lateArtifactObservations[0].taskId,task.id);assert.equal(stopped.lateArtifactObservations[0].status,'OBSERVED_UNVERIFIED');
  }finally{outsider.kill();f.close();}
 });
 
@@ -147,5 +147,25 @@ test('local adjustment revision is bound to the editable enabled mask and exact 
   writeFileSync(facts,originalFacts);writeFileSync(native,JSON.stringify({layers:[{...row,kind:'Pixel'}]}));ledger.update(task.id,epoch,current=>{current.technical.files[facts]=fileDigest(facts);current.technical.files[native]=fileDigest(native);});assert.throws(()=>review.propose(task.id,proposal),/revision_object_not_editable/);
   writeFileSync(native,originalNative);ledger.update(task.id,epoch,current=>{current.technical.files[native]=fileDigest(native);});
   const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});/* 预算与策略单测隔离预检；真实预检及有效修订由 native-harness 验证。 */runner.preflight=()=>({sha256:'fixture',runtimeLockSha256:'fixture',files:{}});const child=await runner.revise(task.id,proposal);assert.deepEqual(child.request.plan.preserveObjects,{'5':['adjustment.BrightnessContrast.brightness']});assert.equal(child.request.plan.operations[1].params.command,'layer.setAdjustment');assert.equal(child.request.plan.assertions[0].maskEnabled,true);ledger.close();
+ }finally{f.close();}
+});
+
+test('cancelled tasks register late files after ledger restart without acceptance or replay',async()=>{
+ const {Runner}=await import('../src/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const {symlinkSync}=await import('node:fs');const f=fixture();
+ try{
+  let ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);const epoch=ledger.claim(task.id);
+  ledger.update(task.id,epoch,current=>{current.worker={token:'owned-fixture',exited:true,processGroupGone:true};});ledger.stop(task.id);
+  const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});
+  const stopped=await runner.reconcile(task.id);assert.equal(stopped.state,'cancelled');
+  mkdirSync(f.request.output);writeFileSync(join(f.request.output,'project.pcraft'),'late native fixture');
+  ledger.close();ledger=new Ledger(join(f.root,'state'));const reopened=new Runner(ledger,runner.options);
+  const registered=await reopened.reconcile(task.id);
+  assert.equal(registered.state,'cancelled');assert.equal(registered.technical.status,'NOT_RUN');assert.equal(registered.replayAllowed,false);
+  assert.equal(registered.lateArtifactObservations.length,1);
+  const receipt=registered.lateArtifactObservations[0];assert.equal(receipt.taskId,task.id);assert.equal(receipt.taskIdentity,task.identity);assert.equal(receipt.workerToken,'owned-fixture');assert.equal(receipt.status,'OBSERVED_UNVERIFIED');assert.equal(receipt.files['project.pcraft'],fileDigest(join(f.request.output,'project.pcraft')));
+  const eventsBefore=ledger.db.prepare('SELECT COUNT(*) AS total FROM events').get();assert.equal((await reopened.reconcile(task.id)).lateArtifactObservations.length,1);assert.deepEqual(ledger.db.prepare('SELECT COUNT(*) AS total FROM events').get(),eventsBefore);
+  writeFileSync(join(f.root,'outside'),'private fixture');symlinkSync(join(f.root,'outside'),join(f.request.output,'escape'));
+  const unsafe=await reopened.reconcile(task.id);assert.equal(unsafe.state,'cancelled');assert.equal(unsafe.lateArtifactObservations.length,2);assert.equal(unsafe.lateArtifactObservations[1].status,'INCOMPLETE');assert.equal(unsafe.lateArtifactObservations[1].files.escape,undefined);assert.ok(unsafe.lateArtifactObservations[1].errors.some((e:any)=>e.code==='symlink_not_allowed'));
+  await assert.rejects(()=>reopened.run(task.id),/reconcile_required/);ledger.close();
  }finally{f.close();}
 });

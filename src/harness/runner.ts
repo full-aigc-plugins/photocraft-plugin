@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { canonical, digest, fileDigest, readJson, safePath, within } from '../protocol/files.ts';
 import { Ledger } from './ledger.ts';
+import { observeLateArtifacts } from './late_artifacts.ts';
 import { mapArtifact } from '../protocol/artifact.ts';
 import { Review } from '../evaluation/review.ts';
 import { preflightRequest, pythonReply, reportedError, skillIdentity, runtimePlatformKey } from './preflight.ts';
@@ -77,6 +78,7 @@ export class Runner {
    let groupGone=false;try{if(child.pid && process.platform!=='win32')process.kill(-child.pid,0);else groupGone=child.exitCode!==null || child.signalCode!==null;}catch(error){groupGone=(error as any).code==='ESRCH';}
    this.ledger.update(id,epoch,current=>{current.stopEvidence={processGroupGone:groupGone,ownedWorkerToken:workerToken,exitCode:exit,signal:child.signalCode,at:Date.now(),lateArtifacts:existsSync(join(current.request.output,'manifest.json'))};});
    this.ledger.transition(id,epoch,'reconciling');
+   this.registerLateArtifacts(id);
    if(groupGone)return this.ledger.transition(id,epoch,'cancelled');
    return this.ledger.status(id);
   }
@@ -110,12 +112,25 @@ export class Runner {
    return this.ledger.update(id,epoch,value=>{value.replayAllowed=false;value.reconcileError=String(error);value.verificationError={code:error instanceof OperationError?error.code:'technical_verification_unproven',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:error instanceof OperationError?error.recoveryAction:'reconcile'};value.recoveryAction='inspect_preserved_artifacts';});
   }
  }
+ /** 保存取消任务的独立观察记录；相同快照不重复登记，迟到结果不能提升状态。 */
+ registerLateArtifacts(id:string) {
+  const task=this.ledger.status(id);const observation=observeLateArtifacts(task);
+  if(task.replayAllowed===false && (!observation || task.lateArtifactObservations?.at(-1)?.sha256===observation.sha256))return task;
+  return this.ledger.update(id,task.epoch,current=>{
+   current.replayAllowed=false;
+   if(observation && current.lateArtifactObservations?.at(-1)?.sha256!==observation.sha256) {
+    current.lateArtifactObservations??=[];current.lateArtifactObservations.push(observation);
+   }
+  });
+ }
  async reconcile(id: string) {
   let task=this.ledger.status(id);
-  if(['completed','cancelled','failed','review_ready','planned'].includes(task.state))return task;
+  if(task.state==='cancelled')return this.registerLateArtifacts(id);
+  if(['completed','failed','review_ready','planned'].includes(task.state))return task;
   if(task.state!=='reconciling')task=this.ledger.transition(id,task.epoch,'reconciling');
   // 活跃执行器仍有写入权；状态核对不能与它并行验收。
   if(task.stopRequestedAt) {
+   this.registerLateArtifacts(id);
    const descendants=(this.ledger.db.prepare('SELECT data FROM tasks').all() as any[]).map(row=>JSON.parse(row.data)).filter(child=>child.request.parentTask===id);
    if(task.worker?.exited && task.worker.processGroupGone && descendants.every(child=>['cancelled','failed','completed'].includes(child.state))) {
     this.ledger.update(id,task.epoch,current=>{current.stopEvidence={processGroupGone:true,ownedWorkerToken:current.worker.token,at:Date.now(),lateArtifacts:existsSync(join(current.request.output,'manifest.json'))};});

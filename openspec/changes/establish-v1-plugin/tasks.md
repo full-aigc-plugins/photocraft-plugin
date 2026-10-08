@@ -242,7 +242,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 10.10 [PC-TX-003] 建立重启预算归零、父子重复重试、取消后迟到结果、非任务进程误终止及磁盘预留不足测试。责任：Harness owner；前置：10.8；关联原 3.7–3.9；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/task-budget-stop/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 10.11 [PC-TX-003] 实现持久时间／截止时间／并发／磁盘与修订计数、stop 对 cancel 合同的映射；只控制自有进程，未核清前保留占用并停止新操作。责任：Harness owner；前置：10.10；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 10.12 [PC-TX-003] 验证受控原生进程取消、中断重启、资源不足拒绝和迟到产物登记；证明 cancelled 需停止证据，本地流程无新增云登录／积分审批。责任：QA owner；前置：10.11 及对应固定来源可用；产物：docs/evidence/optimization/task-budget-stop/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [ ] 10.12 [PC-TX-003] 验证受控原生进程取消、中断重启、资源不足拒绝和迟到产物登记；证明 cancelled 需停止证据，本地流程无新增云登录／积分审批。责任：QA owner；前置：10.11 及对应固定来源可用；产物：docs/evidence/optimization/task-budget-stop/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 补充候选：`docs/evidence/optimization/task-budget-stop/late-artifact-candidate.json` 登记停止后文件摘要、原任务身份和重启后的迟到文件；仅候选回归通过，真实原生取消及固定安装验收仍未证明。
 
 ## 11. P2：质量、受限修订与血缘
 
