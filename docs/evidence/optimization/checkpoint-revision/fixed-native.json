@@ -1,0 +1,22 @@
+{
+  "schema": "photocraft-checkpoint-harness-evidence/v1",
+  "status": "PASS",
+  "originalTaskId": "5a7c2679-6aa1-4d35-a8ed-b0226192049d",
+  "childTaskId": "d21dd8d1-ca13-4f74-baed-8397e6e55a94",
+  "checkpointRecordSha256": "c48b07dd93d272eb36e97a29355ed6d94a5ba5300d57fd3f5e1fe5909c5eeb80",
+  "checkpointProjectSha256": "b1f25688cbfd50cb459535b3b47f931eddebc0346f70a3fa3c0416854e774d82",
+  "childProjectSha256": "5197ebec6f0bb4d3982ac6785c35c22539a02f3978fe1528f719880a82aad67b",
+  "originalIntentEpoch": 1,
+  "originalFilesUnchanged": true,
+  "originalSaveCount": 1,
+  "revisionCount": 1,
+  "remainingRevisions": 0,
+  "repeatedRecoverSameChild": true,
+  "foreignCheckpointRefused": true,
+  "foreignExitTokenRefused": true,
+  "checkpointMutationBeforeRunRefused": true,
+  "exhaustedBudgetRefused": true,
+  "typeLayerCount": 1,
+  "creative": "NOT_RUN",
+  "sourceSha256": "e9acba4e12e4a04296bfff3433aa8cf608960bfd1621fd9b37263a343fc956bf"
+}

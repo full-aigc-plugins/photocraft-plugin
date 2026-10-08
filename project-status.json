@@ -175,7 +175,7 @@
     "pluginWorkingVersion": "0.1.0-dev.56",
     "fixedSkillSourceVersion": "0.1.0-dev.45",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_PC_TX_003_FIXED_NATIVE",
+    "publication": "PARTIAL_PUBLISHED_CHECKPOINT_RECOVERY_FIXED_NATIVE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -184,7 +184,7 @@
       "newlyCompleted": 71
     },
     "currentRegressionEvidence": "docs/evidence/optimization/checkpoint-revision/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/task-budget-stop/publication.json"
+    "publicationEvidence": "docs/evidence/optimization/checkpoint-revision/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -309,11 +309,11 @@
     "fixedInstallation": "PASS_82_HARNESS_7_NATIVE"
   },
   "checkpointRecoveryCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "pluginVersion": "0.1.0-dev.56",
     "skillSourceVersion": "0.1.0-dev.45",
     "evidence": "docs/evidence/optimization/checkpoint-revision/",
-    "fixedInstallation": "NOT_RUN",
+    "fixedInstallation": "PASS_86_HARNESS_8_NATIVE",
     "closedTasks": [],
     "remainingTasks": [
       "3.6",
@@ -324,6 +324,7 @@
       "same-plan foreign full-delivery producer binding",
       "durable progress after hard SIGKILL before failure record",
       "complete V1"
-    ]
+    ],
+    "publicationEvidence": "docs/evidence/optimization/checkpoint-revision/publication.json"
   }
 }

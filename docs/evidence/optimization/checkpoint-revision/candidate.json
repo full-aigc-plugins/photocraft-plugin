@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-checkpoint-revision-candidate/v1",
-  "status": "PARTIAL_CANDIDATE",
+  "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
   "harness": {
     "tests": 86,
     "pass": 86,
@@ -13,5 +13,7 @@
     "3.6",
     "10.9"
   ],
-  "scope": "Saved failed-stage fork, bound explicit recovery, preserved original intent and files; full crash/restart and fixed publication remain open"
+  "scope": "Explicit task-bound saved-checkpoint fork and native title revision passed on public installed dev.56/source45; full crash/restart, hard SIGKILL progress, full-delivery producer binding, model and creative acceptance remain open",
+  "fixedInstallation": "PASS_86_HARNESS_8_NATIVE",
+  "publicationEvidence": "docs/evidence/optimization/checkpoint-revision/publication.json"
 }

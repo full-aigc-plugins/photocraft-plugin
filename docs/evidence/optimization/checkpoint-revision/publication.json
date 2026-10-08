@@ -1,0 +1,67 @@
+{
+  "schema": "photocraft-checkpoint-revision-publication/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.45",
+    "commit": "62a70bad1e891dace22b991a9ed9e2c398b3b0d5",
+    "assetSha256": "f760113b73dc6a35d9e67b0f327dd12a18436274e0c6619e93a39a4c38e81ef5",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.45",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.56",
+    "commit": "5bd0dfc1f4914cb390d586e67964a8dff8153985",
+    "assetSha256": "7e65db757875228fc462a2e0f737d5cc0bea85cabd6bd75dcf623c381162ded1",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.56",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37835667512,
+      "event": "push",
+      "headSha": "5bd0dfc1f4914cb390d586e67964a8dff8153985",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37835666617,
+      "event": "push",
+      "headSha": "5bd0dfc1f4914cb390d586e67964a8dff8153985",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37835661379,
+      "event": "push",
+      "headSha": "5bd0dfc1f4914cb390d586e67964a8dff8153985",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37835661301,
+      "event": "push",
+      "headSha": "5bd0dfc1f4914cb390d586e67964a8dff8153985",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    }
+  ],
+  "sourceCI": [],
+  "fixedSummarySha256": "647c7d92304484ee5d925b38ba82522d26993e517f25621f9c14029d5a2a6935",
+  "fixedNativeSha256": "0ca1e6a69e11d5b64de3452707be2c83c7a2d6a2a4134679e5d68b2636a9212f",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Explicit task-bound saved-checkpoint fork and native title revision passed on public installed dev.56/source45; full crash/restart, hard SIGKILL progress, full-delivery producer binding, model and creative acceptance remain open"
+}
