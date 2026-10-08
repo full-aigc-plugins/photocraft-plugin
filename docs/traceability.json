@@ -33,8 +33,9 @@
         "2.3"
       ],
       "owner": "Runtime owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/bootstrap-tests.json"
+      "status": "verified",
+      "evidence": "docs/evidence/craft-fixed-runtime-integrity-20261008.json",
+      "scope": "current pinned macOS arm64 CLI matrix; all current requirement scenarios"
     },
     {
       "requirement": "PC-RT-002",
