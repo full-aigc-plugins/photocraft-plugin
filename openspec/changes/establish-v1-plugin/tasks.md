@@ -299,3 +299,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 当前插件 dev.39／技能 dev.35 的 macOS arm64 固定安装已完成 PC-DM-001／002／003／007 的16个规范场景核对，新增关闭7项领域验收。累计120/157项完成、37项开放。真实首用、追加原生、蒙版像素与绑定证据及首轮失败记录见[逐场景审计](../../../docs/evidence/optimization/domain-acceptance-audit.json)；[复验方式与边界](../../../docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。PSD 必要功能损失、导出来源、运行时升级、宿主模型及完整命令等门禁保持开放，不同步／归档。
 
 9.6未发布候选补充：原生argv预检与Runner失败预检不写持久记录已实现，见 `docs/evidence/optimization/native-argv/candidate.json` 与双语原生argv文档。create／修订、流式入口及原生多步骤回复合同尚未完成，固定安装仍开放，不勾选本项。
+
+2026-10-08 发布补充：技能源dev.40／插件dev.45承载原生argv安装前预检及Harness失败预检状态保全；发布不改变PC-TX-005完整验收，9.6继续开放，本次关闭0项。版本绑定验证与公开包证据见docs/evidence/optimization/native-argv-release-validation.json及native-argv-publication.json。

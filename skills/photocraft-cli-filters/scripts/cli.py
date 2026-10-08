@@ -20,6 +20,15 @@ def main():
  args=parser.parse_args();argv=args.arguments
  if argv[:1]==['--']:argv=argv[1:]
  if not argv or argv[0] not in ALLOWED:parser.error('unsupported_cli_subcommand: put the native subcommand first after --')
+ if argv[0] in {'run','batch','droplet','convert'}:
+  try:
+   path=Path(__file__).with_name('cli_contract.py');spec=importlib.util.spec_from_file_location('craft_cli_contract',path)
+   contract=importlib.util.module_from_spec(spec);spec.loader.exec_module(contract);contract.preflight(argv)
+  except (ValueError,OSError) as error:
+   # 静态无效输入不是安装失败；保留稳定恢复字段，不能先触发安装。
+   if 'contract' in locals():reply=contract.load('operation_errors').describe(error)
+   else:reply={'error':str(error),'code':'cli_contract_unavailable','phase':'validation','outcome':'not_executed','category':'validation_failed','fieldPath':'$argv','retryable':False,'recoveryAction':'restore_skill_resources'}
+   print(json.dumps(reply));return 1
  installation_completed=False
  try:
   path=Path(__file__).with_name('bootstrap.py');spec=importlib.util.spec_from_file_location('craft_bootstrap',path)

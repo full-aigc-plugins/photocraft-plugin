@@ -17,3 +17,7 @@ flowchart LR
 Runner preflight no longer writes persistent plans or failure events; its private temporary input is cleaned on success and error. Actual CLI audit still shows create initializes a ledger for a semantically invalid plan and run does not propagate complete structured preflight fields. Revision budget reservation, strict subprocess replies, MCP/serve streaming and native multi-step reply stopping need further work. These bounded static/native checks cannot close9.6.
 
 Candidate, published fixed-installation evidence and complete command acceptance remain separate. Complete candidate regression passed13 checks:234 source tests,29 plugin TypeScript tests and48 plugin Python tests, zero skips and unchanged source fingerprints. New fixed release acceptance remains unexecuted. Task9.6 stays unchecked and28 plan tasks remain open.
+
+## Dev.45 / source dev.40 release scope
+
+This development release incorporates the candidate fixes into a pinned snapshot; older tags and archives remain immutable. Source dev.40 is public, and the vendor tool imports13 skills after tag/commit verification without manual snapshot edits. The initial13 checks passed234 source,29 TypeScript and48 Python tests with zero skips. Updated snapshot combination regression and public installation evidence are recorded in `native-argv-release-validation.json` and `native-argv-publication.json`; installation is not claimed before execution. Task9.6 remains open,129/157 complete and zero tasks closed.
