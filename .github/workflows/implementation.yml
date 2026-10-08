@@ -22,3 +22,13 @@ jobs:
           if test -f package.json; then
             npm test
           fi
+      - name: Read fixed skill-source identity
+        id: skill-source
+        run: python3 -c "import json,os;v=json.load(open('skills.lock.json'))['sources'][0];f=open(os.environ['GITHUB_OUTPUT'],'a');print('sha='+v['sha'],file=f)"
+      - uses: actions/checkout@v4
+        with:
+          repository: full-aigc-skills/photocraft-skills
+          ref: ${{ steps.skill-source.outputs.sha }}
+          path: .skills-authority
+      - name: Check complete independent release combination
+        run: python3 -I -B scripts/release_combination.py --skills-source .skills-authority

@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.43 增加完整当前发行组合摘要及来源冲突拒绝，技能源仍固定dev.38。公开固定安装验收待完成。[身份门禁](docs/PhotoCraft-Release-Combination.zh_CN.md)。
+
 dev.42 固定技能源dev.38，能力快照绑定版本／平台和双后端身份，按本次操作依赖核验合同并保留发现摘要。公开dev.42安装通过双后端14例与安装副本全部28项插件测试，任务10.3完成；完整升级回退仍开放。[能力验收](docs/PhotoCraft-Capability-Acceptance.zh_CN.md)。
 
 dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供应方回执保全，返工继承导出要求。dev.41 固定安装、原生重开与安装副本全部28项插件测试通过。[合同与证据边界](docs/PhotoCraft-Flat-Export-Acceptance.zh_CN.md)。
@@ -8,7 +10,7 @@ dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供�
 
 PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；返工继承策略，接受记录绑定源版本。[门禁与验证](docs/PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。公开 dev.40 固定安装通过当前原生／PSD 交换的全部7个规范场景。
 
-开发版本 dev.42 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.38。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
+开发版本 dev.43 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.38。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
 开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为127/157项完成，30项门禁开放。
 
@@ -26,7 +28,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.42`；技能源：`0.1.0-dev.38`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.43`；技能源：`0.1.0-dev.38`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -121,7 +123,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.42 |
+| Metadata version | 0.1.0-dev.43 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.38 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
@@ -161,7 +163,7 @@ openspec validate establish-v1-plugin --strict --no-interactive
 ```
 以上校验文档和规范，不运行产品工作流。OpenSpec 校验使用 1.13.1；本仓不自动安装工具。
 
-已安装官方 CLI 后可执行基础检查：
+已安装固定维护版 CLI 后可执行基础检查：
 
 ```bash
 photocraft-cli --version
@@ -218,7 +220,7 @@ python3 -I -B skills/photocraft-use/scripts/bootstrap.py
 python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 ```
 
-首次入口会安装锁定官方 CLI 到用户数据目录；要求 macOS arm64 与 Python 3.11+。使用技能内示例计划并提供真实素材；交付与修订合同见技能的 SKILL.md。[来源与校验证据](docs/evidence/skill-publication.json)。
+首次入口会安装锁定维护版 CLI 到用户数据目录；要求 macOS arm64 与 Python 3.11+。使用技能内示例计划并提供真实素材；交付与修订合同见技能的 SKILL.md。[来源与校验证据](docs/evidence/skill-publication.json)。
 
 ## Codex 开发版宿主验证
 

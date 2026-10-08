@@ -36,7 +36,7 @@ def reusable_skills_check(baseline,current,args):
  return check
 
 def main():
- parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--skills-repo',required=True,type=Path);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--native',action='store_true');parser.add_argument('--desktop',action='store_true');parser.add_argument('--reuse-skills-evidence',type=Path,help='Reuse only an exact-source, same-layer verified skills test run; all plugin and static checks rerun');args=parser.parse_args()
+ parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--skills-repo',required=True,type=Path);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--native',action='store_true');parser.add_argument('--desktop',action='store_true');parser.add_argument('--release-source',type=Path,help='Previously verified immutable source archive for complete release combination');parser.add_argument('--reuse-skills-evidence',type=Path,help='Reuse only an exact-source, same-layer verified skills test run; all plugin and static checks rerun');args=parser.parse_args()
  if args.desktop and not args.native:parser.error('--desktop requires --native')
  skills=args.skills_repo.resolve();output=args.output.resolve();output.parent.mkdir(parents=True,exist_ok=True)
  before={'skills':fingerprint(skills),'plugin':fingerprint(ROOT)}
@@ -69,6 +69,7 @@ def main():
   junit=temp/'skills-junit.xml'
   commands=[('skills-tests',[sys.executable,'-B','-m','pytest','-q','-p','no:cacheprovider','--junitxml='+str(junit)],skills),('plugin-tests',['node','--test',*[str(p.relative_to(ROOT)) for p in sorted((ROOT/'tests').glob('*.test.ts'))]],ROOT)]
   commands.extend([('plugin-python-tests',[sys.executable,'-B','-m','unittest','discover','-s','tests','-p','test_*.py'],ROOT),('skills-resources',[sys.executable,'-I','-B','scripts/sync_skill_suite.py','--check'],skills),('skills-command-coverage',[sys.executable,'-I','-B','scripts/build_command_coverage.py','--check'],skills),('skills-release-identity',[sys.executable,'-I','-B','scripts/check_release_identity.py'],skills),('command-acceptance-index',[sys.executable,'-I','-B','scripts/command_acceptance.py','check','--skill-root',str(skills/'skills/photocraft-use'),'--index','docs/evidence/optimization/command-acceptance-index.json'],ROOT),('plugin-release-identity',[sys.executable,'-I','-B','scripts/check_release_identity.py'],ROOT),('fixed-snapshot-integrity',[sys.executable,'-I','-B','scripts/vendor/skill_vendor.py','check','--offline'],ROOT),('openspec-validation',['openspec','validate','establish-v1-plugin','--strict'],ROOT),('documentation-validation',[sys.executable,'-I','-B','scripts/validate_docs.py'],ROOT),('skills-whitespace',['git','diff','--check'],skills),('plugin-whitespace',['git','diff','--check'],ROOT)])
+  if args.release_source:commands.append(('complete-release-combination',[sys.executable,'-I','-B','scripts/release_combination.py','--skills-source',str(args.release_source.resolve())],ROOT))
   for label,command,cwd in commands:
    if label=='skills-tests' and reused is not None:
     item={**reused,'reused':True,'baselineSeconds':reused['seconds'],'seconds':0.0};report['checks'].append(item);save();print('skills-tests REUSED exact source and layers',flush=True);continue

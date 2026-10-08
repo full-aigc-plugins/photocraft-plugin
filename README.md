@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+Dev.43 adds complete current release combination digests and provenance-conflict refusal; source remains pinned to dev.38. Public fixed-installation acceptance is pending. [Identity gate](docs/PhotoCraft-Release-Combination.md).
+
 Dev.42 pins source dev.38, binding runtime version/platform and backend identities, with operation-scoped contract checks and full discovery digests. Public dev.42 installation passes fourteen backend cases and all 28 installed harness tests; task10.3 closes and full upgrade/rollback remains open. [Capability acceptance](docs/PhotoCraft-Capability-Acceptance.md).
 
 Dev.41 adds actual flat-export color/ICC/alpha checks and bound existing provider receipts; revisions retain the export requirements. Fixed dev.41 installation, native reopening and all 28 installed harness tests pass. [Contract and evidence boundaries](docs/PhotoCraft-Flat-Export-Acceptance.md).
@@ -8,7 +10,7 @@ Published [skills dev.36](https://github.com/full-aigc-skills/photocraft-skills/
 
 PSD required-feature delivery now refuses unaccepted observed losses and required unknowns; revisions retain the policy with source-bound acceptance. [Policy and verification](docs/PhotoCraft-PSD-Policy-Architecture.md). The public dev.40 installation passes all seven current PSD/native exchange scenarios.
 
-Development release dev.42 includes SQLite task control, bound review and bounded revisions, with standalone dev.38 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
+Development release dev.43 includes SQLite task control, bound review and bounded revisions, with standalone dev.38 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
 Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 127/157 complete, with 30 gates open.
 
@@ -26,7 +28,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.42`; skill source: `0.1.0-dev.38`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.43`; skill source: `0.1.0-dev.38`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -121,7 +123,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.42 |
+| Metadata version | 0.1.0-dev.43 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.38 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
@@ -161,7 +163,7 @@ openspec validate establish-v1-plugin --strict --no-interactive
 ```
 These commands validate documentation and specifications, not product workflows. OpenSpec validation uses 1.13.1; this repository does not install tools automatically.
 
-After installing the official CLI, perform a basic check:
+After installing the pinned maintained CLI, perform a basic check:
 
 ```bash
 photocraft-cli --version
@@ -218,7 +220,7 @@ python3 -I -B skills/photocraft-use/scripts/bootstrap.py
 python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 ```
 
-First use installs the pinned official CLI into user-level storage. Requires macOS arm64 and Python 3.11+. Use the bundled example with real input assets; consult SKILL.md for delivery and revision contracts. [Source verification](docs/evidence/skill-publication.json).
+First use installs the pinned maintained CLI into user-level storage. Requires macOS arm64 and Python 3.11+. Use the bundled example with real input assets; consult SKILL.md for delivery and revision contracts. [Source verification](docs/evidence/skill-publication.json).
 
 ## Codex development host checks
 
