@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+The complete PC-DM-004 size-variant contract passes fixed installed first use: padding, crop, resample, editable native/PSD layers, safe-area/size refusal, preserved source and failed stages. [Acceptance architecture](docs/PhotoCraft-Complete-Variant-Contract-Architecture.md). FullV1 remains open.
+
 Four-domain RT-001 runtime source/integrity acceptance now covers every current scenario; existing pinned skill bytes remain unchanged. Runtime upgrades and fullV1 remain open. [Acceptance architecture](docs/Craft-Fixed-Runtime-Integrity-Architecture.md).
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.

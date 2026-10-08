@@ -1,0 +1,677 @@
+{
+  "schema": "photocraft-complete-variant-contract/v1",
+  "result": "PASS",
+  "requirement": "PC-DM-004",
+  "contractSha256": "a3e6c04b2617e6a6f047326272ab65fe94e88ae22221d0dd91777a0f85e3f768",
+  "scenarioCoverage": [
+    {
+      "name": "PC-DM-004-P 正常交付",
+      "result": "PASS",
+      "evidence": "native source, padding, crop and resample plus unsafe/mismatch failure receipts; seven source layout/preflight tests"
+    },
+    {
+      "name": "PC-DM-004-N 异常或不保真",
+      "result": "PASS",
+      "evidence": "sourceOverwriteRejected and allSourceFilesPreserved"
+    },
+    {
+      "name": "Native canvas variant retains editable identities",
+      "result": "PASS",
+      "evidence": "native source, padding, crop and resample plus unsafe/mismatch failure receipts; seven source layout/preflight tests"
+    },
+    {
+      "name": "Unsafe or inconsistent variant is rejected",
+      "result": "PASS",
+      "evidence": "native source, padding, crop and resample plus unsafe/mismatch failure receipts; seven source layout/preflight tests"
+    }
+  ],
+  "fixedInstallation": {
+    "repository": "https://github.com/full-aigc-plugins/photocraft-plugin.git",
+    "version": "0.1.0-dev.38",
+    "ref": "v0.1.0-dev.38",
+    "sha": "e70772bc80cfabc605a247ac9107a6f28929852c",
+    "skillSourceSha": "c3b23207b6a6f09032c9dd0a68c7b173a36b11c0",
+    "skillSourceRef": "v0.1.0-dev.34",
+    "skillSha256": "3d93bc0941de14157120c47788355e8f6678539b75b9b8ed6690ba6bfd302979",
+    "pluginManifestSha256": "50ddf302336cdc1ee59e1805376881f02f74ccdbde5a1639dd81f92f68a043d6",
+    "skills": {
+      "photocraft-cli": "92ea889f31d6d454027f400d9acbb1f8e25571daa70cb5e6f0ce91b225bf4882",
+      "photocraft-cli-adjustments": "71f7182c59a04f9351047dbb890679edb82c75c3cab59ee8715222d819a0f3dc",
+      "photocraft-cli-export": "4c095359c3040a1b5b74b7c4ecb73d806718ead1325401b656fd46c4c6ca7eae",
+      "photocraft-cli-filters": "5e5c562d4352e990fcc23159088c57238855581b456bebb79086c165516a9592",
+      "photocraft-cli-layers": "5624af33a149be746cc5e3dbb093236e5f217ff9da210470c657931361d6b0ff",
+      "photocraft-cli-masks": "f90dd7a3174939df275cd54fa4d7769f6952f57ada8b8c41ba011170ce74b551",
+      "photocraft-cli-project": "182bdbc20bbcffe7e6762801615b9e8130ef4b0f9e3baf3a121e020df3f8f7ed",
+      "photocraft-cli-resize": "15cff4113b747d36b61a7c4f8eff5e7eec82d75cd7a13ee1ad2f811854bba45d",
+      "photocraft-cli-retouch": "0f8d0e562a2f73bdb4e78fe99d0095abc7eba54fd361893a3e022be54bcdcda6",
+      "photocraft-cli-selection": "bad063d589c417945b33194550105d4289f80b84389553f494e1b27a81fcf0b7",
+      "photocraft-cli-setup": "53cce539624796984c1523a244c91afa337fe54372fe2789e0721a09435f8623",
+      "photocraft-cli-text": "204b0fe044a88c795522d02aaa4d94524371b6bfaf73a2e1b45bb622a6973d3f",
+      "photocraft-use": "3d93bc0941de14157120c47788355e8f6678539b75b9b8ed6690ba6bfd302979"
+    }
+  },
+  "installedSkillIdentitiesAfterUse": 13,
+  "currentSourceIdentity": {
+    "tagAndTrackedFiles": "match",
+    "untrackedSkillFiles": 0,
+    "ignoredSkillFiles": 7,
+    "wholeWorkingTreeClaim": "not asserted"
+  },
+  "independentSkillSha256": "15cff4113b747d36b61a7c4f8eff5e7eec82d75cd7a13ee1ad2f811854bba45d",
+  "native": {
+    "schema": "photocraft-layout-first-use/v1",
+    "python": "3.13.5",
+    "sourceFiles": {
+      "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+      "design.png": "cfcb56eaa3edadb6a4d9de939f9d0085f06899874faea0a3e492eb10b27ec7df",
+      "plan.json": "64b16aab2d91a3c851d1e2f7ff663cb14ab1dd24c32e1fbbfa0fe9804cc097ec",
+      "design.psd": "8de32c27961d676562577a7649b2a71e8d95d3926e80342b0ff00aeb9d735dc0",
+      "exchange-loss.json": "011a02367ed02a1111943c91514214a6019d0d045e3d963f73fadbb0cc267e8a",
+      "psd-inspection.json": "a80d5aa65abcd9645359e74b14e16e0f15060a2b1c7b5c4f44238f05e2030c90",
+      "native.json": "c203821c7d498fa20f705cd83bce946a7ff22fbfe08dc0fa17b6a1500bd6301d",
+      "project.pcraft": "0ec07ecb329b7a7932760d5baafed2582eb4f4092487069a1a41c724a6f2af2c",
+      "manifest.json": "39745d929c24482c928af743d2b6cc7769cbfccb60e418695d853dea29fbf34b",
+      "operations.json": "911900a469a80eefcfe2727ed517b8a3b7e1aa83c4bfc1b2eea8c747424c0a52"
+    },
+    "variants": {
+      "padding": {
+        "manifest": {
+          "schema": "photocraft-delivery/v1",
+          "sourceProjectSha256": "0ec07ecb329b7a7932760d5baafed2582eb4f4092487069a1a41c724a6f2af2c",
+          "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+          "bindings": {
+            "asset_product": {
+              "path": "asset-product.png"
+            },
+            "product": {
+              "layer": 5
+            },
+            "headline": {
+              "bounds": [
+                29,
+                36,
+                118,
+                62
+              ],
+              "layer": 6
+            },
+            "caption": {
+              "bounds": [
+                28,
+                349,
+                162,
+                365
+              ],
+              "layer": 7
+            }
+          },
+          "assets": {
+            "product": {
+              "path": "asset-product.png",
+              "sha256": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536"
+            }
+          },
+          "outputs": [
+            {
+              "path": "design.png",
+              "warnings": [
+                "4 layer(s) flattened; layers, masks and blend modes are not kept"
+              ]
+            },
+            {
+              "path": "design.psd",
+              "warnings": []
+            }
+          ],
+          "nativeWarnings": [],
+          "files": {
+            "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+            "design.png": "ecc3abe4f460b0490d3434e0ffd309cf054734e507609a4f175b85559689941a",
+            "plan.json": "1aac5262719d8bc54ced86f521daa76a9400454ccd9963be038f2066666d1608",
+            "design.psd": "7b82ba43472c325fb610f5f1fd63b6d5c338670a553e6a5bd8c54d7cfbb0fc6d",
+            "exchange-loss.json": "4386735caf8ac88700ce53b57e90fac110fd823e6fc2d4e8e689652ef625589f",
+            "layout-variant.json": "7f1cb9b41d4238bc14f1045b3c613945561ba5c6efbfbd8a577fa4a90e3be38d",
+            "psd-inspection.json": "b29b4d3f298fd4b6c3e94f6afc06f6aeaea56f4aee56de7ffc5d41883163ca1f",
+            "native.json": "6d303934ed63d0d9aab3baa9a9195aedde71d5467afa29e74e473ee894763bf5",
+            "project.pcraft": "be8c6a9025780d4b018f68b09a977871f7c1d7c9667d8d4c605c7ef92cb7d675",
+            "operations.json": "f112121aeabeab8fa43ffbe8779933b715f8b27aa22639a74aa6cbbae3592066"
+          },
+          "lossReport": {
+            "path": "exchange-loss.json",
+            "sha256": "4386735caf8ac88700ce53b57e90fac110fd823e6fc2d4e8e689652ef625589f"
+          },
+          "acceptance": "requires-domain-and-visual-review",
+          "layoutVariant": {
+            "path": "layout-variant.json",
+            "sha256": "7f1cb9b41d4238bc14f1045b3c613945561ba5c6efbfbd8a577fa4a90e3be38d"
+          }
+        },
+        "layout": {
+          "schema": "photocraft-layout-variant/v1",
+          "sourceSize": [
+            320,
+            400
+          ],
+          "targetSize": [
+            360,
+            440
+          ],
+          "safeArea": [
+            8,
+            8,
+            344,
+            424
+          ],
+          "steps": [
+            {
+              "command": "image.canvasSize",
+              "before": [
+                320,
+                400
+              ],
+              "after": [
+                360,
+                440
+              ],
+              "offset": [
+                20,
+                20
+              ],
+              "crop": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              },
+              "padding": {
+                "left": 20,
+                "top": 20,
+                "right": 20,
+                "bottom": 20
+              }
+            }
+          ],
+          "roles": {
+            "background": {
+              "id": 2,
+              "kind": "Pixel",
+              "name": "Background",
+              "bounds": [
+                20,
+                20,
+                320,
+                400
+              ],
+              "text": null
+            },
+            "product": {
+              "id": 5,
+              "kind": "Pixel",
+              "name": "Product",
+              "bounds": [
+                120,
+                160,
+                120,
+                160
+              ],
+              "text": null
+            },
+            "text": {
+              "id": 6,
+              "kind": "Type",
+              "name": "Headline",
+              "bounds": [
+                49,
+                56,
+                89,
+                26
+              ],
+              "text": {
+                "font": "Arial",
+                "sizePt": 32.0,
+                "text": "NOVA"
+              }
+            }
+          }
+        }
+      },
+      "crop": {
+        "manifest": {
+          "schema": "photocraft-delivery/v1",
+          "sourceProjectSha256": "0ec07ecb329b7a7932760d5baafed2582eb4f4092487069a1a41c724a6f2af2c",
+          "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+          "bindings": {
+            "asset_product": {
+              "path": "asset-product.png"
+            },
+            "product": {
+              "layer": 5
+            },
+            "headline": {
+              "bounds": [
+                29,
+                36,
+                118,
+                62
+              ],
+              "layer": 6
+            },
+            "caption": {
+              "bounds": [
+                28,
+                349,
+                162,
+                365
+              ],
+              "layer": 7
+            }
+          },
+          "assets": {
+            "product": {
+              "path": "asset-product.png",
+              "sha256": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536"
+            }
+          },
+          "outputs": [
+            {
+              "path": "design.png",
+              "warnings": [
+                "4 layer(s) flattened; layers, masks and blend modes are not kept"
+              ]
+            },
+            {
+              "path": "design.psd",
+              "warnings": []
+            }
+          ],
+          "nativeWarnings": [],
+          "files": {
+            "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+            "design.png": "c49b8bedb904552a9639f7ad90890bb6372e51725d2223993d34b4d0482d918b",
+            "plan.json": "e9c6c6c14d0a4653ea367a29a19562f54a38c9b13f6653669dadfb9fd0ccd2ae",
+            "design.psd": "34f60c4d39d78defca4df1f34c39bc75c10fe15ce740f53a4e287c777d510dbc",
+            "exchange-loss.json": "d27c60f18c8ec6fac4d93a220ae6e2b9768ccee0f37f3df9fd68c7322ffb16de",
+            "layout-variant.json": "abc0ecf05f64c124caa7ac18e3bb320f52e6b3a10d3033553d1a5bbdc7743037",
+            "psd-inspection.json": "fa75ed0f7fa54bedb7bf695baeed910d51917b3696d1c86324655f898e6ce59a",
+            "native.json": "2ea413a03b53ceb47182dee915af853f8fa4ee187a7848ee2d3bec8185008046",
+            "project.pcraft": "16087ad83127757313d616f7625d62d3b152a4cf00eea2a3678e27d89b575893",
+            "operations.json": "a1069bc19539984fd233475d8c9f9046d479f115fb0a0477647153c9bb3a5757"
+          },
+          "lossReport": {
+            "path": "exchange-loss.json",
+            "sha256": "d27c60f18c8ec6fac4d93a220ae6e2b9768ccee0f37f3df9fd68c7322ffb16de"
+          },
+          "acceptance": "requires-domain-and-visual-review",
+          "layoutVariant": {
+            "path": "layout-variant.json",
+            "sha256": "abc0ecf05f64c124caa7ac18e3bb320f52e6b3a10d3033553d1a5bbdc7743037"
+          }
+        },
+        "layout": {
+          "schema": "photocraft-layout-variant/v1",
+          "sourceSize": [
+            320,
+            400
+          ],
+          "targetSize": [
+            300,
+            380
+          ],
+          "safeArea": [
+            8,
+            8,
+            284,
+            364
+          ],
+          "steps": [
+            {
+              "command": "image.canvasSize",
+              "before": [
+                320,
+                400
+              ],
+              "after": [
+                300,
+                380
+              ],
+              "offset": [
+                -10,
+                -10
+              ],
+              "crop": {
+                "left": 10,
+                "top": 10,
+                "right": 10,
+                "bottom": 10
+              },
+              "padding": {
+                "left": 0,
+                "top": 0,
+                "right": 0,
+                "bottom": 0
+              }
+            }
+          ],
+          "roles": {
+            "background": {
+              "id": 2,
+              "kind": "Pixel",
+              "name": "Background",
+              "bounds": [
+                -10,
+                -10,
+                320,
+                400
+              ],
+              "text": null
+            },
+            "product": {
+              "id": 5,
+              "kind": "Pixel",
+              "name": "Product",
+              "bounds": [
+                90,
+                130,
+                120,
+                160
+              ],
+              "text": null
+            },
+            "text": {
+              "id": 6,
+              "kind": "Type",
+              "name": "Headline",
+              "bounds": [
+                19,
+                26,
+                89,
+                26
+              ],
+              "text": {
+                "font": "Arial",
+                "sizePt": 32.0,
+                "text": "NOVA"
+              }
+            }
+          }
+        }
+      },
+      "resample": {
+        "manifest": {
+          "schema": "photocraft-delivery/v1",
+          "sourceProjectSha256": "0ec07ecb329b7a7932760d5baafed2582eb4f4092487069a1a41c724a6f2af2c",
+          "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+          "bindings": {
+            "asset_product": {
+              "path": "asset-product.png"
+            },
+            "product": {
+              "layer": 5
+            },
+            "headline": {
+              "bounds": [
+                29,
+                36,
+                118,
+                62
+              ],
+              "layer": 6
+            },
+            "caption": {
+              "bounds": [
+                28,
+                349,
+                162,
+                365
+              ],
+              "layer": 7
+            }
+          },
+          "assets": {
+            "product": {
+              "path": "asset-product.png",
+              "sha256": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536"
+            }
+          },
+          "outputs": [
+            {
+              "path": "design.png",
+              "warnings": [
+                "4 layer(s) flattened; layers, masks and blend modes are not kept"
+              ]
+            },
+            {
+              "path": "design.psd",
+              "warnings": []
+            }
+          ],
+          "nativeWarnings": [],
+          "files": {
+            "asset-product.png": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+            "design.png": "c49b6f9a31c3e6e3478dfcdc788d85014f43e220bcbabb34684262c286c9ae61",
+            "plan.json": "d76c72b9d2a680498f7d81dd2aaf63c79f876e5d7789fe97d052484be183f4b4",
+            "design.psd": "0a8f8de3a251a03b07da3412c5b6fbbc0aacf542d25f5021dab53b98dd074535",
+            "exchange-loss.json": "8bce99d35cdaebc83b9d23787fc996964f1c938fa458dc7b346593b3230fe3ba",
+            "layout-variant.json": "c620df3ad95cc0d32cf707ce4d2bd8a2f86afc2bdc03c61da89d013418d3861f",
+            "psd-inspection.json": "87b4da3c8d8db839789da85a23f1c5d0d50a3c62beb346c358a763cff3a14372",
+            "native.json": "5a7145d9322b24f75ff78566066a9b109649050722970986c2b421ae9532c783",
+            "project.pcraft": "a6da76b695620a41333406caa2e7f0bba43456bc0a51bf47bfc1db40b5b03c5d",
+            "operations.json": "95a80095bca913bbe50d15f82b8ac68969836cb2ea0f96166b6a99e3060f1a19"
+          },
+          "lossReport": {
+            "path": "exchange-loss.json",
+            "sha256": "8bce99d35cdaebc83b9d23787fc996964f1c938fa458dc7b346593b3230fe3ba"
+          },
+          "acceptance": "requires-domain-and-visual-review",
+          "layoutVariant": {
+            "path": "layout-variant.json",
+            "sha256": "c620df3ad95cc0d32cf707ce4d2bd8a2f86afc2bdc03c61da89d013418d3861f"
+          }
+        },
+        "layout": {
+          "schema": "photocraft-layout-variant/v1",
+          "sourceSize": [
+            320,
+            400
+          ],
+          "targetSize": [
+            160,
+            200
+          ],
+          "safeArea": [
+            8,
+            8,
+            144,
+            184
+          ],
+          "steps": [
+            {
+              "command": "image.imageSize",
+              "before": [
+                320,
+                400
+              ],
+              "after": [
+                160,
+                200
+              ],
+              "scale": [
+                0.5,
+                0.5
+              ]
+            }
+          ],
+          "roles": {
+            "background": {
+              "id": 2,
+              "kind": "Pixel",
+              "name": "Background",
+              "bounds": [
+                0,
+                0,
+                160,
+                200
+              ],
+              "text": null
+            },
+            "product": {
+              "id": 5,
+              "kind": "Pixel",
+              "name": "Product",
+              "bounds": [
+                50,
+                70,
+                60,
+                80
+              ],
+              "text": null
+            },
+            "text": {
+              "id": 6,
+              "kind": "Type",
+              "name": "Headline",
+              "bounds": [
+                14,
+                18,
+                46,
+                14
+              ],
+              "text": {
+                "font": "Arial",
+                "sizePt": 32.0,
+                "text": "NOVA"
+              }
+            }
+          }
+        }
+      }
+    },
+    "unsafeRejected": true,
+    "sizeMismatchRejected": true,
+    "allSourceFilesPreserved": true,
+    "sourceOverwriteRejected": true,
+    "failedDeliveries": {
+      "unsafe": {
+        "schema": "craft-failed-stage/v1",
+        "status": "failed",
+        "outcome": "failed",
+        "error": "variant_safe_area_violation: product",
+        "stage": "../.photocraft-px0z4_dw",
+        "files": {
+          "asset-product.png": {
+            "sha256": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+            "bytes": 447
+          },
+          "design.png": {
+            "sha256": "ecc3abe4f460b0490d3434e0ffd309cf054734e507609a4f175b85559689941a",
+            "bytes": 7847
+          },
+          "design.psd": {
+            "sha256": "7b82ba43472c325fb610f5f1fd63b6d5c338670a553e6a5bd8c54d7cfbb0fc6d",
+            "bytes": 58356
+          },
+          "project.pcraft": {
+            "sha256": "be8c6a9025780d4b018f68b09a977871f7c1d7c9667d8d4c605c7ef92cb7d675",
+            "bytes": 44172
+          },
+          "recovery-operations.json": {
+            "sha256": "c28167aebc07fc71ae248857ba079101bcb6ea24837c3ac80cf104a49b907646",
+            "bytes": 14335
+          },
+          "source.pcraft": {
+            "sha256": "0ec07ecb329b7a7932760d5baafed2582eb4f4092487069a1a41c724a6f2af2c",
+            "bytes": 39244
+          }
+        },
+        "completedOperations": 11,
+        "lastAttempt": {
+          "tool": "doc_inspect",
+          "arguments": {},
+          "phase": "reply_received"
+        },
+        "replayAllowed": false,
+        "acceptance": "not-a-successful-delivery",
+        "recovery": "verify hashes and reopen original project in a new read-only session before any explicit revision"
+      },
+      "mismatch": {
+        "schema": "craft-failed-stage/v1",
+        "status": "failed",
+        "outcome": "failed",
+        "error": "variant_size_mismatch",
+        "stage": "../.photocraft-k6jsr72l",
+        "files": {
+          "asset-product.png": {
+            "sha256": "ee9c3aba3fe213badad0549b1ca4424da3ee2cd4faf09875224336cfd0855536",
+            "bytes": 447
+          },
+          "design.png": {
+            "sha256": "ecc3abe4f460b0490d3434e0ffd309cf054734e507609a4f175b85559689941a",
+            "bytes": 7847
+          },
+          "design.psd": {
+            "sha256": "7b82ba43472c325fb610f5f1fd63b6d5c338670a553e6a5bd8c54d7cfbb0fc6d",
+            "bytes": 58356
+          },
+          "project.pcraft": {
+            "sha256": "be8c6a9025780d4b018f68b09a977871f7c1d7c9667d8d4c605c7ef92cb7d675",
+            "bytes": 44172
+          },
+          "recovery-operations.json": {
+            "sha256": "c28167aebc07fc71ae248857ba079101bcb6ea24837c3ac80cf104a49b907646",
+            "bytes": 14335
+          },
+          "source.pcraft": {
+            "sha256": "0ec07ecb329b7a7932760d5baafed2582eb4f4092487069a1a41c724a6f2af2c",
+            "bytes": 39244
+          }
+        },
+        "completedOperations": 11,
+        "lastAttempt": {
+          "tool": "doc_inspect",
+          "arguments": {},
+          "phase": "reply_received"
+        },
+        "replayAllowed": false,
+        "acceptance": "not-a-successful-delivery",
+        "recovery": "verify hashes and reopen original project in a new read-only session before any explicit revision"
+      }
+    },
+    "retainedOutputs": true,
+    "scope": "single copied resize skill, fresh runtime, native PNG/PSD/project geometry; synthetic product fixture, no creative quality acceptance"
+  },
+  "historicalRed": {
+    "commit": "db975e18dea5f08ec933405dfed4d8e1bcb36e39",
+    "workflowSha256": "ffcbf758d3ec70e9e01dd57af9b97c0065950ba34c75d8b078acd893e2324536",
+    "logSha256": "b28a4b037f34e4ece1722f0b97b248993f93d2da1f33f643888a628cf82727a7",
+    "behavior": "valid operation list with invalid variant safe area was silently accepted; expected rejection assertion failed",
+    "scope": "historical red reconstructed in this turn, not original TDD log"
+  },
+  "currentPreflight": {
+    "workflowSha256": "3560d35457ee8f6b95a6e6500e5e45f57ff85404d28ffe335b90011f19d23e0f",
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "testFailureCorrection": {
+    "logSha256": "940237a91e606f09220bcdb374982cf151534de26171fdb54ade771b6f6fb001",
+    "reason": "stale test demanded no failure diagnostics directory; PC-TX-004 requires failed native stage preservation",
+    "productBehavior": "correct failure, not successful delivery; updated assertions require no success manifest and hash-bound non-replayable retained native stage"
+  },
+  "testFiles": {
+    "test_layout_variant.py": "0e59d92c85f6b1d9032a024d4c0d1d73852ba78c62167de85b056f3b5d4ffe3a",
+    "test_layout_variant_first_use.py": "fff40aab442df0ea443c4bc92ed86c337720a1bc7617713cad59e95989734e27"
+  },
+  "logs": {
+    "native-complete.log": "f44f9f022a65c2aac16f3a508194dbe12e11e627adbb6e5bb9e51008c1a19850",
+    "layout-unit-complete.log": "ba098ca0fde857907d6ed84436f50bebd048f8f85fba82271271a7619367e162",
+    "source-regression.log": "da7876517fb4e6c4cecbc117ad4f0f1acf30c6df30ee8a758c6ce2429ffe71ab"
+  },
+  "sourceRegressionSummary": "Ran 150 tests in 21.613s\n\nOK (skipped=31)",
+  "scope": "complete current PC-DM-004 technical scenarios using an independently copied fixed installed skill and fresh public runtime; not full V1 or human creative acceptance",
+  "unverified": [
+    "Other platforms",
+    "Other Photo requirements",
+    "All command contexts",
+    "Generic Skills CLI installation",
+    "Human creative acceptance",
+    "Full V1"
+  ]
+}

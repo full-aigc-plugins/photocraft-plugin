@@ -138,8 +138,9 @@
         "4.22"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json"
+      "status": "verified",
+      "evidence": "docs/evidence/photocraft-complete-variant-contract-20261008.json",
+      "scope": "all current PC-DM-004 technical scenarios; pinned macOS arm64 CLI matrix"
     },
     {
       "requirement": "PC-DM-005",

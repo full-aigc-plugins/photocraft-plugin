@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切、重采样、可编辑原生／PSD图层、安全区／尺寸拒绝、源工程及失败暂存保全。[验收架构](docs/PhotoCraft-Complete-Variant-Contract-Architecture.zh_CN.md)。完整首版继续开放。
+
 四领域RT-001运行时来源与完整性已完成当前全部场景验收，固定技能字节保持不变；运行时升级与完整首版仍开放。[验收架构](docs/Craft-Fixed-Runtime-Integrity-Architecture.zh_CN.md)。
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。

@@ -56,7 +56,10 @@
     "1.5": "docs/evidence/craft-fixed-setup-boundary-20261008.json",
     "1.6": "docs/evidence/craft-fixed-setup-boundary-20261008.json",
     "2.2": "docs/evidence/craft-fixed-runtime-integrity-20261008.json",
-    "2.3": "docs/evidence/craft-fixed-runtime-integrity-20261008.json"
+    "2.3": "docs/evidence/craft-fixed-runtime-integrity-20261008.json",
+    "4.10": "docs/evidence/photocraft-complete-variant-contract-20261008.json",
+    "4.11": "docs/evidence/photocraft-complete-variant-contract-20261008.json",
+    "4.12": "docs/evidence/photocraft-complete-variant-contract-20261008.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
