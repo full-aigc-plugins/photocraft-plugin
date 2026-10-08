@@ -11,6 +11,18 @@ function fixture() {
  const request={idempotencyKey:'one',brief:'Edit the title only',plan:{document:{width:32,height:32},operations:[],exports:[{format:'png'}]},output:join(root,'delivery'),authorization:{ref:'user',writeRoot:root},budget:{deadline:Date.now()+60000,maxRevisions:1,reserveBytes:1024}};
  return {root,request,close:()=>rmSync(root,{recursive:true,force:true})};
 }
+test('revision retains PSD requirements and scopes accepted losses to the exact base source',async()=>{
+ const {Runner}=await import('../src/harness/runner.ts');
+ for(const matchingSource of [false,true]){
+  const f=fixture();try{
+   const policy={requiredFeatures:['text','structure'],acceptedForSourceSha256:(matchingSource?'a':'d').repeat(64),acceptedLosses:{'0:structure':{status:'lost',observationSha256:'e'.repeat(64),reason:'test fixture only'}}};
+   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create({...f.request,plan:{...f.request.plan,exports:[{format:'png'},{format:'psd'}],psdPolicy:policy}});const epoch=ledger.claim(task.id);ledger.transition(task.id,epoch,'verifying');ledger.recordTechnical(task.id,epoch,{status:'PASS',projectSha256:'a'.repeat(64),previewSha256:'b'.repeat(64),manifestSha256:'c'.repeat(64)});
+   const review=new Review(ledger);const req=review.request(task.id);review.import(task.id,{requestId:req.id,projectSha256:req.projectSha256,previewSha256:req.previewSha256,manifestSha256:req.manifestSha256,referencesSha256:req.referencesSha256,briefSha256:req.briefSha256,rubricVersion:req.rubricVersion,evaluator:{kind:'human',identity:'test-fixture',version:'v1',contextIsolation:'fixture'},verdict:'FAIL',gaps:[{id:'title',layer:2,property:'text',reason:'Change title'}]});
+   const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});const child=await runner.revise(task.id,{baseProjectSha256:req.projectSha256,baseManifestSha256:req.manifestSha256,authorizationRef:'user',operations:[{command:'type.edit',params:{layer:2,text:'NEW'}}]});
+   assert.deepEqual(child.request.plan.psdPolicy,matchingSource?policy:{requiredFeatures:policy.requiredFeatures});assert.deepEqual(ledger.status(task.id).request.plan.psdPolicy,policy);ledger.close();
+  }finally{f.close();}
+ }
+});
 test('unknown native completion is reconciled by observation, never replayed',async()=>{
  const { Runner }=await import('../src/harness/runner.ts');const f=fixture();
  try{

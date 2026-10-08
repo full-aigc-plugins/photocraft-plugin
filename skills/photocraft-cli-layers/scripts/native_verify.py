@@ -19,6 +19,7 @@ def verify(root,runtime_home):
  if key not in lock['artifacts']:raise ValueError('unsupported_platform')
  installed=load('bootstrap').inspect_install(Path(runtime_home)/'photocraft'/lock['resolvedVersion'],lock['artifact'],lock['artifacts'][key])
  if installed['binarySha256']!=manifest['runtimeSha256']:raise ValueError('runtime_identity_mismatch')
+ psd_verification=None
  with tempfile.TemporaryDirectory(prefix='photocraft-readonly-') as temporary:
   with load('mcp_session').Session([installed['executable'],'mcp','--automation-read-root',str(root),'--automation-write-root',temporary]) as session:
    commands=load('commands')
@@ -27,9 +28,14 @@ def verify(root,runtime_home):
    if 'native-facts.json' in manifest['files']:
     facts=load('native_facts').collect(root/'project.pcraft',actual,call)
     if facts!=delivery.read_json(root/'native-facts.json'):raise ValueError('native_facts_changed')
+   if 'psd-inspection.json' in manifest['files']:
+    call('doc_open',{'path':'design.psd'});actual_psd=call('doc_inspect',{})
+    psd_verification=load('psd_features').verify_reopen(delivery.read_json(root/'psd-inspection.json'),actual_psd)
  load('domain_assertions').compare(delivery.read_json(root/'native.json'),actual,{})
  delivery.validate_delivery(root,manifest_sha)
- return {'schema':'photocraft-native-verification/v1','result':'PASS','manifestSha256':manifest_sha,'projectSha256':manifest['files']['project.pcraft'],'runtimeSha256':installed['binarySha256'],'scope':'fresh headless reopen and recorded object preservation; creative review NOT_RUN'}
+ result={'schema':'photocraft-native-verification/v1','result':'PASS','manifestSha256':manifest_sha,'projectSha256':manifest['files']['project.pcraft'],'runtimeSha256':installed['binarySha256'],'scope':'fresh headless reopen and recorded object preservation; creative review NOT_RUN'}
+ if psd_verification is not None:result['psdVerification']=psd_verification
+ return result
 
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('delivery');parser.add_argument('--runtime-home',default=os.environ.get('CRAFT_RUNTIME_HOME',str(Path.home()/'.local/share/craft-runtimes')));args=parser.parse_args()

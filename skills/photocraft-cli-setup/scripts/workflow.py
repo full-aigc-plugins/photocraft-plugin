@@ -106,7 +106,7 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
     if not isinstance(plan, dict) or not isinstance(plan.get('operations'), list):
         raise ValueError('operations_required: $.operations')
     allowed = {'document', 'operations', 'assets', 'exports', 'minimumLayers',
-               'expectedProjectSha256', 'expectedManifestSha256', 'protectedRegions', 'variant', 'assertions', 'preserveObjects', 'filterContract','acceptedFontSubstitutions'}
+               'expectedProjectSha256', 'expectedManifestSha256', 'protectedRegions', 'variant', 'assertions', 'preserveObjects', 'filterContract','acceptedFontSubstitutions','psdPolicy'}
     if set(plan) - allowed:
         raise ValueError('unknown_plan_field: $.' + sorted(set(plan) - allowed)[0])
     # 保留旧的片段校验入口；完整 execute 总会传入已核验的绑定再严格检查。
@@ -200,6 +200,10 @@ def validate(plan, bindings=None, check_references=True, inherited_assets=()):
         formats.append(item['format'])
     if len(formats) != len(set(formats)):
         raise ValueError('duplicate_export')
+    if 'psdPolicy' in plan:
+        load_module('psd_policy').validate(plan['psdPolicy'])
+        if 'psd' not in formats:
+            raise ValueError('psd_policy_requires_psd')
     if 'document' in plan:
         doc = plan['document']
         if not isinstance(doc, dict) or set(doc) - {'name', 'width', 'height', 'background', 'mode', 'depth'}:
@@ -238,6 +242,9 @@ def preflight(plan, output=None, source=None):
             raise ValueError('output_exists')
     if 'protectedRegions' in plan and not source:raise ValueError('protected_source_required')
     if 'variant' in plan and not source:raise ValueError('variant_source_required')
+    if plan.get('psdPolicy', {}).get('acceptedLosses'):
+        if not source or plan['psdPolicy']['acceptedForSourceSha256'] != plan.get('expectedProjectSha256'):
+            raise ValueError('psd_acceptance_source_mismatch')
     source_project, source_hash, source_manifest_hash = None, None, None
     bindings = {}
     inherited_assets = {}

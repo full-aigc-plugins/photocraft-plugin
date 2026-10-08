@@ -30,7 +30,7 @@ node "$PLUGIN_ROOT/src/cli.ts" stop --state-dir "$STATE_DIR" --task "$TASK_ID"
 
 ## 当前范围
 
-开发版 dev.39 的默认执行资源来自固定 dev.35 快照。开发验证可明确传入 `--skill-root` 指向其他单技能目录，其摘要写入任务；该路径的验证不能冒充固定发行验收。桌面可变工程写入未接通，明确拒绝；真实宿主模型派发、Windows/Linux 原生运行及创作接受未验收。
+开发版 dev.40 的默认执行资源来自固定 dev.36 快照。开发验证可明确传入 `--skill-root` 指向其他单技能目录，其摘要写入任务；该路径的验证不能冒充固定发行验收。桌面可变工程写入未接通，明确拒绝；真实宿主模型派发、Windows/Linux 原生运行及创作接受未验收。
 
 ## 可移动血缘交付
 
@@ -39,3 +39,5 @@ node "$PLUGIN_ROOT/src/cli.ts" stop --state-dir "$STATE_DIR" --task "$TASK_ID"
 `bundle-check --bundle "$MOVED_BUNDLE" --expected-sha256 "$BUNDLE_SHA256"` 只读核对，无需任务账本或旧绝对路径。旧交付可检查文件摘要，但血缘保持 UNKNOWN。完整性不证明评估器身份真实性，也不把 NOT_RUN 创作状态变成通过。
 
 局部调整修订当前仅支持已有 `BrightnessContrast` 调整层的 `brightness`／`contrast`。必须有绑定的失败评估、目标授权、已启用蒙版及蒙版瓦片摘要，并声明保护区域；另存后核验实际像素变化、蒙版保全及非目标像素。其他调整种类仍拒绝，不由此声明完整领域或创作验收。
+
+PSD 导出按固定技能的必要特性门禁执行；受限返工继承 `psdPolicy`，旧源版本的损失接受不得自动授权不同源版本。

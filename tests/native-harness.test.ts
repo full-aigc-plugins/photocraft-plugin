@@ -14,7 +14,7 @@ test('real native task, fresh readonly reopening, bounded title revision, source
   let ledger=new Ledger(join(root,'state'));
   const options={skillRoot:process.env.PHOTOCRAFT_SKILL_ROOT!,python:process.env.PHOTOCRAFT_PYTHON??'python3'};
   let runner=new Runner(ledger,options);
-  const task=ledger.create({idempotencyKey:'poster',brief:'An editable title saying NEW, with the white background preserved',plan:{document:{width:64,height:64,background:'#ffffff'},operations:[{command:'type.create',params:{text:'OLD',font:'Arial',size:12,x:8,y:20},as:'title'}],exports:[{format:'png'},{format:'psd'}]},output:join(root,'delivery'),authorization:{ref:'test-authorization',writeRoot:root},budget:{deadline:Date.now()+120000,maxRevisions:1,maxConcurrent:1,reserveBytes:1048576}});
+  const task=ledger.create({idempotencyKey:'poster',brief:'An editable title saying NEW, with the white background preserved',plan:{document:{width:64,height:64,background:'#ffffff'},operations:[{command:'type.create',params:{text:'OLD',font:'Arial',size:12,x:8,y:20},as:'title'}],exports:[{format:'png'},{format:'psd'}],psdPolicy:{requiredFeatures:['structure','text']}},output:join(root,'delivery'),authorization:{ref:'test-authorization',writeRoot:root},budget:{deadline:Date.now()+120000,maxRevisions:1,maxConcurrent:1,reserveBytes:1048576}});
   const result=await runner.run(task.id);
   assert.equal(result.state,'verifying');assert.equal(result.technical.status,'PASS');assert.equal(result.creative.status,'NOT_RUN');
   const original=readFileSync(join(root,'delivery/project.pcraft'));
@@ -24,7 +24,9 @@ test('real native task, fresh readonly reopening, bounded title revision, source
   review.import(task.id,{requestId:req.id,projectSha256:req.projectSha256,previewSha256:req.previewSha256,manifestSha256:req.manifestSha256,referencesSha256:req.referencesSha256,briefSha256:req.briefSha256,rubricVersion:req.rubricVersion,evaluator:{kind:'external',identity:'test-fixture-not-production-review',version:'test-fixture/v1',contextIsolation:'test-fixture'},verdict:'FAIL',gaps:[{id:'title',layer:manifest.bindings.title.layer,property:'text',reason:'OLD must become NEW'}]});
   assert.throws(()=>review.propose(task.id,{baseProjectSha256:req.projectSha256,baseManifestSha256:req.manifestSha256,authorizationRef:'test-authorization',operations:[{command:'type.edit',params:{layer:manifest.bindings.title.layer,text:'OLD'}}]}),/revision_no_improvement/);
   const child=await runner.revise(task.id,{baseProjectSha256:req.projectSha256,baseManifestSha256:req.manifestSha256,authorizationRef:'test-authorization',operations:[{command:'type.edit',params:{layer:manifest.bindings.title.layer,text:'NEW'}}]});
+  assert.deepEqual(child.request.plan.psdPolicy,{requiredFeatures:['structure','text']});
   const revised=await runner.run(child.id);assert.equal(revised.technical.status,'PASS');assert.equal(revised.creative.status,'NOT_RUN');assert.deepEqual(readFileSync(join(root,'delivery/project.pcraft')),original);
+  assert.equal(revised.technical.nativeReopen.psdVerification.status,'PASS');
   const portable=exportBundle(revised,join(root,'portable-child'),ledger.status(task.id).artifact);
   const {renameSync}=await import('node:fs');renameSync(join(root,'portable-child'),join(root,'relocated-child'));
   const checked=verifyBundle(join(root,'relocated-child'),portable.bundleSha256);assert.equal(checked.lineage,'VERIFIED');assert.equal(checked.artifact.assetId,result.artifact.assetId);assert.equal(checked.artifact.sourceRefs[0].sha256,result.artifact.sha256);assert.equal(checked.creativeAcceptance,'NOT_RUN');

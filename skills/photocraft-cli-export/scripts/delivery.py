@@ -101,6 +101,10 @@ def validate_delivery(root, expected_manifest_sha256=None):
                 or output.get('role') != 'derivative' or output.get('nativeSubstitute') is not False):
             raise ValueError('delivery_loss_identity_mismatch')
         observed.add(location)
+    spec = importlib.util.spec_from_file_location('delivery_psd_policy', Path(__file__).with_name('psd_policy.py'))
+    policy = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(policy)
+    policy.validate_saved(root, read_json(root / 'plan.json'), loss, files)
     if sha(manifest_file) != manifest_digest:
         raise ValueError('delivery_manifest_changed')
     return manifest

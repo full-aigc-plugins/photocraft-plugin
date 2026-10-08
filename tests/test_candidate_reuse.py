@@ -23,4 +23,9 @@ class CandidateReuseTests(unittest.TestCase):
    elif key=='sourceUnchanged':old[key]=False
    else:old['checks'][0]['tests'][key]=1
    with self.subTest(key=key),self.assertRaises(ValueError):m.reusable_skills_check(old,{'sha256':'a'*64},SimpleNamespace(native=True,desktop=True))
+ def test_terminal_failure_of_independent_check_preserves_skills_pass(self):
+  m=module();old=self.fixture();old['status']='FAIL';old['checks'].append({'name':'command-acceptance-index','status':'FAIL','exitCode':1})
+  self.assertEqual(m.reusable_skills_check(old,{'sha256':'a'*64},SimpleNamespace(native=True,desktop=True))['tests']['passed'],201)
+  old['checks'][0]['status']='FAIL'
+  with self.assertRaises(ValueError):m.reusable_skills_check(old,{'sha256':'a'*64},SimpleNamespace(native=True,desktop=True))
 if __name__=='__main__':unittest.main()

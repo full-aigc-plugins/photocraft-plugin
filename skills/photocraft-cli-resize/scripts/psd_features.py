@@ -9,11 +9,22 @@ def tree(model):
    if 'children' in layer:walk(layer['children'],key+'/')
  walk(model.get('layers',[]),'');return result
 
+def verify_reopen(recorded,actual):
+ """PSD 重开可重分配 ID；按递归位置比较完整持久属性和画幅。"""
+ for key in ('width','height','mode','depth'):
+  if recorded.get(key)!=actual.get(key):raise ValueError('psd_reopen_canvas_changed: '+key)
+ before=tree(recorded);after=tree(actual)
+ if set(before)!=set(after):raise ValueError('psd_reopen_structure_changed: positions')
+ for key,old in before.items():
+  normalize=lambda row:{name:value for name,value in row.items() if name not in ('id','selected','children')}
+  if normalize(old)!=normalize(after[key]):raise ValueError('psd_reopen_structure_changed: '+key)
+ return {'status':'PASS','layers':len(before),'scope':'recursive reopened PSD persistent properties; reassigned IDs and temporary selection excluded, external editor fidelity NOT_RUN'}
+
 def assess(native,psd,used_effects=False):
  a=tree(native);b=tree(psd);features={}
  for key,layer in a.items():
   other=b.get(key);same=other is not None and other.get('name')==layer.get('name')
-  features[key+':structure']={'status':'retained' if same and other.get('kind')==layer.get('kind') else 'lost','evidence':'native and PSD reopened trees at the same sibling position'}
+  features[key+':structure']={'status':'retained' if same and other.get('kind')==layer.get('kind') else 'lost','native':{'name':layer.get('name'),'kind':layer.get('kind')},'psd':{'name':other.get('name'),'kind':other.get('kind')} if other is not None else None,'evidence':'native and PSD reopened trees at the same sibling position'}
   used=[]
   if layer.get('kind')=='Type':used.append(('text','text'))
   if layer.get('hasMask') is True:used.append(('mask','hasMask'))

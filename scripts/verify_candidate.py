@@ -24,7 +24,9 @@ def fingerprint(root):
  return {'sha256':hashlib.sha256(json.dumps(files,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'files':files}
 
 def reusable_skills_check(baseline,current,args):
- if baseline.get('schema')!='photocraft-candidate-validation/v1' or baseline.get('status')!='PASS' or baseline.get('sourceUnchanged') is not True:raise ValueError('reuse_unverified_baseline')
+ if baseline.get('schema')!='photocraft-candidate-validation/v1' or baseline.get('status') not in ('PASS','FAIL') or baseline.get('sourceUnchanged') is not True:raise ValueError('reuse_unverified_baseline')
+ # 整体失败仅允许复用独立通过的技能检查，且必须保留另一个失败检查的证据。
+ if baseline['status']=='FAIL' and not any(item.get('name')!='skills-tests' and item.get('status')=='FAIL' and isinstance(item.get('exitCode'),int) and item['exitCode']!=0 for item in baseline.get('checks',[])):raise ValueError('reuse_unverified_baseline')
  if baseline.get('source',{}).get('skills')!=current:raise ValueError('reuse_source_mismatch')
  if any(baseline.get('layers',{}).get(key) is not getattr(args,key) for key in ('native','desktop')):raise ValueError('reuse_layer_mismatch')
  checks=[item for item in baseline.get('checks',[])if item.get('name')=='skills-tests']
@@ -45,6 +47,7 @@ def main():
  if reused is not None:
   report['reuse']={'baselineFile':str(args.reuse_skills_evidence.relative_to(ROOT)) if args.reuse_skills_evidence.is_relative_to(ROOT) else args.reuse_skills_evidence.name,'baselineSha256':hashlib.sha256(args.reuse_skills_evidence.read_bytes()).hexdigest(),'scope':'skills-tests only, byte-identical source and equal native/desktop opt-in layers; all plugin/static checks freshly executed'}
   report['reusedNativeReports']=baseline.get('nativeReports',{})
+  report['reuse']['baselineStatus']=baseline['status'];report['reuse']['baselineFailedChecks']=[item['name'] for item in baseline['checks'] if item.get('status')=='FAIL']
  def save():output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  save()
  with tempfile.TemporaryDirectory(prefix='photocraft-candidate-validation-') as temporary:

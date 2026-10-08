@@ -72,5 +72,13 @@ def write_report(root,outputs,warnings):
    change('font-portability','unknown','Native live-text portability is not verified.')
   elif fmt not in ('jpg','jpeg','webp'):raise ValueError('loss_format_unsupported')
   report['outputs'].append({'location':location,'sha256':sha(path),'format':fmt,'role':'derivative','nativeSubstitute':False,'changes':changes,'observations':observations,'warnings':warnings.get(location,[])})
+ gate=None
+ if any(output['format']=='psd' for output in report['outputs']):
+  spec=importlib.util.spec_from_file_location('psd_policy',Path(__file__).with_name('psd_policy.py'));policy=importlib.util.module_from_spec(spec);spec.loader.exec_module(policy)
+  plan=json.loads((root/'plan.json').read_text()) if (root/'plan.json').is_file() else {}
+  gate=policy.assess(report,plan.get('psdPolicy',{}),sha(root/'plan.json') if (root/'plan.json').is_file() else None,plan.get('expectedProjectSha256'))
+  (root/'psd-acceptance.json').write_text(json.dumps(gate,ensure_ascii=False,indent=2)+'\n')
+  report['psdGate']={'location':'psd-acceptance.json','sha256':sha(root/'psd-acceptance.json')}
  (root/'exchange-loss.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+ if gate is not None and gate['status']=='FAIL':raise ValueError('psd_required_features_unaccepted: '+','.join(gate['unaccepted']+gate['unobservedRequired']+gate['unusedAcceptances']))
  return report

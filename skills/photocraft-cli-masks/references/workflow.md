@@ -24,6 +24,7 @@ python3 "$SKILL_DIR/scripts/workflow.py" \
 | minimumLayers | 重开后最低图层数门禁；无法替代图层语义检查 |
 | exports | `[{"format":"png"},{"format":"psd"}]`；同时支持 jpg、tif、webp |
 | expectedProjectSha256 | 修订时必须与源工程及源 manifest 摘要一致 |
+| psdPolicy | 必要 PSD 功能及与源版本／观察摘要绑定的明确损失接受；见本技能 exchange-loss.md |
 
 `asset.place` 是本助手操作，不是上游命令。它使用限定读取根内的 `doc_open`，把素材复制到目标文档的独立像素图层，支持 `asset`、`center`、`name` 参数。它不创建链接图层或智能对象，不执行 MCP 明确禁止的带外文件命令。
 
