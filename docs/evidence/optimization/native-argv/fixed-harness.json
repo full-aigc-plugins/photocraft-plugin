@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests": {
+    "tests": 29,
+    "pass": 29,
+    "fail": 0,
+    "skipped": 0
+  },
+  "logSha256": "0def28aa15c4d4316b6c80395d97f19e8e078ba1acc44ae03c46fd969266e81e",
+  "installedTreeUnchanged": true,
+  "scope": "All29 tests from actual public-tag installed plugin including2 native tests; synthetic review is not independent creative acceptance"
+}

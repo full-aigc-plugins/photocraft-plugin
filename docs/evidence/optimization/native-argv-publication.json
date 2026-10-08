@@ -1,22 +1,110 @@
 {
   "schema": "photocraft-native-argv-publication/v1",
-  "status": "PREPARING_DEVELOPMENT_RELEASE",
-  "source": {
-    "repository": "full-aigc-skills/photocraft-skills",
-    "tag": "v0.1.0-dev.40",
-    "commit": "f3b035bab935afb5d0f42f1c765f1028e5234646",
-    "assetSha256": "1f2a40811b3afeeb645149da9989ce2df3db16cf05b0c712a85a655b08d329e7",
-    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.40",
-    "prerelease": true
-  },
-  "pluginVersion": "0.1.0-dev.45",
-  "fixedInstallation": "NOT_RUN",
+  "status": "PASS_DEVELOPMENT_PUBLICATION_PARTIAL_ACCEPTANCE",
+  "recordedAt": "2026-10-08T15:39:43.490628+00:00",
+  "releases": [
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "tag": "v0.1.0-dev.40",
+      "commit": "f3b035bab935afb5d0f42f1c765f1028e5234646",
+      "assetSha256": "1f2a40811b3afeeb645149da9989ce2df3db16cf05b0c712a85a655b08d329e7",
+      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.40",
+      "prerelease": true,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true
+    },
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "tag": "v0.1.0-dev.45",
+      "commit": "0a4d116e5b005267baea03801aeee1837f0879a0",
+      "assetSha256": "2219ea215bda99e4d175f592a1a29becdfab5f08e489325fc0de949e00887714",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.45",
+      "prerelease": true,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true
+    }
+  ],
+  "previousReleasesPreserved": [
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "tag": "v0.1.0-dev.39",
+      "commit": "e17da3eeee17790aa4783f0d0109f79f95f8d5ff",
+      "assetSha256": "e10fb5376bd812a96f4fb6784cf573a6b0429b5041110e4096b0eba63d8db10c",
+      "preserved": true
+    },
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "tag": "v0.1.0-dev.44",
+      "commit": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+      "assetSha256": "3a45b21a04094485306e3a533dcc560f94cbb42dc964a4450bc2dc9283b95704",
+      "preserved": true
+    }
+  ],
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37802224633,
+      "headBranch": "v0.1.0-dev.45",
+      "headSha": "0a4d116e5b005267baea03801aeee1837f0879a0",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37802224633"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37802224842,
+      "headBranch": "v0.1.0-dev.45",
+      "headSha": "0a4d116e5b005267baea03801aeee1837f0879a0",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37802224842"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37802215130,
+      "headBranch": "main",
+      "headSha": "0a4d116e5b005267baea03801aeee1837f0879a0",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37802215130"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37802215121,
+      "headBranch": "main",
+      "headSha": "0a4d116e5b005267baea03801aeee1837f0879a0",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37802215121"
+    }
+  ],
+  "skillsRepositoryCI": [],
+  "skillsCIBoundary": "No source CI run;234 local source tests passed, zero skips",
+  "releaseValidation": "native-argv-release-validation.json",
+  "releaseValidationSha256": "a58b81ab07826c2fe0cb5b3eded1e6fbc0185a637f860d9fc6d4b857879f8fa8",
+  "sourceValidation": "native-argv-source-validation.json",
+  "sourceValidationSha256": "7c910bc332cf8348ed2eb00918d3098a4d6d29a2b1385d92136d5ba166045e94",
+  "fixedHost": "native-argv/fixed-host.json",
+  "fixedArgv": "native-argv/fixed.json",
+  "fixedHarness": "native-argv/fixed-harness.json",
+  "fixedInstallation": "PASS_BOUNDED_ARGV_AND_HARNESS_REGRESSION",
+  "installedTreeUnchanged": true,
   "taskCounts": {
     "completed": 129,
     "total": 157,
     "open": 28
   },
   "closedTasks": [],
+  "remaining": [
+    "9.6 full entry contract including Harness create/revise and structured replies",
+    "MCP/serve streaming and per-command semantic reply stopping",
+    "Full remaining OpenSpec gates"
+  ],
+  "initialCombinationCheck": {
+    "status": "FAIL_LOCAL_IGNORED_BYTECODE_NOT_RELEASE_CONTENT",
+    "sha256": "7f26af6dda0952a518a24c9c92f6599a1c98c067bc0f6b1021950687be1671ca",
+    "resolution": "Verified immutable public source ZIP used; complete release combination PASS"
+  },
   "marketplaceEligible": false,
   "supportedPluginHosts": [],
   "fullV1": "INCOMPLETE"

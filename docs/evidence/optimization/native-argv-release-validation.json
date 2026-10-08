@@ -2490,7 +2490,7 @@
       "exitCode": 0,
       "seconds": 9.535,
       "outputSha256": "5c6204c06d94a41f47be83a749a51a4c2dbf2e71af30c113f99d50ca547961d5",
-      "summary": "fetched /private/var/folders/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmp5rhzooo2/source@v1.0.0 -> 1b64aec1d6a557453285a90d991e10c866cf6b1c\nusing local tagged source for sample-skills: /private/var/folders/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmp5rhzooo2/source @ 1b64aec1d6a557453285a90d991e10c866cf6b1c\n\n..............................................fatal: couldn't find remote ref refs/tags/v1.0.0\n..\n----------------------------------------------------------------------\nRan 48 tests in 9.453s\n\nOK\n"
+      "summary": "fetched TEMPORARY_WORKSPACE/tmp5rhzooo2/source@v1.0.0 -> 1b64aec1d6a557453285a90d991e10c866cf6b1c\nusing local tagged source for sample-skills: TEMPORARY_WORKSPACE/tmp5rhzooo2/source @ 1b64aec1d6a557453285a90d991e10c866cf6b1c\n\n..............................................fatal: couldn't find remote ref refs/tags/v1.0.0\n..\n----------------------------------------------------------------------\nRan 48 tests in 9.453s\n\nOK\n"
     },
     {
       "name": "skills-resources",
@@ -5564,5 +5564,9 @@
   },
   "nativeReports": {},
   "sourceUnchanged": true,
-  "finishedAt": "2026-10-08T15:36:42.891190+00:00"
+  "finishedAt": "2026-10-08T15:36:42.891190+00:00",
+  "normalization": {
+    "rawReportSha256": "79c31b5838eccc6bc4425cff15ecea264d44e28ed9d7da371ff319816742a8a5",
+    "scope": "Only ephemeral absolute paths in test summaries normalized; source fingerprints, raw output hashes and results retained"
+  }
 }

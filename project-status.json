@@ -171,7 +171,7 @@
     "pluginWorkingVersion": "0.1.0-dev.45",
     "fixedSkillSourceVersion": "0.1.0-dev.40",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "DEVELOPMENT_RELEASE_PREPARATION",
+    "publication": "PUBLISHED_ARGV_PREFLIGHT_PARTIAL_ENTRY_ACCEPTANCE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -179,8 +179,8 @@
       "open": 28,
       "newlyCompleted": 67
     },
-    "publicationEvidence": "docs/evidence/optimization/entry-release-publication.json",
-    "currentRegressionEvidence": "docs/evidence/optimization/entry-post-release-validation.json"
+    "publicationEvidence": "docs/evidence/optimization/native-argv-publication.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/native-argv-release-validation.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -193,13 +193,16 @@
   "fixedReleaseIdentityEvidence": "docs/evidence/optimization/identity-acceptance-audit.json",
   "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json",
   "entryContractEvidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
-  "entryContractAcceptance": "PARTIAL: fixed workflow/commands/desktop pass; native argv preflight and Harness audit remain open",
+  "entryContractAcceptance": "PARTIAL: fixed argv preflight and29 installed Harness tests pass; create/revise, streaming and per-command reply contract remain open",
   "fixedReleaseCombinationEvidence": "docs/evidence/optimization/entry-contract/fixed-release-combination.json",
   "unreleasedEntryCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED",
     "evidence": "docs/evidence/optimization/native-argv/candidate.json",
-    "published": false,
+    "published": true,
     "closedTasks": [],
-    "remainingTask": "9.6"
+    "remainingTask": "9.6",
+    "sourceRef": "v0.1.0-dev.40",
+    "pluginRef": "v0.1.0-dev.45",
+    "publicationEvidence": "docs/evidence/optimization/native-argv-publication.json"
   }
 }
