@@ -339,12 +339,12 @@ def execute(plan, output, runtime_home=None, source=None):
         receipts = []
         recovery_state['operations'] = receipts
         with load_module('mcp_session').Session(argv) as session:
-            gate=load_module('capabilities').Gate(session,load_module('commands'),installed['binarySha256'])
+            gate=load_module('capabilities').Gate(session,load_module('commands'),installed['binarySha256'],runtime_identity=installed.get('runtimeIdentity'))
             capability=gate.check()
             def call(name, args):
                 if name=='command_run':
                     load_module('commands').validate_parameters(args['id'],args['params'],'$.native.'+args['id'],True)
-                    gate.check(args['id'])
+                gate.check_scope([args['id']] if name=='command_run' else [],[name],args['id'] if name=='command_run' else None)
                 return call_tool(session, name, args, recovery_state, receipts)
             opened = call('doc_open', {'path': 'source.pcraft'}) if source_project else call('doc_new', plan['document'])
             target_index = opened.get('index', opened.get('document'))
@@ -370,7 +370,7 @@ def execute(plan, output, runtime_home=None, source=None):
                     filter_before='filter-'+str(len(filter_steps))+'-before.png';filter_after='filter-'+str(len(filter_steps))+'-after.png'
                     call('doc_export',{'path':filter_before,'format':'png'})
                 if operation['command'] == 'native.command':
-                    gate.check(params['command'])
+                    gate.check_scope([params['command']],['command_run'],params['command'])
                     result = native_module().execute(session, params, recovery_state, receipts, stage)
                 elif operation['command'] in SMART_SOURCE | {'asset.placeSmart'}:
                     asset=params['asset']
@@ -465,6 +465,7 @@ def execute(plan, output, runtime_home=None, source=None):
             (stage / 'source.pcraft').unlink()
         if filter_steps:(stage/'filter-contract.json').write_text(json.dumps({'schema':'photocraft-filter-execution/v1','steps':filter_steps},ensure_ascii=False,indent=2)+'\n')
         (stage/'capabilities.json').write_text(json.dumps(capability,ensure_ascii=False,indent=2)+'\n')
+        (stage/'capability-checks.json').write_text(json.dumps(gate.checks,ensure_ascii=False,indent=2)+'\n')
         for name, value in [('native.json', native), ('plan.json', plan), ('operations.json', receipts)]:
             (stage / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
         if psd is not None:

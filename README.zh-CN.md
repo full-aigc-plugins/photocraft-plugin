@@ -1,12 +1,14 @@
 # PhotoCraft Agent Plugin
 
+dev.42 固定技能源dev.38，能力快照绑定版本／平台和双后端身份，按本次操作依赖核验合同并保留发现摘要。公开固定安装验收待完成。[能力验收](docs/PhotoCraft-Capability-Acceptance.zh_CN.md)。
+
 dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供应方回执保全，返工继承导出要求。dev.41 固定安装、原生重开与安装副本全部28项插件测试通过。[合同与证据边界](docs/PhotoCraft-Flat-Export-Acceptance.zh_CN.md)。
 
 已发布 [技能源 dev.36](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36) 与 [插件 dev.40](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40)：公开压缩包摘要与提交一致，main／标签两条 CI 均通过。固定 Codex 发现14个技能；独立单技能冷启动 PSD 验收及28项安装副本测试通过。任务4.15、5.6、12.12完成，未知保真边界保持明确。[发布证据](docs/evidence/optimization/psd-release-publication.json) · [场景审计](docs/evidence/optimization/psd-acceptance-audit.json)。
 
 PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；返工继承策略，接受记录绑定源版本。[门禁与验证](docs/PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。公开 dev.40 固定安装通过当前原生／PSD 交换的全部7个规范场景。
 
-开发版本 dev.41 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.37。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
+开发版本 dev.42 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.38。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
 开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为126/157项完成，31项门禁开放。
 
@@ -24,7 +26,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.41`；技能源：`0.1.0-dev.37`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.42`；技能源：`0.1.0-dev.38`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -119,9 +121,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.41 |
+| Metadata version | 0.1.0-dev.42 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.37 |
+| Skills source | photocraft-skills / 0.1.0-dev.38 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

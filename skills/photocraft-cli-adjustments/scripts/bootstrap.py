@@ -125,6 +125,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
                  or not re.fullmatch(r'[a-f0-9]{64}', expected['provenanceSha256'])))):
         raise ValueError('runtime_lock_invalid')
     artifact, version = lock['artifact'], lock['resolvedVersion']
+    identity = {'version': version, 'versionOutput': expected.get('versionOutput', f'{artifact} {version}'), 'platform': key}
     if not re.fullmatch(r'[a-z]+craft-cli', artifact) or not re.fullmatch(r'\d+\.\d+\.\d+(?:-craft\.[1-9]\d*)?', version):
         raise ValueError('invalid_runtime_identity')
     parent = Path(runtime_home).expanduser().absolute() / artifact.removesuffix('-cli')
@@ -148,7 +149,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
                     raise TimeoutError('runtime_install_busy: installation lock wait expired') from None
                 time.sleep(min(.05, remaining))
         if destination.exists() or destination.is_symlink():
-            return inspect_install(destination, artifact, expected)
+            return dict(inspect_install(destination, artifact, expected), runtimeIdentity=identity)
         with tempfile.TemporaryDirectory(prefix='.install-', dir=parent) as temporary:
             stage = Path(temporary)
             package = Path(archive) if archive else stage / 'release.zip'
@@ -182,7 +183,7 @@ def install(lock, runtime_home, archive=None, platform_key=None):
             (payload / 'installation.json').write_text(json.dumps(receipt, indent=2) + '\n')
             # 同文件系统原子发布。没有任何自动升级/替换已有版本的分支。
             payload.rename(destination)
-            return dict(inspect_install(destination, artifact, expected), reused=False)
+            return dict(inspect_install(destination, artifact, expected), reused=False, runtimeIdentity=identity)
 
 
 def setup_failure(runtime_home):

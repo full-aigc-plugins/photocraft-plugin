@@ -90,10 +90,12 @@ After staged failure, retain both the output recovery record and its original si
 
 `filterContract` 明确 `target/method/selection/mask/region`，例如 `{"target":2,"method":"raster","selection":false,"mask":false,"region":[0,0,32,32]}`。配合显式 layer.select 和 native.command 的 filter 命令；执行前核对上下文，执行后核验实际像素变化。raster 明确为烘焙；智能滤镜完整可编辑图当前无法核验，不能提升为可编辑通过。保护产品仍需声明 protectedRegions 或非目标对象保全。
 
-`capabilities.json` 记录当前会话、后端、二进制、命令参数说明与 MCP 工具 schema 摘要；参数说明并非逐命令 JSON Schema。`native_verify.py DELIVERY` 使用已安装的固定二进制在新只读会话重开，验证结束后再次核对原包，不安装。PSD featureMatrix 的 retained/degraded/lost/unknown 只表示已报告属性比较，不等于完整保真或外部编辑器验收。
+`capabilities.json` 记录当前会话、后端、二进制、运行时版本／构建／平台、命令参数说明与 MCP 工具 schema 摘要；参数说明并非逐命令 JSON Schema。`native_verify.py DELIVERY` 使用已安装的固定二进制在新只读会话重开，验证结束后再次核对原包，不安装。PSD featureMatrix 的 retained/degraded/lost/unknown 只表示已报告属性比较，不等于完整保真或外部编辑器验收。
 
 可选 `acceptedFontSubstitutions` 明确从缺失字体到已安装字体的映射。无接受映射时仍拒绝缺失字体；执行替换后再次只读查询当前缺失字体，font-substitutions.json 保留接受映射与原生前后回复。替代字体不会自动获得精确排版或外部 PSD 保真接受。
 
 命令参数按固定公开说明做可确定的类型、范围及键检查；MCP 工具按固定实际 schema 检查。引用在解析后、下一副作用前再次检查。command_batch 的每一步同样校验；部分完成的批次保留子结果并转入核对，不登记成功别名或继续后续操作。重复 JSON 键及非有限数值携带字段路径；这些检查不等于全部命令的真实业务执行验收。
 
 蒙版保全事实除绑定、启用、链接、密度和羽化外，还绑定保存格式中的 surface 描述与实际压缩瓦片 SHA-256。仅蒙版元数据相同不能通过保全；缺失瓦片或超过 64 MiB 的蒙版瓦片核验范围会明确拒绝。该摘要验证内容保全，不证明创作质量。
+
+每次操作核对实际使用的命令／工具与发现工具，未使用合同变化不会阻止当前操作；完整发现摘要仍记录在 `capabilityChecks` 或 `capability-checks.json`。若以后使用已变化合同，按原会话基线拒绝，不把无关变化静默接受为新基线。

@@ -56,6 +56,7 @@ def validate_tool_parameters(identifier, params, path='$.params', resolved=False
 
 def command_ids(step):
     if 'command' in step:return [step['command']]
+    if step.get('tool')==ROUTES[DOMAIN][1] and isinstance(step.get('params',{}).get(ROUTES[DOMAIN][2]),str):return [step['params'][ROUTES[DOMAIN][2]]]
     if step.get('tool')=='command_batch' and isinstance(step['params'].get('steps'),list):
         return [item['id'] for item in step['params']['steps'] if isinstance(item,dict) and isinstance(item.get('id'),str)]
     return []
@@ -326,15 +327,15 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             current = {r["id"]: r for r in runtime_rows(session)}
             expected = {r["id"] for r in catalog()["commands"]}
             if mode!='bridge' and not expected.issubset(current):
-                raise load("operation_errors").error("native_registry_drift")
+                raise load("operation_errors").error("capability_missing: native_registry_drift")
             receipt["registeredCommands"] = len(current)
-            gate=load('capabilities').Gate(session,sys.modules.get(__name__) or load('commands'),installed['binarySha256'],mode)
-            receipt['capabilitySnapshot']=gate.check()
+            gate=load('capabilities').Gate(session,sys.modules.get(__name__) or load('commands'),installed['binarySha256'],mode,runtime_identity=installed.get('runtimeIdentity'))
+            receipt['capabilitySnapshot']=gate.check();receipt['capabilityChecks']=gate.checks
             for index, step in enumerate(plan["operations"]):
-                gate.check()
                 params = resolve(step["params"], bindings)
                 if 'command' in step:validate_parameters(step['command'],params,'$.operations['+str(index)+'].params',True)
                 else:validate_tool_parameters(step['tool'],params,'$.operations['+str(index)+'].params',True)
+                gate.check_scope(command_ids({**step,'params':params}),[native_call(step['command'],{})[0] if 'command' in step else step['tool']])
                 if mode=='bridge':
                     for identifier in command_ids({**step,'params':params}):
                         if identifier not in current:raise ValueError('backend_command_unavailable: '+identifier)

@@ -61,6 +61,7 @@ def main():
    installation=temp/'installation.json';installation.write_text(json.dumps({'runtimeHome':str(Path.home()/'.local/share/craft-runtimes')}));env['CRAFT_PRESERVED_STAGE_INSTALLATION']=str(installation)
    env['PHOTOCRAFT_NATIVE_TEST']='1';env['PHOTOCRAFT_SKILL_ROOT']=str(skills/'skills/photocraft-use');env['PHOTOCRAFT_PYTHON']=sys.executable
   if args.desktop:
+   env['CRAFT_CAPABILITY_FIRST_USE']='1';env['CRAFT_INSTALLED_CAPABILITY_SKILL']=str(skills/'skills/photocraft-cli');env['CRAFT_CAPABILITY_REPORT']=str(temp/'capability_report.json')
    for flag,path,report_key in [('DESKTOP_FIRST_USE','DESKTOP_SKILL','DESKTOP_REPORT'),('DESKTOP_SESSION_FIRST_USE','DESKTOP_SESSION_SKILL','DESKTOP_SESSION_REPORT'),('ADVANCED_DESKTOP','ADVANCED_DESKTOP_SKILL','ADVANCED_DESKTOP_REPORT')]:
     env['CRAFT_'+flag]='1';env['CRAFT_'+path]=str(skills/'skills/photocraft-cli');env['CRAFT_'+report_key]=str(temp/(report_key.lower()+'.json'))
   for key in ['NATIVE_PROTOCOL_REPORT','PRESERVED_STAGE_EVIDENCE','NATIVE_WORKFLOW_REPORT','PHOTO_ADJUSTMENT_REPORT','NATIVE_REPORT','NATIVE_REVISION_REPORT','PROTECTED_EVIDENCE_FILE','RETOUCH_EVIDENCE_FILE','LAYOUT_EVIDENCE_FILE','SMART_EVIDENCE','SELECTION_EVIDENCE_FILE','PHOTO_FONTLESS_EVIDENCE','FLAT_EXPORT_REPORT']:

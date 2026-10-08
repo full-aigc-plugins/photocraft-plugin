@@ -86,3 +86,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知会阻止成功。用户明确接受时按同一源版本和实际观察摘要记录，不自动接受；见本技能[PSD 交换与接受门禁](references/exchange-loss.md#psd-必要功能门禁--required-psd-features)。
 
 平面导出需要明确颜色／ICC／透明要求或保留外部生成素材来源时，读取本技能 [平面导出与来源合同](references/flat-export.md)。
+
+运行时／后端身份与能力漂移问题，读取本技能 [能力快照与拒绝合同](references/capabilities.md)。
