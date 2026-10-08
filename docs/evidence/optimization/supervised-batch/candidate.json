@@ -1,0 +1,112 @@
+{
+  "schema": "photocraft-supervised-batch-candidate/v1",
+  "status": "PASS",
+  "scope": "candidate batch plan and per-reply stopping; not public CLI integration or full PC-TX-005 acceptance",
+  "skillsSource": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "commit": "83cfbb940541dd09a7be0f0aac2e11863cd69ecb",
+    "executionSourceSha256": "f9dfd3fad283e7640729e9495fb8b22cd8fbeed6e7cc2f56ad60360859559eb5"
+  },
+  "candidateRuntime": {
+    "version": "0.2.0-craft.3",
+    "platform": "darwin-arm64",
+    "binarySha256": "a2fbac2bf2206155de20f7af8321afc4a5b78061d25f923414b44b5f5d843f86",
+    "archiveSha256": "5fed91e5f747d11f9195669377c361680bfed1f5305d561ff75b02f2bd816cf2",
+    "patchSha256": "e89a1dddb03faa1dc36a8db2528d0bd566c1a7171e9088e4ba05971b354734f9",
+    "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947"
+  },
+  "red": {
+    "batchBeforeImplementation": {
+      "runtimeVersion": "0.2.0-craft.2",
+      "methods": 7,
+      "failures": 2,
+      "errors": 9,
+      "reason": "native batch ignores supervision flag and edits/saves without confirmation; prior supervisor rejects unsupported batch"
+    },
+    "extraFrame": {
+      "methods": 5,
+      "failures": 1,
+      "reason": "preceding normal reply accepted and acknowledged before unsolicited frame rejection"
+    }
+  },
+  "checks": {
+    "rustTests": {
+      "passed": 58,
+      "failed": 0,
+      "ignored": 0
+    },
+    "focusedRunBatchTests": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0
+    },
+    "fullSourceTests": {
+      "tests": 260,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "nativePostSaveFaultCases": {
+      "passed": 6,
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "sourceUnchanged": true,
+      "savedProjectsReopenedUnchanged": true
+    }
+  },
+  "fixtureCorrection": {
+    "initialCandidateMethods": 20,
+    "initialCandidateErrors": 1,
+    "reason": "nonexistent output ending in /. rejected by pinned Rust create_dir_all even in ordinary mode; valid existing-directory case now compares legacy and supervised output",
+    "implementationChangedForFixture": false
+  },
+  "logs": {
+    "red": {
+      "path": "red.txt",
+      "sha256": "3134f6725b40fdf7dc10cb7b7496e6365cf148d4016fc58b228d6e33db12cc35"
+    },
+    "extra-frame-red": {
+      "path": "extra-frame-red.txt",
+      "sha256": "cea052a013a763f4f7902c4bae4053d49824f20aac77343abfe3bd910a57b486"
+    },
+    "extra-frame-green": {
+      "path": "extra-frame-green.txt",
+      "sha256": "8ebeff38b0629c4bc65d62c3aaadd83a9903a9b71a554f13f64f2f1a4fc9a7e9"
+    },
+    "green-final": {
+      "path": "green-final.txt",
+      "sha256": "bcdc715eddf41e22136527deb7e55237f84757e9f87da71257a8a673fe927287"
+    }
+  },
+  "evidence": [
+    "source-validation.json",
+    "build-receipt.json",
+    "rust-test-summary.json",
+    "native-faults.json"
+  ],
+  "publicState": {
+    "skillsVersion": "0.1.0-dev.41",
+    "pluginVersion": "0.1.0-dev.47",
+    "lockedRuntimeVersion": "0.2.0-craft.1",
+    "publicCliIntegration": "NOT_RUN",
+    "fixedInstallation": "NOT_RUN",
+    "managedSnapshotChanged": false,
+    "newReleasePublished": false
+  },
+  "open": [
+    "pre-dispatch runtime capability and source gating for public integration",
+    "durable recovery receipts",
+    "droplet internal command boundaries",
+    "MCP/serve streaming contracts",
+    "fixed release installation and complete entry matrix",
+    "all-command native acceptance"
+  ],
+  "taskStatus": {
+    "closedThisTurn": 0,
+    "completed": 129,
+    "total": 157,
+    "open": 28,
+    "task9_6": "OPEN"
+  }
+}

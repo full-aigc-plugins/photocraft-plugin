@@ -1,0 +1,355 @@
+{
+  "schema": "photocraft-supervised-batch-faults/v1",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "candidateRuntimeVersion": "0.2.0-craft.3",
+  "binarySha256": "a2fbac2bf2206155de20f7af8321afc4a5b78061d25f923414b44b5f5d843f86",
+  "scriptSha256": "dac6789db2251170960c52a5d0a974b22277bcdd3f5c2061375345cb4996e9df",
+  "proxySha256": "1a87a9cf4cf727f423f6abf8d499149c6830b7ddc10172fb81a98c1b0f56d577",
+  "cases": [
+    {
+      "fault": "duplicate",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52",
+        "a.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52"
+      },
+      "actionsSha256": "f9f4d0f98d2836b44462644de984c9ef21473aad6b1e5fbda93ba445058d5dd7",
+      "savedProject": {
+        "path": "fault-cases-recorded/duplicate/output/a.pcraft",
+        "sha256": "4ffc17bb71769a8b2bd0e3ffdc4cd6308b9e27ac5472acbee1e3e5356c0cd0fb"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "b7aa8a36b7c8d86ba463daf4e2b252afd9cc70c69b8e94f57d76279dacc95ced",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "$ARTIFACTS/fault-cases-recorded/duplicate/output/a.pcraft",
+          "format": "pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "batch_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "dd2a13f6f708ce031b4e532ffb96af9708ef102d2807fe03da9f508b9e532a0c",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "nonfinite",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52",
+        "a.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52"
+      },
+      "actionsSha256": "f9f4d0f98d2836b44462644de984c9ef21473aad6b1e5fbda93ba445058d5dd7",
+      "savedProject": {
+        "path": "fault-cases-recorded/nonfinite/output/a.pcraft",
+        "sha256": "4ffc17bb71769a8b2bd0e3ffdc4cd6308b9e27ac5472acbee1e3e5356c0cd0fb"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "9ad63b4605a2d218b1601b25f15e66a904f16323110403bce3663a32df817462",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "$ARTIFACTS/fault-cases-recorded/nonfinite/output/a.pcraft",
+          "format": "pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "batch_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "4b0ee21c6d4d716ed5fae0ebc015d69f45d272eafe4186c4a2fd5b1dee723625",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "semantic",
+      "status": "PASS",
+      "outcome": "failed",
+      "code": "semantic_error",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52",
+        "a.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52"
+      },
+      "actionsSha256": "f9f4d0f98d2836b44462644de984c9ef21473aad6b1e5fbda93ba445058d5dd7",
+      "savedProject": {
+        "path": "fault-cases-recorded/semantic/output/a.pcraft",
+        "sha256": "4ffc17bb71769a8b2bd0e3ffdc4cd6308b9e27ac5472acbee1e3e5356c0cd0fb"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "967a0a8fa541d4772ad2efb998a6d21237e68c1b040ee96bef25db6b48cf6e53",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "$ARTIFACTS/fault-cases-recorded/semantic/output/a.pcraft",
+          "format": "pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "batch_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "cd358691cac4fc209baa2b0cf9ceaf43cced1fe42eadc92fd6e033717d035339",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "save-array",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52",
+        "a.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52"
+      },
+      "actionsSha256": "f9f4d0f98d2836b44462644de984c9ef21473aad6b1e5fbda93ba445058d5dd7",
+      "savedProject": {
+        "path": "fault-cases-recorded/save-array/output/a.pcraft",
+        "sha256": "4ffc17bb71769a8b2bd0e3ffdc4cd6308b9e27ac5472acbee1e3e5356c0cd0fb"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "0f069b046e41578021c2b2c385cb15ea44a062913d30b3594cc97d1c4beb47e2",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "$ARTIFACTS/fault-cases-recorded/save-array/output/a.pcraft",
+          "format": "pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "batch_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "d6ae95e0397e7466963f5cc9744b1b90cea282e0c704693f781961867d6b7e07",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "wrong-save-path",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52",
+        "a.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52"
+      },
+      "actionsSha256": "f9f4d0f98d2836b44462644de984c9ef21473aad6b1e5fbda93ba445058d5dd7",
+      "savedProject": {
+        "path": "fault-cases-recorded/wrong-save-path/output/a.pcraft",
+        "sha256": "4ffc17bb71769a8b2bd0e3ffdc4cd6308b9e27ac5472acbee1e3e5356c0cd0fb"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "043546236a0438d00062f6aa06d494bc9cf40442faa8698af1013b7cfacd22dd",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "$ARTIFACTS/fault-cases-recorded/wrong-save-path/output/a.pcraft",
+          "format": "pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "batch_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "4775dd0015b87ba4f97c0f1a024e1320e974583c1393057246e6477881a90767",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "extra-frame",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52",
+        "a.pcraft": "3bb8c9b1aa1dcdbdd292f32de86410945c69d2e5571ba122d242bc502e37da52"
+      },
+      "actionsSha256": "f9f4d0f98d2836b44462644de984c9ef21473aad6b1e5fbda93ba445058d5dd7",
+      "savedProject": {
+        "path": "fault-cases-recorded/extra-frame/output/a.pcraft",
+        "sha256": "4ffc17bb71769a8b2bd0e3ffdc4cd6308b9e27ac5472acbee1e3e5356c0cd0fb"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "08aab6d63cc4d47be1dffc2c73d34440ff98b1af8ca292957aaea0c8cd15da26",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "$ARTIFACTS/fault-cases-recorded/extra-frame/output/a.pcraft",
+          "format": "pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "batch_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "d327170872b0039c1ed62854f294d9f7ace4d2a2bc0b95aafd8a5eef0a3675a1",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    }
+  ],
+  "scope": "Candidate actual native first-file save followed by injected reply; fixed installation, public CLI integration and complete entry matrix NOT_RUN",
+  "rawReportSha256": "73e1627a082e3537499cda9bbcb1864f38c8f4a09c76ac964fb6a6d7eb0ddbeb"
+}

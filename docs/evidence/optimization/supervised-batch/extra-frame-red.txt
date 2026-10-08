@@ -1,0 +1,26 @@
+test_actual_native_reply_fault_stops_before_next_command_and_save (test_supervisor.NativeSupervision.test_actual_native_reply_fault_stops_before_next_command_and_save) ... error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+error: supervised result not acknowledged; operation may have completed; do not replay
+
+  test_actual_native_reply_fault_stops_before_next_command_and_save (test_supervisor.NativeSupervision.test_actual_native_reply_fault_stops_before_next_command_and_save) (fault='extra-frame') ... FAIL
+test_healthy_create_aside_revision_preserves_source_and_public_lines (test_supervisor.NativeSupervision.test_healthy_create_aside_revision_preserves_source_and_public_lines) ... ok
+test_malformed_actual_save_retains_file_and_previous_receipts (test_supervisor.NativeSupervision.test_malformed_actual_save_retains_file_and_previous_receipts) ... error: supervised result not acknowledged; operation may have completed; do not replay
+ok
+test_invalid_input_never_starts_process_or_emits_output (test_supervisor.SupervisionPlanning.test_invalid_input_never_starts_process_or_emits_output) ... ok
+test_original_flag_order_last_parameters_and_format_are_bound (test_supervisor.SupervisionPlanning.test_original_flag_order_last_parameters_and_format_are_bound) ... ok
+
+======================================================================
+FAIL: test_actual_native_reply_fault_stops_before_next_command_and_save (test_supervisor.NativeSupervision.test_actual_native_reply_fault_stops_before_next_command_and_save) (fault='extra-frame')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervisor.py", line 59, in test_actual_native_reply_fault_stops_before_next_command_and_save
+    self.assertEqual(len(error.receipts), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.055s
+
+FAILED (failures=1)

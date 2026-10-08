@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "passed": 58,
+  "failed": 0,
+  "ignored": 0,
+  "fullBuildLogSha256": "1f1b2353ee48f17cdec536ba70cc5a244a6e1e75d3f1805f8946ad0fb7443a5b",
+  "summaryLines": [
+    "    Finished `test` profile [optimized] target(s) in 1m 21s",
+    "test result: ok. 31 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s",
+    "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s",
+    "test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s",
+    "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+    "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+    "test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.98s",
+    "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+    "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+    "    Finished `release` profile [optimized] target(s) in 1m 51s"
+  ]
+}

@@ -1,0 +1,136 @@
+test_eof_after_actual_first_save_stops_before_second_file (test_supervised_batch.SupervisedBatch.test_eof_after_actual_first_save_stops_before_second_file) ... FAIL
+test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) ... 
+  test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='duplicate') ... ERROR
+  test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='nonfinite') ... ERROR
+  test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='semantic') ... ERROR
+  test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='save-array') ... ERROR
+  test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='wrong-save-path') ... ERROR
+test_healthy_supervisor_keeps_original_stdout_and_format_quality (test_supervised_batch.SupervisedBatch.test_healthy_supervisor_keeps_original_stdout_and_format_quality) ... ERROR
+test_invalid_or_incomplete_native_plan_never_creates_output (test_supervised_batch.SupervisedBatch.test_invalid_or_incomplete_native_plan_never_creates_output) ... ERROR
+test_known_native_failure_stops_supervision_but_legacy_keeps_continuation (test_supervised_batch.SupervisedBatch.test_known_native_failure_stops_supervision_but_legacy_keeps_continuation) ... ERROR
+test_native_sorted_fresh_sessions_and_full_confirmation (test_supervised_batch.SupervisedBatch.test_native_sorted_fresh_sessions_and_full_confirmation) ... ERROR
+test_unconfirmed_plan_never_creates_output_or_starts_document (test_supervised_batch.SupervisedBatch.test_unconfirmed_plan_never_creates_output_or_starts_document) ... FAIL
+
+======================================================================
+ERROR: test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='duplicate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 99, in test_fault_after_native_save_preserves_file_and_stops_later_files
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='nonfinite')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 99, in test_fault_after_native_save_preserves_file_and_stops_later_files
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='semantic')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 99, in test_fault_after_native_save_preserves_file_and_stops_later_files
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='save-array')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 99, in test_fault_after_native_save_preserves_file_and_stops_later_files
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_fault_after_native_save_preserves_file_and_stops_later_files (test_supervised_batch.SupervisedBatch.test_fault_after_native_save_preserves_file_and_stops_later_files) (fault='wrong-save-path')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 99, in test_fault_after_native_save_preserves_file_and_stops_later_files
+    self.assertEqual(caught.exception.outcome,'failed' if fault=='semantic' else 'unknown')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_healthy_supervisor_keeps_original_stdout_and_format_quality (test_supervised_batch.SupervisedBatch.test_healthy_supervisor_keeps_original_stdout_and_format_quality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 86, in test_healthy_supervisor_keeps_original_stdout_and_format_quality
+    actual = io.StringIO();result = supervisor.execute(BINARY,argv,actual)
+                                    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "$SKILLS_SOURCE/skills/photocraft-use/scripts/cli_supervisor.py", line 59, in execute
+    expected = expected_events(argv)
+  File "$SKILLS_SOURCE/skills/photocraft-use/scripts/cli_supervisor.py", line 28, in expected_events
+    raise ValueError('unsupported_supervised_subcommand: $argv')
+ValueError: unsupported_supervised_subcommand: $argv
+
+======================================================================
+ERROR: test_invalid_or_incomplete_native_plan_never_creates_output (test_supervised_batch.SupervisedBatch.test_invalid_or_incomplete_native_plan_never_creates_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 120, in test_invalid_or_incomplete_native_plan_never_creates_output
+    self.assertEqual(caught.exception.outcome,'unknown');self.assertEqual(caught.exception.receipts,[])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ValueError' object has no attribute 'outcome'
+
+======================================================================
+ERROR: test_known_native_failure_stops_supervision_but_legacy_keeps_continuation (test_supervised_batch.SupervisedBatch.test_known_native_failure_stops_supervision_but_legacy_keeps_continuation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 73, in test_known_native_failure_stops_supervision_but_legacy_keeps_continuation
+    events = [json.loads(line) for line in result.stdout.splitlines()]
+              ~~~~~~~~~~^^^^^^
+  File "/opt/anaconda3/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/anaconda3/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+ERROR: test_native_sorted_fresh_sessions_and_full_confirmation (test_supervised_batch.SupervisedBatch.test_native_sorted_fresh_sessions_and_full_confirmation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 49, in test_native_sorted_fresh_sessions_and_full_confirmation
+    events = [json.loads(line) for line in result.stdout.splitlines()]
+              ~~~~~~~~~~^^^^^^
+  File "/opt/anaconda3/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/anaconda3/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+======================================================================
+FAIL: test_eof_after_actual_first_save_stops_before_second_file (test_supervised_batch.SupervisedBatch.test_eof_after_actual_first_save_stops_before_second_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 62, in test_eof_after_actual_first_save_stops_before_second_file
+    self.assertNotEqual(result.returncode,0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_unconfirmed_plan_never_creates_output_or_starts_document (test_supervised_batch.SupervisedBatch.test_unconfirmed_plan_never_creates_output_or_starts_document)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SKILLS_SOURCE/runtime/tests/test_supervised_batch.py", line 38, in test_unconfirmed_plan_never_creates_output_or_starts_document
+    self.assertNotEqual(result.returncode,0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.216s
+
+FAILED (failures=2, errors=9)
