@@ -1,0 +1,62 @@
+{
+  "schema": "photocraft-durable-progress-publication/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.59",
+    "commit": "10322e32fa67fc8df46d431573a4edb758c68a6d",
+    "assetSha256": "3a5b9b848fc2c46108a01205237649b07804eed8447273a4bccb87c4c7cd451b",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.59",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.47",
+    "commit": "49045a0e807b541e22521a22f3e87e24e6a98401",
+    "assetSha256": "be9bfd7e999af19805fc115b306d0d4602d394a2fc01a30e19ce9729d82649aa",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.47",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37841232037,
+      "headSha": "10322e32fa67fc8df46d431573a4edb758c68a6d",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37841231940,
+      "headSha": "10322e32fa67fc8df46d431573a4edb758c68a6d",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37841224669,
+      "headSha": "10322e32fa67fc8df46d431573a4edb758c68a6d",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37841224694,
+      "headSha": "10322e32fa67fc8df46d431573a4edb758c68a6d",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    }
+  ],
+  "fixedSummarySha256": "78692dc0420cebba4ef9f22a17780e7661d8de3f63dbb0f6f7a18b52cf848339",
+  "fixedProgressNativeSha256": "bfe8cc68b05e61c724aeeab72351430874efff2d419c371d4cfef3ad787d1c2e",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Durable original-task progress after actual native save and workflow SIGKILL; readonly CLI status and separately confirmed supervisor stop. Explicit interrupted checkpoint recovery, complete crash/restart matrix, creative/model acceptance and V1 remain open."
+}

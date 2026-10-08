@@ -175,7 +175,7 @@
     "pluginWorkingVersion": "0.1.0-dev.59",
     "fixedSkillSourceVersion": "0.1.0-dev.47",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_CANDIDATE_DURABLE_PROGRESS",
+    "publication": "PARTIAL_PUBLISHED_DURABLE_PROGRESS_FIXED_NATIVE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -184,7 +184,7 @@
       "newlyCompleted": 71
     },
     "currentRegressionEvidence": "docs/evidence/optimization/durable-progress/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/preintent-restart/publication.json"
+    "publicationEvidence": "docs/evidence/optimization/durable-progress/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -364,11 +364,11 @@
     "publicationEvidence": "docs/evidence/optimization/preintent-restart/publication.json"
   },
   "durableProgressCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "pluginVersion": "0.1.0-dev.59",
     "skillSourceVersion": "0.1.0-dev.47",
     "evidence": "docs/evidence/optimization/durable-progress/",
-    "fixedInstallation": "NOT_RUN",
+    "fixedInstallation": "PASS_93_HARNESS_11_NATIVE",
     "closedTasks": [],
     "remainingTasks": [
       "3.6",
@@ -378,6 +378,7 @@
       "explicit interrupted checkpoint and bound recovery",
       "complete worker crash/restart matrix",
       "complete V1"
-    ]
+    ],
+    "publicationEvidence": "docs/evidence/optimization/durable-progress/publication.json"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "schema": "photocraft-progress-harness-native/v1",
+  "status": "PASS",
+  "taskId": "f3d2b220-97b3-410a-939b-96be44e19925",
+  "taskIdentity": "9e11a778dac85db31a03353de9a5570f34cf79a8c994658b8ab4dfc723c39774",
+  "sourceSha256": "f3a93608965947eccd50a7266d976a432de8326c07580e53bd15146900512d41",
+  "progressRecordSha256": "86f1ab756f953a903c9a7609305c7190977d8577fbaee1c29ed75ed59f5484a4",
+  "savedProjectSha256": "b60ee9c72ec592ed5e7ebce0415f3fc08e096c1fd113a3a1fa93f749ad088195",
+  "phase": "submitted",
+  "lastAttempt": {
+    "tool": "doc_save",
+    "arguments": {
+      "path": "project.pcraft"
+    },
+    "phase": "submitted"
+  },
+  "originalEpoch": 1,
+  "originalFilesUnchanged": true,
+  "liveStatusReadOnly": true,
+  "workerStoppedConfirmed": true,
+  "failureRecordInvented": false,
+  "checkpointInvented": false,
+  "replayRefused": true,
+  "technical": "NOT_RUN",
+  "creative": "NOT_RUN",
+  "scope": "Actual saved native and hard workflow SIGKILL; original progress observed, explicit checkpoint recovery remains open."
+}
