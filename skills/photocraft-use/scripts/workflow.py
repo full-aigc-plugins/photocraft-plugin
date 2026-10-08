@@ -149,7 +149,7 @@ def execute(plan, output, runtime_home=None, source=None):
         raise ValueError('output_exists')
     if 'protectedRegions' in plan and not source:raise ValueError('protected_source_required')
     if 'variant' in plan and not source:raise ValueError('variant_source_required')
-    source_project, source_hash = None, None
+    source_project, source_hash, source_manifest_hash = None, None, None
     bindings = {}
     inherited_assets = {}
     if source:
@@ -157,10 +157,12 @@ def execute(plan, output, runtime_home=None, source=None):
         source_project = source / 'project.pcraft'
         if source_project.is_symlink():
             raise ValueError('invalid_source')
-        prior = json.loads((source / 'manifest.json').read_text())
+        source_manifest_hash = sha(source / 'manifest.json')
+        prior = load_module('delivery').read_json(source / 'manifest.json')
         source_hash = sha(source_project)
         if source_hash != prior['files']['project.pcraft'] or source_hash != plan.get('expectedProjectSha256'):
             raise ValueError('revision_conflict')
+        load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
         if 'document' in plan:
             raise ValueError('revision_cannot_recreate_document')
         bindings = prior['bindings']
@@ -311,6 +313,9 @@ def execute(plan, output, runtime_home=None, source=None):
         if 'variant' in plan:
             manifest['layoutVariant'] = {'path':'layout-variant.json','sha256':sha(stage/'layout-variant.json')}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+        load_module('delivery').validate_delivery(stage)
+        if source:
+            load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
         stage.rename(output)

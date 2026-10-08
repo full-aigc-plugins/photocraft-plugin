@@ -1,0 +1,32 @@
+{
+  "schema": "photocraft-delivery-integrity-source/v1",
+  "result": "PASS",
+  "goalStatus": "not_complete",
+  "sourceVersion": "0.1.0-dev.34",
+  "sourceRegression": {
+    "total": 149,
+    "passed": 118,
+    "skipped": 31
+  },
+  "nativeSeconds": 5.165,
+  "red": "Source preview replacement reached bootstrap; new verifier was absent. Layout reference mismatch then separately failed.",
+  "native": "single copied export skill cold public runtime, four editable layers/mask, moved package after original asset deletion, text revision, source/non-target preservation, same-name preview refused before runtime install",
+  "fixedPluginInstallation": "NOT_RUN",
+  "hashes": {
+    "red.log": "60089dae0aeb407e9f0dc92ff313c29e259470e974125d19ffdbdd930b208adb",
+    "reference-red.log": "1401cfa69ddd09b1973d7cfa366c54c129312c140ceabb6fd931aa9e545d6ef0",
+    "green.log": "7a559f5f3b288fe7710f7d08453f712cd2e9ce60025f248acc51ca1c2ff5db00",
+    "source-regression-final.log": "0e19581a52916a1b073d39f3a64d54ba7f8f8e6974bf8e6fe76caf4dfd51e7ee",
+    "source-native-final.log": "df9e0151534ae43e3fc45dbf58089291afb5a211480d46a1602fdcd8e010c285",
+    "source-native-final/proof.json": "8f4f862c6895885b44ba977153de15f9064d496d8acb3321da0ebe068ebef9cf"
+  },
+  "remaining": [
+    "logical immutable artifact IDs and task lineage",
+    "full artifact requirement",
+    "all PSD fidelity",
+    "all commands",
+    "GUI and other platforms",
+    "human creative approval",
+    "full V1"
+  ]
+}

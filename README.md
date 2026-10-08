@@ -2,7 +2,7 @@
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.37`; skill source: `0.1.0-dev.33`; 13 independent skills.
+Current plugin: `0.1.0-dev.38`; skill source: `0.1.0-dev.34`; 13 independent skills.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -97,9 +97,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.37 |
+| Metadata version | 0.1.0-dev.38 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.33 |
+| Skills source | photocraft-skills / 0.1.0-dev.34 |
 | Execution | Upstream CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

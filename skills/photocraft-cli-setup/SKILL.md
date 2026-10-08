@@ -76,3 +76,5 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 ## 同目标执行保护
 
 调用公开工作流前阅读本技能的 [执行登记与中断处理](references/output-execution.md)。竞争或未知状态不得删除登记、自动重放或换目标绕过核对。
+
+交付、移动包或源工程返工前，按 [交付完整性](references/delivery-integrity.md) 校验清单全部文件与交换身份；只读检查无需安装运行时。
