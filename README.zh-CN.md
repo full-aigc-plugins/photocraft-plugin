@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.46 固定技能源dev.40，补齐 Harness 创建／修订预检、严格回执绑定与只读账本快照。候选本地49项 TypeScript（含3项真实原生）和48项 Python 测试通过；发行后固定副本验证另行记录。任务9.6、流式入口、逐命令回执及完整V1仍开放。[范围与证据](docs/PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
+dev.46 固定技能源dev.40，补齐 Harness 创建／修订预检、严格回执绑定与只读账本快照。候选本地49项 TypeScript（含3项真实原生）和48项 Python 测试通过；公开固定副本49项Harness测试通过，安装树不变；发布提交及标签4项CI通过。[发行证据](docs/evidence/optimization/harness-entry-publication.json)。任务9.6、流式入口、逐命令回执及完整V1仍开放。[范围与证据](docs/PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
 
 dev.45 固定技能源dev.40，加入原生argv安装前预检，并保全Harness失败预检的任务、事件和持久计划状态。任务9.6、流式回复、创建／修订及完整首版验收仍开放。[范围与验证](docs/PhotoCraft-Native-Argv-Preflight.zh_CN.md)。
 

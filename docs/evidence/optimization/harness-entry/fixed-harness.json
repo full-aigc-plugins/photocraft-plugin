@@ -1,0 +1,26 @@
+{
+  "schema": "photocraft-fixed-harness-entry/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.46",
+  "skillSourceRef": "v0.1.0-dev.40",
+  "tests": {
+    "tests": 49,
+    "pass": 49,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeTests": 3,
+  "logSha256": "9d125a868fe3f710d5a20cd56df1565fabaf215768859c7167dd1d7d815634ca",
+  "installedTreeUnchanged": true,
+  "installedTreeSha256": "abab40d8dea43ea85039a530271a4248eda7cdc30754094ad1ac3f5ee078857b",
+  "scope": "Actual isolated public-tag installed plugin;49 Harness regressions including3 native cases. Filesystem and ledger observed; installer/session counters not instrumented in Harness cases.",
+  "excluded": [
+    "all-entry PC-TX-005 matrix",
+    "MCP/serve streaming",
+    "per-command native replies",
+    "complete checkpoint semantic binding",
+    "host model dispatch",
+    "independent creative acceptance"
+  ],
+  "closedTasks": []
+}

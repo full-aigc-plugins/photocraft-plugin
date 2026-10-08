@@ -25,3 +25,5 @@ Harness运行预检不再提前写入账本目录的计划或记录失败事件�
 公开dev.45／源dev.40复验完成：公开ZIP摘要及归档提交匹配标签，前一版本标签与附件不变；发布提交与标签4项CI通过。隔离Codex发现14项技能，零加载错误；安装副本3项argv测试、13项单技能零安装拒绝及全部29项Harness测试通过，零跳过，安装树不变。源仓无CI，234项为本地证据。见[发行证据](evidence/optimization/native-argv-publication.json)。本次关闭0项，9.6和其余28项总门禁继续开放。
 
 2026-10-09：上述create／run／revise缺口已在未发布Harness候选补齐预检及主要回复绑定；公开dev.45本身不变，流式／逐命令／检查点与新固定安装仍开放。见[当前候选范围](PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
+
+Harness候选后续已作为dev.46公开预发布，并完成49项实际安装副本回归；完整入口门禁继续开放。见[dev.46发行证据](evidence/optimization/harness-entry-publication.json)。

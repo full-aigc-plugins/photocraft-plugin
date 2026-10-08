@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "UNPUBLISHED_HARNESS_CANDIDATE_FULL_PLAN_INCOMPLETE",
+  "status": "PUBLISHED_HARNESS_ENTRY_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -231,9 +231,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "harness-entry-validation.json",
+  "releaseCandidateEvidence": "harness-entry-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "native-argv-publication.json",
+  "publicationEvidence": "harness-entry-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -269,5 +269,6 @@
     "skillsRef": "v0.1.0-dev.40",
     "evidence": "native-argv-release-validation.json"
   },
-  "closedThisRun": []
+  "closedThisRun": [],
+  "fixedHarnessEntryEvidence": "harness-entry/fixed-harness.json"
 }

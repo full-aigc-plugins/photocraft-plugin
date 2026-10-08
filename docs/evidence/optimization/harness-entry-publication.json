@@ -1,0 +1,109 @@
+{
+  "schema": "photocraft-harness-entry-publication/v1",
+  "status": "PASS_DEVELOPMENT_PUBLICATION_PARTIAL_ACCEPTANCE",
+  "recordedAt": "2026-10-08T16:27:36.821739+00:00",
+  "release": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.46",
+    "commit": "52f78be0fa668e240a1e31a1fc5122ec5ce44f40",
+    "assetSha256": "3e6f83ca6cf073e176229ff30ac9ad3e1d55253299126cfc2ed2757ea78da1ad",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.46",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "unchangedReleases": [
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "tag": "v0.1.0-dev.40",
+      "commit": "f3b035bab935afb5d0f42f1c765f1028e5234646",
+      "assetSha256": "1f2a40811b3afeeb645149da9989ce2df3db16cf05b0c712a85a655b08d329e7",
+      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.40",
+      "prerelease": true,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true,
+      "preserved": true
+    },
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "tag": "v0.1.0-dev.45",
+      "commit": "0a4d116e5b005267baea03801aeee1837f0879a0",
+      "assetSha256": "2219ea215bda99e4d175f592a1a29becdfab5f08e489325fc0de949e00887714",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.45",
+      "prerelease": true,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true,
+      "preserved": true
+    }
+  ],
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37808631179,
+      "headBranch": "v0.1.0-dev.46",
+      "headSha": "52f78be0fa668e240a1e31a1fc5122ec5ce44f40",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37808631179"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37808631306,
+      "headBranch": "v0.1.0-dev.46",
+      "headSha": "52f78be0fa668e240a1e31a1fc5122ec5ce44f40",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37808631306"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37808582625,
+      "headBranch": "main",
+      "headSha": "52f78be0fa668e240a1e31a1fc5122ec5ce44f40",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37808582625"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37808582646,
+      "headBranch": "main",
+      "headSha": "52f78be0fa668e240a1e31a1fc5122ec5ce44f40",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37808582646"
+    }
+  ],
+  "sourceChangeCommit": "5e3c8a40535c9170c4e6821288ce0af38bcfcf5a",
+  "releaseValidation": "harness-entry-release-validation.json",
+  "releaseValidationSha256": "f04227f479ba568c7b5117f79a2fbf3d87944a020cd5d195c6e4f74e7a8f1c04",
+  "fixedHost": "harness-entry/fixed-host.json",
+  "fixedHarness": "harness-entry/fixed-harness.json",
+  "localValidation": {
+    "pluginTypeScript": 49,
+    "pluginPython": 48,
+    "skillsTestsReused": 234,
+    "skillsReuse": "exact source and same native/desktop layers",
+    "sourceCI": "NOT_RUN",
+    "checks": 14,
+    "sourceUnchanged": true
+  },
+  "fixedInstallation": "PASS_BOUNDED_HARNESS_REGRESSION",
+  "taskCounts": {
+    "completed": 129,
+    "total": 157,
+    "open": 28
+  },
+  "closedTasks": [],
+  "remaining": [
+    "all-entry PC-TX-005 matrix",
+    "MCP/serve streaming",
+    "per-command native replies",
+    "complete checkpoint semantic binding",
+    "host model dispatch",
+    "independent creative acceptance"
+  ],
+  "marketplaceEligible": false,
+  "supportedPluginHosts": [],
+  "fullV1": "INCOMPLETE"
+}

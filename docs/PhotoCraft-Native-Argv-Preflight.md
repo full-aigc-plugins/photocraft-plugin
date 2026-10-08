@@ -25,3 +25,5 @@ This development release incorporates the candidate fixes into a pinned snapshot
 Public dev.45/source dev.40 verification completed: ZIP digests and archive commits match immutable tags; previous tags/assets are unchanged; all4 release/main CI runs pass. Isolated Codex discovers14 skills without loading errors. Installed3 argv tests,13 single-skill zero-install refusals and all29 Harness tests pass without skips or installed-tree changes. Source has no CI;234 tests are local evidence. See [publication](evidence/optimization/native-argv-publication.json). Zero tasks closed;9.6 and the total28 gates remain open.
 
 2026-10-09: an unpublished Harness candidate now supplies the create/run/revise preflight and main reply bindings described as gaps above. Public dev.45 is unchanged; streaming, per-command, checkpoint and new fixed-installation acceptance stay open. See [current candidate scope](PhotoCraft-Harness-Entry-Contract.md).
+
+The subsequent Harness candidate is now published as dev.46 and passes49 actual installed-copy regressions; the complete entry gate remains open. See [dev.46 publication](evidence/optimization/harness-entry-publication.json).

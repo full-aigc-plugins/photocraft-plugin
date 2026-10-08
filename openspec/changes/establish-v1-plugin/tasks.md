@@ -304,3 +304,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 
 2026-10-09 Harness候选补充：create在可写账本前预检并保留幂等返回；run传播严格字段且仅完整核验后标记reply_validated；revise在预算／子任务前验证实际计划并事务复核。真实保存后重复键stdout保全检查点，自动核验／重放为零；非零退出与UTF-8跨块也有回归；只读查询使用私有数据库／日志快照，活跃WAL可见、原WAL／SHM不变，复制期间提交明确拒绝并保留写方提交。候选49项TypeScript、48项Python及14项检查通过，234项源测试按相同指纹与层级复用；完整流式／逐命令／检查点／固定安装合同仍开放，9.6不勾选，关闭0项。见docs/evidence/optimization/harness-entry/candidate.json及双语Harness入口文档。
+
+2026-10-09发行补充：插件dev.46／技能源dev.40公开身份与附件摘要已核验，发布提交与标签4项CI通过；隔离Codex发现14项技能，固定安装副本49项Harness测试（含3项原生）全部通过，安装树不变。未关闭任何任务；9.6的流式、逐命令回执、检查点语义和完整入口矩阵仍待验收。证据：`docs/evidence/optimization/harness-entry-publication.json`。

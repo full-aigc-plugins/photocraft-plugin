@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Dev.46 pins source dev.40 and adds Harness create/revise preflight, strict bound replies and read-only ledger snapshots. Candidate validation passes49 TypeScript tests (including3 native cases) and48 Python tests; fixed public-copy verification is recorded separately. Task9.6, streaming entries, per-command replies and full V1 remain open. [Scope and evidence](docs/PhotoCraft-Harness-Entry-Contract.md).
+Dev.46 pins source dev.40 and adds Harness create/revise preflight, strict bound replies and read-only ledger snapshots. Candidate validation passes49 TypeScript tests (including3 native cases) and48 Python tests; the fixed public copy also passes49 Harness tests without installed-tree changes, and all4 release/main CI runs pass. [Publication evidence](docs/evidence/optimization/harness-entry-publication.json). Task9.6, streaming entries, per-command replies and full V1 remain open. [Scope and evidence](docs/PhotoCraft-Harness-Entry-Contract.md).
 
 Dev.45 pins source dev.40 with native argv pre-install validation and preserves tasks, events and persistent plans on Harness preflight failure. Task9.6, streaming replies, create/revise and full V1 acceptance remain open. [Scope and verification](docs/PhotoCraft-Native-Argv-Preflight.md).
 
