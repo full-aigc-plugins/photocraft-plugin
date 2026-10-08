@@ -11,13 +11,13 @@
     "src/harness/checkpoint.ts": "992f5a653907151f8876459a253dd72a1a7f88abfd67a06539791f58bbe75943",
     "src/harness/runner.ts": "b82dd2198c7f14092755681b127d54e1928432fb5143df3e6a40f2201ced80c1",
     "src/protocol/strict_json.ts": "4e77f4a88242bb63b7a10485f142042b8bb1288e7b97419b374599e4fee85775",
-    "tests/checkpoint-contract.test.ts": "36e82d65813d4757510869d5e7a7e1aee273e766b4dc1e81dc9d05b1111d80ef",
+    "tests/checkpoint-contract.test.ts": "38c4feb4a00cf187804578167271002db73d631bb02faa17bf3c21d0b5493237",
     "tests/native-harness.test.ts": "ca1a677816c2765f7208195408fde73a5567decdfbf94e9ec9449d8dd6029f0a",
     "tests/runner.test.ts": "ea39b09234be6e5b0a727effbce0655ba9d34c7348528234580511868afab84e"
   },
-  "sourceFingerprint": "9b2209cc9df7c92c08e38ba8ab94f2f6afef63739cb1f8bbb662d6dd1fdcf633",
+  "sourceFingerprint": "a89d6214e2894b5561a704ed1f4acc64a02e7f629cfcaaf09e06b719076905c9",
   "validation": "checkpoint-contract-validation.json",
-  "validationSha256": "7b140ebda89da401695ae38a1c4a6dc4fab30d8653cc4d7c76cc24c8a93d54a1",
+  "validationSha256": "5c91ac3d5d81e916de819225626e88b989a977e585e4504e9c8dda5c1c644223",
   "validationCounts": {
     "checks": 14,
     "pluginTypeScript": 70,
@@ -74,5 +74,12 @@
     "open": 28
   },
   "marketplaceEligible": false,
-  "supportedPluginHosts": []
+  "supportedPluginHosts": [],
+  "initialCIFailure": {
+    "runId": 37810067046,
+    "logSha256": "eaebe26b553d52cefbeb6e48aab15513b9485f173f3759e6e2b9e21a1d971a3c",
+    "reason": "Contract fixture read macOS-only native lock on Linux CI; changed to owned synthetic platform-keyed fixture. No additional runtime support claimed.",
+    "nativeAcceptancePlatform": "darwin-arm64",
+    "correctedLocalValidation": "70 tests,0 skips;14 checks PASS"
+  }
 }

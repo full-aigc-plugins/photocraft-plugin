@@ -19,3 +19,5 @@ flowchart TD
 验证：20项检查点合同测试覆盖合法回执、错误身份、旧接受状态撤销、外部写方、双份记录冲突、路径逃逸和源变化。真实原生案例以透明文字导出JPEG，在实际保存工程后被透明度验收拒绝；错误运行时回执拒绝，随后原工程只读重开接受为部分检查点，所有暂存文件字节不变，重复run拒绝。最终70项插件TypeScript（含4项原生）、48项Python、14项检查通过；234项源测试按完全相同指纹和native/desktop层级复用。
 
 [当前候选与摘要](evidence/optimization/checkpoint-contract-candidate.json) · [完整回归](evidence/optimization/checkpoint-contract-validation.json)。这些证据不代替原生逐命令停止、MCP流式合同、技能源检查点内层工具回复语义或全入口固定安装／计数器验收。9.6和总计28项任务仍开放；完整V1未完成。
+
+CI夹具修正：合同单元测试使用私有合成运行时锁，以便在Linux核验纯合同；真实原生回归继续只声明macOS arm64。初次CI缺少平台键的失败与修正已记录在候选证据中，不代表Linux原生支持。

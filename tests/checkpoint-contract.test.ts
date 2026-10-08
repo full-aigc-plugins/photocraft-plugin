@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, realpathSync, rmSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join, resolve } from 'node:path';
+import { join } from 'node:path';
 import { Ledger } from '../src/harness/ledger.ts';
 import { Runner } from '../src/harness/runner.ts';
 import { fileDigest, readJson } from '../src/protocol/files.ts';
@@ -17,7 +17,10 @@ function fixture() {
  const record={schema:'craft-failed-stage/v1',status:'failed',outcome:'outcome_unknown',stage:'../retained',files,completedOperations:0,lastAttempt:{tool:'doc_save',arguments:{path:'project.pcraft'},phase:'submitted'},replayAllowed:false};
  for(const path of [join(output,'failure.json'),join(stage,'failure.json')])writeFileSync(path,JSON.stringify(record));
  const ledger=new Ledger(join(root,'state'));const task=ledger.create({idempotencyKey:'checkpoint',brief:'Inspect retained project',plan:{document:{width:32,height:32},operations:[]},output,authorization:{ref:'fixture',writeRoot:root},budget:{deadline:Date.now()+60000,maxRevisions:1,reserveBytes:1024}});
- const runner=new Runner(ledger,{skillRoot:resolve('skills/photocraft-use'),python:process.env.PHOTOCRAFT_PYTHON??'python3'});
+ // 合同单元测试使用本次拥有的合成锁，不把macOS原生支持扩展到CI平台。
+ const skillRoot=join(root,'synthetic-skill');mkdirSync(join(skillRoot,'scripts'),{recursive:true});mkdirSync(join(skillRoot,'references'));
+ writeFileSync(join(skillRoot,'scripts/runtime.lock.json'),JSON.stringify({artifacts:{[runtimePlatformKey()]:{binarySha256:'9'.repeat(64)}}}));
+ const runner=new Runner(ledger,{skillRoot,python:process.env.PHOTOCRAFT_PYTHON??'python3'});
  const epoch=ledger.claim(task.id);ledger.update(task.id,epoch,value=>{value.executionIdentity=runner.identity();value.executionResult={outcome:'unknown',phase:'submitted'};});
  const reply={schema:'photocraft-checkpoint-verification/v1',result:'PASS',stage,recordSha256:fileDigest(join(output,'failure.json')),projectSha256:files['project.pcraft'].sha256,files,lastAttempt:record.lastAttempt,completedOperations:0,nativeReopened:true,objectCount:0,runtimeSha256:readJson(join(runner.options.skillRoot,'scripts/runtime.lock.json')).artifacts[runtimePlatformKey()].binarySha256,replayAllowed:false,technical:'NOT_RUN',creative:'NOT_RUN'};
  let calls=0;runner.python=(script)=>{assert.equal(script,'checkpoint_verify.py');calls++;return reply;};
