@@ -1,0 +1,56 @@
+{
+  "schema": "photocraft-final-documentation-verification/v1",
+  "status": "PASS",
+  "candidateEvidence": "candidate-validation.json",
+  "sourceDeltaSinceFullRun": {
+    "skills": {},
+    "plugin": {
+      "README.md": {
+        "before": "a404ac72544a386e603c79f75d6e0b73da8f8bac1ecd2345e09d2e33e29411ff",
+        "after": "eb6912a0d6b7fd27a76a6ce7a3141204ec4842ebc3456eaf3f9da3a443a456cc"
+      },
+      "README.zh-CN.md": {
+        "before": "fe3f496975c2ff54a07e8d819cb3d801234f14ae4dbfc785b92bdf2e1b854866",
+        "after": "559a29372f57bdad61bdee9a95cd556c779c026ce47b9d750c430107bb8b9ec9"
+      }
+    }
+  },
+  "explanation": "Only root README status text changed after full regression. Runtime code, skills, test inputs and contracts match full-run fingerprints. OpenSpec/product-doc/status evidence is excluded from behavior fingerprints and revalidated here.",
+  "checks": [
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "-B",
+        "scripts/validate_docs.py"
+      ],
+      "exitCode": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"scope\": \"documentation structure, local links, status honesty and spec/task traceability only\",\n  \"markdownFiles\": 357,\n  \"capabilities\": 7,\n  \"requirements\": 27,\n  \"scenarios\": 109,\n  \"openImplementationTasks\": 62,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "openspec",
+        "validate",
+        "establish-v1-plugin",
+        "--strict"
+      ],
+      "exitCode": 0,
+      "output": "Change 'establish-v1-plugin' is valid\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": ""
+    }
+  ],
+  "taskProgress": "task-progress.json",
+  "sourceCurrent": {
+    "skillsSha256": "7f709c9ff7912ba14a0d2e76dfc2474fc3b3525b4a4a5bd93fb70fb006510b89",
+    "pluginSha256": "a66491f24cb9e456c226286367c965eab7a907a6c05129a2eab52c76d702e5ae"
+  },
+  "publication": "NOT_RUN",
+  "specSyncArchive": "NOT_RUN"
+}

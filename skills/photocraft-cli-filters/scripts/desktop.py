@@ -104,5 +104,8 @@ def main():
   print(json.dumps(result,allow_nan=False))
   if result.get('result','PASS')!='PASS':raise SystemExit(1)
  except KeyboardInterrupt:parser.exit(130,'desktop_workflow_interrupted: outcome receipt preserved; request not replayed\n')
- except (ValueError,OSError,subprocess.SubprocessError) as error:parser.exit(1,'desktop_install_failed: '+type(error).__name__+': '+str(error)+'\n')
+ except (ValueError,OSError,RuntimeError,subprocess.SubprocessError) as error:
+  import importlib.util
+  spec=importlib.util.spec_from_file_location('desktop_operation_errors',Path(__file__).with_name('operation_errors.py'));errors=importlib.util.module_from_spec(spec);spec.loader.exec_module(errors)
+  print(json.dumps({'result':'FAIL',**errors.describe(error)},ensure_ascii=False));raise SystemExit(1)
 if __name__=='__main__':main()

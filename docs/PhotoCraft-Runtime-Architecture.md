@@ -1,5 +1,11 @@
 # PhotoCraft Runtime Architecture
 
+## Optimization design update — 2026-10-08
+
+Standalone executors and bounded native-delivery evidence now exist; earlier blanket statements that nothing is implemented no longer describe every component. The complete Harness remains a target design. Retain the TypeScript/Node.js and SQLite plugin design while reusing standalone Python executors. Add project ownership, capability snapshots, status/reconcile/verify, digest-bound judging, constrained revisions and stop. Ledger transactions do not cover the native engine; reconcile unknown outcomes and preserve self-contained standalone skills.
+
+[Scope and compatibility](../openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [Specifications and tasks](../openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
+
 > **Purpose**: Complete target design for processes, data, protocols, recovery and acceptance.
 >
 > **Version**: 1.0.0
@@ -210,3 +216,7 @@ Snapshot `0.1.0-dev.2` has scoped installation/discovery and installed-entrypoin
 ## CLI skill suite revision
 
 [PhotoCraft CLI / setup / task suite](PhotoCraft-Skill-Suite-Architecture.md)
+
+Current candidate implementation and evidence boundaries: [task-control candidate](PhotoCraft-Harness-Candidate.md).
+
+Candidate backend snapshots are separate: the maintained headless registry has 755 commands; the pinned upstream desktop bridge has 748. Parameter/tool-schema fingerprints bind each backend. Headless additions are not advertised as desktop support.

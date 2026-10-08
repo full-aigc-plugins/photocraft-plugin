@@ -43,8 +43,10 @@ def preserved_stage(output, prefix, state=None):
                 if path.is_file() and not path.is_symlink() and path.name != 'failure.json':
                     files[path.relative_to(stage).as_posix()] = {'sha256': hashlib.sha256(path.read_bytes()).hexdigest(), 'bytes': path.stat().st_size}
             record = {'schema': 'craft-failed-stage/v1', 'status': 'failed',
-                      'outcome': 'outcome_unknown' if 'outcome_unknown:' in str(error) else 'failed',
-                      'error': str(error), 'stage': os.path.relpath(stage, output),
+                      'outcome': 'outcome_unknown' if (getattr(error, 'outcome', None) == 'unknown' or str(error).partition(':')[0] == 'outcome_unknown') else 'failed',
+                      'error': str(error), 'code': getattr(error, 'code', 'execution_failed'),
+                      'phase': getattr(error, 'phase', 'submitted'), 'retryable': False,
+                      'recoveryAction': getattr(error, 'recoveryAction', 'reconcile'), 'stage': os.path.relpath(stage, output),
                       'files': files, 'completedOperations': len(operations), 'lastAttempt': state.get('lastAttempt'), 'replayAllowed': False,
                       'acceptance': 'not-a-successful-delivery', 'recovery': 'verify hashes and reopen original project in a new read-only session before any explicit revision'}
             _write_record(stage / 'failure.json', record)

@@ -1,6 +1,12 @@
 """绑定实际保存工程的尺寸变体、安全区与编辑图层身份记录。"""
 import math
 import re
+import importlib.util
+from pathlib import Path
+
+def recursive_layers(model):
+ spec=importlib.util.spec_from_file_location('variant_objects',Path(__file__).with_name('domain_assertions.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+ return list(module.index(model).values())
 
 def validate(config):
  if not isinstance(config,dict) or set(config)!={'width','height','safeArea','roles'}:raise ValueError('invalid_variant_schema')
@@ -12,6 +18,8 @@ def validate(config):
  if x<0 or y<0 or w<=0 or h<=0 or x+w>config['width'] or y+h>config['height']:raise ValueError('invalid_variant_safe_area')
  roles=config['roles']
  if not isinstance(roles,dict) or set(roles)!={'background','product','text'}:raise ValueError('invalid_variant_roles')
+ concrete=[value for value in roles.values() if type(value) is int]
+ if len(concrete)!=len(set(concrete)):raise ValueError('variant_role_identity')
  for value in roles.values():
   if type(value) is int and 0<value<2**53:continue
   if isinstance(value,dict) and set(value)=={'$ref'} and isinstance(value['$ref'],str) and re.fullmatch(r'[a-zA-Z][\w-]*(?:\.[a-zA-Z0-9_]+)+',value['$ref']):continue
@@ -33,8 +41,9 @@ def assess(config,before,after,steps,roles):
  if not steps:raise ValueError('variant_geometry_required')
  x,y,w,h=config['safeArea']
  for role,identity in ids.items():
-  original=[v for v in before['layers'] if v['id']==identity];saved=[v for v in after['layers'] if v['id']==identity]
+  original=[v for v in recursive_layers(before) if v['id']==identity];saved=[v for v in recursive_layers(after) if v['id']==identity]
   if len(original)!=1 or len(saved)!=1 or saved[0]['kind']!=original[0]['kind']:raise ValueError('variant_role_changed: '+role)
+  if original[0]['_parent']!=saved[0]['_parent']:raise ValueError('variant_role_parent_changed: '+role)
   layer=saved[0]
   if role=='text' and (layer['kind']!='Type' or not layer.get('text')):raise ValueError('variant_text_not_editable')
   if not layer.get('visible'):raise ValueError('variant_role_hidden: '+role)

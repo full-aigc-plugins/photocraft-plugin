@@ -1,5 +1,11 @@
 # PhotoCraft — 技术方案与路线
 
+## 2026-10-08 优化路线补充
+
+本轮技术路线按 P0 统一入口校验、路由和发行身份，P1 能力快照与持久化控制，P2 质量、血缘和领域结果验收推进；逐命令及真实宿主模型派发作为持续独立门禁。独立技能源先实施并固定发布，插件仅消费不可变副本；本地 Harness 复用公开入口，不复制领域执行器或 ArtCraft 公共协议。新增任务全部开放，旧版技术、安装及尺寸变体证据不自动证明增量通过。
+
+[范围与兼容设计](../../openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [规范与任务](../../openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
+
 > **文档说明**：产品级边界与跨版本决策。
 >
 > **版本**：1.0.0
@@ -93,3 +99,9 @@
 ## CLI 技能体系增量
 
 [PhotoCraft CLI / setup / task suite](../../docs/PhotoCraft-Skill-Suite-Architecture.zh_CN.md)
+
+## 2026-10-08 候选实现进展
+
+任务控制现有 TypeScript/SQLite 候选实现，复用独立 Python 技能执行器，提供持久意图、单写 epoch、预算、停止与只读恢复。评审请求／回执绑定需求、参考和候选摘要，另存修订限制在明确问题涉及的文字属性和图层命名；原生重开通过不等于创作通过。独立技能增加严格解析与预检、递归对象保全、PSD 功能观察和背景滤镜目标检查。
+
+后端能力按实际固定制品分开：维护版 headless 755 命令，上游桌面 bridge 748 命令；同名参数或工具 schema 漂移拒绝。详见 [候选架构](../../docs/PhotoCraft-Harness-Candidate.zh_CN.md)。候选验证、固定发行安装、逐命令上下文、真实宿主／独立评审及外部 PSD 编辑器均为独立门禁；当前没有提升市场可用状态或归档规格。

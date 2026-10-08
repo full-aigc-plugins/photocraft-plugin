@@ -2,6 +2,7 @@
 """只读核对 PhotoCraft 交付清单、依赖和交换身份；不安装运行时。"""
 import argparse
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import re
@@ -15,16 +16,9 @@ def sha(path):
 
 
 def read_json(path):
-    def pairs(items):
-        result = {}
-        for key, value in items:
-            if key in result:
-                raise ValueError('duplicate_json_key: ' + key)
-            result[key] = value
-        return result
-    def constant(value):
-        raise ValueError('invalid_json_number: ' + value)
-    return json.loads(Path(path).read_text(), object_pairs_hook=pairs, parse_constant=constant)
+    spec=importlib.util.spec_from_file_location('delivery_strict_json',Path(__file__).with_name('strict_json.py'))
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module.loads(Path(path).read_text())
 
 
 def file_path(root, location):

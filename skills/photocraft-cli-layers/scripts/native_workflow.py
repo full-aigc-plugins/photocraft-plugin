@@ -17,6 +17,7 @@ def validate(params):
         raise ValueError('native_catalog_identity_mismatch')
     if not isinstance(params['command'], str) or params['command'] not in {row['id'] for row in catalog['commands']}:
         raise ValueError('unknown_native_command')
+    commands.validate_parameters(params['command'],params['params'],'$.native.'+params['command']+'.params')
     try:
         json.dumps(params['params'], allow_nan=False)
     except (ValueError, TypeError):
@@ -26,6 +27,7 @@ def validate(params):
 def execute(session, params, state, receipts, stage):
     validate(params)
     identifier = params['command']
+    commands.validate_parameters(identifier,params['params'],'$.native.'+identifier+'.params',True)
     rows = commands.runtime_rows(session)
     if not {row['id'] for row in commands.catalog()['commands']}.issubset({row['id'] for row in rows}):
         raise RuntimeError('native_registry_drift')
@@ -37,6 +39,6 @@ def execute(session, params, state, receipts, stage):
     reply = session.request('tools/call', {'name': tool, 'arguments': arguments})
     # 不先把原生JSON转成对象：重复键、非有限值或畸形回复保持unknown。
     result = commands.parse_reply(reply, Path(stage), len(receipts))
-    state['lastAttempt']['phase'] = 'reply_received'
+    state['lastAttempt']['phase'] = 'reply_validated'
     receipts.append({'tool': tool, 'arguments': arguments, 'command': identifier, 'params': params['params'], 'nativeCommand': identifier, 'result': result})
     return result

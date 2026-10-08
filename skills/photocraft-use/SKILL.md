@@ -1,6 +1,6 @@
 ---
 name: photocraft-use
-description: 使用 PhotoCraft 制作可编辑 pcraft 海报、封面和图层合成，处理文字、蒙版、局部调整和尺寸适配；首次使用时安装并检查官方 CLI。
+description: 使用 PhotoCraft 制作可编辑 pcraft 海报、封面和图层合成，处理文字、蒙版、局部调整和尺寸适配；首次使用时安装并检查固定维护版 CLI。
 license: Apache-2.0
 ---
 
@@ -11,7 +11,7 @@ license: Apache-2.0
 ## 首次使用
 
 1. 定位本 `SKILL.md` 的实际目录。需要 Python 3.11+；使用该目录下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
-2. 用户已要求安装或完成创作且现有授权涵盖必要依赖时，直接运行安装入口；安装范围是用户数据目录，不需要 sudo。下载固定官方制品并校验摘要，失败即停止，不删除隔离属性、不改 shell 配置。
+2. 用户已要求安装或完成创作且现有授权涵盖必要依赖时，直接运行安装入口；安装范围是用户数据目录，不需要 sudo。下载锁定维护版制品并校验摘要，失败即停止，不删除隔离属性、不改 shell 配置。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/photocraft-use`，项目级可能位于 `.agents/skills/photocraft-use`，插件可能位于其 `skills/photocraft-use` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
@@ -22,7 +22,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 安装器返回 JSON `executable`，后续将其作为 argv 的第一个元素。当前锁定平台为 macOS arm64；未支持的平台返回 `unsupported_platform`，不要安装别的平台制品。
 
-安装位置默认 `~/.local/share/craft-runtimes`，可用 `--runtime-home` 或 `CRAFT_RUNTIME_HOME` 指定。重复调用校验并复用同版运行时，不联网升级。`--archive` 接受已下载的官方 ZIP，但不跳过摘要检查。
+安装位置默认 `~/.local/share/craft-runtimes`，可用 `--runtime-home` 或 `CRAFT_RUNTIME_HOME` 指定。重复调用校验并复用同版运行时，不联网升级。`--archive` 接受已下载的锁定 ZIP，但不跳过摘要检查。
 
 3. 执行返回路径的 `--version` 并读取命令目录。使用 `help` 读取 CLI 用法。
 
@@ -53,7 +53,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | 技能 | 触发任务 |
 | :--- | :--- |
-| **photocraft-cli** | 查询 PhotoCraft 原生命令和参数，或处理局部滤镜、背景虚化与输出锐化；首次使用安装固定 CLI。 |
+| **photocraft-cli** | 查询 PhotoCraft 原生命令、参数与能力，执行明确指定的公共命令或诊断；首次使用安装固定维护版 CLI。 |
 | **photocraft-cli-setup** | 首次安装、摘要校验、版本检查与缺失运行时排障 |
 | **photocraft-cli-project** | 创建、打开和保存 pcraft，检查尺寸、深度和色彩模式 |
 | **photocraft-cli-layers** | 组织产品、背景、文本与图层组，调整混合和层级 |
@@ -102,3 +102,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 调用公开工作流前阅读本技能的 [执行登记与中断处理](references/output-execution.md)。竞争或未知状态不得删除登记、自动重放或换目标绕过核对。
 
 交付、移动包或源工程返工前，按 [交付完整性](references/delivery-integrity.md) 校验清单全部文件与交换身份；只读检查无需安装运行时。
+
+## 场景契约与路由
+
+按 [场景合同](references/scenario-contract.md) 核对输入、目标与保护范围、恢复和验收。完整任务按名称选择最短技能链；已知结果不明时先核对原任务，不重放。显式意图可用本技能 `scripts/route.py INTENT` 查询入口；这是合同查询，不证明宿主模型派发已通过。

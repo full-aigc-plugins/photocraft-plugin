@@ -18,6 +18,13 @@ spec.loader.exec_module(vendor)
 
 
 class SelfContainedVendorTests(unittest.TestCase):
+    def test_moved_release_tag_is_rejected_without_replacing_local_payload(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            target, checkout, lock = self.fixture(Path(temporary));before=lock.read_bytes()
+            with patch.object(vendor,'source_checkout',return_value=(target,'b'*40)),contextlib.redirect_stdout(io.StringIO()),contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(vendor.cmd_check(lock,False,{}),1)
+            self.assertEqual(lock.read_bytes(),before)
+            self.assertEqual((target/'skills/first/SKILL.md').read_text(),'original first')
     def test_regular_payload_retains_existing_digest(self):
         with tempfile.TemporaryDirectory() as temporary:
             skill = Path(temporary) / 'skill'

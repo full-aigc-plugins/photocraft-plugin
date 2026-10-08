@@ -1,12 +1,12 @@
 ---
 name: photocraft-cli
-description: 查询 PhotoCraft 原生命令和参数，或处理局部滤镜、背景虚化与输出锐化；首次使用安装固定 CLI。
+description: 查询 PhotoCraft 原生命令、参数与能力，执行明确指定的公共命令或诊断；首次使用安装固定维护版 CLI。
 license: Apache-2.0
 ---
 
 # PhotoCraft CLI 公共操作
 
-本技能负责查询实际命令参数和能力，调用公开 CLI、MCP 与诊断。与同包技能按名称交接，单独安装即可使用，不读取兄弟目录。调用固定官方 photocraft-cli，保留原生编辑工程。
+本技能负责查询实际命令参数和能力，调用公开 CLI、MCP 与诊断。与同包技能按名称交接，单独安装即可使用，不读取兄弟目录。调用固定维护版 photocraft-cli，保留原生编辑工程。
 
 ## 输入与交付
 
@@ -80,3 +80,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 调用公开工作流前阅读本技能的 [执行登记与中断处理](references/output-execution.md)。竞争或未知状态不得删除登记、自动重放或换目标绕过核对。
 
 交付、移动包或源工程返工前，按 [交付完整性](references/delivery-integrity.md) 校验清单全部文件与交换身份；只读检查无需安装运行时。
+
+## 场景契约与路由
+
+按 [场景合同](references/scenario-contract.md) 核对输入、目标与保护范围、恢复和验收。完整任务按名称选择最短技能链；已知结果不明时先核对原任务，不重放。显式意图可用本技能 `scripts/route.py INTENT` 查询入口；这是合同查询，不证明宿主模型派发已通过。

@@ -1,0 +1,62 @@
+{
+  "schema": "photocraft-routing/v1",
+  "skills": [
+    "photocraft-use",
+    "photocraft-cli",
+    "photocraft-cli-setup",
+    "photocraft-cli-project",
+    "photocraft-cli-layers",
+    "photocraft-cli-selection",
+    "photocraft-cli-masks",
+    "photocraft-cli-adjustments",
+    "photocraft-cli-retouch",
+    "photocraft-cli-text",
+    "photocraft-cli-resize",
+    "photocraft-cli-export",
+    "photocraft-cli-filters"
+  ],
+  "intents": {
+    "query_commands": [
+      "photocraft-cli"
+    ],
+    "setup": [
+      "photocraft-cli-setup"
+    ],
+    "edit_text": [
+      "photocraft-cli-text"
+    ],
+    "filter_background": [
+      "photocraft-cli-filters"
+    ],
+    "export": [
+      "photocraft-cli-export"
+    ],
+    "poster": [
+      "photocraft-cli-project",
+      "photocraft-cli-layers",
+      "photocraft-cli-text",
+      "photocraft-cli-export"
+    ],
+    "selection": [
+      "photocraft-cli-selection"
+    ],
+    "masks": [
+      "photocraft-cli-masks"
+    ],
+    "adjustments": [
+      "photocraft-cli-adjustments"
+    ],
+    "retouch": [
+      "photocraft-cli-retouch"
+    ],
+    "resize": [
+      "photocraft-cli-resize"
+    ],
+    "project": [
+      "photocraft-cli-project"
+    ],
+    "layers": [
+      "photocraft-cli-layers"
+    ]
+  }
+}

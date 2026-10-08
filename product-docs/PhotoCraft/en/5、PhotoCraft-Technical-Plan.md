@@ -1,5 +1,11 @@
 # PhotoCraft — Technical-Plan
 
+## Optimization roadmap update — 2026-10-08
+
+The roadmap prioritizes P0 entry validation, routing and release identity; P1 capability snapshots and persistent control; and P2 quality, lineage and domain-result acceptance. Exhaustive commands and actual host-model routing remain separate ongoing gates. Implement in the standalone skill source and publish immutable snapshots before plugin consumption. The local Harness reuses public executors and the authoritative ArtCraft protocol. All new tasks remain open; earlier runtime, installation and size-variant evidence does not validate these additions.
+
+[Scope and compatibility](../../../openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [Specifications and tasks](../../../openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
+
 > **Purpose**: Product boundaries and cross-version decisions.
 >
 > **Version**: 1.0.0
@@ -93,3 +99,9 @@ Snapshot `0.1.0-dev.2` has scoped installation/discovery and installed-entrypoin
 ## CLI skill suite revision
 
 [PhotoCraft CLI / setup / task suite](../../../docs/PhotoCraft-Skill-Suite-Architecture.md)
+
+## Candidate implementation progress — 2026-10-08
+
+A TypeScript/SQLite candidate now owns durable task intent, writer epochs, budgets, stop and read-only reconciliation while reusing the standalone Python skill executor. Review requests and receipts bind brief, references and candidate hashes; separate revisions are limited to reported text properties and layer names. Native reopening does not constitute creative acceptance. Standalone skills add strict parsing/preflight, recursive object preservation, PSD feature observations and explicit background-filter targets.
+
+Pinned backends have distinct registries: 755 commands for maintained headless and 748 for upstream desktop bridge. Parameter/tool-schema drift is refused. See the [candidate architecture](../../../docs/PhotoCraft-Harness-Candidate.md). Source validation, fixed release installation, per-command contexts, real host/independent review and external PSD-editor evidence remain separate gates; marketplace status and specification archive are unchanged.

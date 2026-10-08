@@ -1,0 +1,248 @@
+{
+  "schema": "photocraft-task-progress/v1",
+  "status": "CANDIDATE_VERIFIED_FULL_PLAN_INCOMPLETE",
+  "specAuthority": "openspec/changes/establish-v1-plugin",
+  "newlyCompletedTaskIds": [
+    "3.1",
+    "3.2",
+    "3.4",
+    "3.5",
+    "3.7",
+    "3.8",
+    "4.1",
+    "4.2",
+    "4.4",
+    "4.5",
+    "4.13",
+    "4.14",
+    "6.1",
+    "6.2",
+    "6.4",
+    "6.5",
+    "9.1",
+    "9.2",
+    "9.4",
+    "10.1",
+    "10.2",
+    "10.7",
+    "10.8",
+    "11.1",
+    "11.2",
+    "11.4",
+    "11.5",
+    "12.1",
+    "12.2",
+    "12.10",
+    "12.11",
+    "12.13",
+    "12.14",
+    "9.5",
+    "9.7",
+    "9.8",
+    "10.4",
+    "10.5",
+    "10.10",
+    "10.11",
+    "11.7",
+    "11.8",
+    "5.1",
+    "5.2",
+    "12.4",
+    "12.5",
+    "12.7",
+    "12.8",
+    "4.7",
+    "4.8",
+    "13.1"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 113,
+    "open": 44,
+    "newlyCompleted": 51
+  },
+  "openTaskIds": [
+    "2.4",
+    "2.5",
+    "2.6",
+    "3.3",
+    "3.6",
+    "3.9",
+    "4.3",
+    "4.6",
+    "4.9",
+    "4.15",
+    "4.16",
+    "4.17",
+    "4.18",
+    "5.3",
+    "5.6",
+    "6.3",
+    "6.6",
+    "7.1",
+    "7.2",
+    "7.3",
+    "7.4",
+    "7.5",
+    "7.6",
+    "8.3",
+    "9.3",
+    "9.6",
+    "9.9",
+    "10.3",
+    "10.6",
+    "10.9",
+    "10.12",
+    "11.3",
+    "11.6",
+    "11.9",
+    "12.3",
+    "12.6",
+    "12.9",
+    "12.12",
+    "12.15",
+    "13.2",
+    "13.3",
+    "13.4",
+    "13.5",
+    "13.6"
+  ],
+  "greenEvidence": "candidate-validation.json",
+  "baselineRedReconstruction": "baseline-red.json",
+  "observedRegressionFixes": "additional-red-green.json",
+  "groups": [
+    {
+      "requirements": [
+        "PC-SK-004"
+      ],
+      "candidate": "explicit intent routing, reused steps, self-contained shared contracts and 13-skill resources",
+      "remaining": "fixed candidate installation and actual host/model routing; static routing is not a natural-language model test"
+    },
+    {
+      "requirements": [
+        "PC-TX-005"
+      ],
+      "candidate": "strict JSON with nested field paths, descriptive known-parameter types/ranges, actual MCP schema subset, static/resolved references and batch reply validation",
+      "remaining": "formal per-command schemas are not provided by the native descriptions; fixed candidate installation and full entry acceptance remain open"
+    },
+    {
+      "requirements": [
+        "PC-RL-003"
+      ],
+      "candidate": "current combination checkers and refusal fixtures for conflicting versions, historical active lock, maintained provenance and moved immutable tags",
+      "remaining": "fixed candidate publication/installation; plugin managed snapshot still locks dev.34"
+    },
+    {
+      "requirements": [
+        "PC-RT-002"
+      ],
+      "candidate": "content fingerprints and per-step checks; actual headless 755 and desktop 748 pinned registries",
+      "remaining": "complete upgrade/rollback gates, fixed candidate installation and remaining target platforms"
+    },
+    {
+      "requirements": [
+        "PC-TX-001"
+      ],
+      "candidate": "SQLite project/session leases and epoch fencing; two independent process race, actual parallel immutable native revisions; unknown GUI writes refused",
+      "remaining": "full fixed-candidate ownership/late-reply/user GUI version acceptance"
+    },
+    {
+      "requirements": [
+        "PC-TX-002",
+        "PC-TX-003"
+      ],
+      "candidate": "durable intent and readonly checkpoint recovery, no unknown replay; inherited parent/child budgets, owned process-group stop, late artifacts retained",
+      "remaining": "full crash/cancellation matrix and controlled native cancellation with fixed candidate installation"
+    },
+    {
+      "requirements": [
+        "PC-QA-001",
+        "PC-QA-002"
+      ],
+      "candidate": "candidate-bound receipts with evaluator identity/version and separate states; title and enabled-mask BrightnessContrast revisions, immutable source/object/mask tile/protected-pixel preservation and finite root budget",
+      "remaining": "actual independent evaluator/context-isolation proof, fixed candidate installation and full quality acceptance; synthetic receipts are not creative proof"
+    },
+    {
+      "requirements": [
+        "PC-AR-001"
+      ],
+      "candidate": "portable public-contract bundle with packaged plan, inputs, source/capability and review bindings, parent identity, relocation verification, legacy readonly UNKNOWN and tamper/mixed-review refusal",
+      "remaining": "fixed candidate installation, cross-repository consumer proof and any source authenticity or creative acceptance claim"
+    },
+    {
+      "requirements": [
+        "PC-DM-001",
+        "PC-DM-002",
+        "PC-DM-003",
+        "PC-DM-005",
+        "PC-DM-007"
+      ],
+      "candidate": "recursive layer preservation and native saved mask ownership/enabled/link/content context; actual type.info line/range/tracking/font metrics, explicit font substitution, RGB8 protection refusal boundary; PSD matrices, nested variants and baked filters",
+      "remaining": "fixed candidate domain installation, unavailable glyph coverage/overflow metrics, smart-filter editability, additional color modes/depths and any claimed external PSD editor"
+    },
+    {
+      "requirements": [
+        "PC-CM-001",
+        "PC-RL-001",
+        "PC-RL-002"
+      ],
+      "candidate": "755-command inventory with 1510 backend contexts, stale-source/snapshot refusal, context/result/save/revision proof binding and zero automatic catalog-to-PASS promotion; native/desktop test layers and exact-source reuse guard",
+      "remaining": "per-command context review, all 755 applicable command executions, package-resource integration of the acceptance index, repeated actual host/model routing, host permission adapters and fixed candidate installation"
+    }
+  ],
+  "scope": "candidate tests/minimum implementations only; no sync/archive, publication, fixed candidate installation, host support or creative acceptance claim",
+  "historicalSymbolicCompletedTasks": [
+    "SC-001",
+    "SC-002",
+    "FIRST-FAIL-001",
+    "SC-004",
+    "SC-005",
+    "PC-SK-003-PATH-SELF",
+    "PC-CM-001-SAVED-SELECTION"
+  ],
+  "latestCompletedTaskIds": [
+    "9.5",
+    "9.7",
+    "9.8",
+    "10.4",
+    "10.5",
+    "10.10",
+    "10.11",
+    "11.7",
+    "11.8",
+    "5.1",
+    "5.2",
+    "12.4",
+    "12.5",
+    "12.7",
+    "12.8",
+    "4.7",
+    "4.8",
+    "13.1"
+  ],
+  "continuedRedGreen": "continued-red-green.json",
+  "verification": {
+    "skills": 201,
+    "skillsReusedFrom": "mask-adjustment-full-green.json",
+    "skillsReuse": "exact source and equal native/desktop layers",
+    "pluginTypeScript": 27,
+    "pluginPython": 36,
+    "skipped": 0,
+    "checks": 13,
+    "sourceUnchanged": true
+  },
+  "commandAcceptanceIndex": {
+    "file": "command-acceptance-index.json",
+    "commands": 755,
+    "contexts": 1510,
+    "PASS": 0,
+    "NOT_RUN": 1510,
+    "contextReview": "UNREVIEWED",
+    "tasksRemaining": [
+      "13.2",
+      "13.3"
+    ]
+  },
+  "releaseCandidateEvidence": "release-candidate-validation.json",
+  "publication": "READY_TO_PUBLISH_PLUGIN"
+}

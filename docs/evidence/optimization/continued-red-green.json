@@ -1,0 +1,182 @@
+{
+  "schema": "photocraft-observed-red-green/v1",
+  "scope": "Observed current continuation TDD failures and subsequent targeted passes; no publication or creative acceptance claim",
+  "observations": [
+    {
+      "tests": "test_parameter_contract.py initial known-parameter tests",
+      "red": {
+        "failed": 4
+      },
+      "cause": "wrong command parameter types/ranges reached execution preflight"
+    },
+    {
+      "tests": "test_parameter_contract.py tool schema tests",
+      "red": {
+        "failed": 2,
+        "passed": 4
+      },
+      "cause": "MCP argument and document settings types were not checked"
+    },
+    {
+      "tests": "test_strict_json_paths.py",
+      "red": {
+        "failed": 2,
+        "passed": 1
+      },
+      "cause": "duplicate and nonfinite JSON errors lacked nested field paths"
+    },
+    {
+      "tests": "artifact.test.ts and strict_json.test.ts",
+      "red": {
+        "failed": 2,
+        "passed": 1
+      },
+      "cause": "inherited prototype keys bypassed closed schema; Unicode whitespace was accepted"
+    },
+    {
+      "tests": "test_native_facts.py",
+      "red": {
+        "failed": 2
+      },
+      "cause": "native mask/text-fact collection and assertion API missing"
+    },
+    {
+      "tests": "test_parameter_contract.py batch parameters",
+      "red": {
+        "failed": 1,
+        "passed": 6
+      },
+      "cause": "batch steps bypassed command validation"
+    },
+    {
+      "tests": "test_parameter_contract.py partial batch reply",
+      "red": {
+        "failed": 1,
+        "passed": 7
+      },
+      "cause": "partial batch result validation missing"
+    },
+    {
+      "tests": "test_release_combination.py",
+      "red": {
+        "failed": 1,
+        "passed": 2
+      },
+      "cause": "maintained source could omit runtime variant and claim upstream identity"
+    },
+    {
+      "tests": "test_optimization_native.py explicit font substitution",
+      "red": {
+        "failed": 1,
+        "passed": 3
+      },
+      "cause": "native substitution reply contains pre-replacement missing families; fixed by fresh query"
+    },
+    {
+      "tests": "test_parameter_contract.py asset wrapper",
+      "red": {
+        "failed": 1,
+        "passed": 8
+      },
+      "cause": "asset wrapper types were not checked before installation"
+    },
+    {
+      "tests": "protected source mode/depth preflight",
+      "red": {
+        "failed": 1,
+        "passed": 5
+      },
+      "cause": "high-depth source could be compared through an 8-bit preview"
+    },
+    {
+      "tests": "known numeric range overflow",
+      "red": {
+        "failed": 1
+      },
+      "cause": "huge JSON integer raised OverflowError instead of a parameter error"
+    },
+    {
+      "tests": "first full continuation regression",
+      "red": {
+        "failed": 3,
+        "passed": 192,
+        "skipped": 0
+      },
+      "cause": "two legacy duplicate-key error compatibility assertions and one obsolete native enum failure expectation",
+      "evidence": "entry-lineage-facts-first-full-run.json",
+      "fix": "Preserved compact public error code and added fieldPath/message; invalid enum now proves zero-install, zero-output refusal"
+    },
+    {
+      "tests": "test_native_facts.py mask content preservation",
+      "red": {
+        "failed": 1,
+        "passed": 2
+      },
+      "cause": "equal enabled/link metadata hid changed mask tile bytes",
+      "targetedGreen": {
+        "passed": 3
+      }
+    },
+    {
+      "tests": "runner.test.ts masked local adjustment revision",
+      "red": {
+        "failed": 1,
+        "passed": 9
+      },
+      "cause": "bounded adjustment revision whitelist and mask/protection mapping missing",
+      "targetedGreen": {
+        "passed": 10
+      }
+    },
+    {
+      "tests": "native-harness.test.ts real title and masked adjustment revisions",
+      "targetedGreen": {
+        "passed": 2,
+        "skipped": 0
+      },
+      "scope": "actual target pixel darkening, saved mask tile preservation, protected-region equality, readonly native reopening and original source retention; synthetic review receipts only"
+    },
+    {
+      "tests": "runner.test.ts proposal protected-region contract",
+      "red": {
+        "failed": 1,
+        "passed": 9
+      },
+      "cause": "fractional, duplicate, oversized or unknown region fields could spend a revision before workflow preflight",
+      "targetedGreen": {
+        "passed": 27,
+        "skipped": 0
+      },
+      "scope": "all plugin TypeScript including real native title and local adjustment tests"
+    },
+    {
+      "tests": "test_command_acceptance.py initial inventory/context/staleness fixtures",
+      "red": {
+        "errors": 4,
+        "tests": 4
+      },
+      "cause": "command-context evidence index API missing",
+      "targetedGreen": {
+        "passed": 6
+      },
+      "scope": "synthetic bound-proof fixtures only; actual index retains all 1510 contexts NOT_RUN"
+    },
+    {
+      "tests": "test_candidate_reuse.py",
+      "red": {
+        "errors": 5,
+        "tests": 3
+      },
+      "cause": "exact-source/equal-layer evidence reuse validation missing",
+      "targetedGreen": {
+        "passed": 3
+      },
+      "scope": "failed, unstable, skipped-native, wrong-layer and changed-source evidence is refused"
+    }
+  ],
+  "greenEvidence": "candidate-validation.json",
+  "limitations": [
+    "Detailed targeted terminal output exists in task tool history; this file records observed counts and causes, not a fabricated historical raw log",
+    "Root/child budgets and portable lineage have additional regression cases; only their actual test-layer evidence is claimed"
+  ]
+}

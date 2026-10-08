@@ -1,12 +1,21 @@
 # PhotoCraft Agent Plugin
 
+开发版本 dev.39 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.35。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
+
+
+## 2026-10-08 优化规划
+
+Dreamina 对比分析已纳入现有 OpenSpec。本开发实现包含严格入口与批次校验、持久任务预算、可移动血缘包、保存后的蒙版事实和原生文字布局检查。[任务进展](docs/evidence/optimization/task-progress.json) 记录已验证完成项与全部剩余门禁；[候选回归](docs/evidence/optimization/candidate-validation.json) 绑定实际测试源码。完整 V1、真实宿主／模型及独立创作接受仍开放；固定安装证据单独记录。
+
+[范围与兼容设计](openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [规范与任务](openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
+
 PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切、重采样、可编辑原生／PSD图层、安全区／尺寸拒绝、源工程及失败暂存保全。[验收架构](docs/PhotoCraft-Complete-Variant-Contract-Architecture.zh_CN.md)。完整首版继续开放。
 
 四领域RT-001运行时来源与完整性已完成当前全部场景验收，固定技能字节保持不变；运行时升级与完整首版仍开放。[验收架构](docs/Craft-Fixed-Runtime-Integrity-Architecture.zh_CN.md)。
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.38`；技能源：`0.1.0-dev.34`；13 个独立技能。
+当前插件：`0.1.0-dev.39`；技能源：`0.1.0-dev.35`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -101,10 +110,10 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.38 |
+| Metadata version | 0.1.0-dev.39 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.34 |
-| Execution | 上游 CLI；ArtCraft 使用子适配器 |
+| Skills source | photocraft-skills / 0.1.0-dev.35 |
+| Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
 
@@ -151,11 +160,11 @@ photocraft-cli --version
 
 ## 配置与运行时
 
-目标配置包含 CLI 路径、允许读写根目录、运行模式、预算、超时与输出目录；配置 schema 尚待实现。技能锁文件固定已发布的独立技能源提交与内容摘要。运行时锁文件中的摘要来自真实官方制品，只证明已记录平台的基础运行。
+目标配置包含 CLI 路径、允许读写根目录、运行模式、预算、超时与输出目录；配置 schema 尚待实现。技能锁文件固定已发布的独立技能源提交与内容摘要。当前活动运行时锁与固定技能一致；维护版与上游来源分别记录，历史证据保持原版本及范围。
 
 ## 可靠性与安全
 
-规划要求：单工程写入锁、版本前置条件、持久化意图、幂等键、不明确结果核对、原生工程检查点、产物摘要及受限修订。密钥只通过宿主秘密引用传递；素材元数据不作为执行指令。
+本地候选实现了写入租约、版本前置条件、持久化意图、幂等键、不明确结果核对、只读原生检查点和受限修订；完整并发故障矩阵与固定发行验收仍开放。密钥只通过宿主秘密引用传递；素材元数据不作为执行指令。
 
 ## 验证与成熟度
 
@@ -164,7 +173,7 @@ photocraft-cli --version
 | 层面 | 状态 |
 | :--- | :--- |
 | 上游 CLI 与只读 MCP | 已观察，仅 macOS arm64 |
-| 独立技能与适配器 | 技术工作流已验证；完整 Harness 待完成 |
+| 独立技能与适配器 | 任务控制候选通过；完整 Harness 验收待完成 |
 | 原生工程与创作验收 | 原生技术用例通过；创作质量待验收 |
 | 目标宿主安装 | Codex 受控安装与发现通过；完整宿主验收待完成 |
 

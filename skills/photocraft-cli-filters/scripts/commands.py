@@ -31,27 +31,56 @@ def load(name):
     spec.loader.exec_module(value)
     return value
 
+def validate_parameters(identifier, params, path='$.params', resolved=False):
+    rows={row['id']:row for row in catalog()['commands']}
+    return load('parameter_contract').validate(identifier,params,rows,path,resolved)
+
+def validate_tool_parameters(identifier, params, path='$.params', resolved=False):
+    snapshot=json.loads((ROOT/'references/native-command-snapshot.json').read_text())
+    tools={tool['name']:tool for tool in snapshot['tools']}
+    if identifier not in tools:raise ValueError('unknown_tool: '+identifier)
+    load('parameter_contract').validate_schema(params,tools[identifier]['inputSchema'],path,resolved,close=True)
+    if identifier=='command_batch':
+        contract=load('parameter_contract')
+        if not resolved and contract.is_reference(params['steps']):return params
+        for index,step in enumerate(params['steps']):
+            if not resolved and contract.is_reference(step):continue
+            command=step['id'];location=path+'.steps['+str(index)+']'
+            if not resolved and load('parameter_contract').is_reference(command):continue
+            if not isinstance(command,str) or command not in {row['id'] for row in catalog()['commands']}:raise ValueError('unknown_command: '+location+'.id')
+            if set(step)-{'id','params'}:raise ValueError('parameter_unknown_field: '+location)
+            values=step.get('params')
+            if not resolved and contract.is_reference(values):continue
+            validate_parameters(command,{} if values is None else values,location+'.params',resolved)
+    return params
+
+def command_ids(step):
+    if 'command' in step:return [step['command']]
+    if step.get('tool')=='command_batch' and isinstance(step['params'].get('steps'),list):
+        return [item['id'] for item in step['params']['steps'] if isinstance(item,dict) and isinstance(item.get('id'),str)]
+    return []
+
 def output_path(value):
     if not isinstance(value, str) or not value or "\\" in value or Path(value).is_absolute() or any(p in ("", ".", "..") for p in value.split("/")) or value.split("/")[0] in {"journal.json", "success.json", "failure.json", "inputs", "tool-images", "desktop-session.json", "desktop.log", ".desktop-data", "artcraft-domain-command.json"}:
         raise ValueError("invalid_output_path")
     return value
 
-def references(value, aliases):
+def references(value, aliases, path='$'):
     if isinstance(value, dict):
         if set(value) == {"$output"}:
             output_path(value["$output"])
         elif set(value) == {"$ref"}:
             text = value["$ref"]
             if not isinstance(text, str) or not re.fullmatch(r"[a-zA-Z][\w-]*(?:\.[\w-]+)*", text):
-                raise ValueError("invalid_reference")
+                raise ValueError('invalid_reference: '+path)
             if text.split(".")[0] not in aliases:
-                raise ValueError("forward_or_unknown_reference: " + text)
+                raise ValueError('forward_or_unknown_reference: '+path+' => '+text)
         else:
-            for child in value.values():
-                references(child, aliases)
+            for key,child in value.items():
+                references(child, aliases,path+'.'+str(key))
     elif isinstance(value, list):
-        for child in value:
-            references(child, aliases)
+        for index,child in enumerate(value):
+            references(child, aliases,path+'['+str(index)+']')
 
 def validate(plan, input_names=()):
     if (not isinstance(plan, dict) or set(plan) != {"schema", "operations"}
@@ -76,7 +105,9 @@ def validate(plan, input_names=()):
             raise ValueError("invalid_json_parameters: " + str(index)) from None
         if key == "tool" and step[key] == ROUTES[DOMAIN][1]:
             raise ValueError("use_command_operation_for_native_registry")
-        references(step["params"], aliases)
+        references(step["params"], aliases,'$.operations['+str(index)+'].params')
+        if key=='command':validate_parameters(step[key],step['params'],'$.operations['+str(index)+'].params')
+        else:validate_tool_parameters(step[key],step['params'],'$.operations['+str(index)+'].params')
         alias = step.get("as")
         if alias is not None:
             if not isinstance(alias, str) or not re.fullmatch(r"[a-zA-Z][\w-]*", alias) or alias in aliases:
@@ -107,20 +138,19 @@ def native_call(identifier, params):
     return tool, {key: identifier, "params": params}
 
 def reply_json(text):
-    """拒绝重复键与非有限值；保留合法 JSON 标量及普通文字工具兼容性。"""
-    def constant(value):
-        raise ValueError('nonfinite_json_value')
-    def object_pairs(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError('duplicate_json_key')
-            result[key] = value
-        return result
-    value = json.loads(text, parse_constant=constant, object_pairs_hook=object_pairs)
-    # 1e999 等合法数值字面量仍可能溢出；不能等到写回执时才发现。
-    json.dumps(value, allow_nan=False)
-    return value
+    return load('strict_json').loads(text)
+
+def validate_tool_reply(identifier,result,params):
+    if identifier=='command_batch':
+        counts=('completed','failed')
+        if (not isinstance(result,dict) or any(type(result.get(k)) is not int or result[k]<0 for k in counts)
+                or not isinstance(result.get('results'),list) or any(not isinstance(row,dict) or type(row.get('ok')) is not bool for row in result['results'])
+                or result['completed']+result['failed']!=len(result['results']) or result['failed']!=sum(not row['ok'] for row in result['results'])
+                or len(result['results'])>len(params['steps'])):
+            raise load('operation_errors').error('outcome_unknown: invalid_batch_reply')
+        if result['failed'] or result['completed']!=len(params['steps']):raise load('operation_errors').error('outcome_unknown: partial_batch; inspect completed steps, no replay')
+    return result
+
 
 def parse_reply(reply, output=None, index=0):
     if (not isinstance(reply, dict)
@@ -129,9 +159,9 @@ def parse_reply(reply, output=None, index=0):
             or any(not isinstance(item, dict) or not isinstance(item.get('type'), str)
                    or (item.get('type') == 'text' and not isinstance(item.get('text'), str))
                    for item in reply['content'])):
-        raise RuntimeError('outcome_unknown: invalid_tool_reply')
+        raise load("operation_errors").error('outcome_unknown: invalid_tool_reply')
     if reply.get("isError"):
-        raise RuntimeError("command_failed: " + json.dumps(reply.get("content"), ensure_ascii=False))
+        raise load("operation_errors").error("command_failed: " + json.dumps(reply.get("content"), ensure_ascii=False))
     content = reply.get("content", [])
     texts = [item["text"] for item in content if item.get("type") == "text"]
     if len(content) == 1 and len(texts) == 1:
@@ -139,15 +169,15 @@ def parse_reply(reply, output=None, index=0):
             result = reply_json(texts[0])
         except json.JSONDecodeError:
             if output is None:
-                raise RuntimeError("outcome_unknown: unexpected_reply") from None
+                raise load("operation_errors").error("outcome_unknown: unexpected_reply") from None
         except (ValueError, TypeError):
-            raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
+            raise load("operation_errors").error('outcome_unknown: unsafe_json_reply') from None
         else:
             if isinstance(result, dict) and result.get("error"):
-                raise RuntimeError("semantic_error: " + json.dumps(result, ensure_ascii=False))
+                raise load("operation_errors").error("semantic_error: " + json.dumps(result, ensure_ascii=False))
             return result
     if output is None or not content:
-        raise RuntimeError("outcome_unknown: unexpected_reply")
+        raise load("operation_errors").error("outcome_unknown: unexpected_reply")
     # 原生工具允许图片和普通文字；附件落盘，日志不保留大块 base64。
     result = {"content": []}
     for number, item in enumerate(content):
@@ -157,23 +187,23 @@ def parse_reply(reply, output=None, index=0):
             except json.JSONDecodeError:
                 parsed = item["text"]
             except (ValueError, TypeError):
-                raise RuntimeError('outcome_unknown: unsafe_json_reply') from None
+                raise load("operation_errors").error('outcome_unknown: unsafe_json_reply') from None
             if isinstance(parsed, dict) and parsed.get("error"):
-                raise RuntimeError("semantic_error: " + json.dumps(parsed, ensure_ascii=False))
+                raise load("operation_errors").error("semantic_error: " + json.dumps(parsed, ensure_ascii=False))
             result["content"].append({"type": "text", "value": parsed})
         elif item.get("type") == "image" and item.get("mimeType") in ("image/png", "image/jpeg", "image/webp"):
             extension = {"image/png": "png", "image/jpeg": "jpg", "image/webp": "webp"}[item["mimeType"]]
             try:
                 data = base64.b64decode(item["data"], validate=True)
             except (ValueError, KeyError, TypeError):
-                raise RuntimeError("outcome_unknown: invalid_image_reply") from None
+                raise load("operation_errors").error("outcome_unknown: invalid_image_reply") from None
             path = Path(output) / "tool-images" / (str(index) + "-" + str(number) + "." + extension)
             path.parent.mkdir(exist_ok=True)
             path.write_bytes(data)
             result["content"].append({"type": "image", "mimeType": item["mimeType"],
                 "path": str(path.relative_to(output)), "sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)})
         else:
-            raise RuntimeError("outcome_unknown: unsupported_tool_content")
+            raise load("operation_errors").error("outcome_unknown: unsupported_tool_content")
     return result
 
 def backend_argv(executable, output, mode="headless", connect=None, token_file=None):
@@ -220,7 +250,7 @@ def runtime_rows(session, params=None):
             or any(not isinstance(row, dict) or not isinstance(row.get('id'), str)
                    or not row['id'] for row in rows)
             or len({row['id'] for row in rows}) != len(rows)):
-        raise RuntimeError("outcome_unknown: unexpected_registry")
+        raise load("operation_errors").error("outcome_unknown: unexpected_registry")
     return rows
 
 def execute(plan, output, runtime_home=None, mode="headless", connect=None, token_file=None,
@@ -244,6 +274,12 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
     output = output.absolute()
     # 验证连接参数在安装和创建目录之前完成；不偷偷回退到另一会话。
     backend_argv("native", output, mode, connect, token_file)
+    if mode=='bridge':
+        pinned=reply_json((ROOT/'references/desktop-command-snapshot.json').read_text())
+        identifiers={row['id'] for row in pinned['commands']}
+        for step in plan['operations']:
+            for identifier in command_ids(step):
+                if identifier not in identifiers:raise ValueError('backend_command_unavailable: '+identifier)
     plan_bytes = json.dumps(plan, ensure_ascii=False, sort_keys=True, allow_nan=False).encode()
     receipt = {"schema": "craft-command-receipt/v1", "pluginId": DOMAIN,
                "planSha256": hashlib.sha256(plan_bytes).hexdigest(),
@@ -280,20 +316,28 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             if (not isinstance(discovery, dict) or not isinstance(discovery.get('tools'), list)
                     or any(not isinstance(tool, dict) or not isinstance(tool.get('name'), str)
                            or not tool['name'] for tool in discovery['tools'])):
-                raise RuntimeError('outcome_unknown: unexpected_tools_reply')
+                raise load("operation_errors").error('outcome_unknown: unexpected_tools_reply')
             available = {tool['name'] for tool in discovery['tools']}
             required = {native_call(s["command"], {})[0] if "command" in s else s["tool"]
                         for s in plan["operations"]}
             # 目录查询也是原生能力合同；旧服务不能冒充新入口。
             if not required.issubset(available) or ROUTES[DOMAIN][0] not in available:
-                raise RuntimeError("native_tool_missing")
+                raise load("operation_errors").error("native_tool_missing")
             current = {r["id"]: r for r in runtime_rows(session)}
             expected = {r["id"] for r in catalog()["commands"]}
-            if not expected.issubset(current):
-                raise RuntimeError("native_registry_drift")
+            if mode!='bridge' and not expected.issubset(current):
+                raise load("operation_errors").error("native_registry_drift")
             receipt["registeredCommands"] = len(current)
+            gate=load('capabilities').Gate(session,sys.modules.get(__name__) or load('commands'),installed['binarySha256'],mode)
+            receipt['capabilitySnapshot']=gate.check()
             for index, step in enumerate(plan["operations"]):
+                gate.check()
                 params = resolve(step["params"], bindings)
+                if 'command' in step:validate_parameters(step['command'],params,'$.operations['+str(index)+'].params',True)
+                else:validate_tool_parameters(step['tool'],params,'$.operations['+str(index)+'].params',True)
+                if mode=='bridge':
+                    for identifier in command_ids({**step,'params':params}):
+                        if identifier not in current:raise ValueError('backend_command_unavailable: '+identifier)
                 record = {"index": index, "command": step.get("command"), "tool": step.get("tool"),
                           "params": params, "state": "started"}
                 if "command" in step:
@@ -303,7 +347,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                         record["state"] = "blocked"
                         record["reason"] = row.get("why", "native_context_disabled") if row else "native_command_missing"
                         receipt["steps"].append(record)
-                        raise RuntimeError("precondition_failed: " + step["command"] + ": " + record["reason"])
+                        raise load("operation_errors").error("precondition_failed: " + step["command"] + ": " + record["reason"])
                     tool, args = native_call(step["command"], params)
                 else:
                     tool, args = step["tool"], params
@@ -312,17 +356,19 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                 result = parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
                                      output if "tool" in step else None, index)
                 record["result"] = result
+                validate_tool_reply(tool,result,args)
                 record["state"] = "succeeded"
+                record['phase']='reply_validated'
                 if "as" in step:
                     bindings[step["as"]] = result
                 write(output / "journal.json", receipt)
         receipt["result"] = "PASS"
         write(output / "success.json", receipt)
     except (ValueError, RuntimeError, OSError, TimeoutError, subprocess.SubprocessError) as error:
-        uncertain = isinstance(error, (TimeoutError, subprocess.TimeoutExpired)) or any(s in str(error) for s in
-                    ("outcome_unknown", "mcp_disconnected", "mcp_response_too_large"))
+        uncertain = isinstance(error, (TimeoutError, subprocess.TimeoutExpired)) or getattr(error, "outcome", None) == "unknown"
         receipt["result"] = "unknown" if uncertain else "FAIL"
         receipt["error"] = str(error)
+        receipt["errorDetails"] = load("operation_errors").describe(error, "submitted")
         if receipt["steps"] and receipt["steps"][-1]["state"] == "started":
             receipt["steps"][-1]["state"] = "unknown" if uncertain else "failed"
         write(output / "failure.json", receipt)
@@ -364,7 +410,7 @@ def main():
         print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
         return 0 if not isinstance(result, dict) or result.get("result", "PASS") == "PASS" else 1
     except (ValueError, OSError) as error:
-        print(json.dumps({"result":"FAIL", "error":str(error)}, ensure_ascii=False))
+        print(json.dumps({'result':'FAIL',**load('operation_errors').describe(error)},ensure_ascii=False))
         return 1
 
 if __name__ == "__main__":

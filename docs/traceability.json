@@ -46,12 +46,37 @@
         "2.6",
         "4.29",
         "2.9",
-        "2.10"
+        "2.10",
+        "10.1",
+        "10.2",
+        "10.3"
       ],
       "owner": "Runtime owner",
       "status": "in-progress",
       "candidateEvidence": "docs/evidence/photocraft-native-download-candidate-20261007.json",
-      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json"
+      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "10.1",
+          "10.2",
+          "10.3"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/capability-snapshot/",
+        "completedTasks": [
+          "10.1",
+          "10.2"
+        ],
+        "openTasks": [
+          "10.3"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-TX-001",
@@ -61,10 +86,35 @@
         "3.2",
         "3.3",
         "3.13",
-        "3.14"
+        "3.14",
+        "10.4",
+        "10.5",
+        "10.6"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "10.4",
+          "10.5",
+          "10.6"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/project-ownership/",
+        "completedTasks": [
+          "10.4",
+          "10.5"
+        ],
+        "openTasks": [
+          "10.6"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-TX-002",
@@ -72,10 +122,35 @@
       "tasks": [
         "3.4",
         "3.5",
-        "3.6"
+        "3.6",
+        "10.7",
+        "10.8",
+        "10.9"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "10.7",
+          "10.8",
+          "10.9"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/task-recovery/",
+        "completedTasks": [
+          "10.7",
+          "10.8"
+        ],
+        "openTasks": [
+          "10.9"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-TX-003",
@@ -83,10 +158,35 @@
       "tasks": [
         "3.7",
         "3.8",
-        "3.9"
+        "3.9",
+        "10.10",
+        "10.11",
+        "10.12"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "10.10",
+          "10.11",
+          "10.12"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/task-budget-stop/",
+        "completedTasks": [
+          "10.10",
+          "10.11"
+        ],
+        "openTasks": [
+          "10.12"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-DM-001",
@@ -97,11 +197,36 @@
         "4.3",
         "4.26",
         "4.27",
-        "4.28"
+        "4.28",
+        "12.1",
+        "12.2",
+        "12.3"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json"
+      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "12.1",
+          "12.2",
+          "12.3"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/recursive-layers/",
+        "completedTasks": [
+          "12.1",
+          "12.2"
+        ],
+        "openTasks": [
+          "12.3"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-DM-002",
@@ -109,11 +234,36 @@
       "tasks": [
         "4.4",
         "4.5",
-        "4.6"
+        "4.6",
+        "12.4",
+        "12.5",
+        "12.6"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json"
+      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "12.4",
+          "12.5",
+          "12.6"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/mask-protection/",
+        "completedTasks": [
+          "12.4",
+          "12.5"
+        ],
+        "openTasks": [
+          "12.6"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-DM-003",
@@ -122,11 +272,36 @@
         "4.7",
         "4.8",
         "4.9",
-        "4.19"
+        "4.19",
+        "12.7",
+        "12.8",
+        "12.9"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json"
+      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "12.7",
+          "12.8",
+          "12.9"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/text-layout/",
+        "completedTasks": [
+          "12.7",
+          "12.8"
+        ],
+        "openTasks": [
+          "12.9"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-DM-004",
@@ -148,11 +323,36 @@
       "tasks": [
         "4.13",
         "4.14",
-        "4.15"
+        "4.15",
+        "12.10",
+        "12.11",
+        "12.12"
       ],
       "owner": "Domain owner",
       "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json"
+      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "12.10",
+          "12.11",
+          "12.12"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/psd-feature-fidelity/",
+        "completedTasks": [
+          "12.10",
+          "12.11"
+        ],
+        "openTasks": [
+          "12.12"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-DM-006",
@@ -172,10 +372,35 @@
       "tasks": [
         "5.1",
         "5.2",
-        "5.3"
+        "5.3",
+        "11.7",
+        "11.8",
+        "11.9"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "11.7",
+          "11.8",
+          "11.9"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/artifact-lineage/",
+        "completedTasks": [
+          "11.7",
+          "11.8"
+        ],
+        "openTasks": [
+          "11.9"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-AR-002",
@@ -194,10 +419,35 @@
       "tasks": [
         "6.1",
         "6.2",
-        "6.3"
+        "6.3",
+        "11.1",
+        "11.2",
+        "11.3"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "11.1",
+          "11.2",
+          "11.3"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/bound-review/",
+        "completedTasks": [
+          "11.1",
+          "11.2"
+        ],
+        "openTasks": [
+          "11.3"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-QA-002",
@@ -205,10 +455,35 @@
       "tasks": [
         "6.4",
         "6.5",
-        "6.6"
+        "6.6",
+        "11.4",
+        "11.5",
+        "11.6"
       ],
       "owner": "Harness owner",
-      "status": "planned"
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "11.4",
+          "11.5",
+          "11.6"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/bounded-revision/",
+        "completedTasks": [
+          "11.4",
+          "11.5"
+        ],
+        "openTasks": [
+          "11.6"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-RL-001",
@@ -216,10 +491,30 @@
       "tasks": [
         "7.1",
         "7.2",
-        "7.3"
+        "7.3",
+        "13.4",
+        "13.5",
+        "13.6"
       ],
       "owner": "Release owner",
-      "status": "planned"
+      "status": "planned",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "13.4",
+          "13.5",
+          "13.6"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/host-evidence/",
+        "completedTasks": [],
+        "openTasks": [
+          "13.4",
+          "13.5",
+          "13.6"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-RL-002",
@@ -261,7 +556,10 @@
         "8.9",
         "8.10",
         "8.11",
-        "8.12"
+        "8.12",
+        "13.1",
+        "13.2",
+        "13.3"
       ],
       "owner": "Skills owner",
       "status": "in-progress",
@@ -272,7 +570,25 @@
       "protocolFaultHostEvidence": "docs/evidence/codex-protocol-fault-first-use-20261007.json",
       "publicWorkflowCandidateEvidence": "docs/evidence/public-workflow-session-candidate-20261007.json",
       "publicWorkflowFixedHostEvidence": "docs/evidence/codex-public-workflow-session-first-use-20261007.json",
-      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json"
+      "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "13.1",
+          "13.2",
+          "13.3"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/command-acceptance/",
+        "completedTasks": [
+          "13.1"
+        ],
+        "openTasks": [
+          "13.2",
+          "13.3"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     },
     {
       "requirement": "PC-TX-004",
@@ -298,6 +614,138 @@
       "owner": "Desktop runtime owner",
       "status": "verified-bounded-darwin-arm64",
       "evidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json"
+    },
+    {
+      "requirement": "PC-SK-004",
+      "capability": "skills-distribution",
+      "tasks": [
+        "9.1",
+        "9.2",
+        "9.3"
+      ],
+      "owner": "Skills owner",
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "9.1",
+          "9.2",
+          "9.3"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/routing-contract/",
+        "completedTasks": [
+          "9.1",
+          "9.2"
+        ],
+        "openTasks": [
+          "9.3"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
+    },
+    {
+      "requirement": "PC-TX-005",
+      "capability": "task-execution",
+      "tasks": [
+        "9.4",
+        "9.5",
+        "9.6"
+      ],
+      "owner": "Skills owner",
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "9.4",
+          "9.5",
+          "9.6"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/entry-contract/",
+        "completedTasks": [
+          "9.4",
+          "9.5"
+        ],
+        "openTasks": [
+          "9.6"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
+    },
+    {
+      "requirement": "PC-RL-003",
+      "capability": "release-compatibility",
+      "tasks": [
+        "9.7",
+        "9.8",
+        "9.9"
+      ],
+      "owner": "Release owner",
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "9.7",
+          "9.8",
+          "9.9"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/release-identity/",
+        "completedTasks": [
+          "9.7",
+          "9.8"
+        ],
+        "openTasks": [
+          "9.9"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
+    },
+    {
+      "requirement": "PC-DM-007",
+      "capability": "domain-workflow",
+      "tasks": [
+        "12.13",
+        "12.14",
+        "12.15"
+      ],
+      "owner": "Domain owner",
+      "status": "candidate-implemented-full-acceptance-open",
+      "optimizationScope": {
+        "date": "2026-10-08",
+        "status": "candidate-implemented-partial-acceptance",
+        "tasks": [
+          "12.13",
+          "12.14",
+          "12.15"
+        ],
+        "evidenceTarget": "docs/evidence/optimization/complex-layout-filters/",
+        "completedTasks": [
+          "12.13",
+          "12.14"
+        ],
+        "openTasks": [
+          "12.15"
+        ],
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      },
+      "candidateImplementation": {
+        "status": "verified-minimum-implementation-full-acceptance-open",
+        "evidence": "docs/evidence/optimization/task-progress.json"
+      }
     }
   ]
 }

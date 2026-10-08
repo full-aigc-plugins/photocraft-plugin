@@ -1,0 +1,67 @@
+{
+  "schema": "photocraft-final-documentation-verification/v1",
+  "status": "PASS",
+  "candidateEvidence": "candidate-validation.json",
+  "candidateEvidenceSha256": "5575420192aec9d8c933016876e32b86882fd2f16b066d83092284a7f77dce20",
+  "sourceDeltaSinceLatestVerification": {
+    "skills": {},
+    "plugin": {}
+  },
+  "sourceCurrent": {
+    "skills": "bcc97388480dbc83d5cc4077c6940bc84caf6fc9884276229f7ac7444230fa89",
+    "plugin": "ac56fe2c7bdff1e1f4fc160aa3ade9ab17b4b5cba12de5caf6ba6d851084557a"
+  },
+  "explanation": "Latest verification reran all plugin and static checks; skills tests reused only from exact-source equal-layer full native/desktop evidence. Subsequent changes are excluded task/status/documentation fields, verified here. No behavioral source delta.",
+  "checks": [
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "-B",
+        "scripts/validate_docs.py"
+      ],
+      "repository": "plugin",
+      "exitCode": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"scope\": \"documentation structure, local links, status honesty and spec/task traceability only\",\n  \"markdownFiles\": 358,\n  \"capabilities\": 7,\n  \"requirements\": 27,\n  \"scenarios\": 109,\n  \"openImplementationTasks\": 44,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "openspec",
+        "validate",
+        "establish-v1-plugin",
+        "--strict"
+      ],
+      "repository": "plugin",
+      "exitCode": 0,
+      "output": "Change 'establish-v1-plugin' is valid\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "repository": "plugin",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "repository": "skills",
+      "exitCode": 0,
+      "output": ""
+    }
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 113,
+    "open": 44,
+    "newlyCompleted": 51
+  },
+  "publication": "NOT_RUN",
+  "specSyncArchive": "NOT_RUN",
+  "publicationRedaction": "Personal checkout path removed from command display only; historical results and source identities retained."
+}

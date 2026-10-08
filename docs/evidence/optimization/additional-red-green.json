@@ -1,0 +1,17 @@
+{
+  "schema": "photocraft-observed-regression-fixes/v1",
+  "scope": "Observed local failures during candidate implementation; full current green evidence is candidate-validation.json. Baseline reconstruction is separately labeled in baseline-red.json.",
+  "cases": [
+    {"test": "artifact mapping binds files and parent", "red": "Missing expected exception parent_version_conflict", "fix": "Bind parent artifact digest to expectedProjectSha256 and manifest.sourceProjectSha256"},
+    {"test": "reconcile records a verified retained checkpoint", "red": "checkpoint undefined", "fix": "Inspect preserved failure record and reopen original stage read-only without replay"},
+    {"test": "creative receipts reject missing evaluator version", "red": "Missing expected exception independent_evaluator_required", "fix": "Require evaluator.version and retain self-review refusal"},
+    {"test": "functional adjustment counts without pixel bounds", "red": "editable_count missing; actual adjustment native fixture failed editable_layer_gate_failed", "fix": "Count functional Adjustment objects while excluding empty Pixel and Group shells"},
+    {"test": "bridge uses its pinned registry", "red": "Gate reference parameter missing; actual desktop failed native_registry_drift", "fix": "Separate pinned 748-command desktop snapshot from maintained 755-command headless snapshot"},
+    {"test": "desktop unavailable command rejected before install", "red": "backend-incompatible plan reached installation", "fix": "Pinned backend preflight rejects unsupported commands with no output"},
+    {"test": "smart replacement and relink", "red": "command_disabled convertToEmbedded", "fix": "Select explicit target, inspect actual source kind and skip redundant conversion for already embedded objects"},
+    {"test": "nested ungroup negative fixture", "red": "text assertion fired before structure comparison", "fix": "Remove unrelated text assertion from negative fixture; structure refusal remains required"},
+    {"test": "checkpoint native six fault fixture", "red": "checkpoint_symlink on macOS var alias", "fix": "Canonicalize temporary fixture root, retain production symlink refusal"}
+  ],
+  "historicalFullRun": "first-full-run.json",
+  "acceptance": "This record does not establish fixed release installation or independent creative acceptance."
+}

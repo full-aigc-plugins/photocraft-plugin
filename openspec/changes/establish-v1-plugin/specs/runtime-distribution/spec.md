@@ -55,6 +55,18 @@
 - **THEN** 安装器 SHALL 丢弃半包并最多执行三次只读下载，之后仍执行原摘要／安全解压／版本检查，不重试原生编辑
 - **AND** 证书、权限、磁盘、大小限制、摘要及非临时HTTP拒绝错误 SHALL 不被重试或放宽；固定发行及安装首用另行验收
 
+#### Scenario: PC-RT-002-SNAPSHOT 内容绑定的能力快照
+
+- **WHEN** 一个新原生会话准备执行计划，或运行时、后端、schema 发生变化
+- **THEN** 适配器 SHALL 从实际执行端生成绑定二进制摘要、版本、平台、headless／desktop 后端、会话、命令 ID 与参数 schema 摘要的能力快照，并把快照摘要绑定任务和回执
+- **AND** 每个操作前重新核对动态文档、选择和 enabled 前置条件；enabled 不等同用户授权，权限范围单独核验
+
+#### Scenario: PC-RT-002-SCHEMA-DRIFT 命令名称相同但合同变化
+
+- **WHEN** 实际运行时保留命令 ID 但参数结构、引用形式或后端能力不同于计划所依据的快照
+- **THEN** 系统 SHALL 在受影响操作前返回 capability_mismatch，保留旧组合及已有产物，不用目录集合包含关系代替 schema 校验
+- **AND** 仅重新核验变化影响的能力；不能从 headless 通过推断 desktop bridge 通过，也不静默升级运行时
+
 ### Requirement: PC-DS-001 Owned standalone desktop workflow
 Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
 

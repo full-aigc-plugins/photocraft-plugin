@@ -1,5 +1,11 @@
 # PhotoCraft Runtime Architecture
 
+## 2026-10-08 优化设计补充
+
+当前已有独立技能执行器及限定原生交付证据；本文早期“尚未实现”的整体描述不再表示全部组件状态。完整 Harness 仍为目标设计。继续保留 TypeScript/Node.js、SQLite 的插件目标，复用独立 Python 执行器；增加工程写入身份、能力快照、status/reconcile/verify、摘要绑定 Judge、受限修订与 stop。账本与原生引擎不具备跨系统原子事务，未知结果先核对，单技能自包含能力保持。
+
+[范围与兼容设计](../openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [规范与任务](../openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
+
 > **文档说明**：进程、数据、协议、故障恢复及验收的完整目标设计。
 >
 > **版本**：1.0.0
@@ -210,3 +216,7 @@ stateDiagram-v2
 ## CLI 技能体系增量
 
 [PhotoCraft CLI / setup / task suite](PhotoCraft-Skill-Suite-Architecture.zh_CN.md)
+
+本轮候选实现与证据边界见 [任务控制候选](PhotoCraft-Harness-Candidate.zh_CN.md)。
+
+候选实测后端目录分离：维护版 headless 755 条，上游固定桌面 bridge 748 条。各自使用参数及工具 schema 摘要；不能因 ID 数不同绕过漂移检查，也不能把 headless 扩展自动声明为桌面可用。

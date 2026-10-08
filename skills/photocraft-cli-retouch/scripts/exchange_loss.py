@@ -1,6 +1,7 @@
 """从实际导出与重开记录生成交换损失报告；不把格式能力推断当成保真验证。"""
 import hashlib
 import json
+import importlib.util
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -56,6 +57,10 @@ def write_report(root,outputs,warnings):
    if (root/'psd-inspection.json').is_file():
     psd=json.loads((root/'psd-inspection.json').read_text());observations['nativeLayerCount']=len(model.get('layers',[]));observations['psdLayerCount']=len(psd.get('layers',[]))
     report['psdInspection']={'location':'psd-inspection.json','sha256':sha(root/'psd-inspection.json')}
+    spec=importlib.util.spec_from_file_location('psd_features',Path(__file__).with_name('psd_features.py'));features=importlib.util.module_from_spec(spec);spec.loader.exec_module(features)
+    plan=json.loads((root/'plan.json').read_text()) if (root/'plan.json').is_file() else {}
+    used_effects=any(str(op.get('command','')).startswith(('filter.','layer.smartFilter.')) or op.get('command')=='native.command' and str(op.get('params',{}).get('command','')).startswith(('filter.','layer.smartFilter.')) for op in plan.get('operations',[]))
+    observations['featureMatrix']=features.assess(model,psd,used_effects)
   elif fmt=='pdf':
    change('font-portability','unknown','PDF font embedding and substitution are not verified.')
    change('effect-fidelity','unknown','Native effect/mask appearance in PDF consumers is not verified.')

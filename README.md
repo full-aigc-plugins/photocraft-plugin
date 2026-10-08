@@ -1,12 +1,21 @@
 # PhotoCraft Agent Plugin
 
+Development release dev.39 includes SQLite task control, bound review and bounded revisions, with standalone dev.35 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
+
+
+## Optimization plan — 2026-10-08
+
+The Dreamina comparison is captured in the existing OpenSpec change. This development implementation includes strict entry and batch validation, persistent task budgets, portable lineage bundles, saved-mask facts and native text-layout checks. [Task progress](docs/evidence/optimization/task-progress.json) records verified completions and every remaining gate; [candidate regression](docs/evidence/optimization/candidate-validation.json) binds the tested source. Full V1, host/model routing and independent creative acceptance remain open; fixed-installation evidence is recorded separately.
+
+[Scope and compatibility](openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [Specifications and tasks](openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
+
 The complete PC-DM-004 size-variant contract passes fixed installed first use: padding, crop, resample, editable native/PSD layers, safe-area/size refusal, preserved source and failed stages. [Acceptance architecture](docs/PhotoCraft-Complete-Variant-Contract-Architecture.md). FullV1 remains open.
 
 Four-domain RT-001 runtime source/integrity acceptance now covers every current scenario; existing pinned skill bytes remain unchanged. Runtime upgrades and fullV1 remain open. [Acceptance architecture](docs/Craft-Fixed-Runtime-Integrity-Architecture.md).
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.38`; skill source: `0.1.0-dev.34`; 13 independent skills.
+Current plugin: `0.1.0-dev.39`; skill source: `0.1.0-dev.35`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -101,10 +110,10 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.38 |
+| Metadata version | 0.1.0-dev.39 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.34 |
-| Execution | Upstream CLI; ArtCraft uses child adapters |
+| Skills source | photocraft-skills / 0.1.0-dev.35 |
+| Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |
 
@@ -151,11 +160,11 @@ The recorded result is 0.2.0. The public independent-skill bootstrap and workflo
 
 ## Configuration and runtime
 
-Target configuration includes CLI paths, allowed read/write roots, execution mode, budget, timeout and output directory; the configuration schema is not implemented yet. The skills lock pins the published source commit and whole-skill digest. Runtime lock hashes identify real official artifacts and establish only the recorded platform’s smoke evidence.
+Target configuration includes CLI paths, allowed read/write roots, execution mode, budget, timeout and output directory; the configuration schema is not implemented yet. The skills lock pins the published source commit and whole-skill digest. The active runtime lock matches the fixed skills. Maintained and upstream provenance are recorded separately; historical evidence retains its original version and scope.
 
 ## Reliability and security
 
-Planned safeguards include project write locks, revision preconditions, persisted intent, idempotency keys, outcome reconciliation, native checkpoints, artifact hashes and bounded revisions. Secrets are host-managed references; asset metadata is never an execution instruction.
+The local candidate implements writer leases, revision preconditions, persisted intent, idempotency keys, outcome reconciliation, read-only native checkpoints and bounded revisions. Full concurrency fault matrices and fixed release acceptance remain open. Secrets are host-managed references; asset metadata is never an execution instruction.
 
 ## Verification and maturity
 
@@ -164,7 +173,7 @@ Planned safeguards include project write locks, revision preconditions, persiste
 | Layer | Status |
 | :--- | :--- |
 | Upstream CLI and read-only MCP | Observed on macOS arm64 only |
-| Independent skill and adapter | Technical workflow tested; full harness pending |
+| Independent skill and adapter | Task-control candidate passes; full harness acceptance pending |
 | Native project and creative acceptance | Native technical cases pass; creative acceptance pending |
 | Target host installation | Codex controlled install/discovery pass; full host acceptance pending |
 
