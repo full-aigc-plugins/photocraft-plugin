@@ -1,0 +1,63 @@
+{
+  "schema": "photocraft-requirement-acceptance/v1",
+  "requirement": "PC-TX-003",
+  "status": "PASS",
+  "sourceRef": "v0.1.0-dev.44",
+  "sourceCommit": "70e6dfe56afa23257feb343bf4b51727c220e303",
+  "pluginRef": "v0.1.0-dev.54",
+  "pluginCommit": "9ccbfca1af2f03c9719000bc5f5159354d83ea82",
+  "platform": "darwin-arm64",
+  "publicRuntimeVersion": "0.2.0-craft.1",
+  "normativeScenarios": [
+    {
+      "id": "PC-TX-003-P",
+      "result": "PASS",
+      "evidence": [
+        "fixed-stop-native.json",
+        "fixed-harness.txt"
+      ],
+      "proof": "receipt binds task/request/epoch/token/source/launch; no technical/creative promotion"
+    },
+    {
+      "id": "PC-TX-003-N",
+      "result": "PASS",
+      "evidence": [
+        "fixed-stop-native.json",
+        "fixed-harness.txt"
+      ],
+      "proof": "real native child runs while stopped parent keeps occupancy; both cancelled only after owned group exit"
+    },
+    {
+      "id": "PC-TX-003-PERSIST",
+      "result": "PASS",
+      "evidence": [
+        "fixed-stop-native.json",
+        "fixed-harness.txt"
+      ],
+      "proof": "fresh ledger preserves root revision count, start/deadline/elapsed, concurrency and disk reservations; no replay; single signal owner"
+    },
+    {
+      "id": "PC-TX-003-STOP",
+      "result": "PASS",
+      "evidence": [
+        "fixed-native-late.json",
+        "late-native.ts",
+        "fixed-harness.txt"
+      ],
+      "proof": "stop accepted before delayed actual native response consumed; native artifacts observed under original task; no completed promotion; unknown receipt retains occupancy; unrelated process untouched"
+    }
+  ],
+  "closedTaskIds": [
+    "3.9",
+    "10.12"
+  ],
+  "localCloudGeneration": "NONE_IN_TESTED_LOCAL_WORKFLOWS",
+  "limitations": [
+    "darwin-arm64 native acceptance; Linux CI covers synthetic contracts only",
+    "synthetic review establishes revision contract, not creative acceptance",
+    "hard supervisor/OS interruption without an exit receipt remains reconciling and retains occupancy; no stop evidence invented",
+    "native craft.5 candidate not activated; public runtime remains craft.1",
+    "PC-TX-002 full recovery and PC-TX-001 GUI ownership are separate requirements"
+  ],
+  "scope": "All PC-TX-003 normative scenarios on immutable public installed plugin/source; no full V1, model routing or creative acceptance claim"
+}

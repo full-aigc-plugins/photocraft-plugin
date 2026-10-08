@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. Local native parent/child cancellation passes; fixed public installation is pending. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
+dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. All PC-TX-003 scenarios pass on public fixed macOS arm64 installation; tasks3.9/10.12 complete.133/157 complete,24 open. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
 
 Published dev.52 / source dev.44: all PC-AR-001 scenarios pass on actual fixed macOS arm64 native copies and the immutable ArtCraft109 consumer.17 indexed-file replacements refuse; old dev.50 remains read-only. Tasks5.3/11.9 complete;131/157 complete,26 open. Creative acceptance and source authenticity remain unproven. [Audit](docs/evidence/optimization/artifact-lineage/acceptance-audit.json).
 

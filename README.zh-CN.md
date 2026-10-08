@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。本地真实原生父子取消已通过，公开固定安装待验收。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
+dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。公开固定macOS arm64安装通过全部PC-TX-003场景，3.9／10.12完成；现133/157完成、24开放。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
 
 dev.52／源dev.44已发布：实际固定macOS arm64原生副本及不可变ArtCraft109消费者通过全部PC-AR-001规范场景，17项逐文件替换拒绝、旧dev.50只读兼容。5.3／11.9完成，现131/157完成、26开放；创作接受及来源真实性未证明。[验收](docs/evidence/optimization/artifact-lineage/acceptance-audit.json)。
 

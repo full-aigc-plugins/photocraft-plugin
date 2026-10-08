@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.54",
+  "skillSourceRef": "v0.1.0-dev.44",
+  "harness": {
+    "tests": 78,
+    "pass": 78,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 6,
+  "readonlyNativeFaults": 14,
+  "healthyReadonlyPaths": 2,
+  "installedTreeUnchanged": true,
+  "installedTreeSha256": "2f3850dabc26b00f2253788fffffc5947d553d797a832373e9a41d7b1278d920",
+  "harnessLogSha256": "25705afd8967c7f59d0dbb857751b2aaf7be8215a08e2a8bb7d18d598c0089ec",
+  "integerOverflowMethods": 3,
+  "integerOverflowPublicRefusals": 52,
+  "integerOverflowInstallCalls": 0,
+  "integerOverflowSessionCalls": 0,
+  "lineageNativeCases": 17,
+  "lineageNativeReportSha256": "f813a951ec102a34c65390554a74882bdf1ae0513d287334501425a523304ae3",
+  "closedTasks": [],
+  "scope": "Actual public-tag installed canonical skill,78 Harness tests and52 independent-entry integer refusals; native craft.5 supervision is not activated or accepted; not complete raw/streaming/entry/counter/model/creative acceptance"
+}

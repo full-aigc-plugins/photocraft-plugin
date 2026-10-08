@@ -1,5 +1,7 @@
 # Cancellation artifact observation
 
+Fixed acceptance: plugin dev.54 / source dev.44 pass all PC-TX-003 scenarios on macOS arm64. Public ZIP/tag bytes match;78 installed Harness tests, actual native parent/child interrupted stop and delayed native reply observation pass; installed bytes remain unchanged. Four release CI runs pass (Linux synthetic contracts; six native tests deliberately skip there). Tasks3.9/10.12 complete;133/157 complete,24 open. [Audit](evidence/optimization/task-budget-stop/acceptance-audit.json). Earlier candidate limitations below describe the pre-acceptance stages; complete recovery, GUI ownership, other native platforms, creative acceptance and full V1 remain separate.
+
 The PC-TX-003 candidate now registers late files separately from technical and creative acceptance. A stop request and a stopped worker remain different states. Existing stop evidence is still required before an attempted task can become cancelled.
 
 The harness records `photocraft-late-artifacts/v1` observations with the original task ID, request identity, owned worker token, output directory, per-file SHA-256, and observation time. Reconcile also observes already-cancelled tasks, allowing a fresh ledger session to register files that arrived after stop confirmation. Repeated identical observations do not add events. Changed snapshots append observations without replacing the earlier evidence.

@@ -41,7 +41,7 @@
 - [ ] 3.6 [PC-TX-002] 完成“幂等与不明确结果恢复”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.5。产物：evidence/pc-tx-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
 - [x] 3.7 [PC-TX-003] 编写能暴露“取消与预算边界”缺失的正向与失败测试并确认预期失败。责任：Harness owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 3.8 [PC-TX-003] 在 src/harness/ 账本、租约与恢复 实现“取消与预算边界”的最小行为，不扩大支持范围。责任：Harness owner；前置：3.7。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 3.9 [PC-TX-003] 完成“取消与预算边界”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.8。产物：evidence/pc-tx-003/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 3.9 [PC-TX-003] 完成“取消与预算边界”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：3.8。产物：evidence/pc-tx-003/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 2026-10-09固定技能源dev.44／插件dev.54在macOS arm64通过全部PC-TX-003规范场景：真实原生父子中断取消、原截止时间、预算／占用保留、独立迟到原生回复登记及原生源文件保全；证据：`docs/evidence/optimization/task-budget-stop/acceptance-audit.json`。未知停止仍核对；完整恢复、GUI所有权及创作验收另计。
 
 - [x] 3.10 [PC-TX-004] 真实保存后六类协议异常复现暂存工程删除，并建立目录竞争／成功清理／回执保全测试；确认失败为目标缺失。
 - [x] 3.11 [PC-TX-004] 独立技能源保留失败暂存原路径、工程／依赖摘要、成功回执与未知状态；验证原生重开、不重放、成功交付及全部单技能资源。
@@ -242,7 +242,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 10.10 [PC-TX-003] 建立重启预算归零、父子重复重试、取消后迟到结果、非任务进程误终止及磁盘预留不足测试。责任：Harness owner；前置：10.8；关联原 3.7–3.9；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/task-budget-stop/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 10.11 [PC-TX-003] 实现持久时间／截止时间／并发／磁盘与修订计数、stop 对 cancel 合同的映射；只控制自有进程，未核清前保留占用并停止新操作。责任：Harness owner；前置：10.10；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 10.12 [PC-TX-003] 验证受控原生进程取消、中断重启、资源不足拒绝和迟到产物登记；证明 cancelled 需停止证据，本地流程无新增云登录／积分审批。责任：QA owner；前置：10.11 及对应固定来源可用；产物：docs/evidence/optimization/task-budget-stop/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 补充候选：`docs/evidence/optimization/task-budget-stop/late-artifact-candidate.json` 登记停止后文件摘要、原任务身份和重启后的迟到文件；仅候选回归通过，真实原生取消及固定安装验收仍未证明。
+- [x] 10.12 [PC-TX-003] 验证受控原生进程取消、中断重启、资源不足拒绝和迟到产物登记；证明 cancelled 需停止证据，本地流程无新增云登录／积分审批。责任：QA owner；前置：10.11 及对应固定来源可用；产物：docs/evidence/optimization/task-budget-stop/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 初期迟到文件候选与红绿回归保留于 `docs/evidence/optimization/task-budget-stop/late-artifact-candidate.json`；完整验收以当前固定记录为准。 2026-10-09固定技能源dev.44／插件dev.54在macOS arm64通过全部PC-TX-003规范场景：真实原生父子中断取消、原截止时间、预算／占用保留、独立迟到原生回复登记及原生源文件保全；证据：`docs/evidence/optimization/task-budget-stop/acceptance-audit.json`。未知停止仍核对；完整恢复、GUI所有权及创作验收另计。
 
 ## 11. P2：质量、受限修订与血缘
 
@@ -326,3 +326,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09整数溢出发行核验：源dev.43／插件dev.49公开ZIP及标签提交一致，283项源回归零跳过、70项Harness及48项Python通过；发布提交／标签4项CI通过。隔离Codex发现14技能，实际安装副本70项Harness／14例只读故障及13独立入口52例整数拒绝通过，安装树不变。公开运行时仍craft.1；craft.5 droplet监督候选未接入及固定验收，9.6继续开放，129/157完成、28开放，关闭0项。证据：`docs/evidence/optimization/integer-overflow/publication.json`。
 
 2026-10-09产物血缘验收：源dev.44／插件dev.52公开ZIP／标签摘要一致；287项源回归零跳过，72项Harness／48项Python通过，固定副本17例原生血缘、14例只读故障及52例整数拒绝通过。实际固定ArtCraft109消费两个原生父子包并拒绝全部17项登记文件替换，旧dev.50包只读身份不变；安装树不变。5.3／11.9按全部PC-AR-001规范场景关闭，现131/157完成、26开放。评估fixture不证明创作接受；来源真实性、完整Art宿主／模型流程13.6、raw监督9.6及V1保持开放。证据：`docs/evidence/optimization/artifact-lineage/acceptance-audit.json`。
+
+2026-10-09取消与预算固定验收：dev.54公开ZIP、远端提交及标签一致；固定副本78项Harness零跳过，真实原生父子中断取消、迟到原生回复登记及安装树保全通过，发布提交与标签四项CI通过。仅关闭3.9／10.12；现133/157完成、24开放。PC-TX-002完整恢复、PC-TX-001 GUI所有权、完整V1及创作接受保持开放。

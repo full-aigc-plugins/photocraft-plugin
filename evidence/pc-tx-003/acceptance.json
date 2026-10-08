@@ -1,0 +1,14 @@
+{
+  "schema": "photocraft-acceptance-index/v1",
+  "requirement": "PC-TX-003",
+  "status": "PASS",
+  "canonicalEvidence": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json",
+  "canonicalEvidenceSha256": "9c38da88418850abbad1da94229f1cdbdef4c9091f523020a623ec5ab8c265ae",
+  "pluginRef": "v0.1.0-dev.54",
+  "sourceRef": "v0.1.0-dev.44",
+  "closedTasks": [
+    "3.9",
+    "10.12"
+  ],
+  "platform": "darwin-arm64"
+}

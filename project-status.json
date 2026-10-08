@@ -128,7 +128,9 @@
     "9.3": "docs/evidence/optimization/routing-acceptance-audit.json",
     "9.9": "docs/evidence/optimization/identity-acceptance-audit.json",
     "5.3": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json",
-    "11.9": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json"
+    "11.9": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json",
+    "3.9": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json",
+    "10.12": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -173,16 +175,16 @@
     "pluginWorkingVersion": "0.1.0-dev.54",
     "fixedSkillSourceVersion": "0.1.0-dev.44",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_PC_AR_001_FIXED_NATIVE_AND_AUTHORITY_CONSUMER",
+    "publication": "PUBLISHED_PC_TX_003_FIXED_NATIVE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 131,
-      "open": 26,
-      "newlyCompleted": 69
+      "completed": 133,
+      "open": 24,
+      "newlyCompleted": 71
     },
     "currentRegressionEvidence": "docs/evidence/optimization/artifact-lineage/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/artifact-lineage/publication.json"
+    "publicationEvidence": "docs/evidence/optimization/task-budget-stop/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -280,12 +282,16 @@
   },
   "artifactLineageAcceptanceEvidence": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json",
   "cancellationBudgetCandidate": {
-    "status": "PASS_LOCAL_NATIVE_FIXED_PENDING",
+    "status": "PASS_FIXED54_NATIVE",
     "pluginVersion": "0.1.0-dev.54",
     "sourceRef": "v0.1.0-dev.44",
     "runtimeVersion": "0.2.0-craft.1",
     "evidence": "docs/evidence/optimization/task-budget-stop/",
-    "fullAcceptance": "NOT_RUN",
-    "closedTasks": []
-  }
+    "fullAcceptance": "PASS_PC_TX_003_DARWIN_ARM64",
+    "closedTasks": [
+      "3.9",
+      "10.12"
+    ]
+  },
+  "cancellationBudgetAcceptanceEvidence": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json"
 }

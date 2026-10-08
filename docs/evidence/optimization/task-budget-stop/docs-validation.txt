@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scope": "documentation structure, local links, status honesty and spec/task traceability only",
+  "markdownFiles": 466,
+  "capabilities": 7,
+  "requirements": 27,
+  "scenarios": 109,
+  "openImplementationTasks": 26,
+  "errors": []
+}
+
