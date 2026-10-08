@@ -1,0 +1,187 @@
+{
+  "schema": "photocraft-domain-acceptance-audit/v1",
+  "status": "PASS_CURRENT_FIXED_RUNTIME_SCENARIOS",
+  "date": "2026-10-08",
+  "specAuthority": "openspec/changes/establish-v1-plugin/specs/domain-workflow/spec.md",
+  "specSha256": "82929b0ece1f25c7fc44fd3c1de562db76b3ff64987f5724b11cfdc48c5d2896",
+  "pluginVersion": "0.1.0-dev.39",
+  "skillsRef": "v0.1.0-dev.35",
+  "skillsCommit": "47eac4287b8b577ac36c4629edd4504ebbd6f0e5",
+  "platform": "Darwin-arm64",
+  "nativeVersion": "0.2.0-craft.1",
+  "driverSha256": "15d047b428d6397a54cf3e0e2d1ecb353e036cee304e9ea88aea1e2321249bff",
+  "closedTasks": [
+    "4.3",
+    "4.6",
+    "4.9",
+    "12.3",
+    "12.6",
+    "12.9",
+    "12.15"
+  ],
+  "requirements": [
+    "PC-DM-001",
+    "PC-DM-002",
+    "PC-DM-003",
+    "PC-DM-007"
+  ],
+  "scenarioInventoryMatched": true,
+  "scenarios": [
+    {
+      "id": "PC-DM-001-P",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "smart, chinese; nested-source / nested-title-revision",
+      "observedContract": "Actual native layered background/product/text, saved/reopened identities; non-target name/order/type/visibility/blend/parent/bounds are preserved."
+    },
+    {
+      "id": "PC-DM-001-N",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "flat-preview-not-editable",
+      "observedContract": "A correct flat PNG cannot satisfy minimum editable leaves; editable_layer_gate_failed and no success manifest."
+    },
+    {
+      "id": "PC-DM-001-SMART",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "smart; smart-unknown-asset / smart-unknown-field / smart-invalid-layer",
+      "observedContract": "Registered replace/relink is embedded before delivery; existing transforms/mask and non-targets retained; moved package survives removal of original inputs and can be revised; invalid parameters refused."
+    },
+    {
+      "id": "PC-DM-001-TREE",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "optimization:test_nested_text_preservation_and_recursive_layout; nested-source / nested-title-revision / nested-second-edit / non-target-change",
+      "observedContract": "Recursive parent/order/identity assertions survive a targeted edit and a second native reopen/edit; ungrouping and non-target rename fail without replacing source."
+    },
+    {
+      "id": "PC-DM-002-P",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "fixed-mask-native.json; fixed-mask-binding.json",
+      "observedContract": "Enabled masked BrightnessContrast changes target pixel 152 to 106; native adjustment can be edited while saved mask owner/link/content and control pixels remain identical."
+    },
+    {
+      "id": "PC-DM-002-N",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "protected; retouch",
+      "observedContract": "An edit entering declared protected pixels records differences and refuses delivery; no success manifest, source unchanged and replayAllowed false."
+    },
+    {
+      "id": "PC-DM-002-GUARD",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "protected; selected-blur / selected-grain / selected-sharpen",
+      "observedContract": "Actual source and saved/reopened candidate PNGs have same dimensions; product/title protected RGBA samples have zero changed pixels. Invalid bounds and undecodable/different-size inputs remain covered by pinned source regressions, not promoted as native cases."
+    },
+    {
+      "id": "PC-DM-002-RETOUCH",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "retouch",
+      "observedContract": "Individually copied installed retouch skill cold-starts and executes stroke/clone/heal, saves/reopens independent native and applicable exports, protects non-target pixels and all input files, refuses intruding stroke."
+    },
+    {
+      "id": "PC-DM-002-BINDING",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "optimization:test_saved_mask_binding_and_text_layout_facts_reopen / test_native_16_bit_source_cannot_claim_rgba8_protection; fixed-mask-binding.json",
+      "observedContract": "Saved native ownership, enabled/link state and tile digest checked. Disabled/enabled and wrong-layer assertions refuse; actual 16-bit source is rejected as protected_pixel_mode_unsupported before output. Evidence is bounded to current RGB8 inspection."
+    },
+    {
+      "id": "PC-DM-003-P",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "chinese; optimization:test_saved_mask_binding_and_text_layout_facts_reopen; nested-title-revision",
+      "observedContract": "Actual type.info proves content/font/size/tracking/auto-leading/line count and mixed CJK line ranges after save/reopen, with non-target structures preserved."
+    },
+    {
+      "id": "PC-DM-003-N",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "chinese; optimization:test_missing_font_requires_explicit_accepted_substitution",
+      "observedContract": "Missing font prevents success; explicit accepted substitution is recorded and queried as Songti SC after reopening; source untouched."
+    },
+    {
+      "id": "PC-DM-003-CJK",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "chinese",
+      "observedContract": "Single installed text skill cold creation and title revision retain native/PSD editable Type, font/size/identity, non-target layers, product/background pixels and source; PSD rerender matches PNG; unknown layer/missing font refuse."
+    },
+    {
+      "id": "PC-DM-003-NO-TEXT",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "fontless",
+      "observedContract": "Single installed layer skill creates/revises no-Type native project without text-only font calls; native/PSD/PNG independently checked, source/inputs/skill unchanged. Nested font discovery and invalid response refusal remain bound to pinned source regressions."
+    },
+    {
+      "id": "PC-DM-003-LAYOUT",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "optimization:test_saved_mask_binding_and_text_layout_facts_reopen; nested-title-revision / nested-second-edit / noOverflow-unknown / glyphCoverage-unknown",
+      "observedContract": "Real available metrics are asserted; wrong line count/tracking refuses. Unavailable overflow/glyph coverage stays unknown and required metrics fail layout_metric_unavailable; no complete glyph/overflow claim."
+    },
+    {
+      "id": "PC-DM-007-NESTED",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "nested-padding / unsafe-nested-variant / duplicate-roles / unverified-transform",
+      "observedContract": "Actual canvas offsets, recursive role identity/parent/bounds and safe area checked; out-of-bounds/duplicate mapping/missing transform refuse. Original source file inventory unchanged."
+    },
+    {
+      "id": "PC-DM-007-FILTER",
+      "result": "PASS_WITH_DECLARED_BOUNDARIES",
+      "caseSelectors": "selected-blur / selected-grain / selected-sharpen; all twelve *-wrong-* cases",
+      "observedContract": "Each actual selected-background operation changes pixels, declares raster acceptance and editable=false, saves/reopens PNG/native/PSD, protects product/title and non-target objects. Wrong target/selection/mask or requested smart method refuse. Protected invasion also exercised by protected/retouch groups."
+    }
+  ],
+  "evidenceFiles": {
+    "fixed-domain-first-run.json": "bdccf101510b57c78a8f9352b1ac1e4e12e7d995a2a25f0062f7e37036c0d553",
+    "fixed-domain-acceptance.json": "fd2d32e1022fcce2e21b298dfda775c4f56e5330831afe0a1edf5d82cb970ac5",
+    "fixed-domain-boundary-supplement.json": "c094930b1b6405b212d538b9c3bb2ab3ef28a6a7c0ef2c8681ebb7d6c87fe999",
+    "fixed-mask-native.json": "5f9380d029f8100e41dd6c67b622a140c6b6a8132535e88bdea7ebf570dd3f1e",
+    "fixed-mask-binding.json": "c29328193c64acde0fa6b4bc99d27d324b51ab831d0fc9f172e4e85c730b09fd",
+    "fixed-host-installation.json": "4ac0db966b4a641177a097a7585b0a14284b9f58de3eb378424247de1a52ca11",
+    "fixed-installed-execution.json": "a4af0015c39af8928e4d59af4c50193e1a184cb90c65fa4b19953677e495867d",
+    "release-publication.json": "a2fc38be11ccf98de34f8b4b20c015e3cddae67f93bec27c06cc4a16998bb4c3"
+  },
+  "retainedArtifactCountsVerified": {
+    "fixed-domain-first-run.json": 562,
+    "fixed-domain-acceptance.json": 301,
+    "fixed-mask-native.json": 27
+  },
+  "artifactLocationPolicy": "Owned local artifacts outside the plugin repository; reports index content digests. Native/media/cache/runtime binaries are not committed. First-use artifacts are indexed by fixed-domain-first-run.json; additional cases by fixed-domain-acceptance.json.",
+  "counts": {
+    "firstUseTestsPassed": 11,
+    "additionalNativeCasesPassed": 26,
+    "adjustmentMaskNativeTestsPassed": 1,
+    "supplementalPreflightRefusalsPassed": 3,
+    "nativeTestSkips": 0
+  },
+  "reuse": {
+    "scope": "Only six independently passed first-use groups (11 tests), not the failed additional fixture",
+    "failedBaselineRetained": true,
+    "guards": [
+      "installed 13 skill hashes equal fixed published resources",
+      "current source 57 test dependency files equal published commit",
+      "runner AST and individual test drivers unchanged",
+      "all retained baseline artifacts unchanged"
+    ],
+    "additionalCasesExecutedFresh": true
+  },
+  "observedRedGreen": {
+    "reuseGuardRed": "AttributeError: reusable_first_use missing, observed before implementation",
+    "reuseGuardGreenTests": 4,
+    "firstAdditionalRun": "FAIL: fixture reached variant_size_mismatch before intended geometry gate",
+    "correctedFixture": "Target remains 64x64 so missing geometry is reached; final unverified-transform records variant_geometry_required"
+  },
+  "boundaries": [
+    "No full V1, marketplace or general host support acceptance",
+    "No complete Chinese glyph coverage or overflow metric; demanded unavailable metrics refuse",
+    "No smart-filter editability; explicit raster method only",
+    "No external PSD editor proof or full required-feature-loss gate acceptance",
+    "RGB8 protected-pixel inspection only; actual 16-bit source refuses",
+    "No all-command execution, model routing or independent creative acceptance",
+    "No OpenSpec sync/archive while remaining gates are open"
+  ],
+  "regression": {
+    "file": "fixed-domain-regression.json",
+    "sha256": "ddd0e159bac19f3d4217601ae8480d24b3707b3f40bf8f00b28e3ef02abb8027",
+    "status": "PASS",
+    "skillsTests": 201,
+    "skillsReuse": "exact unchanged published source and equal native/desktop layers",
+    "pluginTypeScriptTests": 27,
+    "pluginPythonTests": 40,
+    "pluginChecks": 13,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "original": {
+    "schema": "photocraft-native-facts/v1",
+    "projectSha256": "dd49b0e3ab4403559531e3dc8808f032ee1aa9fd3b5a4a5800883a90f632b25f",
+    "objects": {
+      "5": {
+        "hasMask": true,
+        "maskEnabled": true,
+        "maskLinked": true,
+        "maskDensity": 1.0,
+        "maskFeather": 0.0,
+        "maskSurfaceSha256": "cac8c2fc35ad7c018bf1cdc0d92c4630085c13c31e025c918561d2c944aa49e6"
+      },
+      "4": {
+        "hasMask": false
+      },
+      "3": {
+        "hasMask": false
+      },
+      "2": {
+        "hasMask": false
+      }
+    },
+    "scope": "saved v1 mask ownership/state and readonly type.info; glyph coverage, overflow and cross-editor appearance unknown"
+  },
+  "revised": {
+    "schema": "photocraft-native-facts/v1",
+    "projectSha256": "9dc6e8d8288feecf973c1a2e69bf711e2b84480b9779791d01349028b0358501",
+    "objects": {
+      "5": {
+        "hasMask": true,
+        "maskEnabled": true,
+        "maskLinked": true,
+        "maskDensity": 1.0,
+        "maskFeather": 0.0,
+        "maskSurfaceSha256": "cac8c2fc35ad7c018bf1cdc0d92c4630085c13c31e025c918561d2c944aa49e6"
+      },
+      "4": {
+        "hasMask": false
+      },
+      "3": {
+        "hasMask": false
+      },
+      "2": {
+        "hasMask": false
+      }
+    },
+    "scope": "saved v1 mask ownership/state and readonly type.info; glyph coverage, overflow and cross-editor appearance unknown"
+  },
+  "status": "PASS",
+  "layer": "5",
+  "maskBindingEnabledLinkedAndTilesPreserved": true,
+  "projectSha256sDiffer": true,
+  "scope": "Read-only saved native mask binding, enabled/link state and compressed tile digests; existing pixel comparison is recorded separately in fixed-mask-native.json"
+}

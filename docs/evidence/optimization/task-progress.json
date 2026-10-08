@@ -53,13 +53,20 @@
     "12.8",
     "4.7",
     "4.8",
-    "13.1"
+    "13.1",
+    "4.3",
+    "4.6",
+    "4.9",
+    "12.3",
+    "12.6",
+    "12.9",
+    "12.15"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 113,
-    "open": 44,
-    "newlyCompleted": 51
+    "completed": 120,
+    "open": 37,
+    "newlyCompleted": 58
   },
   "openTaskIds": [
     "2.4",
@@ -68,9 +75,6 @@
     "3.3",
     "3.6",
     "3.9",
-    "4.3",
-    "4.6",
-    "4.9",
     "4.15",
     "4.16",
     "4.17",
@@ -96,18 +100,14 @@
     "11.3",
     "11.6",
     "11.9",
-    "12.3",
-    "12.6",
-    "12.9",
     "12.12",
-    "12.15",
     "13.2",
     "13.3",
     "13.4",
     "13.5",
     "13.6"
   ],
-  "greenEvidence": "release-candidate-validation.json",
+  "greenEvidence": "fixed-domain-regression.json",
   "baselineRedReconstruction": "baseline-red.json",
   "observedRegressionFixes": "additional-red-green.json",
   "groups": [
@@ -130,7 +130,7 @@
         "PC-RL-003"
       ],
       "candidate": "current combination checkers and refusal fixtures for conflicting versions, historical active lock, maintained provenance and moved immutable tags",
-      "remaining": "fixed candidate publication/installation; plugin managed snapshot still locks dev.34"
+      "remaining": "9.9 full identity refusal acceptance remains open; current immutable dev.35/dev.39 publication and fixed installation are recorded separately"
     },
     {
       "requirements": [
@@ -178,7 +178,7 @@
         "PC-DM-007"
       ],
       "candidate": "recursive layer preservation and native saved mask ownership/enabled/link/content context; actual type.info line/range/tracking/font metrics, explicit font substitution, RGB8 protection refusal boundary; PSD matrices, nested variants and baked filters",
-      "remaining": "fixed candidate domain installation, unavailable glyph coverage/overflow metrics, smart-filter editability, additional color modes/depths and any claimed external PSD editor"
+      "remaining": "PC-DM-001/002/003/007 current fixed macOS arm64 normative scenarios passed (domain-acceptance-audit.json); PC-DM-005 required-feature-loss refusal and external editor proof remain open. Unavailable glyph/overflow metrics, smart-filter editability and non-RGB8 protection explicitly refuse; no expanded support."
     },
     {
       "requirements": [
@@ -190,7 +190,7 @@
       "remaining": "per-command context review, all 755 applicable command executions, package-resource integration of the acceptance index, repeated actual host/model routing, host permission adapters and fixed candidate installation"
     }
   ],
-  "scope": "Source tests/minimum implementations and bounded fixed-release installation/native execution verified; remaining full-scenario, model, creative and platform gates stay open; no sync/archive or full host support claim.",
+  "scope": "Source tests/minimum implementations, published fixed installation and PC-DM-001/002/003/007 current runtime scenarios verified; 37 full V1 gates remain open. No sync/archive or general host support claim.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -201,24 +201,13 @@
     "PC-CM-001-SAVED-SELECTION"
   ],
   "latestCompletedTaskIds": [
-    "9.5",
-    "9.7",
-    "9.8",
-    "10.4",
-    "10.5",
-    "10.10",
-    "10.11",
-    "11.7",
-    "11.8",
-    "5.1",
-    "5.2",
-    "12.4",
-    "12.5",
-    "12.7",
-    "12.8",
-    "4.7",
-    "4.8",
-    "13.1"
+    "4.3",
+    "4.6",
+    "4.9",
+    "12.3",
+    "12.6",
+    "12.9",
+    "12.15"
   ],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
@@ -226,7 +215,7 @@
     "skillsReusedFrom": "release-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 27,
-    "pluginPython": 36,
+    "pluginPython": 40,
     "skipped": 0,
     "checks": 13,
     "sourceUnchanged": true
@@ -245,5 +234,25 @@
   },
   "releaseCandidateEvidence": "release-candidate-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "release-publication.json"
+  "publicationEvidence": "release-publication.json",
+  "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
+  "fixedDomainVerification": {
+    "normativeScenarios": 16,
+    "firstUseTestsPassed": 11,
+    "additionalNativeCasesPassed": 26,
+    "adjustmentMaskNativeTestsPassed": 1,
+    "supplementalPreflightRefusalsPassed": 3,
+    "nativeSkipped": 0,
+    "installedSkillsUnchanged": true
+  },
+  "previousReleaseVerification": {
+    "skills": 201,
+    "skillsReusedFrom": "release-source-validation.json",
+    "skillsReuse": "exact source and equal native/desktop layers",
+    "pluginTypeScript": 27,
+    "pluginPython": 36,
+    "skipped": 0,
+    "checks": 13,
+    "sourceUnchanged": true
+  }
 }

@@ -54,13 +54,13 @@
 
 - [x] 4.1 [PC-DM-001] 编写能暴露“分层文档与编辑身份”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 4.2 [PC-DM-001] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“分层文档与编辑身份”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.1。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 4.3 [PC-DM-001] 完成“分层文档与编辑身份”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.2。产物：evidence/pc-dm-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 4.3 [PC-DM-001] 完成“分层文档与编辑身份”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.2。产物：evidence/pc-dm-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 - [x] 4.4 [PC-DM-002] 编写能暴露“蒙版与局部调整”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 4.5 [PC-DM-002] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“蒙版与局部调整”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 4.6 [PC-DM-002] 完成“蒙版与局部调整”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.5。产物：evidence/pc-dm-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 4.6 [PC-DM-002] 完成“蒙版与局部调整”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.5。产物：evidence/pc-dm-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 - [x] 4.7 [PC-DM-003] 编写能暴露“文字排版与字体依赖”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 4.8 [PC-DM-003] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“文字排版与字体依赖”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.7。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 4.9 [PC-DM-003] 完成“文字排版与字体依赖”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.8。产物：evidence/pc-dm-003/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
+- [x] 4.9 [PC-DM-003] 完成“文字排版与字体依赖”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.8。产物：evidence/pc-dm-003/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 - [x] 4.10 [PC-DM-004] 编写能暴露“海报封面尺寸变体”缺失的正向与失败测试并确认预期失败。责任：Domain owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 证据：`docs/evidence/photocraft-complete-variant-contract-20261008.json`；历史失败本轮重建，固定Photo38／源34尺寸技能原生三变体、重开、PSD图层、安全区／尺寸／覆盖拒绝与失败暂存保全通过，仅完整PC-DM-004。
 - [x] 4.11 [PC-DM-004] 在 src/planning/、src/adapters/ 的领域计划与映射 实现“海报封面尺寸变体”的最小行为，不扩大支持范围。责任：Domain owner；前置：4.10。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 证据：`docs/evidence/photocraft-complete-variant-contract-20261008.json`；历史失败本轮重建，固定Photo38／源34尺寸技能原生三变体、重开、PSD图层、安全区／尺寸／覆盖拒绝与失败暂存保全通过，仅完整PC-DM-004。
 - [x] 4.12 [PC-DM-004] 完成“海报封面尺寸变体”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：4.11。产物：evidence/pc-dm-004/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 证据：`docs/evidence/photocraft-complete-variant-contract-20261008.json`；历史失败本轮重建，固定Photo38／源34尺寸技能原生三变体、重开、PSD图层、安全区／尺寸／覆盖拒绝与失败暂存保全通过，仅完整PC-DM-004。
@@ -262,15 +262,15 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 12.1 [PC-DM-001] 建立嵌套组、空壳层、同名异类型、父子／顺序／可见性改变和整体扁平化的业务失败用例。责任：Domain owner；前置：9.5；关联原 4.1–4.3；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/recursive-layers/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 12.2 [PC-DM-001] 在独立技能源扩展递归对象身份与可编辑性断言，保留旧合法工程与角色映射；原生保存重开后核验对象关系和非目标对象。责任：Domain owner；前置：12.1；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 12.3 [PC-DM-001] 验证真实嵌套工程的定点修改、重开再编辑和负例拒绝，保存前后结构及原生摘要；固定安装验收不只统计图层数量。责任：QA owner；前置：12.2 及对应固定来源可用；产物：docs/evidence/optimization/recursive-layers/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 12.3 [PC-DM-001] 验证真实嵌套工程的定点修改、重开再编辑和负例拒绝，保存前后结构及原生摘要；固定安装验收不只统计图层数量。责任：QA owner；前置：12.2 及对应固定来源可用；产物：docs/evidence/optimization/recursive-layers/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 
 - [x] 12.4 [PC-DM-002] 建立蒙版错绑／禁用、选择误当蒙版、保护区变化及不支持颜色模式／深度的拒绝用例。责任：Domain owner；前置：12.2；关联原 4.4–4.6；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/mask-protection/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 12.5 [PC-DM-002] 在独立技能源核验蒙版关系、局部作用和可编辑性，明确像素检查器支持边界；不可核验的保护约束不能静默跳过。责任：Domain owner；前置：12.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 12.6 [PC-DM-002] 在固定安装的真实工程上验证目标像素与蒙版、非目标区域和源包保全；额外格式单独记录未知或拒绝，不外推 RGBA8 证据。责任：QA owner；前置：12.5 及对应固定来源可用；产物：docs/evidence/optimization/mask-protection/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 12.6 [PC-DM-002] 在固定安装的真实工程上验证目标像素与蒙版、非目标区域和源包保全；额外格式单独记录未知或拒绝，不外推 RGBA8 证据。责任：QA owner；前置：12.5 及对应固定来源可用；产物：docs/evidence/optimization/mask-protection/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 
 - [x] 12.7 [PC-DM-003] 建立文本溢出、缺字／替代、换行／字距变化和非目标文字改变用例，区分精确排版要求与能力未知。责任：Domain owner；前置：12.2；关联原 4.7–4.9；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/text-layout/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 12.8 [PC-DM-003] 扩展文字布局断言与替代接受记录，保留组内字体检查及无文字工程兼容；不可获取的布局指标保持 unknown。责任：Domain owner；前置：12.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 12.9 [PC-DM-003] 以真实中文与混合文字定点修订验证内容、字体、布局及源工程保全；保存重开和适用交换结果分别记录，固定安装复验。责任：QA owner；前置：12.8 及对应固定来源可用；产物：docs/evidence/optimization/text-layout/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 12.9 [PC-DM-003] 以真实中文与混合文字定点修订验证内容、字体、布局及源工程保全；保存重开和适用交换结果分别记录，固定安装复验。责任：QA owner；前置：12.8 及对应固定来源可用；产物：docs/evidence/optimization/text-layout/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 
 - [x] 12.10 [PC-DM-005] 建立 PSD 重开但文字／蒙版／效果丢失、图层数相同但属性降级的负例和真实使用功能矩阵。责任：Domain owner；前置：12.2、11.8；关联原 4.13–4.15 与 5.6；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/psd-feature-fidelity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 12.11 [PC-DM-005] 按工程实际使用功能生成保留／降级／丢失／未知及绑定证据，兼容既有 exchange-loss 的 lost／observed／unknown，不把 observed 自动等同保真。责任：Domain owner；前置：12.10；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
@@ -278,7 +278,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 12.13 [PC-DM-007] 建立嵌套角色变换／重复或歧义映射／安全区越界，以及背景滤镜侵入产品／烘焙伪称可编辑的失败用例。责任：Domain owner；前置：12.5、12.8；复用 PC-DM-004 原有合同；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/complex-layout-filters/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 12.14 [PC-DM-007] 实现递归布局角色变体与滤镜目标／选择／蒙版合同，明确可编辑和烘焙路径及支持能力，保持现有简单尺寸变体兼容。责任：Domain owner；前置：12.13；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 12.15 [PC-DM-007] 在真实嵌套变体和背景虚化／颗粒／锐化任务中核验目标效果、可编辑性及保护范围；固定安装复验，新需求不能由 PC-DM-004 旧证据关闭。责任：QA owner；前置：12.14 及对应固定来源可用；产物：docs/evidence/optimization/complex-layout-filters/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 12.15 [PC-DM-007] 在真实嵌套变体和背景虚化／颗粒／锐化任务中核验目标效果、可编辑性及保护范围；固定安装复验，新需求不能由 PC-DM-004 旧证据关闭。责任：QA owner；前置：12.14 及对应固定来源可用；产物：docs/evidence/optimization/complex-layout-filters/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定安装场景证据：`docs/evidence/optimization/domain-acceptance-audit.json`；仅关闭当前锁定版本及声明边界，完整 V1 门禁不变。
 
 ## 13. 持续门禁：逐命令与真实宿主
 
@@ -293,3 +293,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 ## Candidate implementation evidence — 2026-10-08
 
 后续实施授权已生效；本轮已完成候选源码与本地回归。新增勾选仅覆盖有证据的测试／最小实现；同组真实全场景、固定发行安装、真实宿主与独立创作验收保持开放。[任务证据](../../../docs/evidence/optimization/task-progress.json) 逐组记录范围、未完成项与下一步；[完整候选回归](../../../docs/evidence/optimization/candidate-validation.json) 绑定源码、测试输入和原生结果。基线红灯重建单独标注，不伪称历史原始执行日志。
+
+## Fixed domain acceptance — 2026-10-08
+
+当前插件 dev.39／技能 dev.35 的 macOS arm64 固定安装已完成 PC-DM-001／002／003／007 的16个规范场景核对，新增关闭7项领域验收。累计120/157项完成、37项开放。真实首用、追加原生、蒙版像素与绑定证据及首轮失败记录见[逐场景审计](../../../docs/evidence/optimization/domain-acceptance-audit.json)；[复验方式与边界](../../../docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。PSD 必要功能损失、导出来源、运行时升级、宿主模型及完整命令等门禁保持开放，不同步／归档。

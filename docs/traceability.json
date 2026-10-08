@@ -203,11 +203,11 @@
         "12.3"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "status": "verified-current-fixed-runtime-scenarios",
+      "evidence": "docs/evidence/optimization/domain-acceptance-audit.json",
       "optimizationScope": {
         "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
+        "status": "verified-fixed-runtime-scenarios",
         "tasks": [
           "12.1",
           "12.2",
@@ -216,16 +216,15 @@
         "evidenceTarget": "docs/evidence/optimization/recursive-layers/",
         "completedTasks": [
           "12.1",
-          "12.2"
-        ],
-        "openTasks": [
+          "12.2",
           "12.3"
         ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "openTasks": [],
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       },
       "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "status": "verified-fixed-macos-arm64-scenarios-with-explicit-boundaries",
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       }
     },
     {
@@ -240,11 +239,11 @@
         "12.6"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "status": "verified-current-fixed-runtime-scenarios",
+      "evidence": "docs/evidence/optimization/domain-acceptance-audit.json",
       "optimizationScope": {
         "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
+        "status": "verified-fixed-runtime-scenarios",
         "tasks": [
           "12.4",
           "12.5",
@@ -253,16 +252,15 @@
         "evidenceTarget": "docs/evidence/optimization/mask-protection/",
         "completedTasks": [
           "12.4",
-          "12.5"
-        ],
-        "openTasks": [
+          "12.5",
           "12.6"
         ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "openTasks": [],
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       },
       "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "status": "verified-fixed-macos-arm64-scenarios-with-explicit-boundaries",
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       }
     },
     {
@@ -278,11 +276,11 @@
         "12.9"
       ],
       "owner": "Domain owner",
-      "status": "in-progress",
-      "evidence": "docs/evidence/photo-workflow-tests.json",
+      "status": "verified-current-fixed-runtime-scenarios",
+      "evidence": "docs/evidence/optimization/domain-acceptance-audit.json",
       "optimizationScope": {
         "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
+        "status": "verified-fixed-runtime-scenarios",
         "tasks": [
           "12.7",
           "12.8",
@@ -291,16 +289,15 @@
         "evidenceTarget": "docs/evidence/optimization/text-layout/",
         "completedTasks": [
           "12.7",
-          "12.8"
-        ],
-        "openTasks": [
+          "12.8",
           "12.9"
         ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "openTasks": [],
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       },
       "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "status": "verified-fixed-macos-arm64-scenarios-with-explicit-boundaries",
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       }
     },
     {
@@ -723,10 +720,10 @@
         "12.15"
       ],
       "owner": "Domain owner",
-      "status": "candidate-implemented-full-acceptance-open",
+      "status": "verified-current-fixed-runtime-scenarios",
       "optimizationScope": {
         "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
+        "status": "verified-fixed-runtime-scenarios",
         "tasks": [
           "12.13",
           "12.14",
@@ -735,17 +732,17 @@
         "evidenceTarget": "docs/evidence/optimization/complex-layout-filters/",
         "completedTasks": [
           "12.13",
-          "12.14"
-        ],
-        "openTasks": [
+          "12.14",
           "12.15"
         ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
+        "openTasks": [],
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
       },
       "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
+        "status": "verified-fixed-macos-arm64-scenarios-with-explicit-boundaries",
+        "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
+      },
+      "evidence": "docs/evidence/optimization/domain-acceptance-audit.json"
     }
   ]
 }

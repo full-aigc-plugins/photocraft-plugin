@@ -1,0 +1,1586 @@
+{
+  "schema": "photocraft-fixed-domain-acceptance/v1",
+  "status": "PASS",
+  "startedAt": "2026-10-08T12:09:18.848475+00:00",
+  "pluginVersion": "0.1.0-dev.39",
+  "skillSource": {
+    "ref": "v0.1.0-dev.35",
+    "sha": "47eac4287b8b577ac36c4629edd4504ebbd6f0e5",
+    "digests": {
+      "photocraft-use": "24becb53f3be20256352359e94bb001f1b3d037b521529e924d9bf57bf56c7c4",
+      "photocraft-cli": "99422e2e30004b99e12afa2ae380d6b65b17e2a5849827562ee7bdbd47e32c48",
+      "photocraft-cli-setup": "a63923e9ee68f3d2549a516b5ebe0952f4edf987313831d9c69042fdfe26da49",
+      "photocraft-cli-project": "33296ee5b2527a254b53d5869a4ded7f658e7f6a9d90d628263420a871147b82",
+      "photocraft-cli-layers": "c201690a6b31fc7fc2b8ef6908be14e9ac2dcccbd2388b20c35bcefb7cc7672a",
+      "photocraft-cli-selection": "686e876e4e0dbccc2382b585366e6bbfd524a3371589bb7462fe1f0997bf3fd0",
+      "photocraft-cli-masks": "3312083bbb975cf8d11ed388ce2459f3f8224d97cee67ed10d04b4c2a8d0c60e",
+      "photocraft-cli-adjustments": "1b57b7c46401eaab34138597cc9946147286360812c1dfe5e083b8f38c2dbe38",
+      "photocraft-cli-retouch": "49f7d07b65c07be11f1595478c1e7bc777482338039fda71a212eb7af70b658f",
+      "photocraft-cli-text": "657353f814dd58cefd6abfce73ed40ca4a109dd173846a338e65dab4aa3a3143",
+      "photocraft-cli-resize": "a5e508b82c2869235d7a06786795d0fc89ed223e7ff3ec653c8af9e524c60c02",
+      "photocraft-cli-export": "e7f43f47054e0ea14810f83fad7b0dddd7a6a683deb671aa5586873bed0ac3b0",
+      "photocraft-cli-filters": "1d91e20afa347d890bdad2cb32cd0e474bc6bf6662bb14bfd36c6270cd2cffc2"
+    }
+  },
+  "platform": "Darwin-arm64",
+  "driverSha256": "15d047b428d6397a54cf3e0e2d1ecb353e036cee304e9ea88aea1e2321249bff",
+  "cases": [
+    {
+      "case": "smart",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "test_smart_replace_relink_move_and_preservation (fixed_test_smart_first_use.SmartFirstUse.test_smart_replace_relink_move_and_preservation) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 6.079s\n\nOK\n",
+      "driverSha256": "fa98f7a28ed9059ea36b8fb1232021ea51ae2d59c2194b4632567b4e9f7294fd",
+      "status": "PASS",
+      "retainedDirectory": "smart",
+      "reused": true
+    },
+    {
+      "case": "protected",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "test_public_skill_refuses_protected_changes_and_preserves_source (fixed_test_protected_regions_first_use.ProtectedFirstUse.test_public_skill_refuses_protected_changes_and_preserves_source) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 6.783s\n\nOK\n",
+      "driverSha256": "56c9509ce84b2d8035ae64db09b84dbe2e19da5096e720cf4f8f48de949d24d6",
+      "status": "PASS",
+      "retainedDirectory": "protected",
+      "reused": true
+    },
+    {
+      "case": "retouch",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "test_stroke_clone_heal_and_protected_rejection (fixed_test_retouch_workflow_first_use.RetouchWorkflowFirstUse.test_stroke_clone_heal_and_protected_rejection) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 8.554s\n\nOK\n",
+      "driverSha256": "637c7b6af46278e1caaae33c737bb04afda825d977e8b9767671d391dd4d101a",
+      "status": "PASS",
+      "retainedDirectory": "retouch",
+      "reused": true
+    },
+    {
+      "case": "chinese",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "test_single_text_skill_preserves_layers_and_pixels_during_chinese_revision (fixed_test_chinese_text_first_use.ChineseTextFirstUseTests.test_single_text_skill_preserves_layers_and_pixels_during_chinese_revision) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 6.268s\n\nOK\n",
+      "driverSha256": "e90a229e1e1eed0b4bb82d2ad1a2113d34ef290333a6d2f8e7262e6596c0a483",
+      "status": "PASS",
+      "retainedDirectory": "chinese",
+      "reused": true
+    },
+    {
+      "case": "fontless",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "test_image_only_create_revision_and_missing_font_gate (fixed_test_fontless_first_use.FontlessFirstUseTests.test_image_only_create_revision_and_missing_font_gate) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 5.742s\n\nOK\n",
+      "driverSha256": "240e37a0e990828efa381c98bfa968f58faca2408275c2662baa36547a52e3ad",
+      "status": "PASS",
+      "retainedDirectory": "fontless",
+      "reused": true
+    },
+    {
+      "case": "optimization",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log": "test_blur_noise_sharpen_background_preserve_product_pixels (fixed_test_optimization_native.OptimizationNativeTests.test_blur_noise_sharpen_background_preserve_product_pixels) ... ok\ntest_missing_font_requires_explicit_accepted_substitution (fixed_test_optimization_native.OptimizationNativeTests.test_missing_font_requires_explicit_accepted_substitution) ... ok\ntest_native_16_bit_source_cannot_claim_rgba8_protection (fixed_test_optimization_native.OptimizationNativeTests.test_native_16_bit_source_cannot_claim_rgba8_protection) ... ok\ntest_native_batch_partial_completion_stops_following_tool (fixed_test_optimization_native.OptimizationNativeTests.test_native_batch_partial_completion_stops_following_tool) ... ok\ntest_nested_text_preservation_and_recursive_layout (fixed_test_optimization_native.OptimizationNativeTests.test_nested_text_preservation_and_recursive_layout) ... ok\ntest_saved_mask_binding_and_text_layout_facts_reopen (fixed_test_optimization_native.OptimizationNativeTests.test_saved_mask_binding_and_text_layout_facts_reopen) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 10.687s\n\nOK\n",
+      "driverSha256": "aa2d3daee915e4ca91d8c1e77b1e71e24d21874afa08f3ba83e65627ccbb11d2",
+      "status": "PASS",
+      "retainedDirectory": "optimization",
+      "reused": true
+    }
+  ],
+  "excluded": [
+    "independent creative acceptance",
+    "external PSD editor compatibility",
+    "complete PSD fidelity",
+    "complete glyph coverage or exact overflow metrics",
+    "other platforms",
+    "all755 commands",
+    "full V1"
+  ],
+  "reuse": {
+    "scope": "independently passed first-use cases only; all additional native cases rerun",
+    "baselineFile": "fixed-domain-first-run.json",
+    "baselineSha256": "bdccf101510b57c78a8f9352b1ac1e4e12e7d995a2a25f0062f7e37036c0d553",
+    "previousDriverSha256": "517840e1922337bae34d63dc98690ad64d47885d5b9fe7f22c17c70f46d8335f",
+    "runnerAstUnchanged": true,
+    "testDriversUnchanged": true,
+    "retainedArtifactsUnchanged": true
+  },
+  "additionalNativeCases": [
+    {
+      "case": "nested-source",
+      "result": "PASS",
+      "nativeProjectSha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "manifestSha256": "5eaaba82fc86c0ca248ef8e1d642c097af3434f8b416c2b056f73f4d3eb10e61",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "5eaaba82fc86c0ca248ef8e1d642c097af3434f8b416c2b056f73f4d3eb10e61",
+        "projectSha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "nested-title-revision",
+      "result": "PASS",
+      "nativeProjectSha256": "e621082fa0704a9a1cec2f06ec9eb4c58db3c264ab825fcb19d88c870f9ceb53",
+      "manifestSha256": "0e945ec4485e2efb7144323820361a3f44823fc3bfd6d9e90e832b1c99a7b6b0",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "0e945ec4485e2efb7144323820361a3f44823fc3bfd6d9e90e832b1c99a7b6b0",
+        "projectSha256": "e621082fa0704a9a1cec2f06ec9eb4c58db3c264ab825fcb19d88c870f9ceb53",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "nested-second-edit",
+      "result": "PASS",
+      "nativeProjectSha256": "1548d9ffb27b119b4ae82f3cc9daa1bfb0e4f76def9a6b6ee7e2f969de85f017",
+      "manifestSha256": "9a7a8a6882b8f3e74cfe8247ae907eee7a6208b827964c26b17ab1313cd748cd",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "9a7a8a6882b8f3e74cfe8247ae907eee7a6208b827964c26b17ab1313cd748cd",
+        "projectSha256": "1548d9ffb27b119b4ae82f3cc9daa1bfb0e4f76def9a6b6ee7e2f969de85f017",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "flat-preview-not-editable",
+      "result": "PASS",
+      "observedError": "editable_layer_gate_failed",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "b631538ff0afd6e7281cec80b269c64b6e51d34c7690b09b682cc05befb1f500"
+    },
+    {
+      "case": "noOverflow-unknown",
+      "result": "PASS",
+      "observedError": "layout_metric_unavailable: overflow",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "f644880df3626c32230702cec9dc1aeebe2bc05e1a99c402595863d9af29f109"
+    },
+    {
+      "case": "glyphCoverage-unknown",
+      "result": "PASS",
+      "observedError": "layout_metric_unavailable: glyphCoverage",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "abac37a827ec4d12932cf20414d6f041226f2fb176e52160369e8550dc1f117c"
+    },
+    {
+      "case": "non-target-change",
+      "result": "PASS",
+      "observedError": "object_changed: 8: name",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "720c7be5321efe891845c58b61dc03a759f0d04711d6b38e5982838a17614343"
+    },
+    {
+      "case": "nested-padding",
+      "result": "PASS",
+      "nativeProjectSha256": "22a2fe15cc79b7187119e50c594a33df16e448b9b3b6169ca85295a762ce96e9",
+      "manifestSha256": "698e16e672015d3961ed5e9121494d9beef3c59a3ffb042db0f31e595147aadf",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "698e16e672015d3961ed5e9121494d9beef3c59a3ffb042db0f31e595147aadf",
+        "projectSha256": "22a2fe15cc79b7187119e50c594a33df16e448b9b3b6169ca85295a762ce96e9",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "unsafe-nested-variant",
+      "result": "PASS",
+      "observedError": "variant_safe_area_violation: product",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "0c1885f0db25968ecb349b9107a538c6bcd2aefe4279a6c520dac3551954019c"
+    },
+    {
+      "case": "duplicate-roles",
+      "result": "PASS",
+      "observedError": "variant_role_identity",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": null
+    },
+    {
+      "case": "unverified-transform",
+      "result": "PASS",
+      "observedError": "variant_geometry_required",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "831921a736205051a447250e6115f862c58b73dbfbb34eda6db9e6584baad2f2"
+    },
+    {
+      "case": "selected-blur",
+      "result": "PASS",
+      "nativeProjectSha256": "6fbb1009e9f3f657049d5ae66ac243a4675f519fe7321090ccdf7ee17e12725d",
+      "manifestSha256": "0de9e495b64615a05471f4dddccfd897cd104cb8223dcb234ec686912defe113",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "0de9e495b64615a05471f4dddccfd897cd104cb8223dcb234ec686912defe113",
+        "projectSha256": "6fbb1009e9f3f657049d5ae66ac243a4675f519fe7321090ccdf7ee17e12725d",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "blur-wrong-target",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "80ef4075a927fe558aefe1ac4f88c1838e2c5831a5afbdb354292c03af252e11"
+    },
+    {
+      "case": "blur-wrong-selection",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "73f123184caaabb4abe5042c3bfc4053ce9645b55d8f3b5a43be5cf27b2072ba"
+    },
+    {
+      "case": "blur-wrong-mask",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "4858fdcd7d60798991d78fa8682d31d8ee0b6bac585e89fab119f61a85e87c14"
+    },
+    {
+      "case": "blur-wrong-method",
+      "result": "PASS",
+      "observedError": "filter_editability_unverified: full editable filter graph is not exposed by this pinned inspection API",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "d5cad3adafd272b2b3630cc0f52a2fa3faf8c69d9ef92e15be7c6f0b0cabc118"
+    },
+    {
+      "case": "selected-grain",
+      "result": "PASS",
+      "nativeProjectSha256": "96a18526950070b2747c371aa0b43dd4b1495b58ecb6fdd46b01b2ba271d1aba",
+      "manifestSha256": "073a3d80de5ba66bd0e2bab00ccd767eda43b399d8d56d9a84f4dd707b3796bf",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "073a3d80de5ba66bd0e2bab00ccd767eda43b399d8d56d9a84f4dd707b3796bf",
+        "projectSha256": "96a18526950070b2747c371aa0b43dd4b1495b58ecb6fdd46b01b2ba271d1aba",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "grain-wrong-target",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "4b3447732b7f3aaa5005736d6445482c7696316bd256d4230e2bfb3d1643438a"
+    },
+    {
+      "case": "grain-wrong-selection",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "033beaefe5163e9f4cfd38bb327ae6e224250c7b378ffaaabe0f74c0a5836c78"
+    },
+    {
+      "case": "grain-wrong-mask",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "7c9a73d23c71b7f3cd464c69fca40ba4932e164b1de69e5d0d849e373ac67079"
+    },
+    {
+      "case": "grain-wrong-method",
+      "result": "PASS",
+      "observedError": "filter_editability_unverified: full editable filter graph is not exposed by this pinned inspection API",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "740d95df426983447cfcd35d2172fa1ef4f121b90f118dc3db52c9094d8e6b06"
+    },
+    {
+      "case": "selected-sharpen",
+      "result": "PASS",
+      "nativeProjectSha256": "118466fa6a57eb5dd2b11f4f8c2a97fb08936a53f3dffd554e0b861473fb3889",
+      "manifestSha256": "7b3598e99cdb9744baf6720cfc3f2b192b29fab5ccf2f4188ca7f0f01d7cdf6e",
+      "freshNativeReopen": {
+        "schema": "photocraft-native-verification/v1",
+        "result": "PASS",
+        "manifestSha256": "7b3598e99cdb9744baf6720cfc3f2b192b29fab5ccf2f4188ca7f0f01d7cdf6e",
+        "projectSha256": "118466fa6a57eb5dd2b11f4f8c2a97fb08936a53f3dffd554e0b861473fb3889",
+        "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+        "scope": "fresh headless reopen and recorded object preservation; creative review NOT_RUN"
+      },
+      "sourceUnchanged": true
+    },
+    {
+      "case": "sharpen-wrong-target",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "b14d35be7302390c1f26c29bbef1622ce250d3b6b2a7749b8969eae62efb3941"
+    },
+    {
+      "case": "sharpen-wrong-selection",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "6ada397910f149d7a7c5aa0723aacf59954ab08b122a1d0fd171b24552bad8b3"
+    },
+    {
+      "case": "sharpen-wrong-mask",
+      "result": "PASS",
+      "observedError": "filter_context_mismatch",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "34ff2c73b343e1b44851f7bdf7b268c9575dca5bbcf4aeca5287d62f941116ee"
+    },
+    {
+      "case": "sharpen-wrong-method",
+      "result": "PASS",
+      "observedError": "filter_editability_unverified: full editable filter graph is not exposed by this pinned inspection API",
+      "successfulDeliveryAbsent": true,
+      "sourceUnchanged": true,
+      "failureReceipt": "7aca045ec6e1d1ea46b09d23de3e500d21bd5c628fe3e6a9000ebcf0094a35e2"
+    }
+  ],
+  "installedSkillsUnchanged": true,
+  "artifacts": {
+    "additional/.photocraft-0wbzuzhq/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-0wbzuzhq/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-0wbzuzhq/design.png": {
+      "sha256": "5579ed0c8e9b46fed985769034490bba0c10912f8835eae657e06003345b97b1",
+      "bytes": 843
+    },
+    "additional/.photocraft-0wbzuzhq/design.psd": {
+      "sha256": "65c0adaa6481c7ad8b78f3bd783ca01427044b91f80db4359888a0a1be45df34",
+      "bytes": 14729
+    },
+    "additional/.photocraft-0wbzuzhq/failure.json": {
+      "sha256": "0c1885f0db25968ecb349b9107a538c6bcd2aefe4279a6c520dac3551954019c",
+      "bytes": 1573
+    },
+    "additional/.photocraft-0wbzuzhq/project.pcraft": {
+      "sha256": "22a2fe15cc79b7187119e50c594a33df16e448b9b3b6169ca85295a762ce96e9",
+      "bytes": 16496
+    },
+    "additional/.photocraft-0wbzuzhq/recovery-operations.json": {
+      "sha256": "ebe4d3af863d5066c69a6c134d06f1623bffa55b26603380f9a1e8402f9ae43b",
+      "bytes": 15774
+    },
+    "additional/.photocraft-0wbzuzhq/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-398p7bij/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-398p7bij/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-398p7bij/failure.json": {
+      "sha256": "b14d35be7302390c1f26c29bbef1622ce250d3b6b2a7749b8969eae62efb3941",
+      "bytes": 1301
+    },
+    "additional/.photocraft-398p7bij/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-398p7bij/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-398p7bij/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-3gql3aaf/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-3gql3aaf/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-3gql3aaf/failure.json": {
+      "sha256": "4b3447732b7f3aaa5005736d6445482c7696316bd256d4230e2bfb3d1643438a",
+      "bytes": 1301
+    },
+    "additional/.photocraft-3gql3aaf/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-3gql3aaf/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-3gql3aaf/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-7bn422k3/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-7bn422k3/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-7bn422k3/design.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-7bn422k3/design.psd": {
+      "sha256": "b923a0dac8452b1dff565d7b1a82645b58d18713ec493269b21876cf6a730bc9",
+      "bytes": 13529
+    },
+    "additional/.photocraft-7bn422k3/failure.json": {
+      "sha256": "720c7be5321efe891845c58b61dc03a759f0d04711d6b38e5982838a17614343",
+      "bytes": 2065
+    },
+    "additional/.photocraft-7bn422k3/native-facts-preservation.json": {
+      "sha256": "c1a1e3bdfd5370cba3e72acdb9b65b51e7b0ef72d8b6d8a02a2a23f093b819a1",
+      "bytes": 142
+    },
+    "additional/.photocraft-7bn422k3/native-facts.json": {
+      "sha256": "e198ebe035eb6bb5e2e075dc5f25bd922b0197342043f3373fa925a1edf1538b",
+      "bytes": 2805
+    },
+    "additional/.photocraft-7bn422k3/object-assertions.json": {
+      "sha256": "bd02f4aa0f53a3908c492fbcb29d97fcee772f33645bc9d575b4dbb66dcaeb93",
+      "bytes": 761
+    },
+    "additional/.photocraft-7bn422k3/project.pcraft": {
+      "sha256": "209db118c14446fea083243b477292c57bad295a6fb452a1b203d223d8e3e6d5",
+      "bytes": 16833
+    },
+    "additional/.photocraft-7bn422k3/recovery-operations.json": {
+      "sha256": "8e222058673ae750a171c55cf3bc37c21a358c35d864b8949c62d6bdccae538e",
+      "bytes": 16655
+    },
+    "additional/.photocraft-7bn422k3/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-c3dipqnk/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-c3dipqnk/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-c3dipqnk/failure.json": {
+      "sha256": "4858fdcd7d60798991d78fa8682d31d8ee0b6bac585e89fab119f61a85e87c14",
+      "bytes": 1301
+    },
+    "additional/.photocraft-c3dipqnk/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-c3dipqnk/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-c3dipqnk/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-d22pnyu2/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-d22pnyu2/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-d22pnyu2/failure.json": {
+      "sha256": "73f123184caaabb4abe5042c3bfc4053ce9645b55d8f3b5a43be5cf27b2072ba",
+      "bytes": 1301
+    },
+    "additional/.photocraft-d22pnyu2/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-d22pnyu2/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-d22pnyu2/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-de5s7tud/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-de5s7tud/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-de5s7tud/design.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-de5s7tud/design.psd": {
+      "sha256": "b48772ce22eae0146467e9b7d8a61c62de44dc0620f65d9bcc3a5c4d36504d73",
+      "bytes": 13513
+    },
+    "additional/.photocraft-de5s7tud/failure.json": {
+      "sha256": "831921a736205051a447250e6115f862c58b73dbfbb34eda6db9e6584baad2f2",
+      "bytes": 1561
+    },
+    "additional/.photocraft-de5s7tud/project.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-de5s7tud/recovery-operations.json": {
+      "sha256": "313381b2e40f3b24966cc95ac635003b7d2a41afb81c10fb25eeda4b56cf1f4a",
+      "bytes": 11899
+    },
+    "additional/.photocraft-de5s7tud/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-execution-03ec493a05103b51bb8a0a6e6f513515465e0a18b4dec579d0f31555f2441362.json": {
+      "sha256": "8eac318e4c71d8c36ec55b8a92892f8cf2ada08f4c134692f64169d1472960dd",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-08667d342ee0fad4cb4ee7f740a8d8cbb7f5484ee5de76e45fe31ce7aa9e71e7.json": {
+      "sha256": "71d9988d8d0dd3ffe560b7af1e90c8a4fd67c8c1b55fbcee0ad44e8514155e6f",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-0a66779ab79c5447e2bbecd57407f1ea3374c6031f76786703d7bcf2426ab793.json": {
+      "sha256": "4a2ee3748340a1f03de3066cd420311818c926063a6d9ee3dd5e2bc80b6f65c8",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-105688d3c338d0e9f452e60571e1f2e73c67d4d8a81914ea071fea434bdd61b7.json": {
+      "sha256": "da0a5b29e17055fcf7ee2997f49d35f5596fe347987da3fabad0260f8f2baa09",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-16bcd8c1b747dfa2234cad088a6dfbdbdcbe5abfb67f8d0f01f03ae1c0c3ffbc.json": {
+      "sha256": "808f2c7eb2d8d7911af1f37e7f113af73c8f402b99b95abf876773c6693bb026",
+      "bytes": 635
+    },
+    "additional/.photocraft-execution-44b3f1dc408ca5cf41bd6d8f95ae41f287b913cdac2be351ef612963c983a391.json": {
+      "sha256": "409e7a508bd33df60f87da32afa9e37ba4dcadc9801b898e800dc125809ce34f",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-49ec3a73cec0bf10ac9bfdea93f8cd5ddaf4fb8238639467cbce1ad3bd965d5d.json": {
+      "sha256": "3ef9d3c3969e7a42e72fc8292e2933f4986fed83b44cd80232a0dd32751637a5",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-579376acd33360eba98b1af0770a0aa81d61f22020018aec2302a33bc1aff415.json": {
+      "sha256": "a202303b859e2202fa0fc11aa45f9952f5562639fd01b312355e0eb5d48e34df",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-5c9307fbda26a0779a037d7e270ce93d28cbf2cc2f0337d03870f114436ef9ee.json": {
+      "sha256": "f8be91e80667cf4f50bccb12453032d180c5b9217b8983ae4f7a4699eda8b77d",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-6e3c862d237842871ec0c0f01fe907c63e04eb48b2f2bb3b982689727506fcb7.json": {
+      "sha256": "75f2ed19f007d35f86fedf08769255223d610c9b9db1d7057da4de4fcf40b14a",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-75ab0582e1cea18b1286bd6967c9a620d5959d8178ffb3a54b773c52c8d7caf2.json": {
+      "sha256": "f4e58b3b32e39d4818c3552b1695922b3b34a7826194b4d96b1aa4d042f7a5b5",
+      "bytes": 635
+    },
+    "additional/.photocraft-execution-8734aeca2247314587cb2ffefa12dff1f165a5c939dda5df7a6c4996e2e7c3e7.json": {
+      "sha256": "b0dad155163635c92358cca66fc9480cd81f2574115e0d4116f04bbad7c48e9b",
+      "bytes": 635
+    },
+    "additional/.photocraft-execution-8b3d1c648c03f4033ec93f78328d456951ddf4cd9d348921569d2663750d5349.json": {
+      "sha256": "7dae4368080c1774933af085def57e93c443d56a0f581407fef9439bf30715cb",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-9dcc24f93e93480e0c9bc4af91be5e4fb6f26b750871a2bf4a680faedd4aad7c.json": {
+      "sha256": "66e3c8fcc63e6adb5dcc307b8f1d061b7fc82f297f02168b89051c507f5959f0",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-a5252ff4553765890bf4b21a3f7d6b8d39aa7cc276e7f06c3b51c64e9bf3e8ae.json": {
+      "sha256": "4270a36ec8c1073eedebca84c3ea87d8e081f4d5f71a864cf68fd381b367d3b0",
+      "bytes": 635
+    },
+    "additional/.photocraft-execution-a562409a400e792c575437c16ad4e2252b9197bce5ca39d074813c3808f3fecb.json": {
+      "sha256": "423ff2abb0e4c7503b73fc44260e32f83b2e7c965e41867aadd5351a30af8f07",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-acbd14ed9237a4aaedf1b20fe6c8874f9eaf5a1ef5b405cc48a095dec74be1f5.json": {
+      "sha256": "9e4068502641bd742950c3fba784ae8c0c9b4df88b294d225021cc5b9238c8ab",
+      "bytes": 635
+    },
+    "additional/.photocraft-execution-b500facc741ed620d4b691ca89b6d0555319993fb24373e49485764120d2dc60.json": {
+      "sha256": "2d4cfad11360d5502e55c9baad6c8836622f1795d0a3f1fd301131c195aec4c4",
+      "bytes": 635
+    },
+    "additional/.photocraft-execution-b69b9509b0ac1833824e24a1110910bd81b5c2a012b7e4e156e88f1b614216c9.json": {
+      "sha256": "24bb7c462d23d50c58797fc22d62b4d152f668788730b01271a14094bb1f36d4",
+      "bytes": 573
+    },
+    "additional/.photocraft-execution-c1cca44ceb057f1f7d4d293ddb98a45a4a627408374f73c7481e907ec24f03f6.json": {
+      "sha256": "a3562f7dd25de9b3a8da0eb88232abc854f329aa4dd5532cbf57462f6cb3bd75",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-c2bc3e72473aaf0d0b3d8ee0a3ac422c757e6e90692868edd70f88152ef557ab.json": {
+      "sha256": "84b80269b45b30f4610ef8bf09ebf7811a03ad620e70398562bc269b03cb404e",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-c624d6e749830f33f7dce6c2ab746802b57c53c681a29edb1aba6b7096093af8.json": {
+      "sha256": "8635cfaca6c10929328bce8dc7306e54c75e9af29dae402b4d5aa639ff9acf74",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-c89340bce18a348239830ecee861d56df57dca9d9c2c81e12051e5441d18495e.json": {
+      "sha256": "2233aa7a03f08ace08cc3d65ac5f2060b60179e89d3782668f63d4d39fc86f82",
+      "bytes": 638
+    },
+    "additional/.photocraft-execution-cd2069e3d2bb02b011dad0aacadb59eee02797de40c83ee0c4192af72081788f.json": {
+      "sha256": "4c6965296d6f545bcb899a9e4e48a43cb09f4781758816abc31ece6d58100878",
+      "bytes": 417
+    },
+    "additional/.photocraft-execution-cfa9d84226199c0889c63c41a6e0ef0cea5cd86554d38b82b0267acbed32bee2.json": {
+      "sha256": "ce6c5698b4a7f929032826e0a07694162bd13e8cf2fb07e93282d441d3df7b69",
+      "bytes": 638
+    },
+    "additional/.photocraft-f3_r0f4k/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-f3_r0f4k/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-f3_r0f4k/failure.json": {
+      "sha256": "7aca045ec6e1d1ea46b09d23de3e500d21bd5c628fe3e6a9000ebcf0094a35e2",
+      "bytes": 1380
+    },
+    "additional/.photocraft-f3_r0f4k/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-f3_r0f4k/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-f3_r0f4k/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-h95hf1al/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-h95hf1al/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-h95hf1al/failure.json": {
+      "sha256": "34ff2c73b343e1b44851f7bdf7b268c9575dca5bbcf4aeca5287d62f941116ee",
+      "bytes": 1301
+    },
+    "additional/.photocraft-h95hf1al/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-h95hf1al/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-h95hf1al/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-ho1d9kv8/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-ho1d9kv8/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-ho1d9kv8/failure.json": {
+      "sha256": "6ada397910f149d7a7c5aa0723aacf59954ab08b122a1d0fd171b24552bad8b3",
+      "bytes": 1301
+    },
+    "additional/.photocraft-ho1d9kv8/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-ho1d9kv8/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-ho1d9kv8/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-hymryxfk/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-hymryxfk/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-hymryxfk/failure.json": {
+      "sha256": "d5cad3adafd272b2b3630cc0f52a2fa3faf8c69d9ef92e15be7c6f0b0cabc118",
+      "bytes": 1380
+    },
+    "additional/.photocraft-hymryxfk/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-hymryxfk/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-hymryxfk/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-ne8_73sv/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-ne8_73sv/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-ne8_73sv/failure.json": {
+      "sha256": "740d95df426983447cfcd35d2172fa1ef4f121b90f118dc3db52c9094d8e6b06",
+      "bytes": 1380
+    },
+    "additional/.photocraft-ne8_73sv/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-ne8_73sv/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-ne8_73sv/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-okpk1lqj/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-okpk1lqj/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-okpk1lqj/failure.json": {
+      "sha256": "80ef4075a927fe558aefe1ac4f88c1838e2c5831a5afbdb354292c03af252e11",
+      "bytes": 1301
+    },
+    "additional/.photocraft-okpk1lqj/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-okpk1lqj/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-okpk1lqj/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-ons07scr/design.png": {
+      "sha256": "68638ba949566244b712ebe5bdf1c14b2a96cfb7d06cae83f0dfac44bbb8adb8",
+      "bytes": 119
+    },
+    "additional/.photocraft-ons07scr/failure.json": {
+      "sha256": "b631538ff0afd6e7281cec80b269c64b6e51d34c7690b09b682cc05befb1f500",
+      "bytes": 1017
+    },
+    "additional/.photocraft-ons07scr/project.pcraft": {
+      "sha256": "612ba1aaef5bc19259aea768d6812e21ac3203b48772e6e25a25e0d4d13117b7",
+      "bytes": 3937
+    },
+    "additional/.photocraft-ons07scr/recovery-operations.json": {
+      "sha256": "671e5e40eef39c2c7e336ecf4c5eb09d5fe4286a41c93cf8abb68917bdfa8a3a",
+      "bytes": 4116
+    },
+    "additional/.photocraft-rkqqn871/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-rkqqn871/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-rkqqn871/failure.json": {
+      "sha256": "033beaefe5163e9f4cfd38bb327ae6e224250c7b378ffaaabe0f74c0a5836c78",
+      "bytes": 1301
+    },
+    "additional/.photocraft-rkqqn871/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-rkqqn871/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-rkqqn871/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-s69go45l/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-s69go45l/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-s69go45l/design.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-s69go45l/design.psd": {
+      "sha256": "b48772ce22eae0146467e9b7d8a61c62de44dc0620f65d9bcc3a5c4d36504d73",
+      "bytes": 13513
+    },
+    "additional/.photocraft-s69go45l/failure.json": {
+      "sha256": "f644880df3626c32230702cec9dc1aeebe2bc05e1a99c402595863d9af29f109",
+      "bytes": 1571
+    },
+    "additional/.photocraft-s69go45l/project.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-s69go45l/recovery-operations.json": {
+      "sha256": "313381b2e40f3b24966cc95ac635003b7d2a41afb81c10fb25eeda4b56cf1f4a",
+      "bytes": 11899
+    },
+    "additional/.photocraft-s69go45l/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-stjghvd4/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-stjghvd4/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-stjghvd4/failure.json": {
+      "sha256": "7c9a73d23c71b7f3cd464c69fca40ba4932e164b1de69e5d0d849e373ac67079",
+      "bytes": 1301
+    },
+    "additional/.photocraft-stjghvd4/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-stjghvd4/recovery-operations.json": {
+      "sha256": "c58882a48d4a4c9eb87b948716f1db3ff24540f880aa3f26232ec4107c3f2f02",
+      "bytes": 8157
+    },
+    "additional/.photocraft-stjghvd4/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-wn0eluyz/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/.photocraft-wn0eluyz/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/.photocraft-wn0eluyz/design.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/.photocraft-wn0eluyz/design.psd": {
+      "sha256": "b48772ce22eae0146467e9b7d8a61c62de44dc0620f65d9bcc3a5c4d36504d73",
+      "bytes": 13513
+    },
+    "additional/.photocraft-wn0eluyz/failure.json": {
+      "sha256": "abac37a827ec4d12932cf20414d6f041226f2fb176e52160369e8550dc1f117c",
+      "bytes": 1940
+    },
+    "additional/.photocraft-wn0eluyz/native-facts-preservation.json": {
+      "sha256": "c1a1e3bdfd5370cba3e72acdb9b65b51e7b0ef72d8b6d8a02a2a23f093b819a1",
+      "bytes": 142
+    },
+    "additional/.photocraft-wn0eluyz/native-facts.json": {
+      "sha256": "2d9fb60629c41bad1ec6bd22b8e7f45fd5c114053624c3e8f5abb9bddf90b850",
+      "bytes": 2805
+    },
+    "additional/.photocraft-wn0eluyz/project.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/.photocraft-wn0eluyz/recovery-operations.json": {
+      "sha256": "8b697be3809bab6d00f75067bb7f56cbb0d09696c31391566a606711d1299021",
+      "bytes": 16431
+    },
+    "additional/.photocraft-wn0eluyz/source.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/blur-wrong-mask/failure.json": {
+      "sha256": "4858fdcd7d60798991d78fa8682d31d8ee0b6bac585e89fab119f61a85e87c14",
+      "bytes": 1301
+    },
+    "additional/blur-wrong-mask.json": {
+      "sha256": "221362acc583640ec7d2cb1ccaf2a9e3a47a7a923585d877c107a991b22ce323",
+      "bytes": 1171
+    },
+    "additional/blur-wrong-method/failure.json": {
+      "sha256": "d5cad3adafd272b2b3630cc0f52a2fa3faf8c69d9ef92e15be7c6f0b0cabc118",
+      "bytes": 1380
+    },
+    "additional/blur-wrong-method.json": {
+      "sha256": "acd077bd55a5bf64dab1869c113bc6b0c9899820ed2a01a67f301666a4e84f0c",
+      "bytes": 1171
+    },
+    "additional/blur-wrong-selection/failure.json": {
+      "sha256": "73f123184caaabb4abe5042c3bfc4053ce9645b55d8f3b5a43be5cf27b2072ba",
+      "bytes": 1301
+    },
+    "additional/blur-wrong-selection.json": {
+      "sha256": "00b13b82a2032e40324d7d263532df28d441e9c40e1d3426539b81151b268cf4",
+      "bytes": 1173
+    },
+    "additional/blur-wrong-target/failure.json": {
+      "sha256": "80ef4075a927fe558aefe1ac4f88c1838e2c5831a5afbdb354292c03af252e11",
+      "bytes": 1301
+    },
+    "additional/blur-wrong-target.json": {
+      "sha256": "a65cf40b5bbb95d9fd34c17af5398595f6416fefb7c1c4b330b46f0cfea77560",
+      "bytes": 1172
+    },
+    "additional/duplicate-roles.json": {
+      "sha256": "1fc2f1e8e142e5bb653fcf0a2d81c131ea270f9b969bf77011c02096ef555b24",
+      "bytes": 552
+    },
+    "additional/flat-preview-not-editable/failure.json": {
+      "sha256": "b631538ff0afd6e7281cec80b269c64b6e51d34c7690b09b682cc05befb1f500",
+      "bytes": 1017
+    },
+    "additional/flat-preview-not-editable.json": {
+      "sha256": "5c3ee5064bf611dc2b9501858fd40e9f2d5eb75153d07472c6e7dee6236e60aa",
+      "bytes": 183
+    },
+    "additional/glyphCoverage-unknown/failure.json": {
+      "sha256": "abac37a827ec4d12932cf20414d6f041226f2fb176e52160369e8550dc1f117c",
+      "bytes": 1940
+    },
+    "additional/glyphCoverage-unknown.json": {
+      "sha256": "8eaadc856f8a6db1b86e9ac9c03c3bb8bd2207fe97ee5e0eaea8ee9a50f82155",
+      "bytes": 367
+    },
+    "additional/grain-wrong-mask/failure.json": {
+      "sha256": "7c9a73d23c71b7f3cd464c69fca40ba4932e164b1de69e5d0d849e373ac67079",
+      "bytes": 1301
+    },
+    "additional/grain-wrong-mask.json": {
+      "sha256": "f023099093248e3bca84d533722e14d2d8a737ca16d90bd6ec54d74c5721ebdc",
+      "bytes": 1188
+    },
+    "additional/grain-wrong-method/failure.json": {
+      "sha256": "740d95df426983447cfcd35d2172fa1ef4f121b90f118dc3db52c9094d8e6b06",
+      "bytes": 1380
+    },
+    "additional/grain-wrong-method.json": {
+      "sha256": "2cec0fbb6901af68b8aa9a7093126158490c60369769e12ca3d57c3f7f094eba",
+      "bytes": 1188
+    },
+    "additional/grain-wrong-selection/failure.json": {
+      "sha256": "033beaefe5163e9f4cfd38bb327ae6e224250c7b378ffaaabe0f74c0a5836c78",
+      "bytes": 1301
+    },
+    "additional/grain-wrong-selection.json": {
+      "sha256": "647e205ca099fcab540fc27e4a13b585201507be05c3468afe8b20c63ad89272",
+      "bytes": 1190
+    },
+    "additional/grain-wrong-target/failure.json": {
+      "sha256": "4b3447732b7f3aaa5005736d6445482c7696316bd256d4230e2bfb3d1643438a",
+      "bytes": 1301
+    },
+    "additional/grain-wrong-target.json": {
+      "sha256": "0f4c9df285d3831c2e10a6f24431db9407b55bb2c0acd4217a4fd2dadcac3357",
+      "bytes": 1189
+    },
+    "additional/nested-padding/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/nested-padding/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/nested-padding/capabilities.json": {
+      "sha256": "318761312890a76cefaf47777a13db494a1afa32925bb7eb44e77a83eadace6d",
+      "bytes": 534
+    },
+    "additional/nested-padding/design.png": {
+      "sha256": "5579ed0c8e9b46fed985769034490bba0c10912f8835eae657e06003345b97b1",
+      "bytes": 843
+    },
+    "additional/nested-padding/design.psd": {
+      "sha256": "65c0adaa6481c7ad8b78f3bd783ca01427044b91f80db4359888a0a1be45df34",
+      "bytes": 14729
+    },
+    "additional/nested-padding/exchange-loss.json": {
+      "sha256": "96dad5e0bb44a6aa8a9df5753dfe91d9fec5a48044ab7884add084ddfe2c2e71",
+      "bytes": 7023
+    },
+    "additional/nested-padding/layout-variant.json": {
+      "sha256": "93ee05cc004d0384e32d33c1dff17c2a1d27d67a274dd7db68922673413597e8",
+      "bytes": 1232
+    },
+    "additional/nested-padding/manifest.json": {
+      "sha256": "698e16e672015d3961ed5e9121494d9beef3c59a3ffb042db0f31e595147aadf",
+      "bytes": 2569
+    },
+    "additional/nested-padding/native.json": {
+      "sha256": "ea6dfbb63b880b7672d03f8818e0531059f2baab4d23efe198f5f3ad52df23fe",
+      "bytes": 2862
+    },
+    "additional/nested-padding/operations.json": {
+      "sha256": "61b6d4d8ddc21b2bb5288bb41cecba714037166ba0993ea52c602237ff1238d5",
+      "bytes": 19566
+    },
+    "additional/nested-padding/plan.json": {
+      "sha256": "f87a3d3a0e8d4f9bbc614bc905f8bd7b9ca94920007fc27db1ccf38d22767c37",
+      "bytes": 552
+    },
+    "additional/nested-padding/project.pcraft": {
+      "sha256": "22a2fe15cc79b7187119e50c594a33df16e448b9b3b6169ca85295a762ce96e9",
+      "bytes": 16496
+    },
+    "additional/nested-padding/psd-inspection.json": {
+      "sha256": "41224f17a3651d3300d7e99507d6abd0f80c4ed3d255e33ad481198689a0e4be",
+      "bytes": 2868
+    },
+    "additional/nested-padding.json": {
+      "sha256": "f87a3d3a0e8d4f9bbc614bc905f8bd7b9ca94920007fc27db1ccf38d22767c37",
+      "bytes": 552
+    },
+    "additional/nested-second-edit/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/nested-second-edit/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/nested-second-edit/capabilities.json": {
+      "sha256": "bc5343ef3d425feb7093cf603544a6994ed9cdadd182cd869a76d062b989f727",
+      "bytes": 534
+    },
+    "additional/nested-second-edit/design.png": {
+      "sha256": "d6c634938cd2669b91b4874f5539f85eacdc7c269f328830152bef83a8389fd6",
+      "bytes": 753
+    },
+    "additional/nested-second-edit/exchange-loss.json": {
+      "sha256": "c352da6941e15d660e84fdfe851eaa39a40edbfaa493da2fee4e1ac1f7959ad1",
+      "bytes": 1852
+    },
+    "additional/nested-second-edit/manifest.json": {
+      "sha256": "9a7a8a6882b8f3e74cfe8247ae907eee7a6208b827964c26b17ab1313cd748cd",
+      "bytes": 2189
+    },
+    "additional/nested-second-edit/native.json": {
+      "sha256": "c6f5f2c7ad12ecae8f3b65a355aa74c5e3a6512a71b88388f1bbe31f6d179edf",
+      "bytes": 2860
+    },
+    "additional/nested-second-edit/object-preservation.json": {
+      "sha256": "13877d92b0710374cfd4746739d69e051ea24d5d5538e28f31adc9e1ccd45f40",
+      "bytes": 166
+    },
+    "additional/nested-second-edit/operations.json": {
+      "sha256": "8579f8efb9df7adcf387b8af78119722f230dff7d1a82131bc06e3e7b748c8f9",
+      "bytes": 14030
+    },
+    "additional/nested-second-edit/plan.json": {
+      "sha256": "24c3a83c25201a9056f0d78484ce45a15b43159f298bc0d53d2ffc16e15d0cb2",
+      "bytes": 368
+    },
+    "additional/nested-second-edit/project.pcraft": {
+      "sha256": "1548d9ffb27b119b4ae82f3cc9daa1bfb0e4f76def9a6b6ee7e2f969de85f017",
+      "bytes": 16733
+    },
+    "additional/nested-second-edit.json": {
+      "sha256": "24c3a83c25201a9056f0d78484ce45a15b43159f298bc0d53d2ffc16e15d0cb2",
+      "bytes": 368
+    },
+    "additional/nested-source/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/nested-source/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/nested-source/capabilities.json": {
+      "sha256": "2860e637bf1d608077ff88e2bccb1105ff08f86e3f1f7ed686564030cbcd9ee9",
+      "bytes": 534
+    },
+    "additional/nested-source/design.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/nested-source/design.psd": {
+      "sha256": "b48772ce22eae0146467e9b7d8a61c62de44dc0620f65d9bcc3a5c4d36504d73",
+      "bytes": 13513
+    },
+    "additional/nested-source/exchange-loss.json": {
+      "sha256": "6106885ca82ca2d03e79f7c8dec430a89c4e99f293eee9f4928395af0d621b77",
+      "bytes": 7023
+    },
+    "additional/nested-source/manifest.json": {
+      "sha256": "5eaaba82fc86c0ca248ef8e1d642c097af3434f8b416c2b056f73f4d3eb10e61",
+      "bytes": 2270
+    },
+    "additional/nested-source/native.json": {
+      "sha256": "8a376916c1c1962bc79a22058800d7b1f324251184ddce4ea19f65f703ef0379",
+      "bytes": 2860
+    },
+    "additional/nested-source/operations.json": {
+      "sha256": "546e7524a4ebac620aa7f387028003619702a28c2caeeec0c0042937677879cf",
+      "bytes": 23108
+    },
+    "additional/nested-source/plan.json": {
+      "sha256": "3b8b69f6db42b0ccf432b5f236df08fad206901c83dccd2cc9055018cc91d6f2",
+      "bytes": 1562
+    },
+    "additional/nested-source/project.pcraft": {
+      "sha256": "7a08db7fa807832a3914dad0b8a4be35d52b7d5bd0323e5c1553941ef21b9656",
+      "bytes": 16828
+    },
+    "additional/nested-source/psd-inspection.json": {
+      "sha256": "6ba335ad497d1ab83d67ecbac8147a79af0b499fdc15f4c0d1febeee1843cc35",
+      "bytes": 2866
+    },
+    "additional/nested-source.json": {
+      "sha256": "3b8b69f6db42b0ccf432b5f236df08fad206901c83dccd2cc9055018cc91d6f2",
+      "bytes": 1562
+    },
+    "additional/nested-title-revision/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/nested-title-revision/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/nested-title-revision/capabilities.json": {
+      "sha256": "95e4a4b8806c833e2d13bdae4cf9f14e349f76aec51c8d1c3ef6b31243e043e3",
+      "bytes": 534
+    },
+    "additional/nested-title-revision/design.png": {
+      "sha256": "391af0c74aa26d5b68a1fed2f4e38eaa5695a02c0a3c40aa9dabfa626f588ae4",
+      "bytes": 787
+    },
+    "additional/nested-title-revision/design.psd": {
+      "sha256": "784b5dbb70f05eede0cfd47d8ccbd19de0eccbbbac6d79cc117a27fe18e50d56",
+      "bytes": 13538
+    },
+    "additional/nested-title-revision/exchange-loss.json": {
+      "sha256": "141d883d38438de8754e5077e3d35fac6c8f14f6e550d93ea9e53a76a4056d89",
+      "bytes": 7023
+    },
+    "additional/nested-title-revision/manifest.json": {
+      "sha256": "0e945ec4485e2efb7144323820361a3f44823fc3bfd6d9e90e832b1c99a7b6b0",
+      "bytes": 2729
+    },
+    "additional/nested-title-revision/native-facts-preservation.json": {
+      "sha256": "c1a1e3bdfd5370cba3e72acdb9b65b51e7b0ef72d8b6d8a02a2a23f093b819a1",
+      "bytes": 142
+    },
+    "additional/nested-title-revision/native-facts.json": {
+      "sha256": "70a9fab21f69bf8035d1dc9a9254fed3bba78ca8fc3677671d9be21b24c6d5a7",
+      "bytes": 2805
+    },
+    "additional/nested-title-revision/native.json": {
+      "sha256": "bdd3b47f5748bfdc54a7ed06791c788af0a624ed6591ea918153e05b7864f8f5",
+      "bytes": 2860
+    },
+    "additional/nested-title-revision/object-assertions.json": {
+      "sha256": "320e816a0fa272e177040c7f9e5094afc02b6824fe71dee094fd2fd9c475a0dd",
+      "bytes": 761
+    },
+    "additional/nested-title-revision/object-preservation.json": {
+      "sha256": "13877d92b0710374cfd4746739d69e051ea24d5d5538e28f31adc9e1ccd45f40",
+      "bytes": 166
+    },
+    "additional/nested-title-revision/operations.json": {
+      "sha256": "bcccc0238ec7d8bfa5ce729d9947b59690a7d444c64adcb6d7e775e592a87d15",
+      "bytes": 22534
+    },
+    "additional/nested-title-revision/plan.json": {
+      "sha256": "59583f52ed018f3d2ccc3f6ad32cd0f3ad2d25cfb472357023542d0e3d2470fe",
+      "bytes": 590
+    },
+    "additional/nested-title-revision/project.pcraft": {
+      "sha256": "e621082fa0704a9a1cec2f06ec9eb4c58db3c264ab825fcb19d88c870f9ceb53",
+      "bytes": 16899
+    },
+    "additional/nested-title-revision/psd-inspection.json": {
+      "sha256": "bb58e717a05647e21b65cb7146d217ed852742fbb35416b9b4118fce85643daa",
+      "bytes": 2866
+    },
+    "additional/nested-title-revision.json": {
+      "sha256": "59583f52ed018f3d2ccc3f6ad32cd0f3ad2d25cfb472357023542d0e3d2470fe",
+      "bytes": 590
+    },
+    "additional/noOverflow-unknown/failure.json": {
+      "sha256": "f644880df3626c32230702cec9dc1aeebe2bc05e1a99c402595863d9af29f109",
+      "bytes": 1571
+    },
+    "additional/noOverflow-unknown.json": {
+      "sha256": "cbc16d52951dc2457d8dc486048dd3057a6a9cd2eb4ba77b89f915b0d100c26e",
+      "bytes": 364
+    },
+    "additional/non-target-change/failure.json": {
+      "sha256": "720c7be5321efe891845c58b61dc03a759f0d04711d6b38e5982838a17614343",
+      "bytes": 2065
+    },
+    "additional/non-target-change.json": {
+      "sha256": "4d3c4d03bfc9ba009c2dc996c14516f10a9f975786adfaa75c71ceeb4f9e4d6a",
+      "bytes": 603
+    },
+    "additional/product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/selected-blur/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/selected-blur/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/selected-blur/capabilities.json": {
+      "sha256": "ae535180be3bfcbbcc08b46602fe4abd9f00a3a26dc16e71961bea448738e97b",
+      "bytes": 534
+    },
+    "additional/selected-blur/design.png": {
+      "sha256": "83e5ad4a37e8347717cbe7cb3baa339084119e9305375c37b00c758afe516139",
+      "bytes": 945
+    },
+    "additional/selected-blur/design.psd": {
+      "sha256": "8183b6fc02ce9e6c1413c7c1f7552d3c9a050a40c9008bf78855d6496636de24",
+      "bytes": 13801
+    },
+    "additional/selected-blur/exchange-loss.json": {
+      "sha256": "ccdd3895487a870cfa4ef1ea1cab847f8beb063c5e3fe2da870eb2f41932b0cc",
+      "bytes": 7192
+    },
+    "additional/selected-blur/filter-0-after.png": {
+      "sha256": "83e5ad4a37e8347717cbe7cb3baa339084119e9305375c37b00c758afe516139",
+      "bytes": 945
+    },
+    "additional/selected-blur/filter-0-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/selected-blur/filter-contract.json": {
+      "sha256": "5dd9346ec2c256d4167c28262f76666424309e0bfe901ac0545128bf35146231",
+      "bytes": 653
+    },
+    "additional/selected-blur/manifest.json": {
+      "sha256": "0de9e495b64615a05471f4dddccfd897cd104cb8223dcb234ec686912defe113",
+      "bytes": 3007
+    },
+    "additional/selected-blur/native.json": {
+      "sha256": "8a376916c1c1962bc79a22058800d7b1f324251184ddce4ea19f65f703ef0379",
+      "bytes": 2860
+    },
+    "additional/selected-blur/object-preservation.json": {
+      "sha256": "8e2cbbf6f69d8b21c252cd665111f766d57bf11c36a1306598eed7f2dcb8b08e",
+      "bytes": 112
+    },
+    "additional/selected-blur/operations.json": {
+      "sha256": "dfa8fc26e5746e5a9158a8d8bce7e03a77ba75940de34d467f3c2993250685d7",
+      "bytes": 21515
+    },
+    "additional/selected-blur/pixel-protection.json": {
+      "sha256": "5e2e5927dcd632a666559ac2591af74230fcd5729eda3978765aadf9a2669331",
+      "bytes": 909
+    },
+    "additional/selected-blur/plan.json": {
+      "sha256": "389d13f071763cea1808e93be0e98982d0d99fdc50bb9bbb80f079fe394a0818",
+      "bytes": 1172
+    },
+    "additional/selected-blur/project.pcraft": {
+      "sha256": "6fbb1009e9f3f657049d5ae66ac243a4675f519fe7321090ccdf7ee17e12725d",
+      "bytes": 17478
+    },
+    "additional/selected-blur/protection-after.png": {
+      "sha256": "83e5ad4a37e8347717cbe7cb3baa339084119e9305375c37b00c758afe516139",
+      "bytes": 945
+    },
+    "additional/selected-blur/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/selected-blur/psd-inspection.json": {
+      "sha256": "6ba335ad497d1ab83d67ecbac8147a79af0b499fdc15f4c0d1febeee1843cc35",
+      "bytes": 2866
+    },
+    "additional/selected-blur.json": {
+      "sha256": "389d13f071763cea1808e93be0e98982d0d99fdc50bb9bbb80f079fe394a0818",
+      "bytes": 1172
+    },
+    "additional/selected-grain/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/selected-grain/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/selected-grain/capabilities.json": {
+      "sha256": "87c52677eef672120c4fb540ff0c354e4a42c6ffeb716a7bb35301cb78095aaa",
+      "bytes": 534
+    },
+    "additional/selected-grain/design.png": {
+      "sha256": "843733ed1696905e82ca1d01964562c10375f3408698e0940bd6b15304e5780a",
+      "bytes": 1413
+    },
+    "additional/selected-grain/design.psd": {
+      "sha256": "6aef825099ee99de15cd2476d419747bd5f16d450088aa1124b1236242922c3d",
+      "bytes": 14889
+    },
+    "additional/selected-grain/exchange-loss.json": {
+      "sha256": "736dcce079543cb254569fc93ec22b666bfc4dc78ddcbb59aa0713fb4d8a129e",
+      "bytes": 7192
+    },
+    "additional/selected-grain/filter-0-after.png": {
+      "sha256": "843733ed1696905e82ca1d01964562c10375f3408698e0940bd6b15304e5780a",
+      "bytes": 1413
+    },
+    "additional/selected-grain/filter-0-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/selected-grain/filter-contract.json": {
+      "sha256": "f3bab7d7d0ef5a69e666bdeba6f7a6c9662355f33f977e66a1924b0075a96d1b",
+      "bytes": 650
+    },
+    "additional/selected-grain/manifest.json": {
+      "sha256": "073a3d80de5ba66bd0e2bab00ccd767eda43b399d8d56d9a84f4dd707b3796bf",
+      "bytes": 3007
+    },
+    "additional/selected-grain/native.json": {
+      "sha256": "8a376916c1c1962bc79a22058800d7b1f324251184ddce4ea19f65f703ef0379",
+      "bytes": 2860
+    },
+    "additional/selected-grain/object-preservation.json": {
+      "sha256": "8e2cbbf6f69d8b21c252cd665111f766d57bf11c36a1306598eed7f2dcb8b08e",
+      "bytes": 112
+    },
+    "additional/selected-grain/operations.json": {
+      "sha256": "aeb88b8bce6df447420f1f4c0e382bbf121a120044d9f2f91aedd606c71f0673",
+      "bytes": 21619
+    },
+    "additional/selected-grain/pixel-protection.json": {
+      "sha256": "5e2e5927dcd632a666559ac2591af74230fcd5729eda3978765aadf9a2669331",
+      "bytes": 909
+    },
+    "additional/selected-grain/plan.json": {
+      "sha256": "8050fb34b02a787c973cb63915157ae7d5287417bf6f84c4a5138ff6232dfd1c",
+      "bytes": 1189
+    },
+    "additional/selected-grain/project.pcraft": {
+      "sha256": "96a18526950070b2747c371aa0b43dd4b1495b58ecb6fdd46b01b2ba271d1aba",
+      "bytes": 19476
+    },
+    "additional/selected-grain/protection-after.png": {
+      "sha256": "843733ed1696905e82ca1d01964562c10375f3408698e0940bd6b15304e5780a",
+      "bytes": 1413
+    },
+    "additional/selected-grain/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/selected-grain/psd-inspection.json": {
+      "sha256": "6ba335ad497d1ab83d67ecbac8147a79af0b499fdc15f4c0d1febeee1843cc35",
+      "bytes": 2866
+    },
+    "additional/selected-grain.json": {
+      "sha256": "8050fb34b02a787c973cb63915157ae7d5287417bf6f84c4a5138ff6232dfd1c",
+      "bytes": 1189
+    },
+    "additional/selected-sharpen/asset-background.png": {
+      "sha256": "55fc8088664a16fb778c70023d4158989676d59b12cf3d188d51ff298121f155",
+      "bytes": 259
+    },
+    "additional/selected-sharpen/asset-product.png": {
+      "sha256": "2d5616b9aacbc54c6c20720d3d4325f7d2f78e47d15673d9726db06ad8372dcf",
+      "bytes": 94
+    },
+    "additional/selected-sharpen/capabilities.json": {
+      "sha256": "0b3a10b48409f30b0205545cf4e320651041dedc5dc961a63069fb496fe369b0",
+      "bytes": 534
+    },
+    "additional/selected-sharpen/design.png": {
+      "sha256": "44cc2d3cc8333e67c6a79ebf1216fe93f99f211263de2ddd36fca927e241141e",
+      "bytes": 844
+    },
+    "additional/selected-sharpen/design.psd": {
+      "sha256": "ceaf69d188f3966177f7f19555d90478b28a51b0ac6c28047b6fc5311a47049b",
+      "bytes": 13769
+    },
+    "additional/selected-sharpen/exchange-loss.json": {
+      "sha256": "bb716f3688d1dd8bdcfa41b3671e27123730eced1a8caec6b3f11f1e146af10c",
+      "bytes": 7192
+    },
+    "additional/selected-sharpen/filter-0-after.png": {
+      "sha256": "44cc2d3cc8333e67c6a79ebf1216fe93f99f211263de2ddd36fca927e241141e",
+      "bytes": 844
+    },
+    "additional/selected-sharpen/filter-0-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/selected-sharpen/filter-contract.json": {
+      "sha256": "7995019e5178e1f39e107a2a2641de5f8daa97e7d4e60262b1ab290c5c472f14",
+      "bytes": 651
+    },
+    "additional/selected-sharpen/manifest.json": {
+      "sha256": "7b3598e99cdb9744baf6720cfc3f2b192b29fab5ccf2f4188ca7f0f01d7cdf6e",
+      "bytes": 3007
+    },
+    "additional/selected-sharpen/native.json": {
+      "sha256": "8a376916c1c1962bc79a22058800d7b1f324251184ddce4ea19f65f703ef0379",
+      "bytes": 2860
+    },
+    "additional/selected-sharpen/object-preservation.json": {
+      "sha256": "8e2cbbf6f69d8b21c252cd665111f766d57bf11c36a1306598eed7f2dcb8b08e",
+      "bytes": 112
+    },
+    "additional/selected-sharpen/operations.json": {
+      "sha256": "14b5b725d32ab264d12a1666a8589d584a9a077130da9c10e32c56ebd25adbaf",
+      "bytes": 21503
+    },
+    "additional/selected-sharpen/pixel-protection.json": {
+      "sha256": "5e2e5927dcd632a666559ac2591af74230fcd5729eda3978765aadf9a2669331",
+      "bytes": 909
+    },
+    "additional/selected-sharpen/plan.json": {
+      "sha256": "50c07032ac060706ebd6d3eb80cf789e565fbb85bc4d4a9fc5e96dfa062a6972",
+      "bytes": 1137
+    },
+    "additional/selected-sharpen/project.pcraft": {
+      "sha256": "118466fa6a57eb5dd2b11f4f8c2a97fb08936a53f3dffd554e0b861473fb3889",
+      "bytes": 17075
+    },
+    "additional/selected-sharpen/protection-after.png": {
+      "sha256": "44cc2d3cc8333e67c6a79ebf1216fe93f99f211263de2ddd36fca927e241141e",
+      "bytes": 844
+    },
+    "additional/selected-sharpen/protection-before.png": {
+      "sha256": "65775116f1c3d05853887698acf734244fb72b78ac76c39cdaa0c7e24dcc4060",
+      "bytes": 766
+    },
+    "additional/selected-sharpen/psd-inspection.json": {
+      "sha256": "6ba335ad497d1ab83d67ecbac8147a79af0b499fdc15f4c0d1febeee1843cc35",
+      "bytes": 2866
+    },
+    "additional/selected-sharpen.json": {
+      "sha256": "50c07032ac060706ebd6d3eb80cf789e565fbb85bc4d4a9fc5e96dfa062a6972",
+      "bytes": 1137
+    },
+    "additional/sharpen-wrong-mask/failure.json": {
+      "sha256": "34ff2c73b343e1b44851f7bdf7b268c9575dca5bbcf4aeca5287d62f941116ee",
+      "bytes": 1301
+    },
+    "additional/sharpen-wrong-mask.json": {
+      "sha256": "7dce1d28f4ca315607c5e7efdd7d9ea5f8664cc26de5d450b170d12d7b00e8b7",
+      "bytes": 1136
+    },
+    "additional/sharpen-wrong-method/failure.json": {
+      "sha256": "7aca045ec6e1d1ea46b09d23de3e500d21bd5c628fe3e6a9000ebcf0094a35e2",
+      "bytes": 1380
+    },
+    "additional/sharpen-wrong-method.json": {
+      "sha256": "7fe11d5446f7d64c63751d16f03960ed72808c5567402518343f6049c3fa4ad8",
+      "bytes": 1136
+    },
+    "additional/sharpen-wrong-selection/failure.json": {
+      "sha256": "6ada397910f149d7a7c5aa0723aacf59954ab08b122a1d0fd171b24552bad8b3",
+      "bytes": 1301
+    },
+    "additional/sharpen-wrong-selection.json": {
+      "sha256": "36547f8c01ada4d0f3bff4349967b9251c69bacecc0caebb971413b051ddd9f9",
+      "bytes": 1138
+    },
+    "additional/sharpen-wrong-target/failure.json": {
+      "sha256": "b14d35be7302390c1f26c29bbef1622ce250d3b6b2a7749b8969eae62efb3941",
+      "bytes": 1301
+    },
+    "additional/sharpen-wrong-target.json": {
+      "sha256": "b6cb61b25a579545446eff27e366a158629e97e316614255f69f2bea8e79bb1a",
+      "bytes": 1137
+    },
+    "additional/unsafe-nested-variant/failure.json": {
+      "sha256": "0c1885f0db25968ecb349b9107a538c6bcd2aefe4279a6c520dac3551954019c",
+      "bytes": 1573
+    },
+    "additional/unsafe-nested-variant.json": {
+      "sha256": "bb371cf66df0e8ae613844873486454010d954499ab9a8f19b2d64569c11ce43",
+      "bytes": 550
+    },
+    "additional/unverified-transform/failure.json": {
+      "sha256": "831921a736205051a447250e6115f862c58b73dbfbb34eda6db9e6584baad2f2",
+      "bytes": 1561
+    },
+    "additional/unverified-transform.json": {
+      "sha256": "df85ff5319ee0aee15a908fc2006444880eb6930de048e55ced42c60ae1f90ce",
+      "bytes": 404
+    }
+  },
+  "finishedAt": "2026-10-08T12:09:26.231956+00:00"
+}

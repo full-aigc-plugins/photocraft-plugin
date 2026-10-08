@@ -110,7 +110,14 @@
     "12.8": "docs/evidence/optimization/task-progress.json",
     "4.7": "docs/evidence/optimization/task-progress.json",
     "4.8": "docs/evidence/optimization/task-progress.json",
-    "13.1": "docs/evidence/optimization/task-progress.json"
+    "13.1": "docs/evidence/optimization/task-progress.json",
+    "4.3": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "4.6": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "4.9": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "12.3": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "12.6": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "12.9": "docs/evidence/optimization/domain-acceptance-audit.json",
+    "12.15": "docs/evidence/optimization/domain-acceptance-audit.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -159,10 +166,13 @@
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 113,
-      "open": 44,
-      "newlyCompleted": 51
+      "completed": 120,
+      "open": 37,
+      "newlyCompleted": 58
     },
-    "publicationEvidence": "docs/evidence/optimization/release-publication.json"
-  }
+    "publicationEvidence": "docs/evidence/optimization/release-publication.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/fixed-domain-regression.json"
+  },
+  "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
+  "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open"
 }

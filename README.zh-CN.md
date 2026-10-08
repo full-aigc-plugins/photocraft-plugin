@@ -2,8 +2,10 @@
 
 开发版本 dev.39 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.35。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
-开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划仍为113/157项完成，44项门禁开放。
+开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为120/157项完成，37项门禁开放。
 
+
+固定安装领域验收新增关闭7项任务：递归图层、蒙版保护、中文文字及复杂布局／滤镜的16个规范场景通过。不可获取的布局指标、可编辑智能滤镜和非 RGB8 保护明确拒绝；PSD 必要功能损失等门禁仍开放。见[验收与复验方式](docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。
 ## 2026-10-08 优化规划
 
 Dreamina 对比分析已纳入现有 OpenSpec。本开发实现包含严格入口与批次校验、持久任务预算、可移动血缘包、保存后的蒙版事实和原生文字布局检查。[任务进展](docs/evidence/optimization/task-progress.json) 记录已验证完成项与全部剩余门禁；[候选回归](docs/evidence/optimization/candidate-validation.json) 绑定实际测试源码。完整 V1、真实宿主／模型及独立创作接受仍开放；固定安装证据单独记录。
