@@ -26,6 +26,9 @@ test('real native task, fresh readonly reopening, bounded title revision, source
   // 合成评估器回执仅测试协调合同，不作为真实独立创作验收。
   review.import(task.id,{requestId:req.id,projectSha256:req.projectSha256,previewSha256:req.previewSha256,manifestSha256:req.manifestSha256,referencesSha256:req.referencesSha256,briefSha256:req.briefSha256,rubricVersion:req.rubricVersion,evaluator:{kind:'external',identity:'test-fixture-not-production-review',version:'test-fixture/v1',contextIsolation:'test-fixture'},verdict:'FAIL',gaps:[{id:'title',layer:manifest.bindings.title.layer,property:'text',reason:'OLD must become NEW'}]});
   assert.throws(()=>review.propose(task.id,{baseProjectSha256:req.projectSha256,baseManifestSha256:req.manifestSha256,authorizationRef:'test-authorization',operations:[{command:'type.edit',params:{layer:manifest.bindings.title.layer,text:'OLD'}}]}),/revision_no_improvement/);
+  const beforeInvalid=JSON.stringify({tasks:ledger.db.prepare('SELECT * FROM tasks ORDER BY id').all(),events:ledger.db.prepare('SELECT * FROM events ORDER BY sequence').all()});
+  await assert.rejects(()=>runner.revise(task.id,{baseProjectSha256:req.projectSha256,baseManifestSha256:req.manifestSha256,authorizationRef:'test-authorization',operations:[{command:'type.edit',params:{layer:manifest.bindings.title.layer,text:123}}]}),(error:any)=>{assert.equal(error.phase,'validation');assert.equal(error.outcome,'not_executed');assert.equal(error.fieldPath,'$.plan.operations[0].params.text');return true;});
+  assert.equal(JSON.stringify({tasks:ledger.db.prepare('SELECT * FROM tasks ORDER BY id').all(),events:ledger.db.prepare('SELECT * FROM events ORDER BY sequence').all()}),beforeInvalid);assert.deepEqual(readFileSync(join(root,'delivery/project.pcraft')),original);
   const child=await runner.revise(task.id,{baseProjectSha256:req.projectSha256,baseManifestSha256:req.manifestSha256,authorizationRef:'test-authorization',operations:[{command:'type.edit',params:{layer:manifest.bindings.title.layer,text:'NEW'}}]});
   assert.deepEqual(child.request.plan.psdPolicy,{requiredFeatures:['structure','text']});
   const revised=await runner.run(child.id);assert.equal(revised.technical.status,'PASS');assert.equal(revised.creative.status,'NOT_RUN');assert.deepEqual(readFileSync(join(root,'delivery/project.pcraft')),original);
@@ -55,5 +58,25 @@ test('real masked local adjustment revision preserves mask tiles and every prote
   const protection=JSON.parse(readFileSync(join(revised.request.output,'pixel-protection.json'),'utf8'));assert.equal(protection.regions[0].changedPixels,0);
   const model=JSON.parse(readFileSync(join(revised.request.output,'native.json'),'utf8'));assert.equal(model.layers.find((row:any)=>row.id===layer).adjustment.BrightnessContrast.brightness,-30);
   const {spawnSync}=await import('node:child_process');const pixels=spawnSync(options.python,['-I','-B','-c','from PIL import Image;import sys,json;a=Image.open(sys.argv[1]).convert("RGB");b=Image.open(sys.argv[2]).convert("RGB");print(json.dumps({"before":a.getpixel((16,24)),"after":b.getpixel((16,24))}))',join(root,'delivery/design.png'),join(revised.request.output,'design.png')],{encoding:'utf8'});assert.equal(pixels.status,0,pixels.stderr);const value=JSON.parse(pixels.stdout);assert.ok(value.after[0]<value.before[0]);ledger.close();
+ }finally{rmSync(root,{recursive:true,force:true});}
+});
+
+test('real save followed by an ambiguous workflow reply retains a native checkpoint without automatic verification or replay', {skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},async()=>{
+ const {cpSync,writeFileSync,renameSync,existsSync}=await import('node:fs');const {spawnSync}=await import('node:child_process');
+ const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-native-reply-')));
+ try{
+  const originalSkill=process.env.PHOTOCRAFT_SKILL_ROOT!;const skillRoot=join(root,'fault-skill');cpSync(originalSkill,skillRoot,{recursive:true});
+  const scripts=join(skillRoot,'scripts');renameSync(join(scripts,'workflow.py'),join(scripts,'original_workflow.py'));
+  const calls=join(root,'calls.json');writeFileSync(calls,'0');
+  // 故障只作用于本次私有副本的保存后stdout，原生编辑与保存均真实执行。
+  writeFileSync(join(scripts,'workflow.py'),'import subprocess,sys\nfrom pathlib import Path\nr=subprocess.run([sys.executable,"-I","-B",str(Path(__file__).with_name("original_workflow.py")),*sys.argv[1:]],capture_output=True,text=True)\nif "--check" in sys.argv or r.returncode: print(r.stdout,end="");sys.exit(r.returncode)\np=Path('+JSON.stringify(calls)+');p.write_text(str(int(p.read_text())+1))\nprint(\'{"schema":"photocraft-delivery/v1","schema":"photocraft-delivery/v1"}\')\n');
+  const python=process.env.PHOTOCRAFT_PYTHON??'python3';const ledger=new Ledger(join(root,'state'));const runner=new Runner(ledger,{skillRoot,python});
+  const task=ledger.create({idempotencyKey:'post-save',brief:'Retain a real native checkpoint after a reply fault',plan:{document:{width:32,height:32,background:'#ffffff'},operations:[{command:'layer.new.layer',params:{name:'Checkpoint'}}],exports:[{format:'png'}]},output:join(root,'delivery'),authorization:{ref:'fixture',writeRoot:root},budget:{deadline:Date.now()+120000,maxRevisions:1,reserveBytes:1048576}});
+  const originalVerify=runner.verify.bind(runner);let verifications=0;runner.verify=async(id)=>{verifications++;return originalVerify(id);};
+  const result=await runner.run(task.id);assert.equal(result.state,'reconciling');assert.equal(result.executionResult.outcome,'unknown');assert.equal(result.executionResult.phase,'reply_received');assert.equal(result.technical.status,'NOT_RUN');assert.equal(verifications,0);assert.equal(result.replayAllowed,false);assert.equal(readFileSync(calls,'utf8'),'1');assert.equal(existsSync(join(task.request.output,'project.pcraft')),true);
+  const retained=readFileSync(join(task.request.output,'project.pcraft'));const probe=spawnSync(python,['-I','-B',join(originalSkill,'scripts/cli.py'),'--','info',join(task.request.output,'project.pcraft')],{encoding:'utf8',timeout:30000});assert.equal(probe.status,0,probe.stdout+probe.stderr);assert.ok(JSON.parse(probe.stdout).layers.some((layer:any)=>layer.name==='Checkpoint'));
+  await assert.rejects(()=>runner.run(task.id),/reconcile_required/);assert.equal(readFileSync(calls,'utf8'),'1');assert.deepEqual(readFileSync(join(task.request.output,'project.pcraft')),retained);
+  // 明确核对操作只观察已有产物；原提交回复仍是unknown，不追加编辑。
+  const checked=await runner.reconcile(task.id);assert.equal(checked.technical.status,'PASS');assert.equal(checked.executionResult.outcome,'unknown');assert.equal(readFileSync(calls,'utf8'),'1');assert.deepEqual(readFileSync(join(task.request.output,'project.pcraft')),retained);ledger.close();
  }finally{rmSync(root,{recursive:true,force:true});}
 });

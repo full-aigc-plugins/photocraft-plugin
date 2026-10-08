@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { existsSync } from 'node:fs';
 import { Ledger } from './harness/ledger.ts';
 import { Runner } from './harness/runner.ts';
 import { mapArtifact } from './protocol/artifact.ts';
 import { exportBundle,verifyBundle } from './protocol/bundle.ts';
 import { Review } from './evaluation/review.ts';
 import { readJson, safePath } from './protocol/files.ts';
+import { preflightRequest, skillIdentity } from './harness/preflight.ts';
+import { OperationError, validationError } from './protocol/operation_error.ts';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const actions=['create','run','status','reconcile','verify','judge','review-import','import-judge','revise','stop','accept','artifact','bundle-export','bundle-check'];
@@ -26,9 +29,31 @@ try {
   else {
   if(!options['--state-dir'])throw new Error('state_directory_required');
   const input=action==='create'?readJson(options['--request']):['review-import','import-judge'].includes(action)?readJson(options['--receipt']):action==='revise'?readJson(options['--proposal']):undefined;
+  const state=safePath(options['--state-dir']);
+  if(action!=='create' && !options['--task'])throw validationError('task_id_required','$.task');
+  if(action!=='create' && !existsSync(join(state,'tasks.sqlite')))throw new Error('ledger_missing');
+  const adapterOptions={skillRoot:options['--skill-root']??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']};
+  let existing:any;
+  if(action==='create') {
+   try {Ledger.validateRequest(input);}
+   catch(error){if(error instanceof OperationError)throw error;const message=error instanceof Error?error.message:String(error);throw validationError(message.split(':',1)[0],'$',message);}
+   // 已有同身份任务不重新预检其已存在输出，也不打开可写账本。
+   if(existsSync(join(state,'tasks.sqlite'))) {
+    const prior=new Ledger(state,{readOnly:true});
+    try{existing=prior.existing(input);}finally{prior.close();}
+   }
+   if(!existing) {
+    if(input.parentTask)throw validationError('parent_task_requires_revision','$.parentTask');
+    const identity=skillIdentity(adapterOptions);preflightRequest(input,adapterOptions);
+    if(skillIdentity(adapterOptions).sha256!==identity.sha256)throw new OperationError('skill_source_changed',{code:'skill_source_changed',phase:'validation',outcome:'not_executed',category:'validation_failed',fieldPath:'$.skillRoot',recoveryAction:'inspect'});
+    Ledger.validateRequest(input);
+   }
+  }
+  if(existing) {console.log(JSON.stringify(existing));}
+  else {
   const readOnly=['status','artifact','bundle-export'].includes(action);
-  ledger=new Ledger(safePath(options['--state-dir']),{readOnly});
-  const runner=new Runner(ledger,{skillRoot:options['--skill-root']??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']});
+  ledger=new Ledger(state,{readOnly});
+  const runner=new Runner(ledger,adapterOptions);
   const id=options['--task'];if(action!=='create' && !id)throw new Error('task_id_required');
   let result:any;
   switch(action) {
@@ -48,8 +73,10 @@ try {
   }
   console.log(JSON.stringify(result));
   }
+  }
  }
 } catch(error) {
  const message=error instanceof Error?error.message:String(error);const code=message.split(':',1)[0];
- console.log(JSON.stringify({result:'FAIL',code,error:message,retryable:false,recoveryAction:['reconcile_required','adapter_failed'].includes(code)?'reconcile':'inspect'}));process.exitCode=1;
+ const detail=error instanceof OperationError?{code:error.code,phase:error.phase,outcome:error.outcome,retryable:error.retryable,recoveryAction:error.recoveryAction,category:error.category,fieldPath:error.fieldPath}:{};
+ console.log(JSON.stringify({result:'FAIL',code,error:message,retryable:false,recoveryAction:['reconcile_required','adapter_failed'].includes(code)?'reconcile':'inspect',...detail}));process.exitCode=1;
 } finally {ledger?.close();}

@@ -1,12 +1,18 @@
-import { spawn, spawnSync } from 'node:child_process';
-import { existsSync, writeFileSync, readdirSync, mkdtempSync, rmSync } from 'node:fs';
+import { spawn } from 'node:child_process';
+import { existsSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
-import { canonical, digest, fileDigest, readJson, safePath } from '../protocol/files.ts';
+import { canonical, digest, fileDigest, readJson, safePath, within } from '../protocol/files.ts';
 import { Ledger } from './ledger.ts';
 import { mapArtifact } from '../protocol/artifact.ts';
 import { Review } from '../evaluation/review.ts';
+import { preflightRequest, pythonReply, reportedError, skillIdentity, runtimePlatformKey } from './preflight.ts';
+import { strictJson } from '../protocol/strict_json.ts';
+import { OperationError } from '../protocol/operation_error.ts';
+
+const object=(value:any)=>value!==null && typeof value==='object' && !Array.isArray(value);
+const hex=(value:any)=>typeof value==='string' && /^[a-f0-9]{64}$/.test(value);
+const invalidVerification=()=>new OperationError('unexpected_verification_result',{code:'unexpected_verification_result',phase:'verification',outcome:'unknown',recoveryAction:'reconcile'});
 
 /** 所有编辑复用独立技能执行器；账本先登记意图，断连后只核对。 */
 export class Runner {
@@ -15,32 +21,25 @@ export class Runner {
  constructor(ledger: Ledger, options: { skillRoot: string; python: string; runtimeHome?: string }) { this.ledger=ledger; this.options=options; }
 
  identity() {
-  const root=safePath(this.options.skillRoot);const files: Record<string,string>={};
-  for (const folder of ['scripts','references']) for (const name of readdirSync(join(root,folder)).sort()) {
-   if (name.endsWith('.py') || name.endsWith('.json')) files[folder+'/'+name]=fileDigest(join(root,folder,name));
-  }
-  return { sha256:digest(canonical(files)), runtimeLockSha256:files['scripts/runtime.lock.json'], files };
+  return skillIdentity(this.options);
  }
  python(script: string,args: string[]) {
-  const result=spawnSync(this.options.python,['-I','-B',join(safePath(this.options.skillRoot),'scripts',script),...args],{encoding:'utf8',timeout:120_000,maxBuffer:2*1024*1024,env:{...process.env,PYTHONDONTWRITEBYTECODE:'1'}});
-  if(result.error || result.status!==0) throw new Error('adapter_failed: '+(result.stdout || result.error?.message || result.stderr).slice(0,2048));
-  return JSON.parse(result.stdout);
+  return pythonReply(this.options,script,args);
+ }
+ /** 创建、执行和修订共用实际技能预检；调用不登记任务意图。 */
+ preflight(request:any) {
+  const identity=this.identity();
+  preflightRequest(request,this.options,(script,args)=>this.python(script,args));
+  if(this.identity().sha256!==identity.sha256)throw new OperationError('skill_source_changed',{code:'skill_source_changed',phase:'validation',outcome:'not_executed',category:'validation_failed',fieldPath:'$.skillRoot',recoveryAction:'inspect'});
+  return identity;
  }
  async run(id: string) {
   let task=this.ledger.status(id);
   if(task.state!=='planned' || task.attempted) throw new Error('reconcile_required');
   if(task.request.mutableProject) throw new Error('mutable_desktop_execution_not_supported');
-  const identity=this.identity();const planPath=join(this.ledger.root,id+'-plan.json');
+  const identity=this.preflight(task.request);const planPath=join(this.ledger.root,id+'-plan.json');
   const args=[planPath,'--output',task.request.output];
   if(task.request.source) args.push('--source',task.request.source);
-  // 预检文件只存在于本次私有临时目录；拒绝时不写任务、事件或恢复记录。
-  const temporary=mkdtempSync(join(tmpdir(),'photocraft-plan-check-'));
-  try {
-   const checkPath=join(temporary,'plan.json');
-   writeFileSync(checkPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
-   this.python('workflow.py',[checkPath,...args.slice(1),'--check']);
-  } finally {rmSync(temporary,{recursive:true,force:true});}
-  if(this.identity().sha256!==identity.sha256) throw new Error('skill_source_changed');
   writeFileSync(planPath,canonical(task.request.plan),{flag:'wx',mode:0o600});
   const epoch=this.ledger.claim(id);
   this.ledger.update(id,epoch,current=>{current.executionIdentity=identity;current.preflight={status:'PASS'};});
@@ -49,7 +48,8 @@ export class Runner {
   const child=spawn(this.options.python,['-I','-B',join(this.options.skillRoot,'scripts/workflow.py'),...args],{detached:process.platform!=='win32',stdio:['ignore','pipe','pipe'],env:{...process.env,PYTHONDONTWRITEBYTECODE:'1',CRAFT_STOP_FILE:join(this.ledger.root,id+'.stop')}});
   this.ledger.update(id,epoch,current=>{current.worker={pid:process.pid,childPid:child.pid,token:workerToken,startedAt:Date.now()};});
   let bytes=0;let output='';let cancelled=false;let stopStarted=0;let spawnError='';
-  child.stdout.on('data',data=>{bytes+=data.length;if(bytes<=2*1024*1024)output+=data.toString();});
+  child.stdout.setEncoding('utf8');
+  child.stdout.on('data',(data:string)=>{bytes+=Buffer.byteLength(data);if(bytes<=2*1024*1024)output+=data;});
   child.stderr.on('data',()=>{});
   child.on('error',error=>{spawnError=error.message;});
   const timer=setInterval(()=>{
@@ -79,13 +79,34 @@ export class Runner {
    if(groupGone)return this.ledger.transition(id,epoch,'cancelled');
    return this.ledger.status(id);
   }
-  if(cancelled || exit!==0 || spawnError || bytes>2*1024*1024) {
-   if(task.state!=='reconciling')this.ledger.transition(id,epoch,'reconciling');
-   return this.reconcile(id);
+  let reply:any;
+  try {
+   if(spawnError || bytes>2*1024*1024)throw new Error('worker_reply_unavailable');
+   reply=strictJson(output);
+   const failure=reportedError(reply);if(failure)throw failure;
+   if(exit!==0)throw new Error('worker_failed_without_contract');
+   const manifest=readJson(join(task.request.output,'manifest.json'));
+   const runtime=readJson(join(this.options.skillRoot,'scripts/runtime.lock.json'));
+   const expectedRuntime=runtime.artifacts?.[runtimePlatformKey()]?.binarySha256;
+   if(!object(reply) || reply.schema!=='photocraft-delivery/v1' || !object(reply.files)
+      || !hex(reply.files['project.pcraft']) || !hex(reply.files['design.png'])
+      || !hex(expectedRuntime) || reply.runtimeSha256!==expectedRuntime
+      || !Array.isArray(reply.outputs) || canonical(reply)!==canonical(manifest))throw new Error('invalid_execution_reply');
+  } catch(error) {
+   // 真实调用已经结束；回复不明确时只保全现场，不自动核验或重放。
+   this.ledger.transition(id,epoch,'reconciling');
+   return this.ledger.update(id,epoch,current=>{
+    const failure=reportedError(reply);
+    current.executionResult={...current.executionResult,code:failure?.code??'outcome_unknown',phase:failure?.phase??(spawnError?'submitted':'reply_received'),outcome:failure?.outcome??'unknown',retryable:false,recoveryAction:failure?.recoveryAction??'reconcile',...(failure?.category?{category:failure.category}:{}),...(failure?.fieldPath?{fieldPath:failure.fieldPath}:{}),replyFailureCode:error instanceof OperationError?error.code:'invalid_execution_reply'};
+    current.replayAllowed=false;current.recoveryAction='inspect_preserved_artifacts';
+   });
   }
-  try{return await this.verify(id);}catch(error){
+  try{
+   await this.verify(id);
+   return this.ledger.update(id,epoch,current=>{current.executionResult.phase='reply_validated';current.executionResult.outcome='succeeded';});
+  }catch(error){
    const current=this.ledger.status(id);if(current.state!=='reconciling')this.ledger.transition(id,epoch,'reconciling');
-   return this.ledger.update(id,epoch,value=>{value.replayAllowed=false;value.reconcileError=String(error);value.recoveryAction='inspect_preserved_artifacts';});
+   return this.ledger.update(id,epoch,value=>{value.replayAllowed=false;value.reconcileError=String(error);value.verificationError={code:error instanceof OperationError?error.code:'technical_verification_unproven',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:error instanceof OperationError?error.recoveryAction:'reconcile'};value.recoveryAction='inspect_preserved_artifacts';});
   }
  }
  async reconcile(id: string) {
@@ -123,14 +144,26 @@ export class Runner {
   if(!['running','reconciling','verifying'].includes(task.state))throw new Error('verification_not_ready');
   if(!task.executionIdentity || task.executionIdentity.sha256!==this.identity().sha256)throw new Error('skill_source_changed');
   const output=safePath(task.request.output);
-  this.python('delivery.py',[output]);
+  const integrity=this.python('delivery.py',[output]);
+  if(integrity?.result==='FAIL' && typeof integrity.error==='string')throw new OperationError(integrity.error,{code:'technical_verification_failed',phase:'verification',outcome:'failed',recoveryAction:'inspect'});
+  if(!object(integrity) || integrity.schema!=='photocraft-delivery-integrity/v1' || integrity.result!=='PASS'
+     || Object.hasOwn(integrity,'error') || !hex(integrity.manifestSha256) || !hex(integrity.nativeSha256)
+     || !Number.isSafeInteger(integrity.files) || integrity.files<=0)throw invalidVerification();
+  const manifest=readJson(join(output,'manifest.json'));const manifestSha256=fileDigest(join(output,'manifest.json'));
+  if(!object(manifest) || !object(manifest.files) || integrity.manifestSha256!==manifestSha256
+     || integrity.nativeSha256!==manifest.files['project.pcraft'] || integrity.files!==Object.keys(manifest.files).length)throw invalidVerification();
   const nativeArgs=[output];if(this.options.runtimeHome)nativeArgs.push('--runtime-home',safePath(this.options.runtimeHome));
   const reopened=this.python('native_verify.py',nativeArgs);
-  if(reopened.result!=='PASS')throw new Error('native_reopen_failed');
-  const manifest=readJson(join(output,'manifest.json'));
+  if(reopened?.result==='FAIL' && typeof reopened.error==='string')throw new OperationError(reopened.error,{code:'technical_verification_failed',phase:'verification',outcome:'failed',recoveryAction:'inspect'});
+  const runtime=readJson(join(this.options.skillRoot,'scripts/runtime.lock.json'));
+  const expectedRuntime=runtime.artifacts?.[runtimePlatformKey()]?.binarySha256;
+  if(!object(reopened) || reopened.schema!=='photocraft-native-verification/v1' || reopened.result!=='PASS'
+     || Object.hasOwn(reopened,'error') || reopened.manifestSha256!==manifestSha256 || reopened.projectSha256!==integrity.nativeSha256
+     || !hex(expectedRuntime) || reopened.runtimeSha256!==expectedRuntime || manifest.runtimeSha256!==expectedRuntime
+     || fileDigest(join(output,'manifest.json'))!==manifestSha256)throw invalidVerification();
   if(!manifest.files['design.png'])throw new Error('preview_required');
   const files: Record<string,string>={};
-  for(const [name,sha]of Object.entries(manifest.files)) {const path=safePath(join(output,name));if(fileDigest(path)!==sha)throw new Error('candidate_changed');files[path]=sha as string;}
+  for(const [name,sha]of Object.entries(manifest.files)) {const path=within(join(output,name),output);if(fileDigest(path)!==sha)throw new Error('candidate_changed');files[path]=sha as string;}
   files[join(output,'manifest.json')]=fileDigest(join(output,'manifest.json'));
   if(task.state!=='verifying')task=this.ledger.transition(id,task.epoch,'verifying');
   const evidence={status:'PASS',projectSha256:manifest.files['project.pcraft'],previewSha256:manifest.files['design.png'],manifestSha256:files[join(output,'manifest.json')],files,nativeReopen:reopened,sourceSha256:task.executionIdentity.sha256};
@@ -160,10 +193,12 @@ export class Runner {
   if(contract.protectedRegions.length)plan.protectedRegions=contract.protectedRegions;
   const adjusted=contract.operations.filter((operation:any)=>operation.command==='layer.setAdjustment');
   if(adjusted.length)plan.assertions=adjusted.map((operation:any)=>({layer:operation.params.layer,kind:'Adjustment',hasMask:true,maskEnabled:true}));
+  this.preflight({...task.request,source:task.request.output,output,plan});
   return this.ledger.transaction(()=>{
    // 预算在调度前消耗，重启不能撤回；后续失败需用户核对。
    const current=this.ledger.status(id);
    if(current.revisions!==task.revisions || current.creative.receiptSha256!==contract.gapReceiptSha256)throw new Error('revision_conflict');
+   if(canonical(new Review(this.ledger).propose(id,proposal))!==canonical(contract))throw new Error('revision_conflict');
    const root=this.ledger.revisionRoot(current);
    if(root.revisions>=root.request.budget.maxRevisions || Date.now()>=root.request.budget.deadline)throw new Error('budget_exhausted');
    if(root.id!==current.id){root.revisions++;this.ledger.save(root,'descendant_revision_reserved');}

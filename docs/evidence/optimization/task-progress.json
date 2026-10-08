@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-task-progress/v1",
-  "status": "DEVELOPMENT_RELEASE_VERIFIED_FULL_PLAN_INCOMPLETE",
+  "status": "UNPUBLISHED_HARNESS_CANDIDATE_FULL_PLAN_INCOMPLETE",
   "specAuthority": "openspec/changes/establish-v1-plugin",
   "newlyCompletedTaskIds": [
     "3.1",
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Source39 and fixed plugin44 plan runners:52 preflight and48 native/desktop cases each pass; raw CLI gap is reproduced in both source and actual installation; Harness audit remains open. No task count reduction.",
+  "scope": "Published source40/plugin45 remain immutable. Unpublished plugin-owned Harness candidate covers create before ledger, run propagation, revise before budget, strict and bound replies, and actual native post-save stdout fault without automatic verification/replay. No tasks closed; full9.6 and28 total gates remain open.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -210,10 +210,10 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 231,
-    "skillsReusedFrom": "entry-source-validation.json",
+    "skills": 234,
+    "skillsReusedFrom": "native-argv-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
-    "pluginTypeScript": 28,
+    "pluginTypeScript": 49,
     "pluginPython": 48,
     "skipped": 0,
     "checks": 14,
@@ -231,9 +231,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "entry-post-release-validation.json",
+  "releaseCandidateEvidence": "harness-entry-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "entry-release-publication.json",
+  "publicationEvidence": "native-argv-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -257,5 +257,17 @@
   "fixedPsdAcceptanceEvidence": "psd-acceptance-audit.json",
   "fixedFlatAcceptanceEvidence": "flat-acceptance-audit.json",
   "fixedCapabilityAcceptanceEvidence": "capability-acceptance-audit.json",
-  "entryContractEvidence": "entry-contract/coverage-audit.json"
+  "entryContractEvidence": "harness-entry/candidate.json",
+  "previousPublishedVerification": {
+    "skills": 234,
+    "pluginTypeScript": 29,
+    "pluginPython": 48,
+    "checks": 14,
+    "skipped": 0,
+    "sourceUnchanged": true,
+    "pluginRef": "v0.1.0-dev.45",
+    "skillsRef": "v0.1.0-dev.40",
+    "evidence": "native-argv-release-validation.json"
+  },
+  "closedThisRun": []
 }

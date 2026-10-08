@@ -301,3 +301,6 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 9.6未发布候选补充：原生argv预检与Runner失败预检不写持久记录已实现，见 `docs/evidence/optimization/native-argv/candidate.json` 与双语原生argv文档。create／修订、流式入口及原生多步骤回复合同尚未完成，固定安装仍开放，不勾选本项。
 
 2026-10-08 发布补充：技能源dev.40／插件dev.45承载原生argv安装前预检及Harness失败预检状态保全；发布不改变PC-TX-005完整验收，9.6继续开放，本次关闭0项。版本绑定验证与公开包证据见docs/evidence/optimization/native-argv-release-validation.json及native-argv-publication.json。
+
+
+2026-10-09 Harness候选补充：create在可写账本前预检并保留幂等返回；run传播严格字段且仅完整核验后标记reply_validated；revise在预算／子任务前验证实际计划并事务复核。真实保存后重复键stdout保全检查点，自动核验／重放为零；非零退出与UTF-8跨块也有回归；只读查询使用私有数据库／日志快照，活跃WAL可见、原WAL／SHM不变，复制期间提交明确拒绝并保留写方提交。候选49项TypeScript、48项Python及14项检查通过，234项源测试按相同指纹与层级复用；完整流式／逐命令／检查点／固定安装合同仍开放，9.6不勾选，关闭0项。见docs/evidence/optimization/harness-entry/candidate.json及双语Harness入口文档。

@@ -23,3 +23,5 @@ Harness运行预检不再提前写入账本目录的计划或记录失败事件�
 本次开发发行将上述候选修复纳入固定快照；旧版本标签与压缩包保持不可变。技能源dev.40已公开，插件通过快照工具按标签与提交核验后接收13项技能，未手改管理快照。发布前13项检查通过：234项源测试、29项TypeScript及48项Python，零跳过。新快照组合回归与公开安装证据记录在 `native-argv-release-validation.json` 和 `native-argv-publication.json`；公开安装完成前不声称通过。任务9.6仍开放，129/157完成，本次关闭0项。
 
 公开dev.45／源dev.40复验完成：公开ZIP摘要及归档提交匹配标签，前一版本标签与附件不变；发布提交与标签4项CI通过。隔离Codex发现14项技能，零加载错误；安装副本3项argv测试、13项单技能零安装拒绝及全部29项Harness测试通过，零跳过，安装树不变。源仓无CI，234项为本地证据。见[发行证据](evidence/optimization/native-argv-publication.json)。本次关闭0项，9.6和其余28项总门禁继续开放。
+
+2026-10-09：上述create／run／revise缺口已在未发布Harness候选补齐预检及主要回复绑定；公开dev.45本身不变，流式／逐命令／检查点与新固定安装仍开放。见[当前候选范围](PhotoCraft-Harness-Entry-Contract.zh_CN.md)。

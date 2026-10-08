@@ -677,7 +677,7 @@
         "9.6"
       ],
       "owner": "Skills owner",
-      "status": "fixed-plan-runners-verified-all-entry-acceptance-partial",
+      "status": "unpublished-harness-entry-candidate-all-entry-acceptance-partial",
       "optimizationScope": {
         "date": "2026-10-08",
         "status": "candidate-implemented-partial-acceptance",
@@ -700,8 +700,8 @@
         "status": "verified-minimum-implementation-full-acceptance-open",
         "evidence": "docs/evidence/optimization/task-progress.json"
       },
-      "evidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
-      "scope": "Candidate and fixed plugin44/source39 workflow/commands/desktop52/48 each pass; cli.py passthrough preflight gap reproduced in both scopes, Harness audit pending; task9.6 open"
+      "evidence": "docs/evidence/optimization/harness-entry/candidate.json",
+      "scope": "Published dev.45/source40 unchanged. New Harness create/run/revise preflight and reply candidate passes49 TypeScript/48 Python checks with3 actual native tests; raw/streaming/checkpoint and fixed-candidate matrix remain open;9.6 unchecked."
     },
     {
       "requirement": "PC-RL-003",

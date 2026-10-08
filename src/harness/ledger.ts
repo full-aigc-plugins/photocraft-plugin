@@ -1,9 +1,11 @@
 import { DatabaseSync } from 'node:sqlite';
 import { randomUUID } from 'node:crypto';
-import { chmodSync, existsSync, mkdirSync, statfsSync, writeFileSync } from 'node:fs';
+import { chmodSync, existsSync, mkdirSync, statfsSync, writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { canonical, digest, fileDigest, safePath, within } from '../protocol/files.ts';
 import { strictJson } from '../protocol/strict_json.ts';
+import { OperationError, validationError } from '../protocol/operation_error.ts';
+import { readLedgerSnapshot } from './ledger_snapshot.ts';
 
 const transitions: Record<string, string[]> = {
   planned: ['running', 'cancelled'], running: ['verifying', 'reconciling', 'failed', 'cancel_requested'],
@@ -16,6 +18,7 @@ const transitions: Record<string, string[]> = {
 export class Ledger {
   db: DatabaseSync;
   root: string;
+  private snapshotRoot?:string;
 
   constructor(root: string, options: { readOnly?: boolean } = {}) {
     this.root = safePath(root);
@@ -25,7 +28,9 @@ export class Ledger {
     safePath(file);
     const existed=existsSync(file);
     try {
-      this.db = new DatabaseSync(file, { readOnly: !!options.readOnly });
+      let databaseFile=file;
+      if(options.readOnly) {const snapshot=readLedgerSnapshot(this.root);this.snapshotRoot=snapshot.root;databaseFile=snapshot.file;}
+      this.db = new DatabaseSync(databaseFile, { readOnly: !!options.readOnly });
       if(existed && !this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='metadata'").get())throw new Error('unsupported_ledger_schema');
       if (existed && this.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='metadata'").get() && (this.db.prepare('SELECT version FROM metadata').get() as any)?.version !== 1)throw new Error('unsupported_ledger_schema');
       if (!options.readOnly) {
@@ -39,11 +44,13 @@ export class Ledger {
       }
       if ((this.db.prepare('SELECT version FROM metadata').get() as any)?.version !== 1) throw new Error('unsupported_ledger_schema');
     } catch (error) {
-      this.db?.close(); throw new Error('ledger_invalid: ' + String(error));
+      this.db?.close();if(this.snapshotRoot)rmSync(this.snapshotRoot,{recursive:true,force:true});
+      if(error instanceof OperationError)throw error;
+      throw new Error('ledger_invalid: ' + String(error));
     }
   }
 
-  close() { this.db.close(); }
+  close() {this.db.close();if(this.snapshotRoot)rmSync(this.snapshotRoot,{recursive:true,force:true});}
 
   transaction<T>(work: () => T): T {
     this.db.exec('BEGIN IMMEDIATE');
@@ -65,28 +72,73 @@ export class Ledger {
     this.db.prepare('INSERT INTO events(task,data) VALUES(?,?)').run(task.id, canonical({ event, epoch: task.epoch, state: task.state, at: task.updatedAt }));
   }
 
-  create(request: any): any {
-    const allowed = new Set(['idempotencyKey', 'brief', 'plan', 'output', 'authorization', 'budget', 'source', 'mutableProject', 'expectedProjectSha256', 'parentTask', 'references']);
-    if (!request || typeof request !== 'object' || Array.isArray(request) || Object.keys(request).some(key => !allowed.has(key))) throw new Error('invalid_task_request');
-    if (typeof request.idempotencyKey !== 'string' || !request.idempotencyKey || typeof request.brief !== 'string' || !request.brief.trim()) throw new Error('task_identity_required');
-    if (!request.plan || !Array.isArray(request.plan.operations)) throw new Error('plan_required');
-    if (!request.authorization || Object.keys(request.authorization).some(key=>!['ref','writeRoot','objects'].includes(key)) || typeof request.authorization.ref !== 'string' || !request.authorization.ref) throw new Error('authorization_required');
-    within(request.output, request.authorization.writeRoot);
-    if(request.authorization.objects && (!Array.isArray(request.authorization.objects) || request.authorization.objects.some((id:any)=>!Number.isSafeInteger(id) || id<=0)))throw new Error('invalid_authorization_objects');
-    if (request.source) safePath(request.source);
-    if (request.mutableProject) {
-      safePath(request.mutableProject);
-      if (!/^[a-f0-9]{64}$/.test(request.expectedProjectSha256 ?? '')) throw new Error('project_revision_required');
+  /** 纯读取验证任务元数据，在建立数据库之前复用同一身份规则。 */
+  static validateRequest(request: any): {normalized:any;identity:string} {
+    const object=(value:any)=>value!==null && typeof value==='object' && !Array.isArray(value);
+    const property=(base:string,key:string)=>/^[A-Za-z_][A-Za-z0-9_]*$/.test(key)?base+'.'+key:base+'['+JSON.stringify(key)+']';
+    const keys=(value:any,allowed:string[],base:string,code:string)=>{
+      const unknown=Object.keys(value).find(key=>!allowed.includes(key));
+      if(unknown!==undefined)throw validationError(code,property(base,unknown));
+    };
+    const pathCheck=(action:()=>any,path:string)=>{
+      try {action();} catch(error) {const message=error instanceof Error?error.message:String(error);throw validationError(message.split(':',1)[0],path,message);}
+    };
+    if(!object(request))throw validationError('invalid_task_request');
+    keys(request,['idempotencyKey','brief','plan','output','authorization','budget','source','mutableProject','expectedProjectSha256','parentTask','references'],'$','invalid_task_request');
+    if(typeof request.idempotencyKey!=='string' || !request.idempotencyKey)throw validationError('task_identity_required','$.idempotencyKey');
+    if(typeof request.brief!=='string' || !request.brief.trim())throw validationError('task_identity_required','$.brief');
+    if(!object(request.plan))throw validationError('plan_required','$.plan');
+    if(!Array.isArray(request.plan.operations))throw validationError('plan_required','$.plan.operations');
+    if(!object(request.authorization))throw validationError('authorization_required','$.authorization');
+    keys(request.authorization,['ref','writeRoot','objects'],'$.authorization','authorization_required');
+    if(typeof request.authorization.ref!=='string' || !request.authorization.ref)throw validationError('authorization_required','$.authorization.ref');
+    pathCheck(()=>safePath(request.authorization.writeRoot),'$.authorization.writeRoot');
+    pathCheck(()=>within(request.output,request.authorization.writeRoot),'$.output');
+    if(Object.hasOwn(request.authorization,'objects')) {
+      if(!Array.isArray(request.authorization.objects))throw validationError('invalid_authorization_objects','$.authorization.objects');
+      request.authorization.objects.forEach((id:any,index:number)=>{if(!Number.isSafeInteger(id) || id<=0)throw validationError('invalid_authorization_objects','$.authorization.objects['+index+']');});
     }
-    if(request.references && (!Array.isArray(request.references) || request.references.some((ref:any)=>!ref || Object.keys(ref).some(key=>!['path','sha256'].includes(key)) || !/^[a-f0-9]{64}$/.test(ref.sha256??'') || fileDigest(ref.path)!==ref.sha256)))throw new Error('reference_identity_mismatch');
-    const budget = request.budget;
-    if (!budget || Object.keys(budget).some(key=>!['deadline','maxRevisions','reserveBytes','maxConcurrent'].includes(key)) || ('maxConcurrent' in budget && (!Number.isSafeInteger(budget.maxConcurrent) || budget.maxConcurrent<1)) || !Number.isSafeInteger(budget.deadline) || !Number.isSafeInteger(budget.maxRevisions) || budget.maxRevisions < 0
-        || !Number.isSafeInteger(budget.reserveBytes) || budget.reserveBytes < 0) throw new Error('invalid_budget');
+    if(Object.hasOwn(request,'source'))pathCheck(()=>safePath(request.source),'$.source');
+    if(Object.hasOwn(request,'mutableProject')) {
+      pathCheck(()=>safePath(request.mutableProject),'$.mutableProject');
+      if(typeof request.expectedProjectSha256!=='string' || !/^[a-f0-9]{64}$/.test(request.expectedProjectSha256))throw validationError('project_revision_required','$.expectedProjectSha256');
+    }
+    if(Object.hasOwn(request,'references')) {
+      if(!Array.isArray(request.references))throw validationError('reference_identity_mismatch','$.references');
+      request.references.forEach((ref:any,index:number)=>{
+        const path='$.references['+index+']';
+        if(!object(ref))throw validationError('reference_identity_mismatch',path);
+        keys(ref,['path','sha256'],path,'reference_identity_mismatch');
+        if(typeof ref.sha256!=='string' || !/^[a-f0-9]{64}$/.test(ref.sha256))throw validationError('reference_identity_mismatch',path+'.sha256');
+        pathCheck(()=>{if(fileDigest(ref.path)!==ref.sha256)throw new Error('reference_identity_mismatch');},path+'.path');
+      });
+    }
+    const budget=request.budget;
+    if(!object(budget))throw validationError('invalid_budget','$.budget');
+    keys(budget,['deadline','maxRevisions','reserveBytes','maxConcurrent'],'$.budget','invalid_budget');
+    for(const key of ['deadline','maxRevisions','reserveBytes','maxConcurrent']) {
+      if(key==='maxConcurrent' && !Object.hasOwn(budget,key))continue;
+      if(!Number.isSafeInteger(budget[key]) || key!=='deadline' && budget[key]<(key==='maxConcurrent'?1:0))throw validationError('invalid_budget','$.budget.'+key);
+    }
     const normalized = strictJson(canonical(request)); const identity = digest(canonical(normalized));
+    return {normalized,identity};
+  }
+
+  /** 查询同键任务；同输入只读返回，冲突绝不成为新的执行。 */
+  existing(request:any):any|undefined {
+    const {identity}=Ledger.validateRequest(request);
+    const row=this.db.prepare('SELECT id,identity FROM tasks WHERE key=?').get(request.idempotencyKey) as any;
+    if(!row)return undefined;
+    if(row.identity!==identity)throw validationError('idempotency_conflict','$.idempotencyKey');
+    return this.status(row.id);
+  }
+
+  create(request: any): any {
+    const {normalized,identity}=Ledger.validateRequest(request);
     return this.transaction(() => {
       const existing = this.db.prepare('SELECT id,identity FROM tasks WHERE key=?').get(request.idempotencyKey) as any;
       if (existing) {
-        if (existing.identity !== identity) throw new Error('idempotency_conflict');
+        if (existing.identity !== identity) throw validationError('idempotency_conflict','$.idempotencyKey');
         return this.status(existing.id);
       }
       if(request.parentTask)throw new Error('parent_task_requires_revision');
