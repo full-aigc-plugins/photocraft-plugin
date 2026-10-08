@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Dev.43 adds complete current release combination digests and provenance-conflict refusal; source remains pinned to dev.38. Public fixed-installation acceptance is pending. [Identity gate](docs/PhotoCraft-Release-Combination.md).
+Dev.43 adds complete current release combination digests and provenance-conflict refusal; source remains pinned to dev.38. Public fixed dev.43 installation passes eighteen identity refusals, thirteen cold standalone skills and native representative tasks; tasks9.3/9.9 close, with actual model dispatch still open. [Identity gate](docs/PhotoCraft-Release-Combination.md).
 
 Dev.42 pins source dev.38, binding runtime version/platform and backend identities, with operation-scoped contract checks and full discovery digests. Public dev.42 installation passes fourteen backend cases and all 28 installed harness tests; task10.3 closes and full upgrade/rollback remains open. [Capability acceptance](docs/PhotoCraft-Capability-Acceptance.md).
 
@@ -12,7 +12,7 @@ PSD required-feature delivery now refuses unaccepted observed losses and require
 
 Development release dev.43 includes SQLite task control, bound review and bounded revisions, with standalone dev.38 pinned in the plugin snapshot. See [candidate architecture and remaining gates](docs/PhotoCraft-Harness-Candidate.md).
 
-Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 127/157 complete, with 30 gates open.
+Development prereleases [skills dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) and [plugin dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) are published. Both plugin CI workflows pass; isolated Codex discovers 14 skills without errors, all 13 source skills pass separate cold runtime probes, and the installed copy passes native title/local-adjustment revisions and relocated-bundle checks. See [version-bound release evidence](docs/evidence/optimization/release-publication.json). The current plan is 129/157 complete, with 28 gates open.
 
 
 Fixed-installation domain acceptance closes seven more tasks: 16 normative scenarios for recursive layers, mask protection, CJK text and complex layout/filters pass. Unavailable layout metrics, editable smart filters and non-RGB8 protection explicitly refuse; PSD required-feature gating is verified separately below; other gates remain open. See [acceptance and rerun instructions](docs/PhotoCraft-Fixed-Domain-Acceptance.md).

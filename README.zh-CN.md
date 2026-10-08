@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.43 增加完整当前发行组合摘要及来源冲突拒绝，技能源仍固定dev.38。公开固定安装验收待完成。[身份门禁](docs/PhotoCraft-Release-Combination.zh_CN.md)。
+dev.43 增加完整当前发行组合摘要及来源冲突拒绝，技能源仍固定dev.38。公开dev.43固定安装通过18项身份拒绝案例及13项技能独立冷启动与代表任务；任务9.3／9.9完成，真实模型派发仍开放。[身份门禁](docs/PhotoCraft-Release-Combination.zh_CN.md)。
 
 dev.42 固定技能源dev.38，能力快照绑定版本／平台和双后端身份，按本次操作依赖核验合同并保留发现摘要。公开dev.42安装通过双后端14例与安装副本全部28项插件测试，任务10.3完成；完整升级回退仍开放。[能力验收](docs/PhotoCraft-Capability-Acceptance.zh_CN.md)。
 
@@ -12,7 +12,7 @@ PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；�
 
 开发版本 dev.43 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.38。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
 
-开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为127/157项完成，30项门禁开放。
+开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为129/157项完成，28项门禁开放。
 
 
 固定安装领域验收新增关闭7项任务：递归图层、蒙版保护、中文文字及复杂布局／滤镜的16个规范场景通过。不可获取的布局指标、可编辑智能滤镜和非 RGB8 保护明确拒绝；PSD 必要功能损失等门禁仍开放。见[验收与复验方式](docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。

@@ -1,0 +1,310 @@
+{
+  "schema": "photocraft-release-identity-acceptance/v1",
+  "status": "PASS",
+  "mode": "fixed",
+  "pluginVersion": "0.1.0-dev.43",
+  "skillsVersion": "0.1.0-dev.38",
+  "combination": {
+    "schema": "photocraft-release-combination/v1",
+    "status": "PASS",
+    "combinationSha256": "4e557ca9562d0a3620ba9e3512c6e838bbf6a05a833cbeb181fb52d7a66d9d2e",
+    "combination": {
+      "plugin": {
+        "version": "0.1.0-dev.43",
+        "manifestSha256": "d5406df00e20329ec9b1137f605099a88e4cf9ca2ef2e6d213516e93e11e68fc",
+        "harnessVersion": "0.1.0-dev.43"
+      },
+      "skills": {
+        "repository": "https://github.com/full-aigc-skills/photocraft-skills.git",
+        "ref": "v0.1.0-dev.38",
+        "commit": "f9ce89b72001e46d3cd0cc68ab0a3da36c457ac5",
+        "version": "0.1.0-dev.38",
+        "packageVersion": "0.1.0-dev.38",
+        "suiteVersion": "0.1.0-dev.38",
+        "sha256": {
+          "photocraft-use": "f2b4c1cae24f6f5d3b71b34362a353a896b847f299167ecc696148741866abc5",
+          "photocraft-cli": "99c1cf34a6e8d35813824cdf6377f6d461821c9c5ec76f018ee042fa2bae42ca",
+          "photocraft-cli-setup": "1ed290f904e702e6d58b0531dba90379c92c28752605695af47f7c200feb3f8a",
+          "photocraft-cli-project": "ebf7d07c9582ea901bfa002d7e86b7f5f75c4d1d0aaba11479676bf372d01955",
+          "photocraft-cli-layers": "66b9282b2de7b733677f60c14909617a230bdbe3ee9946abb96b9aefc061f577",
+          "photocraft-cli-selection": "33679be2916cb4a499ade8c53b507ed043feecf1683695edd7a280d84221398b",
+          "photocraft-cli-masks": "198479bfb38825ec48813993b6509f0227c4502efc50ad166bdbbe7ee912d4d7",
+          "photocraft-cli-adjustments": "ca917a42620d0f3345705d2414a7f2866362f2a4a0713d522c92cbab30d469a3",
+          "photocraft-cli-retouch": "93ff763ca096b0af026695ff2ea950448d9c702584a1a2a22a270048e5d12a17",
+          "photocraft-cli-text": "2a256482f8564b947b82e2aa45c440d7c6c722d101b23ffb92ff70e924d07b98",
+          "photocraft-cli-resize": "6a02434bb90ca5e8322f85f5fdaf3254854905c929492c01e0ccf86bd5352e30",
+          "photocraft-cli-export": "710bdf5820bb768e2fc748645b5ff9a7b2f38b84e5b8f2c20975c20c982c5f7f",
+          "photocraft-cli-filters": "349eb21edad4aed4d4ca6ef9a963bafd433acab168fec9a4a3bb148053264f81"
+        }
+      },
+      "runtime": {
+        "schema": "craft-runtime-lock/v1",
+        "artifact": "photocraft-cli",
+        "resolvedVersion": "0.2.0-craft.1",
+        "releaseRef": "runtime-v0.2.0-craft.1",
+        "repository": "https://github.com/full-aigc-skills/photocraft-skills",
+        "artifacts": {
+          "darwin-arm64": {
+            "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/download/runtime-v0.2.0-craft.1/photocraft-cli-0.2.0-craft.1-macos-arm64.zip",
+            "archiveSha256": "02f38c95b7f700d7c26774be93065b86776b71dc5d866345614b51289875969c",
+            "binarySha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+            "versionOutput": "photocraft-cli 0.2.0-craft.1 (dev build)",
+            "evidenceScope": "candidate maintained runtime; native workflow and fixed installation pending"
+          }
+        },
+        "supportedPluginWorkflows": [],
+        "upstreamRepository": "https://github.com/storytold/photocraft",
+        "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+        "runtimeVariant": "maintained-capability-scoped-smart-content"
+      },
+      "historicalRuntime": {
+        "path": "runtime/history/photocraft-cli-upstream-0.2.0.lock.json",
+        "active": false,
+        "lock": {
+          "schema": "craft-runtime-lock/v1",
+          "artifact": "photocraft-cli",
+          "resolvedVersion": "0.2.0",
+          "releaseRef": "v0.2.0",
+          "repository": "https://github.com/storytold/photocraft",
+          "artifacts": {
+            "darwin-arm64": {
+              "url": "https://github.com/storytold/photocraft/releases/download/v0.2.0/photocraft-cli-0.2.0-macos-universal.zip",
+              "archiveSha256": "185e0375eaceeab595cb7fc2dc01e5813479a335f47172e562e4dea461141e30",
+              "binarySha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+              "evidenceScope": "headless MCP smoke only"
+            }
+          },
+          "supportedPluginWorkflows": []
+        },
+        "sourcePath": "runtime/official-runtime-0.2.0.lock.json"
+      },
+      "publicProtocol": {
+        "status": "fixed-protocol-authority-reference",
+        "owner": "full-aigc-plugins/artcraft-plugin",
+        "source": {
+          "repository": "https://github.com/full-aigc-plugins/artcraft-plugin.git",
+          "ref": "v0.1.0-dev.109",
+          "sha": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b"
+        },
+        "protocols": {
+          "task": "craft-task/v1",
+          "artifact": "craft-artifact/v1"
+        },
+        "files": {
+          "taskSpec": {
+            "path": "openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md",
+            "sha256": "c6f17c1d03422a92f57a129f680808cf548f859cb1f12bfc4f88cf4a6dea0b9f",
+            "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md"
+          },
+          "artifactSpec": {
+            "path": "openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md",
+            "sha256": "d73aacc5adc872dbe437dd28e27d040d6fed38072efec55527707691ebd3d90b",
+            "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md"
+          },
+          "taskSchema": {
+            "path": "schemas/craft-task-v1.json",
+            "sha256": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+            "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/schemas/craft-task-v1.json"
+          },
+          "artifactSchema": {
+            "path": "schemas/craft-artifact-v1.json",
+            "sha256": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+            "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/schemas/craft-artifact-v1.json"
+          }
+        },
+        "scope": "Protocol authority only; not a runtime lock or full protocol acceptance."
+      },
+      "files": {
+        "plugin.json": "d5406df00e20329ec9b1137f605099a88e4cf9ca2ef2e6d213516e93e11e68fc",
+        "package.json": "a4351f295592195cef2f54021c57ac9e6dae5fa6e766b2b535a40c81f558fda9",
+        "skills.lock.json": "7a630a121a26ed736b57ea082916d31d4b805d58c72fde43afdd2fdf7749c8bc",
+        "runtime/photocraft-cli.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
+        "runtime/history/photocraft-cli-upstream-0.2.0.lock.json": "beaced33e7eada4d4919a4f8cf5d700c895a170e26e64c99b816048d82968e93",
+        "skills/photocraft-use/scripts/runtime.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
+        "docs/contracts-reference.json": "a5416c35f997ffa914780df2efba26c63b72a95ccc1df8d0f6bc06b3d0ab5feb",
+        "source/.claude-plugin/plugin.json": "5a5d8ec6a4508b13d2a6108652e8381f9c117d452c2f2f3b6cdd594fedb18eb5",
+        "source/skill-suite.json": "89267974a1b96f03e128939a06f49504650a39867dd9ef1e9aea54f9cd8fe1e9",
+        "source/skills/photocraft-use/scripts/runtime.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
+        "source/runtime/official-runtime-0.2.0.lock.json": "1b94994549e0914d47c443bd1e95c45d3d9d7fd7f7d0e3c927f9da4d456da59b",
+        "contracts/artcraft/craft-task-v1.json": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+        "contracts/artcraft/craft-artifact-v1.json": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+        "README.md": "c3c54a15c02732cfb6e321db9b9772c843e765b1ded72b3c1fb3d66166428aab",
+        "README.zh-CN.md": "c9def0b8cdf9870e0820b362fbc0852b660969a3113574973dbc22d27af5fd73"
+      },
+      "versionRoles": "Plugin and skill-source releases are independent; package and suite describe the same source version; active maintained runtime has its own version, distinct from retained upstream runtime."
+    },
+    "errors": [],
+    "acceptance": {
+      "native": false,
+      "hostModelRouting": false,
+      "creative": false,
+      "marketplace": false,
+      "remoteTag": "NOT_CHECKED"
+    },
+    "scope": "readonly local combination and complete source/installed managed-skill bytes; remote immutable tag and public archive identity require separate release evidence"
+  },
+  "combinationSha256": "4e557ca9562d0a3620ba9e3512c6e838bbf6a05a833cbeb181fb52d7a66d9d2e",
+  "cases": [
+    {
+      "case": "harness-version",
+      "result": "REFUSED",
+      "errors": [
+        "harness_version_mismatch"
+      ],
+      "replySha256": "532e48bd28765a5f173005537cc2846c43fd1e31ccf508f8ebd053bc286e7ab6"
+    },
+    {
+      "case": "source-package-version",
+      "result": "REFUSED",
+      "errors": [
+        "source_package_version_mismatch"
+      ],
+      "replySha256": "9790a49b35a54a1d84055d66913104cf7280b7f761891839c6a618c8b7c67f24"
+    },
+    {
+      "case": "source-suite-version",
+      "result": "REFUSED",
+      "errors": [
+        "source_suite_version_mismatch"
+      ],
+      "replySha256": "65933ec7383c9f123eca0b85f7ba6137ce09bff587d9d0167349272a2d6b0f02"
+    },
+    {
+      "case": "source-authority",
+      "result": "REFUSED",
+      "errors": [
+        "source_package_authority_mismatch"
+      ],
+      "replySha256": "bbe3ce72e558698f3b73f6c18d63f6797ccf5fe12465c1eb3de0724c983784c7"
+    },
+    {
+      "case": "source-suite-runtime",
+      "result": "REFUSED",
+      "errors": [
+        "source_suite_runtime_mapping_mismatch"
+      ],
+      "replySha256": "c7f68a4056b248bd4056351c48ae2601002b158e4558e9eccfface870cc9b594"
+    },
+    {
+      "case": "active-historical-lock",
+      "result": "REFUSED",
+      "errors": [
+        "active_runtime_lock_mismatch"
+      ],
+      "replySha256": "6b93c753acbe0bf47eb7673b2390afac115db1e110b373eaf8e32d4871431379"
+    },
+    {
+      "case": "maintained-claim",
+      "result": "REFUSED",
+      "errors": [
+        "active_runtime_lock_mismatch",
+        "maintained_runtime_variant_missing",
+        "source_runtime_lock_mismatch",
+        "installed_skill_digest_mismatch: photocraft-use"
+      ],
+      "replySha256": "8be2d9154c7156e8fe282f1beb90330fc62018da7e57fba999f6573ba527da0b"
+    },
+    {
+      "case": "history-authority",
+      "result": "REFUSED",
+      "errors": [
+        "historical_runtime_authority_mismatch",
+        "historical_source_mapping_mismatch: repository"
+      ],
+      "replySha256": "6a6f2aee43455b1c5ac89718e92b27bd0c454417f96550d56342a390657e9334"
+    },
+    {
+      "case": "installed-skill-content",
+      "result": "REFUSED",
+      "errors": [
+        "installed_skill_digest_mismatch: photocraft-cli"
+      ],
+      "replySha256": "86bd6b5770edc4e4b63ee3c621be4f3cac4d733ed50689eb3204e03995a88a27"
+    },
+    {
+      "case": "source-skill-content",
+      "result": "REFUSED",
+      "errors": [
+        "source_skill_digest_mismatch: photocraft-cli"
+      ],
+      "replySha256": "c9ec60f0ec55f42b4b7fd0ff74cd819e8834dd3f770ee8920bad592604481b5d"
+    },
+    {
+      "case": "english-current-version",
+      "result": "REFUSED",
+      "errors": [
+        "README.md: current_version_paragraph_mismatch"
+      ],
+      "replySha256": "e0e7190d85be89ed1a82a8b39f33368c3a45c1c2c3615ff37050e598b23a79ae"
+    },
+    {
+      "case": "chinese-current-version",
+      "result": "REFUSED",
+      "errors": [
+        "README.zh-CN.md: current_version_paragraph_mismatch"
+      ],
+      "replySha256": "8ff10e37336d915c18d05fb7de7694a6d286f3f8a3accf64aed6d00ce6390f72"
+    },
+    {
+      "case": "english-source-table",
+      "result": "REFUSED",
+      "errors": [
+        "README.md: current_version_table_mismatch: Skills source"
+      ],
+      "replySha256": "e6597d7f350579016b7464816489127238eda2a4a27682d0eeb10ef8198b4b04"
+    },
+    {
+      "case": "chinese-plugin-table",
+      "result": "REFUSED",
+      "errors": [
+        "README.zh-CN.md: current_version_table_mismatch: Metadata version"
+      ],
+      "replySha256": "1fe8ab04051d8cc043926ca8d5b85115a84686a450aac3c3f9657a4913b6696a"
+    },
+    {
+      "case": "english-official-claim",
+      "result": "REFUSED",
+      "errors": [
+        "README.md: current_runtime_provenance_mismatch"
+      ],
+      "replySha256": "986d9fc13c07f9af9ed529b874d5eaee9518620d8aec90e80cce049d1bf8fdfe"
+    },
+    {
+      "case": "chinese-official-claim",
+      "result": "REFUSED",
+      "errors": [
+        "README.zh-CN.md: current_runtime_provenance_mismatch"
+      ],
+      "replySha256": "2fac06ff8b1bb490f0af8056c7d10359fc6e831b02f0d004f375114c9a2236ec"
+    },
+    {
+      "case": "protocol-schema-bytes",
+      "result": "REFUSED",
+      "errors": [
+        "contract_payload_digest_mismatch: taskSchema"
+      ],
+      "replySha256": "72b46e97306173c05819c61e0a66d09d11953aa24d2b2aa1e25d498394f5782e"
+    },
+    {
+      "case": "private-local-tag-moved",
+      "result": "REFUSED",
+      "originalFixtureCommit": "423ee802395da4d249ead468b8abbfabd3a1392b",
+      "movedFixtureCommit": "69599a8af0f3266f86e6becf1926fc6a7f7c4c37",
+      "fixtureOnly": true,
+      "privateInstalledCombinationUnchanged": true,
+      "outputSha256": "15a9e569af991b16deaaa0bcccaba50da87a5d1e4de1bc87a1ddbf30f1273d0a"
+    }
+  ],
+  "installedTreeUnchanged": true,
+  "installedTreeSha256": "432a3b042b9301ae3341033c364f8d01ded1465ffa268bcf950092299d1254b9",
+  "publicSourceUnchanged": true,
+  "publicSourceTreeSha256": "7cb5b61b3ef503f9fbe07dcf87d4ce28218e0aabd6abad0595f0673e3e039c62",
+  "oldDev42InstallationUnchanged": true,
+  "oldDev42TreeSha256": "b52bb93f69d234987351b0d1e9494b9d8d7151d7242c1cfbab835d332050843b",
+  "driverSha256": "f514e0cd0111eb101a9047df24f5f87bbb63a16da1cdc43db5616ef38347ff11",
+  "checkerSha256": "25d10669faf26c65faeb6891fa420b60adb32a824a491ab22d4ed657dcf7eab4",
+  "retainedFiles": {
+    "actual-combination.json": "698ab5e20cf500e839de442fbe29d394a0c0afebca89bc3eaabae6a2f39f979b"
+  },
+  "scope": "Actual complete-release checker; all conflicts in private copies, moved tag only in local Git fixture. Original installed/current/old source and releases are never changed; no native/model/creative proof."
+}

@@ -642,7 +642,7 @@
         "9.3"
       ],
       "owner": "Skills owner",
-      "status": "candidate-implemented-full-acceptance-open",
+      "status": "verified-current-fixed-scenarios",
       "optimizationScope": {
         "date": "2026-10-08",
         "status": "candidate-implemented-partial-acceptance",
@@ -664,7 +664,9 @@
       "candidateImplementation": {
         "status": "verified-minimum-implementation-full-acceptance-open",
         "evidence": "docs/evidence/optimization/task-progress.json"
-      }
+      },
+      "evidence": "docs/evidence/optimization/routing-acceptance-audit.json",
+      "scope": "Current fixed dev.43/dev.38 normative scenarios only; model dispatch and creative acceptance separate"
     },
     {
       "requirement": "PC-TX-005",
@@ -708,7 +710,7 @@
         "9.9"
       ],
       "owner": "Release owner",
-      "status": "candidate-implemented-full-acceptance-open",
+      "status": "verified-current-fixed-scenarios",
       "optimizationScope": {
         "date": "2026-10-08",
         "status": "candidate-implemented-partial-acceptance",
@@ -730,7 +732,9 @@
       "candidateImplementation": {
         "status": "verified-minimum-implementation-full-acceptance-open",
         "evidence": "docs/evidence/optimization/task-progress.json"
-      }
+      },
+      "evidence": "docs/evidence/optimization/identity-acceptance-audit.json",
+      "scope": "Current fixed dev.43/dev.38 normative scenarios only; model dispatch and creative acceptance separate"
     },
     {
       "requirement": "PC-DM-007",

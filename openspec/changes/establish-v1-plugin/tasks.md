@@ -216,7 +216,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.1 [PC-SK-004] 建立 cli／filters 触发冲突、明确指定技能、最短链、单技能隔离及生成副本漂移的正反例；检查每项输入／副作用／恢复／验收与拒绝示例。责任：Skills owner；前置：读取新增场景合同与原有 SK-003；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/routing-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.2 [PC-SK-004] 在独立技能源调整 use／cli／setup／领域描述与路由，补齐场景参考和示例；从唯一维护来源生成公共资源，保留旧 use 与单技能自足入口。责任：Skills owner；前置：9.1；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 9.3 [PC-SK-004] 逐技能隔离安装并验证文档与资源完整、合法旧入口和代表任务；锁定发行后复验，模型派发证据交 13.4–13.6 单独验收。责任：QA owner；前置：9.2 及对应固定来源可用；产物：docs/evidence/optimization/routing-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 9.3 [PC-SK-004] 逐技能隔离安装并验证文档与资源完整、合法旧入口和代表任务；锁定发行后复验，模型派发证据交 13.4–13.6 单独验收。责任：QA owner；前置：9.2 及对应固定来源可用；产物：docs/evidence/optimization/routing-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定验收：`docs/evidence/optimization/routing-acceptance-audit.json`（dev.43／技能源dev.38；模型派发及创作验收保持独立）。
 
 - [x] 9.4 [PC-TX-005] 覆盖所有公开入口的重复键、NaN／Infinity／溢出、错误容器／未知字段、素材与引用依赖；用安装／会话调用计数确认提前拒绝，并复现普通工作流回复与网关语义差异。责任：Skills owner；前置：读取全入口合同与现有 JSON／MCP 故障回归；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/entry-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.5 [PC-TX-005] 在独立技能源统一严格计划解析、静态预检、动态引用检查、工具回复与结构化错误；验证通过才写成功回执，保持文字／图片合法回复及失败保全兼容。责任：Skills owner；前置：9.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
@@ -224,7 +224,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.7 [PC-RL-003] 建立同一版本声明冲突、活动锁误指历史锁、维护版误称上游官方、旧标签被替换等发行拒绝 fixture；合法独立版本映射通过。责任：Release owner；前置：读取当前插件、技能、套件、运行时与公共协议身份；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/release-identity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 9.8 [PC-RL-003] 在各事实源增加当前组合一致性检查及生成说明，明确上游与维护版、套件版本语义和非活动根锁；同步双语当前说明，保留历史证据原值。责任：Release owner；前置：9.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 9.9 [PC-RL-003] 对候选及获授权的固定发行安装副本核对当前组合、来源摘要、旧版保全与发行拒绝；不因元数据一致提升宿主或创作状态。责任：QA owner；前置：9.8 及对应固定来源可用；产物：docs/evidence/optimization/release-identity/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 9.9 [PC-RL-003] 对候选及获授权的固定发行安装副本核对当前组合、来源摘要、旧版保全与发行拒绝；不因元数据一致提升宿主或创作状态。责任：QA owner；前置：9.8 及对应固定来源可用；产物：docs/evidence/optimization/release-identity/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 固定验收：`docs/evidence/optimization/identity-acceptance-audit.json`（dev.43／技能源dev.38；模型派发及创作验收保持独立）。
 
 ## 10. P1：能力快照与持久化控制
 

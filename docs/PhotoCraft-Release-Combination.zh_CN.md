@@ -16,3 +16,7 @@ flowchart LR
 插件与技能源有意采用独立版本。包与套件标识同一不可变技能源，运行时版本属于自身维护构建。上游0.2.0锁保留于`runtime/history/`，不作为活动执行锁。公共协议schema内容对照固定引用摘要；真实所有者Git对象核验仍由独立CI门禁执行。
 
 验收必须绑定公开源码ZIP及源标签／提交、真实公共标签插件安装、源及安装技能完整摘要、私有副本负例和旧版保全。移动标签只在自有本地Git夹具测试。此门禁不能证明原生功能、模型派发、创作接受或市场可用性。
+
+固定dev.43已通过18项实际发行检查拒绝案例，dev.42安装及公开标签／制品保持不变。13项技能逐个冷安装、10项领域原生任务、完整use创建／修订及合法旧CLI计划通过；任务9.3与9.9完成，计划129/157完成、28项开放。
+
+[Identity audit](evidence/optimization/identity-acceptance-audit.json) · [Routing audit](evidence/optimization/routing-acceptance-audit.json) · [Publication](evidence/optimization/identity-release-publication.json).

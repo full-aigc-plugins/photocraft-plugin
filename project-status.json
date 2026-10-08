@@ -124,7 +124,9 @@
     "4.16": "docs/evidence/optimization/flat-acceptance-audit.json",
     "4.17": "docs/evidence/optimization/flat-acceptance-audit.json",
     "4.18": "docs/evidence/optimization/flat-acceptance-audit.json",
-    "10.3": "docs/evidence/optimization/capability-acceptance-audit.json"
+    "10.3": "docs/evidence/optimization/capability-acceptance-audit.json",
+    "9.3": "docs/evidence/optimization/routing-acceptance-audit.json",
+    "9.9": "docs/evidence/optimization/identity-acceptance-audit.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -169,16 +171,16 @@
     "pluginWorkingVersion": "0.1.0-dev.43",
     "fixedSkillSourceVersion": "0.1.0-dev.38",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "CANDIDATE_FIXED_INSTALLATION_PENDING",
+    "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE_FIXED_SCENARIOS_VERIFIED",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 127,
-      "open": 30,
-      "newlyCompleted": 65
+      "completed": 129,
+      "open": 28,
+      "newlyCompleted": 67
     },
-    "publicationEvidence": "docs/evidence/optimization/capability-release-publication.json",
-    "currentRegressionEvidence": "docs/evidence/optimization/capability-post-release-validation.json"
+    "publicationEvidence": "docs/evidence/optimization/identity-release-publication.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/identity-post-release-validation.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -187,5 +189,7 @@
   "fixedFlatAcceptanceEvidence": "docs/evidence/optimization/flat-acceptance-audit.json",
   "fixedFlatAcceptanceStatus": "Both PC-DM-006 scenarios passed on fixed dev.41 macOS arm64 RGB8 fixtures; live generation, billing authenticity, external print and full V1 remain unverified",
   "fixedCapabilityAcceptanceEvidence": "docs/evidence/optimization/capability-acceptance-audit.json",
-  "fixedCapabilityAcceptanceStatus": "Task10.3 passed, fourteen fixed macOS arm64 headless/owned desktop cases; full upgrade/drain/state-compatible rollback2.6 remains open"
+  "fixedCapabilityAcceptanceStatus": "Task10.3 passed, fourteen fixed macOS arm64 headless/owned desktop cases; full upgrade/drain/state-compatible rollback2.6 remains open",
+  "fixedReleaseIdentityEvidence": "docs/evidence/optimization/identity-acceptance-audit.json",
+  "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json"
 }

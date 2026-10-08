@@ -67,13 +67,15 @@
     "4.16",
     "4.17",
     "4.18",
-    "10.3"
+    "10.3",
+    "9.3",
+    "9.9"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 127,
-    "open": 30,
-    "newlyCompleted": 65
+    "completed": 129,
+    "open": 28,
+    "newlyCompleted": 67
   },
   "openTaskIds": [
     "2.4",
@@ -92,9 +94,7 @@
     "7.5",
     "7.6",
     "8.3",
-    "9.3",
     "9.6",
-    "9.9",
     "10.6",
     "10.9",
     "10.12",
@@ -115,8 +115,8 @@
       "requirements": [
         "PC-SK-004"
       ],
-      "candidate": "explicit intent routing, reused steps, self-contained shared contracts and 13-skill resources",
-      "remaining": "fixed candidate installation and actual host/model routing; static routing is not a natural-language model test"
+      "candidate": "All current fixed routing contract scenarios pass: thirteen cold single skills, input/protection/recovery/examples, ten native scenes and use/legacy CLI, generated resource drift refusal",
+      "remaining": "Natural-language actual host/model routing remains tasks13.4–13.6; no exhaustive755 or creative claim"
     },
     {
       "requirements": [
@@ -129,8 +129,8 @@
       "requirements": [
         "PC-RL-003"
       ],
-      "candidate": "current combination checkers and refusal fixtures for conflicting versions, historical active lock, maintained provenance and moved immutable tags",
-      "remaining": "9.9 full identity refusal acceptance remains open; current immutable dev.35/dev.39 publication and fixed installation are recorded separately"
+      "candidate": "Current independent plugin/source/runtime/protocol combination summary and eighteen candidate/fixed conflicts, old installed/source/public tags preserved",
+      "remaining": "No remaining PC-RL-003 scenarios; complete host/model and creative acceptance are separate requirements"
     },
     {
       "requirements": [
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Published fixed task10.3 dual-backend capability subgate verified; 30 full V1 gates remain open. No complete upgrade/rollback, sync/archive or general host support claim.",
+  "scope": "Fixed release identity and standalone routing/resource/native task scenarios verified; 28 full V1 gates remain open. Model dispatch, creative acceptance and all command contexts remain separate.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -208,7 +208,8 @@
     "PC-CM-001-SAVED-SELECTION"
   ],
   "latestCompletedTaskIds": [
-    "10.3"
+    "9.3",
+    "9.9"
   ],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
@@ -216,9 +217,9 @@
     "skillsReusedFrom": "capability-scoped-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 28,
-    "pluginPython": 41,
+    "pluginPython": 48,
     "skipped": 0,
-    "checks": 13,
+    "checks": 14,
     "sourceUnchanged": true
   },
   "commandAcceptanceIndex": {
@@ -233,9 +234,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "capability-post-release-validation.json",
+  "releaseCandidateEvidence": "identity-post-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "capability-release-publication.json",
+  "publicationEvidence": "identity-release-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -247,8 +248,8 @@
     "installedSkillsUnchanged": true
   },
   "previousReleaseVerification": {
-    "skills": 218,
-    "skillsReusedFrom": "flat-source-final.json",
+    "skills": 226,
+    "skillsReusedFrom": "capability-scoped-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 28,
     "pluginPython": 41,

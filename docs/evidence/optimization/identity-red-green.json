@@ -1,0 +1,13 @@
+{
+  "schema": "photocraft-release-combination-red-green/v1",
+  "red": {
+    "missingEntrySha256": "3d96a405371be0406a24359d70987ed056ca41720c6986fb40a1c4f72ec53275",
+    "currentDocumentationMismatchSha256": "c82fdde56890f225db8d601b001a9d783616159849724caf566088bdc8309989",
+    "sourceAuthorityConflictSha256": "5602acd72319348a46ec1bade2cf365d6bb189659b66c968bd5196f027dc7477"
+  },
+  "green": {
+    "tests": 7,
+    "logSha256": "b4c38b505d6be1fd341d138b68819927cbfb4769dc5615dbfa6fd8609aa68c90"
+  },
+  "scope": "Missing aggregate entry, current maintained/official documentation mismatch and source-authority mismatch observed before their respective fixes; no reconstructed historical red proof."
+}

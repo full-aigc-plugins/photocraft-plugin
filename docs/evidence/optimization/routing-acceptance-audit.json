@@ -1,0 +1,45 @@
+{
+  "schema": "photocraft-pc-sk-004-acceptance/v1",
+  "status": "PASS_CURRENT_FIXED_SCENARIOS",
+  "requirement": "PC-SK-004",
+  "closedTasks": [
+    "9.3"
+  ],
+  "pluginVersion": "0.1.0-dev.43",
+  "pluginCommit": "adda9f7579eeaff2b6a06bda40bb09301dc83941",
+  "skillsRef": "v0.1.0-dev.38",
+  "skillsCommit": "f9ce89b72001e46d3cd0cc68ab0a3da36c457ac5",
+  "specAuthority": "openspec/changes/establish-v1-plugin/specs/skills-distribution/spec.md",
+  "specSha256": "8b9183e2277b5d5253cc674a35f2439b022efa6c84ce747249f2f88b5f03e468",
+  "scenarioInventoryMatched": true,
+  "scenarios": [
+    {
+      "id": "PC-SK-004-ROUTE",
+      "status": "PASS",
+      "evidence": "routing-fixed-acceptance.json"
+    },
+    {
+      "id": "PC-SK-004-STANDALONE",
+      "status": "PASS",
+      "evidence": "routing-fixed-acceptance.json"
+    },
+    {
+      "id": "PC-SK-004-DRIFT",
+      "status": "PASS",
+      "evidence": "routing-fixed-acceptance.json"
+    }
+  ],
+  "evidenceSha256": {
+    "routing-fixed-acceptance.json": "4c804cd2f9ce3521efc7eddacad3e4aaf092cbe1689913a45d216928bd8a3047",
+    "identity-fixed-host.json": "c256cd1ca1ba354e12825f33ea04f56243a612e207520de9f0bb617a210c8414",
+    "identity-release-candidate.json": "cd3a72f9b1b9fb7ffedb429beef74363cfc683216208b19001c7ac82ee377c62"
+  },
+  "platform": "darwin-arm64",
+  "scope": "All current PC-SK-004 scenarios, public immutable dev.43 installation and exact dev.38 source. Thirteen independent cold installations, contract routes and ten native task scenes plus public-use create/revision and legacy CLI plan. Static routing is not natural-language host/model dispatch.",
+  "limits": {
+    "naturalLanguageModelRouting": "NOT_RUN",
+    "independentCreativeAcceptance": "NOT_RUN",
+    "marketplaceEligible": false,
+    "fullV1": "INCOMPLETE"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "photocraft-pc-rl-003-acceptance/v1",
+  "status": "PASS_CURRENT_FIXED_SCENARIOS",
+  "requirement": "PC-RL-003",
+  "closedTasks": [
+    "9.9"
+  ],
+  "pluginVersion": "0.1.0-dev.43",
+  "pluginCommit": "adda9f7579eeaff2b6a06bda40bb09301dc83941",
+  "skillsRef": "v0.1.0-dev.38",
+  "skillsCommit": "f9ce89b72001e46d3cd0cc68ab0a3da36c457ac5",
+  "specAuthority": "openspec/changes/establish-v1-plugin/specs/release-compatibility/spec.md",
+  "specSha256": "87dae402dae384412a48e6f038abd8b4155e4dd92ae572a3a84d1995d5981dcd",
+  "scenarioInventoryMatched": true,
+  "scenarios": [
+    {
+      "id": "PC-RL-003-CURRENT",
+      "status": "PASS",
+      "evidence": "identity-fixed-acceptance.json"
+    },
+    {
+      "id": "PC-RL-003-MISMATCH",
+      "status": "PASS",
+      "evidence": "identity-fixed-acceptance.json"
+    }
+  ],
+  "evidenceSha256": {
+    "identity-fixed-acceptance.json": "4b95723463adf862cd5c7f558e2a1dc3071092260aea787b16b968dbda9add43",
+    "identity-candidate-acceptance.json": "6743e5bea651c4326aa99a559c99ef7b8a59d90ae3aad314eb3ca50d0322257f",
+    "identity-fixed-host.json": "c256cd1ca1ba354e12825f33ea04f56243a612e207520de9f0bb617a210c8414",
+    "identity-release-candidate.json": "cd3a72f9b1b9fb7ffedb429beef74363cfc683216208b19001c7ac82ee377c62",
+    "identity-red-green.json": "bcc649baccc6703aad94cdec8630d4eb8d090cd356b2b616b65874d71373d78d"
+  },
+  "platform": "darwin-arm64",
+  "scope": "All current PC-RL-003 scenarios, public immutable dev.43 plugin and dev.38 source. Candidate and fixed checker each refuse18 private-copy conflicts; local-only moved-tag fixture; previous public42/source38 and actual previous42 installed tree preserved. No native/model/creative acceptance upgrade.",
+  "limits": {
+    "naturalLanguageModelRouting": "NOT_RUN",
+    "independentCreativeAcceptance": "NOT_RUN",
+    "marketplaceEligible": false,
+    "fullV1": "INCOMPLETE"
+  }
+}
