@@ -1,0 +1,32 @@
+✖ artifact mapping binds files and parent, survives relocation, rejects mixed preview (11.933167ms)
+✔ fixed public contract rejects unknown keys rather than adding competing schema (2.094375ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.750291
+
+✖ failing tests:
+
+test at tests/artifact.test.ts:7:1
+✖ artifact mapping binds files and parent, survives relocation, rejects mixed preview (11.933167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'application/x-photocraft'
+  - 'application/octet-stream'
+                 ^
+  
+      at TestContext.<anonymous> (file://WORKSPACE/full-aigc-plugins-repositories/photocraft-plugin/tests/artifact.test.ts:15:43)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'application/x-photocraft',
+    expected: 'application/octet-stream',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

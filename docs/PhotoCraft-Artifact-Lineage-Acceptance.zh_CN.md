@@ -5,3 +5,5 @@
 [候选证据](evidence/optimization/artifact-lineage/candidate-native.json)覆盖真实原生标题创建／修订及PSD／PNG保存、父包字节不变、稳定逻辑资产ID与变化的内容版本、任务／计划／输入／运行时／能力绑定、便携参考，以及删除原路径和账本后原生重开。公开bundle-check拒绝损坏预览、缺失文件、链接、重复键、路径逃逸、评估串用、错误父版本／计划和过期外部摘要锚点。
 
 修订评估回执明确为合同fixture，子版本创作和最终接受仍NOT_RUN；完整性与血缘不证明作者真实性或创作质量。关闭5.3／11.9前须补齐公开固定副本证据；本候选仍保留两项开放。
+
+dev.51消费修正：实际不可变ArtCraft109 verifyArtifact对dev.50的application/x-photocraft返回media_type_unsupported。原生工程仍为主产物，内容和版本语义不变；dev.51使用已有application/octet-stream二进制合同。旧包只读核验保留原身份并返回LEGACY_UNSUPPORTED_BY_PINNED_CONSUMER，不静默改写或冒充已支持；两项任务待dev.51固定安装及实际跨仓消费证明后关闭。

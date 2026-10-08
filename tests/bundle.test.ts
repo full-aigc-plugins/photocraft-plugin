@@ -22,6 +22,11 @@ test('portable lineage binds task, input, capability and review without live led
   const reviewRequest={id:'review-old',taskId:task.id,projectSha256:files['project.pcraft'],previewSha256:'f'.repeat(64),manifestSha256:task.technical.manifestSha256,briefSha256:digest(request.brief),referencesSha256:digest(canonical(request.references)),rubricVersion:'v1'};
   const receipt={...reviewRequest,requestId:reviewRequest.id,evaluator:{identity:'fixture',version:'v1',contextIsolation:'fixture'},verdict:'FAIL'};
   assert.throws(()=>exportBundle({...task,reviewRequest,reviewReceipt:receipt,reviewConsumed:true,creative:{status:'FAIL',receiptSha256:digest(canonical(receipt)),requestId:reviewRequest.id}},join(root,'old-review')),/bundle_review_binding_mismatch/);
+  // 旧版完整包的原生MIME仍可按原身份只读检查，但不能声称消费者已兼容。
+  const legacyArtifactPath=join(root,'exported/harness/artifact.json');const legacyArtifact=JSON.parse(readFileSync(legacyArtifactPath,'utf8'));legacyArtifact.mediaType='application/x-photocraft';writeFileSync(legacyArtifactPath,canonical(legacyArtifact));
+  const legacyManifestPath=join(root,'exported/bundle-manifest.json');const legacyManifest=JSON.parse(readFileSync(legacyManifestPath,'utf8'));legacyManifest.files['harness/artifact.json']=digest(canonical(legacyArtifact));writeFileSync(legacyManifestPath,canonical(legacyManifest));
+  const legacyAnchor=digest(canonical(legacyManifest));const legacyChecked=verifyBundle(join(root,'exported'),legacyAnchor);assert.equal(legacyChecked.nativeMediaTypeCompatibility,'LEGACY_UNSUPPORTED_BY_PINNED_CONSUMER');assert.equal(legacyChecked.artifact.mediaType,'application/x-photocraft');
+  exported.bundleSha256=legacyAnchor;
   renameSync(join(root,'exported'),join(root,'moved'));rmSync(delivery,{recursive:true});rmSync(reference);
   assert.equal(verifyBundle(join(root,'moved'),exported.bundleSha256).artifact.sha256,files['project.pcraft']);
   const metadataPath=join(root,'moved/harness/task.json');const changed=JSON.parse(readFileSync(metadataPath,'utf8'));changed.creative={status:'PASS'};writeFileSync(metadataPath,canonical(changed));

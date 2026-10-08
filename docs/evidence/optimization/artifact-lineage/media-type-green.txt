@@ -1,0 +1,11 @@
+✔ artifact mapping binds files and parent, survives relocation, rejects mixed preview (20.910667ms)
+✔ fixed public contract rejects unknown keys rather than adding competing schema (0.600667ms)
+✔ portable lineage binds task, input, capability and review without live ledger or old path (32.7245ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.690959

@@ -12,7 +12,7 @@ test('artifact mapping binds files and parent, survives relocation, rejects mixe
   const files:Record<string,string>={};for(const [name,body]of Object.entries(contents)){writeFileSync(join(dir,name),body);files[name]=sha(body);}
   const manifest=JSON.stringify({schema:'photocraft-delivery/v1',files,outputs:[{path:'design.png'}],assets:{},runtimeSha256:'a'.repeat(64)});writeFileSync(join(dir,'manifest.json'),manifest);
   const task={id:'task-one',request:{output:dir,plan:{}},technical:{status:'PASS',manifestSha256:sha(manifest),projectSha256:files['project.pcraft'],previewSha256:files['design.png']}};
-  const artifact=mapArtifact(task);assert.equal(artifact.producerTaskId,task.id);assert.equal(artifact.version,files['project.pcraft']);assert.equal(artifact.renditions[0].sha256,files['design.png']);
+  const artifact=mapArtifact(task);assert.equal(artifact.mediaType,'application/octet-stream');assert.equal(artifact.nativeProjectRef.location,'project.pcraft');assert.equal(artifact.producerTaskId,task.id);assert.equal(artifact.version,files['project.pcraft']);assert.equal(artifact.renditions[0].sha256,files['design.png']);
   const {validateArtifact}=await import('../src/protocol/artifact.ts');
   for(const name of ['constructor','toString','__proto__'])assert.throws(()=>validateArtifact(JSON.parse(JSON.stringify(artifact).slice(0,-1)+',"'+name+'":1}')),/contract_unknown_field/);
   const inherited=Object.create(artifact);assert.throws(()=>validateArtifact(inherited),/contract_required/);

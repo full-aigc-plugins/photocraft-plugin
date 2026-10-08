@@ -92,8 +92,10 @@ export function verifyBundle(directory:string,expectedSha256?:string):any {
  }
  const artifact=validateArtifact(readJson(join(root,'harness/artifact.json')));
  const evidenceNames=['harness/task.json',...(parent?['harness/parent-artifact.json']:[])];
- const expected={...base,evidenceRefs:[...base.evidenceRefs,...evidenceNames.map(name=>({assetId:base.assetId+':'+name,version:manifest.files[name],sha256:manifest.files[name],location:name}))]};
+ // 已发布旧包保留原生MIME身份，只读检查不能把其改造成新的已兼容发行。
+ const legacyNativeType=artifact.mediaType==='application/x-photocraft';
+ const expected={...base,mediaType:legacyNativeType?artifact.mediaType:base.mediaType,evidenceRefs:[...base.evidenceRefs,...evidenceNames.map(name=>({assetId:base.assetId+':'+name,version:manifest.files[name],sha256:manifest.files[name],location:name}))]};
  if(canonical(artifact)!==canonical(expected))throw new Error('bundle_artifact_mismatch');
  checkFiles(root,manifest.files);if(fileDigest(manifestPath)!==anchor)throw new Error('bundle_changed_during_verify');
- return {result:'PASS',fileIntegrity:'PASS',lineage:'VERIFIED',bundleSha256:anchor,externallyAnchored:!!expectedSha256,sourceAuthenticity:'NOT_PROVEN',artifact,technicalAcceptance:task.technical.status,creativeAcceptance:task.creative.status,acceptance:task.acceptance.status,evaluatorIsolation:task.reviewReceipt?.evaluator?.contextIsolation??'NOT_RUN'};
+ return {result:'PASS',fileIntegrity:'PASS',lineage:'VERIFIED',bundleSha256:anchor,externallyAnchored:!!expectedSha256,sourceAuthenticity:'NOT_PROVEN',nativeMediaTypeCompatibility:legacyNativeType?'LEGACY_UNSUPPORTED_BY_PINNED_CONSUMER':'PINNED_CONSUMER_BINARY_CONTRACT',artifact,technicalAcceptance:task.technical.status,creativeAcceptance:task.creative.status,acceptance:task.acceptance.status,evaluatorIsolation:task.reviewReceipt?.evaluator?.contextIsolation??'NOT_RUN'};
 }

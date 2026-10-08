@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.51 maps the retained native .pcraft artifact to the pinned consumer binary media contract. Existing x-photocraft bundles remain read-only with an explicit unsupported-consumer status. Fixed consumer acceptance is pending. [Contract](docs/PhotoCraft-Artifact-Lineage-Acceptance.md).
+
 dev.50 rejects malformed or empty legacy delivery manifests; native creation, revision and portable lineage checks are recorded separately from creative acceptance. Fixed installation is pending. [Contract](docs/PhotoCraft-Artifact-Lineage-Acceptance.md).
 
 Published dev.49 / source dev.43: public ZIP hashes and tag commits verified; four release/main CI runs pass. Isolated Codex discovers14 skills; actual installed copies pass70 Harness tests,14 read-only native faults and52 independent-entry integer refusals with unchanged installed bytes. Public runtime remains craft.1; craft.5 supervision is not activated or accepted. [Evidence](docs/evidence/optimization/integer-overflow/publication.json).
@@ -48,7 +50,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.50`; skill source: `0.1.0-dev.43`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.51`; skill source: `0.1.0-dev.43`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -143,7 +145,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.50 |
+| Metadata version | 0.1.0-dev.51 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.43 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |

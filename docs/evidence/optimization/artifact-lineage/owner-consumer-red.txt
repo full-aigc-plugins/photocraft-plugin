@@ -1,0 +1,10 @@
+file://WORKSPACE/artifacts/photocraft-lineage-20261009/contract-owner/src/protocol/contracts.ts:124
+  throw new Error('media_type_unsupported: ' + type);
+        ^
+
+Error: media_type_unsupported: application/x-photocraft
+    at matchesMime (file://WORKSPACE/artifacts/photocraft-lineage-20261009/contract-owner/src/protocol/contracts.ts:124:9)
+    at verifyArtifact (file://WORKSPACE/artifacts/photocraft-lineage-20261009/contract-owner/src/protocol/contracts.ts:152:8)
+    at async file://WORKSPACE/artifacts/photocraft-lineage-20261009/owner-consumer.ts:18:100
+
+Node.js v24.15.0
