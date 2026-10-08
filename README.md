@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+Published dev.48 / source dev.42: both public ZIP hashes and tag commits verified; four release/main CI runs pass. Isolated Codex discovers14 skills; the fixed copy passes70 Harness tests and14 read-only native faults without installed-tree changes. Public runtime remains craft.1; this does not activate or accept supervised craft.4. [Publication evidence](docs/evidence/optimization/supervised-convert/publication.json).
+
 Dev.48 pins source dev.42 with internal supervised run/batch/convert candidates and a read-only capability gate. Public cli.py and locked craft.1 remain unchanged. [Candidate scope](docs/PhotoCraft-Supervised-Convert-Candidate.md). Fixed candidate installation, task9.6 and full V1 remain open.
 
 Dev.47 pins source dev.41 with read-only inner reply semantics and Harness checkpoint record/file/runtime binding. The source candidate passes240 tests;14 actual read-only faults preserve original files and stop subsequent calls. The fixed copy passes70 Harness tests and14 actual readonly faults without installed-tree changes. [Fixed acceptance](docs/PhotoCraft-Readonly-Reply-Acceptance.md). Task9.6 raw per-command, streaming editing and full-entry matrix remain open. [Source contract](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.md).

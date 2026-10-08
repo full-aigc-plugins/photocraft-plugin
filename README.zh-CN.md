@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.48／源dev.42已发布：公开ZIP摘要及标签提交核验通过，发布提交／标签4项CI通过。隔离Codex发现14项技能，固定副本70项Harness及14例只读原生故障通过，安装树不变。公开运行时仍为craft.1，本记录不启用或验收监督候选craft.4。[发行证据](docs/evidence/optimization/supervised-convert/publication.json)。
+
 dev.48锁定技能源dev.42，打包内部run／batch／convert监督候选及只读能力门禁。公开cli.py及craft.1锁保持不变。[候选范围](docs/PhotoCraft-Supervised-Convert-Candidate.zh_CN.md)。候选固定安装、任务9.6与完整首版仍开放。
 
 dev.47 固定技能源dev.41，加入只读重开内层语义校验，并接入Harness检查点记录／文件／运行时绑定。候选技能源240项测试通过，14例真实只读故障保持原文件且停止后续调用；固定副本70项Harness及14例真实只读故障通过，安装树不变；[固定验收](docs/PhotoCraft-Readonly-Reply-Acceptance.zh_CN.md)。任务9.6的raw逐命令、流式编辑及完整入口矩阵仍开放。[源码合同](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.zh_CN.md)。

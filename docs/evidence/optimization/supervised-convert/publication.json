@@ -1,0 +1,92 @@
+{
+  "schema": "photocraft-supervised-candidate-publication/v1",
+  "status": "PASS_BOUNDED_DEVELOPMENT_PUBLICATION",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.42",
+    "commit": "5654fe7f77ca069dd8e73c4c5fc634988fae64a7",
+    "assetSha256": "5a713faea23c9918232f26fc184b82fc104611cad7c154f8e9294507210806e7",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.42",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.48",
+    "commit": "f2b9831ecff2ee136ff7cd488b8291cfd539bb39",
+    "assetSha256": "a97bc656f665bc95e81058e7bd04b976aeccd26a952b1120ab0dbb3cae181653",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.48",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "sourceTests": {
+    "passed": 270,
+    "failed": 0,
+    "skipped": 0
+  },
+  "candidateRuntimeTests": {
+    "passed": 30,
+    "rustPassed": 58
+  },
+  "pluginPythonTests": 48,
+  "pluginTypeScriptTests": 70,
+  "fixedInstallation": {
+    "status": "PASS",
+    "pluginVersion": "0.1.0-dev.48",
+    "skillSourceRef": "v0.1.0-dev.42",
+    "harness": {
+      "tests": 70,
+      "pass": 70,
+      "fail": 0,
+      "skipped": 0
+    },
+    "nativeHarnessTests": 4,
+    "readonlyNativeFaults": 14,
+    "healthyReadonlyPaths": 2,
+    "installedTreeUnchanged": true,
+    "installedTreeSha256": "43b4ffc514352e318e2bde813be57d83b6b9112b99f3023046a9747c5f18a2f9",
+    "harnessLogSha256": "dcfcfc0dfc36dac4a39895c679db8483cb34918b723b409b17416f21b0e6072b",
+    "closedTasks": [],
+    "scope": "Actual public-tag installed canonical skill and70 Harness tests; not complete raw/streaming/entry/counter/model/creative acceptance"
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37819924746,
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37819924894,
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37819915902,
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37819915835,
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    }
+  ],
+  "sourceCI": "NO_RUNS",
+  "publicRuntime": "0.2.0-craft.1",
+  "supervisedCandidateRuntime": "0.2.0-craft.4",
+  "supervisedCandidatePublicIntegration": "NOT_RUN",
+  "supervisedCandidateFixedInstallation": "NOT_RUN",
+  "closedTasks": [],
+  "taskCounts": {
+    "total": 157,
+    "complete": 129,
+    "open": 28
+  },
+  "scope": "public source and plugin prereleases, immutable ZIP hashes, isolated Codex discovery and bounded installed existing-public-runtime regression; candidate runtime not activated, full V1 and marketplace remain open"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.48",
+  "skillSourceRef": "v0.1.0-dev.42",
+  "harness": {
+    "tests": 70,
+    "pass": 70,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 4,
+  "readonlyNativeFaults": 14,
+  "healthyReadonlyPaths": 2,
+  "installedTreeUnchanged": true,
+  "installedTreeSha256": "43b4ffc514352e318e2bde813be57d83b6b9112b99f3023046a9747c5f18a2f9",
+  "harnessLogSha256": "dcfcfc0dfc36dac4a39895c679db8483cb34918b723b409b17416f21b0e6072b",
+  "closedTasks": [],
+  "scope": "Actual public-tag installed canonical skill and70 Harness tests; not complete raw/streaming/entry/counter/model/creative acceptance"
+}
