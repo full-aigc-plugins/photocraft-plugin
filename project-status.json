@@ -168,10 +168,10 @@
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
     "skillsVersion": "0.1.0-dev.40",
-    "pluginWorkingVersion": "0.1.0-dev.45",
+    "pluginWorkingVersion": "0.1.0-dev.46",
     "fixedSkillSourceVersion": "0.1.0-dev.40",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_BASELINE45_WITH_UNPUBLISHED_HARNESS_ENTRY_CANDIDATE",
+    "publication": "HARNESS_ENTRY_DEVELOPMENT_RELEASE_PREPARATION",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -211,6 +211,7 @@
     "evidence": "docs/evidence/optimization/harness-entry/candidate.json",
     "regressionEvidence": "docs/evidence/optimization/harness-entry-validation.json",
     "closedTasks": [],
-    "remainingTask": "9.6"
+    "remainingTask": "9.6",
+    "targetPluginRef": "v0.1.0-dev.46"
   }
 }
