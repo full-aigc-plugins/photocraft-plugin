@@ -1,0 +1,55 @@
+{
+  "schema": "photocraft-recovery-publication/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.55",
+    "commit": "0eb6ebbc3021bd4e6b9099cf55a85f3a5181945d",
+    "assetSha256": "92de16602a4d06cf57083632fceca357c765c7bacf378edab1ac65897444a68b",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.55",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37832231210,
+      "event": "push",
+      "headSha": "0eb6ebbc3021bd4e6b9099cf55a85f3a5181945d",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37832231176,
+      "event": "push",
+      "headSha": "0eb6ebbc3021bd4e6b9099cf55a85f3a5181945d",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37832212058,
+      "event": "push",
+      "headSha": "0eb6ebbc3021bd4e6b9099cf55a85f3a5181945d",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37832211939,
+      "event": "push",
+      "headSha": "0eb6ebbc3021bd4e6b9099cf55a85f3a5181945d",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    }
+  ],
+  "fixedSummarySha256": "67d6e76757aa9e6d2b8bc7a9e53483b33cb3973b7351639799bc84b5a086298b",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Recovery identity and corrupt-state protection only; checkpoint revisions and full V1 remain open"
+}

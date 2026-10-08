@@ -295,7 +295,7 @@
   },
   "cancellationBudgetAcceptanceEvidence": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json",
   "recoveryIdentityCandidate": {
-    "status": "PARTIAL_CANDIDATE",
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "pluginVersion": "0.1.0-dev.55",
     "sourceRef": "v0.1.0-dev.44",
     "evidence": "docs/evidence/optimization/recovery-identity/",
@@ -304,6 +304,8 @@
       "3.6",
       "10.9"
     ],
-    "remainingAcceptance": "Verified checkpoint to bound revision and full restart matrix remain open"
+    "remainingAcceptance": "Verified checkpoint to bound revision and full restart matrix remain open",
+    "publicationEvidence": "docs/evidence/optimization/recovery-identity/publication.json",
+    "fixedInstallation": "PASS_82_HARNESS_7_NATIVE"
   }
 }
