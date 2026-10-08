@@ -1,0 +1,62 @@
+{
+  "schema": "photocraft-interrupted-checkpoint-publication/v1",
+  "status": "PASS_BOUNDED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.60",
+    "commit": "a36660f152751de2a703307c12bad41c870881c1",
+    "assetSha256": "fe3be77fcb88715b6a8ce0dfdfad2493b0011be68a2982bd816e7fa1432aa8fb",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.60",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.48",
+    "commit": "9c43af2d0a820fb0bacf60571112a31099c8e4fb",
+    "assetSha256": "49968334b8cc19548bc6c69e78e2dbb8f77b4da4094e2a42f66d50ec197786ee",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.48",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37845923954,
+      "headSha": "a36660f152751de2a703307c12bad41c870881c1",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37845924004,
+      "headSha": "a36660f152751de2a703307c12bad41c870881c1",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37845919681,
+      "headSha": "a36660f152751de2a703307c12bad41c870881c1",
+      "name": "Documentation and specification integrity",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37845919194,
+      "headSha": "a36660f152751de2a703307c12bad41c870881c1",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed"
+    }
+  ],
+  "fixedSummarySha256": "eb59b0c91bef1d0c44e36c3916d8c4b599fb6c0cfcde890cfa7b4d5d9386979c",
+  "fixedProgressNativeSha256": "6db96c0883dd20b4358316e0e67c0b1e8dafed3e2ce9d4dd1c1106ebfa808c77",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "scope": "Independent interrupted checkpoint and explicit child recovery across five actual parent CLI/workflow SIGKILL windows; original files and epoch preserved, no unknown operation replay; complete scenario audit, creative/model acceptance and V1 remain open."
+}

@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-interrupted-checkpoint-candidate/v1",
-  "status": "PARTIAL_CANDIDATE",
+  "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
   "pluginVersion": "0.1.0-dev.60",
   "sourceRef": "v0.1.0-dev.48",
   "harness": {
@@ -10,11 +10,12 @@
     "skipped": 0
   },
   "nativeHarnessTests": 12,
-  "fixedInstallation": "NOT_RUN",
+  "fixedInstallation": "PASS_97_HARNESS_12_NATIVE",
   "closedTasks": [],
   "remainingTasks": [
     "3.6",
     "10.9"
   ],
-  "scope": "Separate interrupted checkpoint, actual parent CLI restart across five windows, masked smart asset preservation and versioned plan identity; fixed public installation and scenario audit pending"
+  "scope": "Separate interrupted checkpoint, actual parent CLI restart across five windows, masked smart asset preservation and versioned plan identity; fixed public installation and scenario audit pending",
+  "publicationEvidence": "docs/evidence/optimization/interrupted-checkpoint/publication.json"
 }
