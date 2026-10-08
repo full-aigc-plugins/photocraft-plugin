@@ -1,3 +1,4 @@
+import {assertRuntimeBinding} from './runtime_binding.ts';
 import { DatabaseSync } from 'node:sqlite';
 import { randomUUID } from 'node:crypto';
 import { chmodSync, existsSync, mkdirSync, statfsSync, writeFileSync, rmSync } from 'node:fs';
@@ -176,8 +177,9 @@ export class Ledger {
     });
   }
 
-  claim(id: string): number {
+  claim(id: string, sourceSha256?:string): number {
     return this.transaction(() => {
+      assertRuntimeBinding(this,sourceSha256);
       const task = this.status(id);
       if (task.state !== 'planned' || task.attempted) throw new Error('reconcile_required');
       for(const ref of task.request.references??[])if(fileDigest(ref.path)!==ref.sha256)throw new Error('reference_identity_mismatch');

@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.62 candidate adds explicit per-ledger runtime combination upgrade, rollback and readonly status with transactional draining, immutable source retention, state backup and claim fencing. The active public binary remains craft.1; different-version and complete PC-RT-002 acceptance stay open. [Lifecycle](docs/PhotoCraft-Runtime-Transition.md).
+
 Published dev.61 / source dev.48: all nine PC-TX-002 scenarios pass on the fixed public macOS arm64 installation, including six actual interruption windows, missing-supervisor proof refusal, readonly status and corrupt-state preservation. Tasks3.6/10.9 complete;135/157 complete,22 open. Creative/model and full V1 remain unverified. [Audit](docs/evidence/optimization/task-recovery/acceptance-audit.json).
 
 dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. All PC-TX-003 scenarios pass on public fixed macOS arm64 installation; tasks3.9/10.12 complete. At that release133/157 were complete,24 open. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
@@ -58,7 +60,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.61`; skill source: `0.1.0-dev.48`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.62`; skill source: `0.1.0-dev.48`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -153,7 +155,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.61 |
+| Metadata version | 0.1.0-dev.62 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.48 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |

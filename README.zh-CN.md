@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.62候选新增单账本显式运行时组合升级、回退和只读状态，事务排空、保留旧来源、备份状态并隔离任务认领。公开二进制仍为craft.1；不同版本与完整PC-RT-002验收保持开放。[生命周期](docs/PhotoCraft-Runtime-Transition.zh_CN.md)。
+
 dev.61／源dev.48已发布：固定公开macOS arm64安装通过全部9个PC-TX-002规范场景，包括真实六窗口、监督丢失无回执拒绝、独立只读查询及损坏状态保全。3.6／10.9完成；现135/157完成、22开放。创作／模型及完整V1仍未验收。[验收](docs/evidence/optimization/task-recovery/acceptance-audit.json)。
 
 dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。公开固定macOS arm64安装通过全部PC-TX-003场景，3.9／10.12完成；当时133/157完成、24开放。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
@@ -58,7 +60,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.61`；技能源：`0.1.0-dev.48`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.62`；技能源：`0.1.0-dev.48`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -153,7 +155,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.61 |
+| Metadata version | 0.1.0-dev.62 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.48 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |

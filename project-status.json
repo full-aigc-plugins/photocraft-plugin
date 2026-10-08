@@ -174,10 +174,10 @@
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
     "skillsVersion": "0.1.0-dev.48",
-    "pluginWorkingVersion": "0.1.0-dev.61",
+    "pluginWorkingVersion": "0.1.0-dev.62",
     "fixedSkillSourceVersion": "0.1.0-dev.48",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_RECOVERY_ACCEPTED",
+    "publication": "PARTIAL_CANDIDATE_RUNTIME_TRANSITION",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,

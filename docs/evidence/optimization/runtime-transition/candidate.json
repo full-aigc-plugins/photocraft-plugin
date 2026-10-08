@@ -1,0 +1,35 @@
+{
+  "schema": "photocraft-runtime-transition-candidate/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.62",
+  "sourceRef": "v0.1.0-dev.48",
+  "harness": {
+    "tests": 107,
+    "pass": 107,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 14,
+  "sourceRegression": {
+    "tests": 306,
+    "reusedUnchangedPublishedSource": true
+  },
+  "behavioralRed": "entry-red.txt",
+  "nativeProbeEvidence": "native-probes.json",
+  "nativeTransitionEvidence": "native-transition.json",
+  "closedTasks": [],
+  "implementationTasks": [
+    "2.4",
+    "2.5"
+  ],
+  "remainingAcceptanceTask": "2.6",
+  "differentBinaryVersionAcceptance": "NOT_RUN",
+  "fullV1": "NOT_RUN",
+  "fixedPublicInstallation": "NOT_RUN",
+  "files": {
+    "entry-red.txt": "b4edaebd5e531f532195bd7cb3fc9cce1678794a5fc99207c050c8c10bee383d",
+    "harness-regression.txt": "8ef2b0a22c8b4cafbb6734202511f72ca0cf117822ab35adac532215dc8e85ab",
+    "native-probes.json": "d3fafdcc12909bc5271c95f2204c65d5eaf2e2693fddd0a7caa59e937b89aa52",
+    "native-transition.json": "06d166b9351325ec6ab2d19f7bd1739642be972ce03dc784f8449297a54d36e1"
+  }
+}

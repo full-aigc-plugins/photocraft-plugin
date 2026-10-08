@@ -71,7 +71,7 @@ export class Runner {
   if(task.request.source) args.push('--source',task.request.source);
   if(task.request.checkpoint)args.push('--checkpoint',task.request.checkpoint.output,'--write-root',task.request.authorization.writeRoot);
   pinPlan(planPath,task.request.plan);
-  const epoch=this.ledger.claim(id);
+  const epoch=this.ledger.claim(id,identity.sha256);
   this.ledger.update(id,epoch,current=>{current.executionIdentity=identity;current.preflight={status:'PASS'};});
   if(this.options.runtimeHome) args.push('--runtime-home',safePath(this.options.runtimeHome));
   const workerToken=randomUUID();

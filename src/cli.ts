@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {RuntimeManager} from './harness/runtime_manager.ts';
+import {runtimeBinding} from './harness/runtime_binding.ts';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
@@ -12,7 +14,7 @@ import { preflightRequest, skillIdentity } from './harness/preflight.ts';
 import { OperationError, validationError } from './protocol/operation_error.ts';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const actions=['create','run','status','reconcile','verify','judge','review-import','import-judge','revise','recover','stop','accept','artifact','bundle-export','bundle-check'];
+const actions=['create','run','status','reconcile','verify','judge','review-import','import-judge','revise','recover','stop','accept','artifact','bundle-export','bundle-check','runtime-upgrade','runtime-rollback','runtime-status'];
 let ledger:Ledger|undefined;
 try {
  const [action,...args]=process.argv.slice(2);
@@ -26,13 +28,21 @@ try {
    options[args[i]]=args[i+1];
   }
   if(action==='bundle-check') {console.log(JSON.stringify(verifyBundle(options['--bundle'],options['--expected-sha256'])));}
-  else {
+  else if(action.startsWith('runtime-')) {
+   if(!options['--state-dir'])throw new Error('state_directory_required');
+   const state=safePath(options['--state-dir']);if(!existsSync(join(state,'tasks.sqlite')))throw new Error('ledger_missing');
+   const proposal=action==='runtime-status'?undefined:readJson(options['--request']);
+   ledger=new Ledger(state,{readOnly:action==='runtime-status'});const selected=runtimeBinding(ledger);
+   const manager=new RuntimeManager(ledger,{skillRoot:options['--skill-root']??selected?.active.skillRoot??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']??selected?.active.runtimeHome});
+   console.log(JSON.stringify(action==='runtime-status'?manager.status():action==='runtime-upgrade'?manager.upgrade(proposal):manager.rollback(proposal)));
+  } else {
   if(!options['--state-dir'])throw new Error('state_directory_required');
   const input=action==='create'?readJson(options['--request']):['review-import','import-judge'].includes(action)?readJson(options['--receipt']):['revise','recover'].includes(action)?readJson(options['--proposal']):undefined;
   const state=safePath(options['--state-dir']);
   if(action!=='create' && !options['--task'])throw validationError('task_id_required','$.task');
   if(action!=='create' && !existsSync(join(state,'tasks.sqlite')))throw new Error('ledger_missing');
-  const adapterOptions={skillRoot:options['--skill-root']??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']};
+  let selected:any;if(existsSync(join(state,'tasks.sqlite'))){const prior=new Ledger(state,{readOnly:true});try{selected=runtimeBinding(prior);}finally{prior.close();}}
+  const adapterOptions={skillRoot:options['--skill-root']??selected?.active.skillRoot??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']??selected?.active.runtimeHome};
   let existing:any;
   if(action==='create') {
    try {Ledger.validateRequest(input);}
