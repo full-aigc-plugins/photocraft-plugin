@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+dev.49／源dev.43已发布：公开ZIP摘要与标签提交一致，发布提交／标签4项CI通过。隔离Codex发现14技能；实际安装副本70项Harness、14例只读原生故障及52例独立入口整数拒绝通过，安装树字节不变。公开运行时仍为craft.1，不启用或验收craft.5监督。[证据](docs/evidence/optimization/integer-overflow/publication.json)。
+
 dev.49锁定技能源dev.43：全部13个独立公开入口在安装前拒绝超大整数JSON，并保留准确字段路径。[合同](docs/PhotoCraft-Integer-Overflow-Contract.zh_CN.md)。任务9.6及完整V1仍开放。
 
 技能源dev.43打包内部craft.5 droplet监督及质量绑定模块；40项定向原生／单元测试及58项Rust测试通过。插件dev.49包含这些模块，公开运行时仍使用craft.1。[候选范围](docs/PhotoCraft-Supervised-Droplet-Candidate.zh_CN.md)。

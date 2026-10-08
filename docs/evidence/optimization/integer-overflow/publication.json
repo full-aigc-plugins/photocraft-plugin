@@ -1,0 +1,112 @@
+{
+  "schema": "photocraft-integer-overflow-publication/v1",
+  "status": "PASS_BOUNDED_DEVELOPMENT_PUBLICATION",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.43",
+    "commit": "a330e091d31a3d3297cdf958bed7f8a8b673a041",
+    "assetSha256": "9cf8c713be5c42f847564974535709c2e4a0bde6a9577a075b16b88fe156848e",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.43",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.49",
+    "commit": "01a71217bc9f270973c9dad783ed629c2c2ef981",
+    "assetSha256": "41d2f1b085887cd43ddb6aa445ef8a1d819dc3b9af23cbd7dab4243b4b7ff858",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.49",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "sourceTests": {
+    "passed": 283,
+    "failed": 0,
+    "skipped": 0
+  },
+  "candidateRuntimeTests": {
+    "passed": 40,
+    "rustPassed": 58,
+    "runtimeVersion": "0.2.0-craft.5",
+    "publicIntegration": "NOT_RUN",
+    "fixedNativeCandidateInstallation": "NOT_RUN"
+  },
+  "pluginPythonTests": 48,
+  "pluginTypeScriptTests": 70,
+  "fixedInstallation": {
+    "status": "PASS",
+    "pluginVersion": "0.1.0-dev.49",
+    "skillSourceRef": "v0.1.0-dev.43",
+    "harness": {
+      "tests": 70,
+      "pass": 70,
+      "fail": 0,
+      "skipped": 0
+    },
+    "nativeHarnessTests": 4,
+    "readonlyNativeFaults": 14,
+    "healthyReadonlyPaths": 2,
+    "installedTreeUnchanged": true,
+    "installedTreeSha256": "2d899949369189c79b9202efab757c7ae894cf6657a30c4fe339ef121be18091",
+    "harnessLogSha256": "7fc5fb6625b9f248eb74889cb5eb3135c8e9a321fb8ee17e2fb09ebe12b210a9",
+    "integerOverflowMethods": 3,
+    "integerOverflowPublicRefusals": 52,
+    "integerOverflowInstallCalls": 0,
+    "integerOverflowSessionCalls": 0,
+    "closedTasks": [],
+    "scope": "Actual public-tag installed canonical skill,70 Harness tests and52 independent-entry integer refusals; native craft.5 supervision is not activated or accepted; not complete raw/streaming/entry/counter/model/creative acceptance"
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37824308710,
+      "headBranch": "v0.1.0-dev.49",
+      "headSha": "01a71217bc9f270973c9dad783ed629c2c2ef981",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37824308710"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37824308845,
+      "headBranch": "v0.1.0-dev.49",
+      "headSha": "01a71217bc9f270973c9dad783ed629c2c2ef981",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37824308845"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37824304371,
+      "headBranch": "main",
+      "headSha": "01a71217bc9f270973c9dad783ed629c2c2ef981",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37824304371"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37824304483,
+      "headBranch": "main",
+      "headSha": "01a71217bc9f270973c9dad783ed629c2c2ef981",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37824304483"
+    }
+  ],
+  "sourceCi": [],
+  "sourceCiStatus": "NO_RUNS",
+  "publicRuntimeVersion": "0.2.0-craft.1",
+  "marketplaceEligible": false,
+  "supportedPluginHosts": [],
+  "closedTasks": [],
+  "tasks": {
+    "completed": 129,
+    "total": 157,
+    "open": 28
+  },
+  "fullV1": "NOT_RUN",
+  "remainingTask": "9.6"
+}

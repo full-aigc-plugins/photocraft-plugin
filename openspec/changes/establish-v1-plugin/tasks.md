@@ -322,3 +322,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09 droplet候选：craft.5共用原引擎droplet准备、import／临时Session／save_doc，保留0–12质量、输入顺序／重复输入及普通失败后继续；监督模式逐条确认并停止后续文件。40项定向、58项Rust及280项源回归零跳过通过，六种实际保存后故障保全产物并原样重开。质量变更红灯实际保存后才拒绝，修复后计划绑定质量并在序号1零确认拒绝；fixture曾误判原生Background层，原始记录保留。流式、嵌套聚合内部、公开来源接入、持久raw恢复及craft.5固定安装仍开放；9.6不勾选，关闭0项。证据：`docs/evidence/optimization/supervised-droplet/candidate.json`。
 
 2026-10-09整数溢出候选：独立源统一解析器先检查原生有限f64数值文本，再构造Python整数；超长字面量保留字段路径，有限大整数旧类型不变。3项定向及13技能52例公开拒绝通过，安装／会话次数为零；原缺陷红灯与5000位路径红灯分别留存。共享解析器改动后完整源回归和固定发行验收独立重跑，不复用前述280项证明新源码；9.6继续开放，关闭0项。证据：`docs/evidence/optimization/integer-overflow/candidate.json`。
+
+2026-10-09整数溢出发行核验：源dev.43／插件dev.49公开ZIP及标签提交一致，283项源回归零跳过、70项Harness及48项Python通过；发布提交／标签4项CI通过。隔离Codex发现14技能，实际安装副本70项Harness／14例只读故障及13独立入口52例整数拒绝通过，安装树不变。公开运行时仍craft.1；craft.5 droplet监督候选未接入及固定验收，9.6继续开放，129/157完成、28开放，关闭0项。证据：`docs/evidence/optimization/integer-overflow/publication.json`。

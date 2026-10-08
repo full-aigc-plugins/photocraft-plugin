@@ -171,7 +171,7 @@
     "pluginWorkingVersion": "0.1.0-dev.49",
     "fixedSkillSourceVersion": "0.1.0-dev.43",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "INTEGER_OVERFLOW_RELEASE_CANDIDATE_PENDING",
+    "publication": "PUBLISHED_INTEGER_OVERFLOW_BOUNDED_FIXED_EXISTING_RUNTIME_REGRESSION",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -252,14 +252,18 @@
     "publicCliIntegration": "NOT_RUN",
     "closedTasks": [],
     "packagedModuleSourceRef": "v0.1.0-dev.43",
-    "targetPluginRef": "v0.1.0-dev.49"
+    "targetPluginRef": "v0.1.0-dev.49",
+    "nativePublished": false,
+    "packagedModulesPublished": true,
+    "pluginRef": "v0.1.0-dev.49"
   },
   "integerOverflowContract": {
-    "status": "PASS_SOURCE_REGRESSION_FIXED_PENDING",
+    "status": "PASS_BOUNDED_PUBLISHED_FIXED_INSTALLED",
     "evidence": "docs/evidence/optimization/integer-overflow/candidate.json",
     "sourceRef": "v0.1.0-dev.43",
     "pluginRef": "v0.1.0-dev.49",
-    "fixedInstallation": "NOT_RUN",
-    "closedTasks": []
+    "fixedInstallation": "PASS_52_PUBLIC_ENTRY_REFUSALS",
+    "closedTasks": [],
+    "publicationEvidence": "docs/evidence/optimization/integer-overflow/publication.json"
   }
 }

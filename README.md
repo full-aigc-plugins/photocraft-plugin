@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+Published dev.49 / source dev.43: public ZIP hashes and tag commits verified; four release/main CI runs pass. Isolated Codex discovers14 skills; actual installed copies pass70 Harness tests,14 read-only native faults and52 independent-entry integer refusals with unchanged installed bytes. Public runtime remains craft.1; craft.5 supervision is not activated or accepted. [Evidence](docs/evidence/optimization/integer-overflow/publication.json).
+
 dev.49 pins source dev.43: all 13 standalone public entries reject oversized integer JSON before installation, with precise field paths. [Contract](docs/PhotoCraft-Integer-Overflow-Contract.md). Task9.6 and full V1 remain open.
 
 Source dev.43 packages internal craft.5 droplet supervision modules and quality binding; 40 focused native/unit and 58 Rust tests pass. Plugin dev.49 packages these modules; public craft.1 remains active. [Candidate scope](docs/PhotoCraft-Supervised-Droplet-Candidate.md).

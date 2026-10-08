@@ -1,0 +1,117 @@
+{
+  "schema": "craft-codex-host-evidence/v2",
+  "result": "passed",
+  "cliVersion": "codex-cli 0.147.0",
+  "appServerUserAgent": "Codex Desktop/0.147.0 (Mac OS 27.0.1; arm64) dumb (craft-host-acceptance; 0.2.0)",
+  "platform": "darwin-arm64",
+  "plugins": [
+    {
+      "pluginId": "photocraft",
+      "version": "0.1.0-dev.49",
+      "pluginManifestSha256": "67b3a01d43f6f0ae5b51b5748b0d23b1d068be980cca7390e75862cf03f40ca0",
+      "sourceSha": "01a71217bc9f270973c9dad783ed629c2c2ef981",
+      "skillSourceSha": "a330e091d31a3d3297cdf958bed7f8a8b673a041",
+      "skillSha256": "ca1b3f63daae6a8ec8c467b6e54a5c89b7ba7c6ddf9dfc7b3dce030a577b4eb8",
+      "discoveredName": "photocraft:photocraft-use",
+      "scope": "user",
+      "enabled": true,
+      "skills": [
+        {
+          "name": "photocraft:photocraft-cli-project",
+          "sha256": "d4965a19f4ccace21b30e5d92ede3bbd06a17d2aff8407b72222eea88467c04e",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-setup",
+          "sha256": "760b622801d25223ba810b187c7c98cda28299af47c3dbd190157942dc64b3d5",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-use",
+          "sha256": "ca1b3f63daae6a8ec8c467b6e54a5c89b7ba7c6ddf9dfc7b3dce030a577b4eb8",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-layers",
+          "sha256": "62ea661b0ea04a8537305ef0a10c006ab1d7c3e1697bc03a7c78d0d25ea50f4f",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-text",
+          "sha256": "7493091f50921612ffeab5bb3d8044fe6a50bbcbd9dc6504f1d53a063ad35080",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-masks",
+          "sha256": "d7c42d0fa728825947c34ceca8ac49e5a709d2aea992db554d4f3d1fd8f29d68",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-filters",
+          "sha256": "e7701058e79f9dc9191a24d22c1b6f95e3f55d364c5370e7be258ab994e923c0",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-adjustments",
+          "sha256": "19b80e256498be60d06ec52a0be516179db4baa2c5a63db7fe27a4fd8143c17a",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-export",
+          "sha256": "a6d869889d2a0ed6fb53d1a608a387ce3030fabf8111073cb90fb1c2efd79486",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli",
+          "sha256": "e2918506ed99dc4fa59db6e97a44b00f2de300e36f167721169878268dbfd6cd",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-resize",
+          "sha256": "b134235de33ca2a2640cc9417f43946cd260cd42a4c6017015f7808b22afbc9c",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-retouch",
+          "sha256": "8b2d35ae9d7a3131b51db0376cd52214156b1d07d02e5732602210d5f0b20b50",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-cli-selection",
+          "sha256": "6861cd3a0b512aa1e8832a6a80eb924dd59f6e2352e638f64f466f3fd4f40f64",
+          "scope": "user",
+          "enabled": true
+        },
+        {
+          "name": "photocraft:photocraft-harness",
+          "sha256": "1b80ccc1c9e483cfb6ee2945b123e2c186f83bdb52e80569e271cc7d571cf796",
+          "scope": "user",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "loadingErrors": 0,
+  "scope": [
+    "isolated fixed public-tag install",
+    "installed immutable skill content identity",
+    "app-server skill discovery"
+  ],
+  "excluded": [
+    "agent model dispatch",
+    "desktop GUI interaction",
+    "production acceptance"
+  ]
+}
