@@ -18,7 +18,7 @@
     "preflight": 52,
     "native": 48
   },
-  "fixedInstalled": "PENDING",
+  "fixedInstalled": "PASS_THREE_PLAN_RUNNERS_ONLY",
   "normativeScenarios": [
     "PC-TX-005-P",
     "PC-TX-005-PLAN",
@@ -32,10 +32,34 @@
   "evidence": [
     "candidate.json",
     "red-green.json",
-    "passthrough-gap.json"
+    "passthrough-gap.json",
+    "fixed.json",
+    "fixed-host.json",
+    "fixed-routing.json",
+    "fixed-passthrough-gap.json",
+    "fixed-release-combination.json"
   ],
   "sourceRegression": "../entry-source-validation.json",
   "sourceRegressionStatus": "PASS",
   "fullV1": "INCOMPLETE",
-  "marketplaceEligible": false
+  "marketplaceEligible": false,
+  "pluginCommit": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+  "fixedCases": {
+    "preflight": 52,
+    "native": 48
+  },
+  "fixedInstalledTreeUnchanged": true,
+  "fixedSkillIdentityMatchesCandidate": true,
+  "regression": "../entry-post-release-validation.json",
+  "evidenceSha256": {
+    "candidate.json": "b21bdfcbba11bb9be66a4976aae74b2da50c8d9fb7d7c23390e8148b26bb32b7",
+    "red-green.json": "d2853a9d41872ade1e083f1e758116e3fa7523a57d3253f7e769b6ec97a704ba",
+    "passthrough-gap.json": "e39be18f41f1e12e013b201d68243952a5f724d11648f5cb998bf72ce2b775f9",
+    "fixed.json": "c0cdd5d81e7315485d64b63b9613538d6e1149de68986a42ccada4790b9241b2",
+    "fixed-host.json": "3db01c0f2f2bd333815a02ca196b5cec3d9a6e211f2c4ed6a6ac8f5caa701e8c",
+    "fixed-routing.json": "66141f3e6718d84936aae4a30c31ebe080f81d352edb5484c5431a952a0f0778",
+    "fixed-passthrough-gap.json": "5aa12cebe04331233801d7b9bf8931e414643ccbc90a044a78f481e5722c1c8d",
+    "fixed-release-combination.json": "3de2544be86728a4e5dfca825e5ae93c87195e51f01cd8337a1282cf72753d20"
+  },
+  "sourceRegressionSha256": "49fe0cfe88b5c0476356b42ab7c70f9108d1d07b6096be250697b52de2da3847"
 }

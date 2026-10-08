@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Dev.44 pins source dev.39, fixing preflight field paths/invalid alias types and unverified save replies. Candidate52 preflight and48 native/desktop cases pass; public fixed-installation acceptance is pending. [Entry acceptance](docs/PhotoCraft-Entry-Contract-Acceptance.md).
+Dev.44 pins source dev.39, fixing preflight field paths/invalid alias types and unverified save replies. Candidate and public fixed installation each pass52 preflight and48 native/desktop cases. Task9.6 stays open for the raw CLI preflight gap and Harness entry audit. [Entry acceptance](docs/PhotoCraft-Entry-Contract-Acceptance.md).
 
 Dev.43 adds complete current release combination digests and provenance-conflict refusal; source remains pinned to dev.38. Public fixed dev.43 installation passes eighteen identity refusals, thirteen cold standalone skills and native representative tasks; tasks9.3/9.9 close, with actual model dispatch still open. [Identity gate](docs/PhotoCraft-Release-Combination.md).
 

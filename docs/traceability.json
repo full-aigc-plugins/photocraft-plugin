@@ -677,7 +677,7 @@
         "9.6"
       ],
       "owner": "Skills owner",
-      "status": "candidate-implemented-partial-acceptance",
+      "status": "fixed-plan-runners-verified-all-entry-acceptance-partial",
       "optimizationScope": {
         "date": "2026-10-08",
         "status": "candidate-implemented-partial-acceptance",
@@ -701,7 +701,7 @@
         "evidence": "docs/evidence/optimization/task-progress.json"
       },
       "evidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
-      "scope": "workflow/commands/desktop plan-runner native scenarios verified separately; cli.py passthrough preflight gap reproduced and Harness editing entry audit pending; task9.6 open"
+      "scope": "Candidate and fixed plugin44/source39 workflow/commands/desktop52/48 each pass; cli.py passthrough preflight gap reproduced in both scopes, Harness audit pending; task9.6 open"
     },
     {
       "requirement": "PC-RL-003",

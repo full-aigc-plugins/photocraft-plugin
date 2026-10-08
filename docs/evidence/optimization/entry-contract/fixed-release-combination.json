@@ -1,0 +1,139 @@
+{
+  "schema": "photocraft-release-combination/v1",
+  "status": "PASS",
+  "combinationSha256": "f6075340ece16d654a908293517660587561c11bb1d36f45cfd1295423f588ec",
+  "combination": {
+    "plugin": {
+      "version": "0.1.0-dev.44",
+      "manifestSha256": "74ee1cec4e97fce52e4982024dc9b127271dddc7153f402766c633c78c8a9712",
+      "harnessVersion": "0.1.0-dev.44"
+    },
+    "skills": {
+      "repository": "https://github.com/full-aigc-skills/photocraft-skills.git",
+      "ref": "v0.1.0-dev.39",
+      "commit": "e17da3eeee17790aa4783f0d0109f79f95f8d5ff",
+      "version": "0.1.0-dev.39",
+      "packageVersion": "0.1.0-dev.39",
+      "suiteVersion": "0.1.0-dev.39",
+      "sha256": {
+        "photocraft-use": "bad7c610dbedf6722677e9ce5eac3994ebecf20cc7dfa0280fb2c86fa4b7ad31",
+        "photocraft-cli": "1b777eb0f2a519d6a1308186638e52f18f7065aa9fc22cf17a6f1c2c92e27bac",
+        "photocraft-cli-setup": "bb74fefafd15f5bfb73ca56522a8f7f5b9f54921f347aa0f2bafb8ce011c45b1",
+        "photocraft-cli-project": "e3bb753fe8f183729e5b3e6081a0ca6e42891836fd60f9697007183b51105fcd",
+        "photocraft-cli-layers": "d10424a70549645f15e4b0be1f10a7b180f1a796e7d7cf4da6d67f6dc44dc2cb",
+        "photocraft-cli-selection": "9203ad3ffab78bfbe93c247cb4610fed3b1f99ed7a8a0c707ac452c4cfd03342",
+        "photocraft-cli-masks": "80977e8a74b6a088f4630c6306023b480441881179e24026768d3a9ed78bea15",
+        "photocraft-cli-adjustments": "9b778dfd0fe7079a77ccc9e7fbdcc7f931dbf0c361df4959046b4759f0d331cf",
+        "photocraft-cli-retouch": "ddd08382fd39253a05946fb6eb4d586663f361ac536aae90bd3fffcaa57f3273",
+        "photocraft-cli-text": "58de6c952e127bf8ac3659177ac4ad64947d9b73af232ffd061d3bb763519e06",
+        "photocraft-cli-resize": "c92cbe86c67d4a69157145be81112cf054d6c685286434469a8030d29d45ffb2",
+        "photocraft-cli-export": "c528d5d7592fb74558922a4731cb7c2971341ec0da831820f6d71da809cb0cb0",
+        "photocraft-cli-filters": "90a6e20d7c647ff068873e5e0118e510d57e477dbf3d83437ce5d18b10cd4452"
+      }
+    },
+    "runtime": {
+      "schema": "craft-runtime-lock/v1",
+      "artifact": "photocraft-cli",
+      "resolvedVersion": "0.2.0-craft.1",
+      "releaseRef": "runtime-v0.2.0-craft.1",
+      "repository": "https://github.com/full-aigc-skills/photocraft-skills",
+      "artifacts": {
+        "darwin-arm64": {
+          "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/download/runtime-v0.2.0-craft.1/photocraft-cli-0.2.0-craft.1-macos-arm64.zip",
+          "archiveSha256": "02f38c95b7f700d7c26774be93065b86776b71dc5d866345614b51289875969c",
+          "binarySha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+          "versionOutput": "photocraft-cli 0.2.0-craft.1 (dev build)",
+          "evidenceScope": "candidate maintained runtime; native workflow and fixed installation pending"
+        }
+      },
+      "supportedPluginWorkflows": [],
+      "upstreamRepository": "https://github.com/storytold/photocraft",
+      "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+      "runtimeVariant": "maintained-capability-scoped-smart-content"
+    },
+    "historicalRuntime": {
+      "path": "runtime/history/photocraft-cli-upstream-0.2.0.lock.json",
+      "active": false,
+      "lock": {
+        "schema": "craft-runtime-lock/v1",
+        "artifact": "photocraft-cli",
+        "resolvedVersion": "0.2.0",
+        "releaseRef": "v0.2.0",
+        "repository": "https://github.com/storytold/photocraft",
+        "artifacts": {
+          "darwin-arm64": {
+            "url": "https://github.com/storytold/photocraft/releases/download/v0.2.0/photocraft-cli-0.2.0-macos-universal.zip",
+            "archiveSha256": "185e0375eaceeab595cb7fc2dc01e5813479a335f47172e562e4dea461141e30",
+            "binarySha256": "57cefe9ee7bda1d996c11741bef84f934cf28d4729eb237900f00d76678d6fa4",
+            "evidenceScope": "headless MCP smoke only"
+          }
+        },
+        "supportedPluginWorkflows": []
+      },
+      "sourcePath": "runtime/official-runtime-0.2.0.lock.json"
+    },
+    "publicProtocol": {
+      "status": "fixed-protocol-authority-reference",
+      "owner": "full-aigc-plugins/artcraft-plugin",
+      "source": {
+        "repository": "https://github.com/full-aigc-plugins/artcraft-plugin.git",
+        "ref": "v0.1.0-dev.109",
+        "sha": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b"
+      },
+      "protocols": {
+        "task": "craft-task/v1",
+        "artifact": "craft-artifact/v1"
+      },
+      "files": {
+        "taskSpec": {
+          "path": "openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md",
+          "sha256": "c6f17c1d03422a92f57a129f680808cf548f859cb1f12bfc4f88cf4a6dea0b9f",
+          "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/openspec/changes/establish-v1-plugin/specs/craft-task-protocol/spec.md"
+        },
+        "artifactSpec": {
+          "path": "openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md",
+          "sha256": "d73aacc5adc872dbe437dd28e27d040d6fed38072efec55527707691ebd3d90b",
+          "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/openspec/changes/establish-v1-plugin/specs/craft-artifact-protocol/spec.md"
+        },
+        "taskSchema": {
+          "path": "schemas/craft-task-v1.json",
+          "sha256": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+          "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/schemas/craft-task-v1.json"
+        },
+        "artifactSchema": {
+          "path": "schemas/craft-artifact-v1.json",
+          "sha256": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+          "url": "https://github.com/full-aigc-plugins/artcraft-plugin/blob/09d4ac5b8ff82f8fe819189e4be487b45ab2472b/schemas/craft-artifact-v1.json"
+        }
+      },
+      "scope": "Protocol authority only; not a runtime lock or full protocol acceptance."
+    },
+    "files": {
+      "plugin.json": "74ee1cec4e97fce52e4982024dc9b127271dddc7153f402766c633c78c8a9712",
+      "package.json": "f97958e25832b415ea5bfc5bf1fe2dc946d11f22076700dd1bff3af5327693ee",
+      "skills.lock.json": "12c4fd8b4878e21053c26aeea73b2312ca15d5672b2fe9e93245e9800338ce1c",
+      "runtime/photocraft-cli.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
+      "runtime/history/photocraft-cli-upstream-0.2.0.lock.json": "beaced33e7eada4d4919a4f8cf5d700c895a170e26e64c99b816048d82968e93",
+      "skills/photocraft-use/scripts/runtime.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
+      "docs/contracts-reference.json": "a5416c35f997ffa914780df2efba26c63b72a95ccc1df8d0f6bc06b3d0ab5feb",
+      "source/.claude-plugin/plugin.json": "109bd3113c32a41d48d7bd1b4186acc9f64fdb5da29d4739e0d4f6f3b113ac64",
+      "source/skill-suite.json": "b41b52f44ea652ffdde30836c8647ebe7261db4857639be5c1d5ab789a3d702b",
+      "source/skills/photocraft-use/scripts/runtime.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
+      "source/runtime/official-runtime-0.2.0.lock.json": "1b94994549e0914d47c443bd1e95c45d3d9d7fd7f7d0e3c927f9da4d456da59b",
+      "contracts/artcraft/craft-task-v1.json": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+      "contracts/artcraft/craft-artifact-v1.json": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+      "README.md": "a7e82eaff01a723bcf47b812c82a342618adbe6f46f34806261b107e91ae000a",
+      "README.zh-CN.md": "3bce18eaff21a5fc208f0c23f57681d7197dca1b7898d9c2ed2a05161bf82244"
+    },
+    "versionRoles": "Plugin and skill-source releases are independent; package and suite describe the same source version; active maintained runtime has its own version, distinct from retained upstream runtime."
+  },
+  "errors": [],
+  "acceptance": {
+    "native": false,
+    "hostModelRouting": false,
+    "creative": false,
+    "marketplace": false,
+    "remoteTag": "NOT_CHECKED"
+  },
+  "scope": "readonly local combination and complete source/installed managed-skill bytes; remote immutable tag and public archive identity require separate release evidence"
+}

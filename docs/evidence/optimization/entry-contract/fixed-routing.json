@@ -1,0 +1,743 @@
+{
+  "schema": "photocraft-fixed-routing-acceptance/v1",
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.44",
+  "skillsRef": "v0.1.0-dev.39",
+  "skillsCommit": "e17da3eeee17790aa4783f0d0109f79f95f8d5ff",
+  "platform": "darwin-arm64",
+  "standalone": [
+    {
+      "name": "photocraft-use",
+      "installedSha256": "bad7c610dbedf6722677e9ce5eac3994ebecf20cc7dfa0280fb2c86fa4b7ad31",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli",
+      "installedSha256": "1b777eb0f2a519d6a1308186638e52f18f7065aa9fc22cf17a6f1c2c92e27bac",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-setup",
+      "installedSha256": "bb74fefafd15f5bfb73ca56522a8f7f5b9f54921f347aa0f2bafb8ce011c45b1",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-project",
+      "installedSha256": "e3bb753fe8f183729e5b3e6081a0ca6e42891836fd60f9697007183b51105fcd",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-layers",
+      "installedSha256": "d10424a70549645f15e4b0be1f10a7b180f1a796e7d7cf4da6d67f6dc44dc2cb",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-selection",
+      "installedSha256": "9203ad3ffab78bfbe93c247cb4610fed3b1f99ed7a8a0c707ac452c4cfd03342",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-masks",
+      "installedSha256": "80977e8a74b6a088f4630c6306023b480441881179e24026768d3a9ed78bea15",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-adjustments",
+      "installedSha256": "9b778dfd0fe7079a77ccc9e7fbdcc7f931dbf0c361df4959046b4759f0d331cf",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-retouch",
+      "installedSha256": "ddd08382fd39253a05946fb6eb4d586663f361ac536aae90bd3fffcaa57f3273",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-text",
+      "installedSha256": "58de6c952e127bf8ac3659177ac4ad64947d9b73af232ffd061d3bb763519e06",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-resize",
+      "installedSha256": "c92cbe86c67d4a69157145be81112cf054d6c685286434469a8030d29d45ffb2",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-export",
+      "installedSha256": "c528d5d7592fb74558922a4731cb7c2971341ec0da831820f6d71da809cb0cb0",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    },
+    {
+      "name": "photocraft-cli-filters",
+      "installedSha256": "90a6e20d7c647ff068873e5e0118e510d57e477dbf3d83437ce5d18b10cd4452",
+      "coldPublicRuntime": true,
+      "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+      "registeredCommands": 755,
+      "isolatedSkillUnchanged": true,
+      "documentationAndExamples": true,
+      "unknownNoEdit": true,
+      "explicitCliPreserved": true,
+      "reusesCompletedPrerequisites": true
+    }
+  ],
+  "staticRoutes": [
+    {
+      "skill": "photocraft-use",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-use",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-use",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-use",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "intent": "query_commands",
+      "skills": [
+        "photocraft-cli"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "intent": "edit_text",
+      "skills": [
+        "photocraft-cli-text"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "intent": "filter_background",
+      "skills": [
+        "photocraft-cli-filters"
+      ]
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "intent": "export",
+      "skills": [
+        "photocraft-cli-export"
+      ]
+    }
+  ],
+  "representativeTests": [
+    {
+      "test": "test_adjustment_remains_editable_and_mask_limits_pixel_changes",
+      "skill": "photocraft-cli-adjustments",
+      "files": {
+        "local-adjustment.pcraft": "30c72ebd6486e8d11835fbe92180c1f9082e1907dadb082dc2f6652efa4675f4",
+        "preview.png": "3a2863b6f9f196201a8f2fdee7e0e61088a03bfef94358efee94c3ae1eb4857d"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_export_psd_preserves_layers_and_renders_same_pixels",
+      "skill": "photocraft-cli-export",
+      "files": {
+        "design.psd": "66a4fc13dac96f779a0df901b2ac037dedcc19edae24e64cdee093ec1536d025",
+        "preview.png": "b119a460eb381da84e1e3b9cbab3e6c114fca62c7d62ad17475cc7c1a3577030"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_filters_blur_product_edge_and_preserve_type_and_background",
+      "skill": "photocraft-cli-filters",
+      "files": {
+        "filtered.pcraft": "2f9e5112c3da2033f23177fdaf604289a57464c2ad3f9e3a8533ec22174540bf",
+        "preview.png": "89c7066be4cf6f389cb60e8d33d397dee0f7a3d2e2ffd281429b9f6ed1b1dc47"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_layers_duplicate_and_edit_properties_without_mutating_original",
+      "skill": "photocraft-cli-layers",
+      "files": {
+        "copied.pcraft": "1d92452e95699e5c503a12deedbe9175e1bda189151cfc6ff788258a7ec30156",
+        "layers.pcraft": "aec68ee6fed7554302140715609d0088879327e59fb58bb9c849ea5e5bb932ea"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_mask_hides_only_requested_half_and_preserves_text",
+      "skill": "photocraft-cli-masks",
+      "files": {
+        "mask.pcraft": "40be6fc0a63ffc811d573a8d825eabe716dd04f22bca431165a6fcd33a36ba17",
+        "preview.png": "64d148e4b8e042332ae92599e14ab53d02cbf36ce5c364286918fa886c82bf03"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_project_creates_editable_layers_and_reopens_native_document",
+      "skill": "photocraft-cli-project",
+      "files": {
+        "new.pcraft": "cc74f13b444586a16e4f7d5df67b6eb80c67bf2e6cd1144ac76ed1941460e6f2"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_resize_generates_canvas_and_resampled_variants",
+      "skill": "photocraft-cli-resize",
+      "files": {
+        "cover.pcraft": "7343fda3d0c860a002c116fd58eecc096bec25f71a78a8341c8dc5e18e7bdaa2",
+        "cover.png": "a7e5d002ad4b63f7a13b4445e01c07d5a58a00d7f34baee13f72fa64e9077df7",
+        "small.pcraft": "a58fbcb2b2079ceea3c3d497d3abd0423ce784dbb7009fa70dc8eee30e38b35c",
+        "small.png": "2dab758675cc246de1db6d3a6e8d098e81a25171c1ac1e0adbf44da7b2998100"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_retouch_stroke_clone_and_heal_preserve_unmodified_regions",
+      "skill": "photocraft-cli-retouch",
+      "files": {
+        "cloneStamp.pcraft": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+        "healingBrush.pcraft": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+        "paint.cloneStamp.png": "b119a460eb381da84e1e3b9cbab3e6c114fca62c7d62ad17475cc7c1a3577030",
+        "paint.healingBrush.png": "b119a460eb381da84e1e3b9cbab3e6c114fca62c7d62ad17475cc7c1a3577030",
+        "painted.pcraft": "8ec359e362b9cee114d4a414e63707247be8aca19c90621d2271eaf02f1fb6b1",
+        "painted.png": "79ddab612b979da4b3b55695e95a69b14ccaaa7757429d4abd208c3188d1e574"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_selection_limits_fill_to_requested_rectangle",
+      "skill": "photocraft-cli-selection",
+      "files": {
+        "preview.png": "096522b5649b040e23f3c4b4ca8e66a39b6db9c908df4af71e39181a8c0b28f9",
+        "selection.pcraft": "4db3f4eb7a37ee5aa6f8147b799a22495a1046c53ffe95d67f87b36a92464c49"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    },
+    {
+      "test": "test_text_revision_keeps_type_editable_and_product_pixels_unchanged",
+      "skill": "photocraft-cli-text",
+      "files": {
+        "preview.png": "6c02466c1882bf340ced6d5d4987408348e6ff03f159855f4a90b8259c38a9fc",
+        "text.pcraft": "e3709e2142a60e61eda7a81b3c434483f6b3103aa8e471201c8f68741138809b"
+      },
+      "sourceProjectSha256": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+      "sourceUnchanged": true
+    }
+  ],
+  "tests": {
+    "total": 13,
+    "passed": 13,
+    "skipped": 0
+  },
+  "cliOldPlan": true,
+  "useWorkflow": {
+    "domain": "photocraft",
+    "result": "PASS",
+    "pathCase": {
+      "unicodeAndSpaces": false,
+      "skillName": "single-skill",
+      "parentName": "tmpi0r425ax",
+      "runtimeInitiallyAbsent": true,
+      "offlineOverridesExcluded": true
+    },
+    "guardRecords": [
+      {
+        "identity": {
+          "inputHashes": {},
+          "planHash": "6b5432785929fbb6c0b104d778626ad72b06e1a26c13f18be01aed4ef3dce75a",
+          "projectRevision": "240e03f21672076cc4003d6a9c2ef77bd38c8cff8c696ae34bbfbddcf758c5da",
+          "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+        },
+        "ownerPid": 23588,
+        "replayAllowed": false,
+        "schema": "photocraft-output-execution/v1",
+        "state": "finished",
+        "targetHash": "30610867258ec66df7b7ac1b72adc6c3ba219c60df47cfd9c352d97589a3455a"
+      },
+      {
+        "identity": {
+          "inputHashes": {},
+          "planHash": "9526322d00be3fa6c9950384e9280b429c38428395a2d8830cf903e2463dee99",
+          "projectRevision": null,
+          "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf"
+        },
+        "ownerPid": 21197,
+        "replayAllowed": false,
+        "schema": "photocraft-output-execution/v1",
+        "state": "finished",
+        "targetHash": "2ee4939b4cd4501cc489b4b57f243a2c0e13b072380fc3d9c411058984d042e9"
+      }
+    ],
+    "workflowSha256": "58e2dede7119a17880dd8f6356aa570346b96f02751cd831d725639fd739bd83",
+    "guardSha256": "52a24556afed5e38ef6d14861bf0609a5d3aa383bbc1b1e144b0cf5e0d1f72ed",
+    "entrySha256": "69586883f2148e2d733166acbf1905edf8c7e7d343276743a9f4712f6fc0b10a",
+    "projectSha256": "240e03f21672076cc4003d6a9c2ef77bd38c8cff8c696ae34bbfbddcf758c5da",
+    "revisionSha256": "e0d36955ff92e46c905e9fa3597c42d7e15c9de5214a4223feec845fab4d2b57",
+    "scope": "fixed installed single-skill cold native workflow delivery/revision; no full DAG acceptance"
+  },
+  "driftRefusals": [
+    {
+      "path": "skills/photocraft-cli-text/examples/failure-recovery.md",
+      "result": "REFUSED",
+      "outputSha256": "9b0e64522d7a3553b2ebe661bef31b479bef2ec649ed63a4cc1e406cbf9a44e6"
+    },
+    {
+      "path": "skills/photocraft-cli-text/references/scenario-contract.md",
+      "result": "REFUSED",
+      "outputSha256": "0d5a66a61e7140cb597e92c15c58677a6c39f9396cc129c840c8a9d8c0f37757"
+    },
+    {
+      "path": "skills/photocraft-cli-text/scripts/commands.py",
+      "result": "REFUSED",
+      "outputSha256": "537e6453d91b92b4de71dd2dddb434e471e9b518903589e343ce3d0e3f8de4c7"
+    }
+  ],
+  "installedTreeUnchanged": true,
+  "installedTreeSha256": "8477013a34534fcc1d2be7fb1c99886930f7f47e68c7eb3bd45779a81580ac96",
+  "sourceTreeSha256": "0ee8fe355ad73ffe780e03bf30b20ea68b98b15ca1ec8abb19b732b508bb2e73",
+  "driverSha256": "ebd23246ac5aa2fa0766e28aa5934ee5e6b4d19721e966ca470f77de65143422",
+  "testDriverSha256": {
+    "test_task_skill_first_use.py": "49a91eb8809363f5a9384669d2b7f76c1ea625cfdda98d7e818d4b3c3b0dea65",
+    "test_native_workflow_first_use.py": "a2a351f33b169f85669d1ab800880b4f66e2f721a0e756f9043dc747445b8de3"
+  },
+  "retainedFiles": {
+    "representative/test_project_creates_editable_layers_and_reopens_native_document/new.pcraft": "cc74f13b444586a16e4f7d5df67b6eb80c67bf2e6cd1144ac76ed1941460e6f2",
+    "representative/test_mask_hides_only_requested_half_and_preserves_text/preview.png": "64d148e4b8e042332ae92599e14ab53d02cbf36ce5c364286918fa886c82bf03",
+    "representative/test_mask_hides_only_requested_half_and_preserves_text/mask.pcraft": "40be6fc0a63ffc811d573a8d825eabe716dd04f22bca431165a6fcd33a36ba17",
+    "representative/test_adjustment_remains_editable_and_mask_limits_pixel_changes/preview.png": "3a2863b6f9f196201a8f2fdee7e0e61088a03bfef94358efee94c3ae1eb4857d",
+    "representative/test_adjustment_remains_editable_and_mask_limits_pixel_changes/local-adjustment.pcraft": "30c72ebd6486e8d11835fbe92180c1f9082e1907dadb082dc2f6652efa4675f4",
+    "representative/test_resize_generates_canvas_and_resampled_variants/cover.pcraft": "7343fda3d0c860a002c116fd58eecc096bec25f71a78a8341c8dc5e18e7bdaa2",
+    "representative/test_resize_generates_canvas_and_resampled_variants/cover.png": "a7e5d002ad4b63f7a13b4445e01c07d5a58a00d7f34baee13f72fa64e9077df7",
+    "representative/test_resize_generates_canvas_and_resampled_variants/small.pcraft": "a58fbcb2b2079ceea3c3d497d3abd0423ce784dbb7009fa70dc8eee30e38b35c",
+    "representative/test_resize_generates_canvas_and_resampled_variants/small.png": "2dab758675cc246de1db6d3a6e8d098e81a25171c1ac1e0adbf44da7b2998100",
+    "representative/test_export_psd_preserves_layers_and_renders_same_pixels/preview.png": "b119a460eb381da84e1e3b9cbab3e6c114fca62c7d62ad17475cc7c1a3577030",
+    "representative/test_export_psd_preserves_layers_and_renders_same_pixels/design.psd": "66a4fc13dac96f779a0df901b2ac037dedcc19edae24e64cdee093ec1536d025",
+    "representative/test_filters_blur_product_edge_and_preserve_type_and_background/preview.png": "89c7066be4cf6f389cb60e8d33d397dee0f7a3d2e2ffd281429b9f6ed1b1dc47",
+    "representative/test_filters_blur_product_edge_and_preserve_type_and_background/filtered.pcraft": "2f9e5112c3da2033f23177fdaf604289a57464c2ad3f9e3a8533ec22174540bf",
+    "representative/test_layers_duplicate_and_edit_properties_without_mutating_original/copied.pcraft": "1d92452e95699e5c503a12deedbe9175e1bda189151cfc6ff788258a7ec30156",
+    "representative/test_layers_duplicate_and_edit_properties_without_mutating_original/layers.pcraft": "aec68ee6fed7554302140715609d0088879327e59fb58bb9c849ea5e5bb932ea",
+    "representative/test_text_revision_keeps_type_editable_and_product_pixels_unchanged/preview.png": "6c02466c1882bf340ced6d5d4987408348e6ff03f159855f4a90b8259c38a9fc",
+    "representative/test_text_revision_keeps_type_editable_and_product_pixels_unchanged/text.pcraft": "e3709e2142a60e61eda7a81b3c434483f6b3103aa8e471201c8f68741138809b",
+    "representative/test_retouch_stroke_clone_and_heal_preserve_unmodified_regions/paint.cloneStamp.png": "b119a460eb381da84e1e3b9cbab3e6c114fca62c7d62ad17475cc7c1a3577030",
+    "representative/test_retouch_stroke_clone_and_heal_preserve_unmodified_regions/paint.healingBrush.png": "b119a460eb381da84e1e3b9cbab3e6c114fca62c7d62ad17475cc7c1a3577030",
+    "representative/test_retouch_stroke_clone_and_heal_preserve_unmodified_regions/cloneStamp.pcraft": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+    "representative/test_retouch_stroke_clone_and_heal_preserve_unmodified_regions/painted.png": "79ddab612b979da4b3b55695e95a69b14ccaaa7757429d4abd208c3188d1e574",
+    "representative/test_retouch_stroke_clone_and_heal_preserve_unmodified_regions/healingBrush.pcraft": "c2008b875c4c6068f6ce7ce1ecfddfc69cc2eebdd1ba3f4397598da9b88705e3",
+    "representative/test_retouch_stroke_clone_and_heal_preserve_unmodified_regions/painted.pcraft": "8ec359e362b9cee114d4a414e63707247be8aca19c90621d2271eaf02f1fb6b1",
+    "representative/test_selection_limits_fill_to_requested_rectangle/selection.pcraft": "4db3f4eb7a37ee5aa6f8147b799a22495a1046c53ffe95d67f87b36a92464c49",
+    "representative/test_selection_limits_fill_to_requested_rectangle/preview.png": "096522b5649b040e23f3c4b4ca8e66a39b6db9c908df4af71e39181a8c0b28f9"
+  },
+  "scope": "Fixed public-tag installed resources, each skill alone with cold public runtime, deterministic intent queries and native representative tasks; actual natural-language host/model routing and full command execution remain NOT_RUN"
+}

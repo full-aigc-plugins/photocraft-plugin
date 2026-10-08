@@ -122,7 +122,7 @@
       "requirements": [
         "PC-TX-005"
       ],
-      "candidate": "Source39 adds stable validation field paths and safe command/alias types, validates document/save/inspect semantics, preserves batch diagnostics and native/desktop open reply forms; candidate52 preflight/48 native cases pass",
+      "candidate": "Source39 adds stable validation field paths and safe command/alias types, validates document/save/inspect semantics, preserves batch diagnostics and native/desktop open reply forms; candidate52 preflight/48 native cases pass; actual fixed installation52/48 and whole installed-tree identity also pass",
       "remaining": "cli.py native argv passthrough duplicate-key case still reaches installer first; public Harness editing/revision coverage audit pending; task9.6 open"
     },
     {
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Source39 repairs public plan-runner preflight and validated document/save replies; candidate/native/desktop scenarios pass, all-entry9.6 remains open for native argv passthrough and Harness audit. No task count reduction.",
+  "scope": "Source39 and fixed plugin44 plan runners:52 preflight and48 native/desktop cases each pass; raw CLI gap is reproduced in both source and actual installation; Harness audit remains open. No task count reduction.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -210,8 +210,8 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 226,
-    "skillsReusedFrom": "capability-scoped-source-validation.json",
+    "skills": 231,
+    "skillsReusedFrom": "entry-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 28,
     "pluginPython": 48,
@@ -231,9 +231,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "identity-post-release-validation.json",
+  "releaseCandidateEvidence": "entry-post-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "identity-release-publication.json",
+  "publicationEvidence": "entry-release-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -256,5 +256,6 @@
   },
   "fixedPsdAcceptanceEvidence": "psd-acceptance-audit.json",
   "fixedFlatAcceptanceEvidence": "flat-acceptance-audit.json",
-  "fixedCapabilityAcceptanceEvidence": "capability-acceptance-audit.json"
+  "fixedCapabilityAcceptanceEvidence": "capability-acceptance-audit.json",
+  "entryContractEvidence": "entry-contract/coverage-audit.json"
 }

@@ -2458,7 +2458,7 @@
       "exitCode": 0,
       "seconds": 10.45,
       "outputSha256": "b9dad601783e789c51f3319c5491f5744a4b002b268af1884cbb2667225dbd27",
-      "summary": "fetched /private/var/folders/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmplf0dj_40/source@v1.0.0 -> bc3af303bf33a1d8d3378976f1276dba38147139\nusing local tagged source for sample-skills: /private/var/folders/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmplf0dj_40/source @ bc3af303bf33a1d8d3378976f1276dba38147139\n\n..............................................fatal: couldn't find remote ref refs/tags/v1.0.0\n..\n----------------------------------------------------------------------\nRan 48 tests in 10.298s\n\nOK\n"
+      "summary": "fetched TEMPORARY_WORKSPACE/source@v1.0.0 -> bc3af303bf33a1d8d3378976f1276dba38147139\nusing local tagged source for sample-skills: TEMPORARY_WORKSPACE/source @ bc3af303bf33a1d8d3378976f1276dba38147139\n\n..............................................fatal: couldn't find remote ref refs/tags/v1.0.0\n..\n----------------------------------------------------------------------\nRan 48 tests in 10.298s\n\nOK\n"
     },
     {
       "name": "skills-resources",
@@ -5507,5 +5507,10 @@
     }
   },
   "sourceUnchanged": true,
-  "finishedAt": "2026-10-08T14:54:00.459055+00:00"
+  "finishedAt": "2026-10-08T14:54:00.459055+00:00",
+  "outputRedaction": {
+    "scope": "Machine-local temporary directory names in subprocess summaries only; original outputSha256, source fingerprints and test results unchanged",
+    "rawReportSha256": "cf1c8b32ec7e92fd2a88604ef3e9ccccb6d2dd8afd0d9ace001eb56196147442",
+    "pathsReplaced": 2
+  }
 }

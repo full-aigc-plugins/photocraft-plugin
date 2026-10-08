@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.44 固定技能源dev.39，修复预检字段位置／非法别名类型及未验证保存回执。候选52项预检与48项原生／桌面场景通过，公开固定安装验收待完成。[入口验收](docs/PhotoCraft-Entry-Contract-Acceptance.zh_CN.md)。
+dev.44 固定技能源dev.39，修复预检字段位置／非法别名类型及未验证保存回执。候选和公开固定安装分别通过52项预检与48项原生／桌面场景；CLI透传预检缺口与Harness入口审计仍使任务9.6保持未完成。[入口验收](docs/PhotoCraft-Entry-Contract-Acceptance.zh_CN.md)。
 
 dev.43 增加完整当前发行组合摘要及来源冲突拒绝，技能源仍固定dev.38。公开dev.43固定安装通过18项身份拒绝案例及13项技能独立冷启动与代表任务；任务9.3／9.9完成，真实模型派发仍开放。[身份门禁](docs/PhotoCraft-Release-Combination.zh_CN.md)。
 

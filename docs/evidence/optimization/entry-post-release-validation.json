@@ -1,6 +1,6 @@
 {
   "schema": "photocraft-candidate-validation/v1",
-  "startedAt": "2026-10-08T14:56:05.276566+00:00",
+  "startedAt": "2026-10-08T15:01:56.376340+00:00",
   "status": "PASS",
   "scope": "source regression with pinned installed/downloaded native runtimes; fixed public installation and host-model/creative acceptance are recorded separately",
   "source": {
@@ -2433,9 +2433,9 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 5.338,
-      "outputSha256": "6c3b7aeef91910be4a78d227856931939cb4390c5093a53a179751c9c587bab2",
-      "summary": "6.48025ms)\n✔ corrupt ledger is preserved, never silently recreated (0.893375ms)\n✔ reconcile records a verified retained checkpoint without replay or technical acceptance (5.340042ms)\n✔ revision proposal cannot edit unrelated layers or reset revision budget (8.068708ms)\n✔ unsupported ledger schema is refused without changing original bytes (3.985334ms)\n✔ active tasks retain aggregate disk and process reservations (6.363458ms)\n✔ descendant revisions spend the root budget once and parent stop waits for children (18.907666ms)\n✔ disk shortage refuses intent and mutable GUI writes refuse before execution (8.431666ms)\n✔ stop confirms only the owned worker and leaves unrelated process alive (262.689709ms)\n✔ local adjustment revision is bound to the editable enabled mask and exact changed properties (10.757167ms)\n✔ JSON accepts only grammar whitespace and own prototype-named keys (0.726666ms)\nℹ tests 28\nℹ suites 0\nℹ pass 28\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5301.435167\n\n",
+      "seconds": 5.532,
+      "outputSha256": "02ee6ad288b05ef20364d1aeb2e2162081f335486a4b71290c28e89e4338920e",
+      "summary": "632917ms)\n✔ corrupt ledger is preserved, never silently recreated (0.956292ms)\n✔ reconcile records a verified retained checkpoint without replay or technical acceptance (5.375333ms)\n✔ revision proposal cannot edit unrelated layers or reset revision budget (15.139458ms)\n✔ unsupported ledger schema is refused without changing original bytes (6.01625ms)\n✔ active tasks retain aggregate disk and process reservations (5.905417ms)\n✔ descendant revisions spend the root budget once and parent stop waits for children (17.988084ms)\n✔ disk shortage refuses intent and mutable GUI writes refuse before execution (11.912333ms)\n✔ stop confirms only the owned worker and leaves unrelated process alive (297.194958ms)\n✔ local adjustment revision is bound to the editable enabled mask and exact changed properties (11.174458ms)\n✔ JSON accepts only grammar whitespace and own prototype-named keys (4.233959ms)\nℹ tests 28\nℹ suites 0\nℹ pass 28\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 5488.076666\n\n",
       "tests": {
         "tests": 28,
         "pass": 28,
@@ -2458,9 +2458,9 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 13.954,
-      "outputSha256": "c51a015c546a7673df66e039508b9c94930ed67851e9482f6b51e9317852ba4e",
-      "summary": "fetched TEMPORARY_WORKSPACE/source@v1.0.0 -> 8dfa8d203c1463063939252a1294de84a9ff549a\nusing local tagged source for sample-skills: TEMPORARY_WORKSPACE/source @ 8dfa8d203c1463063939252a1294de84a9ff549a\n\n..............................................fatal: couldn't find remote ref refs/tags/v1.0.0\n..\n----------------------------------------------------------------------\nRan 48 tests in 13.863s\n\nOK\n"
+      "seconds": 11.367,
+      "outputSha256": "57ac00b3fc8df27ef1c3522d98fe1c42ed0b0984e4703b3c7f3abb4e5889c1d6",
+      "summary": "fetched TEMPORARY_WORKSPACE/source@v1.0.0 -> d93fba95cb5299cff27b41486ce13a10724ebd7f\nusing local tagged source for sample-skills: TEMPORARY_WORKSPACE/source @ d93fba95cb5299cff27b41486ce13a10724ebd7f\n\n..............................................fatal: couldn't find remote ref refs/tags/v1.0.0\n..\n----------------------------------------------------------------------\nRan 48 tests in 11.276s\n\nOK\n"
     },
     {
       "name": "skills-resources",
@@ -2473,7 +2473,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.235,
+      "seconds": 0.378,
       "outputSha256": "f4b87e9e40de9126c3c9b45b40ed4ff6a3aff1e48c3357266788bf2effe234c7",
       "summary": "{\"domain\": \"photocraft\", \"commands\": 755, \"check\": true}\nskill suite resources verified\n\n"
     },
@@ -2488,7 +2488,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.047,
+      "seconds": 0.05,
       "outputSha256": "e7b578716defa393cb8f41718bd1db46fa530ed886474e4df9140612fd41ea89",
       "summary": "{\"pluginId\": \"photocraft\", \"commands\": 755, \"mapped\": 30, \"allRouted\": true, \"nativeExecutionAcceptance\": \"NOT_RUN\"}\n\n"
     },
@@ -2502,7 +2502,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.027,
+      "seconds": 0.034,
       "outputSha256": "a98717b86f12e8186a46847e320bd625fb354df97d6b17608a2f20c6bf5deca6",
       "summary": "{\n  \"status\": \"PASS\",\n  \"packageVersion\": \"0.1.0-dev.39\",\n  \"runtimeVersion\": \"0.2.0-craft.1\",\n  \"runtimeVariant\": \"maintained-capability-scoped-smart-content\",\n  \"runtimeRepository\": \"https://github.com/full-aigc-skills/photocraft-skills\",\n  \"errors\": [],\n  \"scope\": \"release identity only; native and host acceptance separate\"\n}\n\n"
     },
@@ -2521,7 +2521,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.047,
+      "seconds": 0.055,
       "outputSha256": "b9d9eb2b67495f8739a5d896d9b1d0df90ec6ef06a3145e781ac88142e3c45d0",
       "summary": "{\n  \"schema\": \"photocraft-command-acceptance-check/v1\",\n  \"commands\": 755,\n  \"acceptedCommands\": 0,\n  \"boundNativeContexts\": 0,\n  \"contexts\": {\n    \"PASS\": 0,\n    \"FAIL\": 0,\n    \"NOT_RUN\": 1510,\n    \"NOT_APPLICABLE\": 0\n  },\n  \"fullCommandAcceptance\": \"NOT_RUN\",\n  \"fixedCandidateInstallation\": \"NOT_RUN\",\n  \"hostModelRouting\": \"NOT_RUN\",\n  \"creativeAcceptance\": \"NOT_RUN\",\n  \"sourceAuthenticity\": \"NOT_PROVEN\",\n  \"scope\": \"indexed context and bound report integrity only; independent execution authenticity and exhaustive context review require separate acceptance\"\n}\n\n"
     },
@@ -2535,7 +2535,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.027,
+      "seconds": 0.028,
       "outputSha256": "4cda28c1ac0420a8ed8a22f24fe1d2f1b364f0caef33865a8a1475dfb9095974",
       "summary": "{\n  \"status\": \"PASS\",\n  \"pluginVersion\": \"0.1.0-dev.44\",\n  \"skillSource\": {\n    \"package\": \"photocraft-skills\",\n    \"ref\": \"v0.1.0-dev.39\",\n    \"sha\": \"e17da3eeee17790aa4783f0d0109f79f95f8d5ff\"\n  },\n  \"runtimeVersion\": \"0.2.0-craft.1\",\n  \"runtimeVariant\": \"maintained-capability-scoped-smart-content\",\n  \"errors\": [],\n  \"scope\": \"identity only; fixed installation, model routing and creative acceptance separate\"\n}\n\n"
     },
@@ -2551,7 +2551,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.098,
+      "seconds": 0.129,
       "outputSha256": "7c2969937041b49a5620a8a861bae590859470957c53d5230b00aa784e3369d7",
       "summary": "skill vendor check: all managed skills match the lockfile (offline)\n\n"
     },
@@ -2565,7 +2565,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 1.185,
+      "seconds": 1.971,
       "outputSha256": "8d58759f342d25400160f61a373806715be2f2c7b343086ce035ed3141c3d849",
       "summary": "Change 'establish-v1-plugin' is valid\n\n"
     },
@@ -2579,7 +2579,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.499,
+      "seconds": 0.448,
       "outputSha256": "38e249ddee0171c7a7d132eb9e2751a8631fce0d49d7172b7634569dd5a20fea",
       "summary": "{\n  \"status\": \"passed\",\n  \"scope\": \"documentation structure, local links, status honesty and spec/task traceability only\",\n  \"markdownFiles\": 448,\n  \"capabilities\": 7,\n  \"requirements\": 27,\n  \"scenarios\": 109,\n  \"openImplementationTasks\": 28,\n  \"errors\": []\n}\n\n"
     },
@@ -2592,7 +2592,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.011,
+      "seconds": 0.012,
       "outputSha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
       "summary": "\n"
     },
@@ -2605,7 +2605,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.4,
+      "seconds": 0.01,
       "outputSha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
       "summary": "\n"
     },
@@ -2621,7 +2621,7 @@
       ],
       "status": "PASS",
       "exitCode": 0,
-      "seconds": 0.383,
+      "seconds": 0.244,
       "outputSha256": "fcbcf6a60d86289abbbd4f3a6aadef3641ab209eaef0e3ad0d8e2a7addf0c4e8",
       "summary": "da4d456da59b\",\n      \"contracts/artcraft/craft-task-v1.json\": \"4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad\",\n      \"contracts/artcraft/craft-artifact-v1.json\": \"c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d\",\n      \"README.md\": \"a7e82eaff01a723bcf47b812c82a342618adbe6f46f34806261b107e91ae000a\",\n      \"README.zh-CN.md\": \"3bce18eaff21a5fc208f0c23f57681d7197dca1b7898d9c2ed2a05161bf82244\"\n    },\n    \"versionRoles\": \"Plugin and skill-source releases are independent; package and suite describe the same source version; active maintained runtime has its own version, distinct from retained upstream runtime.\"\n  },\n  \"errors\": [],\n  \"acceptance\": {\n    \"native\": false,\n    \"hostModelRouting\": false,\n    \"creative\": false,\n    \"marketplace\": false,\n    \"remoteTag\": \"NOT_CHECKED\"\n  },\n  \"scope\": \"readonly local combination and complete source/installed managed-skill bytes; remote immutable tag and public archive identity require separate release evidence\"\n}\n\n"
     }
@@ -5533,10 +5533,10 @@
   },
   "nativeReports": {},
   "sourceUnchanged": true,
-  "finishedAt": "2026-10-08T14:56:27.760607+00:00",
+  "finishedAt": "2026-10-08T15:02:16.788158+00:00",
   "outputRedaction": {
     "scope": "Machine-local temporary directory names in subprocess summaries only; original outputSha256, source fingerprints and test results unchanged",
-    "rawReportSha256": "ad11143934cc145a00d497828bceb7d82ac720c491430f18598fdcca929c4391",
+    "rawReportSha256": "30a28f8d325cf29a0b2bfa4b5752bee5114f97b31cf7f58967ff32df9b591c6c",
     "pathsReplaced": 2
   }
 }

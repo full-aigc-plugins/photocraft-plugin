@@ -171,7 +171,7 @@
     "pluginWorkingVersion": "0.1.0-dev.44",
     "fixedSkillSourceVersion": "0.1.0-dev.39",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "CANDIDATE_FIXED_INSTALLATION_PENDING",
+    "publication": "PUBLISHED_FIXED_THREE_PLAN_RUNNERS_VERIFIED_ALL_ENTRY_ACCEPTANCE_PARTIAL",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -179,8 +179,8 @@
       "open": 28,
       "newlyCompleted": 67
     },
-    "publicationEvidence": "docs/evidence/optimization/identity-release-publication.json",
-    "currentRegressionEvidence": "docs/evidence/optimization/identity-post-release-validation.json"
+    "publicationEvidence": "docs/evidence/optimization/entry-release-publication.json",
+    "currentRegressionEvidence": "docs/evidence/optimization/entry-post-release-validation.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -191,5 +191,8 @@
   "fixedCapabilityAcceptanceEvidence": "docs/evidence/optimization/capability-acceptance-audit.json",
   "fixedCapabilityAcceptanceStatus": "Task10.3 passed, fourteen fixed macOS arm64 headless/owned desktop cases; full upgrade/drain/state-compatible rollback2.6 remains open",
   "fixedReleaseIdentityEvidence": "docs/evidence/optimization/identity-acceptance-audit.json",
-  "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json"
+  "fixedRoutingContractEvidence": "docs/evidence/optimization/routing-acceptance-audit.json",
+  "entryContractEvidence": "docs/evidence/optimization/entry-contract/coverage-audit.json",
+  "entryContractAcceptance": "PARTIAL: fixed workflow/commands/desktop pass; native argv preflight and Harness audit remain open",
+  "fixedReleaseCombinationEvidence": "docs/evidence/optimization/entry-contract/fixed-release-combination.json"
 }

@@ -1,0 +1,103 @@
+{
+  "schema": "photocraft-entry-publication/v1",
+  "status": "PASS_DEVELOPMENT_PUBLICATION_PARTIAL_ACCEPTANCE",
+  "recordedAt": "2026-10-08T15:03:34.688991+00:00",
+  "releases": [
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "ref": "v0.1.0-dev.39",
+      "commit": "e17da3eeee17790aa4783f0d0109f79f95f8d5ff",
+      "assetSha256": "e10fb5376bd812a96f4fb6784cf573a6b0429b5041110e4096b0eba63d8db10c",
+      "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.39",
+      "prerelease": true,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true,
+      "mainMatchedReleaseAtVerification": true
+    },
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "ref": "v0.1.0-dev.44",
+      "commit": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+      "assetSha256": "3a45b21a04094485306e3a533dcc560f94cbb42dc964a4450bc2dc9283b95704",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.44",
+      "prerelease": true,
+      "publicDownloadMatches": true,
+      "archiveCommitMatchesTag": true,
+      "mainMatchedReleaseAtVerification": true
+    }
+  ],
+  "previousReleasesPreserved": [
+    {
+      "repository": "full-aigc-plugins/photocraft-plugin",
+      "ref": "v0.1.0-dev.43",
+      "commit": "adda9f7579eeaff2b6a06bda40bb09301dc83941",
+      "assetSha256": "c72b0bc1b4d96982fb17071681c509ff1c6a8901ea4e86cd1763242fdd5783b9",
+      "remoteTagAndPublicDigestUnchanged": true,
+      "verification": "GitHub ref API and release asset digest"
+    },
+    {
+      "repository": "full-aigc-skills/photocraft-skills",
+      "ref": "v0.1.0-dev.38",
+      "commit": "f9ce89b72001e46d3cd0cc68ab0a3da36c457ac5",
+      "assetSha256": "7a71e625d52c3f41771a21c1da6fbfc3966857e482a0f316da8a0dbb636a5dc9",
+      "remoteTagAndPublicDigestUnchanged": true,
+      "verification": "GitHub ref API and release asset digest"
+    }
+  ],
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37797005047,
+      "headBranch": "v0.1.0-dev.44",
+      "headSha": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37797005047"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37797004995,
+      "headBranch": "v0.1.0-dev.44",
+      "headSha": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37797004995"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37797000039,
+      "headBranch": "main",
+      "headSha": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37797000039"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37796999784,
+      "headBranch": "main",
+      "headSha": "1e1a22d24e27b8537d51fd74e1f41d06c5050c7e",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37796999784"
+    }
+  ],
+  "skillsRepositoryCI": [],
+  "skillsCIBoundary": "No source repository CI run; local231 tests and immutable public source validation only",
+  "coverageAudit": "entry-contract/coverage-audit.json",
+  "fixedHost": "entry-contract/fixed-host.json",
+  "fixedRouting": "entry-contract/fixed-routing.json",
+  "postReleaseRegression": "entry-post-release-validation.json",
+  "postReleaseRegressionStatus": "PASS",
+  "postReleaseRegressionSha256": "92c53b786ebd2136caa0fd7632c763547c557418564ef46e5bcb356f2306454c",
+  "taskCounts": {
+    "total": 157,
+    "completed": 129,
+    "open": 28
+  },
+  "closedTasks": [],
+  "marketplaceEligible": false,
+  "supportedPluginHosts": [],
+  "fullV1": "INCOMPLETE",
+  "fixedReleaseCombination": "entry-contract/fixed-release-combination.json"
+}
