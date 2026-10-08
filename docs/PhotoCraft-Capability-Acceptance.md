@@ -1,6 +1,6 @@
 # PhotoCraft backend capability acceptance
 
-This continues OpenSpec task10.3. Source dev.38 adds runtime version/build output/platform to capability snapshots; bridge snapshots also bind the verified desktop version and binary digest. Parameter descriptions remain distinct from per-command JSON Schema; actual MCP tool inputSchema is bound separately. Candidate evidence passes; fixed plugin dev.42 acceptance is pending. Full upgrade/drain/state-compatible rollback task2.6 remains open.
+This continues OpenSpec task10.3. Source dev.38 adds runtime version/build output/platform to capability snapshots; bridge snapshots also bind the verified desktop version and binary digest. Parameter descriptions remain distinct from per-command JSON Schema; actual MCP tool inputSchema is bound separately. Source and public fixed plugin dev.42 acceptance pass. Full upgrade/drain/state-compatible rollback task2.6 remains open.
 
 ```mermaid
 flowchart TD
@@ -21,3 +21,7 @@ The ordinary workflow checks capabilities before save/export tool calls as well 
 [Source candidate proof](evidence/optimization/capability-source-first-use.json). Run source `tests/test_capability_first_use.py` with `CRAFT_CAPABILITY_FIRST_USE=1` and `CRAFT_INSTALLED_CAPABILITY_SKILL` pointing to the actual installed CLI skill. Optional `CRAFT_CAPABILITY_OUTPUT` and `CRAFT_CAPABILITY_REPORT` must be new owned paths. Bind driver/input/output, fixed source and installed-content digests, and verify the whole installed tree before and after.
 
 Each operation rechecks only its commands, tool schema and discovery-tool dependency against the initial snapshot. Unrelated command/tool drift is recorded by full registry digests without blocking the current operation; attempting that changed capability later still fails. The scoped checks are bound into the delivery manifest and artifact evidence.
+
+Isolated Codex 0.147.0 installs the public dev.42 tag and discovers fourteen skills without loading errors. The actual installed CLI skill runs fourteen dual-backend cases from empty runtime state; all 28 installed harness tests pass without skips and the installed tree is unchanged. Task10.3 closes; 127/157 tasks pass and thirty remain open.
+
+[Subgate audit](evidence/optimization/capability-acceptance-audit.json) · [Fixed native proof](evidence/optimization/capability-fixed-first-use.json) · [Installed harness](evidence/optimization/capability-fixed-harness.json) · [Publication](evidence/optimization/capability-release-publication.json).

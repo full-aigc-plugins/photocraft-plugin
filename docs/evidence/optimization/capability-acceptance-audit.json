@@ -1,0 +1,50 @@
+{
+  "schema": "photocraft-capability-acceptance-audit/v1",
+  "status": "PASS_FIXED_BACKEND_SUBGATE",
+  "closedTasks": [
+    "10.3"
+  ],
+  "specAuthority": "openspec/changes/establish-v1-plugin/specs/runtime-distribution/spec.md",
+  "specSha256": "7258722e1ecc2040a177c09411a4023daa06816e8965ab6233405db2b747ed5b",
+  "pluginVersion": "0.1.0-dev.42",
+  "pluginCommit": "91f7c9a1a06dcdd2817b483500aec637bef5fd34",
+  "skillsRef": "v0.1.0-dev.38",
+  "skillsCommit": "f9ce89b72001e46d3cd0cc68ab0a3da36c457ac5",
+  "platform": "darwin-arm64",
+  "runtimeVersion": "0.2.0-craft.1",
+  "runtimeSha256": "3b59686b288c399078e51a631ca9133cdb075ba9fe8f2ae705db4a6f76e464bf",
+  "driverSha256": "e9de6e5c19116029bc6d57c04953439a6629334c59bfca366fa25d6b69c81718",
+  "evidenceSha256": {
+    "capability-fixed-first-use.json": "d16246a8d7277b15f1f412bd6ed94fd17f23f357c77dd4289778781b7659665a",
+    "capability-fixed-host.json": "1da50b856abd063d6377af74edad3dee19eaf21b68feafd5de870d6b2bf8fe2d",
+    "capability-fixed-harness.json": "c18798c4574517d9befd70227e323b3d87f6cb231828f2bbe96867f969ca3006",
+    "capability-source-first-use.json": "47b5eba4e71eca1910060b9fbc593758ee7079a25a54d15bbe326255f73bd4a3",
+    "capability-scoped-source-validation.json": "ad370343b7df307d2792057d51b8b56b60c170ee3fce156cda695c704c3ed3e6",
+    "capability-release-candidate.json": "8247130292ccea714849b09f4789d399c585aeea136be25e172ddf7fca9755c4"
+  },
+  "scenarios": [
+    {
+      "scenario": "PC-RT-002-SNAPSHOT",
+      "scope": "fixed version/build/platform/binary/backend/session plus command parameter and tool-schema digests, with dynamic enabled separate from authorization",
+      "evidence": "capability-fixed-first-use.json",
+      "status": "PASS_BOUNDED_FIXED_BACKENDS"
+    },
+    {
+      "scenario": "PC-RT-002-SCHEMA-DRIFT",
+      "scope": "related parameter/tool drift stops before next edit; unrelated drift records full digests and permits current operation, initial required capability absence is zero-edit; fresh checkpoint reopen/hash preservation and owned process stop",
+      "evidence": "capability-fixed-first-use.json",
+      "status": "PASS_CONTROLLED_DISCOVERY_FAULTS"
+    }
+  ],
+  "nativeCases": 14,
+  "scope": "Task10.3 only, public fixed installation on macOS arm64 with labeled readonly discovery fault injection. The full PC-RT-002 requirement remains in progress.",
+  "limits": {
+    "fullUpgradeDrainRollback": "NOT_RUN",
+    "stateSchemaRollback": "NOT_RUN",
+    "all755CommandContexts": "NOT_RUN",
+    "hostModelRouting": "NOT_RUN",
+    "independentCreativeAcceptance": "NOT_RUN",
+    "otherPlatforms": "NOT_RUN",
+    "fullV1": "INCOMPLETE"
+  }
+}

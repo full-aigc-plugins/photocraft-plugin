@@ -76,7 +76,19 @@
       "candidateImplementation": {
         "status": "verified-minimum-implementation-full-acceptance-open",
         "evidence": "docs/evidence/optimization/task-progress.json"
-      }
+      },
+      "capabilitySubgateEvidence": "docs/evidence/optimization/capability-acceptance-audit.json",
+      "completedCapabilityTasks": [
+        "10.1",
+        "10.2",
+        "10.3"
+      ],
+      "openUpgradeTasks": [
+        "2.4",
+        "2.5",
+        "2.6"
+      ],
+      "scope": "Task10.3 only, public fixed installation on macOS arm64 with labeled readonly discovery fault injection. The full PC-RT-002 requirement remains in progress."
     },
     {
       "requirement": "PC-TX-001",

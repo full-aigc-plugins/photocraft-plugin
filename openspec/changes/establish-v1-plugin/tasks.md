@@ -230,7 +230,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 10.1 [PC-RT-002] 建立同命令 ID 参数 schema 改变、后端切换、过期会话和 enabled／授权分离测试；先确认内容级能力漂移缺失。责任：Runtime owner；前置：9.5 的统一执行契约；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/capability-snapshot/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 10.2 [PC-RT-002] 在独立执行器和插件适配层绑定真实运行时／后端／会话及参数 schema 摘要；逐步检查动态文档与选择，漂移停止并保留旧组合。责任：Runtime owner；前置：10.1；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
-- [ ] 10.3 [PC-RT-002] 分别验证支持的 headless 与 desktop 固定运行时正常探测及 schema 漂移拒绝；记录平台、后端与快照，不将该子门禁代替完整升级回退 2.6。责任：QA owner；前置：10.2 及对应固定来源可用；产物：docs/evidence/optimization/capability-snapshot/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。
+- [x] 10.3 [PC-RT-002] 分别验证支持的 headless 与 desktop 固定运行时正常探测及 schema 漂移拒绝；记录平台、后端与快照，不将该子门禁代替完整升级回退 2.6。责任：QA owner；前置：10.2 及对应固定来源可用；产物：docs/evidence/optimization/capability-snapshot/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 验收证据：`docs/evidence/optimization/capability-acceptance-audit.json`（固定dev.42／技能源dev.38，macOS arm64双后端14例；2.6完整升级回退仍开放）。
 
 - [x] 10.4 [PC-TX-001] 建立共享工程不同输出竞争、桌面未保存版本、过期 epoch 回执和独立不可变源副本的并发测试。责任：Harness owner；前置：9.5、10.2；关联原 3.1–3.3；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/project-ownership/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 10.5 [PC-TX-001] 在插件账本实现工程／会话写入权、版本前置条件和 epoch，关联已有输出登记；独立副本不被无理由串行化，未知 GUI 状态拒绝写入。责任：Harness owner；前置：10.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。

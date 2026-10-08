@@ -66,13 +66,14 @@
     "12.12",
     "4.16",
     "4.17",
-    "4.18"
+    "4.18",
+    "10.3"
   ],
   "taskCounts": {
     "total": 157,
-    "completed": 126,
-    "open": 31,
-    "newlyCompleted": 64
+    "completed": 127,
+    "open": 30,
+    "newlyCompleted": 65
   },
   "openTaskIds": [
     "2.4",
@@ -94,7 +95,6 @@
     "9.3",
     "9.6",
     "9.9",
-    "10.3",
     "10.6",
     "10.9",
     "10.12",
@@ -136,8 +136,8 @@
       "requirements": [
         "PC-RT-002"
       ],
-      "candidate": "content fingerprints and per-step checks; actual headless 755 and desktop 748 pinned registries",
-      "remaining": "complete upgrade/rollback gates, fixed candidate installation and remaining target platforms"
+      "candidate": "Fixed headless755/desktop748 identity snapshots and operation-scoped contract checks; fourteen actual fixed cases distinguish related/unrelated drift, preserve saved checkpoint and stop owned processes",
+      "remaining": "Tasks2.4–2.6 full upgrade/drain/state-compatible rollback and other platforms remain open; only10.3 closes"
     },
     {
       "requirements": [
@@ -197,7 +197,7 @@
       "remaining": "Live provider generation, billing/source authenticity, external print/creative acceptance and other platforms NOT_RUN; see flat-acceptance-audit.json"
     }
   ],
-  "scope": "Published fixed installation and current PC-DM-006 RGB8/provenance-fixture scenarios verified; 31 full V1 gates remain open. No sync/archive or general host support claim.",
+  "scope": "Published fixed task10.3 dual-backend capability subgate verified; 30 full V1 gates remain open. No complete upgrade/rollback, sync/archive or general host support claim.",
   "historicalSymbolicCompletedTasks": [
     "SC-001",
     "SC-002",
@@ -208,14 +208,12 @@
     "PC-CM-001-SAVED-SELECTION"
   ],
   "latestCompletedTaskIds": [
-    "4.16",
-    "4.17",
-    "4.18"
+    "10.3"
   ],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 218,
-    "skillsReusedFrom": "flat-source-final.json",
+    "skills": 226,
+    "skillsReusedFrom": "capability-scoped-source-validation.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 28,
     "pluginPython": 41,
@@ -235,9 +233,9 @@
       "13.3"
     ]
   },
-  "releaseCandidateEvidence": "flat-post-release-validation.json",
+  "releaseCandidateEvidence": "capability-post-release-validation.json",
   "publication": "PUBLISHED_DEVELOPMENT_PRERELEASE",
-  "publicationEvidence": "flat-release-publication.json",
+  "publicationEvidence": "capability-release-publication.json",
   "fixedDomainAcceptanceEvidence": "domain-acceptance-audit.json",
   "fixedDomainVerification": {
     "normativeScenarios": 16,
@@ -249,8 +247,8 @@
     "installedSkillsUnchanged": true
   },
   "previousReleaseVerification": {
-    "skills": 210,
-    "skillsReusedFrom": "psd-source-validation.json",
+    "skills": 218,
+    "skillsReusedFrom": "flat-source-final.json",
     "skillsReuse": "exact source and equal native/desktop layers",
     "pluginTypeScript": 28,
     "pluginPython": 41,
@@ -259,5 +257,6 @@
     "sourceUnchanged": true
   },
   "fixedPsdAcceptanceEvidence": "psd-acceptance-audit.json",
-  "fixedFlatAcceptanceEvidence": "flat-acceptance-audit.json"
+  "fixedFlatAcceptanceEvidence": "flat-acceptance-audit.json",
+  "fixedCapabilityAcceptanceEvidence": "capability-acceptance-audit.json"
 }

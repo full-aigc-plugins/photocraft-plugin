@@ -1,6 +1,6 @@
 # PhotoCraft 双后端能力验收
 
-本轮继续 OpenSpec 任务10.3。技能源 dev.38 补齐能力快照的运行时版本／构建输出／平台，bridge 另绑定已核验桌面版本与二进制摘要。参数说明仍不是逐命令 JSON Schema；实际 MCP 工具 inputSchema 单独绑定。当前候选证据通过，固定插件 dev.42 验收待完成。完整升级／排空／状态兼容回退任务2.6保持开放。
+本轮继续 OpenSpec 任务10.3。技能源 dev.38 补齐能力快照的运行时版本／构建输出／平台，bridge 另绑定已核验桌面版本与二进制摘要。参数说明仍不是逐命令 JSON Schema；实际 MCP 工具 inputSchema 单独绑定。来源与公开固定插件 dev.42 验收通过。完整升级／排空／状态兼容回退任务2.6保持开放。
 
 ```mermaid
 flowchart TD
@@ -21,3 +21,7 @@ flowchart TD
 [来源候选证据](evidence/optimization/capability-source-first-use.json)。复验使用来源仓库`tests/test_capability_first_use.py`，设置`CRAFT_CAPABILITY_FIRST_USE=1`及实际安装的`CRAFT_INSTALLED_CAPABILITY_SKILL`，可指定新的自有`CRAFT_CAPABILITY_OUTPUT`与`CRAFT_CAPABILITY_REPORT`。测试驱动、输入输出、固定来源和安装资源摘要必须同时绑定；整个安装树在执行前后核对。
 
 每次操作只重新核验本次命令、工具 schema 及发现工具依赖，仍使用最初快照为基准。无关命令／工具漂移记录完整发现摘要，不阻止当前操作；之后实际使用变化能力仍拒绝。逐次范围检查随交付清单与 artifact 证据绑定。
+
+隔离 Codex 0.147.0从公开dev.42标签安装，14项技能零加载错误。实际安装的CLI技能以空运行时执行14个双后端用例；安装副本28项插件测试零跳过通过，安装树前后不变。任务10.3完成，计划127/157完成、30项开放。
+
+[Subgate audit](evidence/optimization/capability-acceptance-audit.json) · [Fixed native proof](evidence/optimization/capability-fixed-first-use.json) · [Installed harness](evidence/optimization/capability-fixed-harness.json) · [Publication](evidence/optimization/capability-release-publication.json).
