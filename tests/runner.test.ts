@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, realpathSync, rmSync, writeFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, mkdtempSync, realpathSync, rmSync, writeFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Ledger } from '../src/harness/ledger.ts';
@@ -116,11 +116,11 @@ test('stop confirms only the owned worker and leaves unrelated process alive',as
  try{
   const skill=join(f.root,'skill');mkdirSync(join(skill,'scripts'),{recursive:true});mkdirSync(join(skill,'references'));
   writeFileSync(join(skill,'scripts/runtime.lock.json'),'{}');
-  writeFileSync(join(skill,'scripts/workflow.py'),'import sys,time,json,signal\nfrom pathlib import Path\nif "--check" in sys.argv: print(json.dumps({"result":"PASS"}))\nelse:\n def late(signum,frame):\n  output=Path(sys.argv[sys.argv.index("--output")+1]);output.mkdir();(output/"manifest.json").write_text("{}");sys.exit(0)\n signal.signal(signal.SIGTERM,late)\n while True: time.sleep(.1)\n');
+  writeFileSync(join(skill,'scripts/workflow.py'),'import sys,time,json,signal\nfrom pathlib import Path\nif "--check" in sys.argv: print(json.dumps({"result":"PASS"}))\nelse:\n def late(signum,frame):\n  output=Path(sys.argv[sys.argv.index("--output")+1]);output.mkdir();(output/"manifest.json").write_text("{}");sys.exit(0)\n signal.signal(signal.SIGTERM,late)\n Path(__file__).with_name("worker-ready").write_text("ready")\n while True: time.sleep(.1)\n');
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);const runner=new Runner(ledger,{skillRoot:skill,python:'python3'});
   const running=runner.run(task.id);
   for(let i=0;i<100 && !ledger.status(task.id).worker;i++)await new Promise(resolve=>setTimeout(resolve,10));
-  await new Promise(resolve=>setTimeout(resolve,100));ledger.stop(task.id);const stopped=await running;
+  const ready=join(skill,'scripts/worker-ready');const deadline=Date.now()+10000;while(!existsSync(ready)){if(Date.now()>deadline)throw new Error('worker_readiness_timeout');await new Promise(resolve=>setTimeout(resolve,10));}ledger.stop(task.id);const stopped=await running;
   assert.equal(stopped.state,'cancelled');assert.equal(stopped.stopEvidence.processGroupGone,true);assert.equal(stopped.technical.status,'NOT_RUN');assert.equal(outsider.exitCode,null);ledger.close();
   assert.equal(stopped.stopEvidence.lateArtifacts,true);assert.equal(stopped.lateArtifactObservations[0].taskId,task.id);assert.equal(stopped.lateArtifactObservations[0].status,'OBSERVED_UNVERIFIED');
  }finally{outsider.kill();f.close();}

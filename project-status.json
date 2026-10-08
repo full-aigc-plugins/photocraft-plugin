@@ -170,7 +170,7 @@
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
     "skillsVersion": "0.1.0-dev.44",
-    "pluginWorkingVersion": "0.1.0-dev.53",
+    "pluginWorkingVersion": "0.1.0-dev.54",
     "fixedSkillSourceVersion": "0.1.0-dev.44",
     "evidence": "docs/evidence/optimization/task-progress.json",
     "publication": "PUBLISHED_PC_AR_001_FIXED_NATIVE_AND_AUTHORITY_CONSUMER",
@@ -281,7 +281,7 @@
   "artifactLineageAcceptanceEvidence": "docs/evidence/optimization/artifact-lineage/acceptance-audit.json",
   "cancellationBudgetCandidate": {
     "status": "PASS_LOCAL_NATIVE_FIXED_PENDING",
-    "pluginVersion": "0.1.0-dev.53",
+    "pluginVersion": "0.1.0-dev.54",
     "sourceRef": "v0.1.0-dev.44",
     "runtimeVersion": "0.2.0-craft.1",
     "evidence": "docs/evidence/optimization/task-budget-stop/",

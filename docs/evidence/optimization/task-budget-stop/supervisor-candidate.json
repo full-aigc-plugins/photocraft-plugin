@@ -1,7 +1,7 @@
 {
   "schema": "photocraft-supervised-cancellation-candidate/v1",
   "status": "PASS_LOCAL_NATIVE_FIXED_PENDING",
-  "pluginVersion": "0.1.0-dev.53",
+  "pluginVersion": "0.1.0-dev.54",
   "sourceRef": "v0.1.0-dev.44",
   "files": {
     "src/harness/runner.ts": "90f26b921625de481e12e4bd1bc80de9befa04a4ada490e3e402c1e478f0617f",
@@ -9,7 +9,7 @@
     "src/harness/worker_receipt.ts": "cce93fa3af760ecb1d53d4e2643a97ac16ee45e0d5f3de949ca0c7b943b265c1",
     "src/harness/late_artifacts.ts": "d56b55969bfadda3c114a095e9e52694fe630d1a5dffaabb80c7e624d37455ab",
     "tests/supervisor.test.ts": "ac1c8ed5cf3a49eabc59c012b76d9db0c9f11a63e26dc355abb58e2be130413e",
-    "tests/runner.test.ts": "1ea3ea727910ff9f9ca328276fae90f3a2a9fd45a37d50e37b44c3a667698e72"
+    "tests/runner.test.ts": "890d87588f39d730ffb204e2cb7d7c72f7b1ff237aac636f6c981af2fdc921a7"
   },
   "red": {
     "test": "interrupted runner retains supervisor ownership and restart confirms stop without resetting budgets",
@@ -36,5 +36,11 @@
   "tasksRemainOpen": [
     "3.9",
     "10.12"
-  ]
+  ],
+  "ci53Failure": {
+    "job": 37830019061,
+    "reason": "synthetic SIGTERM late-file fixture used fixed 100ms before handler readiness; native and supervision production assertions passed",
+    "fix": "wait for explicit worker-ready file before requesting stop",
+    "productionSupervisionChanged": false
+  }
 }
