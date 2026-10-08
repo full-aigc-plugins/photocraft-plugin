@@ -1,0 +1,348 @@
+{
+  "schema": "photocraft-supervised-droplet-faults/v1",
+  "status": "PASS",
+  "platform": "darwin-arm64",
+  "candidateRuntimeVersion": "0.2.0-craft.5",
+  "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "scriptSha256": "db7dd5dd8689433fd8216a348b5dff4aab46a800928f080661636d0a3da03313",
+  "proxySha256": "1c258d1efb33269e59ed2963ab7087781caefbe02e2365343401e97b504370f3",
+  "cases": [
+    {
+      "fault": "duplicate",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff",
+        "a.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff"
+      },
+      "dropletSha256": "5264cac6dd050fbe9df0cf401a769d0bf1d2b7b27cabfe29bc53f52ffc92818d",
+      "savedProject": {
+        "path": "fault-cases-recorded/duplicate/output/a.pcraft",
+        "sha256": "d424860540a2942ecdbeb5b90db5bc0a209d5316b37e434e0e2e9a2754fdf5da"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "3ae235441ba3e21666cb1b56c74350c4690def2273a38877fa27feadb2ff3b2c",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "WORKSPACE/artifacts/photocraft-supervised-droplet-20261009/fault-cases-recorded/duplicate/output/a.pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "droplet_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "90255651b38180ea3c120a02346497f0396a8343e1d85a5ee81eb74010db1a29",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "nonfinite",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff",
+        "a.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff"
+      },
+      "dropletSha256": "5264cac6dd050fbe9df0cf401a769d0bf1d2b7b27cabfe29bc53f52ffc92818d",
+      "savedProject": {
+        "path": "fault-cases-recorded/nonfinite/output/a.pcraft",
+        "sha256": "d424860540a2942ecdbeb5b90db5bc0a209d5316b37e434e0e2e9a2754fdf5da"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "d03ef82e890f7844d450f82e821f4fdb95fb5960d13b33cc3ee5c7eca61c6f0b",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "WORKSPACE/artifacts/photocraft-supervised-droplet-20261009/fault-cases-recorded/nonfinite/output/a.pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "droplet_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "5513a089ce433111e16c3e39db3d352fd8b77e5a6191765899bea70ac739b514",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "semantic",
+      "status": "PASS",
+      "outcome": "failed",
+      "code": "semantic_error",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff",
+        "a.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff"
+      },
+      "dropletSha256": "5264cac6dd050fbe9df0cf401a769d0bf1d2b7b27cabfe29bc53f52ffc92818d",
+      "savedProject": {
+        "path": "fault-cases-recorded/semantic/output/a.pcraft",
+        "sha256": "d424860540a2942ecdbeb5b90db5bc0a209d5316b37e434e0e2e9a2754fdf5da"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "6038d799296b890b3e62731dd27b6c912402a9ebbb853fadd7349ec875819950",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "WORKSPACE/artifacts/photocraft-supervised-droplet-20261009/fault-cases-recorded/semantic/output/a.pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "droplet_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "3a808c23d6c8378f139f6f08cb80c14bfbc9489b76edddc48998ba523d0fff8e",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "save-array",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff",
+        "a.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff"
+      },
+      "dropletSha256": "5264cac6dd050fbe9df0cf401a769d0bf1d2b7b27cabfe29bc53f52ffc92818d",
+      "savedProject": {
+        "path": "fault-cases-recorded/save-array/output/a.pcraft",
+        "sha256": "d424860540a2942ecdbeb5b90db5bc0a209d5316b37e434e0e2e9a2754fdf5da"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "c8a4aaca35b11a8e72311459be8112ffc0142750ee2932fc25ef919c4187fb31",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "WORKSPACE/artifacts/photocraft-supervised-droplet-20261009/fault-cases-recorded/save-array/output/a.pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "droplet_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "d2f7b44c1c15b13c681cd1240cec4c16fb57a9a9075cb8105e8698f1c7d1c33f",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "wrong-save-path",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff",
+        "a.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff"
+      },
+      "dropletSha256": "5264cac6dd050fbe9df0cf401a769d0bf1d2b7b27cabfe29bc53f52ffc92818d",
+      "savedProject": {
+        "path": "fault-cases-recorded/wrong-save-path/output/a.pcraft",
+        "sha256": "d424860540a2942ecdbeb5b90db5bc0a209d5316b37e434e0e2e9a2754fdf5da"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "b44d33d071d42f4879b623ceb9864e8fe13c856ea46badfba27a92ca7b710432",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "WORKSPACE/artifacts/photocraft-supervised-droplet-20261009/fault-cases-recorded/wrong-save-path/output/a.pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "droplet_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "da1bd6262c811b786ecaf1348b4be91638f98ac46868b4cfba70fc081d9c9d0e",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    },
+    {
+      "fault": "extra-frame",
+      "status": "PASS",
+      "outcome": "unknown",
+      "code": "outcome_unknown",
+      "retryable": false,
+      "inputSha256": {
+        "b.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff",
+        "a.pcraft": "f3b3906ba02706b9e892a4457f50974a3aec8d624de4873a52bcddb668307aff"
+      },
+      "dropletSha256": "5264cac6dd050fbe9df0cf401a769d0bf1d2b7b27cabfe29bc53f52ffc92818d",
+      "savedProject": {
+        "path": "fault-cases-recorded/extra-frame/output/a.pcraft",
+        "sha256": "d424860540a2942ecdbeb5b90db5bc0a209d5316b37e434e0e2e9a2754fdf5da"
+      },
+      "sourceUnchanged": true,
+      "savedProjectReopenedUnchanged": true,
+      "reopenReplySha256": "12c61ae22a21d29f858396c27c013070cba3972f29bff32ec34dca532f4c4f4c",
+      "lastAttempt": {
+        "tool": "doc_save",
+        "arguments": {
+          "path": "WORKSPACE/artifacts/photocraft-supervised-droplet-20261009/fault-cases-recorded/extra-frame/output/a.pcraft"
+        },
+        "sequence": 4,
+        "phase": "submitted"
+      },
+      "validatedReceipts": 3,
+      "nativeEvents": [
+        {
+          "sequence": 1,
+          "tool": "droplet_plan"
+        },
+        {
+          "sequence": 2,
+          "tool": "doc_open"
+        },
+        {
+          "sequence": 3,
+          "tool": "command_run"
+        },
+        {
+          "sequence": 4,
+          "tool": "doc_save"
+        }
+      ],
+      "nativeEventLogSha256": "3a7a6514de4fa0ce749f905a5c019547d7dbd1990b139419ae67765e5e136244",
+      "confirmations": [
+        "continue 1\n",
+        "continue 2\n",
+        "continue 3\n"
+      ],
+      "laterFileCalls": 0,
+      "laterEditCalls": 0,
+      "replays": 0,
+      "publicStdout": ""
+    }
+  ],
+  "scope": "Candidate actual native first-file save followed by injected reply; fixed installation, public CLI integration and complete entry matrix NOT_RUN"
+}

@@ -1,0 +1,35 @@
+test_invalid_plan_never_queries_scans_or_launches (test_supervised_droplet.DropletPreflight.test_invalid_plan_never_queries_scans_or_launches) ... ok
+test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing (test_supervised_droplet.DropletPreflight.test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing) ... FAIL
+test_default_output_options_override_quality_and_pixels_match_legacy (test_supervised_droplet.NativeDroplet.test_default_output_options_override_quality_and_pixels_match_legacy) ... skipped 'explicit native candidate required'
+test_healthy_fresh_sessions_legacy_stdout_and_layers (test_supervised_droplet.NativeDroplet.test_healthy_fresh_sessions_legacy_stdout_and_layers) ... skipped 'explicit native candidate required'
+test_native_failure_stops_supervision_and_ordinary_droplet_still_continues (test_supervised_droplet.NativeDroplet.test_native_failure_stops_supervision_and_ordinary_droplet_still_continues) ... skipped 'explicit native candidate required'
+test_plan_mismatch_never_creates_output (test_supervised_droplet.NativeDroplet.test_plan_mismatch_never_creates_output) ... skipped 'explicit native candidate required'
+test_post_save_faults_stop_next_file_preserve_reopen_and_never_replay (test_supervised_droplet.NativeDroplet.test_post_save_faults_stop_next_file_preserve_reopen_and_never_replay) ... skipped 'explicit native candidate required'
+test_preserves_string_tuple_object_actions_and_input_order_duplicates (test_supervised_droplet.NativeDroplet.test_preserves_string_tuple_object_actions_and_input_order_duplicates) ... skipped 'explicit native candidate required'
+test_unconfirmed_plan_never_opens_or_saves (test_supervised_droplet.NativeDroplet.test_unconfirmed_plan_never_opens_or_saves) ... skipped 'explicit native candidate required'
+
+======================================================================
+FAIL: test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing (test_supervised_droplet.DropletPreflight.test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_droplet.py", line 31, in test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing
+    self.assertEqual(checks[1]['files'],[{'input':str(source),'target':output+'name.Ä'}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'in[112 chars]s/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmpxit35nds/out/name.ä'}] != [{'in[112 chars]s/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmpxit35nds/out/name.Ä'}]
+
+First differing element 0:
+{'inp[110 chars]rs/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmpxit35nds/out/name.ä'}
+{'inp[110 chars]rs/_s/9_xnnkz141920t1yv5zhvd1r0000gn/T/tmpxit35nds/out/name.Ä'}
+
+  [{'input': 'TEMPORARY_WORKSPACE',
+-   'target': 'TEMPORARY_WORKSPACE'}]
+?                                                                                    ^
+
++   'target': 'TEMPORARY_WORKSPACE'}]
+?                                                                                    ^
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.007s
+
+FAILED (failures=1, skipped=7)

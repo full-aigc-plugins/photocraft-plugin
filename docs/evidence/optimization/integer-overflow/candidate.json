@@ -1,0 +1,20 @@
+{
+  "schema": "photocraft-integer-overflow-candidate/v1",
+  "status": "PASS_SOURCE_REGRESSION_FIXED_PENDING",
+  "focusedMethods": 3,
+  "publicEntries": 13,
+  "publicRefusals": 52,
+  "installCalls": 0,
+  "sessionCalls": 0,
+  "outputCreated": false,
+  "originalUnchanged": true,
+  "nativeNumericBoundary": "finite f64",
+  "finiteIntegerLegacyTypePreserved": true,
+  "fixedInstallation": "NOT_RUN",
+  "closedTasks": [],
+  "remainingTask": "9.6",
+  "scope": "positive/negative401-digit and5000-digit literals; exact field paths and typed recovery, not complete entry or full V1",
+  "regressionEvidence": "source-validation.json",
+  "regressionTests": 283,
+  "regressionSkipped": 0
+}

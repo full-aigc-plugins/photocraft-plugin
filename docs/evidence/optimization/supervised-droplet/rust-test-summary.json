@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "passed": 58,
+  "failed": 0,
+  "ignored": 0,
+  "suitePassed": [
+    31,
+    1,
+    14,
+    0,
+    0,
+    12,
+    0,
+    0
+  ],
+  "finalBuildLogSha256": "f42d3b39208acd3abcc93051add055e5930427a78480179ff1e45799b2495937",
+  "initialBuildFailure": {
+    "cause": "No space left on device",
+    "phase": "release build after 58 debug-profile Rust tests passed",
+    "logSha256": "32bd9fd3c4362c1a5c9574063d5c6508c993cf0d6a7200a5f01fefdb7ca888fd"
+  },
+  "redQualityRuntime": "separate intermediate release-profile build, binary hash recorded in quality-red.json; final runtime is bound to build-receipt.json"
+}

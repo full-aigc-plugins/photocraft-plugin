@@ -1,0 +1,24 @@
+test_invalid_plan_never_queries_scans_or_launches (quality_red.DropletPreflight.test_invalid_plan_never_queries_scans_or_launches) ... ok
+test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing (quality_red.DropletPreflight.test_plan_uses_engine_ascii_case_and_backslash_stem_without_writing) ... ok
+test_changed_quality_is_rejected_before_open_actions_and_save (quality_red.NativeDroplet.test_changed_quality_is_rejected_before_open_actions_and_save) ... FAIL
+test_default_output_options_override_quality_and_pixels_match_legacy (quality_red.NativeDroplet.test_default_output_options_override_quality_and_pixels_match_legacy) ... ok
+test_healthy_fresh_sessions_legacy_stdout_and_layers (quality_red.NativeDroplet.test_healthy_fresh_sessions_legacy_stdout_and_layers) ... ok
+test_native_failure_stops_supervision_and_ordinary_droplet_still_continues (quality_red.NativeDroplet.test_native_failure_stops_supervision_and_ordinary_droplet_still_continues) ... ok
+test_plan_mismatch_never_creates_output (quality_red.NativeDroplet.test_plan_mismatch_never_creates_output) ... ok
+test_post_save_faults_stop_next_file_preserve_reopen_and_never_replay (quality_red.NativeDroplet.test_post_save_faults_stop_next_file_preserve_reopen_and_never_replay) ... ok
+test_preserves_string_tuple_object_actions_and_input_order_duplicates (quality_red.NativeDroplet.test_preserves_string_tuple_object_actions_and_input_order_duplicates) ... ok
+test_unconfirmed_plan_never_opens_or_saves (quality_red.NativeDroplet.test_unconfirmed_plan_never_opens_or_saves) ... ok
+
+======================================================================
+FAIL: test_changed_quality_is_rejected_before_open_actions_and_save (quality_red.NativeDroplet.test_changed_quality_is_rejected_before_open_actions_and_save)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/runtime/tests/test_supervised_droplet.py", line 102, in test_changed_quality_is_rejected_before_open_actions_and_save
+    self.assertFalse(output.exists(),'changed quality was used to save before plan refusal')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false : changed quality was used to save before plan refusal
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.371s
+
+FAILED (failures=1)

@@ -1,0 +1,25 @@
+{
+  "schema": "craft-maintained-runtime-build/v1",
+  "runtimeVersion": "0.2.0-craft.5",
+  "platform": "darwin-arm64",
+  "archive": "photocraft-cli-0.2.0-craft.5-macos-arm64.zip",
+  "archiveSha256": "d3367fd25fe4977d88547623156b54bcbe8056b4b31e42032cd5c05644a2b294",
+  "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "versionOutput": "photocraft-cli 0.2.0-craft.5 (dev build)",
+  "provenance": {
+    "schema": "craft-maintained-runtime-patch/v1",
+    "upstreamRepository": "https://github.com/storytold/photocraft",
+    "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+    "patch": "runtime/patches/supervised-droplet.patch",
+    "patchSha256": "d8b1dff6d3e49147fec96e0a69345bce154dd939ab1bb719152fe8b2b6af5aa6",
+    "scope": "Scoped smart content, run/batch/convert supervision and original-engine droplet per-file/command/save acknowledgment; ordinary CLI preserved; streaming and public integration incomplete",
+    "runtimeVersion": "0.2.0-craft.5",
+    "status": "built-maintained-runtime",
+    "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+    "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)",
+    "platform": "darwin-arm64",
+    "cargoLockSha256": "f2189aa9ce4e0c50fef868446ed4232c20f35458c7150364107e3ae7865af117",
+    "sourceArchiveSha256": "a4d50f6954702a23721ab4d4ef3d12ee858f93be163f8f24455b579ae286d06c"
+  },
+  "provenanceSha256": "263bfa101d8462022c2f5da0dd1483dda13432975fde6baffafd1ffc3565e329"
+}

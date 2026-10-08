@@ -1,0 +1,11 @@
+{
+  "schema": "photocraft-integer-overflow-probe/v1",
+  "preflightAccepted": true,
+  "preflightError": null,
+  "nativeExit": 1,
+  "nativeStderr": "error: invalid parameters for `file.automate.runDroplet`: TEMPORARY_WORKSPACE/huge.pcdroplet: number out of range at line 1 column 474\n",
+  "outputCreated": false,
+  "inputSha256": "9f86feb1ced4f659a3508ffda1ce4059cf7c29ba9692856f2ba2a081b7a00704",
+  "sourceSha256": "dfc4c1606cdffdb786b9e22e84ce53fc36cf69f13878236c6308d12245db3329",
+  "scope": "read-only source contract and temporary native fixture; not an installation counter test"
+}

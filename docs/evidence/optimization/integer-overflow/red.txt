@@ -1,0 +1,444 @@
+test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) ... 
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', positive=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', positive=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', positive=False) ... FAIL
+test_finite_large_integers_and_normal_numbers_keep_legacy_types (test_integer_json_overflow.IntegerJSONOverflow.test_finite_large_integers_and_normal_numbers_keep_legacy_types) ... ok
+test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) ... 
+  test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (sign=True) ... FAIL
+  test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (sign=False) ... FAIL
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', positive=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', positive=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 51, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertEqual(json.loads(counts.read_text()),{'install':0,'session':0})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'install': 1, 'session': 0} != {'install': 0, 'session': 0}
+- {'install': 1, 'session': 0}
+?             ^
+
++ {'install': 0, 'session': 0}
+?             ^
+
+
+======================================================================
+FAIL: test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (sign=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 22, in test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies
+    with self.assertRaisesRegex(ValueError,r'nonfinite_json_value: \$\.items\[0\]\.quality'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (sign=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 22, in test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies
+    with self.assertRaisesRegex(ValueError,r'nonfinite_json_value: \$\.items\[0\]\.quality'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.462s
+
+FAILED (failures=28)

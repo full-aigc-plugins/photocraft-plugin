@@ -188,3 +188,11 @@ tasks 第 9–13 节细化原未完成总任务，不建立第二套规格或重
 ## Supervised conversion candidate — 2026-10-09
 
 沿用9.6逐回复确认合同；安装前计划预检完成后，编辑前只读能力查询须匹配协议、子命令和确认格式。缺失能力只可在尚未发送编辑时标记not_executed。convert使用原生files::open/save，确认打开后保存；保存已发生时未知回复保留原始产物及unknown回执，不重放。该内部候选不替代公开二进制来源核验，不改变当前cli.py／craft.1，公开接入及固定验收仍开放。见双语转换监督文档和候选证据。
+
+## Original-engine droplet supervision candidate — 2026-10-09
+
+延续PC-TX-005及9.6原验收，不减少任何入口范围。droplet与CLI batch不是同一引擎路径；候选共用原droplet解析和计划准备，保留原引擎import／临时Session／save_doc，以及0–12 JPEG质量、输入顺序／重复文件和输出优先级。监督模式在文档打开之前核对规范化计划，逐条确认打开、动作、保存及完成清单；确认失败或原生错误停止整个监督批次，不执行后续文件、不重放。普通droplet仍逐文件收集失败并继续。公开craft.1入口和已锁定dev.42快照不因候选而自动更改。嵌套聚合动作内部、流式、公开来源绑定、持久恢复与固定候选安装仍需独立实现及验收。
+
+## Integer literal overflow before installation — 2026-10-09
+
+落实PC-TX-005既有任意深度数值溢出门禁，不引入64位限制。原生JSON有限f64边界在构造Python数值前按数值文本检查，避免Python整数字符串长度限制掩盖准确字段路径；有限大整数类型保持兼容。统一解析器同时作用于公开计划、MCP及工具内层回复，静态无效输入保持validation／not_executed、nonfinite_json_value、retryable=false、correct_plan，已发送工具的未知回复仍不重放。全部13个单独安装技能必须具备相同资源，固定来源及安装验收独立记录。

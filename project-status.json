@@ -167,11 +167,11 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.42",
-    "pluginWorkingVersion": "0.1.0-dev.48",
-    "fixedSkillSourceVersion": "0.1.0-dev.42",
+    "skillsVersion": "0.1.0-dev.43",
+    "pluginWorkingVersion": "0.1.0-dev.49",
+    "fixedSkillSourceVersion": "0.1.0-dev.43",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PUBLISHED_SUPERVISED_CANDIDATE_BOUNDED_FIXED_EXISTING_RUNTIME_REGRESSION",
+    "publication": "INTEGER_OVERFLOW_RELEASE_CANDIDATE_PENDING",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -179,8 +179,8 @@
       "open": 28,
       "newlyCompleted": 67
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/supervised-convert/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/supervised-convert/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/integer-overflow/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/integer-overflow/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -240,6 +240,26 @@
     "evidence": "docs/evidence/optimization/supervised-convert/candidate.json",
     "fixedCandidateInstallation": "NOT_RUN",
     "publicCliIntegration": "NOT_RUN",
+    "closedTasks": []
+  },
+  "supervisedDropletCandidate": {
+    "published": false,
+    "evidence": "docs/evidence/optimization/supervised-droplet/candidate.json",
+    "publicSourceRef": "v0.1.0-dev.42",
+    "publicRuntime": "0.2.0-craft.1",
+    "candidateRuntime": "0.2.0-craft.5",
+    "fixedCandidateInstallation": "NOT_RUN",
+    "publicCliIntegration": "NOT_RUN",
+    "closedTasks": [],
+    "packagedModuleSourceRef": "v0.1.0-dev.43",
+    "targetPluginRef": "v0.1.0-dev.49"
+  },
+  "integerOverflowContract": {
+    "status": "PASS_SOURCE_REGRESSION_FIXED_PENDING",
+    "evidence": "docs/evidence/optimization/integer-overflow/candidate.json",
+    "sourceRef": "v0.1.0-dev.43",
+    "pluginRef": "v0.1.0-dev.49",
+    "fixedInstallation": "NOT_RUN",
     "closedTasks": []
   }
 }

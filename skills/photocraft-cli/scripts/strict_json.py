@@ -52,8 +52,10 @@ def loads(text):
             if text.startswith(literal,offset):raise ValueError('nonfinite_json_value: '+path)
         match=NUMBER.match(text,offset)
         if not match:syntax('invalid value')
-        offset=match.end();result=json.loads(match.group())
-        if isinstance(result,float) and not math.isfinite(result):raise ValueError('nonfinite_json_value: '+path)
+        offset=match.end();number=match.group()
+        # 先按原生有限f64边界检查文本，避免Python超长整数限制丢失字段路径。
+        if not math.isfinite(float(number)):raise ValueError('nonfinite_json_value: '+path)
+        result=json.loads(number)
         return result
     result=value();space()
     if offset!=len(text):syntax('trailing content')

@@ -1,0 +1,11 @@
+{
+  "status": "EXPECTED_RED",
+  "tests": 10,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "baselineScriptSha256": "11a8c09491ca0949bfc235c9c65a93482bff237d83410a59f691fe6b22a2a0d4",
+  "binarySha256": "be4e91e529c81c9a60fc6ff3bba6ca6c394f71288c56cb123002df27ff8f3e6c",
+  "failure": "actual native save occurred before changed-quality refusal",
+  "fixtureCorrection": "source includes native Background layer and newest layers precede older layers; original logs retained"
+}

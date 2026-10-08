@@ -1,4 +1,4 @@
-"""维护版 run／batch／convert 的逐回复监督器；确认前停止，不重放命令。
+"""维护版 run／batch／convert／droplet 的逐回复监督器；确认前停止，不重放命令。
 
 候选内部接口：仅匹配显式 supervised-run 协议的维护运行时。
 公开 cli.py 仍绑定原发行，待候选及固定安装验收后切换。
@@ -82,7 +82,7 @@ def supervision_info(executable, subcommand, timeout):
                 or not isinstance(value['runtimeVersion'],str)
                 or re.fullmatch(r'\d+\.\d+\.\d+(?:-craft\.[1-9]\d*)?',value['runtimeVersion']) is None
                 or not isinstance(value['subcommands'],list)
-                or any(not isinstance(item,str) or item not in {'run','batch','convert'} for item in value['subcommands'])
+                or any(not isinstance(item,str) or item not in {'run','batch','convert','droplet'} for item in value['subcommands'])
                 or len(set(value['subcommands'])) != len(value['subcommands'])
                 or subcommand not in value['subcommands'] or value['acknowledgment'] != 'continue <sequence>\n'):
             raise ValueError('metadata_contract_mismatch')
@@ -141,12 +141,69 @@ def batch_plan(argv):
     return events, checks, lines
 
 
+# 固定引擎 file_cmds::OPENABLE；不能套用 CLI batch 的另一份解码能力表。
+DROPLET_OPENABLE = {'psd','psb','pcraft','png','jpg','jpeg','tif','tiff','webp','gif','bmp','tga','exr','hdr','qoi','ico','pnm','ppm','pgm','dng','cr2','nef','nrw','arw','pef'}
+
+
+def droplet_plan(argv):
+    """独立绑定原引擎的输入顺序、重复文件、动作、输出及0–12质量语义。"""
+    contract = load('cli_contract'); contract.preflight(argv)
+    positional, _, last = contract.parse_argv(argv)
+    filename, location = positional[0]
+    value = contract.json_value(Path(filename).read_text(), location)
+    steps = value['action']['steps']; contract.actions(steps,location+'.action.steps')
+    actions = []
+    for step in steps:
+        if isinstance(step,str):identifier,params=step,{}
+        elif isinstance(step,list):identifier,params=step[0],step[1] if len(step)>1 else {}
+        else:identifier,params=step['command'] if 'command' in step else step['id'],step.get('params',{})
+        actions.append({'id':identifier,'params':params})
+    ascii_case=str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')
+    raw = [item[0] for item in positional[1:]];inputs=[]
+    for path in raw:
+        if os.path.isdir(path):
+            paths=[]
+            with os.scandir(path) as entries:
+                for entry in entries:
+                    extension=os.path.splitext(entry.name)[1][1:].translate(ascii_case)
+                    try:regular=entry.is_file()
+                    except OSError:regular=False
+                    if regular and extension in DROPLET_OPENABLE:paths.append(entry.path)
+            inputs.extend(sorted(paths))
+        else:inputs.append(path)
+    if not inputs:raise ValueError('no_droplet_inputs: $argv')
+    opts=value.get('options',{});opts=opts if isinstance(opts,dict) else {}
+    output=last['--out'][0] if '--out' in last else opts.get('output')
+    if not isinstance(output,str):output=os.path.join(os.path.dirname(inputs[0]),'droplet-output')
+    if not output:raise ValueError('invalid_droplet_output: $argv')
+    format=opts.get('format','same');format=format if isinstance(format,str) else 'same'
+    quality=opts.get('quality');quality=float(quality) if isinstance(quality,(int,float)) and not isinstance(quality,bool) else None
+    def join(directory,name):return directory+('' if directory.endswith(('/','\\')) else '/')+name if directory else name
+    files=[]
+    for path in inputs:
+        name=re.split(r'[/\\]',path)[-1];at=name.rfind('.');stem=name[:at] if at>0 else name
+        extension=path.rsplit('.',1)[-1].translate(ascii_case) if format=='same' else format.lstrip('.').translate(ascii_case)
+        files.append({'input':path,'target':join(output,stem+'.'+extension)})
+    config={'droplet':filename,'input':raw}
+    if '--out' in last:config['output']=last['--out'][0]
+    events=[('droplet_plan',config,False)];lines={}
+    for row in files:
+        events.append(('doc_open',{'path':row['input']},False));events.extend(('command_run',action,False) for action in actions)
+        arguments={'path':row['target']}
+        if quality is not None:arguments['quality']=quality
+        events.append(('doc_save',arguments,False));lines[len(events)]='ok    '+row['target']+'\n'
+    events.append(('droplet_complete',{},False))
+    checks={1:{'files':files,'steps':actions,'quality':quality},len(events):{'files':[row['target'] for row in files],'errors':[]}}
+    return events,checks,lines
+
+
 def execute(executable, argv, output, timeout=600, stderr=None):
     """运行固定候选并逐项校验；异常附带已核验回执和最后请求，绝不重试。
 
     executable 必须由调用方完成锁校验；output 接收原公开 JSON 命令行。
     """
-    expected, checks, lines = batch_plan(argv) if argv and argv[0] == 'batch' else (expected_events(argv), {}, {})
+    expected, checks, lines = (batch_plan(argv) if argv and argv[0] == 'batch' else
+        droplet_plan(argv) if argv and argv[0] == 'droplet' else (expected_events(argv), {}, {}))
     errors = load('operation_errors'); commands = load('commands')
     receipts = []; last_attempt = None
     deadline = time.monotonic() + timeout

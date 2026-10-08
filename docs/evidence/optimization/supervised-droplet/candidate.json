@@ -1,0 +1,40 @@
+{
+  "schema": "photocraft-supervised-droplet-candidate/v1",
+  "status": "PASS_BOUNDED_NATIVE_CANDIDATE",
+  "published": false,
+  "candidateRuntimeVersion": "0.2.0-craft.5",
+  "binarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "focusedTests": {
+    "passed": 40,
+    "failed": 0,
+    "skipped": 0
+  },
+  "rustTests": {
+    "passed": 58,
+    "failed": 0,
+    "ignored": 0
+  },
+  "postSaveFaultCases": 6,
+  "publicSourceRef": "v0.1.0-dev.42",
+  "publicPluginRef": "v0.1.0-dev.48",
+  "publicRuntime": "0.2.0-craft.1",
+  "managedSkillsChanged": false,
+  "publicCliIntegration": "NOT_RUN",
+  "fixedCandidateInstallation": "NOT_RUN",
+  "streaming": "NOT_RUN",
+  "nestedAggregateCommandInternals": "NOT_RUN",
+  "persistentRawRecovery": "NOT_RUN",
+  "closedTasks": [],
+  "remainingTask": "9.6",
+  "qualityRed": "actual native save before changed-quality refusal; final plan includes normalized quality and refuses at sequence1 with no acknowledgment",
+  "scope": "unreleased original-engine droplet supervision; not complete entry, fixed installation or V1 acceptance",
+  "sourceRegressionBeforeIntegerFix": {
+    "passed": 280,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "source-validation-before-integer-fix.json"
+  },
+  "packagedModuleSourceRef": "v0.1.0-dev.43",
+  "targetPluginRef": "v0.1.0-dev.49",
+  "currentSourceRegression": "separately rerun after shared integer parser fix"
+}

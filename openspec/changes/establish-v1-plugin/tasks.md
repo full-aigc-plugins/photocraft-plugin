@@ -220,7 +220,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.4 [PC-TX-005] 覆盖所有公开入口的重复键、NaN／Infinity／溢出、错误容器／未知字段、素材与引用依赖；用安装／会话调用计数确认提前拒绝，并复现普通工作流回复与网关语义差异。责任：Skills owner；前置：读取全入口合同与现有 JSON／MCP 故障回归；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/entry-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.5 [PC-TX-005] 在独立技能源统一严格计划解析、静态预检、动态引用检查、工具回复与结构化错误；验证通过才写成功回执，保持文字／图片合法回复及失败保全兼容。责任：Skills owner；前置：9.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前源dev.41／插件dev.47已验证argv预检、Harness及只读重开回复；raw逐命令停止、流式编辑及完整入口矩阵仍未完成，不以局部通过关闭本项。
+- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前固定源dev.42／插件dev.48已验证argv预检、Harness及只读重开回复；raw逐命令停止、流式编辑及完整入口矩阵仍未完成，不以局部通过关闭本项。
 
 - [x] 9.7 [PC-RL-003] 建立同一版本声明冲突、活动锁误指历史锁、维护版误称上游官方、旧标签被替换等发行拒绝 fixture；合法独立版本映射通过。责任：Release owner；前置：读取当前插件、技能、套件、运行时与公共协议身份；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/release-identity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 9.8 [PC-RL-003] 在各事实源增加当前组合一致性检查及生成说明，明确上游与维护版、套件版本语义和非活动根锁；同步双语当前说明，保留历史证据原值。责任：Release owner；前置：9.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
@@ -318,3 +318,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09转换监督候选及开发发布：craft.4增加编辑前只读能力元数据门禁，旧公开运行时被拒绝且零编辑；convert保留原生files打开／保存并逐条确认，30项定向及58项Rust测试通过。源dev.42／插件dev.48仅打包候选模块，公开cli.py与craft.1锁不变。四种格式及六类真实保存后故障保全已验证；完整源回归另记。候选固定安装、公开入口接入、持久恢复、droplet／流式和完整矩阵仍开放，9.6不勾选，关闭0项。证据：`docs/evidence/optimization/supervised-convert/candidate.json`。
 
 2026-10-09监督候选发行核验：源dev.42与插件dev.48的公开ZIP摘要／标签提交一致，4项发布CI通过；270项源测试零跳过，70项Harness及48项Python通过。隔离Codex发现14技能，固定安装副本70项Harness／14例只读故障通过且安装树不变。此固定验证使用公开craft.1，不代表候选craft.4接入及固定验收；9.6继续开放，129/157完成、28开放，关闭0项。证据：`docs/evidence/optimization/supervised-convert/publication.json`。
+
+2026-10-09 droplet候选：craft.5共用原引擎droplet准备、import／临时Session／save_doc，保留0–12质量、输入顺序／重复输入及普通失败后继续；监督模式逐条确认并停止后续文件。40项定向、58项Rust及280项源回归零跳过通过，六种实际保存后故障保全产物并原样重开。质量变更红灯实际保存后才拒绝，修复后计划绑定质量并在序号1零确认拒绝；fixture曾误判原生Background层，原始记录保留。流式、嵌套聚合内部、公开来源接入、持久raw恢复及craft.5固定安装仍开放；9.6不勾选，关闭0项。证据：`docs/evidence/optimization/supervised-droplet/candidate.json`。
+
+2026-10-09整数溢出候选：独立源统一解析器先检查原生有限f64数值文本，再构造Python整数；超长字面量保留字段路径，有限大整数旧类型不变。3项定向及13技能52例公开拒绝通过，安装／会话次数为零；原缺陷红灯与5000位路径红灯分别留存。共享解析器改动后完整源回归和固定发行验收独立重跑，不复用前述280项证明新源码；9.6继续开放，关闭0项。证据：`docs/evidence/optimization/integer-overflow/candidate.json`。

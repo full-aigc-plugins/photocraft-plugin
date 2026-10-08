@@ -1,0 +1,374 @@
+test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) ... 
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', length=5001, negative=True) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', length=5000, negative=False) ... FAIL
+  test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', length=5001, negative=True) ... FAIL
+test_finite_large_integers_and_normal_numbers_keep_legacy_types (test_integer_json_overflow.IntegerJSONOverflow.test_finite_large_integers_and_normal_numbers_keep_legacy_types) ... ok
+test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) ... 
+  test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (length=5000, negative=False) ... FAIL
+  test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (length=5001, negative=True) ... FAIL
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-adjustments', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-export', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-filters', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-layers', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-masks', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-project', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-resize', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-retouch', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-selection', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-setup', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-cli-text', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', length=5000, negative=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) (skill='photocraft-use', length=5001, negative=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 54, in test_all_thirteen_public_skills_reject_before_install_session_and_output
+    self.assertFalse(reply['retryable']);self.assertEqual(reply['fieldPath'],'$argv[1].options.quality')
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '$argv[1]' != '$argv[1].options.quality'
+- $argv[1]
++ $argv[1].options.quality
+
+
+======================================================================
+FAIL: test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (length=5000, negative=False)
+----------------------------------------------------------------------
+ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 22, in test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies
+    with self.assertRaisesRegex(ValueError,r'nonfinite_json_value: \$\.items\[0\]\.quality'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "nonfinite_json_value: \$\.items\[0\]\.quality" does not match "Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit"
+
+======================================================================
+FAIL: test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) (length=5001, negative=True)
+----------------------------------------------------------------------
+ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_integer_json_overflow.py", line 22, in test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies
+    with self.assertRaisesRegex(ValueError,r'nonfinite_json_value: \$\.items\[0\]\.quality'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "nonfinite_json_value: \$\.items\[0\]\.quality" does not match "Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit"
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.612s
+
+FAILED (failures=28)

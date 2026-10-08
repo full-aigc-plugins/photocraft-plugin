@@ -1,0 +1,8 @@
+test_all_thirteen_public_skills_reject_before_install_session_and_output (test_integer_json_overflow.IntegerJSONOverflow.test_all_thirteen_public_skills_reject_before_install_session_and_output) ... ok
+test_finite_large_integers_and_normal_numbers_keep_legacy_types (test_integer_json_overflow.IntegerJSONOverflow.test_finite_large_integers_and_normal_numbers_keep_legacy_types) ... ok
+test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies (test_integer_json_overflow.IntegerJSONOverflow.test_huge_integer_literals_are_refused_at_exact_paths_and_unknown_replies) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.602s
+
+OK
