@@ -1,0 +1,25 @@
+{
+  "schema": "photocraft-durable-progress-candidate/v1",
+  "status": "PARTIAL_CANDIDATE",
+  "pluginVersion": "0.1.0-dev.59",
+  "sourceRef": "v0.1.0-dev.47",
+  "harness": {
+    "tests": 93,
+    "pass": 93,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 11,
+  "fixedInstallation": "NOT_RUN",
+  "closedTasks": [],
+  "remainingTasks": [
+    "3.6",
+    "10.9"
+  ],
+  "remainingAcceptance": [
+    "explicit interrupted checkpoint and bound recovery",
+    "complete worker crash/restart matrix",
+    "complete V1"
+  ],
+  "scope": "Durable pre-request progress and readonly live/dead-worker observation, actual saved native then SIGKILL; no fabricated failure/checkpoint or unknown replay"
+}

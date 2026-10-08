@@ -235,12 +235,14 @@ def call_tool(session, name, args, state, receipts):
     load_module('commands').validate_tool_parameters(name,args,'$.tools.'+name,True)
     if os.environ.get('CRAFT_STOP_FILE') and Path(os.environ['CRAFT_STOP_FILE']).exists():raise load_module('operation_errors').error('outcome_unknown: stop_requested; reconcile preserved work')
     state['lastAttempt'] = {'tool': name, 'arguments': args, 'phase': 'submitted'}
+    if state.get('_progress'): state['_progress'].publish(state, 'submitted')
     reply = session.request('tools/call', {'name': name, 'arguments': args})
     commands = load_module('commands')
     value = commands.parse_reply(reply)
     commands.validate_tool_reply(name, value, args)
     state['lastAttempt']['phase'] = 'reply_validated'
     receipts.append({'tool': name, 'arguments': args, 'result': value})
+    if state.get('_progress'): state['_progress'].publish(state, 'reply_validated')
     return value
 
 
@@ -331,7 +333,7 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
     execution_identity = {'planHash': hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode()).hexdigest(),
                          'inputHashes': {name: asset['sha256'] for name, asset in {**inherited_assets, **plan.get('assets', {})}.items()},
                          'projectRevision': source_hash, 'runtimeSha256': installed['binarySha256']}
-    with load_module('output_guard').claim(output, execution_identity), load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:
+    with load_module('output_guard').claim(output, execution_identity) as execution_claim, load_module('preserved_stage').preserved_stage(output, '.photocraft-', recovery_state) as temporary:
         stage = Path(temporary)
         assets = {}
         for name, entry in inherited_assets.items():
@@ -365,6 +367,8 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
         receipts = []
         recovery_state['operations'] = receipts
         recovery_state['recoveryContext']={'taskBinding':task_binding,'schema':'photocraft-recovery-context/v1','plan':plan,'executionIdentity':execution_identity,'bindings':bindings,'assets':assets,'capability':None}
+        recovery_state['_progress'] = load_module('progress').Journal(output, stage, execution_claim)
+        recovery_state['_progress'].publish(recovery_state, 'prepared')
         with load_module('mcp_session').Session(argv) as session:
             gate=load_module('capabilities').Gate(session,load_module('commands'),installed['binarySha256'],runtime_identity=installed.get('runtimeIdentity'))
             capability=gate.check()
@@ -438,6 +442,7 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
                     filter_steps.append({'command':params['command'],'context':filter_context,'pixels':pixels,'before':filter_before,'after':filter_after})
                 if operation.get('as'):
                     bindings[operation['as']] = result
+                    recovery_state['_progress'].publish(recovery_state, 'reply_validated')
             # 原生命令仅允许含文字的文档；纯图片合成不具备此命令前置条件。
             font_inspection = call('doc_inspect', {})
             if contains_type_layers(font_inspection.get('layers')):
@@ -516,12 +521,14 @@ def execute(plan, output, runtime_home=None, source=None, checkpoint=None, write
         if 'variant' in plan:
             manifest['layoutVariant'] = {'path':'layout-variant.json','sha256':sha(stage/'layout-variant.json')}
         (stage / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+        recovery_state['_progress'].publish(recovery_state, 'publishing')
         load_module('delivery').validate_delivery(stage)
         if checkpoint:load_module('checkpoint_source').snapshot(checkpoint,write_root,plan,installed['binarySha256'])
         elif source:load_module('delivery').validate_delivery(source, plan.get('expectedManifestSha256', source_manifest_hash))
         if output.exists() or output.is_symlink():
             raise ValueError('output_exists')
         stage.rename(output)
+        recovery_state['_progress'].publish(recovery_state, 'finished')
         return manifest
 
 

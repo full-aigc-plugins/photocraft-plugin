@@ -58,7 +58,7 @@ try {
   let result:any;
   switch(action) {
    case 'create':result=ledger.create(input);break;
-   case 'status':result=ledger.status(id);break;
+   case 'status':result=runner.status(id);break;
    case 'artifact':{const task=ledger.status(id);result=mapArtifact(task,task.request.parentTask?ledger.status(task.request.parentTask).artifact:undefined,options['--delivery']);break;}
    case 'bundle-export':{const task=ledger.status(id);result=exportBundle(task,options['--bundle'],task.request.parentTask?ledger.status(task.request.parentTask).artifact:undefined);break;}
    case 'run':result=await runner.run(id);break;

@@ -1,0 +1,161 @@
+EFEEEEEEEE
+======================================================================
+ERROR: test_atomic_snapshot_matches_original_guard_and_does_not_change_any_file (test_durable_progress.DurableProgressTests.test_atomic_snapshot_matches_original_guard_and_does_not_change_any_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 24, in test_atomic_snapshot_matches_original_guard_and_does_not_change_any_file
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='plan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='identity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='stage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='stageIdentity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='taskBinding')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='receipts')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='phase')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+ERROR: test_tampered_plan_binding_stage_and_guard_are_refused_readonly (test_durable_progress.DurableProgressTests.test_tampered_plan_binding_stage_and_guard_are_refused_readonly) (field='guard')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 31, in test_tampered_plan_binding_stage_and_guard_are_refused_readonly
+    root=Path(tmp).resolve();output,stage,identity,state=self.fixture(root);progress=load('progress')
+                                                                                     ~~~~^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 6, in load
+    spec=importlib.util.spec_from_file_location('progress_test_'+name,SCRIPTS/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 759, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 896, in get_code
+  File "<frozen importlib._bootstrap_external>", line 954, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/progress.py'
+
+======================================================================
+FAIL: test_submitted_progress_is_durable_before_unknown_native_reply (test_durable_progress.DurableProgressTests.test_submitted_progress_is_durable_before_unknown_native_reply)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 19, in test_submitted_progress_is_durable_before_unknown_native_reply
+    with self.assertRaisesRegex(RuntimeError,'reply lost'):load('workflow').call_tool(Session(),'doc_inspect',{},state,[])
+                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/skills/photocraft-use/scripts/workflow.py", line 238, in call_tool
+    reply = session.request('tools/call', {'name': name, 'arguments': args})
+  File "<WORKSPACE>/full-aigc-skills-repositories/photocraft-skills/tests/test_durable_progress.py", line 17, in request
+    self_test.assertEqual(journal.calls,[('submitted',{'tool':'doc_inspect','arguments':{},'phase':'submitted'})]);raise RuntimeError('reply lost')
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [('submitted', {'tool': 'doc_inspect', 'arguments': {}, 'phase': 'submitted'})]
+
+Second list contains 1 additional elements.
+First extra element 0:
+('submitted', {'tool': 'doc_inspect', 'arguments': {}, 'phase': 'submitted'})
+
+- []
++ [('submitted', {'arguments': {}, 'phase': 'submitted', 'tool': 'doc_inspect'})]
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.021s
+
+FAILED (failures=1, errors=9)

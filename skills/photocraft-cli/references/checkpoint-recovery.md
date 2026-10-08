@@ -7,3 +7,7 @@
 失败暂存必须有受failure文件清单保护的`recovery-context.json`，记录原计划、运行时／能力、登记资产及已验证绑定。旧记录缺少上下文时只读核对，不能补造成功manifest获得恢复权。原文件保留，新的`checkpoint-origin.json`记录来源摘要；技术通过仍需独立创作评审及用户接受。
 
 当前为候选实现；固定安装及完整重启矩阵完成前不宣称完整PC-TX-002或V1通过。
+
+## 硬中断后的持久进度
+
+每次原生调用前持久化 submitted，回复严格确认后持久化 reply_validated；原计划、绑定、资产、能力和暂存目录身份同存于独立原子进度文件。只读查询：`python3 -I -B "$SKILL_DIR/scripts/progress.py" OUTPUT --write-root AUTHORIZED_ROOT`。读取不安装或启动会话，不修改原认领、工程和进度记录。返回 PASS 仅表示进度观察记录有效，不能替代原工作进程组停止证明、工程重开或检查点修订许可。缺少失败记录的保存工程仍须显式恢复流程，不能补造 failure.json。

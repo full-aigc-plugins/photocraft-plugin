@@ -5,6 +5,7 @@ import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { confirmedWorkerReceipt } from './worker_receipt.ts';
 import { pinPlan } from './pinned_plan.ts';
+import { observeProgress } from './progress.ts';
 import { canonical, digest, fileDigest, readJson, safePath, within } from '../protocol/files.ts';
 import { Ledger } from './ledger.ts';
 import { observeLateArtifacts } from './late_artifacts.ts';
@@ -45,6 +46,19 @@ export class Runner {
   preflightRequest(request,this.options,(script,args)=>this.python(script,args));
   if(this.identity().sha256!==identity.sha256)throw new OperationError('skill_source_changed',{code:'skill_source_changed',phase:'validation',outcome:'not_executed',category:'validation_failed',fieldPath:'$.skillRoot',recoveryAction:'inspect'});
   return identity;
+ }
+ /** 状态查询只读取原进度和监督回执，不变更账本、安装运行时或启动会话。 */
+ status(id:string) {
+  const task=this.ledger.status(id);
+  try {
+   if(!task.executionIdentity)return task;
+   if(this.identity().sha256!==task.executionIdentity.sha256)throw new Error('skill_source_changed');
+   const progress=observeProgress(task,this.options,(script,args)=>this.python(script,args));
+   if(!progress)return task.progressObservation?{...task,progressObservation:{status:'UNAVAILABLE',code:'progress_record_missing',replayAllowed:false}}:task;
+   const receipt=confirmedWorkerReceipt(this.ledger.root,task);
+   if(receipt && receipt.workflowPid!==progress.record.ownerPid)throw new Error('progress_worker_identity_mismatch');
+   return {...task,progressObservation:{...progress,workerStoppedConfirmed:!!receipt}};
+  }catch(error){return {...task,progressObservation:{status:'UNAVAILABLE',code:String(error),replayAllowed:false}};}
  }
  async run(id: string) {
   let task=this.ledger.status(id);
@@ -177,7 +191,8 @@ export class Runner {
     return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,'partial_checkpoint_only');current.checkpoint=checkpoint;delete current.verificationError;delete current.reconcileError;current.replayAllowed=false;current.recoveryAction='inspect_checkpoint_before_explicit_revision';current.technical={status:'NOT_RUN'};});
    }catch(error){return this.ledger.update(id,task.epoch,current=>{invalidateCurrentAcceptance(current,String(error));delete current.checkpoint;current.replayAllowed=false;current.reconcileError=String(error);current.verificationError={code:error instanceof OperationError?error.code:'checkpoint_verification_failed',phase:'verification',outcome:error instanceof OperationError?error.outcome:'unknown',retryable:false,recoveryAction:'inspect'};current.recoveryAction='inspect_preserved_artifacts';current.technical={status:'NOT_RUN'};});}
   }
-  return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction='inspect_preserved_artifacts';invalidateCurrentAcceptance(current,'delivery_evidence_missing');});
+  const observed=this.status(id).progressObservation;
+  return this.ledger.update(id,task.epoch,current=>{current.replayAllowed=false;current.recoveryAction=observed?.status==='OBSERVED'?'inspect_interrupted_stage':'inspect_preserved_artifacts';if(observed)current.progressObservation=observed;invalidateCurrentAcceptance(current,'delivery_evidence_missing');});
  }
  async verify(id: string) {
   let task=this.ledger.status(id);

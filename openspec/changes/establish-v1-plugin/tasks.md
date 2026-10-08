@@ -340,3 +340,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09认领前中断候选：插件dev.58在原任务claim前固定并刷盘计划，预算失败或SIGKILL后仅复用精确原计划；外来／截断／符号链接／硬链接／目录占位保全并拒绝。真实SIGKILL并关闭重开账本后，同一任务仅登记一次意图、epoch由0至1、预算及计划inode保全、原生标题仅一层，重复run拒绝。91项Harness（含10项原生）零跳过通过；源dev.46字节与294项源回归身份不变。固定安装及工作进程硬中断进度恢复仍开放，3.6／10.9不勾选，本次关闭0项。证据：`docs/evidence/optimization/preintent-restart/candidate.json`。
 
 2026-10-09认领前中断发行核验：插件dev.58公开ZIP摘要／标签提交一致，源仍锁定dev.46，源代码未修改，294项源回归按同一公开身份复用。隔离Codex发现14技能，实际安装副本91项Harness（含10项原生）、14例只读故障、52例整数拒绝及17例原生血缘通过，安装树不变；发布提交与标签四项CI通过。真实认领前SIGKILL、账本关闭重开及原任务续行只登记一次意图，计划inode与预算不变；不能据此宣称工作进程硬中断进度恢复完成。3.6／10.9保持开放，总计133/157完成、24开放，本次关闭0项。证据：`docs/evidence/optimization/preintent-restart/publication.json`。
+
+2026-10-09持久进度候选：技能源dev.47在原生请求前原子刷盘原计划／资产／绑定／任务令牌及最后请求，插件dev.59只读status独立核对固定执行器、原账本与监督退出回执。真实原生保存后、回复确认前SIGKILL仍保留原进度和工程；活跃status及CLI不改变账本，退出后reconcile仅提示检查中断暂存，不伪造failure／检查点、不重放。298项源回归、93项Harness（含11项原生）零跳过通过；初轮安装路径示例失败已修复并全量重跑。固定安装未执行，显式中断检查点恢复及完整崩溃矩阵仍开放，3.6／10.9不勾选，本次关闭0项，总计133/157完成、24开放。证据：`docs/evidence/optimization/durable-progress/candidate.json`。

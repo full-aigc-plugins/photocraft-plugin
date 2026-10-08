@@ -1,0 +1,13 @@
+{
+  "status": "FAIL",
+  "tests": {
+    "tests": 298,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0
+  },
+  "sourceUnchanged": true,
+  "failure": "InstalledPathTests.test_examples_use_loaded_skill_directory: fixed mount path violated loaded SKILL_DIR contract",
+  "resolution": "Use actual loaded SKILL_DIR; focused two methods and full source298 rerun pass",
+  "initialLogSha256": "ad588967a447b0b66257c761904bee28e238640d9d8b3908914a49e949ad516c"
+}

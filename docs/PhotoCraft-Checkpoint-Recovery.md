@@ -48,3 +48,7 @@ flowchart LR
 ```
 
 This covers the pre-intent window only. Durable progress before a hard worker interruption and the complete recovery matrix remain open.
+
+## Hard worker interruption progress candidate
+
+status observes the original plan, inputs, source version, runtime, worker token and stage inode without writing. Foreign or changing snapshots are refused. Owned exit receipts and process-group confirmation remain separate. Observation creates no checkpoint and promotes no technical or creative status. reconcile may return inspect_interrupted_stage while retaining the unknown outcome and original epoch. A stage without failure.json is neither fabricated as failed nor directly eligible for recover.

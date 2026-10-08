@@ -1,0 +1,20 @@
+✖ progress status rejects foreign producer and changing snapshots without mutating task or events (6.239708ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.786
+
+✖ failing tests:
+
+test at tests/progress-observation.test.ts:18:1
+✖ progress status rejects foreign producer and changing snapshots without mutating task or events (6.239708ms)
+  TypeError: f.runner.status is not a function
+      at TestContext.<anonymous> (file://<WORKSPACE>/full-aigc-plugins-repositories/photocraft-plugin/tests/progress-observation.test.ts:24:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.start (node:internal/test_runner/test:1191:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
