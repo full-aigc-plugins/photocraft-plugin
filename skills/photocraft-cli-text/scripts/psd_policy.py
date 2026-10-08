@@ -112,7 +112,16 @@ def assess(report, policy, plan_sha256, source_sha256=None):
 
 def validate_saved(root, plan, report, files):
     """只读交付检查重算功能矩阵及门禁，兼容无新策略的历史包。"""
-    ref = report.get('psdGate')
+    # 新报告使用公开允许的输出观察；旧顶层引用只读兼容，双份引用冲突拒绝。
+    nested = [output['observations']['psdGate'] for output in report.get('outputs', [])
+              if isinstance(output, dict) and output.get('format') == 'psd'
+              and isinstance(output.get('observations'), dict) and 'psdGate' in output['observations']]
+    if len(nested) > 1:
+        raise ValueError('delivery_psd_gate_identity_mismatch')
+    legacy = report.get('psdGate')
+    if legacy is not None and nested and legacy != nested[0]:
+        raise ValueError('delivery_psd_gate_identity_mismatch')
+    ref = nested[0] if nested else legacy
     if ref is None:
         if 'psdPolicy' in plan or 'psd-acceptance.json' in files:
             raise ValueError('delivery_psd_gate_missing')

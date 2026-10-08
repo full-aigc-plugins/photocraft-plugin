@@ -1,0 +1,302 @@
+{
+  "schema": "photocraft-authority-consumer/v1",
+  "status": "PASS",
+  "authority": {
+    "repository": "full-aigc-plugins/artcraft-plugin",
+    "commit": "09d4ac5b8ff82f8fe819189e4be487b45ab2472b",
+    "files": {
+      "schemas/craft-artifact-v1.json": "c3385db540db71fccfdb049f79f05a9adba55ec008958579eab6fac46dd6ea5d",
+      "schemas/craft-exchange-loss-v1.json": "483670333c2ddb6515abe61fc30b9160bbe097b6abc01bda6c1ba73fc1832858",
+      "schemas/craft-task-v1.json": "4a153b1c9ec898807016dfb05ff81fcf5c7cffdb6777b6ab226e56aa2bcdf7ad",
+      "src/protocol/contracts.ts": "ecfdb1a4a30b1cbe13977ef09bc875fbf2146e73bf4d0a4eb2409fc0a9e7e0e9",
+      "src/protocol/dependency_graph.ts": "73454afd86310c7107b333a92520fd07f06a97612f6d539aa84031e987e76c43",
+      "src/protocol/image_sequence.ts": "e63b178aa61abf0e0bee6d407bf747acf947b880352138be70b2c26e4a3bcc56",
+      "src/protocol/jpeg_inspection.ts": "5dc20a65aed1311dd05bccd70a2a610ac9380d2254d4ebf1ef2ba3d4eb48e865",
+      "src/protocol/png_inspection.ts": "86b6d604ca3660cf2bd76fab96a266e06406bd9269e1cfa2e76e7cff0ea22265",
+      "src/protocol/task_error.ts": "ac2f4e43ab13a20e57822036de009209f64ab496a0ba2463a5ebdcc43f3ddd10",
+      "src/protocol/wav_inspection.ts": "6ec1968f2c4a52f43ea4129ad6334158e696f9eebef981477cff803ad642e645"
+    },
+    "mode": "immutable git object extraction; original checkout unchanged"
+  },
+  "pluginVersion": "0.1.0-dev.51",
+  "installedSourceCommit": "0059cce50fc5e048da5c289ccb1d93c02961b950",
+  "sourceRef": "candidate-dev.44-not-published",
+  "actualNativeCreations": 1,
+  "actualNativeRevisions": 1,
+  "acceptedNativeBundles": 2,
+  "tamperCases": [
+    {
+      "file": "capabilities.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "capability-checks.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "design.png",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "design.psd",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "exchange-loss.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "harness/artifact.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "harness/parent-artifact.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "harness/references/0",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "harness/task.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "manifest.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "native.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "object-preservation.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "operations.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "plan.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "project.pcraft",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "psd-acceptance.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    },
+    {
+      "file": "psd-inspection.json",
+      "result": "PASS",
+      "error": "bundle_file_mismatch"
+    }
+  ],
+  "registeredReferenceSha256": "f40717831a71b21d88b4752c01168cdbdbeeb4a0c27ca6b093524e4f99220942",
+  "legacyPublicDev50ReadOnly": "PASS",
+  "legacyPublicDev50BundleSha256": "17ead2177ddedd309ccbe298f2d8f93c9aa6dfd36058314f65ed2d98811831d9",
+  "wrongContentRefused": true,
+  "wrongEvidenceRefused": true,
+  "parentArtifact": {
+    "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d",
+    "bytes": 11085,
+    "dependencies": [],
+    "evidenceRefs": [
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:native.json",
+        "location": "native.json",
+        "sha256": "15a577535b941e9b2d171f7873fdcefa3c439e76bd46ca7bf8ffb7b29f9be06d",
+        "version": "15a577535b941e9b2d171f7873fdcefa3c439e76bd46ca7bf8ffb7b29f9be06d"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:plan.json",
+        "location": "plan.json",
+        "sha256": "6932e824bbc7ea0aa3b43349f3ee10657b18df811e8e0f2eece75499b1995672",
+        "version": "6932e824bbc7ea0aa3b43349f3ee10657b18df811e8e0f2eece75499b1995672"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:operations.json",
+        "location": "operations.json",
+        "sha256": "b66545b900146a948eec1764d896a99a449e8e568f8589b3a683c60c057740fd",
+        "version": "b66545b900146a948eec1764d896a99a449e8e568f8589b3a683c60c057740fd"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:capabilities.json",
+        "location": "capabilities.json",
+        "sha256": "d6ef2a5684d173253086181ef607ee41673fe08631bc4bce6687b7205da1e40b",
+        "version": "d6ef2a5684d173253086181ef607ee41673fe08631bc4bce6687b7205da1e40b"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:capability-checks.json",
+        "location": "capability-checks.json",
+        "sha256": "2cba640d5ad3328eadcc9a217c7eedc9bf02961ae2576d86aa657af612ca6a62",
+        "version": "2cba640d5ad3328eadcc9a217c7eedc9bf02961ae2576d86aa657af612ca6a62"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:harness/task.json",
+        "location": "harness/task.json",
+        "sha256": "8bc9ed0ebd541e4be5fb7524751d364b5966833edeb6e068564935457c392c80",
+        "version": "8bc9ed0ebd541e4be5fb7524751d364b5966833edeb6e068564935457c392c80"
+      }
+    ],
+    "location": "project.pcraft",
+    "lossReportRef": {
+      "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:exchange-loss.json",
+      "location": "exchange-loss.json",
+      "sha256": "908afa91dc35a02395d602b6f7449d25407a02a4d137bf6c685d16fe5e667b13",
+      "version": "908afa91dc35a02395d602b6f7449d25407a02a4d137bf6c685d16fe5e667b13"
+    },
+    "mediaType": "application/octet-stream",
+    "nativeProjectRef": {
+      "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d",
+      "location": "project.pcraft",
+      "sha256": "dc04805a70aeb4dac2148eb21a274f64d6cafb2c575adc7a31ff5a1036d32fa1",
+      "version": "dc04805a70aeb4dac2148eb21a274f64d6cafb2c575adc7a31ff5a1036d32fa1"
+    },
+    "producerTaskId": "05083533-0026-4c3f-b006-fefca4704a6d",
+    "protocolVersion": "craft-artifact/v1",
+    "renditions": [
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:design.png",
+        "location": "design.png",
+        "sha256": "1dd4427ddb29e82ed88c97296d22421c5827596f522a3d5ef6053da82a45c089",
+        "version": "1dd4427ddb29e82ed88c97296d22421c5827596f522a3d5ef6053da82a45c089"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:design.psd",
+        "location": "design.psd",
+        "sha256": "d1caa9fc1346ba409bf2509fa42c6fa153bafce123e979a7b99f3d8eb736eada",
+        "version": "d1caa9fc1346ba409bf2509fa42c6fa153bafce123e979a7b99f3d8eb736eada"
+      }
+    ],
+    "sha256": "dc04805a70aeb4dac2148eb21a274f64d6cafb2c575adc7a31ff5a1036d32fa1",
+    "sourceRefs": [],
+    "technicalMetadata": {
+      "height": 64,
+      "width": 64
+    },
+    "version": "dc04805a70aeb4dac2148eb21a274f64d6cafb2c575adc7a31ff5a1036d32fa1"
+  },
+  "childArtifact": {
+    "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d",
+    "bytes": 11336,
+    "dependencies": [],
+    "evidenceRefs": [
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:native.json",
+        "location": "native.json",
+        "sha256": "66498a83fa02f0df38ce60f1eba18206238297d02c4d1fc860db9549a018b543",
+        "version": "66498a83fa02f0df38ce60f1eba18206238297d02c4d1fc860db9549a018b543"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:plan.json",
+        "location": "plan.json",
+        "sha256": "109c3457ea51e8eeb36e5828fe61742346c488eb6146c38e1a61bd5bd211f05f",
+        "version": "109c3457ea51e8eeb36e5828fe61742346c488eb6146c38e1a61bd5bd211f05f"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:operations.json",
+        "location": "operations.json",
+        "sha256": "6c09e891ac66497a371b8fe670efcc2c52880f6aa404d47f56d6678095405ba8",
+        "version": "6c09e891ac66497a371b8fe670efcc2c52880f6aa404d47f56d6678095405ba8"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:capabilities.json",
+        "location": "capabilities.json",
+        "sha256": "12dec96b101c926064aa1bb3c23e3e31da1b0327b0c40f73e92ab6d15f57521e",
+        "version": "12dec96b101c926064aa1bb3c23e3e31da1b0327b0c40f73e92ab6d15f57521e"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:capability-checks.json",
+        "location": "capability-checks.json",
+        "sha256": "82e6ed3724d21c8e735ba17f075deb22f7891d6370a8aec3285f07086eaf585d",
+        "version": "82e6ed3724d21c8e735ba17f075deb22f7891d6370a8aec3285f07086eaf585d"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:object-preservation.json",
+        "location": "object-preservation.json",
+        "sha256": "92b02960e71cde2a8a326b45545a3b1102cc4423622261f680e60c0fbd0f266f",
+        "version": "92b02960e71cde2a8a326b45545a3b1102cc4423622261f680e60c0fbd0f266f"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:harness/task.json",
+        "location": "harness/task.json",
+        "sha256": "149933d2a5b203800c4651237b9c50b169cbf210c407c0daf849c191a66c128c",
+        "version": "149933d2a5b203800c4651237b9c50b169cbf210c407c0daf849c191a66c128c"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:harness/parent-artifact.json",
+        "location": "harness/parent-artifact.json",
+        "sha256": "d30cf2a0bf45ff2773731e3665deb7dd3c05c28fad3660ba6d2d52d02abcb4fc",
+        "version": "d30cf2a0bf45ff2773731e3665deb7dd3c05c28fad3660ba6d2d52d02abcb4fc"
+      }
+    ],
+    "location": "project.pcraft",
+    "lossReportRef": {
+      "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:exchange-loss.json",
+      "location": "exchange-loss.json",
+      "sha256": "d9f91e8106680c672ee26fa66c1ee47008ad0ea34dbb111c61daf46622da983e",
+      "version": "d9f91e8106680c672ee26fa66c1ee47008ad0ea34dbb111c61daf46622da983e"
+    },
+    "mediaType": "application/octet-stream",
+    "nativeProjectRef": {
+      "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d",
+      "location": "project.pcraft",
+      "sha256": "125333b27cf04d4c4a70e6790cab0d20e52f61688591257c74156cefb5e1bef4",
+      "version": "125333b27cf04d4c4a70e6790cab0d20e52f61688591257c74156cefb5e1bef4"
+    },
+    "producerTaskId": "add6dd5e-1c48-4e6a-9d7a-c7ad7c944f8f",
+    "protocolVersion": "craft-artifact/v1",
+    "renditions": [
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:design.png",
+        "location": "design.png",
+        "sha256": "d46e8c1f57915a3877b3ef94569d878c9a3a1b5343e31c9b519197cf73bc06ba",
+        "version": "d46e8c1f57915a3877b3ef94569d878c9a3a1b5343e31c9b519197cf73bc06ba"
+      },
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d:design.psd",
+        "location": "design.psd",
+        "sha256": "26d78816d3481f52c35881a0a1c2c6220871b81c477c79a9a2770ed743acdbac",
+        "version": "26d78816d3481f52c35881a0a1c2c6220871b81c477c79a9a2770ed743acdbac"
+      }
+    ],
+    "sha256": "125333b27cf04d4c4a70e6790cab0d20e52f61688591257c74156cefb5e1bef4",
+    "sourceRefs": [
+      {
+        "assetId": "photocraft:05083533-0026-4c3f-b006-fefca4704a6d",
+        "sha256": "dc04805a70aeb4dac2148eb21a274f64d6cafb2c575adc7a31ff5a1036d32fa1",
+        "version": "dc04805a70aeb4dac2148eb21a274f64d6cafb2c575adc7a31ff5a1036d32fa1"
+      }
+    ],
+    "technicalMetadata": {
+      "height": 64,
+      "width": 64
+    },
+    "version": "125333b27cf04d4c4a70e6790cab0d20e52f61688591257c74156cefb5e1bef4"
+  },
+  "parentBundleSha256": "1a42f93c5dfa212e82b4239d9f932278bf1d99d9a2663c3202a295ffe95a9cfb",
+  "childBundleSha256": "fa1462bd462d5aaab2d3c51e0c025dd94b1b7695d7f822a587283e7869d3207f",
+  "creativeAcceptance": "NOT_RUN",
+  "sourceAuthenticity": "NOT_PROVEN",
+  "scope": "Fixed public installed PhotoCraft production APIs and immutable ArtCraft109 verifyArtifact consumer; not complete Art workflow/host/model/creative acceptance"
+}

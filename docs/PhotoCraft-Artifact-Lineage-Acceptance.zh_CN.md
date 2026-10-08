@@ -7,3 +7,5 @@
 修订评估回执明确为合同fixture，子版本创作和最终接受仍NOT_RUN；完整性与血缘不证明作者真实性或创作质量。关闭5.3／11.9前须补齐公开固定副本证据；本候选仍保留两项开放。
 
 dev.51消费修正：实际不可变ArtCraft109 verifyArtifact对dev.50的application/x-photocraft返回media_type_unsupported。原生工程仍为主产物，内容和版本语义不变；dev.51使用已有application/octet-stream二进制合同。旧包只读核验保留原身份并返回LEGACY_UNSUPPORTED_BY_PINNED_CONSUMER，不静默改写或冒充已支持；两项任务待dev.51固定安装及实际跨仓消费证明后关闭。
+
+插件dev.52／源dev.44补充：实际消费者进一步发现顶层psdGate未声明；相同摘要引用现归入公共schema允许的PSD输出观察。必要特性门禁及旧引用只读兼容继续执行；候选消费证明核验两个真实原生包，并拒绝全部17项同名登记文件替换。固定dev.52证明仍待完成。

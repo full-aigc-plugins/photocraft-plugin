@@ -1,0 +1,12 @@
+file://WORKSPACE/artifacts/photocraft-lineage-consumer-20261009/contract-owner/src/protocol/contracts.ts:19
+  const fail = () => { throw new Error(`protocol_invalid: ${path}`); };
+                             ^
+
+Error: protocol_invalid: $
+    at fail (file://WORKSPACE/artifacts/photocraft-lineage-consumer-20261009/contract-owner/src/protocol/contracts.ts:19:30)
+    at check (file://WORKSPACE/artifacts/photocraft-lineage-consumer-20261009/contract-owner/src/protocol/contracts.ts:48:55)
+    at validateExchangeLossReport (file://WORKSPACE/artifacts/photocraft-lineage-consumer-20261009/contract-owner/src/protocol/contracts.ts:75:3)
+    at verifyArtifact (file://WORKSPACE/artifacts/photocraft-lineage-consumer-20261009/contract-owner/src/protocol/contracts.ts:181:18)
+    at async file://WORKSPACE/artifacts/photocraft-lineage-consumer-20261009/owner-consumer.ts:20:100
+
+Node.js v24.15.0

@@ -1,7 +1,7 @@
 {
   "schema": "photocraft-command-acceptance/v1",
   "scope": "candidate command-context evidence index; fixed installation, host/model and creative acceptance remain separate",
-  "sourceSha256": "a367d52dac7ed77b762d0b4cf5f3fe7a7580a956118d2be4e5c179d9c6cf1439",
+  "sourceSha256": "8ddc32e2169521c82da5fed0b1c5cf43d7c494237ff7cd43f7436d6d8996e88a",
   "sourceFiles": {
     "scripts/bootstrap.py": "065231567b6d0c2bab9504ee49b630c14b05db0a29508021166caa58b123c7cc",
     "scripts/capabilities.py": "4248ff7fe3d675ef69bc8c28109e2f0145a5b83ceaaf4a565cf1eaf3087ba96d",
@@ -15,7 +15,7 @@
     "scripts/desktop.py": "8fc70a931f2a628bf00347285cc2fa110de147bae04997831007e010fb975868",
     "scripts/desktop_session.py": "b6b07a9a18b77386d481a7f263190b0981a7a763dda4f46ad7417a92d416fbb5",
     "scripts/domain_assertions.py": "2a321ec3eb0dc0d13ba39a0d32ceb7116d4caa6c5924689392fd0d95f20dc3c4",
-    "scripts/exchange_loss.py": "1834570a5f0f8597f7679ab81fe9bcc673af07cfe0dc8dcc7c7a6796ac11b22e",
+    "scripts/exchange_loss.py": "31bee4dc70791790f17bed8ae98328c7e6d7f2b501ec2bf8c7fa5c3949a27833",
     "scripts/filter_contract.py": "24e7d3ed6de7963d6a8447a7f73f3c47806f6910f51efc3c3e3a0f724b0860ef",
     "scripts/flat_export.py": "4302d6a9bbf72067bd2b34d5ca2d0b41c079e53c4c06ac20dceea7dd52c1459d",
     "scripts/layout_variant.py": "7b0865514548b6363d0ccde56ddeef25a03d9b00c5e60c854730dd62d598f384",
@@ -29,7 +29,7 @@
     "scripts/pixel_guard.py": "aa5c8da250bfd6278879235cd2020b9f10951b1ef4539c76c5b2df8efa0890ef",
     "scripts/preserved_stage.py": "cee54ffc1764229f3b19c9830fe6cf71b711244bd7919776afde9c5ce5edf57f",
     "scripts/psd_features.py": "358de87e8ad5e531fc7ca423a10069cb55e35e44aede0bf2d3589a8969500b65",
-    "scripts/psd_policy.py": "ec3118ce2edcadf43554ae55e42d4d96e32255bf2edef61dde556dd10088cb3d",
+    "scripts/psd_policy.py": "a43efb849cd910038a9d288720f5e0c04f894564128e853ab5f89d2de32aff7c",
     "scripts/route.py": "099f0607a2600f0cd1b155585a44e5f28acbcbc600f909b7f13b088ca49d4bbf",
     "scripts/runtime.lock.json": "b358d465bab65e3e7bf87add7b490fa6f4e37f7efb45c17580123a4a8cfa2a49",
     "scripts/strict_json.py": "02f91323a5dc1fa473db69c34fd54d6772ded09ecfee113097380772323ce50c",

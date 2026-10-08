@@ -78,7 +78,9 @@ def write_report(root,outputs,warnings):
   plan=json.loads((root/'plan.json').read_text()) if (root/'plan.json').is_file() else {}
   gate=policy.assess(report,plan.get('psdPolicy',{}),sha(root/'plan.json') if (root/'plan.json').is_file() else None,plan.get('expectedProjectSha256'))
   (root/'psd-acceptance.json').write_text(json.dumps(gate,ensure_ascii=False,indent=2)+'\n')
-  report['psdGate']={'location':'psd-acceptance.json','sha256':sha(root/'psd-acceptance.json')}
+  # 领域门禁属于公共schema允许的PSD观察，不能添加未声明的顶层字段。
+  psd_output=next(output for output in report['outputs'] if output['format']=='psd')
+  psd_output['observations']['psdGate']={'location':'psd-acceptance.json','sha256':sha(root/'psd-acceptance.json')}
  (root/'exchange-loss.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
  if gate is not None and gate['status']=='FAIL':raise ValueError('psd_required_features_unaccepted: '+','.join(gate['unaccepted']+gate['unobservedRequired']+gate['unusedAcceptances']))
  return report

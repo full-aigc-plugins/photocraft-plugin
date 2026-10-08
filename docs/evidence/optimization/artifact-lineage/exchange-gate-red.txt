@@ -1,0 +1,42 @@
+.EFEE
+======================================================================
+ERROR: test_legacy_top_level_gate_is_readonly_compatible_without_rewriting (test_psd_exchange_contract.PsdExchangeContract.test_legacy_top_level_gate_is_readonly_compatible_without_rewriting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_psd_exchange_contract.py", line 40, in test_legacy_top_level_gate_is_readonly_compatible_without_rewriting
+    report['psdGate']=report['outputs'][0]['observations'].pop('psdGate')
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'psdGate'
+
+======================================================================
+ERROR: test_wrong_nested_gate_or_removed_gate_never_bypasses_required_policy (test_psd_exchange_contract.PsdExchangeContract.test_wrong_nested_gate_or_removed_gate_never_bypasses_required_policy) (mode='wrong')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_psd_exchange_contract.py", line 55, in test_wrong_nested_gate_or_removed_gate_never_bypasses_required_policy
+    if mode=='wrong':observations['psdGate']['sha256']='f'*64
+                     ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'psdGate'
+
+======================================================================
+ERROR: test_wrong_nested_gate_or_removed_gate_never_bypasses_required_policy (test_psd_exchange_contract.PsdExchangeContract.test_wrong_nested_gate_or_removed_gate_never_bypasses_required_policy) (mode='missing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_psd_exchange_contract.py", line 56, in test_wrong_nested_gate_or_removed_gate_never_bypasses_required_policy
+    else:observations.pop('psdGate');(root/'psd-acceptance.json').unlink()
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'psdGate'
+
+======================================================================
+FAIL: test_public_exchange_root_stays_fixed_and_gate_is_bound_in_psd_observations (test_psd_exchange_contract.PsdExchangeContract.test_public_exchange_root_stays_fixed_and_gate_is_bound_in_psd_observations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "WORKSPACE/full-aigc-skills-repositories/photocraft-skills/tests/test_psd_exchange_contract.py", line 32, in test_public_exchange_root_stays_fixed_and_gate_is_bound_in_psd_observations
+    self.assertEqual(set(report),{'schema','pluginId','native','inspection','psdInspection','outputs','acceptance'})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+'psdGate'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.022s
+
+FAILED (failures=1, errors=3)
