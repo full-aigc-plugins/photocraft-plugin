@@ -1,0 +1,32 @@
+{
+  "schema": "photocraft-runtime-transition-native/v1",
+  "status": "PASS",
+  "initialSourceSha256": "a06d96691b879db98d570d52b5def1809f056dbced23ac72d446a571ee7b449b",
+  "candidateSourceSha256": "c9e63c54b1519fc1faccf065f701bf8621f54901baeafb708964ebf3df2329b8",
+  "finalSourceSha256": "a06d96691b879db98d570d52b5def1809f056dbced23ac72d446a571ee7b449b",
+  "initialProjectSha256": "5facc669ec2c3dd6942c260af430ce3a54d6dc57ffcff61b1c37cd2ae7ce07ab",
+  "retainedProjectSha256": "5facc669ec2c3dd6942c260af430ce3a54d6dc57ffcff61b1c37cd2ae7ce07ab",
+  "generations": [
+    1,
+    2
+  ],
+  "pendingTaskRefused": true,
+  "oldSourceClaimRefused": true,
+  "oldSourceEpoch": 0,
+  "selectedSourceExecutionPassed": true,
+  "backupCount": 2,
+  "projectsReopened": [
+    1,
+    3
+  ],
+  "probes": [
+    "upgrade",
+    "rollback"
+  ],
+  "runtimeVersion": "0.2.0-craft.1",
+  "sameBinaryOnly": true,
+  "failedSavedStageReopened": true,
+  "failedSavedProjectSha256": "31ee1566fc252d3bfe2184dadba548d534fa68dfc9787824110391b8ef144de1",
+  "editingDuringProbe": 0,
+  "scope": "Actual native create/save, drain/cancel, source combination activation and rollback with readonly project checks; same craft.1 binary. Different-version and full PC-RT-002 fixed acceptance remain open."
+}

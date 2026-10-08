@@ -1,8 +1,8 @@
 # PhotoCraft Agent Plugin
 
-dev.62 candidate adds explicit per-ledger runtime combination upgrade, rollback and readonly status with transactional draining, immutable source retention, state backup and claim fencing. The active public binary remains craft.1; different-version and complete PC-RT-002 acceptance stay open. [Lifecycle](docs/PhotoCraft-Runtime-Transition.md).
+dev.62 published: fixed public installation passes107 Harness tests (14 native) with unchanged installed bytes. Explicit per-ledger runtime combination upgrade/rollback, draining, backups and claim fencing implemented; tasks2.4/2.5 complete,137/157 complete,20 open. Native transitions use the same craft.1 binary; different-version and full PC-RT-002 task2.6 remain open. [Publication](docs/evidence/optimization/runtime-transition/publication.json). [Lifecycle](docs/PhotoCraft-Runtime-Transition.md).
 
-Published dev.61 / source dev.48: all nine PC-TX-002 scenarios pass on the fixed public macOS arm64 installation, including six actual interruption windows, missing-supervisor proof refusal, readonly status and corrupt-state preservation. Tasks3.6/10.9 complete;135/157 complete,22 open. Creative/model and full V1 remain unverified. [Audit](docs/evidence/optimization/task-recovery/acceptance-audit.json).
+Published dev.61 / source dev.48: all nine PC-TX-002 scenarios pass on the fixed public macOS arm64 installation, including six actual interruption windows, missing-supervisor proof refusal, readonly status and corrupt-state preservation. Tasks3.6/10.9 complete; at that release135/157 were complete,22 open. Creative/model and full V1 remain unverified. [Audit](docs/evidence/optimization/task-recovery/acceptance-audit.json).
 
 dev.54 adds independent worker supervision, bound restart stop receipts and late-file observations. All PC-TX-003 scenarios pass on public fixed macOS arm64 installation; tasks3.9/10.12 complete. At that release133/157 were complete,24 open. [Evidence contract](docs/PhotoCraft-Cancellation-Observation.md).
 

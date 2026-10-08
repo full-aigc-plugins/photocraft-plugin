@@ -24,8 +24,8 @@
 - [x] 2.1 [PC-RT-001] 编写能暴露“运行时来源与完整性”缺失的正向与失败测试并确认预期失败。责任：Runtime owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
 - [x] 2.2 [PC-RT-001] 在 src/adapters/runtime、runtime/ 锁文件与安装器 实现“运行时来源与完整性”的最小行为，不扩大支持范围。责任：Runtime owner；前置：2.1。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 证据：`docs/evidence/craft-fixed-runtime-integrity-20261008.json`；固定当前安装、原制品保全、真实并发／超时及全部场景逐项核验，仅RT-001。
 - [x] 2.3 [PC-RT-001] 完成“运行时来源与完整性”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：2.2。产物：evidence/pc-rt-001/；验证：规范所有场景有证据，且 README 能力状态与证据一致。 证据：`docs/evidence/craft-fixed-runtime-integrity-20261008.json`；固定当前安装、原制品保全、真实并发／超时及全部场景逐项核验，仅RT-001。
-- [ ] 2.4 [PC-RT-002] 编写能暴露“运行能力与隔离升级”缺失的正向与失败测试并确认预期失败。责任：Runtime owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。
-- [ ] 2.5 [PC-RT-002] 在 src/adapters/runtime、runtime/ 锁文件与安装器 实现“运行能力与隔离升级”的最小行为，不扩大支持范围。责任：Runtime owner；前置：2.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。
+- [x] 2.4 [PC-RT-002] 编写能暴露“运行能力与隔离升级”缺失的正向与失败测试并确认预期失败。责任：Runtime owner；前置：技能/运行时合同已确定；业务调用依赖对应适配器。产物：fixture、断言及失败日志；验证：失败原因必须是目标行为缺失。 插件dev.62固定安装107项Harness（14项原生）及行为红灯证据：`docs/evidence/optimization/runtime-transition/publication.json`；实现位于`src/harness/runtime_manager.ts`与认领事务，复用锁定源dev.48安装器；仅关闭测试／最小实现，不同二进制与完整2.6验收保持开放。
+- [x] 2.5 [PC-RT-002] 在 src/adapters/runtime、runtime/ 锁文件与安装器 实现“运行能力与隔离升级”的最小行为，不扩大支持范围。责任：Runtime owner；前置：2.4。产物：对应源码/独立技能源/锁定材料；验证：目标测试和受影响回归通过。 插件dev.62固定安装107项Harness（14项原生）及行为红灯证据：`docs/evidence/optimization/runtime-transition/publication.json`；实现位于`src/harness/runtime_manager.ts`与认领事务，复用锁定源dev.48安装器；仅关闭测试／最小实现，不同二进制与完整2.6验收保持开放。
 - [ ] 2.6 [PC-RT-002] 完成“运行能力与隔离升级”真实边界验收并记录版本、平台、输入输出摘要及未验证项。责任：QA owner；前置：2.5。产物：evidence/pc-rt-002/；验证：规范所有场景有证据，且 README 能力状态与证据一致。
 
 - [x] 2.9 [PC-RT-002] 为首次原生下载的SSL EOF建立代表性红绿测试；独立技能源实现最多三次只读下载、丢弃半包并保留完整性边界，同步全部技能，候选回归通过。证据 `docs/evidence/photocraft-native-download-candidate-20261007.json`；仅候选子门禁。
@@ -352,3 +352,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09恢复验收候选dev.61：锁定源dev.48，源306项原生／桌面全回归按未变化文件摘要复用。97项Harness零跳过通过，真实父CLI／监督／工作进程全部消失且无回执仍保持reconciling、禁止检查点和修订；同一保存工程上的独立status不改文件、同键返回原任务、异输入冲突、损坏意图／SQLite／未知metadata版本原样拒绝。六窗口候选通过，规范9场景将对公开安装逐项审计；固定发行之前3.6／10.9不勾选，总计133/157完成、24开放。测试初稿误用SQLite user_version而非项目metadata.version，已修正fixture并重跑通过，无运行时实现变更。证据：`docs/evidence/optimization/task-recovery/audit-plan.json`。
 
 2026-10-09恢复逐场景验收：公开固定dev.61／源dev.48的全部9个PC-TX-002场景通过，97项Harness（12项原生）零跳过及安装树不变；实际监督丢失无回执仍禁止写入，独立status、幂等冲突、原生检查点／显式副本、同计划外来生产者和损坏／旧状态保全均有当前证据。3.6／10.9完成，总计135/157完成、22开放。源306项回归按原发行未变化摘要复用；创作／模型、逐命令、raw／streaming、可变GUI写入权和完整V1未由此验收。证据：`docs/evidence/optimization/task-recovery/acceptance-audit.json`。
+
+2026-10-09运行时生命周期实施发行：插件dev.62公开ZIP／标签摘要一致，发布提交与标签四项CI通过。隔离Codex发现14技能，固定副本107项Harness（14项原生）、14例只读故障、52例整数拒绝及17例原生血缘通过，安装树不变。实际工程及失败暂存只读重开、排空、旧来源认领拒绝、状态备份、显式切换和回退通过；原生切换使用相同craft.1二进制，不能代替不同版本或全部PC-RT-002验收。只关闭2.4／2.5，现137/157完成、20开放；2.6及完整V1保持开放。源dev.48未修改，306项原回归按精确摘要复用。证据：`docs/evidence/optimization/runtime-transition/publication.json`。

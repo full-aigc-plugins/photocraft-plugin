@@ -132,7 +132,9 @@
     "3.9": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json",
     "10.12": "docs/evidence/optimization/task-budget-stop/acceptance-audit.json",
     "3.6": "docs/evidence/optimization/task-recovery/acceptance-audit.json",
-    "10.9": "docs/evidence/optimization/task-recovery/acceptance-audit.json"
+    "10.9": "docs/evidence/optimization/task-recovery/acceptance-audit.json",
+    "2.4": "docs/evidence/optimization/runtime-transition/publication.json",
+    "2.5": "docs/evidence/optimization/runtime-transition/publication.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",
@@ -177,16 +179,16 @@
     "pluginWorkingVersion": "0.1.0-dev.62",
     "fixedSkillSourceVersion": "0.1.0-dev.48",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_CANDIDATE_RUNTIME_TRANSITION",
+    "publication": "PARTIAL_PUBLISHED_RUNTIME_TRANSITION_IMPLEMENTATION",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
-      "completed": 135,
-      "open": 22,
-      "newlyCompleted": 73
+      "completed": 137,
+      "open": 20,
+      "newlyCompleted": 75
     },
     "currentRegressionEvidence": "docs/evidence/optimization/interrupted-checkpoint/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/task-recovery/acceptance-audit.json"
+    "publicationEvidence": "docs/evidence/optimization/runtime-transition/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -411,6 +413,17 @@
       "3.6",
       "10.9"
     ],
+    "fullV1": "NOT_RUN"
+  },
+  "runtimeTransitionImplementation": {
+    "status": "FIXED_IMPLEMENTATION_PASS",
+    "evidence": "docs/evidence/optimization/runtime-transition/publication.json",
+    "closedTaskIds": [
+      "2.4",
+      "2.5"
+    ],
+    "openAcceptanceTask": "2.6",
+    "sameBinaryOnly": true,
     "fullV1": "NOT_RUN"
   }
 }

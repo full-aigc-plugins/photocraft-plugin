@@ -1,6 +1,6 @@
 # 显式运行时组合生命周期
 
-PC-RT-002实施候选，插件dev.62／源dev.48；公开二进制仍为craft.1。真实不同二进制版本升级及完整场景验收2.6保持开放。控制范围是一个既有任务账本，不修改PATH、全局插件安装或已发布技能快照。
+PC-RT-002已发布实施，插件dev.62／源dev.48；2.4／2.5完成，[发行证据](evidence/optimization/runtime-transition/publication.json)；公开二进制仍为craft.1。真实不同二进制版本升级及完整场景验收2.6保持开放。控制范围是一个既有任务账本，不修改PATH、全局插件安装或已发布技能快照。
 
 `node src/cli.ts runtime-status --state-dir <绝对账本目录>`只读查询选择，不初始化状态或安装运行时。generation0表示历史固定入口尚未受管。`runtime-upgrade`与`runtime-rollback`使用`--request <绝对JSON路径>`；首次升级另外指定原`--skill-root`，后续普通CLI任务默认使用保留的活动来源，显式外来来源不能绕过认领隔离。
 

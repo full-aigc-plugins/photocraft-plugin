@@ -1,6 +1,6 @@
 # Explicit runtime combination lifecycle
 
-PC-RT-002 implementation candidate, plugin dev.62 / source dev.48. The public binary remains craft.1. Different-binary version upgrade and full scenario acceptance2.6 remain open. These controls operate on one existing task ledger and do not change PATH, the global plugin installation or the published skill snapshot.
+PC-RT-002 fixed public implementation, plugin dev.62 / source dev.48. Tasks2.4/2.5 complete; [publication evidence](evidence/optimization/runtime-transition/publication.json). The public binary remains craft.1. Different-binary version upgrade and full scenario acceptance2.6 remain open. These controls operate on one existing task ledger and do not change PATH, the global plugin installation or the published skill snapshot.
 
 Use `node src/cli.ts runtime-status --state-dir <absolute-state>` to inspect the selected combination without initializing state or installing a runtime. Generation0 means the historical fixed entry remains unmanaged. `runtime-upgrade` and `runtime-rollback` take `--request <absolute-json>`. The first upgrade also takes the original `--skill-root`; subsequent ordinary CLI tasks use the retained active source by default. Explicit foreign sources cannot bypass claim fencing.
 

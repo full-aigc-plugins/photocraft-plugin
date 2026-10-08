@@ -1,8 +1,8 @@
 # PhotoCraft Agent Plugin
 
-dev.62候选新增单账本显式运行时组合升级、回退和只读状态，事务排空、保留旧来源、备份状态并隔离任务认领。公开二进制仍为craft.1；不同版本与完整PC-RT-002验收保持开放。[生命周期](docs/PhotoCraft-Runtime-Transition.zh_CN.md)。
+dev.62已发布：固定公开安装107项Harness（14项原生）通过，安装树不变。单账本显式运行时组合切换／回退、排空、备份与认领隔离已实施，2.4／2.5完成，现137/157完成、20开放。原生切换仍为相同craft.1二进制；不同版本及完整PC-RT-002任务2.6保持开放。[发行证据](docs/evidence/optimization/runtime-transition/publication.json)。[生命周期](docs/PhotoCraft-Runtime-Transition.zh_CN.md)。
 
-dev.61／源dev.48已发布：固定公开macOS arm64安装通过全部9个PC-TX-002规范场景，包括真实六窗口、监督丢失无回执拒绝、独立只读查询及损坏状态保全。3.6／10.9完成；现135/157完成、22开放。创作／模型及完整V1仍未验收。[验收](docs/evidence/optimization/task-recovery/acceptance-audit.json)。
+dev.61／源dev.48已发布：固定公开macOS arm64安装通过全部9个PC-TX-002规范场景，包括真实六窗口、监督丢失无回执拒绝、独立只读查询及损坏状态保全。3.6／10.9完成；当时135/157完成、22开放。创作／模型及完整V1仍未验收。[验收](docs/evidence/optimization/task-recovery/acceptance-audit.json)。
 
 dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。公开固定macOS arm64安装通过全部PC-TX-003场景，3.9／10.12完成；当时133/157完成、24开放。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
 

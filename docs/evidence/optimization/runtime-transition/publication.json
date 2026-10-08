@@ -1,0 +1,118 @@
+{
+  "schema": "photocraft-runtime-transition-publication/v1",
+  "status": "PASS_IMPLEMENTATION_ONLY",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.62",
+    "commit": "15744ebb72852d80587758a5cf7f878cbc16d13a",
+    "assetSha256": "8787c363cfe86225a33dd6ead8cc39dd3ed0f03f54997e6e7b706ecf3e2bf3ce",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.62",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.48",
+    "commit": "9c43af2d0a820fb0bacf60571112a31099c8e4fb",
+    "assetSha256": "49968334b8cc19548bc6c69e78e2dbb8f77b4da4094e2a42f66d50ec197786ee",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.48",
+    "prerelease": true,
+    "publicDownloadMatches": true,
+    "archiveCommitMatchesTag": true
+  },
+  "platform": "darwin-arm64",
+  "fixedInstallation": {
+    "status": "PASS",
+    "pluginVersion": "0.1.0-dev.62",
+    "skillSourceRef": "v0.1.0-dev.48",
+    "harness": {
+      "tests": 107,
+      "pass": 107,
+      "fail": 0,
+      "skipped": 0
+    },
+    "nativeHarnessTests": 14,
+    "readonlyNativeFaults": 14,
+    "healthyReadonlyPaths": 2,
+    "installedTreeUnchanged": true,
+    "installedTreeSha256": "fa076dee314db63dcbf7e7ecc84f863cb95186c8034a07fa4f6b10e5f2c9d8b5",
+    "harnessLogSha256": "57c06afb36caecc08a6d549453e0512fde1c25c1f7bf1f010df92cde38846335",
+    "integerOverflowMethods": 3,
+    "integerOverflowPublicRefusals": 52,
+    "integerOverflowInstallCalls": 0,
+    "integerOverflowSessionCalls": 0,
+    "lineageNativeCases": 17,
+    "lineageNativeReportSha256": "2039b27f2b6b27f8a06880cf573b395f8ee3ff73fb9a749aa40efa4e8b1f69aa",
+    "closedTasks": [],
+    "scope": "Actual public-tag installed canonical skill,107 Harness tests and52 independent-entry integer refusals; native craft.5 supervision is not activated or accepted; not complete raw/streaming/entry/counter/model/creative acceptance"
+  },
+  "closedTaskIds": [
+    "2.4",
+    "2.5"
+  ],
+  "openTaskIds": [
+    "2.6"
+  ],
+  "publicRuntimeVersion": "0.2.0-craft.1",
+  "sameBinaryOnly": true,
+  "differentBinaryVersionAcceptance": "NOT_RUN",
+  "fullPcRt002Acceptance": "NOT_RUN",
+  "fullV1": "NOT_RUN",
+  "sourceRegression": {
+    "tests": 306,
+    "reused": true,
+    "reason": "Exact source dev.48 fingerprints unchanged; source and locked runtime unchanged",
+    "evidence": "../interrupted-checkpoint/source-validation.json"
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37849869331,
+      "headSha": "15744ebb72852d80587758a5cf7f878cbc16d13a",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37849869331"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37849869175,
+      "headSha": "15744ebb72852d80587758a5cf7f878cbc16d13a",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37849869175"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37849864882,
+      "headSha": "15744ebb72852d80587758a5cf7f878cbc16d13a",
+      "name": "Documentation and specification integrity",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37849864882"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 37849864943,
+      "headSha": "15744ebb72852d80587758a5cf7f878cbc16d13a",
+      "name": "Skill snapshots and implementation units",
+      "status": "completed",
+      "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37849864943"
+    }
+  ],
+  "evidenceSha256": {
+    "fixed-summary.json": "00d7d4d5d6ebc47d5ca735de83de3edaf8af3df3e6d7947cc15b18b147d1b53d",
+    "fixed-host-public.json": "cf73823cde53afd88fc0686a4bb8e56d1fbbc140d9e0f0b5c62c93da680f3abc",
+    "fixed-runtime-transition.json": "06d166b9351325ec6ab2d19f7bd1739642be972ce03dc784f8449297a54d36e1",
+    "fixed-runtime-probes.json": "d60ba7473c29fcb3958b56b1488a04a290a8547c9bc12cd3333586c8df214604",
+    "fixed-harness.txt": "57c06afb36caecc08a6d549453e0512fde1c25c1f7bf1f010df92cde38846335"
+  },
+  "scope": "Fixed public installed implementation tests: explicit ledger draining, backup, immutable source retention, separate native headless/owned desktop probes, original and failed saved project reopening, source activation/rollback and transaction claim fencing. Same craft.1 binary only; not all PC-RT-002 scenarios or other platforms.",
+  "implementationSha256": {
+    "src/cli.ts": "ea0d3b2c003e2be498b543cf7d6c6aa406fd6713c228b2c372fa3864f5731cd5",
+    "src/harness/runtime_binding.ts": "d9e05bfe30627bb8e9beac1d12bb5584509fad73f5aaa842f7ae3ddb8dc4ba33",
+    "src/harness/runtime_manager.ts": "38e69bb4886232fbf3ca5461bd8f621990106b870adf8e568fc3f09370249be5",
+    "src/harness/ledger.ts": "bae7ed9e624d0508022d4eadd28640c6c143a3db2902aa23959f1f0c60ac2c97",
+    "src/harness/runner.ts": "29ec8d35b010c57e59b7ec0dcb92206e80004222fcc4a9ba22303df43426cd0d",
+    "tests/runtime-transition.test.ts": "4184bfeb1c6a1fb6d9e584d4b671d5622fac0398ff9761b6d855a4bd067a9ac4"
+  }
+}
