@@ -29,8 +29,9 @@ def main():
    if 'contract' in locals():reply=contract.load('operation_errors').describe(error)
    else:reply={'error':str(error),'code':'cli_contract_unavailable','phase':'validation','outcome':'not_executed','category':'validation_failed','fieldPath':'$argv','retryable':False,'recoveryAction':'restore_skill_resources'}
    print(json.dumps(reply));return 1
- if argv[0]=='mcp':
-  path=Path(__file__).with_name('mcp_stream.py');spec=importlib.util.spec_from_file_location('craft_public_mcp_stream',path)
+ if argv[0] in {'mcp','serve'}:
+  tcp=argv[0]=='serve' and any(value=='--port' or value.startswith('--port=') for value in argv[1:])
+  path=Path(__file__).with_name('mcp_stream.py' if argv[0]=='mcp' else 'serve_tcp.py' if tcp else 'serve_stream.py');spec=importlib.util.spec_from_file_location('craft_public_mcp_stream',path)
   stream=importlib.util.module_from_spec(spec);spec.loader.exec_module(stream)
   def install_stream():
    try:

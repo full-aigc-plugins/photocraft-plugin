@@ -1,0 +1,38 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__ PublicServePreflight.test_invalid_first_request_never_installs_or_launches __
+
+self = <test_serve_stream.PublicServePreflight testMethod=test_invalid_first_request_never_installs_or_launches>
+
+    def test_invalid_first_request_never_installs_or_launches(self):
+     for scripts in sorted(SCRIPTS.parents[1].glob('*/scripts')):
+      for raw in ['{"id":1,"id":2,"method":"doc.new"}\n',json.dumps({'id':1,'method':'engine.execute','params':{'command':'layer.new.layer','params':{'opacity':'bad'}}})+'\n']:
+       with self.subTest(skill=scripts.parent.name,raw=raw):
+        cli=load('cli',scripts);original=importlib.util.spec_from_file_location;calls=[]
+        def observe(name,path,*args,**kwargs):
+         spec=original(name,path,*args,**kwargs);execute=spec.loader.exec_module
+         def hooked(module):
+          execute(module)
+          if Path(path).name=='bootstrap.py':
+           def forbidden(*args,**kwargs):calls.append('install');raise AssertionError('invalid serve installed runtime')
+           module.install=forbidden
+         spec.loader.exec_module=hooked;return spec
+        output=io.StringIO()
+>       with patch.object(sys,'argv',['cli.py','--','serve']),patch.object(sys,'stdin',io.StringIO(raw)),patch.object(sys,'stdout',output),patch.object(importlib.util,'spec_from_file_location',side_effect=observe):code=cli.main()
+
+tests/test_serve_stream.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+skills/photocraft-cli/scripts/cli.py:49: in main
+    installed=module.install(lock,args.runtime_home,args.archive)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'artifact': 'photocraft-cli', 'artifacts': {'darwin-arm64': {'archiveSha256': 'd3367fd25fe4977d88547623156b54bcbe805...tory': 'https://github.com/full-aigc-skills/photocraft-skills', ...}, '/Users/wandl/.local/share/craft-runtimes', None)
+kwargs = {}
+
+>   def forbidden(*args,**kwargs):calls.append('install');raise AssertionError('invalid serve installed runtime')
+E   AssertionError: invalid serve installed runtime
+
+tests/test_serve_stream.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_serve_stream.py::PublicServePreflight::test_invalid_first_request_never_installs_or_launches
+1 failed in 0.03s

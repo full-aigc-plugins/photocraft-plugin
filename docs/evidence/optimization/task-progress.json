@@ -323,5 +323,18 @@
     "remainingTaskIds": [
       "9.6"
     ]
+  },
+  "serveStdioCandidate": {
+    "status": "CANDIDATE_NATIVE_PASS_NOT_PUBLISHED",
+    "evidence": "docs/evidence/optimization/serve-stream/candidate.json",
+    "sourceFingerprintSha256": "55cc6c0ec2c0807183affeb2f3707a049929e931ea10e2b337afc9bb726fe7d1",
+    "sourceTests": 333,
+    "nativeFaultCases": 7,
+    "healthyCases": 1,
+    "fixedInstallation": "NOT_RUN",
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
   }
 }

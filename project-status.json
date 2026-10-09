@@ -176,9 +176,9 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.51",
-    "pluginWorkingVersion": "0.1.0-dev.66",
-    "fixedSkillSourceVersion": "0.1.0-dev.51",
+    "skillsVersion": "0.1.0-dev.52",
+    "pluginWorkingVersion": "0.1.0-dev.67",
+    "fixedSkillSourceVersion": "0.1.0-dev.52",
     "evidence": "docs/evidence/optimization/task-progress.json",
     "publication": "PARTIAL_PUBLISHED_MCP_STREAM",
     "fullAcceptance": "NOT_RUN",
@@ -474,6 +474,19 @@
     ],
     "publicNativeFaultCases": 6,
     "healthyNativeCases": 1,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
+  },
+  "serveStdioCandidate": {
+    "status": "CANDIDATE_NATIVE_PASS_NOT_PUBLISHED",
+    "evidence": "docs/evidence/optimization/serve-stream/candidate.json",
+    "sourceFingerprintSha256": "55cc6c0ec2c0807183affeb2f3707a049929e931ea10e2b337afc9bb726fe7d1",
+    "sourceTests": 333,
+    "nativeFaultCases": 7,
+    "healthyCases": 1,
+    "fixedInstallation": "NOT_RUN",
     "closedTaskIds": [],
     "remainingTaskIds": [
       "9.6"

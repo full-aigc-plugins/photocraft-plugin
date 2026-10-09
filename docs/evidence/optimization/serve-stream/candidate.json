@@ -1,0 +1,41 @@
+{
+  "schema": "photocraft-serve-stream-candidate/v1",
+  "status": "CANDIDATE_NATIVE_PASS_NOT_PUBLISHED",
+  "sourceBaseRef": "v0.1.0-dev.51",
+  "sourceBaseCommit": "218ce50fe192389abfe9fdcea0fb2d064d28ecfe",
+  "sourceFingerprintSha256": "55cc6c0ec2c0807183affeb2f3707a049929e931ea10e2b337afc9bb726fe7d1",
+  "runtimeVersion": "0.2.0-craft.5",
+  "sourceTests": {
+    "tests": 333,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "serveNativePostSaveFaultCases": 7,
+  "serveHealthyCases": 1,
+  "nativeKnownFailureStopsLaterSave": true,
+  "streaming": [
+    "mcp-stdio",
+    "serve-stdio"
+  ],
+  "fixedInstallation": "NOT_RUN",
+  "tcp": "NOT_RUN",
+  "aggregateInteriors": "NOT_RUN",
+  "completeInputMatrix": "NOT_RUN",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "taskCounts": {
+    "completed": 138,
+    "total": 157,
+    "open": 19
+  },
+  "files": {
+    "native-known-failure.json": "204b79179e09df9058e9d076f815e37d41d738c1481320577d020def94860f0e",
+    "preflight-red.txt": "d90ef2291a2ef01129bb95f1074513d1ef8c343d484dfdffd85196930966e060",
+    "source-validation.json": "9448f22951a3dfa12fd1a74de5aa3ac78bd91882d31fce54df2f68d787738044",
+    "source-serve-stream.json": "5d1a273510d142e2985605de0100150a593ff95e61dd7d405b7448090db9b598",
+    "path-red.txt": "d2316166f26604a527b12eead20119cc6ca32ec7bd61e61f438d95322072e426"
+  }
+}

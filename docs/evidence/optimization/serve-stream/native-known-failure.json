@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "scope": "Actual public serve stdio, native explicit document-index failure, later save absent",
+  "exitCode": 1,
+  "replyIds": [
+    1,
+    2
+  ],
+  "nativeError": "no document at index 999",
+  "errorData": {
+    "error": "command_failed: native_serve_error",
+    "code": "command_failed",
+    "phase": "reply_received",
+    "outcome": "failed",
+    "retryable": false,
+    "recoveryAction": "inspect",
+    "replayAllowed": false,
+    "request": {
+      "id": 2,
+      "method": "doc.select",
+      "params": {
+        "index": 999
+      }
+    },
+    "receipts": [
+      {
+        "request": {
+          "id": 1,
+          "method": "doc.new",
+          "params": {
+            "width": 8,
+            "height": 8
+          }
+        },
+        "phase": "reply_validated"
+      }
+    ],
+    "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4"
+  },
+  "laterSaveCreated": false
+}

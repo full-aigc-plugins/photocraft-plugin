@@ -1,0 +1,28 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______ ServePathContract.test_native_rejected_paths_never_reach_installer ______
+
+self = <test_serve_stream.ServePathContract testMethod=test_native_rejected_paths_never_reach_installer>
+
+    def test_native_rejected_paths_never_reach_installer(self):
+     stream=load('serve_stream')
+     for path in ['', '/absolute', '../escape', 'a/../escape', 'a\\b', 'C:/escape', 'a//b', './a', 'name:stream', 'NUL', 'con.txt', 'folder/COM1.log', 'folder/end.', 'folder/end ']:
+      for method in ['doc.open','doc.save','doc.render']:
+       calls=[];output=io.StringIO()
+       def forbidden():calls.append('install');raise AssertionError('invalid path installed runtime')
+       with self.subTest(path=path,method=method):
+>       code=stream.run(['serve'],forbidden,io.StringIO(json.dumps({'id':1,'method':method,'params':{'path':path}})+'\n'),output)
+
+tests/test_serve_stream.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+skills/photocraft-use/scripts/serve_stream.py:141: in run
+    installed=install();wire=Wire([installed['executable'],*argv])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def forbidden():calls.append('install');raise AssertionError('invalid path installed runtime')
+E   AssertionError: invalid path installed runtime
+
+tests/test_serve_stream.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_serve_stream.py::ServePathContract::test_native_rejected_paths_never_reach_installer
+1 failed, 6 deselected in 0.03s

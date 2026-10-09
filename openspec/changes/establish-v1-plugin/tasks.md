@@ -364,3 +364,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09公开CLI固定验收：源dev.50／插件dev.65公开ZIP、标签提交与摘要一致；314项源码测试、110项固定安装Harness（15项原生）及15例真实原生公开CLI保存后故障通过，安装字节不变，发行4项CI通过。流式及嵌套聚合仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/public-cli-supervision/publication.json`。
 
 2026-10-09 MCP stdio固定验收：源dev.51／插件dev.66公开ZIP、标签提交与摘要一致；326项源码测试、110项固定安装Harness（15项原生）、15例argv故障及6例MCP保存后故障、健康图像预览通过，安装字节不变，发行4项CI通过。serve／TCP及聚合内部逐项确认仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/mcp-stream/publication.json`。
+
+2026-10-09 serve stdio候选：公开入口延迟安装和逐请求监督同步13技能；333项源码回归零跳过通过，真实craft.5保存后七类异常停止下一编辑并保全／重开工程，健康图像及文件渲染、复合／缺省id和可空params通过；原生明确失败保留错误并停止后续保存。基于源dev.51的未发布工作树指纹有完整记录，固定安装、TCP、聚合内部及完整输入矩阵未验收；9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/serve-stream/candidate.json`。

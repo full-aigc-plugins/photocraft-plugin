@@ -118,3 +118,7 @@ PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知�
 公开 run／batch／convert／droplet 使用固定原生逐步监督，失败不自动重放；流式及嵌套聚合仍开放。参见 [公开 CLI 监督](references/public-cli-supervision.md)。
 
 公开 MCP 流式入口先校验输入，再逐请求验证回复；参见 [MCP流式监督](references/mcp-stream.md)。serve／TCP及聚合内部逐项确认仍单独验收。
+
+公开 `cli.py serve` 的 stdio 预检和回复监督见 [serve stdio合同](references/serve-stream.md)；TCP／聚合内部及固定发行验收继续开放。
+
+公开 `cli.py serve --port` 的共享会话、认证与回复交付监督见 [serve TCP合同](references/serve-tcp.md)；批量内部逐步确认及完整9.6继续开放。
