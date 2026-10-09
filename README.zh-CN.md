@@ -1,8 +1,8 @@
 # PhotoCraft Agent Plugin
 
-开发版dev.67／源dev.52接入serve stdio／TCP监督，共享原生会话并隔离交付丢失。固定验收待执行；聚合内部及完整9.6继续开放。[合同](docs/PhotoCraft-Serve-TCP-Supervision.zh_CN.md)。
+dev.67／源dev.52已发布：345项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，发行4项CI通过。聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-tcp/publication.json)。[合同](docs/PhotoCraft-Serve-TCP-Supervision.zh_CN.md)。
 
-未发布serve stdio候选：333项源码回归零跳过通过，七类真实原生保存后故障停止后续编辑并保全工程。固定安装、TCP及聚合内部仍开放，9.6不勾选。[候选证据](docs/evidence/optimization/serve-stream/candidate.json)。[合同](docs/PhotoCraft-Serve-Stream-Supervision.zh_CN.md)。
+早期serve stdio候选（已整合入dev.67）：333项源码回归零跳过通过，七类真实原生保存后故障停止后续编辑并保全工程。固定安装、TCP及聚合内部仍开放，9.6不勾选。[候选证据](docs/evidence/optimization/serve-stream/candidate.json)。[合同](docs/PhotoCraft-Serve-Stream-Supervision.zh_CN.md)。
 
 dev.66／源dev.51已发布：326项源测试、110项固定安装Harness（15项原生）、15例公开argv故障、6例真实MCP保存后故障、健康MCP预览及四项发行CI通过。隔离Codex发现14技能，安装字节不变。serve／TCP及聚合内部逐项确认使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/mcp-stream/publication.json)。[合同](docs/PhotoCraft-MCP-Stream-Supervision.zh_CN.md)。
 

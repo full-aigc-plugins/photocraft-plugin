@@ -1,8 +1,8 @@
 # PhotoCraft Agent Plugin
 
-Development dev.67 / source dev.52 adds supervised serve stdio/TCP with one shared native session and delivery-loss quarantine. Fixed acceptance is pending; aggregate interiors and full9.6 remain open. [Contract](docs/PhotoCraft-Serve-TCP-Supervision.md).
+Published dev.67 / source dev.52:345 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 MCP faults,7 serve stdio faults,7 TCP faults and a TCP delivery-loss race pass. Healthy shared-session editing, native process exit and actual30-second idle timeout are verified. Isolated Codex discovers14 skills; installed bytes unchanged; four release CI runs pass. Aggregate interiors and the full input matrix keep9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/serve-tcp/publication.json). [Contract](docs/PhotoCraft-Serve-TCP-Supervision.md).
 
-Unpublished serve stdio candidate:333 source tests pass without skips; seven actual native post-save faults stop later edits and preserve saved files. Fixed installation, TCP and aggregate interiors remain open; task9.6 stays open. [Candidate evidence](docs/evidence/optimization/serve-stream/candidate.json). [Contract](docs/PhotoCraft-Serve-Stream-Supervision.md).
+Earlier serve stdio candidate (integrated in dev.67):333 source tests pass without skips; seven actual native post-save faults stop later edits and preserve saved files. Fixed installation, TCP and aggregate interiors remain open; task9.6 stays open. [Candidate evidence](docs/evidence/optimization/serve-stream/candidate.json). [Contract](docs/PhotoCraft-Serve-Stream-Supervision.md).
 
 Published dev.66 / source dev.51:326 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 actual MCP post-save faults, healthy MCP preview and four release CI runs pass. Isolated Codex discovers14 skills; installed bytes remain unchanged. Serve/TCP and aggregate interiors keep task9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/mcp-stream/publication.json). [Contract](docs/PhotoCraft-MCP-Stream-Supervision.md).
 

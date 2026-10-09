@@ -180,7 +180,7 @@
     "pluginWorkingVersion": "0.1.0-dev.67",
     "fixedSkillSourceVersion": "0.1.0-dev.52",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_MCP_STREAM",
+    "publication": "PARTIAL_PUBLISHED_SERVE_TCP",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -188,8 +188,8 @@
       "open": 19,
       "newlyCompleted": 76
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/mcp-stream/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/mcp-stream/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/serve-tcp/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/serve-tcp/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -480,13 +480,30 @@
     ]
   },
   "serveStdioCandidate": {
-    "status": "CANDIDATE_NATIVE_PASS_NOT_PUBLISHED",
+    "status": "SUPERSEDED_BY_FIXED_SERVE_TCP",
     "evidence": "docs/evidence/optimization/serve-stream/candidate.json",
     "sourceFingerprintSha256": "55cc6c0ec2c0807183affeb2f3707a049929e931ea10e2b337afc9bb726fe7d1",
     "sourceTests": 333,
     "nativeFaultCases": 7,
     "healthyCases": 1,
     "fixedInstallation": "NOT_RUN",
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ],
+    "supersededBy": "docs/evidence/optimization/serve-tcp/publication.json"
+  },
+  "serveTcpSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/serve-tcp/publication.json",
+    "entries": [
+      "mcp-stdio",
+      "serve-stdio",
+      "serve-tcp"
+    ],
+    "publicNativeFaultCases": 20,
+    "deliveryLossCases": 1,
+    "healthyNativeCases": 3,
     "closedTaskIds": [],
     "remainingTaskIds": [
       "9.6"
