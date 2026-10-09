@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { Ledger } from '../src/harness/ledger.ts';
 import { Runner } from '../src/harness/runner.ts';
+import { confirmedWorkerReceipt } from '../src/harness/worker_receipt.ts';
 import { Review } from '../src/evaluation/review.ts';
 import { canonical, digest, fileDigest } from '../src/protocol/files.ts';
 
@@ -19,13 +20,22 @@ for(const mode of ['stop','deadline'])test('interrupted runner retains superviso
  try{
   const skill=join(root,'skill');mkdirSync(join(skill,'scripts'),{recursive:true});mkdirSync(join(skill,'references'));writeFileSync(join(skill,'scripts/runtime.lock.json'),'{}');
   writeFileSync(join(skill,'scripts/workflow.py'),`import sys,time,json,signal\nfrom pathlib import Path\nif '--check' in sys.argv: print(json.dumps({'result':'PASS'}))\nelse:\n output=Path(sys.argv[sys.argv.index('--output')+1]);output.mkdir()\n def late(signum,frame):\n  time.sleep(.3);(output/'project.pcraft').write_text('late fixture');sys.exit(0)\n signal.signal(signal.SIGTERM,late)\n (output/'ready').write_text('ready')\n while True: time.sleep(.05)\n`);
-  const state=join(root,'state');ledger=new Ledger(state);const request={idempotencyKey:'interrupted',brief:'cancel fixture',plan:{operations:[]},output:join(root,'output'),authorization:{ref:'user',writeRoot:root},budget:{deadline:Date.now()+(mode==='deadline'?1800:30000),maxRevisions:2,maxConcurrent:1,reserveBytes:1024}};
+  const state=join(root,'state');ledger=new Ledger(state);const request={idempotencyKey:'interrupted',brief:'cancel fixture',plan:{operations:[]},output:join(root,'output'),authorization:{ref:'user',writeRoot:root},budget:{deadline:Date.now()+(mode==='deadline'?10000:30000),maxRevisions:2,maxConcurrent:1,reserveBytes:1024}};
   const task=ledger.create(request);const cli=resolve('src/cli.ts');outer=spawn(process.execPath,[cli,'run','--state-dir',state,'--task',task.id,'--skill-root',skill,'--python',process.env.PHOTOCRAFT_PYTHON??'python3'],{stdio:'ignore'});
   await until(()=>existsSync(join(request.output,'ready')));const running=ledger.status(task.id);assert.ok(running.worker.supervisor);
   const closed=new Promise(resolve=>outer.once('close',resolve));outer.kill('SIGKILL');await closed;
   const before=ledger.status(task.id);if(mode==='stop')ledger.stop(task.id);else await until(()=>existsSync(join(state,task.id+'.stop')));const runner=new Runner(ledger,{skillRoot:skill,python:'python3'});
-  const pending=await runner.reconcile(task.id);assert.equal(pending.state,'reconciling');assert.equal(pending.worker.exited,undefined);await assert.rejects(()=>runner.verify(task.id),/stopped_task_verification_forbidden/);
-  const second=ledger.create({...request,idempotencyKey:'second',output:join(root,'second'),budget:{...request.budget,deadline:Date.now()+30000}});assert.throws(()=>ledger!.claim(second.id),/concurrency_budget_exhausted/);
+  const pending=await runner.reconcile(task.id);
+  const second=ledger.create({...request,idempotencyKey:'second',output:join(root,'second'),budget:{...request.budget,deadline:Date.now()+30000}});
+  // CI 调度可能晚于原生退出；仅匹配身份且确认进程组消失的回执允许进入终态。
+  if(pending.state==='cancelled') {
+   const receipt=confirmedWorkerReceipt(state,pending);assert.ok(receipt);assert.deepEqual(pending.workerExitReceipt,receipt);
+   assert.equal(pending.worker.exited,true);assert.equal(pending.stopEvidence.processGroupGone,true);
+  } else {
+   assert.equal(pending.state,'reconciling');assert.equal(pending.worker.exited,undefined);
+   assert.throws(()=>ledger!.claim(second.id),/concurrency_budget_exhausted/);
+  }
+  await assert.rejects(()=>runner.verify(task.id),/stopped_task_verification_forbidden/);
   ledger.close();ledger=new Ledger(state);const restarted=new Runner(ledger,runner.options);
   await until(()=>existsSync(join(state,task.id+'-worker-exit.json')));
   let result=await restarted.reconcile(task.id);for(let i=0;i<100 && result.state!=='cancelled';i++){await new Promise(resolve=>setTimeout(resolve,25));result=await restarted.reconcile(task.id);}

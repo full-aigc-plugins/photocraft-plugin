@@ -1,0 +1,28 @@
+{
+  "pluginVersion": "0.1.0-dev.74",
+  "sourceRef": "v0.1.0-dev.58",
+  "changes": [
+    "portable Python interpreter with executed-fixture proof",
+    "absolute native shim interpreter resolved through sys.executable",
+    "supervisor assertions require matching exit receipt for terminal state, otherwise retain reservation refusal"
+  ],
+  "parallelHarness": {
+    "tests": 118,
+    "pass": 102,
+    "fail": 0,
+    "skipped": 16,
+    "skipReason": "native integration disabled in CI-style run"
+  },
+  "parallelLogSha256": "e50324b4a3b3a381fe7b149c778b796bc9ce2211c3e7b9d541bd063b38652df2",
+  "nativeHarness": {
+    "tests": 118,
+    "pass": 118,
+    "fail": 0,
+    "skipped": 0,
+    "nativeCases": 16,
+    "logSha256": "a163cb8d04521736cda42eb26a18bd5bb558d64957e8b7b5931cc7f8ae811663",
+    "guiLaunches": 0
+  },
+  "fixedInstallation": "PENDING",
+  "closedTaskIds": []
+}
