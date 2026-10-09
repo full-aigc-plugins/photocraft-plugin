@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.69／源dev.54已发布：365项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例、MCP／计划聚合21例及发行4项CI通过。桌面聚合及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/mcp-aggregate/publication.json)。[合同](docs/PhotoCraft-MCP-Aggregate-Supervision.zh_CN.md)。
+dev.70候选：自有桌面聚合截止时间传递及12个签名GUI案例通过，固定源与安装验收待记录，完整输入矩阵及9.6继续开放。[合同](docs/PhotoCraft-Desktop-Aggregate-Supervision.zh_CN.md)。
 
 dev.68／源dev.53已发布：355项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例及发行4项CI通过。MCP／命令计划聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-aggregate/publication.json)。[合同](docs/PhotoCraft-Serve-Aggregate-Supervision.zh_CN.md)。
 
@@ -76,7 +76,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.69`；技能源：`0.1.0-dev.54`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.70`；技能源：`0.1.0-dev.55`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -171,9 +171,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.69 |
+| Metadata version | 0.1.0-dev.70 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.54 |
+| Skills source | photocraft-skills / 0.1.0-dev.55 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

@@ -11,7 +11,13 @@ def owned_listener(process,port):
 
 class OwnedSession:
  def __init__(self,argv,desktop,domain,output,port,token_file=None):
-  self.argv=argv;self.desktop=desktop;self.domain=domain;self.output=Path(output);self.port=port;self.token_file=token_file;self.process=None;self.session=None;self.log=None;self.stopped=False;self.listener_verified=False
+  self.argv=argv;self.desktop=desktop;self.domain=domain;self.output=Path(output);self.port=port;self.token_file=token_file;self.process=None;self.session=None;self.log=None;self.stopped=False;self.listener_verified=False;self._timeout=120
+ @property
+ def timeout(self):return self.session.timeout if self.session else self._timeout
+ @timeout.setter
+ def timeout(self,value):
+  self._timeout=value
+  if self.session:self.session.timeout=value
  def __enter__(self):
   args=[self.desktop['executable'],'--control',str(self.port)];env=dict(os.environ);data=self.output/'.desktop-data';data.mkdir(mode=0o700)
   if self.domain=='filmcraft':args+=['--empty','--no-recover','--data-dir',str(data)]
@@ -27,7 +33,7 @@ class OwnedSession:
     if owned_listener(self.process,self.port):self.listener_verified=True;break
     time.sleep(.2)
    else:raise TimeoutError('desktop_start_timeout: no owned loopback listener')
-   self.session=load('mcp_session').Session(self.argv);return self
+   self.session=load('mcp_session').Session(self.argv,timeout=self._timeout);return self
   except BaseException:
    self.close();raise
  def request(self,*args):return self.session.request(*args)
