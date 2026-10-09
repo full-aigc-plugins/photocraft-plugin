@@ -391,3 +391,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09 命令来源绑定候选dev.77：755条命令的精确参数、注册、宏／生成表和启用谓词定义绑定112个维护版源码文件，实际字节与行范围核验通过；独立来源补丁身份及完整命令绑定接入CI。68项Python（8项新来源、2项宿主组件用例）、102项离线TypeScript通过；16项原生未重跑，执行资源与dev.75字节一致，零原生／GUI启动。人工上下文审查及已验收命令仍为0，1510个上下文NOT_RUN；13.2／13.3及完整V1保持开放，仍138/157完成、19开放。见`docs/evidence/optimization/command-acceptance/source-context-candidate.json`。
 
 2026-10-09 插件组件收敛候选dev.77：按Agent Plugins 1.0.0保留根plugin.json与14个直接技能目录；Claude专用manifest显式指向14个同名技能命令及仅SessionStart启动／恢复提示钩子。钩子不安装、不启动或关闭原生实例；包内2项组件用例与Claude严格manifest检查通过，但校验器未返回组件发现明细，真实宿主路由仍NOT_RUN。13.4、13.5、13.6和7.x原门禁不勾选，138/157完成、19开放。见`docs/evidence/optimization/command-acceptance/source-context-candidate.json`。
+
+2026-10-09 dev.77公开固定安装验收：公开ZIP及标签摘要一致，隔离Codex发现14技能且零加载错误，安装副本68项Python及755命令来源字节绑定检查通过，安装树与公开ZIP字节一致；发行4项CI成功。Claude专用manifest严格校验通过，但命令发现及模型路由未获当前校验器证明；16项原生本轮未重跑，零原生／GUI启动。13.2、13.3、13.4–13.6、7.x及完整V1保持开放，仍138/157完成、19开放。见`docs/evidence/optimization/command-acceptance/source-context-publication.json`。

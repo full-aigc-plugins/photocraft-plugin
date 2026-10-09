@@ -501,8 +501,8 @@
     ]
   },
   "clientComponents": {
-    "status": "CANDIDATE_STATIC_PASS",
-    "evidence": "docs/evidence/optimization/command-acceptance/source-context-candidate.json",
+    "status": "PARTIAL_PUBLISHED_STATIC",
+    "evidence": "docs/evidence/optimization/command-acceptance/source-context-publication.json",
     "commands": 14,
     "sessionStartHooks": 1,
     "hostDiscovery": "NOT_PROVEN",

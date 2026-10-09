@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-候选dev.77／技能源仍为dev.59：755条命令的注册、参数合同和启用谓词已绑定锁定维护版源码行范围，并分别核验来源文件、元数据与执行状态。1510个上下文仍为NOT_RUN；19项任务与完整V1保持开放。[使用说明](docs/PhotoCraft-Command-Source-Contexts.zh_CN.md)。
+dev.77已发布／技能源仍为dev.59：755条命令注册及启用谓词绑定维护版源码；公开固定安装在Codex发现14项技能，68项Python、102项离线TypeScript及4项CI通过。Claude manifest校验仅为静态证据；模型路由与1510个命令上下文仍NOT_RUN，19项任务及完整V1保持开放。[证据](docs/evidence/optimization/command-acceptance/source-context-publication.json)。
 
 现已增加指向14个打包技能的Claude专用命令及SessionStart提示钩子，提醒宿主复用原生实例。可移植包仍以根`plugin.json`和`skills/`为准；实际宿主路由仍开放。[组件边界](docs/PhotoCraft-Plugin-Components.zh_CN.md)。
 dev.75／源dev.59已发布：全部13技能提供连续任务会话。实际隔离安装通过一个原生进程完成五阶段公开JSONL操作，保全旧工程并仅关闭自有进程。源405项通过（9项既有跳过），固定Harness118项（16原生）、插件Python48项、会话单测20项及13技能独立预检通过。桌面候选仅启动一次，执行代码与发行一致；固定桌面未重复运行。发行4项CI成功。完整V1及19项任务仍开放。[证据](docs/evidence/optimization/task-session/publication.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
