@@ -1,0 +1,26 @@
+[
+  {
+    "conclusion": "success",
+    "databaseId": 37870275743,
+    "status": "completed",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37870275743"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 37870275777,
+    "status": "completed",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37870275777"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 37870272711,
+    "status": "completed",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37870272711"
+  },
+  {
+    "conclusion": "success",
+    "databaseId": 37870272753,
+    "status": "completed",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/actions/runs/37870272753"
+  }
+]

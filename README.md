@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.70 candidate: owned desktop aggregate deadline propagation with12 signed GUI cases; fixed source/install acceptance pending; full input matrix and9.6 remain open. [Contract](docs/PhotoCraft-Desktop-Aggregate-Supervision.md).
+Published dev.70 / source dev.55:371 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 MCP faults,7 serve stdio faults,7 TCP faults and a TCP delivery-loss race pass. Healthy shared-session editing, native process exit and actual30-second idle timeout are verified. Isolated Codex discovers14 skills; installed bytes unchanged; 20 serve,21 MCP/plan and12 signed desktop aggregate cases pass; four release CI runs pass. The full public input matrix keeps9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/desktop-aggregate/publication.json). [Contract](docs/PhotoCraft-Desktop-Aggregate-Supervision.md).
 
 Published dev.68 / source dev.53:355 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 MCP faults,7 serve stdio faults,7 TCP faults and a TCP delivery-loss race pass. Healthy shared-session editing, native process exit and actual30-second idle timeout are verified. Isolated Codex discovers14 skills; installed bytes unchanged; 20 serve aggregate cases pass; four release CI runs pass. MCP/command-plan aggregate interiors and the full input matrix keep9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/serve-aggregate/publication.json). [Contract](docs/PhotoCraft-Serve-Aggregate-Supervision.md).
 

@@ -220,7 +220,7 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 
 - [x] 9.4 [PC-TX-005] 覆盖所有公开入口的重复键、NaN／Infinity／溢出、错误容器／未知字段、素材与引用依赖；用安装／会话调用计数确认提前拒绝，并复现普通工作流回复与网关语义差异。责任：Skills owner；前置：读取全入口合同与现有 JSON／MCP 故障回归；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/entry-contract/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；本项只关闭测试／最小实现，不关闭同组完整验收。
 - [x] 9.5 [PC-TX-005] 在独立技能源统一严格计划解析、静态预检、动态引用检查、工具回复与结构化错误；验证通过才写成功回执，保持文字／图片合法回复及失败保全兼容。责任：Skills owner；前置：9.4；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
-- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前固定源dev.44／插件dev.52已验证argv预检、Harness及只读重开回复；raw逐命令停止、流式编辑及完整入口矩阵仍未完成，不以局部通过关闭本项。
+- [ ] 9.6 [PC-TX-005] 验证有效创建／另存修订、真实保存后畸形及语义错误、后续编辑停止、unknown 不重放、原文件重开；候选和固定安装副本分别记录，预检失败零安装／零会话／零输出。责任：QA owner；前置：9.5 及对应固定来源可用；产物：docs/evidence/optimization/entry-contract/ 验收记录；验证：本组全部规范场景有当前证据，不能以静态检查或候选通过代替固定安装／真实场景。 当前固定源dev.55／插件dev.70已验证四类argv、MCP stdio、serve stdio／TCP及聚合逐步确认、自有签名桌面聚合、检查点保全和unknown不重放；完整公开输入矩阵仍未完成，不以局部通过关闭本项。证据：`docs/evidence/optimization/desktop-aggregate/publication.json`。
 
 - [x] 9.7 [PC-RL-003] 建立同一版本声明冲突、活动锁误指历史锁、维护版误称上游官方、旧标签被替换等发行拒绝 fixture；合法独立版本映射通过。责任：Release owner；前置：读取当前插件、技能、套件、运行时与公共协议身份；产物：对应仓库失败测试／fixture 与 docs/evidence/optimization/release-identity/ 红灯记录；验证：失败来自目标行为缺失，环境故障另报。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
 - [x] 9.8 [PC-RL-003] 在各事实源增加当前组合一致性检查及生成说明，明确上游与维护版、套件版本语义和非活动根锁；同步双语当前说明，保留历史证据原值。责任：Release owner；前置：9.7；产物：对应仓库实现、用例与候选记录；验证：目标测试及受影响回归通过，不修改已发布快照充数。 候选实施证据：`docs/evidence/optimization/task-progress.json`；只关闭本项测试／最小实现，同组完整验收保持开放。
@@ -372,3 +372,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09 serve stdio／TCP固定验收：源dev.53／插件dev.68公开ZIP、标签提交与摘要一致；355项源码测试零跳过、110项固定Harness（15项原生）、15例argv、6例MCP、7例stdio、7例TCP故障及交付丢失跨连接竞态通过，共享会话与认证、16连接／1MiB／真实30秒超时通过，自有原生进程退出、源及保存工程保全，安装字节不变。serve聚合20例通过；发行4项CI通过；MCP／命令计划聚合内部及完整输入矩阵仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/serve-aggregate/publication.json`。
 
 2026-10-09 MCP／命令计划聚合固定验收：源dev.54／插件dev.69公开ZIP、标签提交与摘要一致；365项源码测试零跳过、110项固定Harness（15项原生）、15例argv、6例MCP、7例stdio、7例TCP故障及交付丢失跨连接竞态通过，共享会话与认证、16连接／1MiB／真实30秒超时通过，自有原生进程退出、源及保存工程保全，安装字节不变。serve聚合20例及MCP／计划聚合21例通过；发行4项CI通过；桌面聚合及完整输入矩阵仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/mcp-aggregate/publication.json`。
+
+2026-10-09 桌面聚合固定验收：源dev.55／插件dev.70公开ZIP、标签提交与摘要一致；371项源码测试零跳过、110项固定Harness（15项原生）、15例argv、6例MCP、7例stdio、7例TCP故障及交付丢失跨连接竞态通过，共享会话与认证、16连接／1MiB／真实30秒超时通过，自有原生进程退出、源及保存工程保全，安装字节不变。serve聚合20例、MCP／计划聚合21例及签名桌面聚合12例通过；发行4项CI通过；完整公开输入矩阵仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/desktop-aggregate/publication.json`。

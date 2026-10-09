@@ -1,0 +1,2552 @@
+{
+  "schema": "photocraft-desktop-aggregate-native/v1",
+  "status": "PASS",
+  "cases": [
+    {
+      "fault": "deadline",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 101.56900024414062,
+          "timings": {
+            "commandMs": 0.2435420000000477,
+            "compositeMs": 17.01670899999999,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 26.002749999999992,
+            "uiMs": 4.239389960025795,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": 0.0789765409717802,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "duplicate",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 18,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 107.35340881347656,
+          "timings": {
+            "commandMs": 0.22304100000002336,
+            "compositeMs": 13.435457999999985,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 21.72999999999999,
+            "uiMs": 3.848208459601508,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "nonfinite",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 98.67090606689452,
+          "timings": {
+            "commandMs": 0.25495800000004465,
+            "compositeMs": 14.500167000000031,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 22.99799999999999,
+            "uiMs": 3.7320182425226807,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "semantic",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 107.23587036132812,
+          "timings": {
+            "commandMs": 0.2663329999999746,
+            "compositeMs": 14.576207999999951,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 22.878292000000044,
+            "uiMs": 3.5614933613118853,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "wrong-id",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 18,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 103.6929931640625,
+          "timings": {
+            "commandMs": 0.2542079999999771,
+            "compositeMs": 14.936165999999986,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 23.170709000000016,
+            "uiMs": 3.907334224288619,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "extra-frame",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 18,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 96.36052703857422,
+          "timings": {
+            "commandMs": 0.2487909999999829,
+            "compositeMs": 14.535291,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 22.774459000000036,
+            "uiMs": 3.84695851188808,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "malformed-error",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 111.85845184326172,
+          "timings": {
+            "commandMs": 0.2501670000000331,
+            "compositeMs": 14.270207999999968,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 22.704416999999975,
+            "uiMs": 3.626140900985947,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "missing-jsonrpc",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 18,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 109.6762924194336,
+          "timings": {
+            "commandMs": 0.24537499999999568,
+            "compositeMs": 14.637374999999992,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 23.121999999999986,
+            "uiMs": 3.837522020291527,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 0,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "budget",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 98.41921997070312,
+          "timings": {
+            "commandMs": 0.25608400000004394,
+            "compositeMs": 15.041874999999948,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 23.363834000000058,
+            "uiMs": 3.654888274420655,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 43,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": null,
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Healthy",
+        "Bound",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 18,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 110.30516052246094,
+          "timings": {
+            "commandMs": 0.2506670000000213,
+            "compositeMs": 14.771375000000006,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 23.062166999999988,
+            "uiMs": 3.841644103105401,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 2,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": null,
+      "notifications": true,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Healthy",
+        "Bound",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 110.34151458740234,
+          "timings": {
+            "commandMs": 0.25862500000005184,
+            "compositeMs": 14.430125000000032,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 22.88299999999998,
+            "uiMs": 3.6450369343890614,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 2,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    },
+    {
+      "fault": "native-error",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "27c786eb71162acbe0b7abd8af365eaedae6cd5628401d0f046f67766584eaed",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "ownedDesktopExited": true,
+      "ownedCLIExited": true,
+      "ownedListenerVerified": true,
+      "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+      "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+      "uiInspection": {
+        "brush": {
+          "hardness": 1.0,
+          "opacity": 1.0,
+          "size": 20.0
+        },
+        "dialogs": [],
+        "distort": {
+          "gallery": null,
+          "liquify": null,
+          "perspective": null,
+          "puppet": null
+        },
+        "document": {
+          "activeLayer": 3,
+          "canRedo": false,
+          "canUndo": false,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 16,
+          "history": [
+            "Open"
+          ],
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 3,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Source",
+              "opacity": 1.0,
+              "selected": true,
+              "visible": true
+            },
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                16,
+                16
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "id": 2,
+              "kind": "Pixel",
+              "linkGroup": null,
+              "name": "Background",
+              "opacity": 1.0,
+              "selected": false,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "Untitled",
+          "notes": [],
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 1,
+          "selectedLayers": [
+            3
+          ],
+          "selectionBounds": null,
+          "timeline": null,
+          "variables": null,
+          "width": 16
+        },
+        "frame": 20,
+        "notices": [],
+        "panels": {
+          "brush_settings": false,
+          "color": true,
+          "history": false,
+          "layers": true,
+          "navigator": false,
+          "options_bar": true,
+          "properties": true,
+          "status_bar": true,
+          "toolbar": true
+        },
+        "perf": {
+          "fps": 107.46426391601562,
+          "timings": {
+            "commandMs": 0.2522920000000113,
+            "compositeMs": 15.532083,
+            "gpu": true,
+            "gpuFallback": null,
+            "gpuUploads": 1,
+            "lastCommand": "command.list",
+            "lastRefresh": "gpu-full",
+            "lastRefreshPx": 256,
+            "spans": {},
+            "uiMaxMs": 24.003041999999994,
+            "uiMs": 3.68222297600514,
+            "uploadMs": 0.0
+          }
+        },
+        "session": {
+          "active": 0,
+          "background": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "documents": [
+            {
+              "dirty": false,
+              "height": 16,
+              "index": 0,
+              "name": "Untitled",
+              "path": "checkpoint.pcraft",
+              "revision": 1,
+              "width": 16
+            }
+          ],
+          "foreground": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "status": "Saved checkpoint.pcraft",
+        "statusError": false,
+        "textEdit": null,
+        "theme": "ProMedium",
+        "tool": "Brush",
+        "views": [
+          {
+            "center": [
+              8.0,
+              8.0
+            ],
+            "doc_size": [
+              16,
+              16
+            ],
+            "fit_pending": false,
+            "zoom": 1.0
+          }
+        ],
+        "window": {
+          "height": 900.0,
+          "pixelsPerPoint": 2.0,
+          "width": 1440.0
+        },
+        "windows": []
+      },
+      "confirmedSteps": 1,
+      "deadlineTimeout": null,
+      "scope": "actual signed GUI command plan aggregate; transport fault injection and readonly observation; full public input matrix separate"
+    }
+  ]
+}

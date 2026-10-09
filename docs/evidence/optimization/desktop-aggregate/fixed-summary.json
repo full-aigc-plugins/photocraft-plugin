@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.70",
+  "skillSourceRef": "v0.1.0-dev.55",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "mcpPostSaveFaultCases": 6,
+  "mcpHealthyCases": 1,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "1fcbace7a7ada8554508b19d5460eea4e3f42f0dd9d7060589730a26975717c1",
+  "servePostSaveFaultCases": 7,
+  "serveHealthyCases": 1,
+  "tcpPostSaveFaultCases": 7,
+  "tcpDeliveryLossCases": 1,
+  "tcpHealthyCases": 1,
+  "serveAggregateCases": 20,
+  "mcpAggregateCases": 21,
+  "desktopAggregateCases": 12,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native,15 public argv faults,6 MCP faults,20 serve aggregate cases and21 MCP/plan aggregate cases; 12 signed desktop aggregate cases pass; complete input matrix remains open"
+}

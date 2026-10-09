@@ -210,7 +210,7 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 365,
+    "skills": 371,
     "pluginTypeScript": 110,
     "pluginPython": 48,
     "nativeHarness": 15,
@@ -222,7 +222,8 @@
     "tcpNativeFaultCases": 7,
     "tcpDeliveryLossCases": 1,
     "mcpAggregateCases": 21,
-    "serveAggregateCases": 20
+    "serveAggregateCases": 20,
+    "desktopAggregateCases": 12
   },
   "commandAcceptanceIndex": {
     "file": "command-acceptance-index.json",
@@ -300,7 +301,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "mcp-aggregate/publication.json",
+  "latestRegressionEvidence": "desktop-aggregate/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -388,6 +389,26 @@
     "responseBudgetCases": 2,
     "healthyNativeCases": 2,
     "legalNotificationCases": 1,
+    "serveAggregateCases": 20,
+    "mcpAggregateCases": 21,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
+  },
+  "desktopAggregateSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/desktop-aggregate/publication.json",
+    "entries": [
+      "owned-signed-desktop-command-plan"
+    ],
+    "postCheckpointReplyFaultCases": 7,
+    "nativeErrorCases": 1,
+    "responseBudgetCases": 1,
+    "deadlineCases": 1,
+    "healthyNativeCases": 2,
+    "legalNotificationCases": 1,
+    "desktopAggregateCases": 12,
     "serveAggregateCases": 20,
     "mcpAggregateCases": 21,
     "closedTaskIds": [],

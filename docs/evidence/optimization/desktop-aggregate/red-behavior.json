@@ -1,0 +1,18 @@
+{
+  "schema": "photocraft-desktop-deadline-red/v1",
+  "status": "EXPECTED_BEHAVIOR_FAILURE",
+  "unit": {
+    "realStdio": true,
+    "failure": "TimeoutError not raised",
+    "logSha256": "2d40595c3039fe7af49464838e3b272a7f82750d90492cf773f23b7c5ffcec33"
+  },
+  "signedGUI": {
+    "sourceTag": "v0.1.0-dev.54",
+    "sourceCommit": "3b84b3a9cfe0794d596c66bc7607f85476d87fd8",
+    "sourceArchiveSha256": "5f0ead4375b846d80d65165c2e7e06bd72acf083a010756f246112b107917617",
+    "expectedMaximumSeconds": 0.12,
+    "actualChildRequestTimeoutSeconds": 119.99999783298699,
+    "logSha256": "8dba22d5fca0667e8aaa4812b9a63dee953a31919c866cf1f381d8fb80896ed1"
+  },
+  "testSha256": "74c61509d130506de38938b37cc3ee42d554d9598148af006d6630f19299aeef"
+}

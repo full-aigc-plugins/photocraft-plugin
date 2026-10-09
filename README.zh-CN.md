@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.70候选：自有桌面聚合截止时间传递及12个签名GUI案例通过，固定源与安装验收待记录，完整输入矩阵及9.6继续开放。[合同](docs/PhotoCraft-Desktop-Aggregate-Supervision.zh_CN.md)。
+dev.70／源dev.55已发布：371项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例、MCP／计划聚合21例、签名桌面聚合12例及发行4项CI通过。完整公开输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/desktop-aggregate/publication.json)。[合同](docs/PhotoCraft-Desktop-Aggregate-Supervision.zh_CN.md)。
 
 dev.68／源dev.53已发布：355项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例及发行4项CI通过。MCP／命令计划聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-aggregate/publication.json)。[合同](docs/PhotoCraft-Serve-Aggregate-Supervision.zh_CN.md)。
 

@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "scope": "Actual public TCP frontend with pinned craft.5 shared native process; post-save faults and delivery barrier",
+  "cases": [
+    {
+      "fault": "duplicate",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "nonfinite",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "semantic",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "wrong-id",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "extra-frame",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "malformed-error",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "missing-ok",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "delivery",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": true,
+      "ownedNativeProcessesExited": true
+    },
+    {
+      "fault": "healthy",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4,
+        5,
+        {
+          "image": [
+            1,
+            true
+          ]
+        }
+      ],
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "sharedSession": true,
+      "otherConnectionQuarantined": false,
+      "ownedNativeProcessesExited": true
+    }
+  ]
+}
