@@ -1,0 +1,18 @@
+{
+  "schema": "photocraft-command-acceptance-check/v1",
+  "commands": 755,
+  "acceptedCommands": 0,
+  "boundNativeContexts": 0,
+  "contexts": {
+    "PASS": 0,
+    "FAIL": 0,
+    "NOT_RUN": 1510,
+    "NOT_APPLICABLE": 0
+  },
+  "fullCommandAcceptance": "NOT_RUN",
+  "fixedCandidateInstallation": "NOT_RUN",
+  "hostModelRouting": "NOT_RUN",
+  "creativeAcceptance": "NOT_RUN",
+  "sourceAuthenticity": "NOT_PROVEN",
+  "scope": "indexed context and bound report integrity only; independent execution authenticity and exhaustive context review require separate acceptance"
+}

@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-候选dev.76沿用源dev.59，增加逐命令证据索引维护：刷新生成新副本，保留旧证据；资源变化使旧结果失效，命令／后端注册变化要求重新审查。当前755命令索引绑定锁定技能并接入CI，1510个上下文仍为NOT_RUN。这是维护基础能力，完整逐命令验收尚未完成。[用法](docs/PhotoCraft-Command-Index-Maintenance.zh_CN.md)。
+dev.76已发布，技能源dev.59未变：逐命令索引刷新只写新副本、保留历史并使旧结果失效，合同／注册变化要求重审。755命令索引已接入包内及CI资源绑定检查。实际隔离安装58项Python（10项索引用例）通过；离线TypeScript102项通过、16项原生未重跑，执行资源与dev.75字节相同。发行4项CI成功，安装字节与公开ZIP一致且不变。本轮零原生／GUI启动；1510个上下文仍NOT_RUN，完整V1及19项任务开放。[证据](docs/evidence/optimization/command-acceptance/publication.json)。[用法](docs/PhotoCraft-Command-Index-Maintenance.zh_CN.md)。
 
 dev.75／源dev.59已发布：全部13技能提供连续任务会话。实际隔离安装通过一个原生进程完成五阶段公开JSONL操作，保全旧工程并仅关闭自有进程。源405项通过（9项既有跳过），固定Harness118项（16原生）、插件Python48项、会话单测20项及13技能独立预检通过。桌面候选仅启动一次，执行代码与发行一致；固定桌面未重复运行。发行4项CI成功。完整V1及19项任务仍开放。[证据](docs/evidence/optimization/task-session/publication.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
 

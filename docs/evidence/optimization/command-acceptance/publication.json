@@ -1,0 +1,62 @@
+{
+  "schema": "photocraft-command-index-publication/v1",
+  "status": "PARTIAL_PUBLISHED_FIXED_INDEX",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.76",
+    "commit": "faa004d688eef2d9ac445ef2b8fe328263bbd9cf",
+    "assetSha256": "90426d6b66486750f95f821061e6ba6bdba0726eb2ed9dcb894530dd10900c68",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.76",
+    "prerelease": true
+  },
+  "skills": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.59",
+    "commit": "395cb5aee4fbc8025ab6f3049f9e101bf492e7cd",
+    "assetSha256": "7d5e20feba9a661112e344b4ce34493066874dbff71725a3949b0ecea588cc5b",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.59",
+    "prerelease": true
+  },
+  "fixedPythonTests": 58,
+  "newIndexTests": 10,
+  "candidateTypescript": {
+    "collected": 118,
+    "passed": 102,
+    "skippedNative": 16,
+    "failed": 0
+  },
+  "commands": 755,
+  "contexts": 1510,
+  "reviewedCommands": 0,
+  "acceptedCommands": 0,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "nativeThisIncrement": "NOT_RUN; previous byte-identical dev.75 native evidence retained",
+  "nativeReuseEvidence": "native-reuse.json",
+  "desktopLaunchesThisIncrement": 0,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "13.2",
+    "13.3"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 138,
+    "open": 19
+  },
+  "fullV1": "OPEN",
+  "files": {
+    "release-ci.json": "7832ceec75abe3e7554593feadbdcd706b3518561d098dd35f0a97f397510dce",
+    "fixed-index-check.json": "fec35265668749ae98badec8d35578bd18e6187cd795b6ae0b5b275abd1d1ec0",
+    "current-index.json": "db4dd4bb8e76ed035377b0fd2ed4a3fac35bb3efd9904f523ca2ec9b9ef8f96c",
+    "candidate.json": "698a3c322d02a4cb73f8d68ae89989bae6c6242c3f1f5a282b7f528531f0dd18",
+    "fixed-host-public.json": "2b53fb9856b87045b05dee36347bd94f2571d9577c5fbf4f7f26f43626bc4505",
+    "fixed-summary.json": "bd00e2836858059fb53f4c30c80cd1d953484a5a9403631d6d6f41757d7960c0",
+    "plugin-validation.json": "1bb1ecca0161ffd0159645d95924c66790146b630d1f7f4908dc8a3aa34d8c94",
+    "refresh.json": "d2318ad7694b85b2d647f44694c8cdb3286b2790131f8b66c9a0d9cfb88988d5",
+    "source-release.json": "3797eb27dfd1dd3116d77f545f4d0663f499941bbfaa1cfeb0f4d33659bcfdc4",
+    "native-reuse.json": "dd4e1859125ce7192e59031b8025abf921cc7c39fcb4e6def0f5c7069d19437d",
+    "current-index-check.json": "fec35265668749ae98badec8d35578bd18e6187cd795b6ae0b5b275abd1d1ec0",
+    "public-plugin.json": "57f364fae1ddaa812ec067e19a01e4de540c5b1cd7e36e5bf22e84dee8f957a7"
+  }
+}

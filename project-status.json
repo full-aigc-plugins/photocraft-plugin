@@ -180,7 +180,7 @@
     "pluginWorkingVersion": "0.1.0-dev.76",
     "fixedSkillSourceVersion": "0.1.0-dev.59",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_CONTINUOUS_TASK_SESSION",
+    "publication": "PARTIAL_PUBLISHED_COMMAND_INDEX",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -188,8 +188,8 @@
       "open": 19,
       "newlyCompleted": 76
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/task-session/source-regression.json",
-    "publicationEvidence": "docs/evidence/optimization/task-session/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/command-acceptance/plugin-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/command-acceptance/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -608,7 +608,7 @@
     "fullV1": "OPEN"
   },
   "commandIndexMaintenance": {
-    "status": "PARTIAL_IMPLEMENTATION_PASS",
+    "status": "PARTIAL_PUBLISHED_FIXED_INDEX",
     "evidence": "docs/evidence/optimization/command-acceptance/candidate.json",
     "commands": 755,
     "contexts": 1510,
@@ -620,6 +620,9 @@
     "remainingTaskIds": [
       "13.2",
       "13.3"
-    ]
+    ],
+    "publicationEvidence": "docs/evidence/optimization/command-acceptance/publication.json",
+    "fixedPythonTests": 58,
+    "installedTreeUnchanged": true
   }
 }

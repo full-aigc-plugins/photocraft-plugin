@@ -211,8 +211,8 @@
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
     "skills": 405,
-    "pluginTypeScript": 118,
-    "pluginPython": 48,
+    "pluginTypeScript": 102,
+    "pluginPython": 58,
     "nativeHarness": 16,
     "skipped": 9,
     "sourceUnchanged": true,
@@ -231,7 +231,9 @@
     "harnessUnicodeRefusals": 25,
     "harnessUtf8FileRefusals": 5,
     "continuousTaskStages": 5,
-    "nativeProcessesPerTask": 1
+    "nativeProcessesPerTask": 1,
+    "nativeSkippedThisIncrement": 16,
+    "nativeThisIncrement": "NOT_RUN; byte-identical dev.75 resources verified"
   },
   "commandAcceptanceIndex": {
     "file": "command-acceptance-index.json",
@@ -309,7 +311,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "task-session/publication.json",
+  "latestRegressionEvidence": "command-acceptance/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -467,7 +469,7 @@
     "fullV1": "OPEN"
   },
   "commandIndexMaintenance": {
-    "status": "PARTIAL_IMPLEMENTATION_PASS",
+    "status": "PARTIAL_PUBLISHED_FIXED_INDEX",
     "evidence": "docs/evidence/optimization/command-acceptance/candidate.json",
     "commands": 755,
     "contexts": 1510,
@@ -479,6 +481,9 @@
     "remainingTaskIds": [
       "13.2",
       "13.3"
-    ]
+    ],
+    "publicationEvidence": "docs/evidence/optimization/command-acceptance/publication.json",
+    "fixedPythonTests": 58,
+    "installedTreeUnchanged": true
   }
 }
