@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "scope": "Actual pinned native; each healthy stream has one process; no GUI",
+  "cases": [
+    {
+      "mode": "legacy-extensions",
+      "status": "PASS",
+      "operations": 7,
+      "nativeProcesses": 1,
+      "stopped": true,
+      "savedReopened": true,
+      "savedSha256": "64e861ed338d270ef7fb32903d15eb6a513149134b2216cf8d336dcfb63955b0"
+    },
+    {
+      "mode": "metadata-only",
+      "status": "PASS",
+      "operations": 5,
+      "nativeProcesses": 1,
+      "stopped": true,
+      "savedReopened": true,
+      "savedSha256": "64e861ed338d270ef7fb32903d15eb6a513149134b2216cf8d336dcfb63955b0"
+    },
+    {
+      "mode": "serve-stdio",
+      "status": "PASS",
+      "utf8IdBytes": 540004,
+      "inputBytes": 540273,
+      "operations": 5,
+      "nativeProcesses": 1,
+      "stopped": true,
+      "savedReopened": true,
+      "savedSha256": "4870fe1d7cfa9c68071d628fd25caf35fbdb52a2e88867dccc408ef5348e4b16"
+    }
+  ]
+}

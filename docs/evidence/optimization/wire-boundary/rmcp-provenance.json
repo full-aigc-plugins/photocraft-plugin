@@ -1,0 +1,6 @@
+{
+  "source": "https://static.crates.io/crates/rmcp/rmcp-3.5.0.crate",
+  "sha256": "fae7019994ae0fe4ada40b732f798f3ff26f0f04facb1477f1bf37eb4f18a2d3",
+  "pinnedUpstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "scope": "readonly dependency source; no installation"
+}

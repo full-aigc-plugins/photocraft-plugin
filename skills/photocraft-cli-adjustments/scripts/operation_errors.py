@@ -30,6 +30,7 @@ def describe(exception, phase='validation'):
     message=str(exception);code=message.partition(':')[0]
     # 旧公开重复键错误码保持不变；新增定位字段避免消费方解析展示文案。
     location={'fieldPath':message.split(': ',1)[1].split(' expected ',1)[0].split(' => ',1)[0]} if ': $' in message else {}
+    if getattr(exception,'fieldPath',None) is not None:location['fieldPath']=exception.fieldPath
     if phase == 'validation':
         location.setdefault('fieldPath', '$')
         location['category'] = 'validation_failed'

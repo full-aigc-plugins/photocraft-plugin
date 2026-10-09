@@ -20,11 +20,13 @@ def load(name):
 def preflight(raw):
     message=load('strict_json').loads(raw)
     if (not isinstance(message,dict) or message.get('jsonrpc')!='2.0'
-            or not isinstance(message.get('method'),str)
-            or message.get('params') is not None and not isinstance(message['params'],dict)):
+            or not isinstance(message.get('method'),str)):
         raise ValueError('invalid_mcp_request: $')
+    if message.get('params') is not None and not isinstance(message['params'],dict):
+        raise ValueError('parameter_type: $.params')
     if 'id' in message and type(message['id']) not in (int,str):
         raise ValueError('invalid_mcp_request_id: $.id')
+    if message['method']=='initialize':load('mcp_protocol').initialize(message)
     if message['method']=='tools/call':
         if 'id' not in message:raise ValueError('tool_request_requires_id: $.id')
         params=message.get('params') or {}
@@ -54,7 +56,7 @@ class Wire:
         except BaseException:self.stderr.close();raise
     def send(self,message):
         try:
-            self.process.stdin.write((json.dumps(message,allow_nan=False)+'\n').encode());self.process.stdin.flush()
+            self.process.stdin.write((json.dumps(message,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode('utf-8'));self.process.stdin.flush()
         except OSError as error:raise load('operation_errors').error('outcome_unknown: mcp_write_failed; no replay') from error
     def read_line(self,deadline):
         while b'\n' not in self.buffer:

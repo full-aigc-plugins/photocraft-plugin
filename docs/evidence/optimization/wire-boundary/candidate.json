@@ -1,0 +1,43 @@
+{
+  "schema": "photocraft-wire-boundary-candidate/v1",
+  "status": "SOURCE_PUBLISHED_PLUGIN_FIXED_PENDING",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.57",
+    "commit": "ed8871e5ff3b8a6cc43e9f7b13ce74c3cf3b3273",
+    "assetSha256": "198bb52a2d24895a457683076412cd0e370a0dff0c5b29b078446c96ff5fb04d",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.57",
+    "prerelease": true
+  },
+  "baselineCommit": "c952cb1363696827a6b73379933017b330323b56",
+  "redEvidence": {
+    "red.log": "9d3f67159a1eb92b912fef12a40015ba37403c44986cdf45a1f2446e24aab0f6",
+    "red-paths.log": "e19f87ba45a5ec7bd18864ce7600d1d35f49d73d040bf22a49c957d6d5609c87"
+  },
+  "redFailures": {
+    "initialBoundary": 5,
+    "publicUnicodeAndFieldPath": 2
+  },
+  "sourceRegression": {
+    "collected": 383,
+    "passed": 374,
+    "skipped": 9,
+    "failures": 0,
+    "errors": 0
+  },
+  "invalidInitializationCases": 429,
+  "invalidUnicodePublicCases": 65,
+  "nativeWireCases": 3,
+  "nativeProcessesPerHealthyStream": 1,
+  "guiLaunches": 0,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "remainingAudit": [
+    "numeric wire re-encoding budget",
+    "other protocol lifecycle",
+    "Harness public input matrix"
+  ],
+  "fullV1": "NOT_RUN"
+}
