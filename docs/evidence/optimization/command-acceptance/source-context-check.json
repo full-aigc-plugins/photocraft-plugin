@@ -1,0 +1,10 @@
+{
+  "schema": "photocraft-command-source-context-check/v1",
+  "sourceBoundCommands": 755,
+  "upstreamBytes": "VERIFIED",
+  "nativeExecution": "NOT_RUN",
+  "contextReview": "NOT_RUN",
+  "desktopPredicateAcceptance": "NOT_RUN",
+  "fullV1": "OPEN",
+  "scope": "Static source/file/range and parameter identity binding only; source authenticity, runtime enablement and full business prerequisites remain separate."
+}

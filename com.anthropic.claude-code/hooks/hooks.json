@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -I -B \"${CLAUDE_PLUGIN_ROOT}/com.anthropic.claude-code/hooks/session_guidance.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -485,5 +485,27 @@
     "publicationEvidence": "docs/evidence/optimization/command-acceptance/publication.json",
     "fixedPythonTests": 58,
     "installedTreeUnchanged": true
+  },
+  "commandSourceContexts": {
+    "status": "PARTIAL_IMPLEMENTATION_PASS",
+    "evidence": "docs/evidence/optimization/command-acceptance/source-context-candidate.json",
+    "sourceBoundCommands": 755,
+    "reviewedCommands": 0,
+    "acceptedCommands": 0,
+    "nativeLaunches": 0,
+    "desktopLaunches": 0,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "13.2",
+      "13.3"
+    ]
+  },
+  "clientComponents": {
+    "status": "CANDIDATE_STATIC_PASS",
+    "evidence": "docs/evidence/optimization/command-acceptance/source-context-candidate.json",
+    "commands": 14,
+    "sessionStartHooks": 1,
+    "hostDiscovery": "NOT_PROVEN",
+    "modelRouting": "NOT_RUN"
   }
 }

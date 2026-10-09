@@ -1,0 +1,74 @@
+{
+  "schema": "photocraft-command-source-context-candidate/v1",
+  "status": "PARTIAL_IMPLEMENTATION_PASS",
+  "pluginVersion": "0.1.0-dev.77",
+  "skillSourceVersion": "0.1.0-dev.59",
+  "commands": 755,
+  "sourceFiles": 112,
+  "sourceBoundCommands": 755,
+  "reviewedCommands": 0,
+  "acceptedCommands": 0,
+  "contextStatus": {
+    "PASS": 0,
+    "FAIL": 0,
+    "NOT_RUN": 1510,
+    "NOT_APPLICABLE": 0
+  },
+  "pythonTests": 68,
+  "newSourceContextTests": 8,
+  "typescript": {
+    "collected": 118,
+    "passed": 102,
+    "skippedNative": 16,
+    "failed": 0
+  },
+  "redFailures": 5,
+  "logDigests": {
+    "red-source-bind.log": "257fafee90ded03d1f4429dc2d88a75f92984c2fce8d0df8b64237d293dbebfd",
+    "green-source-bind.log": "4560a8caafd2ce9e725906013dcf8c9b1e1110cf32407fe60495bccf7f3324ec",
+    "python-tests.log": "f6d56da5baacf0d64683082b25e8b5f77d1401f5a2c0ba5ae882a0890b714956",
+    "npm-tests.log": "6f519faac81f433c267a6867382c061b94c0cc70292292b28266183c4b667d8b"
+  },
+  "sourceCode": {
+    "scripts/command_source_contexts.py": "de2882811ea47be4fe26b0c5af490ebc5947c7d8dc07ff6d97fe8f199967ec96",
+    "tests/test_command_source_contexts.py": "0f9e237aa88f414717f73de2947b52feaee852cb4e319eeebdd79b66800d3bca",
+    "tests/test_plugin_components.py": "14e4e95848172d0f83e4eee176d346d5fd4ec77ca911c87238646f12b56a0691"
+  },
+  "profileSha256": "875e5cf311e6f9068dab0217c64d4038e75f110a6fd82e9802f2ea7e55e1e114",
+  "upstreamCommit": "f114f621799a96dc9f28ffb8faa01da680b64947",
+  "patchSha256": "d8b1dff6d3e49147fec96e0a69345bce154dd939ab1bb719152fe8b2b6af5aa6",
+  "nativeReuse": {
+    "unchangedFiles": 1316,
+    "fileMapSha256": "0b9b19ff9ffc9851f1bdb19b6b9501cb7bd5bfddb4c88bd383851bf983408b6e",
+    "release": "v0.1.0-dev.75",
+    "evidence": "../task-session/fixed-summary.json",
+    "runtimeRerun": false
+  },
+  "nativeLaunches": 0,
+  "desktopLaunches": 0,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "13.2",
+    "13.3"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 138,
+    "open": 19
+  },
+  "fullV1": "OPEN",
+  "scope": "Static registry/source-span and exact parameter binding plus Claude command/hook candidate; business context review, actual host routing and native/save/revision acceptance remain separate.",
+  "clientComponents": {
+    "client": "Claude Code",
+    "commands": 14,
+    "sessionHooks": 1,
+    "hookEvents": [
+      "SessionStart"
+    ],
+    "nativeStarts": 0,
+    "nativeStops": 0,
+    "strictManifestValidation": "PASS",
+    "manifestContentsDiscovery": "NOT_PROVEN",
+    "actualHostRouting": "NOT_RUN"
+  }
+}

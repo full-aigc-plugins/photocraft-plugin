@@ -1,7 +1,8 @@
 # PhotoCraft Agent Plugin
 
-Published dev.76 / unchanged source dev.59 adds command-evidence index maintenance. Refresh writes a new copy, retains history and invalidates stale results; changed contracts/registrations require review. The 755-command index is checked against locked resources in package tests and CI. Actual isolated installation passes 58 Python tests (10 index cases); 102 offline TypeScript tests pass and 16 native cases are not rerun, with published execution bytes unchanged from dev.75. Four release CI runs pass; installed bytes match the public ZIP and remain unchanged. All 1,510 contexts remain NOT_RUN; full V1 and 19 tasks stay open. [Evidence](docs/evidence/optimization/command-acceptance/publication.json). [Usage](docs/PhotoCraft-Command-Index-Maintenance.md).
+Candidate dev.77 / unchanged source dev.59 binds all 755 command registrations, exact parameter contracts and enabled predicates to pinned maintained source spans. Source hashes are checked separately from metadata and execution. All 1,510 contexts remain NOT_RUN; 19 tasks and full V1 stay open. [Usage](docs/PhotoCraft-Command-Source-Contexts.md).
 
+Claude-specific commands and a SessionStart hook now route the 14 packaged skills and remind the host to reuse the native instance. The portable package remains rooted in `plugin.json` and `skills/`; actual host routing is still open. [Component boundary](docs/PhotoCraft-Plugin-Components.md).
 Published dev.75 / source dev.59: all 13 skills provide a continuous task session. Actual isolated installation completes five public JSONL stages in one native process, keeps prior projects unchanged and closes only its owned process. 405 source tests pass (9 existing skips), 118 installed Harness tests (16 native), 48 plugin Python tests, 20 task-session units and 13 independent preflight checks pass. Candidate desktop proof used one launch and matches published execution code; fixed desktop was not rerun. Four release CI runs pass. Full V1 and 19 tasks remain open. [Evidence](docs/evidence/optimization/task-session/publication.json). [Usage](docs/PhotoCraft-Task-Session.md).
 
 Published dev.74 / source dev.58:The unchanged source retains 384 passing tests and 9 desktop/capability skips; 118 installed Harness tests (16 native) and 48 plugin Python tests pass. All 13 installed skills reject 247 invalid MCP lifecycle inputs before installation. Numeric stdio/TCP and pre-init ping modes save/reopen in shared processes. Five Harness actions reject 25 surrogate and 5 invalid-byte inputs; actual native saved output with a malformed UTF-8 outer reply remains unknown, preserved and unreplayed. Installed bytes match the public ZIP and remain unchanged; four release CI runs pass. No GUI launches; task 9.6 and full V1 stay open, 138/157 complete. [Evidence](docs/evidence/optimization/numeric-wire-lifecycle/publication.json). [Contract](docs/PhotoCraft-Numeric-Wire-Lifecycle.md).
@@ -88,7 +89,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.76`; skill source: `0.1.0-dev.59`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.77`; skill source: `0.1.0-dev.59`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -183,7 +184,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.76 |
+| Metadata version | 0.1.0-dev.77 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.59 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |

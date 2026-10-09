@@ -1,0 +1,14 @@
+{
+  "name": "photocraft",
+  "version": "0.1.0-dev.77",
+  "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+  "author": {
+    "name": "Full AIGC Plugins",
+    "url": "https://github.com/full-aigc-plugins"
+  },
+  "homepage": "https://github.com/full-aigc-plugins/photocraft-plugin",
+  "repository": "https://github.com/full-aigc-plugins/photocraft-plugin",
+  "license": "Apache-2.0",
+  "commands": "./com.anthropic.claude-code/commands/",
+  "hooks": "./com.anthropic.claude-code/hooks/hooks.json"
+}
