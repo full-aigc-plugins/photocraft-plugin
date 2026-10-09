@@ -180,7 +180,7 @@
     "pluginWorkingVersion": "0.1.0-dev.68",
     "fixedSkillSourceVersion": "0.1.0-dev.53",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_SERVE_TCP",
+    "publication": "PARTIAL_PUBLISHED_SERVE_AGGREGATE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -188,8 +188,8 @@
       "open": 19,
       "newlyCompleted": 76
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/serve-tcp/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/serve-tcp/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/serve-aggregate/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/serve-aggregate/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -504,6 +504,23 @@
     "publicNativeFaultCases": 20,
     "deliveryLossCases": 1,
     "healthyNativeCases": 3,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
+  },
+  "serveAggregateSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/serve-aggregate/publication.json",
+    "entries": [
+      "serve-stdio",
+      "serve-tcp"
+    ],
+    "postSaveReplyFaultCases": 14,
+    "nativeErrorCases": 2,
+    "responseBudgetCases": 2,
+    "healthyNativeCases": 2,
+    "serveAggregateCases": 20,
     "closedTaskIds": [],
     "remainingTaskIds": [
       "9.6"

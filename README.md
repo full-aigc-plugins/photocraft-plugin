@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Unpublished dev.68 / source dev.53 candidate adds step-confirmed serve batches. [Contract](docs/PhotoCraft-Serve-Aggregate-Supervision.md). Fixed installation, other aggregate entries and complete9.6 remain open;138/157 complete,19 open.
+Published dev.68 / source dev.53:355 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 MCP faults,7 serve stdio faults,7 TCP faults and a TCP delivery-loss race pass. Healthy shared-session editing, native process exit and actual30-second idle timeout are verified. Isolated Codex discovers14 skills; installed bytes unchanged; 20 serve aggregate cases pass; four release CI runs pass. MCP/command-plan aggregate interiors and the full input matrix keep9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/serve-aggregate/publication.json). [Contract](docs/PhotoCraft-Serve-Aggregate-Supervision.md).
 
 Published dev.67 / source dev.52:345 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 MCP faults,7 serve stdio faults,7 TCP faults and a TCP delivery-loss race pass. Healthy shared-session editing, native process exit and actual30-second idle timeout are verified. Isolated Codex discovers14 skills; installed bytes unchanged; four release CI runs pass. Aggregate interiors and the full input matrix keep9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/serve-tcp/publication.json). [Contract](docs/PhotoCraft-Serve-TCP-Supervision.md).
 

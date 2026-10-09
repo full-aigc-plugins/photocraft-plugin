@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-未发布dev.68／源dev.53候选增加serve批量逐步确认。[合同](docs/PhotoCraft-Serve-Aggregate-Supervision.zh_CN.md)。固定安装、其他聚合入口及完整9.6仍开放，138/157完成、19开放。
+dev.68／源dev.53已发布：355项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例及发行4项CI通过。MCP／命令计划聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-aggregate/publication.json)。[合同](docs/PhotoCraft-Serve-Aggregate-Supervision.zh_CN.md)。
 
 dev.67／源dev.52已发布：345项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，发行4项CI通过。聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-tcp/publication.json)。[合同](docs/PhotoCraft-Serve-TCP-Supervision.zh_CN.md)。
 

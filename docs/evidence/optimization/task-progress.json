@@ -210,7 +210,7 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 345,
+    "skills": 355,
     "pluginTypeScript": 110,
     "pluginPython": 48,
     "nativeHarness": 15,
@@ -298,7 +298,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "serve-tcp/publication.json",
+  "latestRegressionEvidence": "serve-aggregate/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -352,6 +352,23 @@
     "publicNativeFaultCases": 20,
     "deliveryLossCases": 1,
     "healthyNativeCases": 3,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
+  },
+  "serveAggregateSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/serve-aggregate/publication.json",
+    "entries": [
+      "serve-stdio",
+      "serve-tcp"
+    ],
+    "postSaveReplyFaultCases": 14,
+    "nativeErrorCases": 2,
+    "responseBudgetCases": 2,
+    "healthyNativeCases": 2,
+    "serveAggregateCases": 20,
     "closedTaskIds": [],
     "remainingTaskIds": [
       "9.6"
