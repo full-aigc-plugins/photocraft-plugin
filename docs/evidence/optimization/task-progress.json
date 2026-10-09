@@ -465,5 +465,20 @@
     "fixedDesktopRerun": false,
     "closedTaskIds": [],
     "fullV1": "OPEN"
+  },
+  "commandIndexMaintenance": {
+    "status": "PARTIAL_IMPLEMENTATION_PASS",
+    "evidence": "docs/evidence/optimization/command-acceptance/candidate.json",
+    "commands": 755,
+    "contexts": 1510,
+    "reviewedCommands": 0,
+    "acceptedCommands": 0,
+    "pythonTests": 58,
+    "nativeRerun": false,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "13.2",
+      "13.3"
+    ]
   }
 }

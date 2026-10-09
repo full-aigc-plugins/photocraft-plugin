@@ -14,6 +14,8 @@ jobs:
           python-version: '3.13'
       - run: python3 -m unittest discover -s tests -v
       - run: python3 scripts/vendor/skill_vendor.py check
+      - name: Check command evidence against locked execution resources
+        run: python3 -I -B scripts/command_acceptance.py check --skill-root skills/photocraft-use --index docs/evidence/optimization/command-acceptance/current-index.json
       - uses: actions/setup-node@v4
         with:
           node-version: '24.21.0'

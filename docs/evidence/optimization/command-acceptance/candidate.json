@@ -1,0 +1,61 @@
+{
+  "schema": "photocraft-command-index-candidate/v1",
+  "status": "PARTIAL_IMPLEMENTATION_PASS",
+  "pluginVersion": "0.1.0-dev.76",
+  "sourceVersion": "0.1.0-dev.59",
+  "pythonTests": 58,
+  "newIndexTests": 10,
+  "targetTests": 16,
+  "typescript": {
+    "collected": 118,
+    "passed": 102,
+    "skippedNative": 16,
+    "failed": 0
+  },
+  "commands": 755,
+  "contexts": 1510,
+  "reviewedCommands": 0,
+  "currentAcceptedCommands": 0,
+  "red": {
+    "missingRefreshCapabilityFailures": 5,
+    "integrityFailures": 2,
+    "invalidUnicodePartialOutputFailures": 1
+  },
+  "logDigests": {
+    "red.log": {
+      "sha256": "dfb78242f23c127210791189658b0dbf25cdc014602462d9307d86d5221c725f"
+    },
+    "red-integrity.log": {
+      "sha256": "197639652aa59d990ddab5d64f6c56b6860059c7a8f2d64db9876351fa792b12"
+    },
+    "red-unicode.log": {
+      "sha256": "b7220808b9b39364fa4d6e85503dd2ab697258b187d70e52dab4f14d8debe046"
+    },
+    "green-final.log": {
+      "sha256": "12d41b6adb0f0bb1d895d67287c0c9ecc2b3fee0b64b0551d9a01a50fada9f34"
+    },
+    "python-full.log": {
+      "sha256": "94290b367ec94bacdd31cf04cf921c8234bbad4e028b6967d7e9739df5c33815"
+    },
+    "npm-full.log": {
+      "sha256": "ebfc2c8cfa2d49d04a9ca73c3c576fc7d2776baf47f0881a9d48815f96c7ad7e"
+    }
+  },
+  "nativeReuse": "native-reuse.json",
+  "sourceCode": {
+    "scripts/command_acceptance.py": "533d61d930bb5ffd4e2cfb30829150a3070e898952222aadb3fd895c49de7a22",
+    "tests/test_command_index_refresh.py": "0b3bdf5e06353326102f7157181fa482f2d332e5c301349d94017076800a685c"
+  },
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "13.2",
+    "13.3"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 138,
+    "open": 19
+  },
+  "fullV1": "OPEN",
+  "scope": "Maintains current resource-bound inventory, conservative invalidation and history; individual command prerequisites and real execution remain unreviewed and NOT_RUN."
+}

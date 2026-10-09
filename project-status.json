@@ -177,7 +177,7 @@
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
     "skillsVersion": "0.1.0-dev.59",
-    "pluginWorkingVersion": "0.1.0-dev.75",
+    "pluginWorkingVersion": "0.1.0-dev.76",
     "fixedSkillSourceVersion": "0.1.0-dev.59",
     "evidence": "docs/evidence/optimization/task-progress.json",
     "publication": "PARTIAL_PUBLISHED_CONTINUOUS_TASK_SESSION",
@@ -606,5 +606,20 @@
     "fixedDesktopRerun": false,
     "closedTaskIds": [],
     "fullV1": "OPEN"
+  },
+  "commandIndexMaintenance": {
+    "status": "PARTIAL_IMPLEMENTATION_PASS",
+    "evidence": "docs/evidence/optimization/command-acceptance/candidate.json",
+    "commands": 755,
+    "contexts": 1510,
+    "reviewedCommands": 0,
+    "acceptedCommands": 0,
+    "pythonTests": 58,
+    "nativeRerun": false,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "13.2",
+      "13.3"
+    ]
   }
 }

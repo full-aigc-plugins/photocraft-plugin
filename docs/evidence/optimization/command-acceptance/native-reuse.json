@@ -1,0 +1,21 @@
+{
+  "status": "BYTE_IDENTICAL",
+  "pluginRelease": "v0.1.0-dev.75",
+  "pluginReleaseCommit": "99cc2709dbe319004fa81e336ec3721107314247",
+  "sourceRelease": "v0.1.0-dev.59",
+  "unchangedFiles": 1316,
+  "fileMapSha256": "0b9b19ff9ffc9851f1bdb19b6b9501cb7bd5bfddb4c88bd383851bf983408b6e",
+  "previousActualInstalledNativeHarness": {
+    "passed": 118,
+    "nativeTests": 16,
+    "evidence": "../task-session/fixed-summary.json"
+  },
+  "sourceRegression": {
+    "passed": 405,
+    "skipped": 9,
+    "evidence": "../task-session/source-regression.json"
+  },
+  "nativeSuiteRerunThisIncrement": false,
+  "desktopLaunchesThisIncrement": 0,
+  "scope": "Published native execution resources and TypeScript native drivers are byte-identical; command evidence maintenance Python code is separately tested now."
+}

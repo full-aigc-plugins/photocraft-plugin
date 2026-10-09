@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+候选dev.76沿用源dev.59，增加逐命令证据索引维护：刷新生成新副本，保留旧证据；资源变化使旧结果失效，命令／后端注册变化要求重新审查。当前755命令索引绑定锁定技能并接入CI，1510个上下文仍为NOT_RUN。这是维护基础能力，完整逐命令验收尚未完成。[用法](docs/PhotoCraft-Command-Index-Maintenance.zh_CN.md)。
+
 dev.75／源dev.59已发布：全部13技能提供连续任务会话。实际隔离安装通过一个原生进程完成五阶段公开JSONL操作，保全旧工程并仅关闭自有进程。源405项通过（9项既有跳过），固定Harness118项（16原生）、插件Python48项、会话单测20项及13技能独立预检通过。桌面候选仅启动一次，执行代码与发行一致；固定桌面未重复运行。发行4项CI成功。完整V1及19项任务仍开放。[证据](docs/evidence/optimization/task-session/publication.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
 
 dev.74／源dev.58已发布：技能源未变，复用384项通过及9项桌面／能力跳过的源回归证据；118项安装Harness（16原生）及48项插件Python通过。13个实际安装技能在安装前拒绝247个无效MCP生命周期输入；数值stdio／TCP和初始化前ping模式单进程保存／重开。5个Harness动作拒绝25个代理项及5个坏字节输入；真实原生保存后外层坏UTF-8回复保持unknown、工程保全且不重放。安装字节与公开ZIP一致且不变，发行4项CI成功。本轮零GUI启动，完整9.6及V1仍开放，138/157完成。[证据](docs/evidence/optimization/numeric-wire-lifecycle/publication.json)。[合同](docs/PhotoCraft-Numeric-Wire-Lifecycle.zh_CN.md)。
@@ -86,7 +88,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.75`；技能源：`0.1.0-dev.59`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.76`；技能源：`0.1.0-dev.59`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -181,7 +183,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.75 |
+| Metadata version | 0.1.0-dev.76 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.59 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |

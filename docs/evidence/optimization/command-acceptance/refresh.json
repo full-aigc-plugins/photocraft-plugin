@@ -1,0 +1,10 @@
+{
+  "schema": "photocraft-command-index-refresh/v1",
+  "sourceChanged": true,
+  "addedCommands": [],
+  "removedCommands": [],
+  "changedCommands": [],
+  "invalidatedContexts": 0,
+  "fullCommandAcceptance": "NOT_RUN",
+  "sourceAuthenticity": "NOT_PROVEN"
+}
