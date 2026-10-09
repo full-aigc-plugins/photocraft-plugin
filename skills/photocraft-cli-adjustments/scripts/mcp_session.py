@@ -20,6 +20,16 @@ def strict_json(data):
     return module.loads(data)
 
 
+def reply_error(message):
+    error=_errors.error(message);error.phase='reply_received';return error
+
+
+def notification(value):
+    return (isinstance(value,dict) and value.get('jsonrpc')=='2.0' and 'id' not in value
+            and isinstance(value.get('method'),str) and 'result' not in value and 'error' not in value
+            and ('params' not in value or isinstance(value['params'],dict)))
+
+
 class Session:
     def __init__(self, argv, timeout=120):
         self.timeout = timeout
@@ -58,15 +68,20 @@ class Session:
                 try:
                     response = strict_json(line)
                 except (ValueError, UnicodeError):
-                    raise _errors.error('outcome_unknown: invalid_mcp_json; request not retried') from None
-                if not isinstance(response, dict):
-                    raise _errors.error('outcome_unknown: invalid_mcp_response; request not retried')
-                if type(response.get('id')) is not int or response.get('id') != identifier:
+                    raise reply_error('outcome_unknown: invalid_mcp_json; request not retried') from None
+                if notification(response):
                     continue
+                if not isinstance(response, dict) or response.get('jsonrpc')!='2.0':
+                    raise reply_error('outcome_unknown: invalid_mcp_response; request not retried')
+                if type(response.get('id')) is not int or response.get('id') != identifier:
+                    raise reply_error('outcome_unknown: mismatched_mcp_reply_id; request not retried')
                 if ('error' in response) == ('result' in response):
-                    raise _errors.error('outcome_unknown: missing_or_ambiguous_mcp_result; request not retried')
+                    raise reply_error('outcome_unknown: missing_or_ambiguous_mcp_result; request not retried')
                 if 'error' in response:
-                    raise _errors.error('mcp_error: ' + json.dumps(response['error']))
+                    error=response['error']
+                    if not isinstance(error,dict) or type(error.get('code')) is not int or not isinstance(error.get('message'),str):
+                        raise reply_error('outcome_unknown: invalid_mcp_error; request not retried')
+                    raise reply_error('mcp_error: ' + json.dumps(error))
                 result = response['result']
                 if method == 'tools/call':
                     if (not isinstance(result, dict)
@@ -76,7 +91,8 @@ class Session:
                                    or not isinstance(entry.get('type'), str)
                                    or (entry['type'] == 'text' and not isinstance(entry.get('text'), str))
                                    for entry in result.get('content', []))):
-                        raise _errors.error('outcome_unknown: invalid_tool_reply; request not retried')
+                        raise reply_error('outcome_unknown: invalid_tool_reply; request not retried')
+                self.drain_pending(deadline)
                 return result
             remaining = deadline - time.monotonic()
             if remaining <= 0 or not select.select([self.process.stdout], [], [], remaining)[0]:
@@ -87,6 +103,23 @@ class Session:
             self.buffer += chunk
             if len(self.buffer) > 64 * 1024 * 1024:
                 raise _errors.error('mcp_response_too_large')
+
+    def drain_pending(self,deadline):
+        """确认成功前消费合法通知；额外回复或不完整帧必须先核清，禁止下一编辑。"""
+        while self.buffer or select.select([self.process.stdout],[],[],0)[0]:
+            while b'\n' not in self.buffer:
+                remaining=deadline-time.monotonic()
+                if remaining<=0 or not select.select([self.process.stdout],[],[],remaining)[0]:
+                    raise reply_error('outcome_unknown: pending_mcp_frame_timeout; request not retried')
+                chunk=os.read(self.process.stdout.fileno(),65536)
+                if not chunk:raise reply_error('mcp_disconnected: pending frame; request not retried')
+                self.buffer+=chunk
+                if len(self.buffer)>64*1024*1024:raise reply_error('mcp_response_too_large')
+            line,self.buffer=self.buffer.split(b'\n',1)
+            if not line.strip():continue
+            try:value=strict_json(line)
+            except (ValueError,UnicodeError) as error:raise reply_error('outcome_unknown: invalid_pending_mcp_json') from error
+            if not notification(value):raise reply_error('outcome_unknown: unsolicited_mcp_reply')
 
     def command(self, identifier, params):
         result = self.request('tools/call', {'name': 'run_command', 'arguments': {'command': identifier, 'params': params}})

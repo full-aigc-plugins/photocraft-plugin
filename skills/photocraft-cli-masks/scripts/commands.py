@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import time
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,6 +44,7 @@ def validate_tool_parameters(identifier, params, path='$.params', resolved=False
     if identifier=='command_batch':
         contract=load('parameter_contract')
         if not resolved and contract.is_reference(params['steps']):return params
+        if len(params['steps'])>256:raise ValueError('invalid_batch_steps: '+path+'.steps')
         for index,step in enumerate(params['steps']):
             if not resolved and contract.is_reference(step):continue
             command=step['id'];location=path+'.steps['+str(index)+']'
@@ -145,6 +147,24 @@ def resolve(value, bindings):
 def native_call(identifier, params):
     _, tool, key = ROUTES[DOMAIN]
     return tool, {key: identifier, "params": params}
+
+
+def supervised_batch(params,invoke,confirmed):
+    """原生聚合拆为单步确认；累计预算与停止合同不被continue参数绕过。"""
+    results=[];remaining=(8<<20)-(1<<20)-4096
+    for index,step in enumerate(params['steps']):
+        try:
+            result=invoke(step)
+            row={'ok':True,'result':result}
+            size=len(json.dumps(row,ensure_ascii=False,separators=(',',':'),allow_nan=False).encode())+1
+            if size>remaining:
+                error=load('operation_errors').error('outcome_unknown: command_batch_response_budget');error.phase='reply_received';raise error
+            remaining-=size;results.append(row);confirmed(index,step,row)
+        except (ValueError,RuntimeError,OSError,TimeoutError,subprocess.SubprocessError) as error:
+            error.aggregate={'stepIndex':index,'confirmedSteps':len(results),'request':step}
+            error.partialResult={'completed':len(results),'failed':0,'results':results}
+            raise
+    return {'completed':len(results),'failed':0,'results':results}
 
 def reply_json(text):
     return load('strict_json').loads(text)
@@ -353,6 +373,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             available = {tool['name'] for tool in discovery['tools']}
             required = {native_call(s["command"], {})[0] if "command" in s else s["tool"]
                         for s in plan["operations"]}
+            if 'command_batch' in required:required.add(ROUTES[DOMAIN][1])
             # 目录查询也是原生能力合同；旧服务不能冒充新入口。
             if not required.issubset(available) or ROUTES[DOMAIN][0] not in available:
                 raise load("operation_errors").error("native_tool_missing")
@@ -387,9 +408,28 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                 receipt["steps"].append(record)
                 record['phase'] = 'submitted'
                 write(output / "journal.json", receipt)
-                result = parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
-                                     output if "tool" in step else None, index)
                 try:
+                    if tool=='command_batch':
+                        original_timeout=getattr(session,'timeout',120);deadline=time.monotonic()+original_timeout
+                        record['substeps']=[]
+                        def invoke(child):
+                            if hasattr(session,'timeout'):session.timeout=deadline-time.monotonic()
+                            if time.monotonic()>=deadline:raise load('operation_errors').error('outcome_unknown: command_batch_deadline')
+                            gate.check_scope([child['id']],[ROUTES[DOMAIN][1]],enabled_command=child['id'])
+                            if hasattr(session,'timeout'):session.timeout=deadline-time.monotonic()
+                            if time.monotonic()>=deadline:raise load('operation_errors').error('outcome_unknown: command_batch_deadline')
+                            reply=session.request('tools/call',{'name':ROUTES[DOMAIN][1],'arguments':child})
+                            try:return parse_reply(reply)
+                            except RuntimeError as error:error.phase='reply_received';raise
+                        def confirmed(child_index,child,row):
+                            record['substeps'].append({'index':child_index,'request':child,'phase':'reply_validated','result':row['result']})
+                            write(output/'journal.json',receipt)
+                        try:result=supervised_batch(args,invoke,confirmed)
+                        finally:
+                            if hasattr(session,'timeout'):session.timeout=original_timeout
+                    else:
+                        result = parse_reply(session.request("tools/call", {"name": tool, "arguments": args}),
+                                             output if "tool" in step else None, index)
                     validate_tool_reply(tool, result, args)
                 except RuntimeError as error:
                     # 保留结构已验证的部分批次诊断，继续保持未知状态且不绑定别名。
@@ -409,6 +449,8 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
         receipt["result"] = "unknown" if uncertain else "FAIL"
         receipt["error"] = str(error)
         receipt["errorDetails"] = load("operation_errors").describe(error, "submitted")
+        receipt['errorDetails']['replayAllowed']=False
+        if hasattr(error,'aggregate'):receipt['errorDetails']['aggregate']=error.aggregate
         if receipt["steps"] and receipt["steps"][-1]["state"] == "started":
             receipt["steps"][-1]["state"] = "unknown" if uncertain else "failed"
         write(output / "failure.json", receipt)

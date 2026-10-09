@@ -4,8 +4,8 @@
     {
       "package": "photocraft-skills",
       "repo": "https://github.com/full-aigc-skills/photocraft-skills.git",
-      "ref": "v0.1.0-dev.53",
-      "sha": "b539efd67918e4d7c1dd3547965d8105f558ba0a",
+      "ref": "v0.1.0-dev.54",
+      "sha": "3b84b3a9cfe0794d596c66bc7607f85476d87fd8",
       "skills": [
         "photocraft-use",
         "photocraft-cli",
@@ -23,19 +23,19 @@
       ],
       "dest": "skills/",
       "sha256": {
-        "photocraft-use": "0ca671c2e0ee6d2e8adeb248075add018ba5ab4e56e93d351af6e142315488fb",
-        "photocraft-cli": "59c7757d71589d2ffeef6638aba0c0a1b95f17a908467c85f335b9f4f10027a2",
-        "photocraft-cli-setup": "4f4fa5799add0f85fe66bfcc691c47718a2d6c979d43050df8bbf98904314418",
-        "photocraft-cli-project": "2204e21d3bd69ad3c6da59024d996b880fe0207a409f1b52e5003971f1970118",
-        "photocraft-cli-layers": "7878fa15e621162f82d85e112ca6d3d095b12ea40ed21ddda0b86f80a4ea6b5f",
-        "photocraft-cli-selection": "93563dd48547a03c98b7a7e4d9ca9653737becef92a7f7489141c4c8f88ba729",
-        "photocraft-cli-masks": "f22965030e48201a46f4d2adabbe8ef89594a6804909385c198548ba25775b38",
-        "photocraft-cli-adjustments": "2fce8f87b3d2ac9aabcc8ca4af49e712be2209fe4e404bf8ecc51f784d7d661b",
-        "photocraft-cli-retouch": "803776df5137eed44ebcd455e017be83e9c3981574944f38ef852360df517eb6",
-        "photocraft-cli-text": "66ca673355111b2b2478505450a773cfbb57a2541c3575689cca443a9339ab51",
-        "photocraft-cli-resize": "8437e05058f0cf65d79e9016bd54f4b2a47e21e60380e31b18bbd4b28c30344b",
-        "photocraft-cli-export": "412c890c249bc3adcc16696cc879339989f551b13a7feee999189e4bd512ab0e",
-        "photocraft-cli-filters": "1cd4bec5c490896fc872996f83f6a9f71931f0447e15a98cd883f0179a1bae53"
+        "photocraft-use": "8b91f63bc45dbb92d2b05945b5f0fc190f0222c790efab32c7e025f3c4ec0d5b",
+        "photocraft-cli": "fcc60431d2b3cce1a5e4c4c696672659b2b64313ef9eb016547b50ee409fa913",
+        "photocraft-cli-setup": "a3defdda253cb2a690d9df870da09adae2caa2aadb3239302e82515e3dcd8398",
+        "photocraft-cli-project": "b7686c70e65e9f0adb767815b5f3c656c357e308eb0f5fedf8c6d0e8c4fb0a0f",
+        "photocraft-cli-layers": "d456927dcfbb684c51e3921bb11716e9e3921d708ebcc2f176b5ef8b56abcacd",
+        "photocraft-cli-selection": "0b8bdff7d2df7650a714b2092a134d21426bfa4f1059574480844785d61beb46",
+        "photocraft-cli-masks": "4e0a0870353c6f19f202927c3183f9c7b957c7498727694ad7d301e91ec08f2d",
+        "photocraft-cli-adjustments": "53d209e118a9b4228b94d47c8d10b508c5936250fa552e11d63d6268f47a6748",
+        "photocraft-cli-retouch": "3b870434d74fcb46dfaa4f87cc72c75813a5075555e5674335148a7ffaee99d7",
+        "photocraft-cli-text": "c0e92d87955cf1025b716bf72fa63e9e7cf76702e6d59b639aa2eb28edfcd3d7",
+        "photocraft-cli-resize": "9e4ebb3af3e62f83ed68286b2a336c3c93c65eb15922bb88c0799bed6e6059cc",
+        "photocraft-cli-export": "e06ab52924e5d8f58622ea9981908d1f7589e1cc2767d73c81d0560df0820dcd",
+        "photocraft-cli-filters": "b93fa7a336f8470f468f5e7caeccceb3ef4ab9c078d75ffce3fc1ae15ff9824f"
       }
     }
   ]

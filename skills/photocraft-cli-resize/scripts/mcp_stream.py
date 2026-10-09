@@ -173,7 +173,25 @@ def run(argv,install,source=None,output=None):
             message=None;phase='validation';message=preflight(raw)
             if wire is None:
                 installed=install();wire=Wire([installed['executable'],*argv])
-            phase='submitted';wire.send(message)
+            phase='submitted'
+            if message['method']=='tools/call' and message['params']['name']=='command_batch':
+                commands=load('commands');original_timeout=wire.timeout;deadline=time.monotonic()+original_timeout
+                def invoke(step):
+                    child={**message,'params':{**message['params'],'name':'command_run','arguments':step}}
+                    wire.timeout=deadline-time.monotonic()
+                    if wire.timeout<=0:raise reply_error('outcome_unknown: command_batch_deadline')
+                    wire.send(child);reply=wire.receive(child,output)
+                    try:validate_reply(child,reply)
+                    except RuntimeError as error:error.phase='reply_received';raise
+                    return commands.parse_reply(reply['result'])
+                def confirmed(index,step,row):
+                    receipts.append({'request':step,'phase':'reply_validated','aggregateStep':index})
+                try:result=commands.supervised_batch(message['params']['arguments'],invoke,confirmed)
+                finally:wire.timeout=original_timeout
+                reply={'jsonrpc':'2.0','id':message['id'],'result':{'content':[{'type':'text','text':json.dumps(result,ensure_ascii=False,allow_nan=False)}]}}
+                phase='reply_received';validate_reply(message,reply)
+                receipts.append({'request':message,'phase':'reply_validated'});emit(output,reply);continue
+            wire.send(message)
             if 'id' not in message:continue
             reply=wire.receive(message,output);phase='reply_received';validate_reply(message,reply,installed.get('expectedRuntimeVersion'))
             receipts.append({'request':message,'phase':'reply_validated'})
@@ -185,6 +203,7 @@ def run(argv,install,source=None,output=None):
         detail.update(replayAllowed=False,request=message,receipts=receipts)
         if installed:detail['runtimeSha256']=installed['binarySha256']
         if hasattr(error,'dependencySetup'):detail['dependencySetup']=error.dependencySetup
+        if hasattr(error,'aggregate'):detail['aggregate']=error.aggregate
         emit(output,{'jsonrpc':'2.0','id':message.get('id') if message else None,'error':{'code':-32602 if phase=='validation' else -32000,'message':detail['code'],'data':detail}})
         return 1
     finally:
