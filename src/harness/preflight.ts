@@ -3,7 +3,7 @@ import { mkdtempSync, rmSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { canonical, safePath, fileDigest, digest } from '../protocol/files.ts';
-import { strictJson } from '../protocol/strict_json.ts';
+import { strictJson, decodeUtf8 } from '../protocol/strict_json.ts';
 import { OperationError, validationError } from '../protocol/operation_error.ts';
 
 export type AdapterOptions = {skillRoot:string;python:string;runtimeHome?:string};
@@ -38,9 +38,9 @@ export function reportedError(reply:any):OperationError|undefined {
 
 /** 解析子进程的单个严格 JSON 回复；畸形回复不能宣称原操作未执行。 */
 export function pythonReply(options:AdapterOptions,script:string,args:string[]):any {
- const result=spawnSync(options.python,['-I','-B',join(safePath(options.skillRoot),'scripts',script),...args],{encoding:'utf8',timeout:120_000,maxBuffer:2*1024*1024,env:{...process.env,PYTHONDONTWRITEBYTECODE:'1'}});
+ const result=spawnSync(options.python,['-I','-B',join(safePath(options.skillRoot),'scripts',script),...args],{timeout:120_000,maxBuffer:2*1024*1024,env:{...process.env,PYTHONDONTWRITEBYTECODE:'1'}});
  let reply:any;
- try {reply=strictJson(result.stdout??'');}
+ try {reply=strictJson(decodeUtf8(result.stdout??Buffer.alloc(0)));}
  catch {
   throw new OperationError('adapter_reply_invalid',{code:'adapter_reply_invalid',phase:'reply_received',outcome:'unknown',recoveryAction:'reconcile'});
  }

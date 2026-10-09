@@ -83,12 +83,13 @@ def validate_method(method,params,path='$.params'):
 def preflight(raw):
     # 拆分批次不能使原生本应拒绝的超长外层请求变成可执行小帧。
     if len(raw.encode('utf-8') if isinstance(raw,str) else raw)>1<<20:reject('request_too_large','$')
-    message=load('strict_json').loads(raw)
+    fragments={'$.id':None,**{'$.params.steps['+str(i)+'].params':None for i in range(256)}}
+    message=load('strict_json').loads(raw,fragments=fragments)
     if not isinstance(message,dict):reject('invalid_serve_request','$')
     fields(message,{'id','method','params'},'$')
     if not isinstance(message.get('method'),str):reject('parameter_type','$.method')
     validate_method(message['method'],message.get('params'))
-    return message
+    return load('wire_json').Frame(message,raw,{path:value for path,value in fragments.items() if value is not None})
 
 
 def reply_error(message):
@@ -109,7 +110,7 @@ class Wire(load('mcp_stream').Wire):
         raw=self.read_line(time.monotonic()+self.timeout)
         try:reply=load('strict_json').loads(raw)
         except (ValueError,UnicodeError) as error:raise reply_error('outcome_unknown: invalid_serve_json') from error
-        if (not isinstance(reply,dict) or 'id' not in reply or not same_id(reply['id'],message.get('id'))
+        if (not isinstance(reply,dict) or 'id' not in reply or not same_id(reply['id'],getattr(message,'native_id',message.get('id')))
                 or type(reply.get('ok')) is not bool or ('result' in reply)==('error' in reply)
                 or reply['ok']!=('result' in reply)):
             raise reply_error('outcome_unknown: invalid_serve_envelope')
@@ -148,7 +149,8 @@ def transact(wire,message,output,receipts):
     if message['method']!='batch':
         wire.send(message);reply=wire.receive(message,output);validate_reply(message,reply)
         return reply
-    results=[];remaining=(8<<20)-(1<<20)-4096
+    identifier=getattr(message,'native_id',message.get('id'))
+    results=[];remaining=(8<<20)-len(load('wire_json').compact(identifier).encode('utf-8'))-4096
     original_timeout=wire.timeout;deadline=time.monotonic()+original_timeout
     try:
         for index,step in enumerate(message['params']['steps']):
@@ -156,6 +158,7 @@ def transact(wire,message,output,receipts):
             if 'command' in step:
                 child.update(method='engine.execute',params={'command':step['command'],'params':step.get('params')})
             else:child.update(method=step['method'],params=step.get('params'))
+            child=load('wire_json').batch_child(message,index,child)
             phase='submitted'
             try:
                 wire.timeout=deadline-time.monotonic()
@@ -171,7 +174,7 @@ def transact(wire,message,output,receipts):
                 if not hasattr(error,'phase'):error.phase=phase
                 error.aggregate={'stepIndex':index,'confirmedSteps':len(results),'request':child}
                 raise
-        return {'id':message.get('id'),'ok':True,'result':{'completed':len(results),'failed':0,'results':results}}
+        return {'id':identifier,'ok':True,'result':{'completed':len(results),'failed':0,'results':results}}
     finally:wire.timeout=original_timeout
 
 

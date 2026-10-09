@@ -71,3 +71,46 @@ def initialize(message):
     client=field(params,'clientInfo',dict,'$.params',required=True)
     implementation(client,'$.params.clientInfo')
     field(params,'_meta',dict,'$.params')
+
+
+def number_or_string(value,path,raw=None):
+    """固定rmcp的标识只接受字符串或有符号64位整数。"""
+    if isinstance(value,str):return
+    if type(value) is not int or not -(1<<63)<=value<(1<<63) or raw=='-0':
+        reject('invalid_mcp_request_id',path)
+
+
+def lifecycle(message,fragments):
+    """校验已知分页和通知字段；保留原生忽略字段及开放元数据。"""
+    if 'id' in message:number_or_string(message['id'],'$.id',fragments.get('$.id'))
+    params=message.get('params') or {};method=message['method']
+    field(params,'_meta',dict,'$.params')
+    if method=='tools/list':field(params,'cursor',str,'$.params')
+    if 'id' in message:return
+    if method=='notifications/cancelled':
+        token=params.get('requestId')
+        if token is not None:number_or_string(token,'$.params.requestId',fragments.get('$.params.requestId'))
+        field(params,'reason',str,'$.params')
+    elif method=='notifications/progress':
+        if 'progressToken' not in params:reject('missing_progress_field','$.params.progressToken')
+        number_or_string(params['progressToken'],'$.params.progressToken',fragments.get('$.params.progressToken'))
+        if 'progress' not in params:reject('missing_progress_field','$.params.progress')
+        if type(params['progress']) not in (int,float):reject('parameter_type','$.params.progress')
+        if params.get('total') is not None and type(params['total']) not in (int,float):reject('parameter_type','$.params.total')
+        field(params,'message',str,'$.params')
+
+
+class Lifecycle:
+    """只镜像固定服务的首请求门禁；不强制等待initialized或改写元数据。"""
+    def __init__(self):self.started=False
+    def accept(self,message):
+        if self.started:return
+        if 'id' not in message:reject('expected_initialize_request','$.method')
+        if message['method']=='ping':return
+        if message['method']=='initialize':self.started=True;return
+        meta=field(message.get('params') or {},'_meta',dict,'$.params',required=True)
+        path='$.params._meta'
+        field(meta,'io.modelcontextprotocol/protocolVersion',str,path,required=True)
+        key='io.modelcontextprotocol/clientCapabilities'
+        value=field(meta,key,dict,path,required=True);capabilities(value,member(path,key))
+        self.started=True

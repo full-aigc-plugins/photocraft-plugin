@@ -10,7 +10,7 @@ class JSONContractError(ValueError):
     def __init__(self,code,path):
         super().__init__(code+': '+path);self.fieldPath=path
 
-def loads(text):
+def loads(text,fragments=None):
     if isinstance(text,bytes):text=text.decode('utf-8')
     if not isinstance(text,str):raise TypeError('JSON text required')
     offset=0
@@ -30,6 +30,11 @@ def loads(text):
             raise JSONContractError('invalid_json_unicode',location) from None
         return value
     def value(path='$',depth=0):
+        # 仅记录调用方指定的已验证值片段，不给大数组逐元素保留副本。
+        space();start=offset;result=parse_value(path,depth)
+        if fragments is not None and path in fragments:fragments[path]=text[start:offset]
+        return result
+    def parse_value(path='$',depth=0):
         nonlocal offset
         if depth>128:raise JSONContractError('json_depth_limit',path)
         space()

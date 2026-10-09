@@ -13,7 +13,7 @@ import { observeLateArtifacts } from './late_artifacts.ts';
 import { mapArtifact } from '../protocol/artifact.ts';
 import { Review } from '../evaluation/review.ts';
 import { preflightRequest, pythonReply, reportedError, skillIdentity, runtimePlatformKey } from './preflight.ts';
-import { strictJson } from '../protocol/strict_json.ts';
+import { strictJson, decodeUtf8 } from '../protocol/strict_json.ts';
 import { OperationError } from '../protocol/operation_error.ts';
 import { checkpointSnapshot, validateCheckpointReply } from './checkpoint.ts';
 
@@ -88,12 +88,13 @@ export class Runner {
   this.ledger.update(id,epoch,current=>{current.worker={pid:process.pid,childPid:null,token:workerToken,startedAt:Date.now(),supervisor:true,launchSha256};});
   const child=spawn(process.execPath,[fileURLToPath(new URL('./worker_supervisor.ts',import.meta.url)),launchPath,launchSha256],{detached:process.platform!=='win32',stdio:['ignore','pipe','pipe'],env:{...process.env,PYTHONDONTWRITEBYTECODE:'1'}});
   this.ledger.update(id,epoch,current=>{current.worker.childPid=child.pid??null;});
-  let bytes=0;let output='';let spawnError='';
-  child.stdout.setEncoding('utf8');child.stdout.on('data',(data:string)=>{bytes+=Buffer.byteLength(data);if(bytes<=2*1024*1024)output+=data;});
+  let bytes=0;const chunks:Buffer[]=[];let spawnError='';
+  child.stdout.on('data',(data:Buffer)=>{bytes+=data.length;if(bytes<=2*1024*1024)chunks.push(data);});
   child.stderr.on('data',()=>{});child.on('error',error=>{spawnError=error.message;});
   // 独立监督进程是唯一停止责任层；父执行器只持久化截止时间触发，不发送第二轮信号。
   const timer=setInterval(()=>{const latest=this.ledger.status(id);if(Date.now()>=latest.request.budget.deadline && !latest.stopRequestedAt)this.ledger.stop(id);},100);
   const exit=await new Promise<number|null>(resolve=>child.once('close',resolve));clearInterval(timer);
+  const output=Buffer.concat(chunks);
   task=this.ledger.status(id);let receipt:any;
   try{receipt=confirmedWorkerReceipt(this.ledger.root,task);}catch{}
   const processGroupGone=!!receipt;
@@ -114,7 +115,7 @@ export class Runner {
   let reply:any;
   try {
    if(spawnError || bytes>2*1024*1024 || receipt.outputTruncated)throw new Error('worker_reply_unavailable');
-   reply=strictJson(output);
+   reply=strictJson(decodeUtf8(output));
    const failure=reportedError(reply);if(failure)throw failure;
    if(exit!==0)throw new Error('worker_failed_without_contract');
    const manifest=readJson(join(task.request.output,'manifest.json'));

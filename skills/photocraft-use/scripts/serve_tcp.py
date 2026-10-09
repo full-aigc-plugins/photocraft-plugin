@@ -76,7 +76,7 @@ def server_token(supplied,path):
 
 
 def emit(output,reply):
-    output.write((json.dumps(reply,ensure_ascii=True,allow_nan=False)+'\n').encode());output.flush()
+    output.write((json.dumps(reply,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode('utf-8'));output.flush()
 
 
 def failure(error,message,receipts,phase='validation',installed=None):

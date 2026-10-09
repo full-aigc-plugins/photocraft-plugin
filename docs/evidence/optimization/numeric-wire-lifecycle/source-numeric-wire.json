@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "transport": "stdio",
+      "status": "PASS",
+      "nativeProcesses": 1,
+      "stopped": true,
+      "guiLaunches": 0,
+      "requests": 5,
+      "batchSteps": 4,
+      "numericIdElements": 120000,
+      "largestRequestBytes": 480237,
+      "savedReopened": true,
+      "savedSha256": "4870fe1d7cfa9c68071d628fd25caf35fbdb52a2e88867dccc408ef5348e4b16"
+    },
+    {
+      "transport": "tcp",
+      "status": "PASS",
+      "clients": 2,
+      "nativeProcesses": 1,
+      "stopped": true,
+      "guiLaunches": 0,
+      "batchSteps": 4,
+      "numericIdElements": 120000,
+      "savedReopened": true,
+      "savedSha256": "4870fe1d7cfa9c68071d628fd25caf35fbdb52a2e88867dccc408ef5348e4b16"
+    }
+  ]
+}

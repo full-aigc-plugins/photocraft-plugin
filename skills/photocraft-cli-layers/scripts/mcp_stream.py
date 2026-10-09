@@ -18,7 +18,8 @@ def load(name):
 
 
 def preflight(raw):
-    message=load('strict_json').loads(raw)
+    fragments={path:None for path in ('$.id','$.params.requestId','$.params.progressToken')}
+    message=load('strict_json').loads(raw,fragments=fragments)
     if (not isinstance(message,dict) or message.get('jsonrpc')!='2.0'
             or not isinstance(message.get('method'),str)):
         raise ValueError('invalid_mcp_request: $')
@@ -26,6 +27,7 @@ def preflight(raw):
         raise ValueError('parameter_type: $.params')
     if 'id' in message and type(message['id']) not in (int,str):
         raise ValueError('invalid_mcp_request_id: $.id')
+    load('mcp_protocol').lifecycle(message,fragments)
     if message['method']=='initialize':load('mcp_protocol').initialize(message)
     if message['method']=='tools/call':
         if 'id' not in message:raise ValueError('tool_request_requires_id: $.id')
@@ -56,7 +58,9 @@ class Wire:
         except BaseException:self.stderr.close();raise
     def send(self,message):
         try:
-            self.process.stdin.write((json.dumps(message,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode('utf-8'));self.process.stdin.flush()
+            payload=getattr(message,'wire_payload',None)
+            if payload is None:payload=(json.dumps(message,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n').encode('utf-8')
+            self.process.stdin.write(payload);self.process.stdin.flush()
         except OSError as error:raise load('operation_errors').error('outcome_unknown: mcp_write_failed; no replay') from error
     def read_line(self,deadline):
         while b'\n' not in self.buffer:
@@ -112,10 +116,13 @@ class Wire:
 
 
 def emit(output,message):
-    output.write(json.dumps(message,ensure_ascii=False,allow_nan=False)+'\n');output.flush()
+    output.write(json.dumps(message,ensure_ascii=False,separators=(',',':'),allow_nan=False)+'\n');output.flush()
 
 
 def validate_reply(message,reply,expected_version=None):
+    if message['method']=='ping':
+        if not isinstance(reply['result'],dict):raise reply_error('outcome_unknown: invalid_ping_reply')
+        return
     if message['method']=='tools/list':
         result=reply['result']
         if (not isinstance(result,dict) or not isinstance(result.get('tools'),list)
@@ -169,11 +176,13 @@ def run(argv,install,source=None,output=None):
     """逐条转发并验证；install仅在首条有效请求之后执行。"""
     source=sys.stdin if source is None else source;output=sys.stdout if output is None else output
     wire=None;receipts=[];message=None;phase='validation';installed=None
+    lifecycle=load('mcp_protocol').Lifecycle()
     try:
         load('stream_launch').preflight(argv)
         for raw in source:
             if not raw.strip():continue
             message=None;phase='validation';message=preflight(raw)
+            lifecycle.accept(message)
             if wire is None:
                 installed=install();wire=Wire([installed['executable'],*argv])
             phase='submitted'

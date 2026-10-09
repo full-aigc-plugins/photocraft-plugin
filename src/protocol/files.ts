@@ -1,14 +1,19 @@
 import { createHash } from 'node:crypto';
 import { existsSync, lstatSync, readFileSync, realpathSync } from 'node:fs';
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
-import { strictJson } from './strict_json.ts';
+import { strictJson, unicodeString, decodeUtf8 } from './strict_json.ts';
 
 /** 将 JSON 内容规范化，数字必须有限，属性顺序不影响身份。 */
-export function canonical(value: any): string {
+export function canonical(value: any,path='$'): string {
   if (typeof value === 'number' && !Number.isFinite(value)) throw new Error('nonfinite_json_value');
-  if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
+  if (typeof value === 'string') unicodeString(value,path);
+  if (Array.isArray(value)) return '[' + value.map((entry,index)=>canonical(entry,path+'['+index+']')).join(',') + ']';
   if (value !== null && typeof value === 'object') {
-    return '{' + Object.keys(value).sort().map(key => JSON.stringify(key) + ':' + canonical(value[key])).join(',') + '}';
+    return '{' + Object.keys(value).sort().map(key => {
+      unicodeString(key,path,true);
+      const child=/^[A-Za-z_][A-Za-z0-9_]*$/.test(key)?path+'.'+key:path+'['+JSON.stringify(key)+']';
+      return JSON.stringify(key)+':'+canonical(value[key],child);
+    }).join(',') + '}';
   }
   const encoded = JSON.stringify(value);
   if (encoded === undefined) throw new Error('invalid_json_value');
@@ -16,7 +21,7 @@ export function canonical(value: any): string {
 }
 
 export const digest = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
-export const readJson = (path: string) => strictJson(readFileSync(safePath(path), 'utf8'));
+export const readJson = (path: string) => strictJson(decodeUtf8(readFileSync(safePath(path))));
 export const fileDigest = (path: string) => digest(readFileSync(safePath(path)));
 
 /** 拒绝任意路径段的符号链接；允许最终目标尚未创建。 */

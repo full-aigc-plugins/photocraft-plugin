@@ -1,0 +1,41 @@
+{
+  "schema": "photocraft-numeric-wire-lifecycle-candidate/v1",
+  "status": "SOURCE_PUBLISHED_PLUGIN_FIXED_PENDING",
+  "source": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.58",
+    "commit": "c45d934b54a7c4ce40f39376b8c5ed6cb848c31f",
+    "assetSha256": "f4e3dc5d3bb6ffcc92b6958327df9ae45891a8ae68dfcfee4d68f2540e9db59d",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.58",
+    "prerelease": true
+  },
+  "sourceRegression": {
+    "collected": 393,
+    "passed": 384,
+    "skipped": 9,
+    "failures": 0,
+    "errors": 0
+  },
+  "lifecycleRefusals": 247,
+  "harnessUnicodeRefusals": 25,
+  "harnessUtf8FileRefusals": 5,
+  "numericNativeCases": 2,
+  "mcpLifecycleNativeCases": 2,
+  "nativeProcessesPerHealthyStream": 1,
+  "guiLaunches": 0,
+  "redEvidence": {
+    "red-budget.log": "6b603238d3858f3b14cf01ed433bb1f9aef2868080b2735447bb56209e47f455",
+    "red.log": "1bd56f3ef4f942b335fe818e93d9bea81fd8f24ef25d64051e5febbbec4e6a60",
+    "red-tcp-budget.log": "ab82d72e4d53b6bcaf0eef36bc85b655cfc8f00796c36e3f7b23a4edbea0a4c0",
+    "red-harness-unicode.log": "7e6ac78783faee61f12b706142bfb1570ec920dc7a439f2e05ebde26c3bb2a4a",
+    "red-harness-utf8.log": "e92106d9378e51bb30dbec9cec78aff4bfda4c8ce0fe3f9dbac86b8b5734877d",
+    "red-batch.log": "1b641755069c106d5827a39412f85b05eb3d4351ea90a19dc43f6be20ff794cd",
+    "red-lifecycle.log": "9be779ec6ca8cc0721619180489c6a0c04556c20d0f717f28ef57d22b6dd8550"
+  },
+  "redFixtureCorrection": "Initial batch fillColor was not a native field; corrected resolution fixture has its own red-batch log. No fixture error is counted as a behavior failure.",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN"
+}
