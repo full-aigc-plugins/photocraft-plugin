@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.71 / source dev.56 candidate adds pre-install stream launch validation and verifies one native process for consecutive create/save/inspect requests. No GUI launches are needed for this increment. Fixed installation and full9.6 remain separate. [Contract](docs/PhotoCraft-Stream-Launch-Preflight.md).
+Published dev.71 / source dev.56:366 source tests pass,9 unchanged desktop/capability cases skipped;110 fixed Harness and48 plugin Python tests pass. All13 installed standalone skills reject208 invalid launches before install or process startup. Native MCP/serve create/save/inspect uses one process per stream. Public payload bytes match and remain unchanged; four release CI runs pass. This increment launches no GUI; full9.6 and V1 remain open,138/157 complete. [Evidence](docs/evidence/optimization/stream-launch/publication.json). [Contract](docs/PhotoCraft-Stream-Launch-Preflight.md).
 
 Published dev.70 / source dev.55:371 source tests,110 installed Harness tests (15 native),15 public-argv faults,6 MCP faults,7 serve stdio faults,7 TCP faults and a TCP delivery-loss race pass. Healthy shared-session editing, native process exit and actual30-second idle timeout are verified. Isolated Codex discovers14 skills; installed bytes unchanged; 20 serve,21 MCP/plan and12 signed desktop aggregate cases pass; four release CI runs pass. The full public input matrix keeps9.6 open;138/157 complete,19 open. [Evidence](docs/evidence/optimization/desktop-aggregate/publication.json). [Contract](docs/PhotoCraft-Desktop-Aggregate-Supervision.md).
 

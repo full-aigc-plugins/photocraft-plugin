@@ -1,0 +1,362 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "transport": "stdio",
+      "fault": "budget",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "native-error",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save",
+        "doc.select"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": null,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "c991c1401a4d16fbcaeb7d5a05a1504b2f8d301bbcdc57c15f0313a1281323e8",
+      "savedReopened": true,
+      "noLaterEdit": false,
+      "sentMethods": [
+        "doc.open",
+        "doc.save",
+        "engine.execute",
+        "doc.save",
+        "doc.inspect",
+        "doc.render",
+        "methods"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "duplicate",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "nonfinite",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "semantic",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "wrong-id",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "extra-frame",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "malformed-error",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "stdio",
+      "fault": "missing-ok",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "budget",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands",
+        "engine.commands"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "native-error",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save",
+        "doc.select"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": null,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "c991c1401a4d16fbcaeb7d5a05a1504b2f8d301bbcdc57c15f0313a1281323e8",
+      "savedReopened": true,
+      "noLaterEdit": false,
+      "sentMethods": [
+        "doc.open",
+        "doc.save",
+        "engine.execute",
+        "doc.save",
+        "doc.inspect",
+        "doc.render"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "duplicate",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "nonfinite",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "semantic",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "wrong-id",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "extra-frame",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "malformed-error",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    },
+    {
+      "transport": "tcp",
+      "fault": "missing-ok",
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "savedReopened": true,
+      "noLaterEdit": true,
+      "sentMethods": [
+        "doc.open",
+        "doc.save"
+      ]
+    }
+  ]
+}

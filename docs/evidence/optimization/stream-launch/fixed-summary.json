@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.71",
+  "skillSourceRef": "v0.1.0-dev.56",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "mcpPostSaveFaultCases": 6,
+  "mcpHealthyCases": 1,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "e14a36baf0b0a26d47738a0ff5f13d1e030c3877e4c9541bf33dbcbe7b4fb641",
+  "servePostSaveFaultCases": 7,
+  "serveHealthyCases": 1,
+  "tcpPostSaveFaultCases": 7,
+  "tcpDeliveryLossCases": 1,
+  "tcpHealthyCases": 1,
+  "serveAggregateCases": 20,
+  "mcpAggregateCases": 21,
+  "desktopAggregateCases": "NOT_RUN: no GUI launches",
+  "streamLaunchRefusals": 208,
+  "sharedProcessPerStream": 1,
+  "nativeLaunchProtocols": 2,
+  "pluginPythonTests": 48,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native,15 public argv faults,6 MCP faults,20 serve aggregate cases and21 MCP/plan aggregate cases; 208 startup refusals and2 healthy shared-process launch workflows pass; no GUI launched; complete input matrix remains open"
+}

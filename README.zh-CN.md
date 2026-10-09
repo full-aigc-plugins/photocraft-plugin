@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-dev.71／源dev.56候选增加流式启动预检，并核验连续创建／保存／检查只启动一个原生进程；本增量不启动GUI。固定安装及完整9.6单独验收。[合同](docs/PhotoCraft-Stream-Launch-Preflight.zh_CN.md)。
+dev.71／源dev.56已发布：366项源回归通过，9项未改动桌面／能力验收跳过；110项固定Harness及48项插件Python测试通过。13个实际安装独立技能的208个无效启动在安装／进程前拒绝；MCP／serve连续创建／保存／检查每个输入流只启动一个原生进程。公开载荷与安装字节一致且不变，发行4项CI通过；本增量零GUI启动。完整9.6与V1仍开放，138/157完成。[证据](docs/evidence/optimization/stream-launch/publication.json)。[合同](docs/PhotoCraft-Stream-Launch-Preflight.zh_CN.md)。
 
 dev.70／源dev.55已发布：371项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例、MCP／计划聚合21例、签名桌面聚合12例及发行4项CI通过。完整公开输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/desktop-aggregate/publication.json)。[合同](docs/PhotoCraft-Desktop-Aggregate-Supervision.zh_CN.md)。
 

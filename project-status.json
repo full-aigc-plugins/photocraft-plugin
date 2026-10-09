@@ -176,11 +176,11 @@
   "skillSourceContractEvidence": "docs/evidence/vendor-self-contained-20261008.json",
   "skillSourceContractStatus": "current fixed source and self-contained snapshot boundaries verified; complete V1 remains in progress",
   "candidateImplementation": {
-    "skillsVersion": "0.1.0-dev.55",
-    "pluginWorkingVersion": "0.1.0-dev.70",
-    "fixedSkillSourceVersion": "0.1.0-dev.55",
+    "skillsVersion": "0.1.0-dev.56",
+    "pluginWorkingVersion": "0.1.0-dev.71",
+    "fixedSkillSourceVersion": "0.1.0-dev.56",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_DESKTOP_AGGREGATE",
+    "publication": "PARTIAL_PUBLISHED_STREAM_LAUNCH",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -188,8 +188,8 @@
       "open": 19,
       "newlyCompleted": 76
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/desktop-aggregate/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/desktop-aggregate/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/stream-launch/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/stream-launch/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -564,5 +564,14 @@
     "remainingTaskIds": [
       "9.6"
     ]
+  },
+  "streamLaunchPreflight": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/stream-launch/publication.json",
+    "fixedStartupRefusals": 208,
+    "nativeProcessesPerStream": 1,
+    "guiLaunchesThisIncrement": 0,
+    "closedTaskIds": [],
+    "fullInputMatrix": "OPEN"
   }
 }
