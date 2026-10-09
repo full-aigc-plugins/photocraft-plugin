@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "skill": "photocraft-cli",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-adjustments",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-export",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-filters",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-layers",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-masks",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-project",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-resize",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-retouch",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-selection",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-setup",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-cli-text",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    },
+    {
+      "skill": "photocraft-use",
+      "result": "PASS",
+      "independentCopy": true,
+      "noOutput": true,
+      "noRuntimeInstallation": true,
+      "skillBytesUnchanged": true,
+      "taskSessionSha256": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df"
+    }
+  ],
+  "scope": "13 independent single-skill public JSONL entry preflight refusals; not native or model routing acceptance"
+}

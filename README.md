@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+Development candidate dev.75 / source dev.59 adds a public continuous task session to all 13 skills. Five stages reuse one owned native process; the desktop candidate launches once. Source regression: 405 pass, 9 existing skips. Candidate execution code matches the published source. Full V1 and 19 tasks remain open. [Evidence](docs/evidence/optimization/task-session/candidate.json). [Usage](docs/PhotoCraft-Task-Session.md).
+
 Published dev.74 / source dev.58:The unchanged source retains 384 passing tests and 9 desktop/capability skips; 118 installed Harness tests (16 native) and 48 plugin Python tests pass. All 13 installed skills reject 247 invalid MCP lifecycle inputs before installation. Numeric stdio/TCP and pre-init ping modes save/reopen in shared processes. Five Harness actions reject 25 surrogate and 5 invalid-byte inputs; actual native saved output with a malformed UTF-8 outer reply remains unknown, preserved and unreplayed. Installed bytes match the public ZIP and remain unchanged; four release CI runs pass. No GUI launches; task 9.6 and full V1 stay open, 138/157 complete. [Evidence](docs/evidence/optimization/numeric-wire-lifecycle/publication.json). [Contract](docs/PhotoCraft-Numeric-Wire-Lifecycle.md).
 
 Published dev.73 / source dev.58 passed public macOS fixed checks but failed two Linux implementation CI runs; dev.74 corrects the test interpreter and exit-observation assertions. [Retained failure evidence](docs/evidence/optimization/ci-portability/previous-dev73.json).
@@ -84,7 +86,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.74`; skill source: `0.1.0-dev.58`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
+Current plugin: `0.1.0-dev.75`; skill source: `0.1.0-dev.59`; 13 independent skills plus the plugin-local `photocraft-harness` skill.
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -179,9 +181,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.74 |
+| Metadata version | 0.1.0-dev.75 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.58 |
+| Skills source | photocraft-skills / 0.1.0-dev.59 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

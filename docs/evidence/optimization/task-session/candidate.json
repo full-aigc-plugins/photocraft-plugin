@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "sourceRelease": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.59",
+    "commit": "395cb5aee4fbc8025ab6f3049f9e101bf492e7cd",
+    "assetSha256": "7d5e20feba9a661112e344b4ce34493066874dbff71725a3949b0ecea588cc5b",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.59",
+    "prerelease": true
+  },
+  "nativeCandidate": {
+    "headless": "source-task-session.json",
+    "desktop": "native-desktop.json",
+    "identicalPublishedExecutionCode": true,
+    "fixedReleaseDesktopRerun": false
+  },
+  "scope": "Continuous task session candidate evidence; full V1, shared mutable ownership, model routing and creative acceptance remain open."
+}

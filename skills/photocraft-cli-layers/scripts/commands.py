@@ -307,7 +307,8 @@ def runtime_rows(session, params=None):
     return rows
 
 def execute(plan, output, runtime_home=None, mode="headless", connect=None, token_file=None,
-            installer=None, session_factory=None, inputs=None):
+            installer=None, session_factory=None, inputs=None, session_root=None,
+            session_identity=None, expected_capabilities=None):
     inputs = inputs or {}
     if not isinstance(inputs, dict) or any(not isinstance(k, str) or not re.fullmatch(r"[a-zA-Z][\w-]*", k) or k == "output" for k in inputs):
         raise ValueError("invalid_input_name")
@@ -325,8 +326,16 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
     if not output.parent.is_dir():
         raise ValueError("output_parent_missing")
     output = output.absolute()
+    # 连续任务的原生沙箱根固定不变；阶段仅在自己的子目录记录和交付。
+    backend_root = output
+    if session_root is not None:
+        backend_root = Path(session_root).absolute()
+        if (not backend_root.is_dir() or backend_root.is_symlink()
+                or backend_root.resolve() != backend_root
+                or output.resolve() != output or not output.is_relative_to(backend_root)):
+            raise ValueError('invalid_session_root')
     # 验证连接参数在安装和创建目录之前完成；不偷偷回退到另一会话。
-    backend_argv("native", output, mode, connect, token_file)
+    backend_argv("native", backend_root, mode, connect, token_file)
     if mode=='bridge':
         pinned=reply_json((ROOT/'references/desktop-command-snapshot.json').read_text())
         identifiers={row['id'] for row in pinned['commands']}
@@ -348,7 +357,7 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                                str(Path.home() / ".local/share/craft-runtimes")))
         receipt["runtimeSha256"] = installed["binarySha256"]
         session_factory = session_factory or load("mcp_session").Session
-        bindings = {"output": "" if DOMAIN == "photocraft" else str(output)}
+        bindings = {"output": (str(output.relative_to(backend_root)) if session_root is not None else "") if DOMAIN == "photocraft" else str(output)}
         receipt["inputs"] = {}
         if sources:
             (output / "inputs").mkdir()
@@ -362,9 +371,10 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
             if copied != digest or after != digest:
                 raise ValueError("input_changed: " + name)
             relative = str(target.relative_to(output))
-            bindings[name] = {"path": relative if DOMAIN == "photocraft" else str(target), "sha256": digest}
+            native_relative = str(target.relative_to(backend_root)) if session_root is not None else relative
+            bindings[name] = {"path": native_relative if DOMAIN == "photocraft" else str(target), "sha256": digest}
             receipt["inputs"][name] = {"path": relative, "sha256": digest}
-        with session_factory(backend_argv(installed["executable"], output, mode, connect, token_file)) as session:
+        with session_factory(backend_argv(installed["executable"], backend_root, mode, connect, token_file)) as session:
             discovery = session.request("tools/list", {})
             if (not isinstance(discovery, dict) or not isinstance(discovery.get('tools'), list)
                     or any(not isinstance(tool, dict) or not isinstance(tool.get('name'), str)
@@ -383,7 +393,9 @@ def execute(plan, output, runtime_home=None, mode="headless", connect=None, toke
                 raise load("operation_errors").error("capability_missing: native_registry_drift")
             receipt["registeredCommands"] = len(current)
             gate=load('capabilities').Gate(session,sys.modules.get(__name__) or load('commands'),installed['binarySha256'],mode,runtime_identity=installed.get('runtimeIdentity'))
+            if session_identity is not None:gate.session_id=session_identity
             receipt['capabilitySnapshot']=gate.check();receipt['capabilityChecks']=gate.checks
+            if expected_capabilities is not None:load('capabilities').ensure(expected_capabilities,receipt['capabilitySnapshot'])
             for index, step in enumerate(plan["operations"]):
                 params = resolve(step["params"], bindings)
                 if 'command' in step:validate_parameters(step['command'],params,'$.operations['+str(index)+'].params',True)

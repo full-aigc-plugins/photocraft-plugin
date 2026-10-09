@@ -92,3 +92,7 @@ PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知�
 平面导出需要明确颜色／ICC／透明要求或保留外部生成素材来源时，读取本技能 [平面导出与来源合同](references/flat-export.md)。
 
 运行时／后端身份与能力漂移问题，读取本技能 [能力快照与拒绝合同](references/capabilities.md)。
+
+## 连续任务与实例复用
+
+同一用户任务连续检查、编辑、保存、重开和返工时，使用本技能 [任务级会话](references/task-session.md) 的 `scripts/task_session.py`，保持同一前台进程及输入句柄。失败／unknown 后先核对原回执和工程，不启动替代实例重放。

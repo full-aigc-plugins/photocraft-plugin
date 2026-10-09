@@ -1,5 +1,7 @@
 # PhotoCraft Agent Plugin
 
+开发候选 dev.75／源 dev.59 为全部 13 个技能增加公开连续任务会话。五个阶段复用同一所属原生进程，桌面候选仅启动一次。源回归 405 项通过、9 项既有跳过；候选执行代码与已发布技能源一致。完整 V1 及 19 项任务仍开放。[证据](docs/evidence/optimization/task-session/candidate.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
+
 dev.74／源dev.58已发布：技能源未变，复用384项通过及9项桌面／能力跳过的源回归证据；118项安装Harness（16原生）及48项插件Python通过。13个实际安装技能在安装前拒绝247个无效MCP生命周期输入；数值stdio／TCP和初始化前ping模式单进程保存／重开。5个Harness动作拒绝25个代理项及5个坏字节输入；真实原生保存后外层坏UTF-8回复保持unknown、工程保全且不重放。安装字节与公开ZIP一致且不变，发行4项CI成功。本轮零GUI启动，完整9.6及V1仍开放，138/157完成。[证据](docs/evidence/optimization/numeric-wire-lifecycle/publication.json)。[合同](docs/PhotoCraft-Numeric-Wire-Lifecycle.zh_CN.md)。
 
 dev.73／源dev.58公开macOS固定安装通过，但两项Linux实施CI失败；dev.74修正测试解释器与退出观察断言。[保留失败记录](docs/evidence/optimization/ci-portability/previous-dev73.json)。
@@ -84,7 +86,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.74`；技能源：`0.1.0-dev.58`；13 个独立技能及插件本地 `photocraft-harness` 技能。
+当前插件：`0.1.0-dev.75`；技能源：`0.1.0-dev.59`；13 个独立技能及插件本地 `photocraft-harness` 技能。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -179,9 +181,9 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.74 |
+| Metadata version | 0.1.0-dev.75 |
 | Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.58 |
+| Skills source | photocraft-skills / 0.1.0-dev.59 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
 | Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
 | License | Apache-2.0 (original repository content) |

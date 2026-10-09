@@ -55,3 +55,7 @@ PSD 导出按固定技能的必要特性门禁执行；受限返工继承 `psdPo
 仅在用户要求升级、回退或核对运行时组合时使用`runtime-status`／`runtime-upgrade`／`runtime-rollback`，不因普通创作任务自动升级。三个入口使用既有`--state-dir`，切换另外提供`--request`提案。先核对代次、来源摘要、后端与stateSchema；任务和原执行者未排空时不得删除记录或重置epoch规避。完整合同在插件根目录`docs/PhotoCraft-Runtime-Transition.zh_CN.md`。
 
 状态查询不安装、不编辑。切换保留旧版本及状态备份，分别核验实际版本、命令schema和原生工程，再原子更新组合。当前仅支持ledger schema1，不迁移未知状态；bridge选择不能静默派发headless任务，可变GUI编辑仍拒绝。不同二进制版本及完整升级验收保持开放，同二进制来源切换证据不能冒充不同版本通过。
+
+## 连续操作的实例复用
+
+独立连续原生命令任务交给 **`photocraft-cli`** 技能的任务级会话入口，在同一进程句柄逐阶段操作，不为检查、保存、重开和返工重复启动桌面。安装：`npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。已有 Harness 任务仍使用原账本核对、授权和累计预算；不要为了复用实例另开任务或绕过 unknown／取消门禁。

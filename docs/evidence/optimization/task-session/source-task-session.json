@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "mode": "headless",
+  "platform": "darwin",
+  "sessionsStarted": 1,
+  "stages": 5,
+  "singleProcessIdentity": true,
+  "ownedProcessesStopped": true,
+  "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "desktopBinarySha256": null,
+  "desktopLaunches": 0,
+  "firstProjectSha256": "d2dafb18267bead39f70c733052e07f92e2a2183af2a822594a5ddbd9cf72865",
+  "secondProjectSha256": "2341929553650f5407718e722511158a4134dfa73dc4add64a43c87c1c186436",
+  "priorProjectsUnchanged": true,
+  "sourceCode": {
+    "task_session.py": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df",
+    "commands.py": "b4906ceb628f45c10ae574f5d669e27e94c31060d16cba0a84bf4d47cd0e5fec",
+    "desktop_session.py": "f2fe1a025afc0900d23d106466e12c0a42ea04a50d79932d9c550e3ce62fb70f",
+    "mcp_session.py": "5881fecd296fea62d56ea887d8889d7b466d0a0fb8fd4dda5b773d86281fe6ce"
+  },
+  "scope": "actual owned native five-stage create/revise/close/reopen/save; no shared mutable ownership, creative, full command or host model acceptance"
+}

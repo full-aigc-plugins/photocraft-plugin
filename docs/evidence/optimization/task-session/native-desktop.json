@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "mode": "bridge",
+  "platform": "darwin",
+  "sessionsStarted": 1,
+  "stages": 5,
+  "singleProcessIdentity": true,
+  "ownedProcessesStopped": true,
+  "cliBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "desktopBinarySha256": "8a4ea2ec9164b818af193b35e3dc59ab51da9ca92165565b88eab729b32baa31",
+  "desktopLaunches": 1,
+  "firstProjectSha256": "471096917ba2a93c49fd906a3997e987e58f6fa58fd136386f26271860197528",
+  "secondProjectSha256": "fcf13b1d6300fea7f6e9232a63f840e9967f891b30376ed3c6b30e51d8165a01",
+  "priorProjectsUnchanged": true,
+  "sourceCode": {
+    "task_session.py": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df",
+    "commands.py": "b4906ceb628f45c10ae574f5d669e27e94c31060d16cba0a84bf4d47cd0e5fec",
+    "desktop_session.py": "f2fe1a025afc0900d23d106466e12c0a42ea04a50d79932d9c550e3ce62fb70f",
+    "mcp_session.py": "5881fecd296fea62d56ea887d8889d7b466d0a0fb8fd4dda5b773d86281fe6ce"
+  },
+  "scope": "actual owned native five-stage create/revise/close/reopen/save; no shared mutable ownership, creative, full command or host model acceptance"
+}
