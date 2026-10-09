@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "sourceUnchanged": true,
+  "checks": [
+    {
+      "name": "python",
+      "status": "PASS",
+      "logSha256": "f05e2746c7b84734fa227e56d5a5ed10fca94c83fde36ed6f6570c8ba1cc7143"
+    },
+    {
+      "name": "docs",
+      "status": "PASS",
+      "logSha256": "2d438de7ae07c847134440bfb762cae49c45f67e4cdefdd4464bc453bfb90aff"
+    },
+    {
+      "name": "openspec",
+      "status": "PASS",
+      "logSha256": "8d58759f342d25400160f61a373806715be2f2c7b343086ce035ed3141c3d849"
+    },
+    {
+      "name": "vendor",
+      "status": "PASS",
+      "logSha256": "c9d21fcb5b0fce52e8342d00a9001451670eb8de16bde9c6a1fe701cf8811e3e"
+    },
+    {
+      "name": "combination",
+      "status": "PASS",
+      "logSha256": "219cec88404d7bcf271e4b35da42127701a7f52ec2ebd61d32369c0ca2bb0c67"
+    },
+    {
+      "name": "whitespace",
+      "status": "PASS",
+      "logSha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "name": "native-harness",
+      "status": "PASS",
+      "counts": {
+        "tests": 118,
+        "pass": 118,
+        "fail": 0,
+        "skipped": 0
+      },
+      "logSha256": "0cf105cf4c2358039e496323aeea4dbacbb869156f4747ccf2e4ca69880e4401"
+    }
+  ]
+}

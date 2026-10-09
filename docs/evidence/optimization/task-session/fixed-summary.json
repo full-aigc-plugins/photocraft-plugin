@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.75",
+  "skillSourceRef": "v0.1.0-dev.59",
+  "harness": {
+    "tests": 118,
+    "pass": 118,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 16,
+  "pluginPythonTests": 48,
+  "taskSessionUnits": 20,
+  "taskSessionPublicJsonl": {
+    "status": "PASS",
+    "stages": 5,
+    "sessionsStarted": 1,
+    "singleProcessIdentity": true,
+    "ownedProcessesStopped": true,
+    "priorProjectsUnchanged": true,
+    "capabilitySnapshotStable": true,
+    "desktopLaunches": 0,
+    "firstProjectSha256": "d8a4c63aa5e4a12db6dbe6f8f4504f94517cb6c208c1611fc8103f1d192b9100",
+    "secondProjectSha256": "471b71ed729a1e682343efc9110d6244734cfbb1f0b5bb4a1d05581bb0b2e57d",
+    "sourceCode": {
+      "task_session.py": "3b529cc530a670f6d94fe13b8faed52034bba131c44264a00dac48921fcab4df",
+      "commands.py": "b4906ceb628f45c10ae574f5d669e27e94c31060d16cba0a84bf4d47cd0e5fec",
+      "mcp_session.py": "5881fecd296fea62d56ea887d8889d7b466d0a0fb8fd4dda5b773d86281fe6ce",
+      "desktop_session.py": "f2fe1a025afc0900d23d106466e12c0a42ea04a50d79932d9c550e3ce62fb70f"
+    },
+    "scope": "actual isolated installed public JSONL entry, one headless instance across five stages; full V1 remains open"
+  },
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "d846829970016c759f40f7fdde6dd7ef3a26188ca9e1d2d41fc6baf7f201306c",
+  "fixedDesktopRerun": false,
+  "desktopCandidateSourceCodeMatchesPublished": true,
+  "closedTaskIds": [],
+  "fullV1": "OPEN"
+}

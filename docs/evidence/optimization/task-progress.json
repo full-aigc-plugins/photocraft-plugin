@@ -210,7 +210,7 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 384,
+    "skills": 405,
     "pluginTypeScript": 118,
     "pluginPython": 48,
     "nativeHarness": 16,
@@ -224,12 +224,14 @@
     "mcpAggregateCases": 21,
     "serveAggregateCases": 20,
     "desktopAggregateCases": "NOT_RUN this increment; prior dev.70 evidence retained",
-    "collectedSkillsTests": 393,
+    "collectedSkillsTests": 414,
     "streamLaunchRefusals": 208,
     "nativeProcessesPerStream": 1,
     "lifecycleRefusals": 247,
     "harnessUnicodeRefusals": 25,
-    "harnessUtf8FileRefusals": 5
+    "harnessUtf8FileRefusals": 5,
+    "continuousTaskStages": 5,
+    "nativeProcessesPerTask": 1
   },
   "commandAcceptanceIndex": {
     "file": "command-acceptance-index.json",
@@ -307,7 +309,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "numeric-wire-lifecycle/publication.json",
+  "latestRegressionEvidence": "task-session/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -453,5 +455,15 @@
     "guiLaunchesThisIncrement": 0,
     "closedTaskIds": [],
     "fullInputMatrix": "OPEN"
+  },
+  "continuousTaskSession": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/task-session/publication.json",
+    "publicJsonlStages": 5,
+    "nativeProcessesPerTask": 1,
+    "candidateDesktopLaunches": 1,
+    "fixedDesktopRerun": false,
+    "closedTaskIds": [],
+    "fullV1": "OPEN"
   }
 }

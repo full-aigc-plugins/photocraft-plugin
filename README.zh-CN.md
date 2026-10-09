@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-开发候选 dev.75／源 dev.59 为全部 13 个技能增加公开连续任务会话。五个阶段复用同一所属原生进程，桌面候选仅启动一次。源回归 405 项通过、9 项既有跳过；候选执行代码与已发布技能源一致。完整 V1 及 19 项任务仍开放。[证据](docs/evidence/optimization/task-session/candidate.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
+dev.75／源dev.59已发布：全部13技能提供连续任务会话。实际隔离安装通过一个原生进程完成五阶段公开JSONL操作，保全旧工程并仅关闭自有进程。源405项通过（9项既有跳过），固定Harness118项（16原生）、插件Python48项、会话单测20项及13技能独立预检通过。桌面候选仅启动一次，执行代码与发行一致；固定桌面未重复运行。发行4项CI成功。完整V1及19项任务仍开放。[证据](docs/evidence/optimization/task-session/publication.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
 
 dev.74／源dev.58已发布：技能源未变，复用384项通过及9项桌面／能力跳过的源回归证据；118项安装Harness（16原生）及48项插件Python通过。13个实际安装技能在安装前拒绝247个无效MCP生命周期输入；数值stdio／TCP和初始化前ping模式单进程保存／重开。5个Harness动作拒绝25个代理项及5个坏字节输入；真实原生保存后外层坏UTF-8回复保持unknown、工程保全且不重放。安装字节与公开ZIP一致且不变，发行4项CI成功。本轮零GUI启动，完整9.6及V1仍开放，138/157完成。[证据](docs/evidence/optimization/numeric-wire-lifecycle/publication.json)。[合同](docs/PhotoCraft-Numeric-Wire-Lifecycle.zh_CN.md)。
 
