@@ -1,0 +1,86 @@
+{
+  "schema": "photocraft-supervised-source-regression/v1",
+  "status": "PASS",
+  "startedAt": "2026-10-09T01:49:50.803382+00:00",
+  "finishedAt": "2026-10-09T01:55:24.628212+00:00",
+  "tests": {
+    "tests": 375,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 9
+  },
+  "sourceUnchanged": true,
+  "runtimeBinarySha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "layers": {
+    "currentLockedRuntimeRegression": true,
+    "candidateSupervisedRuntime": true,
+    "desktop": "NOT_RUN: unchanged GUI paths; avoid unnecessary launches",
+    "fixedInstallation": "NOT_RUN",
+    "publicCliSupervisorIntegration": [
+      "run",
+      "batch",
+      "convert",
+      "droplet"
+    ],
+    "candidateBatch": true,
+    "candidateConvert": true,
+    "candidateDroplet": true,
+    "runtimeCapabilityGate": true,
+    "integerLiteralOverflowGate": true,
+    "streaming": [
+      "mcp-stdio",
+      "serve-stdio",
+      "serve-tcp"
+    ],
+    "nestedAggregateCommands": true,
+    "allCommands": "NOT_RUN"
+  },
+  "sourceFingerprintSha256": "f59914d0dc12c5780a68e04aca15595313dd13ae1ed4ab8c148c4c09f4daf729",
+  "skippedTests": [
+    {
+      "class": "tests.test_advanced_desktop_first_use.AdvancedDesktopFirstUse",
+      "name": "test_owned_gui_advanced_plan_persists_objects_and_renders",
+      "reason": "native advanced desktop is opt-in"
+    },
+    {
+      "class": "tests.test_capability_first_use.CapabilityFirstUse",
+      "name": "test_both_backends_bind_identity_and_stop_drift_before_next_edit",
+      "reason": "explicit native+desktop capability opt-in"
+    },
+    {
+      "class": "tests.test_desktop_aggregate.NativeDesktopAggregate",
+      "name": "test_gui_batch_deadline_reaches_owned_stdio_request",
+      "reason": "explicit signed GUI aggregate opt-in"
+    },
+    {
+      "class": "tests.test_desktop_aggregate.NativeDesktopAggregate",
+      "name": "test_gui_reply_faults_stop_later_edit",
+      "reason": "explicit signed GUI aggregate opt-in"
+    },
+    {
+      "class": "tests.test_desktop_aggregate.NativeDesktopAggregate",
+      "name": "test_gui_response_budget_stops_before_later_edit",
+      "reason": "explicit signed GUI aggregate opt-in"
+    },
+    {
+      "class": "tests.test_desktop_aggregate.NativeDesktopAggregate",
+      "name": "test_healthy_gui_batch_alias_save_reopen_and_notification",
+      "reason": "explicit signed GUI aggregate opt-in"
+    },
+    {
+      "class": "tests.test_desktop_aggregate.NativeDesktopAggregate",
+      "name": "test_native_gui_error_stops_explicit_continue",
+      "reason": "explicit signed GUI aggregate opt-in"
+    },
+    {
+      "class": "tests.test_desktop_install.DesktopPublicFirstUse",
+      "name": "test_independent_cold_install_reuse_and_mutation_rejection",
+      "reason": "explicit public DMG install opt-in"
+    },
+    {
+      "class": "tests.test_desktop_session.OwnedDesktopPublicFirstUse",
+      "name": "test_single_skill_empty_cache_install_launch_save_reopen_and_cleanup",
+      "reason": "native desktop first use is opt-in"
+    }
+  ]
+}

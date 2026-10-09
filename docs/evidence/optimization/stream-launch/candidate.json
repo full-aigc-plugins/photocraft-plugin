@@ -1,0 +1,39 @@
+{
+  "schema": "photocraft-stream-launch-candidate/v1",
+  "status": "CANDIDATE_NATIVE_PASS_FIXED_PENDING",
+  "requirement": "PC-TX-005",
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "publicStartupRefusals": 208,
+  "independentSkills": 13,
+  "red": {
+    "invalidRootInstallerCalls": 1,
+    "invalidConfigurationConsumedInput": true,
+    "targetBehaviorMissing": true
+  },
+  "currentScope": [
+    "mcp-stdio active launch configuration",
+    "serve-stdio active launch configuration",
+    "native option compatibility",
+    "one process per healthy stream"
+  ],
+  "desktop": "NOT_RUN: unchanged desktop paths; no GUI launches",
+  "desktopReuseAcrossInvocations": "NOT_IMPLEMENTED",
+  "fullV1": "NOT_RUN",
+  "sourceTests": {
+    "tests": 375,
+    "passed": 366,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 9
+  },
+  "harnessTests": {
+    "tests": 110,
+    "passed": 110,
+    "failures": 0,
+    "skipped": 0
+  },
+  "redSourceCommit": "a9194ac748c44a952ed5b6b00a79240c5cd3a4e0"
+}

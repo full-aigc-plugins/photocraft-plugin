@@ -1,0 +1,31 @@
+{
+  "schema": "photocraft-entry-coverage-audit/v1",
+  "requirement": "PC-TX-005",
+  "taskId": "9.6",
+  "status": "INCOMPLETE",
+  "verifiedThisIncrement": [
+    "active mcp/serve stdio launch settings before input/install",
+    "13 standalone skill entrypoints:208 refused launches",
+    "native argv compatibility",
+    "create/save/inspect in one child per protocol"
+  ],
+  "nextAuditCandidates": [
+    {
+      "area": "MCP lifecycle metadata",
+      "evidence": "A native initialize request with empty params returns a protocol metadata error; current stream preflight accepted that request. Determine required pinned protocol fields before changing compatibility.",
+      "status": "NEEDS_STATIC_PREFLIGHT_AUDIT"
+    },
+    {
+      "area": "Encoded wire request size",
+      "evidence": "Wire.send uses JSON serialization; raw input limit and serialized size may differ for Unicode.",
+      "status": "NEEDS_BOUNDARY_REPRODUCTION"
+    },
+    {
+      "area": "Complete public entry matrix",
+      "evidence": "All editing entry families need explicit positive/negative input coverage mapping; current publication covers bounded subsets.",
+      "status": "OPEN"
+    }
+  ],
+  "desktopReuseAcrossInvocations": "NOT_IMPLEMENTED",
+  "closedTaskIds": []
+}

@@ -180,6 +180,7 @@ def run(argv,install,source=None,output=None):
     source=sys.stdin if source is None else source;output=sys.stdout if output is None else output
     wire=None;receipts=[];message=None;phase='validation';installed=None
     try:
+        load('stream_launch').preflight(argv)
         for raw in source:
             if not raw.strip():continue
             message=None;phase='validation';message=preflight(raw)

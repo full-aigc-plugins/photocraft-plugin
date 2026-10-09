@@ -1,5 +1,9 @@
 # Version-bound release records
 
+## 0.1.0-dev.71
+
+Pins source dev.56. Public MCP and stdio serve launch configuration is validated before input and installation; native argument compatibility is preserved. Healthy streams reuse one native process. GUI lifecycle across separate invocations and full9.6 remain open.
+
 These records were moved verbatim from the README preface. They describe their own versions and are not the current installation contract.
 
 Fixed PhotoCraft plugin dev.32/source dev.30 passes independent cold installation for every domain skill,7 installed guard tests and1 actual cold native create/reopen/revise/export case. Across the three updated domains:41 distinct empty caches,21 guards and3 native cases pass; all64 installed skill hashes remain unchanged. Art bundle upgrade and full V1 remain separate. [Evidence](docs/evidence/craft-three-domain-output-guards-fixed-first-use-20261007.json).
