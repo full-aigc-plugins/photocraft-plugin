@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "mode": "legacy",
+      "status": "PASS",
+      "nativeProcesses": 1,
+      "savedReopened": true,
+      "requests": 9,
+      "replies": 7,
+      "stopped": true
+    },
+    {
+      "mode": "metadata",
+      "status": "PASS",
+      "nativeProcesses": 1,
+      "savedReopened": true,
+      "requests": 8,
+      "replies": 6,
+      "stopped": true
+    }
+  ],
+  "guiLaunches": 0
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "tag": "v0.1.0-dev.58",
+  "commit": "c45d934b54a7c4ce40f39376b8c5ed6cb848c31f",
+  "publicArchiveSha256": "f4e3dc5d3bb6ffcc92b6958327df9ae45891a8ae68dfcfee4d68f2540e9db59d",
+  "allPublishedFilesMatch": true,
+  "scope": "unchanged published source driver reuse; not a rerun of full source regression"
+}

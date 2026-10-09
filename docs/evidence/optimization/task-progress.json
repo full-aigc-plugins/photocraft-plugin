@@ -210,10 +210,10 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 374,
-    "pluginTypeScript": 110,
+    "skills": 384,
+    "pluginTypeScript": 118,
     "pluginPython": 48,
-    "nativeHarness": 15,
+    "nativeHarness": 16,
     "skipped": 9,
     "sourceUnchanged": true,
     "mcpNativeFaultCases": 6,
@@ -224,9 +224,12 @@
     "mcpAggregateCases": 21,
     "serveAggregateCases": 20,
     "desktopAggregateCases": "NOT_RUN this increment; prior dev.70 evidence retained",
-    "collectedSkillsTests": 383,
+    "collectedSkillsTests": 393,
     "streamLaunchRefusals": 208,
-    "nativeProcessesPerStream": 1
+    "nativeProcessesPerStream": 1,
+    "lifecycleRefusals": 247,
+    "harnessUnicodeRefusals": 25,
+    "harnessUtf8FileRefusals": 5
   },
   "commandAcceptanceIndex": {
     "file": "command-acceptance-index.json",
@@ -304,7 +307,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "wire-boundary/publication.json",
+  "latestRegressionEvidence": "numeric-wire-lifecycle/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -435,6 +438,17 @@
     "fixedUnicodeRefusals": 65,
     "fixedWireNativeCases": 3,
     "fixedStartupRefusals": 208,
+    "nativeProcessesPerStream": 1,
+    "guiLaunchesThisIncrement": 0,
+    "closedTaskIds": [],
+    "fullInputMatrix": "OPEN"
+  },
+  "numericWireLifecycle": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/numeric-wire-lifecycle/publication.json",
+    "lifecycleRefusals": 247,
+    "harnessUnicodeRefusals": 25,
+    "harnessUtf8FileRefusals": 5,
     "nativeProcessesPerStream": 1,
     "guiLaunchesThisIncrement": 0,
     "closedTaskIds": [],

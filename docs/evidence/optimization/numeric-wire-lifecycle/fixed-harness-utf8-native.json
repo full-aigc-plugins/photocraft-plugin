@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "nativeSavedReopened": true,
+  "projectSha256": "7c3d32ee368c08dc85bbd7cb7f262c293968975cfcf4e7e57d4d4117a45988e5",
+  "rawOutputSha256": "8cd351c12a9b6bb66b06c139cc321be265621a3ecf0d76f43792c436db001eb8",
+  "outcome": "unknown",
+  "technical": "NOT_RUN",
+  "workerStopped": true,
+  "replayAllowed": false,
+  "guiLaunches": 0
+}

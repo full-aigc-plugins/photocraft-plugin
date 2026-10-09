@@ -1,0 +1,104 @@
+{
+  "schema": "photocraft-numeric-wire-lifecycle-publication/v1",
+  "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+  "plugin": {
+    "repository": "full-aigc-plugins/photocraft-plugin",
+    "tag": "v0.1.0-dev.74",
+    "commit": "952c11987606974c54db2c675fc1365625354ac4",
+    "assetSha256": "d1c1c20b653de04731cca5f677015e6eb2e714fd97b7f1450e5c8c1a8810bdac",
+    "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.74",
+    "prerelease": true
+  },
+  "skills": {
+    "repository": "full-aigc-skills/photocraft-skills",
+    "tag": "v0.1.0-dev.58",
+    "commit": "c45d934b54a7c4ce40f39376b8c5ed6cb848c31f",
+    "assetSha256": "f4e3dc5d3bb6ffcc92b6958327df9ae45891a8ae68dfcfee4d68f2540e9db59d",
+    "url": "https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.58",
+    "prerelease": true
+  },
+  "runtimeVersion": "0.2.0-craft.5",
+  "sourceTests": {
+    "collected": 393,
+    "passed": 384,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 9
+  },
+  "harnessTests": 118,
+  "nativeHarnessTests": 16,
+  "pluginPythonTests": 48,
+  "fixedLifecycleRefusals": 247,
+  "fixedHarnessUnicodeRefusals": 25,
+  "fixedHarnessUtf8FileRefusals": 5,
+  "fixedNumericNativeCases": 2,
+  "fixedLifecycleNativeCases": 2,
+  "fixedHarnessUtf8NativeCases": 1,
+  "fixedInitializationRefusals": 429,
+  "fixedUnicodeRefusals": 65,
+  "fixedWireNativeCases": 3,
+  "fixedStartupRefusals": 208,
+  "nativeProcessesPerHealthyStream": 1,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "guiLaunchesThisIncrement": 0,
+  "desktopThisIncrement": "NOT_RUN",
+  "desktopReuseAcrossInvocations": "NOT_IMPLEMENTED_BY_THIS_INCREMENT",
+  "previousDesktopEvidence": "../desktop-aggregate/publication.json",
+  "completeInputMatrix": "OPEN",
+  "remainingAudit": [
+    "cross-language numeric precision",
+    "other public input and reply contracts",
+    "current desktop acceptance and instance reuse"
+  ],
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "taskCounts": {
+    "total": 157,
+    "completed": 138,
+    "open": 19
+  },
+  "fullV1": "NOT_RUN",
+  "sourceRegressionReuse": {
+    "sourceRef": "v0.1.0-dev.58",
+    "unchangedPublishedFilesVerified": true,
+    "fullSuiteRerunThisIncrement": false,
+    "previousSourceResult": "384 passed, 9 unchanged desktop/capability skips; 393 collected",
+    "identityEvidence": "source-driver-identity.json"
+  },
+  "previousReleaseCiFailures": {
+    "pluginVersion": "0.1.0-dev.73",
+    "evidence": "../ci-portability/previous-dev73.json",
+    "implementationRuns": [
+      37877397478,
+      37877393456
+    ],
+    "resolvedBy": "portable executed Python fixtures and receipt-based supervisor observation assertions"
+  },
+  "files": {
+    "release-ci.json": "e7943c31d682b72d6e771a339549aa90eda9900ff919ebdb1d2b495752eb3d2f",
+    "source-driver-identity.json": "c151a299656def67754b11fc9d2790cd08979d70bf55551667b524ba6a3dac58",
+    "fixed-driver-resume.json": "048964b08230237657bb7f0a98c0afcea1b3dff8ea5f27c06d536beffdaa502b",
+    "fixed-harness-utf8-native.json": "7d5d00cd1d214d032874ebefc5cae85aa1aeffa7e39e94a8e2dfcf07a4f272f9",
+    "fixed-public-supervision.json": "dac73c31e5da5ab52dcf28dad9705fbe5f8239678c4ec97d0a51b09cea02175a",
+    "source-validation.json": "8aad3a30d56722d0c1d6e4ff3ea6a50ad7fa5f2023995610f58b2344cb8a2349",
+    "candidate.json": "cba2ac42301acd8c8570f345e407e28851e86d80dddf3386a9a16af6d958bb38",
+    "fixed-serve-stream.json": "606172b4d6f682e4f6546340eefb340816341de7e8ded40955bb7bd0a2df4c31",
+    "fixed-serve-tcp.json": "c1d8415da9604e9274af645544a3858746fada37b1c1baec9928cfaf88da38f5",
+    "fixed-host-public.json": "299a839335eaca34571114b5bfe0855436f9f1db602a0403dcd3ff9a2324b649",
+    "fixed-mcp-aggregate.json": "56d7437638a391943335ad353611e7d9aeb0c14f31935543a196c04725411a49",
+    "fixed-wire-boundary.json": "2418d567fc47cc018f06424b4ddc95f2d6f779efffc9b4d8ac1e858b5e9d882e",
+    "fixed-summary.json": "25f035de4b138f2ec44bf759b727efdf4fff8cefe58245adaf33c5f358f5ee2e",
+    "source-mcp-lifecycle.json": "bea78183e586f1e513239546042ffca53c242141b0c61992dfd8ab2585268b86",
+    "fixed-mcp-lifecycle.json": "bea78183e586f1e513239546042ffca53c242141b0c61992dfd8ab2585268b86",
+    "plugin-validation.json": "d322dbe68277eda23535f8a3bb65b93e090cd9549d923b0ad2d249166d6d4fb8",
+    "source-release.json": "16034037e97fbf111774dbc98719cb43917ca870a3f99bf1c40d5217d975d09c",
+    "source-numeric-wire.json": "5c59df139cb301c01ad6bfa36490cd05fe590b3f36f24197b6702061848c47a8",
+    "fixed-mcp-stream.json": "3f73e0f30f56c4d9e5a345a6899927478d234fd498ebc77264cc0f3363dddad2",
+    "public-plugin.json": "87e1f3947eda44583152650d73f76d78490c734ce31a7e76222e3ce3d9862d4e",
+    "fixed-numeric-wire.json": "5c59df139cb301c01ad6bfa36490cd05fe590b3f36f24197b6702061848c47a8",
+    "fixed-serve-aggregate.json": "e32b55b3fc29d4c7a946710d7a24b594d6ad6d32691bed3b74f49d0618b02d1b"
+  }
+}

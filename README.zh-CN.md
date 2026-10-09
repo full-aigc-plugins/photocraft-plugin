@@ -1,8 +1,8 @@
 # PhotoCraft Agent Plugin
 
-dev.74候选：修正Python测试解释器的跨平台选择，停止测试按匹配的退出回执判断状态，处理dev.73两项Linux CI失败。dev.73公开macOS安装已通过118项Harness（16项原生），安装字节与ZIP一致且零GUI启动；两项实施CI失败保留。技能源dev.58不变，完整验证与dev.74固定发布证据待补；138/157完成、19开放。
+dev.74／源dev.58已发布：技能源未变，复用384项通过及9项桌面／能力跳过的源回归证据；118项安装Harness（16原生）及48项插件Python通过。13个实际安装技能在安装前拒绝247个无效MCP生命周期输入；数值stdio／TCP和初始化前ping模式单进程保存／重开。5个Harness动作拒绝25个代理项及5个坏字节输入；真实原生保存后外层坏UTF-8回复保持unknown、工程保全且不重放。安装字节与公开ZIP一致且不变，发行4项CI成功。本轮零GUI启动，完整9.6及V1仍开放，138/157完成。[证据](docs/evidence/optimization/numeric-wire-lifecycle/publication.json)。[合同](docs/PhotoCraft-Numeric-Wire-Lifecycle.zh_CN.md)。
 
-候选dev.73对应源dev.58：保留已校验数值文本，按实际回传ID计费，校验固定MCP生命周期，并在Harness JSON及子进程回复拒绝非法Unicode。健康会话复用单进程；固定发行待复验，完整9.6仍开放。[合同](docs/PhotoCraft-Numeric-Wire-Lifecycle.zh_CN.md)。
+dev.73／源dev.58公开macOS固定安装通过，但两项Linux实施CI失败；dev.74修正测试解释器与退出观察断言。[保留失败记录](docs/evidence/optimization/ci-portability/previous-dev73.json)。
 
 dev.72／源dev.57已发布：374项源回归通过，9项未改动桌面／能力用例跳过。实际安装13技能的429个无效初始化及65个非法Unicode输入均在安装前拒绝，3项原生编码边界及110项Harness通过；健康流单进程完成创建／保存／重开／检查。安装字节与公开ZIP一致且不变，发行4项CI通过。本轮零GUI启动，完整9.6与V1仍开放，138/157完成。[证据](docs/evidence/optimization/wire-boundary/publication.json)。[合同](docs/PhotoCraft-Wire-Boundary.zh_CN.md)。
 
