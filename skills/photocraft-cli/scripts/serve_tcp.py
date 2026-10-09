@@ -84,6 +84,7 @@ def failure(error,message,receipts,phase='validation',installed=None):
     detail.update(request=message,receipts=list(receipts),replayAllowed=False)
     if installed:detail['runtimeSha256']=installed['binarySha256']
     if hasattr(error,'dependencySetup'):detail['dependencySetup']=error.dependencySetup
+    if hasattr(error,'aggregate'):detail['aggregate']=error.aggregate
     reply=dict(getattr(error,'nativeReply',{'id':message.get('id') if message else None,'ok':False,'error':detail['code']}))
     reply['errorData']=detail;return reply
 
@@ -104,8 +105,7 @@ class Gateway:
             try:
                 if self.wire is None:
                     self.installed=self.install();self.wire=self.stream.Wire([self.installed['executable'],*self.native])
-                phase='submitted';self.wire.send(message)
-                reply=self.wire.receive(message,None);phase='reply_received';self.stream.validate_reply(message,reply)
+                phase='submitted';reply=self.stream.transact(self.wire,message,None,self.receipts);phase='reply_received'
                 self.receipts.append({'request':message,'phase':'reply_validated'})
                 return reply,True
             except (ValueError,OSError,RuntimeError,subprocess.SubprocessError) as error:

@@ -122,3 +122,5 @@ PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知�
 公开 `cli.py serve` 的 stdio 预检和回复监督见 [serve stdio合同](references/serve-stream.md)；TCP／聚合内部及固定发行验收继续开放。
 
 公开 `cli.py serve --port` 的共享会话、认证与回复交付监督见 [serve TCP合同](references/serve-tcp.md)；批量内部逐步确认及完整9.6继续开放。
+
+serve stdio／TCP批量逐步确认及失败停止见 [聚合合同](references/serve-aggregate.md)；MCP及命令计划聚合、完整输入矩阵继续单独验收。

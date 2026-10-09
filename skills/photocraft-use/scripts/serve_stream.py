@@ -81,6 +81,8 @@ def validate_method(method,params,path='$.params'):
 
 
 def preflight(raw):
+    # 拆分批次不能使原生本应拒绝的超长外层请求变成可执行小帧。
+    if len(raw.encode('utf-8') if isinstance(raw,str) else raw)>1<<20:reject('request_too_large','$')
     message=load('strict_json').loads(raw)
     if not isinstance(message,dict):reject('invalid_serve_request','$')
     fields(message,{'id','method','params'},'$')
@@ -141,6 +143,38 @@ def validate_reply(message,reply):
             if not data:raise reply_error('outcome_unknown: empty_render_image')
 
 
+def transact(wire,message,output,receipts):
+    """批量拆为同会话逐步调用；确认当前回复和累计预算后才提交下一步。"""
+    if message['method']!='batch':
+        wire.send(message);reply=wire.receive(message,output);validate_reply(message,reply)
+        return reply
+    results=[];remaining=(8<<20)-(1<<20)-4096
+    original_timeout=wire.timeout;deadline=time.monotonic()+original_timeout
+    try:
+        for index,step in enumerate(message['params']['steps']):
+            child={'id':message.get('id')}
+            if 'command' in step:
+                child.update(method='engine.execute',params={'command':step['command'],'params':step.get('params')})
+            else:child.update(method=step['method'],params=step.get('params'))
+            phase='submitted'
+            try:
+                wire.timeout=deadline-time.monotonic()
+                if wire.timeout<=0:raise reply_error('outcome_unknown: serve_batch_deadline')
+                wire.send(child);reply=wire.receive(child,output);phase='reply_received';validate_reply(child,reply)
+                row={'ok':True,'result':reply['result']}
+                # 原生保留8MiB响应预算中的请求ID／包络余量，累计前先收费。
+                size=len(json.dumps(row,ensure_ascii=False,separators=(',',':'),allow_nan=False).encode())+1
+                if size>remaining:raise reply_error('outcome_unknown: serve_batch_response_budget')
+                remaining-=size;results.append(row)
+                receipts.append({'request':child,'phase':'reply_validated','aggregateStep':index})
+            except (ValueError,OSError,RuntimeError,subprocess.SubprocessError) as error:
+                if not hasattr(error,'phase'):error.phase=phase
+                error.aggregate={'stepIndex':index,'confirmedSteps':len(results),'request':child}
+                raise
+        return {'id':message.get('id'),'ok':True,'result':{'completed':len(results),'failed':0,'results':results}}
+    finally:wire.timeout=original_timeout
+
+
 def run(argv,install,source=None,output=None):
     """安装仅发生于首条有效请求后；失败停止，不重放原操作。"""
     source=sys.stdin if source is None else source;output=sys.stdout if output is None else output
@@ -151,8 +185,7 @@ def run(argv,install,source=None,output=None):
             message=None;phase='validation';message=preflight(raw)
             if wire is None:
                 installed=install();wire=Wire([installed['executable'],*argv])
-            phase='submitted';wire.send(message)
-            reply=wire.receive(message,output);phase='reply_received';validate_reply(message,reply)
+            phase='submitted';reply=transact(wire,message,output,receipts);phase='reply_received'
             receipts.append({'request':message,'phase':'reply_validated'})
             load('mcp_stream').emit(output,reply)
         return 0
@@ -160,6 +193,7 @@ def run(argv,install,source=None,output=None):
         detail=load('operation_errors').describe(error,phase=phase);detail.update(replayAllowed=False,request=message,receipts=receipts)
         if installed:detail['runtimeSha256']=installed['binarySha256']
         if hasattr(error,'dependencySetup'):detail['dependencySetup']=error.dependencySetup
+        if hasattr(error,'aggregate'):detail['aggregate']=error.aggregate
         reply=getattr(error,'nativeReply',{'id':message.get('id') if message else None,'ok':False,'error':detail['code']})
         reply['errorData']=detail;load('mcp_stream').emit(output,reply)
         return 1
