@@ -210,7 +210,7 @@
   "latestCompletedTaskIds": [],
   "continuedRedGreen": "continued-red-green.json",
   "verification": {
-    "skills": 366,
+    "skills": 374,
     "pluginTypeScript": 110,
     "pluginPython": 48,
     "nativeHarness": 15,
@@ -224,7 +224,7 @@
     "mcpAggregateCases": 21,
     "serveAggregateCases": 20,
     "desktopAggregateCases": "NOT_RUN this increment; prior dev.70 evidence retained",
-    "collectedSkillsTests": 375,
+    "collectedSkillsTests": 383,
     "streamLaunchRefusals": 208,
     "nativeProcessesPerStream": 1
   },
@@ -304,7 +304,7 @@
     ],
     "publicationEvidence": "docs/evidence/optimization/project-ownership/publication.json"
   },
-  "latestRegressionEvidence": "stream-launch/publication.json",
+  "latestRegressionEvidence": "wire-boundary/publication.json",
   "publicCliSupervision": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/public-cli-supervision/publication.json",
@@ -422,6 +422,18 @@
   "streamLaunchPreflight": {
     "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
     "publicationEvidence": "docs/evidence/optimization/stream-launch/publication.json",
+    "fixedStartupRefusals": 208,
+    "nativeProcessesPerStream": 1,
+    "guiLaunchesThisIncrement": 0,
+    "closedTaskIds": [],
+    "fullInputMatrix": "OPEN"
+  },
+  "wireBoundaryPreflight": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/wire-boundary/publication.json",
+    "fixedInitializationRefusals": 429,
+    "fixedUnicodeRefusals": 65,
+    "fixedWireNativeCases": 3,
     "fixedStartupRefusals": 208,
     "nativeProcessesPerStream": 1,
     "guiLaunchesThisIncrement": 0,

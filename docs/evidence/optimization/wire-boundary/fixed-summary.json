@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.72",
+  "skillSourceRef": "v0.1.0-dev.57",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "mcpPostSaveFaultCases": 7,
+  "mcpHealthyCases": 1,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "a6d49df3aa8ed54edc78ac184e4c939a040fe97b2a921d19032c3812a01aa733",
+  "servePostSaveFaultCases": 8,
+  "serveHealthyCases": 1,
+  "tcpPostSaveFaultCases": 7,
+  "tcpDeliveryLossCases": 1,
+  "tcpHealthyCases": 1,
+  "serveAggregateCases": 20,
+  "mcpAggregateCases": 21,
+  "desktopAggregateCases": "NOT_RUN: no GUI launches",
+  "streamLaunchRefusals": 208,
+  "sharedProcessPerStream": 1,
+  "nativeLaunchProtocols": 2,
+  "wireInitializationRefusals": 429,
+  "wireUnicodeRefusals": 65,
+  "wireNativeCases": 3,
+  "pluginPythonTests": 48,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native,15 public argv faults,7 MCP faults,20 serve aggregate cases and21 MCP/plan aggregate cases; 208 startup refusals,429 initialize refusals,65 Unicode refusals and3 native wire-boundary cases pass; no GUI launched; complete input matrix remains open"
+}

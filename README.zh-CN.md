@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-候选dev.72对应技能源dev.57：补充MCP初始化与Unicode预检、紧凑UTF-8流式编码及结构化错误路径；健康原生流复用一个进程。固定发行复验尚待完成，完整9.6仍开放。[合同](docs/PhotoCraft-Wire-Boundary.zh_CN.md)。
+dev.72／源dev.57已发布：374项源回归通过，9项未改动桌面／能力用例跳过。实际安装13技能的429个无效初始化及65个非法Unicode输入均在安装前拒绝，3项原生编码边界及110项Harness通过；健康流单进程完成创建／保存／重开／检查。安装字节与公开ZIP一致且不变，发行4项CI通过。本轮零GUI启动，完整9.6与V1仍开放，138/157完成。[证据](docs/evidence/optimization/wire-boundary/publication.json)。[合同](docs/PhotoCraft-Wire-Boundary.zh_CN.md)。
 
 dev.71／源dev.56已发布：366项源回归通过，9项未改动桌面／能力验收跳过；110项固定Harness及48项插件Python测试通过。13个实际安装独立技能的208个无效启动在安装／进程前拒绝；MCP／serve连续创建／保存／检查每个输入流只启动一个原生进程。公开载荷与安装字节一致且不变，发行4项CI通过；本增量零GUI启动。完整9.6与V1仍开放，138/157完成。[证据](docs/evidence/optimization/stream-launch/publication.json)。[合同](docs/PhotoCraft-Stream-Launch-Preflight.zh_CN.md)。
 

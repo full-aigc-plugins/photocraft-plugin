@@ -1,6 +1,6 @@
 # PhotoCraft Agent Plugin
 
-Candidate dev.72 targets source dev.57: MCP initialization and Unicode preflight, compact UTF-8 wire encoding and structured field paths. Native validation reuses one process per healthy stream. Fixed publication remains pending; full task9.6 remains open. [Contract](docs/PhotoCraft-Wire-Boundary.md).
+Published dev.72 / source dev.57:374 source tests pass,9 unchanged desktop/capability cases skipped. Actual installed13 skills reject429 invalid initializations and65 invalid Unicode inputs before installation. Three native wire-boundary cases and110 Harness tests pass; healthy streams use one process for create/save/open/inspect. Installed bytes match the public ZIP and remain unchanged; four release CI runs pass. No GUI launched; full9.6 and V1 stay open,138/157 complete. [Evidence](docs/evidence/optimization/wire-boundary/publication.json). [Contract](docs/PhotoCraft-Wire-Boundary.md).
 
 Published dev.71 / source dev.56:366 source tests pass,9 unchanged desktop/capability cases skipped;110 fixed Harness and48 plugin Python tests pass. All13 installed standalone skills reject208 invalid launches before install or process startup. Native MCP/serve create/save/inspect uses one process per stream. Public payload bytes match and remain unchanged; four release CI runs pass. This increment launches no GUI; full9.6 and V1 remain open,138/157 complete. [Evidence](docs/evidence/optimization/stream-launch/publication.json). [Contract](docs/PhotoCraft-Stream-Launch-Preflight.md).
 

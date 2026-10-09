@@ -1,0 +1,318 @@
+{
+  "schema": "photocraft-public-cli-supervision/v1",
+  "status": "PASS",
+  "runtimeVersion": "0.2.0-craft.5",
+  "runtimeSha256": "ce664db23e73067da1465acc3a421cd1f717a7e6be2faec6467b8ae867338db4",
+  "cases": [
+    {
+      "entry": "batch",
+      "fault": "duplicate",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confirmationSequences": [
+        1,
+        2,
+        3
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "batch",
+      "fault": "semantic",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confirmationSequences": [
+        1,
+        2,
+        3
+      ],
+      "outcome": "failed",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "batch",
+      "fault": "save-array",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confirmationSequences": [
+        1,
+        2,
+        3
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "convert",
+      "fault": "duplicate",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2
+      ],
+      "confirmationSequences": [
+        1
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "ee3bef6c11c41aac43881ba13898f54b981f75136f5453650c0b37fc5fc5eb0b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "convert",
+      "fault": "save-array",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2
+      ],
+      "confirmationSequences": [
+        1
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "ee3bef6c11c41aac43881ba13898f54b981f75136f5453650c0b37fc5fc5eb0b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "droplet",
+      "fault": "duplicate",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confirmationSequences": [
+        1,
+        2,
+        3
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "droplet",
+      "fault": "semantic",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confirmationSequences": [
+        1,
+        2,
+        3
+      ],
+      "outcome": "failed",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "droplet",
+      "fault": "save-array",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "confirmationSequences": [
+        1,
+        2,
+        3
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run-final",
+      "fault": "save-array",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run-final",
+      "fault": "wrong-save-path",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run",
+      "fault": "duplicate",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run",
+      "fault": "nonfinite",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run",
+      "fault": "semantic",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "failed",
+      "savedProjectSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run",
+      "fault": "wrong-request",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    },
+    {
+      "entry": "run",
+      "fault": "extra-frame",
+      "status": "PASS",
+      "nativeSequences": [
+        1,
+        2,
+        3
+      ],
+      "confirmationSequences": [
+        1,
+        2
+      ],
+      "outcome": "unknown",
+      "savedProjectSha256": "2bf9ca04f3885c1c147c303e9520749dcbbdbd702932a39e058ef32d81b0348b",
+      "freshReadonlyReopen": true,
+      "sourcePreserved": true,
+      "editingLaunches": 1,
+      "laterEditingEvents": 0
+    }
+  ],
+  "scope": "Actual public CLI and verified native binary; transport observer changes replies after real native execution; streaming and nested aggregates remain separate",
+  "closedTaskIds": []
+}
