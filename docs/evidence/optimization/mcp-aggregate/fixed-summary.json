@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "pluginVersion": "0.1.0-dev.69",
+  "skillSourceRef": "v0.1.0-dev.54",
+  "harness": {
+    "tests": 110,
+    "pass": 110,
+    "fail": 0,
+    "skipped": 0
+  },
+  "nativeHarnessTests": 15,
+  "publicCliPostSaveFaultCases": 15,
+  "mcpPostSaveFaultCases": 6,
+  "mcpHealthyCases": 1,
+  "installedTreeUnchanged": true,
+  "installedPayloadBytesMatchPublicArchive": true,
+  "installedTreeSha256": "169d1e22a27354ca32a4e6f4cbfebd4e06f06bb67ee5ee4b601f7031a445f46d",
+  "servePostSaveFaultCases": 7,
+  "serveHealthyCases": 1,
+  "tcpPostSaveFaultCases": 7,
+  "tcpDeliveryLossCases": 1,
+  "tcpHealthyCases": 1,
+  "serveAggregateCases": 20,
+  "mcpAggregateCases": 21,
+  "closedTaskIds": [],
+  "remainingTaskIds": [
+    "9.6"
+  ],
+  "fullV1": "NOT_RUN",
+  "scope": "Actual public fixed installed Harness110/15 native,15 public argv faults,6 MCP faults,20 serve aggregate cases and21 MCP/plan aggregate cases; desktop aggregates and complete input matrix remain open",
+  "harnessExecution": {
+    "testConcurrency": 1,
+    "initialParallelAttempt": "ENOSPC_ENVIRONMENT_FAILURE",
+    "failedAttemptLogRetained": true,
+    "sameInstalledPublicPayload": true
+  }
+}

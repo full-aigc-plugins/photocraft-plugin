@@ -1,0 +1,344 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "entry": "plan",
+      "fault": null,
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Healthy",
+        "Bound",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": false,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": null,
+      "notifications": true,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Healthy",
+        "Bound",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": false,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "native-error",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "duplicate",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "nonfinite",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "semantic",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "wrong-id",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "extra-frame",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "malformed-error",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "missing-jsonrpc",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "plan",
+      "fault": "budget",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": null,
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Healthy",
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": false,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "native-error",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "duplicate",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "nonfinite",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "semantic",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "wrong-id",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "extra-frame",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "malformed-error",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "missing-jsonrpc",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    },
+    {
+      "entry": "stream",
+      "fault": "budget",
+      "notifications": false,
+      "status": "PASS",
+      "sourceSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointSha256": "f7fe6c837f3c460d9bd03b2407cd3d93840da154c6c1edd9d4b6333b143f0b09",
+      "checkpointReopened": true,
+      "liveLayerNames": [
+        "Preserved",
+        "Source",
+        "Background"
+      ],
+      "noLaterEdit": true,
+      "ownedProcessExited": true
+    }
+  ]
+}

@@ -180,7 +180,7 @@
     "pluginWorkingVersion": "0.1.0-dev.69",
     "fixedSkillSourceVersion": "0.1.0-dev.54",
     "evidence": "docs/evidence/optimization/task-progress.json",
-    "publication": "PARTIAL_PUBLISHED_SERVE_AGGREGATE",
+    "publication": "PARTIAL_PUBLISHED_MCP_AGGREGATE",
     "fullAcceptance": "NOT_RUN",
     "taskCounts": {
       "total": 157,
@@ -188,8 +188,8 @@
       "open": 19,
       "newlyCompleted": 76
     },
-    "currentRegressionEvidence": "docs/evidence/optimization/serve-aggregate/source-validation.json",
-    "publicationEvidence": "docs/evidence/optimization/serve-aggregate/publication.json"
+    "currentRegressionEvidence": "docs/evidence/optimization/mcp-aggregate/source-validation.json",
+    "publicationEvidence": "docs/evidence/optimization/mcp-aggregate/publication.json"
   },
   "fixedDomainAcceptanceEvidence": "docs/evidence/optimization/domain-acceptance-audit.json",
   "fixedDomainAcceptanceStatus": "PC-DM-001/002/003/007 current fixed macOS arm64 scenarios passed with explicit unsupported/unknown boundaries; full V1 remains open",
@@ -521,6 +521,25 @@
     "responseBudgetCases": 2,
     "healthyNativeCases": 2,
     "serveAggregateCases": 20,
+    "closedTaskIds": [],
+    "remainingTaskIds": [
+      "9.6"
+    ]
+  },
+  "mcpAggregateSupervision": {
+    "status": "PARTIAL_PUBLISHED_FIXED_NATIVE",
+    "publicationEvidence": "docs/evidence/optimization/mcp-aggregate/publication.json",
+    "entries": [
+      "mcp-stdio",
+      "command-plan"
+    ],
+    "postCheckpointReplyFaultCases": 14,
+    "nativeErrorCases": 2,
+    "responseBudgetCases": 2,
+    "healthyNativeCases": 2,
+    "legalNotificationCases": 1,
+    "serveAggregateCases": 20,
+    "mcpAggregateCases": 21,
     "closedTaskIds": [],
     "remainingTaskIds": [
       "9.6"

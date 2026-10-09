@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "scope": "Actual public cli.py serve stdio, verified craft.5, no TCP or aggregate interior claim",
+  "cases": [
+    {
+      "fault": null,
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4,
+        5,
+        {
+          "image": [
+            1,
+            true
+          ]
+        },
+        null,
+        null,
+        "render-file",
+        "new"
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4,
+        5,
+        {
+          "image": [
+            1,
+            true
+          ]
+        },
+        null,
+        null,
+        "render-file",
+        "new"
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "duplicate",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "nonfinite",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "semantic",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "wrong-id",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "extra-frame",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "malformed-error",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    },
+    {
+      "fault": "missing-ok",
+      "status": "PASS",
+      "sentIds": [
+        2,
+        3,
+        4
+      ],
+      "observedReplyIds": [
+        2,
+        3,
+        4
+      ],
+      "sourcePreserved": true,
+      "savedReopened": true,
+      "savedSha256": "559d43e7956d5f387d848c1b66b9ce5bce149e12335b8cd0c74cdb8868c651b7"
+    }
+  ]
+}

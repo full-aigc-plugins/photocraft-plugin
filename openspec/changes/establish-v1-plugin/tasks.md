@@ -370,3 +370,5 @@ SC-004 固定安装证据：`docs/evidence/craft-photo30-art96-fixed-first-use-2
 2026-10-09 serve stdio／TCP固定验收：源dev.52／插件dev.67公开ZIP、标签提交与摘要一致；345项源码测试零跳过、110项固定Harness（15项原生）、15例argv、6例MCP、7例stdio、7例TCP故障及交付丢失跨连接竞态通过，共享会话与认证、16连接／1MiB／真实30秒超时通过，自有原生进程退出、源及保存工程保全，安装字节不变。发行4项CI通过；聚合内部及完整输入矩阵仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/serve-tcp/publication.json`。
 
 2026-10-09 serve stdio／TCP固定验收：源dev.53／插件dev.68公开ZIP、标签提交与摘要一致；355项源码测试零跳过、110项固定Harness（15项原生）、15例argv、6例MCP、7例stdio、7例TCP故障及交付丢失跨连接竞态通过，共享会话与认证、16连接／1MiB／真实30秒超时通过，自有原生进程退出、源及保存工程保全，安装字节不变。serve聚合20例通过；发行4项CI通过；MCP／命令计划聚合内部及完整输入矩阵仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/serve-aggregate/publication.json`。
+
+2026-10-09 MCP／命令计划聚合固定验收：源dev.54／插件dev.69公开ZIP、标签提交与摘要一致；365项源码测试零跳过、110项固定Harness（15项原生）、15例argv、6例MCP、7例stdio、7例TCP故障及交付丢失跨连接竞态通过，共享会话与认证、16连接／1MiB／真实30秒超时通过，自有原生进程退出、源及保存工程保全，安装字节不变。serve聚合20例及MCP／计划聚合21例通过；发行4项CI通过；桌面聚合及完整输入矩阵仍未验收，9.6不勾选，关闭0项，仍138/157完成、19开放。证据：`docs/evidence/optimization/mcp-aggregate/publication.json`。
