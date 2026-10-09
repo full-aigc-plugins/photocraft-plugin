@@ -21,6 +21,24 @@
 
 ## Component design
 
+普通任务以宿主选择技能为入口。根 `plugin.json` 和 `skills/` 承载 Agent Plugins 1.0.0 可移植部分；Claude 专用命令与会话钩子经 `.claude-plugin/plugin.json` 指向 `com.anthropic.claude-code/`。命令仅把参数交给同名技能；SessionStart 钩子只提示复用实例。原生操作、保存与结果验证仍由技能调用的固定 PhotoCraft CLI 执行。跨会话账本、恢复、评审与运行时切换由显式 `photocraft-harness` 入口保留，普通领域命令不为单次操作创建 Harness 任务。
+
+```mermaid
+flowchart TD
+    U[用户请求] --> H[宿主选择技能]
+    C[Claude 显式命令] --> H
+    S[SessionStart 只读提示] --> H
+    H --> K[固定来源领域技能]
+    H -->|显式跨会话控制| A[photocraft-harness]
+    A --> K
+    K --> T[任务所有的连续会话]
+    T --> N[固定 PhotoCraft CLI 和原生实例]
+    N --> R[工程、回执与导出]
+    R --> H
+```
+
+精简以既有行为为约束：先列出现有公开入口及对应测试／真实证据，再合并重复适配；单技能独立安装所需资源继续保留。`scripts/` 中的验证与发布程序属于开发工具，不能因文件数量推导运行时负担；`src/` 中的账本与评审属于显式高级入口，只有完成 API 兼容、固定安装与故障恢复回归后才能迁移或删除。每个新增运行模块须对应现有技能和原生 CLI 无法处理的具体行为及失败用例。运行时性能以同一连续任务的原生进程启动次数、实例归属和各阶段身份衡量；静态命令目录或宿主 manifest 校验不证明模型路由。
+
 完整中英文运行时设计位于 [中文架构](../../../docs/PhotoCraft-Runtime-Architecture.zh_CN.md) 和 [English architecture](../../../docs/PhotoCraft-Runtime-Architecture.md)。领域计划对象包括 ImageEditPlan, Document, Layer, Mask, TextBlock，以下能力逐项编译：
 
 | 能力 | 行为边界 | 状态 |
