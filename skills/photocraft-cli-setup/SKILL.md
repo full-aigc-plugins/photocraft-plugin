@@ -14,15 +14,17 @@ license: Apache-2.0
 
 ## 首次使用与公共入口
 
+执行实现收敛在内置的 **photocraft-harness** 技能（随插件捆绑安装；单独安装用 `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-harness`）。将 `HARNESS_DIR` 设置为该技能实际加载目录（绝对路径）；本技能的 `SKILL_DIR` 只用于读取自身的 `examples/` 与 `references/`。
+
 定位当前 SKILL.md 的真实目录。当前支持 macOS arm64、Python 3.11+；固定 CLI 安装到用户数据目录。已有任务授权覆盖必要依赖时直接执行本技能安装器，不另造批准流程。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/photocraft-cli-setup`，项目级可能位于 `.agents/skills/photocraft-cli-setup`，插件可能位于其 `skills/photocraft-cli-setup` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
 ```bash
 : "${SKILL_DIR:?请先设置为本 SKILL.md 的实际所在目录}"
-python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- --version
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- commands --json
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- --version
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- commands --json
 ```
 
 CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔符前；`--runtime-home` 可隔离缓存。锁定制品摘要失败、损坏安装或不支持平台时停止；不改 PATH、不执行浮动升级。原生帮助入口是 `help`；launcher 自身 `--help` 只说明启动参数。
@@ -35,7 +37,7 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 
 不修改 PATH、不使用 sudo；版本损坏保留并报错，不自动升级。
 
-原生组合与源工程修订使用本技能自带 `scripts/workflow.py`；读取 [工作流合同](references/workflow.md)，模板在本技能 examples 内。只修改授权对象，原生工程和依赖素材保留，派生格式损失读取 [交换报告](references/exchange-loss.md)。
+原生组合与源工程修订使用内置 **photocraft-harness** 技能的 `scripts/workflow.py`；读取 [工作流合同](references/workflow.md)，模板在本技能 examples 内。只修改授权对象，原生工程和依赖素材保留，派生格式损失读取 [交换报告](references/exchange-loss.md)。
 
 ## 核验与恢复
 
@@ -54,14 +56,14 @@ CLI argv 在 `--` 后，原生子命令必须放首位。安装参数放分隔�
 当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
 ```
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以内置 **photocraft-harness** 技能的 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 可编辑局部调整与源返工见 [蒙版调整使用说明](references/adjustment-mask.md)；成对计划在本技能 examples 中，源候选与固定安装证据分开。
 
@@ -81,7 +83,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 
 ## 场景契约与路由
 
-按 [场景合同](references/scenario-contract.md) 核对输入、目标与保护范围、恢复和验收。完整任务按名称选择最短技能链；已知结果不明时先核对原任务，不重放。显式意图可用本技能 `scripts/route.py INTENT` 查询入口；这是合同查询，不证明宿主模型派发已通过。
+按 [场景合同](references/scenario-contract.md) 核对输入、目标与保护范围、恢复和验收。完整任务按名称选择最短技能链；已知结果不明时先核对原任务，不重放。显式意图可用内置 **photocraft-harness** 技能的 `scripts/route.py INTENT` 查询入口；这是合同查询，不证明宿主模型派发已通过。
 
 PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知会阻止成功。用户明确接受时按同一源版本和实际观察摘要记录，不自动接受；见本技能[PSD 交换与接受门禁](references/exchange-loss.md#psd-必要功能门禁--required-psd-features)。
 
@@ -91,4 +93,4 @@ PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知�
 
 ## 连续任务与实例复用
 
-同一用户任务连续检查、编辑、保存、重开和返工时，使用本技能 [任务级会话](references/task-session.md) 的 `scripts/task_session.py`，保持同一前台进程及输入句柄。失败／unknown 后先核对原回执和工程，不启动替代实例重放。
+同一用户任务连续检查、编辑、保存、重开和返工时，使用本技能 [任务级会话](references/task-session.md) 与内置 **photocraft-harness** 技能的 `scripts/task_session.py`，保持同一前台进程及输入句柄。失败／unknown 后先核对原回执和工程，不启动替代实例重放。

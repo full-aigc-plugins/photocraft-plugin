@@ -11,7 +11,7 @@ PC-TX-005 / 9.6 的增量候选，目标源 dev.51／插件 dev.66；完整任�
 首次调用示例（两个根目录均须为用户授权的实际目录，工程参数使用根目录下相对路径）：
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- mcp --automation-read-root "$READ_ROOT" --automation-write-root "$WRITE_ROOT"
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- mcp --automation-read-root "$READ_ROOT" --automation-write-root "$WRITE_ROOT"
 ```
 
 serve stdio、TCP/port 及聚合调用内部逐项确认尚未接入本增量；外层回复检查不能证明聚合内部停止。源码回归、公开固定安装与完整9.6验收分别记录，完整首版仍未完成。

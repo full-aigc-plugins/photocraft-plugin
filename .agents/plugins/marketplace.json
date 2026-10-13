@@ -1,0 +1,27 @@
+{
+  "name": "full-aigc-plugins-photocraft",
+  "interface": {
+    "displayName": "PhotoCraft"
+  },
+  "plugins": [
+    {
+      "name": "photocraft",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/full-aigc-plugins/photocraft-plugin.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Creativity",
+      "version": "0.1.0-dev.77",
+      "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+      "interface": {
+        "displayName": "PhotoCraft",
+        "shortDescription": "Editable creative workflows and pinned setup"
+      }
+    }
+  ]
+}

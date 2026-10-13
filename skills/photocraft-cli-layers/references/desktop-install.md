@@ -1,9 +1,9 @@
 # 固定桌面安装 / Pinned desktop installation
 
-仅在任务需要GUI时安装桌面；已有headless任务不需要此步骤。当前支持macOS arm64，官方桌面0.2.0与维护CLI分别锁定，不能用应用版本代替CLI版本。设置SKILL_DIR为当前技能真实加载目录。
+仅在任务需要GUI时安装桌面；已有headless任务不需要此步骤。当前支持macOS arm64，官方桌面0.2.0与维护CLI分别锁定，不能用应用版本代替CLI版本。设置 `HARNESS_DIR` 为 **photocraft-harness** 技能（随插件捆绑安装）实际加载目录；`SKILL_DIR` 为当前领域技能真实加载目录，仅用于读取其 examples/ 与 references/。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/desktop.py" install
+python3 -I -B "$HARNESS_DIR/scripts/desktop.py" install
 ```
 
 返回真实.app路径、executable、version、binarySha256与reused。默认独立缓存为用户数据目录下的领域桌面版本目录；可用--runtime-home设置隔离目录。安装不会启动应用、覆盖/更新Applications内的用户应用或改变PATH。固定官方URL、DMG字节数和摘要、应用版本/ID、arm64架构、签名与完整安装树均核验；损坏安装拒绝而不是静默覆盖。文件下载只发生在私有临时目录，跨进程安装串行，失败不发布目标版本。可选--archive仍必须匹配固定制品，不能绕过校验。
@@ -17,7 +17,7 @@ English: install only when GUI is required. This standalone installer pins offic
 设置 SKILL_DIR 为当前技能真实目录，PLAN 为完整 command-plan/v1 文件，OUTPUT 为尚不存在的输出目录。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/desktop.py" run "$PLAN" --output "$OUTPUT"
+python3 -I -B "$HARNESS_DIR/scripts/desktop.py" run "$PLAN" --output "$OUTPUT"
 ```
 
 可用 `--runtime-home` 指定独立缓存；`--input NAME=PATH` 显式导入素材。有效计划会安装已固定的桌面与 CLI，启动隔离应用，在同一桌面会话执行 `commands.py` 工作流，并保留原生工程、导出、journal、desktop.log 与 desktop-session.json。后者记录应用身份、监听端口归属及本次进程已退出。Photo 的 token 文件在退出时删除，GUI 与 CLI 使用同一输出根。只关闭本次拥有的进程，不连接其他用户会话。失败或未知编辑结果保留回执，不自动重放。安装平台仍为 macOS arm64。

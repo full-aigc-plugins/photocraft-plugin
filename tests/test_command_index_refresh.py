@@ -91,6 +91,8 @@ class LockedIndexIntegrationTests(unittest.TestCase):
   def check(skill):return subprocess.run([sys.executable,'-I','-B',str(ROOT/'scripts/command_acceptance.py'),'check','--skill-root',str(skill),'--index',str(index)],capture_output=True,text=True)
   result=check(ROOT/'skills/photocraft-use');self.assertEqual(result.returncode,0,result.stdout+result.stderr);report=json.loads(result.stdout);self.assertEqual(report['commands'],755);self.assertEqual(report['acceptedCommands'],0);self.assertEqual(report['fullCommandAcceptance'],'NOT_RUN')
   with tempfile.TemporaryDirectory() as td:
-   skill=Path(td)/'skill';shutil.copytree(ROOT/'skills/photocraft-use',skill);path=skill/'scripts/commands.py';path.write_bytes(path.read_bytes()+b'\n# changed execution resource\n');before=path.read_bytes();result=check(skill)
+   # 执行实现唯一收敛在 photocraft-harness；篡改 harness 正典必须使绑定索引失效。
+   skills=Path(td)/'skills';shutil.copytree(ROOT/'skills/photocraft-use',skills/'photocraft-use');shutil.copytree(ROOT/'skills/photocraft-harness',skills/'photocraft-harness',ignore=shutil.ignore_patterns('__pycache__'))
+   path=skills/'photocraft-harness/scripts/commands.py';path.write_bytes(path.read_bytes()+b'\n# changed execution resource\n');before=path.read_bytes();result=check(skills/'photocraft-use')
    self.assertNotEqual(result.returncode,0);self.assertIn('stale_source_or_snapshot',result.stdout);self.assertEqual(path.read_bytes(),before)
 if __name__=='__main__':unittest.main()

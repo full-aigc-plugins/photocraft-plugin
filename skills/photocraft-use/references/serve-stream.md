@@ -9,7 +9,7 @@
 真实craft.5测试通过保存后重复键、非有限值、语义错误、错配ID、额外帧、损坏error及缺失ok七类注入，后续编辑未发送，源摘要不变、保存工程可重开。健康路径验证渲染图像与文件、复合id、无id、可空params及额外file.new参数。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- serve --automation-read-root "$READ_ROOT" --automation-write-root "$WRITE_ROOT"
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- serve --automation-read-root "$READ_ROOT" --automation-write-root "$WRITE_ROOT"
 ```
 
 TCP／port、批量内部逐步监督及完整argv／动态权限输入矩阵仍需实施和固定安装验收。当前批量只预检全部步骤及核验外层回复，不能证明内部异常后停止。不得以本候选关闭9.6或完整V1。

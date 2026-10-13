@@ -15,7 +15,7 @@ Choose capabilities using the local scenario and command references. Workflow op
 复制本技能 `examples/poster-plan.json` 到工作目录，按用户需求修改其文档参数、操作和输出设置；保留技能安装副本。以下演示原模板，路径占位符必须替换为真实绝对路径，输出目录必须不存在。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/workflow.py" \
+python3 -I -B "$HARNESS_DIR/scripts/workflow.py" \
   "$SKILL_DIR/examples/poster-plan.json" \
   --asset product=/absolute/input/product.png \
   --output /absolute/new-delivery

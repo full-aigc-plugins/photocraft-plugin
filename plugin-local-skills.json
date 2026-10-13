@@ -1,7 +1,5 @@
 {
   "version": 1,
   "dest": "skills/",
-  "skills": [
-    "photocraft-harness"
-  ]
+  "skills": []
 }

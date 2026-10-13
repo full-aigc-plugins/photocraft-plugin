@@ -3,8 +3,8 @@
 每个独立技能自带只读校验入口，不安装运行时，不编辑工程：
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/delivery.py" /absolute/delivery
-python3 -I -B "$SKILL_DIR/scripts/delivery.py" /absolute/moved-delivery --expected-manifest-sha256 RECORDED_SHA256
+python3 -I -B "$HARNESS_DIR/scripts/delivery.py" /absolute/delivery
+python3 -I -B "$HARNESS_DIR/scripts/delivery.py" /absolute/moved-delivery --expected-manifest-sha256 RECORDED_SHA256
 ```
 
 校验清单内每个文件、登记素材、原生与检查记录、导出及交换报告的身份。必须保留project.pcraft、native.json、plan.json、operations.json、exchange-loss.json；相对路径禁止逃逸和符号链接。清单重复键、同名文件替换、缺失依赖和报告身份不一致均非零退出，不能继续称原验收有效。PASS仅指完整性，不代替实际重开、PSD保真和创作接受。

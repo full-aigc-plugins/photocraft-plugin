@@ -4,8 +4,8 @@ import {spawn,spawnSync} from 'node:child_process';
 import {mkdtempSync,realpathSync,writeFileSync,readFileSync,chmodSync,existsSync,rmSync,readdirSync,lstatSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
-import {Runner} from '../src/harness/runner.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Runner} from '../scripts/harness/runner.ts';
 import {digest,fileDigest,readJson} from '../src/protocol/files.ts';
 
 async function waitFor(check:()=>boolean,label:string){const until=Date.now()+30000;while(!check()){if(Date.now()>until)throw new Error(label);await new Promise(resolve=>setTimeout(resolve,20));}}

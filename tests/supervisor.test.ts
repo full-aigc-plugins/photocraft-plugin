@@ -4,9 +4,9 @@ import { spawn, execFileSync } from 'node:child_process';
 import { existsSync, mkdtempSync, realpathSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { Ledger } from '../src/harness/ledger.ts';
-import { Runner } from '../src/harness/runner.ts';
-import { confirmedWorkerReceipt } from '../src/harness/worker_receipt.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
+import { Runner } from '../scripts/harness/runner.ts';
+import { confirmedWorkerReceipt } from '../scripts/harness/worker_receipt.ts';
 import { Review } from '../src/evaluation/review.ts';
 import { canonical, digest, fileDigest } from '../src/protocol/files.ts';
 
@@ -45,7 +45,7 @@ for(const mode of ['stop','deadline'])test('interrupted runner retains superviso
 });
 
 test('receipt mismatches and live process groups cannot release a stopped reservation',async()=>{
- const {confirmedWorkerReceipt}=await import('../src/harness/worker_receipt.ts');const {canonical,fileDigest}=await import('../src/protocol/files.ts');
+ const {confirmedWorkerReceipt}=await import('../scripts/harness/worker_receipt.ts');const {canonical,fileDigest}=await import('../src/protocol/files.ts');
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-receipt-')));const alive=spawn(process.execPath,['-e','setInterval(()=>{},1000)'],{detached:true,stdio:'ignore'});
  try{
   const launchPath=join(root,'task-worker-launch.json');writeFileSync(launchPath,'{}');const launchSha256=fileDigest(launchPath);
@@ -93,7 +93,7 @@ test('supervisor refuses a new workflow when cancellation or deadline predates i
   try{
    const launchPath=join(root,'launch.json');const output=join(root,'side-effect');const receipt=join(root,'exit.json');const stopFile=join(root,'stop');if(reason==='stop')writeFileSync(stopFile,'stop');
    writeFileSync(launchPath,canonical({taskId:'fixture',taskIdentity:'fixture',epoch:1,workerToken:'fixture',sourceSha256:'fixture',python:process.execPath,args:['-e',`require('node:fs').writeFileSync(${JSON.stringify(output)},'unexpected')`],stopFile,deadline:Date.now()+(reason==='deadline'?-1:30000),receipt}));
-   const child=spawn(process.execPath,[resolve('src/harness/worker_supervisor.ts'),launchPath,fileDigest(launchPath)],{stdio:'ignore'});await new Promise(resolve=>child.once('close',resolve));
+   const child=spawn(process.execPath,[resolve('scripts/harness/worker_supervisor.ts'),launchPath,fileDigest(launchPath)],{stdio:'ignore'});await new Promise(resolve=>child.once('close',resolve));
    assert.equal(existsSync(output),false);const result=JSON.parse(readFileSync(receipt,'utf8'));assert.equal(result.workflowPid,null);assert.equal(result.processGroupGone,true);assert.ok(result.stoppedAt);assert.equal(existsSync(stopFile),true);
   }finally{rmSync(root,{recursive:true,force:true});}
  }

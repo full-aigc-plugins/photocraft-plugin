@@ -27,11 +27,11 @@ Every owned selection/channel command is classified here. Use commands.py descri
 ## 自包含实例 / Self-contained workflow
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.saveSelection
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check "$SKILL_DIR/examples/saved-selection-create.json"
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/saved-selection-create.json" --output /absolute/new-selection-create
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/saved-selection-reopen.json" --input project=/absolute/new-selection-create/project.pcraft --output /absolute/new-selection-reopen
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/saved-selection-revise.json" --input project=/absolute/new-selection-create/project.pcraft --output /absolute/new-selection-revision
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.saveSelection
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check "$SKILL_DIR/examples/saved-selection-create.json"
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/saved-selection-create.json" --output /absolute/new-selection-create
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/saved-selection-reopen.json" --input project=/absolute/new-selection-create/project.pcraft --output /absolute/new-selection-reopen
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/saved-selection-revise.json" --input project=/absolute/new-selection-create/project.pcraft --output /absolute/new-selection-revision
 ```
 
 创建计划建立 128×80 RGB 8-bit 文档、灰色 Product 图形、绿色 Control 和可编辑亮度调整层。区域 [16,24,24,32] 羽化 2 像素，保存 Product Local alpha 通道并保留 Protected region 备份。恢复主通道覆盖、显式 channel.target.composite 后，为亮度 30 调整层建立蒙版。输出原生 project.pcraft、保留活动选区的 active-selection.pcraft 检查点、preview.png、selection-plane.png 和逐步回执。

@@ -1,0 +1,38 @@
+{
+ "schema": "photocraft-architecture-evidence/v1",
+ "date": "2026-10-13",
+ "scope": "Task 14.2 (PC-SK-003) execution-payload convergence: upstream layout, plugin re-vendor and offline snapshot verification; no new native, creative, platform or host acceptance",
+ "change": {
+  "summary": "收敛重复执行实现为内置 photocraft-harness：共享执行脚本只保留一份，13 个领域技能瘦身为薄文档技能并按名称路由到 harness",
+  "upstreamRepository": "https://github.com/full-aigc-skills/photocraft-skills",
+  "upstreamTag": "v0.1.0-dev.60",
+  "upstreamCommit": "c267692b9629bf4f8c96081ff04a8a6ac1a28a63",
+  "harnessSkill": "skills/photocraft-harness",
+  "harnessDocumentedEntries": ["scripts/bootstrap.py", "scripts/cli.py", "scripts/commands.py", "scripts/workflow.py", "scripts/desktop.py", "scripts/task_session.py", "scripts/route.py", "scripts/delivery.py", "scripts/progress.py", "scripts/native_verify.py", "scripts/native_workflow.py", "scripts/checkpoint_verify.py"],
+  "harnessScriptFiles": 42,
+  "harnessReferenceContracts": ["references/command-coverage.json", "references/native-command-snapshot.json", "references/desktop-command-snapshot.json", "references/routing-contract.json", "references/commands.json"],
+  "domainSkillsSlimmed": 13,
+  "removedOrphanPayload": [],
+  "reachability": "两遍法（带扩展名子串 + 引号内无扩展模块名，覆盖 importlib Path(__file__).with_name 动态加载）自 12 个文档化入口做闭包：42/42 文件可达，0 真孤儿，故无删除项",
+  "behaviorPreservation": "42/42 个 harness 脚本与 v0.1.0-dev.59 的 use 技能载荷逐字节一致（shasum 逐文件核对）；入口与动态依赖闭包一个不少；references 执行契约 JSON 同样逐字节保留"
+ },
+ "verification": {
+  "pluginLock": {
+   "repo": "https://github.com/full-aigc-skills/photocraft-skills.git",
+   "ref": "v0.1.0-dev.60",
+   "sha": "c267692b9629bf4f8c96081ff04a8a6ac1a28a63",
+   "vendoredSkills": 14,
+   "pluginLocalSkills": [],
+   "vendorCheckOffline": "pass — skill vendor check: all managed skills match the lockfile (offline)"
+  },
+  "vendoredPayloadByteCheck": "插件 skills/photocraft-harness/scripts 全部 42 文件与 HEAD（dev.59 锁定快照）skills/photocraft-use/scripts 逐文件 sha256 一致",
+  "upstreamRegression": "373 项测试全部通过（85 项显式 opt-in 跳过，与迁移前基线同口径）；sync_skill_suite --check、build_scenario_catalog --check、check_release_identity 通过",
+  "harnessSmoke": "在插件 vendored 目录：cli.py --help、bootstrap.py --help、delivery.py --help 通过；commands.py list --filter file.new 返回 755 条目录中的条目；route.py edit_text 返回 photocraft-cli-text 且 hostModelRouting=NOT_RUN",
+  "pluginRegression": "python3 -m unittest discover tests：68 项中 66 项通过；仅剩 2 项失败（test_source_plan_identity、test_current_readme_identity），其全部 132 条 validate_docs 错误为 2026-10-12 过度设计裁剪并行工作树的 spec/task 追溯组，与本迁移无关——在 HEAD 基线工作树仅叠加该裁剪（不含本迁移）时产生完全相同的 132 条错误；本迁移引入的 validate_docs 新错误为 0"
+ },
+ "preexistingFindings": [
+  "docs/evidence/optimization/command-acceptance-index.json 在 HEAD 基线即 stale_source_or_snapshot（未随 dev.59 载荷刷新）；unittest 覆盖的 command-acceptance/current-index.json 在收敛后仍通过",
+  "openspec tasks.md 裁剪后 specs 仍声明 PC-RT-002/PC-TX-001/002/003/PC-RL-003 等需求导致 132 条追溯错误，属并行裁剪工作树待完成项"
+ ],
+ "boundaries": "本收敛不证明任何命令的原生执行验收、目标平台验收或宿主验收；发布推送与 CI 在线核验另行授权；上游 commit 与 tag 仅保存在本地克隆，未 push"
+}

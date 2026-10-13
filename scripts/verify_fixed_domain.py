@@ -121,7 +121,7 @@ def child(args):
 def extra_cases(installed, root):
     """使用当前安装脚本执行新增场景，记录实际保存、拒绝、重开与源保全。"""
     from PIL import Image
-    workflow = load(installed / 'skills/photocraft-use/scripts/workflow.py', 'fixed_workflow')
+    workflow = load(installed / 'skills/photocraft-harness/scripts/workflow.py', 'fixed_workflow')
     records = []
     root.mkdir()
     def execute(plan, name, source=None):

@@ -10,14 +10,16 @@ license: Apache-2.0
 
 ## 首次使用
 
-1. 定位本 `SKILL.md` 的实际目录。需要 Python 3.11+；使用该目录下的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
+执行实现收敛在内置的 **photocraft-harness** 技能（随插件捆绑安装；单独安装用 `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-harness`）。将 `HARNESS_DIR` 设置为该技能实际加载目录（绝对路径）；本技能的 `SKILL_DIR` 只用于读取自身的 `examples/` 与 `references/`。
+
+1. 定位本 `SKILL.md` 的实际目录。需要 Python 3.11+；使用内置 **photocraft-harness** 技能的 `scripts/bootstrap.py`，不要假设当前工作目录就是技能目录。
 2. 用户已要求安装或完成创作且现有授权涵盖必要依赖时，直接运行安装入口；安装范围是用户数据目录，不需要 sudo。下载锁定维护版制品并校验摘要，失败即停止，不删除隔离属性、不改 shell 配置。
 
 将 `SKILL_DIR` 设置为宿主实际加载的本 `SKILL.md` 所在目录（绝对路径）。用户级安装可能位于 `~/.agents/skills/photocraft-use`，项目级可能位于 `.agents/skills/photocraft-use`，插件可能位于其 `skills/photocraft-use` 或宿主缓存目录；以实际加载路径为准，不按当前工作目录猜测，也不搜索后随意选择重复版本。技能目录与 CLI 的用户数据安装目录是两个独立位置。
 
 ```bash
 : "${SKILL_DIR:?请先设置为本 SKILL.md 的实际所在目录}"
-python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
 ```
 
 安装器返回 JSON `executable`，后续将其作为 argv 的第一个元素。当前锁定平台为 macOS arm64；未支持的平台返回 `unsupported_platform`，不要安装别的平台制品。
@@ -37,7 +39,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 ## 可执行计划
 
-需要产品素材、独立文字、蒙版、PSD 或尺寸变体时，读取 [原生工作流助手](references/workflow.md)。本技能内的 `scripts/workflow.py` 支持登记素材、执行计划与局部修订；示例通过 `--asset product=<实际素材路径>` 即可绑定输入。
+需要产品素材、独立文字、蒙版、PSD 或尺寸变体时，读取 [原生工作流助手](references/workflow.md)。内置 **photocraft-harness** 技能的 `scripts/workflow.py` 支持登记素材、执行计划与局部修订；示例通过 `--asset product=<实际素材路径>` 即可绑定输入。
 
 ## 修订与交付证据
 
@@ -67,7 +69,7 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 
 | **photocraft-cli-filters** | 使用 PhotoCraft 处理局部滤镜、背景虚化、颗粒与输出锐化，保留可编辑设计；首次使用安装固定 CLI。 |
 
-缺少技能：`npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。每项自带安装与执行资源；直接执行本技能 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
+缺少技能：`npx skills add full-aigc-skills/photocraft-skills --skill <skill-name>`。执行资源统一在内置 **photocraft-harness** 技能；直接执行其 `scripts/cli.py` 也可查询当前 CLI，不依赖兄弟路径。
 
 源工程局部修改可声明 `protectedRegions`，发布交付前检查非目标区域像素；参见本技能[保护区域合同](references/pixel-protection.md)。没有声明区域时不自动推断保护范围。
 
@@ -76,14 +78,14 @@ python3 -I -B "$SKILL_DIR/scripts/bootstrap.py"
 当前技能自带完整目录的参数说明与同会话入口，不受创作模板白名单限制。读取 [完整使用指南](references/command-usage.md)，按需查询 [命令参考](references/command-reference.md)；每条指令有技能路由、前置观察及验收状态。
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter QUERY
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe COMMAND_ID
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run "$SKILL_DIR/examples/commands-advanced.json" --output /absolute/new-command-result
 ```
 
 新入口执行前检查真实注册表与当前可执行状态，保留返回值引用和逐步回执；语义错误或超时不冒充成功。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。
 
-完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以本技能自带 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
+完整工作流命令网关见 [使用说明](references/native-workflow.md)。固定 CLI 的版本与制品摘要以内置 **photocraft-harness** 技能的 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。
 
 可编辑局部调整与源返工见 [蒙版调整使用说明](references/adjustment-mask.md)；成对计划在本技能 examples 中，源候选与固定安装证据分开。
 
@@ -105,7 +107,7 @@ GUI任务可先使用本技能自带的 [固定桌面安装](references/desktop-
 
 ## 场景契约与路由
 
-按 [场景合同](references/scenario-contract.md) 核对输入、目标与保护范围、恢复和验收。完整任务按名称选择最短技能链；已知结果不明时先核对原任务，不重放。显式意图可用本技能 `scripts/route.py INTENT` 查询入口；这是合同查询，不证明宿主模型派发已通过。
+按 [场景合同](references/scenario-contract.md) 核对输入、目标与保护范围、恢复和验收。完整任务按名称选择最短技能链；已知结果不明时先核对原任务，不重放。显式意图可用内置 **photocraft-harness** 技能的 `scripts/route.py INTENT` 查询入口；这是合同查询，不证明宿主模型派发已通过。
 
 PSD 交付需要明确必要特性；已观察丢失／降级及必要项未知会阻止成功。用户明确接受时按同一源版本和实际观察摘要记录，不自动接受；见本技能[PSD 交换与接受门禁](references/exchange-loss.md#psd-必要功能门禁--required-psd-features)。
 
@@ -127,4 +129,4 @@ serve stdio／TCP批量逐步确认及失败停止见 [聚合合同](references/
 
 ## 连续任务与实例复用
 
-同一用户任务连续检查、编辑、保存、重开和返工时，使用本技能 [任务级会话](references/task-session.md) 的 `scripts/task_session.py`，保持同一前台进程及输入句柄。失败／unknown 后先核对原回执和工程，不启动替代实例重放。
+同一用户任务连续检查、编辑、保存、重开和返工时，使用本技能 [任务级会话](references/task-session.md) 与内置 **photocraft-harness** 技能的 `scripts/task_session.py`，保持同一前台进程及输入句柄。失败／unknown 后先核对原回执和工程，不启动替代实例重放。

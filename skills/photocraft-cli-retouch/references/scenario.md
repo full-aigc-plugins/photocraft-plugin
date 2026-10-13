@@ -38,7 +38,7 @@
 
 ```bash
 : "${SKILL_DIR:?本技能实际加载目录}" "${SOURCE_PROJECT:?原生工程绝对路径}" "${OUTPUT_PROJECT:?新工程绝对路径}" "${LAYER_ID:?从 info 取得的整数图层 ID}"
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- run "$SOURCE_PROJECT" \
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- run "$SOURCE_PROJECT" \
   --cmd layer.select --params "{\"layer\":$LAYER_ID}" \
   --cmd paint.cloneStamp --params '{"points":[[130,180],[135,180]],"source":[140,200],"size":16,"hardness":100,"opacity":100,"flow":100}' \
   --out "$OUTPUT_PROJECT"

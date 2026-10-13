@@ -1,6 +1,6 @@
 # 连续任务与实例复用 / Continuous task sessions
 
-同一用户任务的检查、编辑、保存、关闭自有工程、重开和继续修订，使用本技能 `scripts/task_session.py`，保持同一前台进程和输入句柄。每阶段不要重新运行 `commands.py run` 或 `desktop.py run`；这两个兼容入口仍按单次调用清理自己拥有的实例。
+同一用户任务的检查、编辑、保存、关闭自有工程、重开和继续修订，使用内置 **photocraft-harness** 技能的 `scripts/task_session.py`，保持同一前台进程和输入句柄。每阶段不要重新运行 `commands.py run` 或 `desktop.py run`；这两个兼容入口仍按单次调用清理自己拥有的实例。
 
 Keep one foreground task_session.py process and the same stdin handle for all stages of a user task. The existing single-run commands.py and desktop.py entry points keep their original lifecycle.
 
@@ -12,7 +12,7 @@ Keep one foreground task_session.py process and the same stdin handle for all st
 : "${SKILL_DIR:?Set the actual loaded skill directory}"
 : "${TASK_OUTPUT:?Set a new task directory under an authorized output root}"
 : "${RUNTIME_HOME:?Set the authorized runtime cache}"
-python3 -I -B -u "$SKILL_DIR/scripts/task_session.py" \
+python3 -I -B -u "$HARNESS_DIR/scripts/task_session.py" \
   --output "$TASK_OUTPUT" --runtime-home "$RUNTIME_HOME" --mode bridge
 ```
 

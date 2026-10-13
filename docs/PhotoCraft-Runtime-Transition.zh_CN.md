@@ -18,7 +18,7 @@ PC-RT-002已在固定公开插件dev.63／源dev.49的macOS arm64范围验收：
 }
 ```
 
-`src/harness/preflight.ts`导出`skillIdentity`，执行资源摘要不同于Git提交和ZIP摘要。回退提案仅包含authorizationRef、expectedGeneration、expectedActiveSourceSha256和stateSchema；旧代次或来源冲突直接拒绝，不另选版本。
+`scripts/harness/preflight.ts`导出`skillIdentity`，执行资源摘要不同于Git提交和ZIP摘要。回退提案仅包含authorizationRef、expectedGeneration、expectedActiveSourceSha256和stateSchema；旧代次或来源冲突直接拒绝，不另选版本。
 
 ```mermaid
 flowchart TD

@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, realpathSync, rmSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { Ledger } from '../src/harness/ledger.ts';
-import { Runner } from '../src/harness/runner.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
+import { Runner } from '../scripts/harness/runner.ts';
 import { fileDigest, readJson } from '../src/protocol/files.ts';
-import { runtimePlatformKey } from '../src/harness/preflight.ts';
+import { runtimePlatformKey } from '../scripts/harness/preflight.ts';
 
 function fixture() {
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-checkpoint-contract-')));

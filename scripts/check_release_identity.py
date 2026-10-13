@@ -18,7 +18,7 @@ def validate(plugin,source,runtime,active,harness):
  return errors
 
 def check(root):
- plugin=json.loads((root/'plugin.json').read_text());lock=json.loads((root/'skills.lock.json').read_text());runtime=json.loads((root/'skills/photocraft-use/scripts/runtime.lock.json').read_text());active=json.loads((root/'runtime/photocraft-cli.lock.json').read_text());harness=json.loads((root/'package.json').read_text())
+ plugin=json.loads((root/'plugin.json').read_text());lock=json.loads((root/'skills.lock.json').read_text());runtime=json.loads((root/'skills/photocraft-harness/scripts/runtime.lock.json').read_text());active=json.loads((root/'runtime/photocraft-cli.lock.json').read_text());harness=json.loads((root/'package.json').read_text())
  source=lock['sources'][0];errors=validate(plugin,source,runtime,active,harness)
  return {'status':'FAIL' if errors else 'PASS','pluginVersion':plugin['version'],'skillSource':{'package':source['package'],'ref':source['ref'],'sha':source['sha']},'runtimeVersion':runtime['resolvedVersion'],'runtimeVariant':runtime.get('runtimeVariant','upstream'),'errors':errors,'scope':'identity only; fixed installation, model routing and creative acceptance separate'}
 if __name__=='__main__':

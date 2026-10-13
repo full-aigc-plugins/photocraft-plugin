@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync, mkdtempSync, realpathSync, rmSync, writeFileSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { Ledger } from '../src/harness/ledger.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
 import { Review } from '../src/evaluation/review.ts';
 
 function fixture() {
@@ -12,7 +12,7 @@ function fixture() {
  return {root,request,close:()=>rmSync(root,{recursive:true,force:true})};
 }
 test('invalid preflight preserves every task/event and writes no persistent plan or recovery record',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);
   const before=JSON.stringify(ledger.status(task.id));const events=JSON.stringify(ledger.db.prepare('SELECT * FROM events').all());const files=readdirSync(ledger.root).sort();
@@ -23,7 +23,7 @@ test('invalid preflight preserves every task/event and writes no persistent plan
  }finally{f.close();}
 });
 test('revision retains PSD requirements and scopes accepted losses to the exact base source',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');
+ const {Runner}=await import('../scripts/harness/runner.ts');
  for(const matchingSource of [false,true]){
   const f=fixture();try{
    const policy={requiredFeatures:['text','structure'],acceptedForSourceSha256:(matchingSource?'a':'d').repeat(64),acceptedLosses:{'0:structure':{status:'lost',observationSha256:'e'.repeat(64),reason:'test fixture only'}}};
@@ -35,7 +35,7 @@ test('revision retains PSD requirements and scopes accepted losses to the exact 
  }
 });
 test('unknown native completion is reconciled by observation, never replayed',async()=>{
- const { Runner }=await import('../src/harness/runner.ts');const f=fixture();
+ const { Runner }=await import('../scripts/harness/runner.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);ledger.claim(task.id);
   const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});
@@ -48,7 +48,7 @@ test('corrupt ledger is preserved, never silently recreated',()=>{
  const f=fixture();try{const dir=join(f.root,'state');mkdirSync(dir);const file=join(dir,'tasks.sqlite');writeFileSync(file,'not sqlite');assert.throws(()=>new Ledger(dir),/ledger_invalid/);}finally{f.close();}
 });
 test('reconcile refuses an unbound checkpoint without replay or technical acceptance',async()=>{
- const { Runner }=await import('../src/harness/runner.ts');const f=fixture();
+ const { Runner }=await import('../scripts/harness/runner.ts');const f=fixture();
  try {
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);const epoch=ledger.claim(task.id);
   mkdirSync(f.request.output);writeFileSync(join(f.request.output,'failure.json'),'{}');
@@ -80,7 +80,7 @@ test('active tasks retain aggregate disk and process reservations',()=>{
 });
 
 test('descendant revisions spend the root budget once and parent stop waits for children',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});/* 预算与策略单测隔离预检；真实预检及有效修订由 native-harness 验证。 */runner.preflight=()=>({sha256:'fixture',runtimeLockSha256:'fixture',files:{}});const review=new Review(ledger);
   const failReview=(id:string)=>{
@@ -101,7 +101,7 @@ test('descendant revisions spend the root budget once and parent stop waits for 
 });
 
 test('disk shortage refuses intent and mutable GUI writes refuse before execution',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));const enormous=ledger.create({...f.request,budget:{...f.request.budget,reserveBytes:Number.MAX_SAFE_INTEGER}});assert.throws(()=>ledger.claim(enormous.id),/disk_budget_exhausted/);assert.equal(ledger.status(enormous.id).attempted,false);
   const native=join(f.root,'mutable.pcraft');writeFileSync(native,'native');const {fileDigest}=await import('../src/protocol/files.ts');const task=ledger.create({...f.request,idempotencyKey:'mutable',mutableProject:native,expectedProjectSha256:fileDigest(native)});
@@ -111,7 +111,7 @@ test('disk shortage refuses intent and mutable GUI writes refuse before executio
 });
 
 test('stop confirms only the owned worker and leaves unrelated process alive',async()=>{
- const { Runner }=await import('../src/harness/runner.ts');const { spawn }=await import('node:child_process');
+ const { Runner }=await import('../scripts/harness/runner.ts');const { spawn }=await import('node:child_process');
  const f=fixture();const outsider=spawn(process.execPath,['-e','setInterval(()=>{},1000)']);
  try{
   const skill=join(f.root,'skill');mkdirSync(join(skill,'scripts'),{recursive:true});mkdirSync(join(skill,'references'));
@@ -127,7 +127,7 @@ test('stop confirms only the owned worker and leaves unrelated process alive',as
 });
 
 test('local adjustment revision is bound to the editable enabled mask and exact changed properties',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const f=fixture();
  try{
   const native=join(f.root,'native.json');const facts=join(f.root,'native-facts.json');
   const row={id:5,kind:'Adjustment',hasMask:true,adjustment:{BrightnessContrast:{brightness:30,contrast:0,legacy:false}}};writeFileSync(native,JSON.stringify({layers:[row]}));writeFileSync(facts,JSON.stringify({objects:{'5':{hasMask:true,maskEnabled:true,maskLinked:true,maskSurfaceSha256:'d'.repeat(64)}}}));
@@ -151,7 +151,7 @@ test('local adjustment revision is bound to the editable enabled mask and exact 
 });
 
 test('cancelled tasks register late files after ledger restart without acceptance or replay',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const {symlinkSync}=await import('node:fs');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const {symlinkSync}=await import('node:fs');const f=fixture();
  try{
   let ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);const epoch=ledger.claim(task.id);
   ledger.update(task.id,epoch,current=>{current.worker={token:'owned-fixture',exited:true,processGroupGone:true};});ledger.stop(task.id);
@@ -172,7 +172,7 @@ test('cancelled tasks register late files after ledger restart without acceptanc
 
 
 test('stale mutable project revision reports conflict before unsupported desktop dispatch without changing intent',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const {fileDigest}=await import('../src/protocol/files.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));const project=join(f.root,'mutable.pcraft');writeFileSync(project,'original native fixture');
   const task=ledger.create({...f.request,mutableProject:project,expectedProjectSha256:fileDigest(project)});
@@ -185,7 +185,7 @@ test('stale mutable project revision reports conflict before unsupported desktop
 
 
 test('unavailable mutable project observation refuses before native work without claiming a revision',async()=>{
- const {Runner}=await import('../src/harness/runner.ts');const f=fixture();
+ const {Runner}=await import('../scripts/harness/runner.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create({...f.request,mutableProject:join(f.root,'missing.pcraft'),expectedProjectSha256:'a'.repeat(64)});const before=JSON.stringify(ledger.status(task.id));
   const runner=new Runner(ledger,{skillRoot:join(f.root,'absent'),python:'python3'});runner.preflight=()=>assert.fail('missing project reached preflight');

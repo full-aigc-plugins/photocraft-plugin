@@ -40,6 +40,9 @@ flowchart TD
 
 每项技能自带必要脚本、运行时锁、工作流参考和实例；不存在兄弟目录读取或符号链接。仓库维护时通过 `scripts/sync_skill_suite.py` 从 use 技能同步共享执行资源，`--check` 拒绝漂移。场景描述与命令证据分别维护。发布资源适度重复以支持按粒度安装，共享代码不手工维护多套实现。
 
+
+> 2026-10-13 收敛候选（技能源 v0.1.0-dev.60，插件未发布）：重复执行载荷收敛为内置 `photocraft-harness` 技能——13 个领域技能删除各自 `scripts/`（此前 13×42 份逐字节副本），唯一正典保存在 harness（12 个文档化入口 + 42 个执行文件，与 dev.59 载荷逐字节一致，可达性分析无真孤儿），文档按技能名经 `HARNESS_DIR` 路由执行；`sync_skill_suite.py` 改为同步 use→领域技能 examples/references 与 use→harness 执行契约 JSON。单技能独立安装仍可用：领域技能提供场景知识，执行入口经 harness 技能（随插件捆绑；单独安装用 `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-harness`）。收敛不改变已发布 dev.77 快照的身份与证据。
+
 启动器接收 `--` 后的原生 argv，在安装前检查首个子命令，通过固定摘要的可执行文件调用且不使用 shell，保留退出码并有界等待。非法操作、不支持平台与损坏安装明确失败；命令 ID、参数和 enabled 状态运行时重查。超时是结果未知，不能证明写入未发生；先保留检查点、核对工程再决定后续操作。
 
 ## 4. 源码证据与工具差异

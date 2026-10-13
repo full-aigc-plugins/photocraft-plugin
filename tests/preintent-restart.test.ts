@@ -5,8 +5,8 @@ import {existsSync,mkdtempSync,realpathSync,writeFileSync,readFileSync,rmSync,st
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {Ledger} from '../src/harness/ledger.ts';
-import {Runner} from '../src/harness/runner.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Runner} from '../scripts/harness/runner.ts';
 import {canonical,fileDigest} from '../src/protocol/files.ts';
 function fixture(){
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-preintent-')));let ledger=new Ledger(join(root,'state'));
@@ -34,7 +34,7 @@ test('foreign truncated linked or nonregular preintent plans preserve files and 
 test('native SIGKILL between pinned plan and intent resumes the same task exactly once',{skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},async()=>{
  const f=fixture();let child:any;try{
   const options={skillRoot:process.env.PHOTOCRAFT_SKILL_ROOT!,python:process.env.PHOTOCRAFT_PYTHON??'python3'},marker=join(f.root,'before-claim'),script=join(f.root,'interrupt.mjs');
-  writeFileSync(script,`import {Ledger} from ${JSON.stringify(pathToFileURL(resolve('src/harness/ledger.ts')).href)};import {Runner} from ${JSON.stringify(pathToFileURL(resolve('src/harness/runner.ts')).href)};import {writeFileSync} from 'node:fs';const ledger=new Ledger(${JSON.stringify(f.ledger.root)});ledger.claim=()=>{writeFileSync(${JSON.stringify(marker)},'before intent');Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,60000);throw new Error('interrupt not delivered');};await new Runner(ledger,${JSON.stringify(options)}).run(${JSON.stringify(f.task.id)});`);
+  writeFileSync(script,`import {Ledger} from ${JSON.stringify(pathToFileURL(resolve('scripts/harness/ledger.ts')).href)};import {Runner} from ${JSON.stringify(pathToFileURL(resolve('scripts/harness/runner.ts')).href)};import {writeFileSync} from 'node:fs';const ledger=new Ledger(${JSON.stringify(f.ledger.root)});ledger.claim=()=>{writeFileSync(${JSON.stringify(marker)},'before intent');Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,60000);throw new Error('interrupt not delivered');};await new Runner(ledger,${JSON.stringify(options)}).run(${JSON.stringify(f.task.id)});`);
   child=spawn(process.execPath,[script],{stdio:['ignore','pipe','pipe']});let diagnostics='';child.stderr.on('data',(data:Buffer)=>{diagnostics+=data.toString();});
   const deadline=Date.now()+15000;while(!existsSync(marker)){if(child.exitCode!==null||Date.now()>deadline)throw new Error('preintent window missing: '+diagnostics);await new Promise(resolve=>setTimeout(resolve,20));}
   const pin=readFileSync(f.planPath),inode=statSync(f.planPath).ino;const closed=new Promise(resolve=>child.once('close',resolve));child.kill('SIGKILL');await closed;f.reopen();

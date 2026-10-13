@@ -18,7 +18,7 @@ Upgrade request fields:
 }
 ```
 
-`skillIdentity` is exported by `src/harness/preflight.ts`; its executor/resource digest differs from a Git commit or ZIP hash. Rollback requests contain only authorizationRef, expectedGeneration, expectedActiveSourceSha256 and stateSchema. A stale generation or identity refuses without selecting another version.
+`skillIdentity` is exported by `scripts/harness/preflight.ts`; its executor/resource digest differs from a Git commit or ZIP hash. Rollback requests contain only authorizationRef, expectedGeneration, expectedActiveSourceSha256 and stateSchema. A stale generation or identity refuses without selecting another version.
 
 ```mermaid
 flowchart TD

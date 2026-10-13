@@ -4,8 +4,8 @@ import {mkdtempSync,realpathSync,rmSync,mkdirSync,writeFileSync,readFileSync,chm
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {exportBundle,verifyBundle} from '../src/protocol/bundle.ts';
-import {Ledger} from '../src/harness/ledger.ts';
-import {Runner} from '../src/harness/runner.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Runner} from '../scripts/harness/runner.ts';
 import {canonical,digest,fileDigest,readJson} from '../src/protocol/files.ts';
 
 function fixture(){

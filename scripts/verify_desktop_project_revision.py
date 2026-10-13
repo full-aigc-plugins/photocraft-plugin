@@ -7,7 +7,7 @@ def load(path,name):
  spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 
 def verify(skill,runtime_home,node):
- scripts=skill/'scripts';baseline={str(p.relative_to(skill)):sha(p) for p in skill.rglob('*') if p.is_file()};lock=json.loads((scripts/'runtime.lock.json').read_text());desktop_lock=json.loads((scripts/'desktop.lock.json').read_text())
+ scripts=skill/'scripts' if (skill/'scripts').is_dir() else skill.parent/'photocraft-harness'/'scripts';baseline={str(p.relative_to(skill)):sha(p) for p in skill.rglob('*') if p.is_file()};lock=json.loads((scripts/'runtime.lock.json').read_text());desktop_lock=json.loads((scripts/'desktop.lock.json').read_text())
  cli=load(scripts/'bootstrap.py','revision_bootstrap').install(lock,runtime_home);desktop=load(scripts/'desktop.py','revision_desktop_install').install(desktop_lock,runtime_home);owned=load(scripts/'desktop_session.py','revision_owned_session');cases=[]
  with tempfile.TemporaryDirectory(prefix='photo-desktop-revision-') as td:
   root=Path(td).resolve();output=root/'owned';output.mkdir();token=root/'token';token.write_text(secrets.token_hex(32));token.chmod(0o600)

@@ -6,45 +6,6 @@
 
 ## ADDED Requirements
 
-### Requirement: PC-RL-001 宿主与发布证据
-
-发布 SHALL 分别验证插件结构、技能来源、运行时、宿主加载、真实任务和原生交付；文档阶段不得进入可安装市场或宣称功能完成。
-
-#### Scenario: PC-RL-001-P 合同条件满足
-
-- **WHEN** 请求满足本需求的来源、输入、状态和证据条件
-- **THEN** 系统按本需求完成宿主与发布证据并返回可核对的结果
-- **AND** 结果绑定当前版本与执行身份，不提升未验证能力状态
-
-#### Scenario: PC-RL-001-N 边界条件
-
-- **WHEN** 只有 OpenSpec 校验与文档检查通过
-- **THEN** 状态保持 documentation-baseline，所有实现任务仍未完成
-
-#### Scenario: PC-RL-001-MATRIX 分层且绑定候选身份的验收
-
-- **WHEN** 一个候选版本请求提升能力或发行状态
-- **THEN** 系统 SHALL 分别列出目录／参数合同、离线故障、原生场景、固定发行实际安装、宿主加载、模型路由和创作评审的 PASS／FAIL／NOT_RUN／不适用证据，并绑定源码、输入、技能快照、运行时、平台、后端和宿主版本
-- **AND** 逐命令证据包含适用文档、选择、权限和调用前置条件；已有 755 条目录映射不自动提升为逐命令执行通过，不适用须说明原因且不能删除原验收义务
-- **AND** 候选内容变化仅重跑受影响检查及必要的项目门禁；旧证据只能在相关内容摘要相同且范围一致时复用
-
-#### Scenario: PC-RL-001-ROUTING 实际宿主技能选择
-
-- **WHEN** 在固定技能集合中由真实宿主模型处理“只改标题”“背景虚化保留产品”“已有工程导出”“超时后继续”及明确指定技能的输入
-- **THEN** 系统 SHALL 记录宿主、模型及配置、输入集合、实际选中技能链、预期归属、重复执行和越界结果；同一输入多次试验的次数及通过标准在执行前确定并保留逐次结果
-- **AND** 错误选择、未知结果重放或无授权副作用作为失败；描述关键词检查及模拟派发不能替代真实模型路由证据
-
-#### Scenario: PC-RL-001-COMPONENT 宿主入口只路由技能
-
-- **WHEN** Claude Code 从固定插件包发现显式命令及 SessionStart 钩子
-- **THEN** 每条显式命令 SHALL 指向包内现存的同名技能，保留该技能对输入、原生执行与验收的责任；钩子 SHALL 仅提供会话提示，不安装、启动、关闭或重放原生任务
-- **AND** 宿主专用命令和钩子不声明为 Agent Plugins 1.0.0 可移植组件；根 plugin.json 与包内 skills/ 仍满足可移植发现，实际宿主模型路由按 PC-RL-001-ROUTING 另行验收
-
-#### Scenario: PC-RL-001-COMPONENT-FAIL 缺失目标和额外生命周期副作用
-
-- **WHEN** 一个命令指向不存在的技能、宿主 manifest 与根插件版本不一致，或钩子被挂在每轮提示／每次工具调用并操作原生实例
-- **THEN** 包内检查 SHALL 拒绝该候选；不以 manifest 静态校验的成功返回声称命令加载、真实模型路由或原生交付已通过
-
 ### Requirement: PC-RL-002 权限与秘密边界
 
 运行 SHALL 限定素材读取与工程写入根目录；模型输出和素材元数据均为不可信输入；密钥通过宿主秘密引用传入，不进入日志、计划、包或技能。
@@ -78,4 +39,4 @@
 
 ## Implementation evidence (non-normative)
 
-`docs/evidence/codex-current-release.json` binds current fixed releases to two actual Codex CLI/app-server versions, five enabled namespaced skills, installed public workflow outcomes and explicit exclusions. The corresponding bilingual Host-Verification-Architecture documents specify the repeatable check. RL-001 tasks remain unchecked until their full P0 prerequisites and scenarios pass.
+`docs/evidence/codex-current-release.json` binds current fixed releases to two actual Codex CLI/app-server versions, five enabled namespaced skills, installed public workflow outcomes and explicit exclusions. The corresponding bilingual Host-Verification-Architecture documents specify the repeatable check.

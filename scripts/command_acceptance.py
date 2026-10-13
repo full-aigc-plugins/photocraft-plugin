@@ -28,11 +28,15 @@ def read(path):
  return json.loads(Path(path).read_text(),object_pairs_hook=pairs,parse_float=number,parse_constant=constant)
 def source(root):
  root=Path(root).absolute();files={}
- for folder in ('scripts','references'):
-  for path in sorted((root/folder).iterdir()):
+ # 执行实现唯一收敛在 photocraft-harness；领域技能不再自带 scripts/，载荷身份绑定到 harness 正典。
+ folders=[('references',root/'references')]
+ own=root/'scripts'
+ folders.append(('scripts',own) if own.is_dir() else ('scripts',root.parent/'photocraft-harness'/'scripts'))
+ for folder,base in folders:
+  for path in sorted(base.iterdir()):
    if path.suffix in ('.py','.json'):
     if path.is_symlink() or not path.is_file():raise ValueError('skill_resource_not_regular')
-    files[str(path.relative_to(root))]=sha(path)
+    files[str(path.relative_to(base.parent) if base!=own else path.relative_to(root))]=sha(path)
  return {'sha256':digest(encoded(files)),'files':files}
 def scaffold(skill):
  skill=Path(skill);catalog=read(skill/'references/command-coverage.json');desktop=read(skill/'references/desktop-command-snapshot.json');bridge={row['id'] for row in desktop['commands']};identity=source(skill)

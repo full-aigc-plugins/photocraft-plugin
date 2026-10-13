@@ -41,160 +41,14 @@
       "requirement": "PC-RT-002",
       "capability": "runtime-distribution",
       "tasks": [
-        "2.4",
-        "2.5",
-        "2.6",
-        "4.29",
         "2.9",
         "2.10",
-        "10.1",
-        "10.2",
-        "10.3"
+        "4.29"
       ],
       "owner": "Runtime owner",
       "status": "in-progress",
       "candidateEvidence": "docs/evidence/photocraft-native-download-candidate-20261007.json",
       "fixedNativeDownloadEvidence": "docs/evidence/codex-native-download-first-use-20261007.json",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "10.1",
-          "10.2",
-          "10.3"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/capability-snapshot/",
-        "completedTasks": [
-          "10.1",
-          "10.2"
-        ],
-        "openTasks": [
-          "10.3"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "capabilitySubgateEvidence": "docs/evidence/optimization/capability-acceptance-audit.json",
-      "completedCapabilityTasks": [
-        "10.1",
-        "10.2",
-        "10.3"
-      ],
-      "openUpgradeTasks": [
-        "2.4",
-        "2.5",
-        "2.6"
-      ],
-      "scope": "Task10.3 only, public fixed installation on macOS arm64 with labeled readonly discovery fault injection. The full PC-RT-002 requirement remains in progress."
-    },
-    {
-      "requirement": "PC-TX-001",
-      "capability": "task-execution",
-      "tasks": [
-        "3.1",
-        "3.2",
-        "3.3",
-        "3.13",
-        "3.14",
-        "10.4",
-        "10.5",
-        "10.6"
-      ],
-      "owner": "Harness owner",
-      "status": "candidate-implemented-full-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "10.4",
-          "10.5",
-          "10.6"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/project-ownership/",
-        "completedTasks": [
-          "10.4",
-          "10.5"
-        ],
-        "openTasks": [
-          "10.6"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
-    },
-    {
-      "requirement": "PC-TX-002",
-      "capability": "task-execution",
-      "tasks": [
-        "3.4",
-        "3.5",
-        "3.6",
-        "10.7",
-        "10.8",
-        "10.9"
-      ],
-      "owner": "Harness owner",
-      "status": "candidate-implemented-full-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "10.7",
-          "10.8",
-          "10.9"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/task-recovery/",
-        "completedTasks": [
-          "10.7",
-          "10.8"
-        ],
-        "openTasks": [
-          "10.9"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
-    },
-    {
-      "requirement": "PC-TX-003",
-      "capability": "task-execution",
-      "tasks": [
-        "3.7",
-        "3.8",
-        "3.9",
-        "10.10",
-        "10.11",
-        "10.12"
-      ],
-      "owner": "Harness owner",
-      "status": "candidate-implemented-full-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "10.10",
-          "10.11",
-          "10.12"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/task-budget-stop/",
-        "completedTasks": [
-          "10.10",
-          "10.11"
-        ],
-        "openTasks": [
-          "10.12"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
       "candidateImplementation": {
         "status": "verified-minimum-implementation-full-acceptance-open",
         "evidence": "docs/evidence/optimization/task-progress.json"
@@ -383,42 +237,6 @@
       "scope": "Both normative scenarios on the immutable fixed macOS arm64 installation; optional RGB8 contract and explicitly labeled provider receipt fixture. No live generation or billing authentication."
     },
     {
-      "requirement": "PC-AR-001",
-      "capability": "artifact-delivery",
-      "tasks": [
-        "5.1",
-        "5.2",
-        "5.3",
-        "11.7",
-        "11.8",
-        "11.9"
-      ],
-      "owner": "Harness owner",
-      "status": "candidate-implemented-full-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "11.7",
-          "11.8",
-          "11.9"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/artifact-lineage/",
-        "completedTasks": [
-          "11.7",
-          "11.8"
-        ],
-        "openTasks": [
-          "11.9"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
-    },
-    {
       "requirement": "PC-AR-002",
       "capability": "artifact-delivery",
       "tasks": [
@@ -432,116 +250,16 @@
       "scope": "all current scenarios at fixed dev.40 on macOS arm64; complete PSD fidelity and external editors unknown"
     },
     {
-      "requirement": "PC-QA-001",
-      "capability": "quality-review",
-      "tasks": [
-        "6.1",
-        "6.2",
-        "6.3",
-        "11.1",
-        "11.2",
-        "11.3"
-      ],
-      "owner": "Harness owner",
-      "status": "candidate-implemented-full-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "11.1",
-          "11.2",
-          "11.3"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/bound-review/",
-        "completedTasks": [
-          "11.1",
-          "11.2"
-        ],
-        "openTasks": [
-          "11.3"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
-    },
-    {
       "requirement": "PC-QA-002",
       "capability": "quality-review",
-      "tasks": [
-        "6.4",
-        "6.5",
-        "6.6",
-        "11.4",
-        "11.5",
-        "11.6"
-      ],
+      "tasks": [],
       "owner": "Harness owner",
-      "status": "candidate-implemented-full-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "11.4",
-          "11.5",
-          "11.6"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/bounded-revision/",
-        "completedTasks": [
-          "11.4",
-          "11.5"
-        ],
-        "openTasks": [
-          "11.6"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
-    },
-    {
-      "requirement": "PC-RL-001",
-      "capability": "release-compatibility",
-      "tasks": [
-        "7.1",
-        "7.2",
-        "7.3",
-        "13.4",
-        "13.5",
-        "13.6"
-      ],
-      "owner": "Release owner",
-      "status": "planned",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "13.4",
-          "13.5",
-          "13.6"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/host-evidence/",
-        "completedTasks": [],
-        "openTasks": [
-          "13.4",
-          "13.5",
-          "13.6"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      }
+      "status": "candidate-implemented-full-acceptance-open"
     },
     {
       "requirement": "PC-RL-002",
       "capability": "release-compatibility",
-      "tasks": [
-        "7.4",
-        "7.5",
-        "7.6"
-      ],
+      "tasks": [],
       "owner": "Release owner",
       "status": "planned"
     },
@@ -565,7 +283,6 @@
       "tasks": [
         "8.1",
         "8.2",
-        "8.3",
         "8.4",
         "8.5",
         "8.6",
@@ -611,11 +328,7 @@
     {
       "requirement": "PC-TX-004",
       "capability": "task-execution",
-      "tasks": [
-        "3.10",
-        "3.11",
-        "3.12"
-      ],
+      "tasks": [],
       "owner": "Harness owner",
       "status": "verified-darwin-arm64",
       "candidateEvidence": "docs/evidence/failed-stage-candidate-20261007.json",
@@ -636,107 +349,18 @@
     {
       "requirement": "PC-SK-004",
       "capability": "skills-distribution",
-      "tasks": [
-        "9.1",
-        "9.2",
-        "9.3"
-      ],
+      "tasks": [],
       "owner": "Skills owner",
       "status": "verified-current-fixed-scenarios",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "9.1",
-          "9.2",
-          "9.3"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/routing-contract/",
-        "completedTasks": [
-          "9.1",
-          "9.2"
-        ],
-        "openTasks": [
-          "9.3"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
       "evidence": "docs/evidence/optimization/routing-acceptance-audit.json",
       "scope": "Current fixed dev.43/dev.38 normative scenarios only; model dispatch and creative acceptance separate"
     },
     {
-      "requirement": "PC-TX-005",
-      "capability": "task-execution",
-      "tasks": [
-        "9.4",
-        "9.5",
-        "9.6"
-      ],
-      "owner": "Skills owner",
-      "status": "fixed-readonly-reply-and-harness-partial-all-entry-acceptance-open",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "9.4",
-          "9.5",
-          "9.6"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/entry-contract/",
-        "completedTasks": [
-          "9.4",
-          "9.5"
-        ],
-        "openTasks": [
-          "9.6"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "evidence": "docs/evidence/optimization/harness-entry/candidate.json",
-      "scope": "Published dev.45/source40 unchanged. New Harness create/run/revise preflight and reply candidate passes49 TypeScript/48 Python checks with3 actual native tests; raw/streaming/checkpoint and fixed-candidate matrix remain open;9.6 unchecked.",
-      "checkpointCandidateEvidence": "docs/evidence/optimization/checkpoint-contract-candidate.json",
-      "readonlyReplyEvidence": "docs/evidence/optimization/readonly-reply-publication.json"
-    },
-    {
       "requirement": "PC-RL-003",
       "capability": "release-compatibility",
-      "tasks": [
-        "9.7",
-        "9.8",
-        "9.9"
-      ],
+      "tasks": [],
       "owner": "Release owner",
       "status": "verified-current-fixed-scenarios",
-      "optimizationScope": {
-        "date": "2026-10-08",
-        "status": "candidate-implemented-partial-acceptance",
-        "tasks": [
-          "9.7",
-          "9.8",
-          "9.9"
-        ],
-        "evidenceTarget": "docs/evidence/optimization/release-identity/",
-        "completedTasks": [
-          "9.7",
-          "9.8"
-        ],
-        "openTasks": [
-          "9.9"
-        ],
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
-      "candidateImplementation": {
-        "status": "verified-minimum-implementation-full-acceptance-open",
-        "evidence": "docs/evidence/optimization/task-progress.json"
-      },
       "evidence": "docs/evidence/optimization/identity-acceptance-audit.json",
       "scope": "Current fixed dev.43/dev.38 normative scenarios only; model dispatch and creative acceptance separate"
     },

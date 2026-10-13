@@ -33,6 +33,9 @@
           "Create an editable PhotoCraft project from my assets"
         ]
       }
+    },
+    "ai.nanoco.nanoclaw": {
+      "agentName": "PhotoCraft"
     }
   }
 }

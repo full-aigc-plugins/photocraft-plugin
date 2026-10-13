@@ -43,10 +43,10 @@ Auto adjustments change pixels; they do not prove an editable adjustment layer w
 ## 公共执行步骤 / Public execution
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.trim
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.indexedColor
-python3 -I -B "$SKILL_DIR/scripts/commands.py" check /absolute/image-plan.json
-python3 -I -B "$SKILL_DIR/scripts/commands.py" run /absolute/image-plan.json --output /absolute/new-image-result
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.trim
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.indexedColor
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" check /absolute/image-plan.json
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" run /absolute/image-plan.json --output /absolute/new-image-result
 ```
 
 使用本技能command-usage.md的计划合同；更改后同会话保存pcraft，重开后核对尺寸、模式、位深、图层及导出像素。参数说明、分类和计划校验不等于19条新增归属命令全部执行验收；不同转换的图层损失必须按实际结果记录。

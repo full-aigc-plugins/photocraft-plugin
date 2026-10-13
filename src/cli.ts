@@ -1,16 +1,16 @@
 #!/usr/bin/env node
-import {RuntimeManager} from './harness/runtime_manager.ts';
-import {runtimeBinding} from './harness/runtime_binding.ts';
+import {RuntimeManager} from '../scripts/harness/runtime_manager.ts';
+import {runtimeBinding} from '../scripts/harness/runtime_binding.ts';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
-import { Ledger } from './harness/ledger.ts';
-import { Runner } from './harness/runner.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
+import { Runner } from '../scripts/harness/runner.ts';
 import { mapArtifact } from './protocol/artifact.ts';
 import { exportBundle,verifyBundle } from './protocol/bundle.ts';
 import { Review } from './evaluation/review.ts';
 import { readJson, safePath } from './protocol/files.ts';
-import { preflightRequest, skillIdentity } from './harness/preflight.ts';
+import { preflightRequest, skillIdentity } from '../scripts/harness/preflight.ts';
 import { OperationError, validationError } from './protocol/operation_error.ts';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');

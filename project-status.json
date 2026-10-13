@@ -135,7 +135,9 @@
     "10.9": "docs/evidence/optimization/task-recovery/acceptance-audit.json",
     "2.4": "docs/evidence/optimization/runtime-transition/publication.json",
     "2.5": "docs/evidence/optimization/runtime-transition/publication.json",
-    "2.6": "docs/evidence/optimization/runtime-version/acceptance-audit.json"
+    "2.6": "docs/evidence/optimization/runtime-version/acceptance-audit.json",
+    "14.1": "docs/evidence/photocraft-harness-convergence-20261013.json",
+    "14.2": "docs/evidence/photocraft-harness-convergence-20261013.json"
   },
   "hostValidationEvidence": "docs/evidence/craft-full-command-fixed-first-use-20261007.json",
   "hostValidationStatus": "fixed-five-plugin58-discovery-and-standalone-desktop-passed",

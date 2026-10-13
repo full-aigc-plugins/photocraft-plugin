@@ -1,61 +1,60 @@
 ---
 name: photocraft-harness
-description: 当 PhotoCraft 任务需要跨会话状态查询、结果未知后的核对、停止自有执行、提交独立评审回执、导出或检查可移动血缘包，或从已保存检查点显式恢复修订、按问题进行受限另存修订，以及显式查询、升级或回退运行时组合时使用。只查询命令或执行一次领域操作时由对应 PhotoCraft 技能负责。
+description: PhotoCraft 内置执行 harness——所有 photocraft 领域技能（photocraft-use、photocraft-cli 及各场景技能）的统一执行通道。首次安装固定 CLI、查询或执行原生命令、workflow 编排、桌面桥接、连续任务会话、交付与进度核验时，经由本技能的入口脚本执行；领域技能只提供场景知识、计划与示例，不自带脚本。
+license: Apache-2.0
 ---
 
-# PhotoCraft 任务控制
+# PhotoCraft Harness（内置执行通道）
 
-从本技能实际加载目录定位插件根目录；读取 [执行合同](references/execution-contract.md)。需要 Node 24.15+（小于 25）和 Python 3。插件技能来源仍由 `skills.lock.json` 固定，插件本地技能不混入独立技能包。
+本技能是 PhotoCraft 技能套件的**唯一执行实现**：首次安装、原生命令调用、workflow 编排、桌面桥接、连续任务会话与交付核验都收敛在本目录 `scripts/` 内。`photocraft-use`、`photocraft-cli` 及各领域技能是薄文档技能——它们提供场景指引、计划示例与参考契约，实际执行一律经由本技能的入口。**执行任何 PhotoCraft 脚本前，先把 `HARNESS_DIR` 设为本 `SKILL.md` 所在目录（宿主实际加载的绝对路径），不要假设当前工作目录就是技能目录。** 用户级安装可能位于 `~/.agents/skills/photocraft-harness`，项目级可能位于 `.agents/skills/photocraft-harness`，插件可能位于其 `skills/photocraft-harness` 或宿主缓存目录；以宿主实际加载路径为准。领域技能文档中的 `SKILL_DIR` 指领域技能自身目录（用于读取其 `examples/`、`references/`），与本 harness 是两个位置。
 
-## 调用
+## 入口
 
-使用插件根目录的 `src/cli.ts`：
+| 入口 | 用途 |
+|---|---|
+| `scripts/bootstrap.py` | 首次使用安装器：仅用标准库安装锁定的官方 CLI（`runtime.lock.json` 固定版本与摘要），返回 JSON `executable`。 |
+| `scripts/cli.py` | 公开 CLI 通道：按 argv 调用固定二进制；`--` 后放原生子命令，另有 `mcp` 与 `serve` 会话入口。 |
+| `scripts/commands.py` | 原生命令单技能入口：`list` / `describe` / `check` / `run`，参数说明、实时前置检查、同会话调用及失败回执。 |
+| `scripts/workflow.py` | 原生分层计划执行器：独立会话、限定读写目录和不可变修订交付。 |
+| `scripts/desktop.py` | 桌面桥接：按固定官方 DMG 安装桌面应用并执行桌面计划；与 CLI 缓存分离。 |
+| `scripts/task_session.py` | 连续任务会话：逐阶段调用原命令入口，复用一个所属实例，不重启或重放。 |
+| `scripts/route.py` | 意图路由查询：`route.py INTENT` 返回最短技能链；只读合同查询，不代替宿主模型理解。 |
+| `scripts/delivery.py` | 交付完整性：只读核对交付清单、依赖和交换身份；不安装运行时。 |
+| `scripts/progress.py` | 进度观察：原子进度快照的只读查询，不安装、不启动会话、不授予重放或修订权限。 |
+| `scripts/native_verify.py` | 交付核验：使用已安装固定二进制在新会话只读重开；不安装、不修改交付包。 |
+| `scripts/native_workflow.py` | 工作流网关：完整反射命令接入受核验工作流；交付由原生保存、重开及依赖门禁决定。 |
+| `scripts/checkpoint_verify.py` | 检查点核对：只读核对失败暂存并重开原工程；不将部分成功升级为交付通过。 |
+
+其余 `scripts/` 文件是上述入口的内部依赖（协议、守卫与合同模块），不单独调用。
+
+## 用法
+
+场景指引、计划与示例文件取自对应领域技能目录（`SKILL_DIR/examples/`、`SKILL_DIR/references/`）；执行路径一律使用本目录 `HARNESS_DIR/scripts/`。
+
+首次安装（无预装 CLI 时；安装范围是用户数据目录，不需要 sudo）：
 
 ```bash
-node "$PLUGIN_ROOT/src/cli.ts" --help
-node "$PLUGIN_ROOT/src/cli.ts" create --state-dir "$STATE_DIR" --request "$REQUEST_JSON"
-node "$PLUGIN_ROOT/src/cli.ts" run --state-dir "$STATE_DIR" --task "$TASK_ID"
-node "$PLUGIN_ROOT/src/cli.ts" status --state-dir "$STATE_DIR" --task "$TASK_ID"
-node "$PLUGIN_ROOT/src/cli.ts" reconcile --state-dir "$STATE_DIR" --task "$TASK_ID"
-node "$PLUGIN_ROOT/src/cli.ts" stop --state-dir "$STATE_DIR" --task "$TASK_ID"
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
 ```
 
-路径必须是规范化绝对路径，用户路径中的符号链接被拒绝。状态目录为本机私有持久数据，不提交仓库。`run` 先验证计划和输入，再记录意图并执行。相同幂等键只代表同一份请求；未知结果只核对，不换键重跑原编辑。
+原生命令直连与命令目录查询（cli.py 的原生子命令须放在 `--` 之后；commands.py 输出恒为 JSON）：
 
-## 技术、评审和接受
+```bash
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- --version
+python3 -I -B "$HARNESS_DIR/scripts/cli.py" -- commands --json
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe COMMAND_ID
+```
 
-`verify` 核对交付包并使用已安装的固定二进制在新会话重开，不安装。`judge` 生成绑定候选的请求；评审者读取实际工程和预览，以独立上下文或人工方式产生回执。执行器不能编造评审回执。`review-import`（别名 `import-judge`）只接收回执；`accept` 需要用户明确接受当前评审候选。
+持续交互可使用 `cli.py -- mcp` 或 `cli.py serve`（stdio/TCP）；连续检查、编辑、保存、重开使用 `task_session.py`。桌面安装与 GUI 计划见领域技能的 [固定桌面安装] 参考，入口为 `scripts/desktop.py`。
 
-`revise` 只把有效问题映射到已授权对象和属性，创建另存任务并消耗累计预算。新任务仍需 `run`、技术核验和新的评审。拒绝无问题改动、基础版本冲突和跨对象编辑。
+## 领域技能与本 harness 的关系
+
+- `photocraft-use`：完整任务路由与交付合同；执行仍走本 harness。
+- `photocraft-cli` 与各场景技能（setup/project/layers/selection/masks/adjustments/retouch/text/resize/export/filters）：场景知识与参数契约；执行仍走本 harness。
+- 领域技能文档引用脚本时一律写作 `$HARNESS_DIR/scripts/<入口>`；`references/` 中的执行契约 JSON（commands、command-coverage、native-command-snapshot、desktop-command-snapshot、routing-contract）在本技能内与 `photocraft-use` 保持字节一致，领域技能各自保留其场景参考。
+- 交付、移动包或源工程返工前按领域技能的交付完整性参考执行 `scripts/delivery.py`；只读检查无需安装运行时。
 
 ## 当前范围
 
-未受管账本默认执行资源以当前 `skills.lock.json` 固定快照为准；显式受管账本沿用已核验、保留并绑定摘要的活动组合。开发验证可明确传入 `--skill-root` 指向其他单技能目录，其摘要写入任务；该路径的验证不能冒充固定发行验收。桌面可变工程写入未接通，明确拒绝；真实宿主模型派发、Windows/Linux 原生运行及创作接受未验收。
-
-## 可移动血缘交付
-
-`bundle-export --state-dir "$STATE_DIR" --task "$TASK_ID" --bundle "$NEW_BUNDLE"` 导出技术已核验候选、引用素材和绑定评估记录；原目录不覆盖。保留返回的 bundleSha256 作为外部版本锚点。
-
-`bundle-check --bundle "$MOVED_BUNDLE" --expected-sha256 "$BUNDLE_SHA256"` 只读核对，无需任务账本或旧绝对路径。旧交付可检查文件摘要，但血缘保持 UNKNOWN。完整性不证明评估器身份真实性，也不把 NOT_RUN 创作状态变成通过。
-
-局部调整修订当前仅支持已有 `BrightnessContrast` 调整层的 `brightness`／`contrast`。必须有绑定的失败评估、目标授权、已启用蒙版及蒙版瓦片摘要，并声明保护区域；另存后核验实际像素变化、蒙版保全及非目标像素。其他调整种类仍拒绝，不由此声明完整领域或创作验收。
-
-PSD 导出按固定技能的必要特性门禁执行；受限返工继承 `psdPolicy`，旧源版本的损失接受不得自动授权不同源版本。
-
-平面导出 `flatExport` 的颜色／ICC／透明要求随返工继承；素材来源回执由已核验源包继承，替换素材不沿用旧回执；本地编辑不产生新的云生成计量。
-
-## 检查点恢复
-
-`recover --state-dir "$STATE_DIR" --task "$TASK_ID" --proposal "$PROPOSAL_JSON"` 从已保存且原执行者已确认退出的检查点创建关联子任务，不重放原operations。提案绑定原检查点记录（failure或checkpoint.json）及工程摘要、已有授权、明确对象和新操作；重复同提案返回同一子任务，累计修订预算与截止时间保留。新任务仍需`run`及独立评审。
-
-仅有PID消失、未知记录或旧暂存不能恢复写入权；原任务、工作令牌、原计划、资产或文件不匹配时拒绝。检查点不伪装成成功父artifact；公开固定dev.61在macOS arm64通过当前PC-TX-002全部9个规范场景；恢复支持已有文字和图层名称局部修复，创作／模型及其他V1门禁保持独立。
-
-## 显式运行时组合
-
-仅在用户要求升级、回退或核对运行时组合时使用`runtime-status`／`runtime-upgrade`／`runtime-rollback`，不因普通创作任务自动升级。三个入口使用既有`--state-dir`，切换另外提供`--request`提案。先核对代次、来源摘要、后端与stateSchema；任务和原执行者未排空时不得删除记录或重置epoch规避。完整合同在插件根目录`docs/PhotoCraft-Runtime-Transition.zh_CN.md`。
-
-状态查询不安装、不编辑。切换保留旧版本及状态备份，分别核验实际版本、命令schema和原生工程，再原子更新组合。当前仅支持ledger schema1，不迁移未知状态；bridge选择不能静默派发headless任务，可变GUI编辑仍拒绝。不同二进制版本及完整升级验收保持开放，同二进制来源切换证据不能冒充不同版本通过。
-
-## 连续操作的实例复用
-
-独立连续原生命令任务交给 **`photocraft-cli`** 技能的任务级会话入口，在同一进程句柄逐阶段操作，不为检查、保存、重开和返工重复启动桌面。安装：`npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。已有 Harness 任务仍使用原账本核对、授权和累计预算；不要为了复用实例另开任务或绕过 unknown／取消门禁。
+固定 CLI 的版本与制品摘要以本技能 `scripts/runtime.lock.json` 为准；技能包版本以对应发布标签为准。独立安装复验与全量逐命令验收分别记录，不以发布替代验收。目录覆盖与直接原生使用不等于所有指令、GUI、交付或 Art 编排已验收。

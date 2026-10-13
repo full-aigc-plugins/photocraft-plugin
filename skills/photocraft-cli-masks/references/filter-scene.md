@@ -30,9 +30,9 @@ These ranges come from the pinned native parameter contract. Query other filters
 Inspect the actual selection and layer IDs, use the command gateway contract, and save/reopen the native project. Distinguish editable filters from baked pixels. Revisions start from editable state or the preserved original rather than repeatedly sharpening a flattened result.
 
 ```bash
-python3 -I -B "$SKILL_DIR/scripts/commands.py" list --filter filter.
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.convertForSmartFilters
-python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.smartSharpen
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter filter.
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.convertForSmartFilters
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.sharpen.smartSharpen
 ```
 
 ## 交付验收 / Delivery acceptance

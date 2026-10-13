@@ -15,7 +15,7 @@ function fixture() {
 }
 
 test('task survives reopening and a key cannot be reused for a different plan', async () => {
-  const { Ledger } = await import('../src/harness/ledger.ts');
+  const { Ledger } = await import('../scripts/harness/ledger.ts');
   const f = fixture();
   try {
     let ledger = new Ledger(join(f.root, 'state'));
@@ -30,7 +30,7 @@ test('task survives reopening and a key cannot be reused for a different plan', 
 });
 
 test('shared writable project has one owner and old epochs cannot commit', async () => {
-  const { Ledger } = await import('../src/harness/ledger.ts');
+  const { Ledger } = await import('../scripts/harness/ledger.ts');
   const f = fixture();
   try {
     const ledger = new Ledger(join(f.root, 'state'));
@@ -48,11 +48,11 @@ test('shared writable project has one owner and old epochs cannot commit', async
 });
 
 test('independent processes race for the same project and only one intent commits',{timeout:10000},async()=>{
- const {Ledger}=await import('../src/harness/ledger.ts');const {spawn}=await import('node:child_process');const f=fixture();
+ const {Ledger}=await import('../scripts/harness/ledger.ts');const {spawn}=await import('node:child_process');const f=fixture();
  try{
   const state=join(f.root,'state');const ledger=new Ledger(state);const project=join(f.root,'shared.pcraft');writeFileSync(project,'native');
   const tasks=[1,2].map(index=>ledger.create({...f.request,idempotencyKey:'race-'+index,output:join(f.root,'race-'+index),mutableProject:project,expectedProjectSha256:createHash('sha256').update('native').digest('hex')}));
-  const script=join(f.root,'race.mjs');writeFileSync(script,`import {Ledger} from ${JSON.stringify(new URL('../src/harness/ledger.ts',import.meta.url).href)};const ledger=new Ledger(process.argv[2]);process.send('ready');process.once('message',()=>{try{ledger.claim(process.argv[3]);console.log(JSON.stringify({claimed:true}));}catch(error){console.log(JSON.stringify({claimed:false,error:error.message}));}finally{ledger.close();process.disconnect();}});`);
+  const script=join(f.root,'race.mjs');writeFileSync(script,`import {Ledger} from ${JSON.stringify(new URL('../scripts/harness/ledger.ts',import.meta.url).href)};const ledger=new Ledger(process.argv[2]);process.send('ready');process.once('message',()=>{try{ledger.claim(process.argv[3]);console.log(JSON.stringify({claimed:true}));}catch(error){console.log(JSON.stringify({claimed:false,error:error.message}));}finally{ledger.close();process.disconnect();}});`);
   const workers=tasks.map(task=>spawn(process.execPath,[script,state,task.id],{stdio:['ignore','pipe','pipe','ipc']}));
   const results=workers.map(worker=>new Promise<any>((resolve,reject)=>{let output='';worker.stdout!.on('data',data=>output+=data);worker.on('error',reject);worker.on('close',code=>{try{assert.equal(code,0);resolve(JSON.parse(output));}catch(error){reject(error);}});}));
   await Promise.all(workers.map(worker=>new Promise(resolve=>worker.once('message',resolve))));workers.forEach(worker=>worker.send('claim'));
@@ -61,7 +61,7 @@ test('independent processes race for the same project and only one intent commit
 });
 
 test('stop and restart retain deadline and revision budget', async () => {
-  const { Ledger } = await import('../src/harness/ledger.ts');
+  const { Ledger } = await import('../scripts/harness/ledger.ts');
   const f = fixture();
   try {
     let ledger = new Ledger(join(f.root, 'state'));
@@ -77,7 +77,7 @@ test('stop and restart retain deadline and revision budget', async () => {
 });
 
 test('expired tasks and output paths outside authorization fail before claiming', async () => {
-  const { Ledger } = await import('../src/harness/ledger.ts');
+  const { Ledger } = await import('../scripts/harness/ledger.ts');
   const f = fixture();
   try {
     const ledger = new Ledger(join(f.root, 'state'));
@@ -89,7 +89,7 @@ test('expired tasks and output paths outside authorization fail before claiming'
 });
 
 test('parent links cannot bypass revision scheduling or revive a cancelled lineage',async()=>{
- const {Ledger}=await import('../src/harness/ledger.ts');const f=fixture();
+ const {Ledger}=await import('../scripts/harness/ledger.ts');const f=fixture();
  try{
   const ledger=new Ledger(join(f.root,'state'));
   assert.throws(()=>ledger.create({...f.request,parentTask:'missing'}),/parent_task_requires_revision/);
@@ -103,7 +103,7 @@ test('parent links cannot bypass revision scheduling or revive a cancelled linea
 });
 
 test('judge receipts are candidate-bound, consumed once and cannot override technical failure', async () => {
-  const { Ledger } = await import('../src/harness/ledger.ts');
+  const { Ledger } = await import('../scripts/harness/ledger.ts');
   const { Review } = await import('../src/evaluation/review.ts');
   const f = fixture();
   try {
@@ -135,7 +135,7 @@ test('strict request JSON rejects duplicate keys and numeric overflow', async ()
 });
 
 test('creative receipts reject executor self-review and missing evaluator version',async()=>{
- const { Ledger }=await import('../src/harness/ledger.ts');const { Review }=await import('../src/evaluation/review.ts');const f=fixture();
+ const { Ledger }=await import('../scripts/harness/ledger.ts');const { Review }=await import('../src/evaluation/review.ts');const f=fixture();
  try {
   const ledger=new Ledger(join(f.root,'state'));const task=ledger.create(f.request);const epoch=ledger.claim(task.id);ledger.transition(task.id,epoch,'verifying');ledger.recordTechnical(task.id,epoch,{status:'PASS',projectSha256:'a'.repeat(64),previewSha256:'b'.repeat(64),manifestSha256:'c'.repeat(64)});
   const review=new Review(ledger);const request=review.request(task.id);const receipt={requestId:request.id,projectSha256:request.projectSha256,previewSha256:request.previewSha256,manifestSha256:request.manifestSha256,referencesSha256:request.referencesSha256,briefSha256:request.briefSha256,rubricVersion:request.rubricVersion,evaluator:{kind:'human',identity:'reviewer',contextIsolation:'separate-review'},verdict:'PASS',gaps:[]};

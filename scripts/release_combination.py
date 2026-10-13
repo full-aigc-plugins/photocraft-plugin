@@ -28,10 +28,10 @@ def check(root,skills_source):
   if path.is_symlink():raise ValueError('linked_identity_file: '+prefix+name)
   files[prefix+name]=sha(path);return read(path)
  try:
-  plugin=value(root,'plugin.json');harness=value(root,'package.json');lock=value(root,'skills.lock.json');active=value(root,'runtime/photocraft-cli.lock.json');historical=value(root,'runtime/history/photocraft-cli-upstream-0.2.0.lock.json');runtime=value(root,'skills/photocraft-use/scripts/runtime.lock.json');protocol=value(root,'docs/contracts-reference.json')
+  plugin=value(root,'plugin.json');harness=value(root,'package.json');lock=value(root,'skills.lock.json');active=value(root,'runtime/photocraft-cli.lock.json');historical=value(root,'runtime/history/photocraft-cli-upstream-0.2.0.lock.json');runtime=value(root,'skills/photocraft-harness/scripts/runtime.lock.json');protocol=value(root,'docs/contracts-reference.json')
   if len(lock['sources'])!=1:raise ValueError('one_skill_authority_required')
   source=lock['sources'][0];base=load(root,'combination_base','scripts/check_release_identity.py');errors.extend(base.validate(plugin,source,runtime,active,harness))
-  package=value(skills_source,'.claude-plugin/plugin.json','source/');suite=value(skills_source,'skill-suite.json','source/');source_runtime=value(skills_source,'skills/photocraft-use/scripts/runtime.lock.json','source/');source_historical=value(skills_source,'runtime/official-runtime-0.2.0.lock.json','source/');version=source['ref'].removeprefix('v')
+  package=value(skills_source,'.claude-plugin/plugin.json','source/');suite=value(skills_source,'skill-suite.json','source/');source_runtime=value(skills_source,'skills/photocraft-harness/scripts/runtime.lock.json','source/');source_historical=value(skills_source,'runtime/official-runtime-0.2.0.lock.json','source/');version=source['ref'].removeprefix('v')
   if package.get('name')!='photocraft-skills' or package.get('repository','').removesuffix('.git')!='https://github.com/full-aigc-skills/photocraft-skills':errors.append('source_package_authority_mismatch')
   if package.get('version')!=version:errors.append('source_package_version_mismatch')
   if suite.get('version')!=version:errors.append('source_suite_version_mismatch')

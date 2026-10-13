@@ -2,8 +2,8 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { Ledger } from '../src/harness/ledger.ts';
-import { Runner } from '../src/harness/runner.ts';
+import { Ledger } from '../scripts/harness/ledger.ts';
+import { Runner } from '../scripts/harness/runner.ts';
 import { fileDigest } from '../src/protocol/files.ts';
 const [requestPath,state,skillRoot,expected]=process.argv.slice(2);
 const request=JSON.parse(readFileSync(requestPath,'utf8'));const ledger=new Ledger(state);

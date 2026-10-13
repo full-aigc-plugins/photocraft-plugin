@@ -4,8 +4,8 @@ import {mkdtempSync,realpathSync,writeFileSync,readFileSync,rmSync,cpSync,rename
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {spawnSync} from 'node:child_process';
-import {Ledger} from '../src/harness/ledger.ts';
-import {Runner} from '../src/harness/runner.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Runner} from '../scripts/harness/runner.ts';
 import {Review} from '../src/evaluation/review.ts';
 import {exportBundle,verifyBundle} from '../src/protocol/bundle.ts';
 import {fileDigest,canonical,digest} from '../src/protocol/files.ts';

@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { canonical, digest, fileDigest, readJson } from '../protocol/files.ts';
-import { Ledger } from '../harness/ledger.ts';
+import { Ledger } from '../../scripts/harness/ledger.ts';
 
 /** 评估只消费固定产物，不能直接编辑或替代技术验收。 */
 export class Review {

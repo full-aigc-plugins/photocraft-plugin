@@ -6,7 +6,7 @@ import {join} from 'node:path';
 import {spawnSync,execFileSync} from 'node:child_process';
 import {strictJson} from '../src/protocol/strict_json.ts';
 import {canonical,readJson} from '../src/protocol/files.ts';
-import {pythonReply} from '../src/harness/preflight.ts';
+import {pythonReply} from '../scripts/harness/preflight.ts';
 
 const invalid:[string,string][]=[['{"x":"\\ud800"}','$.x'],['{"x":["\\udc00"]}','$.x[0]'],['{"bad\\ud800":1}','$["bad\\ud800"]'],['{"bad expected name":"\\ud800"}','$["bad expected name"]'],['{"x":"a\\ud800b"}','$.x']];
 function refusal(error:any,path:string){assert.equal(error.code,'invalid_json_unicode');assert.equal(error.fieldPath,path);assert.equal(error.phase,'validation');assert.equal(error.outcome,'not_executed');assert.equal(error.retryable,false);return true;}
@@ -63,10 +63,10 @@ test('invalid UTF-8 adapter output is unknown even when replacement text would b
  } finally {rmSync(root,{recursive:true,force:true});}
 });
 
-import {Ledger} from '../src/harness/ledger.ts';
-import {Runner} from '../src/harness/runner.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {Runner} from '../scripts/harness/runner.ts';
 import {digest} from '../src/protocol/files.ts';
-import {runtimePlatformKey} from '../src/harness/preflight.ts';
+import {runtimePlatformKey} from '../scripts/harness/preflight.ts';
 import {existsSync} from 'node:fs';
 
 test('worker preserves raw output digest and refuses invalid UTF-8 before verification or replay',async()=>{

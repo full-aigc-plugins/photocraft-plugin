@@ -1,0 +1,28 @@
+{
+  "name": "photocraft",
+  "displayName": "PhotoCraft",
+  "displayName_i18n": {
+    "en": "PhotoCraft",
+    "zh-CN": "PhotoCraft"
+  },
+  "version": "0.1.0-dev.77",
+  "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+  "description_i18n": {
+    "en": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+    "zh-CN": "PhotoCraft 创意工作流：首用固定安装与独立技能快照；开发版本，完整领域与宿主验收仍在进行。"
+  },
+  "author": {
+    "name": "Full AIGC Plugins",
+    "url": "https://github.com/full-aigc-plugins"
+  },
+  "homepage": "https://github.com/full-aigc-plugins/photocraft-plugin",
+  "repository": "https://github.com/full-aigc-plugins/photocraft-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-plugin",
+    "photocraft",
+    "creative-workflow",
+    "development-release"
+  ],
+  "skills": "skills"
+}

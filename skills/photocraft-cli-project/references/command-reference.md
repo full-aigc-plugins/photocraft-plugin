@@ -14,7 +14,7 @@ New…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -31,7 +31,7 @@ Close
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.close`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.close`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -48,7 +48,7 @@ Undo
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.undo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.undo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -65,7 +65,7 @@ Redo
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.redo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.redo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -82,7 +82,7 @@ Fill…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.fill`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.fill`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -99,7 +99,7 @@ Clear
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.clear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.clear`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -116,7 +116,7 @@ All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.all`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.all`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -133,7 +133,7 @@ Deselect
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.deselect`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.deselect`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -152,7 +152,7 @@ Inverse
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.inverse`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.inverse`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -169,7 +169,7 @@ Rectangular Selection
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.rect`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.rect`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -188,7 +188,7 @@ Layer…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.layer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.layer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -205,7 +205,7 @@ Group…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.group`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.group`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -222,7 +222,7 @@ Group Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.groupLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.groupLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -239,7 +239,7 @@ Duplicate Layer…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.duplicate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -256,7 +256,7 @@ Delete Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -273,7 +273,7 @@ Select Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.select`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -292,7 +292,7 @@ Layer Properties
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setProps`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setProps`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -309,7 +309,7 @@ Bring Forward
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange.bringForward`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.arrange.bringForward`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -326,7 +326,7 @@ Send Backward
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange.sendBackward`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.arrange.sendBackward`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -343,7 +343,7 @@ Bring to Front
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange.bringToFront`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.arrange.bringToFront`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -360,7 +360,7 @@ Send to Back
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange.sendToBack`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.arrange.sendToBack`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -377,7 +377,7 @@ Create Clipping Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.createClippingMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.createClippingMask`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -394,7 +394,7 @@ Release Clipping Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.releaseClippingMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.releaseClippingMask`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -411,7 +411,7 @@ Reveal All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.revealAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.revealAll`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -428,7 +428,7 @@ Hide All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.hideAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.hideAll`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -445,7 +445,7 @@ Reveal Selection
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.revealSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.revealSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -464,7 +464,7 @@ Delete
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -481,7 +481,7 @@ Merge Down
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mergeDown`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mergeDown`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -498,7 +498,7 @@ Flatten Image
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.flattenImage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.flattenImage`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -515,7 +515,7 @@ Solid Color…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newFillLayer.solidColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newFillLayer.solidColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -532,7 +532,7 @@ Gradient…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newFillLayer.gradient`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newFillLayer.gradient`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -549,7 +549,7 @@ Adjustment Properties
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setAdjustment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setAdjustment`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -568,7 +568,7 @@ Reorder Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.moveTo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.moveTo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -585,7 +585,7 @@ Move Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.translate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.translate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -602,7 +602,7 @@ Flip Canvas Horizontal
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.imageRotation.flipCanvasHorizontal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.imageRotation.flipCanvasHorizontal`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -619,7 +619,7 @@ Flip Canvas Vertical
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.imageRotation.flipCanvasVertical`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.imageRotation.flipCanvasVertical`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -636,7 +636,7 @@ Flip Canvas Vertical
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.imageRotation.180`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.imageRotation.180`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -653,7 +653,7 @@ Flip Canvas Vertical
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.imageRotation.90cw`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.imageRotation.90cw`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -670,7 +670,7 @@ Flip Canvas Vertical
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.imageRotation.90ccw`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.imageRotation.90ccw`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -687,7 +687,7 @@ Desaturate
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.desaturate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.desaturate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -704,7 +704,7 @@ Brush Stroke
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.stroke`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -721,7 +721,7 @@ Set Colors
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tools.setColors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tools.setColors`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -738,7 +738,7 @@ Switch Foreground and Background Colors
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tools.swapColors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tools.swapColors`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -755,7 +755,7 @@ Default Foreground and Background Colors
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tools.defaultColors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tools.defaultColors`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -772,7 +772,7 @@ Inspect Session
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe session.inspect`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe session.inspect`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -789,7 +789,7 @@ Inspect Document
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe document.inspect`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe document.inspect`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -806,7 +806,7 @@ Activate Document
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe document.activate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe document.activate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -823,7 +823,7 @@ List Commands
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe command.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe command.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -840,7 +840,7 @@ Read Composite Pixel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe document.pixel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe document.pixel`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -857,7 +857,7 @@ Brightness/Contrast…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.brightnessContrast`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.brightnessContrast`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -876,7 +876,7 @@ Brightness/Contrast…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.brightnessContrast`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.brightnessContrast`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -893,7 +893,7 @@ Levels…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.levels`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.levels`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -910,7 +910,7 @@ Levels…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.levels`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.levels`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -927,7 +927,7 @@ Curves…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.curves`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.curves`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -944,7 +944,7 @@ Curves…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.curves`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.curves`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -961,7 +961,7 @@ Exposure…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.exposure`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.exposure`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -978,7 +978,7 @@ Exposure…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.exposure`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.exposure`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -995,7 +995,7 @@ Vibrance…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.vibrance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.vibrance`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1012,7 +1012,7 @@ Vibrance…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.vibrance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.vibrance`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1029,7 +1029,7 @@ Hue/Saturation…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.hueSaturation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.hueSaturation`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1046,7 +1046,7 @@ Hue/Saturation…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.hueSaturation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.hueSaturation`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1063,7 +1063,7 @@ Color Balance…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.colorBalance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.colorBalance`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1080,7 +1080,7 @@ Color Balance…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.colorBalance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.colorBalance`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1097,7 +1097,7 @@ Black & White…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.blackWhite`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.blackWhite`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1114,7 +1114,7 @@ Black & White…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.blackWhite`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.blackWhite`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1131,7 +1131,7 @@ Photo Filter…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.photoFilter`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.photoFilter`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1148,7 +1148,7 @@ Photo Filter…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.photoFilter`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.photoFilter`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1165,7 +1165,7 @@ Channel Mixer…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.channelMixer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.channelMixer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1182,7 +1182,7 @@ Channel Mixer…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.channelMixer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.channelMixer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1199,7 +1199,7 @@ Invert
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.invert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.invert`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1216,7 +1216,7 @@ Invert
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.invert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.invert`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1233,7 +1233,7 @@ Posterize…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.posterize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.posterize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1250,7 +1250,7 @@ Posterize…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.posterize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.posterize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1267,7 +1267,7 @@ Threshold…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.threshold`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.threshold`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1284,7 +1284,7 @@ Threshold…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.threshold`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.threshold`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1301,7 +1301,7 @@ Gradient Map…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.gradientMap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.gradientMap`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1318,7 +1318,7 @@ Gradient Map…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.gradientMap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.gradientMap`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1335,7 +1335,7 @@ Selective Color…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.selectiveColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.selectiveColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1352,7 +1352,7 @@ Selective Color…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.selectiveColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.selectiveColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1369,7 +1369,7 @@ Color Lookup…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.colorLookup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newAdjustmentLayer.colorLookup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1386,7 +1386,7 @@ Color Lookup…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.colorLookup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.colorLookup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1403,7 +1403,7 @@ Drop Shadow…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.dropShadow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.dropShadow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1420,7 +1420,7 @@ Inner Shadow…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.innerShadow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.innerShadow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1437,7 +1437,7 @@ Outer Glow…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.outerGlow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.outerGlow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1454,7 +1454,7 @@ Inner Glow…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.innerGlow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.innerGlow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1471,7 +1471,7 @@ Stroke…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.stroke`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1488,7 +1488,7 @@ Color Overlay…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.colorOverlay`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.colorOverlay`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1505,7 +1505,7 @@ Gradient Overlay…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.gradientOverlay`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.gradientOverlay`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1522,7 +1522,7 @@ Pattern Overlay…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.patternOverlay`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.patternOverlay`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1539,7 +1539,7 @@ Bevel & Emboss…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.bevelEmboss`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.bevelEmboss`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1556,7 +1556,7 @@ Satin…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.satin`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.satin`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1573,7 +1573,7 @@ Clear Layer Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.clear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.clear`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1590,7 +1590,7 @@ Gaussian Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.gaussianBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.gaussianBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1607,7 +1607,7 @@ Blur
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.blur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.blur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1624,7 +1624,7 @@ Blur More
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.blurMore`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.blurMore`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1641,7 +1641,7 @@ Sharpen
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.sharpen`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.sharpen.sharpen`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1658,7 +1658,7 @@ Sharpen More
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.sharpenMore`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.sharpen.sharpenMore`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1675,7 +1675,7 @@ Sharpen Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.sharpenEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.sharpen.sharpenEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1692,7 +1692,7 @@ Despeckle
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.despeckle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.noise.despeckle`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1709,7 +1709,7 @@ Box Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.boxBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.boxBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1726,7 +1726,7 @@ Motion Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.motionBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.motionBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1743,7 +1743,7 @@ Radial Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.radialBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.radialBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1760,7 +1760,7 @@ Surface Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.surfaceBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.surfaceBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1777,7 +1777,7 @@ Unsharp Mask…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.unsharpMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.sharpen.unsharpMask`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1794,7 +1794,7 @@ Smart Sharpen…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.sharpen.smartSharpen`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.sharpen.smartSharpen`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1811,7 +1811,7 @@ Add Noise…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.addNoise`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.noise.addNoise`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1828,7 +1828,7 @@ Median…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.median`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.noise.median`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1845,7 +1845,7 @@ Dust & Scratches…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.dustAndScratches`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.noise.dustAndScratches`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1862,7 +1862,7 @@ Mosaic…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.mosaic`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.mosaic`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1879,7 +1879,7 @@ Emboss…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.emboss`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.emboss`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1896,7 +1896,7 @@ Find Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.findEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.findEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1913,7 +1913,7 @@ Solarize
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.solarize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.solarize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1930,7 +1930,7 @@ Twirl…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.twirl`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.twirl`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1947,7 +1947,7 @@ Pinch…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.pinch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.pinch`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1964,7 +1964,7 @@ Spherize…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.spherize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.spherize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1981,7 +1981,7 @@ Wave…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.wave`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.wave`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -1998,7 +1998,7 @@ Ripple…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.ripple`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.ripple`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2015,7 +2015,7 @@ Polar Coordinates…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.polarCoordinates`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.polarCoordinates`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2032,7 +2032,7 @@ High Pass…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.highPass`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.other.highPass`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2049,7 +2049,7 @@ Minimum…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.minimum`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.other.minimum`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2066,7 +2066,7 @@ Maximum…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.maximum`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.other.maximum`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2083,7 +2083,7 @@ Offset…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.offset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.other.offset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2100,7 +2100,7 @@ Last Filter
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.lastFilter`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.lastFilter`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2117,7 +2117,7 @@ Color Halftone…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.colorHalftone`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.colorHalftone`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2134,7 +2134,7 @@ Crystallize…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.crystallize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.crystallize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2151,7 +2151,7 @@ Facet
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.facet`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.facet`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2168,7 +2168,7 @@ Fragment
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.fragment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.fragment`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2185,7 +2185,7 @@ Mezzotint…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.mezzotint`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.mezzotint`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2202,7 +2202,7 @@ Pointillize…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.pixelate.pointillize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.pixelate.pointillize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2219,7 +2219,7 @@ Diffuse…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.diffuse`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.diffuse`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2236,7 +2236,7 @@ Extrude…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.extrude`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.extrude`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2253,7 +2253,7 @@ Oil Paint…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.oilPaint`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.oilPaint`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2270,7 +2270,7 @@ Tiles…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.tiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.tiles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2287,7 +2287,7 @@ Trace Contour…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.traceContour`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.traceContour`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2304,7 +2304,7 @@ Wind…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.stylize.wind`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.stylize.wind`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2321,7 +2321,7 @@ Displace…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.displace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.displace`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2338,7 +2338,7 @@ Shear…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.shear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.shear`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2355,7 +2355,7 @@ ZigZag…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.distort.zigZag`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.distort.zigZag`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2372,7 +2372,7 @@ Fibers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.fibers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.fibers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2389,7 +2389,7 @@ Lens Flare…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.lensFlare`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.lensFlare`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2406,7 +2406,7 @@ Lighting Effects…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.lightingEffects`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.lightingEffects`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2423,7 +2423,7 @@ Reduce Noise…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.noise.reduceNoise`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.noise.reduceNoise`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2440,7 +2440,7 @@ Smart Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.smartBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.smartBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2457,7 +2457,7 @@ Lens Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.lensBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.lensBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2474,7 +2474,7 @@ Shape Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.shapeBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.shapeBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2491,7 +2491,7 @@ Tilt-Shift…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.tiltShift`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blurGallery.tiltShift`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2508,7 +2508,7 @@ Iris Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.irisBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blurGallery.irisBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2525,7 +2525,7 @@ Field Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.fieldBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blurGallery.fieldBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2542,7 +2542,7 @@ Spin Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.spinBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blurGallery.spinBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2559,7 +2559,7 @@ Path Blur…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blurGallery.pathBlur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blurGallery.pathBlur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2576,7 +2576,7 @@ Custom…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.custom`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.other.custom`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2593,7 +2593,7 @@ HSB/HSL
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.other.hsbHsl`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.other.hsbHsl`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2610,7 +2610,7 @@ De-Interlace…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.video.deInterlace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.video.deInterlace`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2627,7 +2627,7 @@ NTSC Colors
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.video.ntscColors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.video.ntscColors`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2644,7 +2644,7 @@ Filter Gallery…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.filterGallery`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.filterGallery`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2661,7 +2661,7 @@ Colored Pencil
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.coloredPencil`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.coloredPencil`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2678,7 +2678,7 @@ Cutout
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.cutout`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.cutout`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2695,7 +2695,7 @@ Dry Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.dryBrush`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.dryBrush`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2712,7 +2712,7 @@ Film Grain
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.filmGrain`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.filmGrain`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2729,7 +2729,7 @@ Fresco
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.fresco`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.fresco`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2746,7 +2746,7 @@ Neon Glow
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.neonGlow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.neonGlow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2763,7 +2763,7 @@ Paint Daubs
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.paintDaubs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.paintDaubs`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2780,7 +2780,7 @@ Palette Knife
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.paletteKnife`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.paletteKnife`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2797,7 +2797,7 @@ Plastic Wrap
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.plasticWrap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.plasticWrap`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2814,7 +2814,7 @@ Poster Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.posterEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.posterEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2831,7 +2831,7 @@ Rough Pastels
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.roughPastels`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.roughPastels`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2848,7 +2848,7 @@ Smudge Stick
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.smudgeStick`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.smudgeStick`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2865,7 +2865,7 @@ Sponge
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.sponge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.sponge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2882,7 +2882,7 @@ Underpainting
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.underpainting`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.underpainting`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2899,7 +2899,7 @@ Watercolor
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.watercolor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.watercolor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2916,7 +2916,7 @@ Accented Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.accentedEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.accentedEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2933,7 +2933,7 @@ Angled Strokes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.angledStrokes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.angledStrokes`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2950,7 +2950,7 @@ Crosshatch
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.crosshatch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.crosshatch`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2967,7 +2967,7 @@ Dark Strokes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.darkStrokes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.darkStrokes`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -2984,7 +2984,7 @@ Ink Outlines
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.inkOutlines`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.inkOutlines`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3001,7 +3001,7 @@ Spatter
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.spatter`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.spatter`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3018,7 +3018,7 @@ Sprayed Strokes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.sprayedStrokes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.sprayedStrokes`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3035,7 +3035,7 @@ Sumi-e
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.sumiE`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.sumiE`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3052,7 +3052,7 @@ Diffuse Glow
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.diffuseGlow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.diffuseGlow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3069,7 +3069,7 @@ Glass
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.glass`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.glass`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3086,7 +3086,7 @@ Ocean Ripple
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.oceanRipple`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.oceanRipple`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3103,7 +3103,7 @@ Bas Relief
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.basRelief`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.basRelief`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3120,7 +3120,7 @@ Chalk & Charcoal
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.chalkCharcoal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.chalkCharcoal`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3137,7 +3137,7 @@ Charcoal
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.charcoal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.charcoal`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3154,7 +3154,7 @@ Chrome
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.chrome`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.chrome`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3171,7 +3171,7 @@ Conté Crayon
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.conteCrayon`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.conteCrayon`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3188,7 +3188,7 @@ Graphic Pen
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.graphicPen`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.graphicPen`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3205,7 +3205,7 @@ Halftone Pattern
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.halftonePattern`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.halftonePattern`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3222,7 +3222,7 @@ Note Paper
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.notePaper`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.notePaper`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3239,7 +3239,7 @@ Photocopy
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.photocopy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.photocopy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3256,7 +3256,7 @@ Plaster
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.plaster`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.plaster`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3273,7 +3273,7 @@ Reticulation
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.reticulation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.reticulation`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3290,7 +3290,7 @@ Stamp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.stamp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.stamp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3307,7 +3307,7 @@ Torn Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.tornEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.tornEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3324,7 +3324,7 @@ Water Paper
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.waterPaper`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.waterPaper`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3341,7 +3341,7 @@ Glowing Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.glowingEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.glowingEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3358,7 +3358,7 @@ Craquelure
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.craquelure`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.craquelure`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3375,7 +3375,7 @@ Grain
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.grain`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.grain`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3392,7 +3392,7 @@ Mosaic Tiles
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.mosaicTiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.mosaicTiles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3409,7 +3409,7 @@ Patchwork
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.patchwork`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.patchwork`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3426,7 +3426,7 @@ Stained Glass
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.stainedGlass`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.stainedGlass`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3443,7 +3443,7 @@ Texturizer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.gallery.texturizer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.gallery.texturizer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3460,7 +3460,7 @@ New Type Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.create`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.create`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3477,7 +3477,7 @@ Edit Type
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3494,7 +3494,7 @@ Set Type Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.setStyle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.setStyle`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3511,7 +3511,7 @@ Rasterize Type
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.rasterize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.rasterize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3528,7 +3528,7 @@ Type Layer Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.info`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3545,7 +3545,7 @@ List Fonts
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.fonts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.fonts`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3562,7 +3562,7 @@ Free Transform
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3579,7 +3579,7 @@ New Shape Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.create`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.create`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3598,7 +3598,7 @@ Edit Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3615,7 +3615,7 @@ Shape Layer Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.info`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3632,7 +3632,7 @@ Rasterize Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.rasterize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.rasterize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3649,7 +3649,7 @@ List Paths
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3666,7 +3666,7 @@ Path Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.info`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3683,7 +3683,7 @@ Set Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3700,7 +3700,7 @@ Delete Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3717,7 +3717,7 @@ Rename Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3734,7 +3734,7 @@ Make Selection from Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.toSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.toSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3751,7 +3751,7 @@ Make Work Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.toWorkPath`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.toWorkPath`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3768,7 +3768,7 @@ Fill Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.fill`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.fill`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3785,7 +3785,7 @@ Stroke Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe path.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe path.stroke`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3802,7 +3802,7 @@ Add Vector Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.add`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3819,7 +3819,7 @@ Vector Mask from Current Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.fromPath`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.fromPath`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3836,7 +3836,7 @@ Edit Vector Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3853,7 +3853,7 @@ Delete Vector Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3870,7 +3870,7 @@ Rasterize Vector Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.vectorMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.vectorMask`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3887,7 +3887,7 @@ Vector Mask: Reveal All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.revealAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.revealAll`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3904,7 +3904,7 @@ Vector Mask: Hide All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.hideAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.hideAll`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3921,7 +3921,7 @@ Vector Mask: Current Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.currentPath`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.currentPath`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3938,7 +3938,7 @@ Enable Vector Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.enabled`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.enabled`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3955,7 +3955,7 @@ Link Vector Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.linked`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.linked`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3972,7 +3972,7 @@ Rasterize Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.shape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.shape`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -3989,7 +3989,7 @@ Unite Shapes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.combineShapes.unite`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.combineShapes.unite`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4006,7 +4006,7 @@ Subtract Front Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.combineShapes.subtractFrontShape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.combineShapes.subtractFrontShape`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4023,7 +4023,7 @@ Intersect Shape Areas
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.combineShapes.intersectShapeAreas`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.combineShapes.intersectShapeAreas`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4040,7 +4040,7 @@ Exclude Overlapping Shapes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.combineShapes.excludeOverlappingShapes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.combineShapes.excludeOverlappingShapes`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4057,7 +4057,7 @@ Merge Shape Components
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.combineShapes.mergeShapeComponents`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.combineShapes.mergeShapeComponents`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4074,7 +4074,7 @@ Convert Selection to Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.convertToShape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.convertToShape`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4091,7 +4091,7 @@ Vector Mask Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.vectorMask.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.vectorMask.info`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4108,7 +4108,7 @@ Quick Selection
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.quick`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.quick`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4125,7 +4125,7 @@ Object Selection
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.object`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.object`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4142,7 +4142,7 @@ Subject
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.subject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.subject`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4159,7 +4159,7 @@ Refine Edge
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.refineEdge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.refineEdge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4176,7 +4176,7 @@ Focus Area…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.focusArea`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.focusArea`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4193,7 +4193,7 @@ Cut
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.cut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.cut`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4210,7 +4210,7 @@ Copy
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.copy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4227,7 +4227,7 @@ Copy Merged
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.copyMerged`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.copyMerged`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4244,7 +4244,7 @@ Paste
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.paste`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.paste`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4261,7 +4261,7 @@ Paste in Place
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteSpecial.pasteInPlace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.pasteSpecial.pasteInPlace`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4278,7 +4278,7 @@ Layer via Copy
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.layerViaCopy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.layerViaCopy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4295,7 +4295,7 @@ Layer via Cut
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.layerViaCut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.layerViaCut`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4312,7 +4312,7 @@ Merge Visible
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mergeVisible`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mergeVisible`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4329,7 +4329,7 @@ Auto Tone
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.autoTone`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.autoTone`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4346,7 +4346,7 @@ Auto Contrast
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.autoContrast`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.autoContrast`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4363,7 +4363,7 @@ Auto Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.autoColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.autoColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4380,7 +4380,7 @@ Toggle Last State
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.toggleLastState`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.toggleLastState`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4397,7 +4397,7 @@ Again
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.again`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.again`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4414,7 +4414,7 @@ New Guide…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.newGuide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.newGuide`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4431,7 +4431,7 @@ Move Guide
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.moveGuide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.moveGuide`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4448,7 +4448,7 @@ Delete Guide
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.deleteGuide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.deleteGuide`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4465,7 +4465,7 @@ Clear Guides
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.clearGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.clearGuides`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4482,7 +4482,7 @@ Assign Profile…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.assignProfile`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.assignProfile`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4499,7 +4499,7 @@ Convert to Profile…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.convertToProfile`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.convertToProfile`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4516,7 +4516,7 @@ Color Settings…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.colorSettings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.colorSettings`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4533,7 +4533,7 @@ Embedded Profile Mismatch
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe color.profileMismatch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe color.profileMismatch`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4550,7 +4550,7 @@ Profile Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.profileInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.profileInfo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4567,7 +4567,7 @@ Proof Setup…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4584,7 +4584,7 @@ Proof Colors
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofColors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofColors`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4601,7 +4601,7 @@ Gamut Warning
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.gamutWarning`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.gamutWarning`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4618,7 +4618,7 @@ Pencil
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.pencil`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.pencil`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4635,7 +4635,7 @@ Mixer Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.mixerBrush`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.mixerBrush`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4652,7 +4652,7 @@ Color Replacement
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.colorReplacement`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.colorReplacement`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4669,7 +4669,7 @@ List Brush Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4686,7 +4686,7 @@ Save Brush Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.save`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.save`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4703,7 +4703,7 @@ Delete Brush Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4720,7 +4720,7 @@ Define Brush Preset…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.defineFromSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.defineFromSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4737,7 +4737,7 @@ Get Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.get`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.get`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4754,7 +4754,7 @@ Set Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tools.setBrush`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tools.setBrush`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4771,7 +4771,7 @@ Magic Eraser
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.magicEraser`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.magicEraser`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4788,7 +4788,7 @@ Background Eraser
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.backgroundEraser`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.backgroundEraser`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4805,7 +4805,7 @@ Import Brushes…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.importAbr`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.importAbr`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4822,7 +4822,7 @@ Import Gradients…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.importGrd`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.importGrd`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4839,7 +4839,7 @@ Clone Stamp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.cloneStamp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.cloneStamp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4856,7 +4856,7 @@ Healing Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.healingBrush`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.healingBrush`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4873,7 +4873,7 @@ Spot Healing Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.spotHealing`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.spotHealing`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4890,7 +4890,7 @@ Dodge
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.dodge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.dodge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4907,7 +4907,7 @@ Burn
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.burn`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.burn`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4924,7 +4924,7 @@ Sponge
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.sponge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.sponge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4941,7 +4941,7 @@ Blur
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.blur`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.blur`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4958,7 +4958,7 @@ Sharpen
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.sharpen`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.sharpen`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4975,7 +4975,7 @@ Smudge
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.smudge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.smudge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -4992,7 +4992,7 @@ History Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.historyBrush`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.historyBrush`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5009,7 +5009,7 @@ Image Size…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.imageSize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.imageSize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5026,7 +5026,7 @@ Canvas Size…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.canvasSize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.canvasSize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5043,7 +5043,7 @@ Crop
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.crop`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.crop`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5060,7 +5060,7 @@ Trim…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.trim`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.trim`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5077,7 +5077,7 @@ RGB Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.rgb`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.rgb`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5094,7 +5094,7 @@ Grayscale
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.grayscale`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.grayscale`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5111,7 +5111,7 @@ CMYK Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.cmyk`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.cmyk`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5128,7 +5128,7 @@ Lab Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.lab`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.lab`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5145,7 +5145,7 @@ Lab Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.bits8`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.bits8`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5162,7 +5162,7 @@ Lab Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.bits16`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.bits16`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5179,7 +5179,7 @@ Lab Color
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.bits32`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.bits32`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5196,7 +5196,7 @@ Duplicate…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.duplicate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5213,7 +5213,7 @@ Magic Wand
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.magicWand`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.magicWand`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5230,7 +5230,7 @@ Color Range…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.colorRange`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.colorRange`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5247,7 +5247,7 @@ Border…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.modify.border`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.modify.border`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5264,7 +5264,7 @@ Smooth…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.modify.smooth`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.modify.smooth`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5281,7 +5281,7 @@ Expand…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.modify.expand`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.modify.expand`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5298,7 +5298,7 @@ Contract…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.modify.contract`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.modify.contract`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5315,7 +5315,7 @@ Feather…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.modify.feather`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.modify.feather`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5332,7 +5332,7 @@ Grow
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.grow`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.grow`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5349,7 +5349,7 @@ Similar
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.similar`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.similar`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5366,7 +5366,7 @@ Lasso
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.lasso`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.lasso`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5383,7 +5383,7 @@ Sky
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.sky`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.sky`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5400,7 +5400,7 @@ Isolate Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.isolateLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.isolateLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5417,7 +5417,7 @@ Transform Selection
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.transformSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.transformSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5434,7 +5434,7 @@ Paint Bucket
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.bucket`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.bucket`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5451,7 +5451,7 @@ Gradient
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe paint.gradient`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe paint.gradient`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5468,7 +5468,7 @@ Stroke…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.stroke`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.stroke`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5485,7 +5485,7 @@ Rotate 180°
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.rotate180`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.rotate180`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5502,7 +5502,7 @@ Rotate 90° Clockwise
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.rotate90Cw`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.rotate90Cw`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5519,7 +5519,7 @@ Rotate 90° Counter Clockwise
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.rotate90Ccw`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.rotate90Ccw`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5536,7 +5536,7 @@ Flip Horizontal
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.flipHorizontal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.flipHorizontal`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5553,7 +5553,7 @@ Flip Vertical
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.flipVertical`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.flipVertical`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5570,7 +5570,7 @@ Paste Into
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteSpecial.pasteInto`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.pasteSpecial.pasteInto`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5587,7 +5587,7 @@ Paste Outside
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.pasteSpecial.pasteOutside`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.pasteSpecial.pasteOutside`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5604,7 +5604,7 @@ Reselect
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.reselect`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.reselect`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5621,7 +5621,7 @@ Equalize
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.equalize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.equalize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5638,7 +5638,7 @@ Reveal All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.revealAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.revealAll`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5655,7 +5655,7 @@ Layer From Background…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.layerFromBackground`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.layerFromBackground`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5672,7 +5672,7 @@ Copy Layer Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.copyLayerStyle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.copyLayerStyle`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5689,7 +5689,7 @@ Paste Layer Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.pasteLayerStyle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.pasteLayerStyle`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5706,7 +5706,7 @@ Hide All Effects
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.hideAllEffects`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.hideAllEffects`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5723,7 +5723,7 @@ Show All Effects
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.showAllEffects`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.showAllEffects`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5740,7 +5740,7 @@ Disable Layer Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.enabled`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.enabled`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5757,7 +5757,7 @@ Unlink Layer Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.linked`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.linked`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5774,7 +5774,7 @@ Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.layer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.layer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5791,7 +5791,7 @@ All Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.allLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.allLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5808,7 +5808,7 @@ Type
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.type`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.type`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5825,7 +5825,7 @@ Fill Content
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.fillContent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.fillContent`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5842,7 +5842,7 @@ Smart Object
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.smartObject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.smartObject`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5859,7 +5859,7 @@ Hidden Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.delete.hiddenLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.delete.hiddenLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5876,7 +5876,7 @@ Delete All Empty Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.deleteAllEmptyLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.deleteAllEmptyLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5893,7 +5893,7 @@ Ungroup Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.ungroupLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.ungroupLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5910,7 +5910,7 @@ Hide Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.hideLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.hideLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5927,7 +5927,7 @@ Show Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.showLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.showLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5944,7 +5944,7 @@ Average
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.blur.average`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.blur.average`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5961,7 +5961,7 @@ Clouds
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.clouds`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.clouds`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5978,7 +5978,7 @@ Difference Clouds
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.differenceClouds`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.differenceClouds`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -5995,7 +5995,7 @@ Close All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.closeAll`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.closeAll`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6012,7 +6012,7 @@ Close Others
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.closeOthers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.closeOthers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6029,7 +6029,7 @@ Revert
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.revert`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.revert`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6046,7 +6046,7 @@ Save a Copy…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.saveACopy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.saveACopy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6063,7 +6063,7 @@ Open As…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.openAs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.openAs`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6080,7 +6080,7 @@ Place Embedded…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.placeEmbedded`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.placeEmbedded`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6097,7 +6097,7 @@ Place Linked…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.placeLinked`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.placeLinked`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6114,7 +6114,7 @@ File Info…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.fileInfo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.fileInfo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6131,7 +6131,7 @@ Fit Image…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.fitImage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.fitImage`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6148,7 +6148,7 @@ Conditional Mode Change…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.conditionalModeChange`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.conditionalModeChange`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6165,7 +6165,7 @@ Batch…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.batch`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.batch`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6182,7 +6182,7 @@ Image Processor…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.imageProcessor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.imageProcessor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6199,7 +6199,7 @@ Load Files into Stack…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.loadFilesIntoStack`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.loadFilesIntoStack`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6216,7 +6216,7 @@ Flatten All Layer Effects
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.flattenAllLayerEffects`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.flattenAllLayerEffects`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6233,7 +6233,7 @@ Flatten All Masks
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.flattenAllMasks`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.flattenAllMasks`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6250,7 +6250,7 @@ Layers to Files…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.layersToFiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.layersToFiles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6267,7 +6267,7 @@ Color Lookup Tables…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.colorLookupTables`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.colorLookupTables`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6284,7 +6284,7 @@ New Guide Layout…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.newGuideLayout`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.newGuideLayout`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6301,7 +6301,7 @@ New Guides From Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.newGuidesFromShape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.newGuidesFromShape`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6318,7 +6318,7 @@ Clear Canvas Guides
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.clearCanvasGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.clearCanvasGuides`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6335,7 +6335,7 @@ None
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.none`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.none`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6352,7 +6352,7 @@ Sharp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.sharp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.sharp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6369,7 +6369,7 @@ Crisp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.crisp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.crisp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6386,7 +6386,7 @@ Strong
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.strong`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.strong`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6403,7 +6403,7 @@ Smooth
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.smooth`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.smooth`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6420,7 +6420,7 @@ Windows LCD
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.windowsLcd`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.windowsLcd`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6437,7 +6437,7 @@ Windows
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.antiAlias.windows`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.antiAlias.windows`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6454,7 +6454,7 @@ Horizontal
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.orientation.horizontal`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.orientation.horizontal`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6471,7 +6471,7 @@ Vertical
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.orientation.vertical`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.orientation.vertical`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6488,7 +6488,7 @@ Standard Ligatures
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.standardLigatures`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.standardLigatures`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6505,7 +6505,7 @@ Contextual Alternates
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.contextualAlternates`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.contextualAlternates`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6522,7 +6522,7 @@ Discretionary Ligatures
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.discretionaryLigatures`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.discretionaryLigatures`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6539,7 +6539,7 @@ Swash
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.swash`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.swash`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6556,7 +6556,7 @@ Oldstyle
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.oldstyle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.oldstyle`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6573,7 +6573,7 @@ Stylistic Alternates
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.stylisticAlternates`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.stylisticAlternates`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6590,7 +6590,7 @@ Titling Alternates
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.titlingAlternates`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.titlingAlternates`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6607,7 +6607,7 @@ Ornaments
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.ornaments`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.ornaments`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6624,7 +6624,7 @@ Ordinals
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.ordinals`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.ordinals`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6641,7 +6641,7 @@ Fractions
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.openType.fractions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.openType.fractions`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6658,7 +6658,7 @@ Create Work Path
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.createWorkPath`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.createWorkPath`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6675,7 +6675,7 @@ Convert to Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.convertToShape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.convertToShape`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6692,7 +6692,7 @@ Rasterize Type Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.rasterizeTypeLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.rasterizeTypeLayer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6709,7 +6709,7 @@ Convert to Paragraph Text
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.convertToParagraphText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.convertToParagraphText`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6726,7 +6726,7 @@ Convert to Point Text
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.convertToPointText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.convertToPointText`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6743,7 +6743,7 @@ Warp Text…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.warpText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.warpText`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6760,7 +6760,7 @@ Update All Text Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.updateAllTextLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.updateAllTextLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6777,7 +6777,7 @@ Replace All Missing Fonts
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.replaceAllMissingFonts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.replaceAllMissingFonts`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6794,7 +6794,7 @@ Resolve Missing Fonts…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.resolveMissingFonts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.resolveMissingFonts`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6811,7 +6811,7 @@ Paste Lorem Ipsum
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.pasteLoremIpsum`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.pasteLoremIpsum`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6828,7 +6828,7 @@ Save Default Type Styles
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.saveDefaultTypeStyles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.saveDefaultTypeStyles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6845,7 +6845,7 @@ Load Default Type Styles
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.loadDefaultTypeStyles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.loadDefaultTypeStyles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6862,7 +6862,7 @@ New Character Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6879,7 +6879,7 @@ Duplicate Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.duplicate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6896,7 +6896,7 @@ Delete Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6913,7 +6913,7 @@ Rename Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6930,7 +6930,7 @@ Character Style Options
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6947,7 +6947,7 @@ Apply Character Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6964,7 +6964,7 @@ Redefine Character Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.redefine`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.redefine`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6981,7 +6981,7 @@ Clear Override
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.clearOverride`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.clearOverride`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -6998,7 +6998,7 @@ List Character Styles
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.characterStyle.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.characterStyle.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7015,7 +7015,7 @@ New Paragraph Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7032,7 +7032,7 @@ Duplicate Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.duplicate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7049,7 +7049,7 @@ Delete Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7066,7 +7066,7 @@ Rename Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7083,7 +7083,7 @@ Paragraph Style Options
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7100,7 +7100,7 @@ Apply Paragraph Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7117,7 +7117,7 @@ Redefine Paragraph Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.redefine`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.redefine`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7134,7 +7134,7 @@ Clear Override
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.clearOverride`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.clearOverride`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7151,7 +7151,7 @@ List Paragraph Styles
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.paragraphStyle.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.paragraphStyle.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7168,7 +7168,7 @@ Check Spelling…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.checkSpelling`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.checkSpelling`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7185,7 +7185,7 @@ Insert Glyph
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-text`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe type.insertText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe type.insertText`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7202,7 +7202,7 @@ Convert to Smart Object
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.convertToSmartObject`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.convertToSmartObject`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7219,7 +7219,7 @@ Convert for Smart Filters
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.convertForSmartFilters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.convertForSmartFilters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7236,7 +7236,7 @@ New Smart Object via Copy
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.newSmartObjectViaCopy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.newSmartObjectViaCopy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7253,7 +7253,7 @@ Rasterize
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.rasterize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.rasterize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7270,7 +7270,7 @@ Edit Contents
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.editContents`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.editContents`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7287,7 +7287,7 @@ Save Contents
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.saveContents`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.saveContents`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7304,7 +7304,7 @@ Replace Contents…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.replaceContents`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.replaceContents`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7321,7 +7321,7 @@ Export Contents…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.exportContents`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.exportContents`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7338,7 +7338,7 @@ Relink to File…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.relinkToFile`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.relinkToFile`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7355,7 +7355,7 @@ Update Modified Content
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.updateModifiedContent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.updateModifiedContent`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7372,7 +7372,7 @@ Update All Modified Content
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.updateAllModifiedContent`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.updateAllModifiedContent`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7389,7 +7389,7 @@ Convert to Embedded
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.convertToEmbedded`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.convertToEmbedded`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7406,7 +7406,7 @@ Convert to Linked…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.convertToLinked`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.convertToLinked`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7423,7 +7423,7 @@ Disable Smart Filters
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.disableSmartFilters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.disableSmartFilters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7440,7 +7440,7 @@ Delete Filter Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.deleteFilterMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.deleteFilterMask`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7457,7 +7457,7 @@ Disable Filter Mask
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.disableFilterMask`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.disableFilterMask`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7474,7 +7474,7 @@ Blending Options…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.blendingOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.blendingOptions`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7491,7 +7491,7 @@ Clear Smart Filters
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.clearSmartFilters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.clearSmartFilters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7508,7 +7508,7 @@ Show/Hide Smart Filter
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.setVisible`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.setVisible`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7525,7 +7525,7 @@ Edit Smart Filter
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.setParams`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.setParams`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7542,7 +7542,7 @@ Delete Smart Filter
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7559,7 +7559,7 @@ Move Smart Filter
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartFilter.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartFilter.move`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7576,7 +7576,7 @@ All Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.allLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.allLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7593,7 +7593,7 @@ Deselect Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.deselectLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.deselectLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7610,7 +7610,7 @@ Find Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.findLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.findLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7627,7 +7627,7 @@ Select Linked Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.selectLinkedLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.selectLinkedLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7644,7 +7644,7 @@ Top Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align.topEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align.topEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7661,7 +7661,7 @@ Vertical Centers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align.verticalCenters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align.verticalCenters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7678,7 +7678,7 @@ Bottom Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align.bottomEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align.bottomEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7695,7 +7695,7 @@ Left Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align.leftEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align.leftEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7712,7 +7712,7 @@ Horizontal Centers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align.horizontalCenters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align.horizontalCenters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7729,7 +7729,7 @@ Right Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.align.rightEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.align.rightEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7746,7 +7746,7 @@ Top Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.topEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.topEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7763,7 +7763,7 @@ Vertical Centers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.verticalCenters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.verticalCenters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7780,7 +7780,7 @@ Bottom Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.bottomEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.bottomEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7797,7 +7797,7 @@ Left Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.leftEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.leftEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7814,7 +7814,7 @@ Horizontal Centers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.horizontalCenters`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.horizontalCenters`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7831,7 +7831,7 @@ Right Edges
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.rightEdges`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.rightEdges`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7848,7 +7848,7 @@ Horizontally
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.horizontally`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.horizontally`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7865,7 +7865,7 @@ Vertically
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.distribute.vertically`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.distribute.vertically`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7882,7 +7882,7 @@ Link Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.linkLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.linkLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7899,7 +7899,7 @@ Merge Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.mergeLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.mergeLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7916,7 +7916,7 @@ Group from Layers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.groupFromLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.groupFromLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7933,7 +7933,7 @@ Reverse
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.arrange.reverse`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.arrange.reverse`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7950,7 +7950,7 @@ Lock Layers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.lockLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.lockLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7967,7 +7967,7 @@ Rename Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.renameLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.renameLayer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -7984,7 +7984,7 @@ Get Preferences
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.get`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.get`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8001,7 +8001,7 @@ Set Preferences
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8018,7 +8018,7 @@ Reset Preferences
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe prefs.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe prefs.reset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8035,7 +8035,7 @@ General…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.general`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.general`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8052,7 +8052,7 @@ Interface…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.interface`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.interface`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8069,7 +8069,7 @@ Workspace…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.workspace`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.workspace`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8086,7 +8086,7 @@ Tools…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.tools`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.tools`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8103,7 +8103,7 @@ History Log…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.historyLog`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.historyLog`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8120,7 +8120,7 @@ File Handling…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.fileHandling`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.fileHandling`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8137,7 +8137,7 @@ Export…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.export`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.export`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8154,7 +8154,7 @@ Performance…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.performance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.performance`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8171,7 +8171,7 @@ Scratch Disks…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.scratchDisks`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.scratchDisks`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8188,7 +8188,7 @@ Cursors…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.cursors`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.cursors`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8205,7 +8205,7 @@ Transparency & Gamut…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.transparencyAndGamut`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.transparencyAndGamut`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8222,7 +8222,7 @@ Units & Rulers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.unitsAndRulers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.unitsAndRulers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8239,7 +8239,7 @@ Guides, Grid & Slices…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.guidesGridAndSlices`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.guidesGridAndSlices`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8256,7 +8256,7 @@ Plug-ins…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.plugIns`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.plugIns`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8273,7 +8273,7 @@ Type…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.type`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.type`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8290,7 +8290,7 @@ Enhanced Controls…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.enhancedControls`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.enhancedControls`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8307,7 +8307,7 @@ Camera Raw…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.rawDefaults`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.rawDefaults`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8324,7 +8324,7 @@ Integrations…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.preferences.integrations`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.preferences.integrations`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8341,7 +8341,7 @@ Keyboard Shortcuts…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.keyboardShortcuts`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.keyboardShortcuts`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8358,7 +8358,7 @@ Menus…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.menus`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.menus`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8375,7 +8375,7 @@ Toolbar…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.toolbar`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.toolbar`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8392,7 +8392,7 @@ Fade…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.fade`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.fade`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8409,7 +8409,7 @@ Undo
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge.undo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purge.undo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8426,7 +8426,7 @@ Clipboard
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge.clipboard`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purge.clipboard`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8443,7 +8443,7 @@ Histories
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge.histories`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purge.histories`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8460,7 +8460,7 @@ Video Cache
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge.videoCache`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purge.videoCache`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8477,7 +8477,7 @@ All
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.purge.all`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.purge.all`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8494,7 +8494,7 @@ Content-Aware Fill…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.contentAwareFill`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.contentAwareFill`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8511,7 +8511,7 @@ Content-Aware Scale
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.contentAwareScale`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.contentAwareScale`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8528,7 +8528,7 @@ Define Brush Preset…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.defineBrushPreset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.defineBrushPreset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8545,7 +8545,7 @@ Define Custom Shape…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.defineCustomShape`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.defineCustomShape`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8562,7 +8562,7 @@ Find and Replace Text…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.findAndReplaceText`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.findAndReplaceText`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8579,7 +8579,7 @@ Preset Manager…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.presets.presetManager`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.presets.presetManager`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8596,7 +8596,7 @@ Export/Import Presets…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.presets.exportImportPresets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.presets.exportImportPresets`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8613,7 +8613,7 @@ Auto-Align Layers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.autoAlignLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.autoAlignLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8630,7 +8630,7 @@ Auto-Blend Layers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.autoBlendLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.autoBlendLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8647,7 +8647,7 @@ Photomerge…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.photomerge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.photomerge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8664,7 +8664,7 @@ Merge to HDR Pro…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.mergeToHdrPro`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.mergeToHdrPro`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8681,7 +8681,7 @@ Crop and Straighten Photos
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.cropAndStraightenPhotos`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.cropAndStraightenPhotos`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8698,7 +8698,7 @@ Lens Correction…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.lensCorrection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.lensCorrection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8715,7 +8715,7 @@ Adaptive Wide Angle…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.adaptiveWideAngle`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.adaptiveWideAngle`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8732,7 +8732,7 @@ Camera Raw Filter…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.cameraRaw`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.cameraRaw`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8749,7 +8749,7 @@ Lens Correction…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.lensCorrection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.lensCorrection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8766,7 +8766,7 @@ Vanishing Point…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.vanishingPoint`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.vanishingPoint`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8783,7 +8783,7 @@ Save Selection…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.saveSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.saveSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8800,7 +8800,7 @@ Load Selection…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.loadSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.loadSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8817,7 +8817,7 @@ Edit in Quick Mask Mode
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe select.editInQuickMaskMode`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe select.editInQuickMaskMode`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8834,7 +8834,7 @@ Apply Image…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.applyImage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.applyImage`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8851,7 +8851,7 @@ Calculations…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.calculations`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.calculations`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8868,7 +8868,7 @@ New Channel…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8885,7 +8885,7 @@ New Spot Channel…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.newSpot`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.newSpot`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8902,7 +8902,7 @@ Duplicate Channel…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.duplicate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8919,7 +8919,7 @@ Delete Channel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8936,7 +8936,7 @@ Rename Channel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8953,7 +8953,7 @@ Reorder Channel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.move`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8970,7 +8970,7 @@ Target Channel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -8987,7 +8987,7 @@ Channel Visibility
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.setVisible`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.setVisible`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9004,7 +9004,7 @@ Channel Options…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.options`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.options`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9021,7 +9021,7 @@ Merge Spot Channel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.mergeSpot`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.mergeSpot`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9038,7 +9038,7 @@ Split Channels
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.split`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.split`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9055,7 +9055,7 @@ Merge Channels…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.merge`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.merge`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9072,7 +9072,7 @@ Channels
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9089,7 +9089,7 @@ Target Composite Channel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.composite`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.composite`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9106,7 +9106,7 @@ Target Channel 3
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot3`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot3`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9123,7 +9123,7 @@ Target Channel 4
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot4`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot4`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9140,7 +9140,7 @@ Target Channel 5
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot5`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot5`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9157,7 +9157,7 @@ Target Channel 6
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot6`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot6`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9174,7 +9174,7 @@ Target Channel 7
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot7`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot7`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9191,7 +9191,7 @@ Target Channel 8
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot8`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot8`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9208,7 +9208,7 @@ Target Channel 9
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-selection`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe channel.target.slot9`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe channel.target.slot9`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9225,7 +9225,7 @@ Shadows/Highlights…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.shadowsHighlights`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.shadowsHighlights`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9242,7 +9242,7 @@ Replace Color…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.replaceColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.replaceColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9259,7 +9259,7 @@ Match Color…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.matchColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.matchColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9276,7 +9276,7 @@ HDR Toning…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.hdrToning`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.hdrToning`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9293,7 +9293,7 @@ List Color Lookup Looks
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-adjustments`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.adjustments.colorLookup.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.adjustments.colorLookup.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9310,7 +9310,7 @@ Apply
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9327,7 +9327,7 @@ From Transparency
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.fromTransparency`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.fromTransparency`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9344,7 +9344,7 @@ Hide Selection
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-masks`。
 - 当前工作流映射 / Workflow mapped: true。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerMask.hideSelection`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerMask.hideSelection`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9361,7 +9361,7 @@ Mask All Objects
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.maskAllObjects`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.maskAllObjects`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9378,7 +9378,7 @@ Defringe…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.matting.defringe`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.matting.defringe`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9395,7 +9395,7 @@ Remove Black Matte
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.matting.removeBlackMatte`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.matting.removeBlackMatte`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9412,7 +9412,7 @@ Remove White Matte
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.matting.removeWhiteMatte`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.matting.removeWhiteMatte`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9429,7 +9429,7 @@ Color Decontaminate…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.matting.colorDecontaminate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.matting.colorDecontaminate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9446,7 +9446,7 @@ Entropy
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.entropy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.entropy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9463,7 +9463,7 @@ Kurtosis
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.kurtosis`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.kurtosis`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9480,7 +9480,7 @@ Maximum
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.maximum`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.maximum`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9497,7 +9497,7 @@ Mean
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.mean`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.mean`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9514,7 +9514,7 @@ Median
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.median`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.median`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9531,7 +9531,7 @@ Minimum
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.minimum`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.minimum`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9548,7 +9548,7 @@ Range
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.range`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.range`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9565,7 +9565,7 @@ Skewness
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.skewness`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.skewness`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9582,7 +9582,7 @@ Standard Deviation
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.standardDeviation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.standardDeviation`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9599,7 +9599,7 @@ Summation
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.summation`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.summation`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9616,7 +9616,7 @@ Variance
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.variance`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.variance`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9633,7 +9633,7 @@ None
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.none`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.stackMode.none`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9650,7 +9650,7 @@ Reveal in Finder
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.revealInFinder`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.revealInFinder`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9667,7 +9667,7 @@ Blending Options…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.blendingOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.blendingOptions`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9684,7 +9684,7 @@ Global Light…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.globalLight`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.globalLight`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9701,7 +9701,7 @@ Create Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.createLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.createLayer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9718,7 +9718,7 @@ Scale Effects…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerStyle.scaleEffects`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerStyle.scaleEffects`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9735,7 +9735,7 @@ Layer Content Options…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.layerContentOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.layerContentOptions`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9752,7 +9752,7 @@ Quick Export as PNG
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.quickExportAsPng`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.quickExportAsPng`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9769,7 +9769,7 @@ Export As…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.exportAs`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.exportAs`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9786,7 +9786,7 @@ Arbitrary…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-resize`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.rotation.arbitrary`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.rotation.arbitrary`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9803,7 +9803,7 @@ Indexed Color…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.indexedColor`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.indexedColor`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9820,7 +9820,7 @@ Color Table…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.colorTable`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.colorTable`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9837,7 +9837,7 @@ Bitmap…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.bitmap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.bitmap`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9854,7 +9854,7 @@ Duotone…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.duotone`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.duotone`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9871,7 +9871,7 @@ Multichannel
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.mode.multichannel`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.mode.multichannel`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9888,7 +9888,7 @@ Define Pattern…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.definePattern`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.definePattern`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9905,7 +9905,7 @@ Patterns
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9922,7 +9922,7 @@ Rename Pattern
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9939,7 +9939,7 @@ Delete Pattern
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9956,7 +9956,7 @@ Import Patterns…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.import`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.import`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9973,7 +9973,7 @@ Export Patterns…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.export`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.export`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -9990,7 +9990,7 @@ Pattern…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newFillLayer.pattern`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newFillLayer.pattern`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10007,7 +10007,7 @@ Brush Texture Pattern
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.texturePattern`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.texturePattern`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10024,7 +10024,7 @@ Warp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.warp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.warp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10041,7 +10041,7 @@ Warp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.warp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.warp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10058,7 +10058,7 @@ Split Warp Crosswise
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.splitWarpCrosswise`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.splitWarpCrosswise`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10075,7 +10075,7 @@ Split Warp Horizontally
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.splitWarpHorizontally`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.splitWarpHorizontally`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10092,7 +10092,7 @@ Split Warp Vertically
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.splitWarpVertically`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.splitWarpVertically`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10109,7 +10109,7 @@ Remove Warp Split
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.transform.removeWarpSplit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.transform.removeWarpSplit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10126,7 +10126,7 @@ New Layer Comp…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10143,7 +10143,7 @@ Update Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.update`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.update`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10160,7 +10160,7 @@ Apply Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10177,7 +10177,7 @@ Apply Previous Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.previous`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.previous`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10194,7 +10194,7 @@ Apply Next Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.next`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.next`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10211,7 +10211,7 @@ Delete Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10228,7 +10228,7 @@ Duplicate Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.duplicate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.duplicate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10245,7 +10245,7 @@ Rename Layer Comp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10262,7 +10262,7 @@ Layer Comp Comment
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.setComment`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.setComment`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10279,7 +10279,7 @@ Layer Comp Options…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.setOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.setOptions`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10296,7 +10296,7 @@ Restore Last Document State
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.restoreLastDocumentState`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.restoreLastDocumentState`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10313,7 +10313,7 @@ Layer Comp Warnings
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.updateWarnings`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.updateWarnings`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10330,7 +10330,7 @@ List Layer Comps
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layerComp.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layerComp.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10347,7 +10347,7 @@ Layer Comps to Files…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.layerCompsToFiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.layerCompsToFiles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10364,7 +10364,7 @@ Artboard…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.artboard`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.artboard`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10381,7 +10381,7 @@ Artboard from Group…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.artboardFromGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.artboardFromGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10398,7 +10398,7 @@ Artboard from Layers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.artboardFromLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.artboardFromLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10415,7 +10415,7 @@ Edit Artboard
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.artboard.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.artboard.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10432,7 +10432,7 @@ Clear Selected Artboard Guides
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.clearSelectedArtboardGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.clearSelectedArtboardGuides`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10449,7 +10449,7 @@ Artboards to Files…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.artboardsToFiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.artboardsToFiles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10466,7 +10466,7 @@ Artboards to PDF…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.artboardsToPdf`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.artboardsToPdf`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10483,7 +10483,7 @@ Liquify…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.liquify`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.liquify`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10500,7 +10500,7 @@ Puppet Warp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.puppetWarp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.puppetWarp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10517,7 +10517,7 @@ Puppet Warp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.puppetWarp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.puppetWarp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10534,7 +10534,7 @@ Perspective Warp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.perspectiveWarp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.perspectiveWarp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10551,7 +10551,7 @@ Perspective Warp
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.smartObjects.perspectiveWarp`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.smartObjects.perspectiveWarp`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10568,7 +10568,7 @@ Set Measurement Scale…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.setMeasurementScale`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.setMeasurementScale`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10585,7 +10585,7 @@ Select Data Points…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.selectDataPoints`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.selectDataPoints`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10602,7 +10602,7 @@ Record Measurements
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.recordMeasurements`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.recordMeasurements`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10619,7 +10619,7 @@ Ruler Tool
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.rulerTool`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.rulerTool`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10636,7 +10636,7 @@ Count Tool
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.countTool`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.countTool`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10653,7 +10653,7 @@ Place Scale Marker…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.placeScaleMarker`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.placeScaleMarker`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10670,7 +10670,7 @@ Straighten Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.straightenLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.straightenLayer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10687,7 +10687,7 @@ Analysis Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.analysis.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.analysis.info`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10704,7 +10704,7 @@ Add Count
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.add`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10721,7 +10721,7 @@ Remove Count
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.remove`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10738,7 +10738,7 @@ Move Count
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.move`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10755,7 +10755,7 @@ Clear Count
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.clear`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.clear`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10772,7 +10772,7 @@ New Count Group
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.newGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.newGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10789,7 +10789,7 @@ Delete Count Group
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.deleteGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.deleteGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10806,7 +10806,7 @@ Count Group Options
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe count.setGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe count.setGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10823,7 +10823,7 @@ Measurement Log
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe measurementLog.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe measurementLog.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10840,7 +10840,7 @@ Delete Measurements
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe measurementLog.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe measurementLog.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10857,7 +10857,7 @@ Export Measurements…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe measurementLog.export`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe measurementLog.export`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10874,7 +10874,7 @@ New Note
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe notes.add`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe notes.add`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10891,7 +10891,7 @@ Edit Note
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe notes.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe notes.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10908,7 +10908,7 @@ Delete Note
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe notes.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe notes.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10925,7 +10925,7 @@ Notes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe notes.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe notes.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10942,7 +10942,7 @@ Notes…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.import.notes`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.import.notes`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10959,7 +10959,7 @@ Working Cyan Plate
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.workingCyanPlate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.workingCyanPlate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10976,7 +10976,7 @@ Working Magenta Plate
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.workingMagentaPlate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.workingMagentaPlate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -10993,7 +10993,7 @@ Working Yellow Plate
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.workingYellowPlate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.workingYellowPlate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11010,7 +11010,7 @@ Working Black Plate
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.workingBlackPlate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.workingBlackPlate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11027,7 +11027,7 @@ Working CMY Plate
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.workingCmyPlate`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.workingCmyPlate`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11044,7 +11044,7 @@ Legacy Macintosh RGB
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.legacyMacintoshRgb`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.legacyMacintoshRgb`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11061,7 +11061,7 @@ Color Blindness — Protanopia-type
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.colorBlindnessProtanopia`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.colorBlindnessProtanopia`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11078,7 +11078,7 @@ Color Blindness — Deuteranopia-type
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.proofSetup.colorBlindnessDeuteranopia`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.proofSetup.colorBlindnessDeuteranopia`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11095,7 +11095,7 @@ Color Blindness — Deuteranopia-type
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.thirtyTwoBitPreviewOptions`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.thirtyTwoBitPreviewOptions`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11112,7 +11112,7 @@ Gradient Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11129,7 +11129,7 @@ Select Gradient
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.select`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11146,7 +11146,7 @@ New Gradient Fill Layer from Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11163,7 +11163,7 @@ New Gradient Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11180,7 +11180,7 @@ Edit Gradient Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11197,7 +11197,7 @@ Restore Default Gradients
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe gradient.presets.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe gradient.presets.reset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11214,7 +11214,7 @@ Pattern Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.presets.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.presets.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11231,7 +11231,7 @@ Select Pattern
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.presets.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.presets.select`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11248,7 +11248,7 @@ New Pattern Fill Layer from Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.presets.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.presets.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11265,7 +11265,7 @@ New Pattern Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.presets.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.presets.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11282,7 +11282,7 @@ Edit Pattern Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe pattern.presets.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe pattern.presets.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11299,7 +11299,7 @@ Style Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe style.presets.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe style.presets.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11316,7 +11316,7 @@ Apply Style
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe style.presets.apply`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe style.presets.apply`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11333,7 +11333,7 @@ New Style…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe style.presets.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe style.presets.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11350,7 +11350,7 @@ Edit Style Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe style.presets.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe style.presets.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11367,7 +11367,7 @@ Restore Default Styles
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe style.presets.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe style.presets.reset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11384,7 +11384,7 @@ Shape Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.presets.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.presets.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11401,7 +11401,7 @@ Place Custom Shape
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.presets.place`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.presets.place`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11418,7 +11418,7 @@ New Shape Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.presets.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.presets.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11435,7 +11435,7 @@ Edit Shape Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.presets.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.presets.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11452,7 +11452,7 @@ Restore Default Shapes
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe shape.presets.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe shape.presets.reset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11469,7 +11469,7 @@ Tool Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tool.presets.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tool.presets.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11486,7 +11486,7 @@ New Tool Preset…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tool.presets.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tool.presets.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11503,7 +11503,7 @@ Select Tool Preset
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tool.presets.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tool.presets.select`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11520,7 +11520,7 @@ Edit Tool Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tool.presets.edit`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tool.presets.edit`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11537,7 +11537,7 @@ Reset Tool Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe tool.presets.reset`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe tool.presets.reset`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11554,7 +11554,7 @@ Clone Sources
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cloneSource.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe cloneSource.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11571,7 +11571,7 @@ Select Clone Source
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cloneSource.select`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe cloneSource.select`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11588,7 +11588,7 @@ Set Clone Source
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cloneSource.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe cloneSource.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11605,7 +11605,7 @@ Reset Transform
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cloneSource.resetTransform`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe cloneSource.resetTransform`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11622,7 +11622,7 @@ Clone Source Overlay
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe cloneSource.overlay`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe cloneSource.overlay`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11639,7 +11639,7 @@ Flame…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.flame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.flame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11656,7 +11656,7 @@ Picture Frame…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.pictureFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.pictureFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11673,7 +11673,7 @@ Tree…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-filters`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe filter.render.tree`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe filter.render.tree`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11690,7 +11690,7 @@ Slice Tool
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.new`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.new`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11707,7 +11707,7 @@ Slices From Guides
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.fromGuides`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.fromGuides`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11724,7 +11724,7 @@ Slice Options…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.set`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.set`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11741,7 +11741,7 @@ Promote
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.promote`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.promote`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11758,7 +11758,7 @@ Delete Slice
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11775,7 +11775,7 @@ Divide Slice…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.divide`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.divide`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11792,7 +11792,7 @@ List Slices
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe slice.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe slice.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11809,7 +11809,7 @@ New Layer Based Slice
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.newLayerBasedSlice`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.newLayerBasedSlice`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11826,7 +11826,7 @@ Lock Slices
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.lockSlices`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.lockSlices`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11843,7 +11843,7 @@ Clear Slices
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe view.clearSlices`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe view.clearSlices`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11860,7 +11860,7 @@ Save for Web (Legacy)…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.saveForWebLegacy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.saveForWebLegacy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11877,7 +11877,7 @@ Export Preferences…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.exportPreferences`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.exportPreferences`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11894,7 +11894,7 @@ Quick Export
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.quickExport`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.quickExport`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11911,7 +11911,7 @@ Image Assets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.generate.imageAssets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.generate.imageAssets`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11928,7 +11928,7 @@ Contact Sheet II…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.contactSheetII`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.contactSheetII`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11945,7 +11945,7 @@ Create Droplet…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.createDroplet`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.createDroplet`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11962,7 +11962,7 @@ Run Droplet
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.automate.runDroplet`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.automate.runDroplet`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11979,7 +11979,7 @@ Statistics…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.statistics`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.statistics`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -11996,7 +11996,7 @@ Browse…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.browse`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.browse`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12013,7 +12013,7 @@ Script Events Manager…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.scripts.scriptEventsManager`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.scripts.scriptEventsManager`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12030,7 +12030,7 @@ Print…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.print`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.print`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12047,7 +12047,7 @@ Print One Copy
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.printOneCopy`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.printOneCopy`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12064,7 +12064,7 @@ Package…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.package`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.package`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12081,7 +12081,7 @@ Paths to Illustrator…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.pathsToIllustrator`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.pathsToIllustrator`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12098,7 +12098,7 @@ Auto-Select Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.pickAt`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.pickAt`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12115,7 +12115,7 @@ Frame from Layers
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.new.frameFromLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.new.frameFromLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12132,7 +12132,7 @@ Migrate Presets
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe edit.presets.migratePresets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe edit.presets.migratePresets`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12149,7 +12149,7 @@ Trap…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.trap`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.trap`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12166,7 +12166,7 @@ Create Video Timeline
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.create`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.create`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12183,7 +12183,7 @@ Delete Timeline
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.delete`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.delete`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12200,7 +12200,7 @@ Go to Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.setFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.setFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12217,7 +12217,7 @@ Next Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.nextFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.nextFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12234,7 +12234,7 @@ Previous Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.previousFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.previousFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12251,7 +12251,7 @@ Timeline Settings
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.setProps`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.setProps`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12268,7 +12268,7 @@ Timeline Info
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe timeline.info`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe timeline.info`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12285,7 +12285,7 @@ New Blank Video Layer
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.newBlankVideoLayer`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.newBlankVideoLayer`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12302,7 +12302,7 @@ Insert Blank Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.insertBlankFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.insertBlankFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12319,7 +12319,7 @@ Duplicate Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.duplicateFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.duplicateFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12336,7 +12336,7 @@ Delete Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.deleteFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.deleteFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12353,7 +12353,7 @@ Restore Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.restoreFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.restoreFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12370,7 +12370,7 @@ Restore All Frames
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.restoreAllFrames`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.restoreAllFrames`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12387,7 +12387,7 @@ Show Altered Video
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.showAlteredVideo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.showAlteredVideo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12404,7 +12404,7 @@ Rasterize
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.rasterize`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.rasterize`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12421,7 +12421,7 @@ Video
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.rasterize.video`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.rasterize.video`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12438,7 +12438,7 @@ New Video Layer from File…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.newVideoLayerFromFile`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.newVideoLayerFromFile`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12455,7 +12455,7 @@ Replace Footage…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.replaceFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.replaceFootage`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12472,7 +12472,7 @@ Interpret Footage…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.interpretFootage`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.interpretFootage`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12489,7 +12489,7 @@ Reload Frame
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.videoLayers.reloadFrame`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.videoLayers.reloadFrame`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12506,7 +12506,7 @@ Video Frames to Layers…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.import.videoFramesToLayers`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.import.videoFramesToLayers`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12523,7 +12523,7 @@ Render Video…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.renderVideo`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.renderVideo`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12540,7 +12540,7 @@ WIA Support…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.import.wiaSupport`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.import.wiaSupport`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12557,7 +12557,7 @@ Define…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.variables.define`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.variables.define`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12574,7 +12574,7 @@ Data Sets…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.variables.dataSets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.variables.dataSets`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12591,7 +12591,7 @@ Apply Data Set…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe image.applyDataSet`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe image.applyDataSet`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12608,7 +12608,7 @@ Variable Data Sets…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-project`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.import.variableDataSets`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.import.variableDataSets`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12625,7 +12625,7 @@ Data Sets as Files…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-export`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe file.export.dataSetsAsFiles`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe file.export.dataSetsAsFiles`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12642,7 +12642,7 @@ List Variables
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe variables.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe variables.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12659,7 +12659,7 @@ List Plug-ins
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe plugin.list`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe plugin.list`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12676,7 +12676,7 @@ Install Plug-in…
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe plugin.install`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe plugin.install`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12693,7 +12693,7 @@ Remove Plug-in
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe plugin.remove`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe plugin.remove`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12710,7 +12710,7 @@ Reload Plug-ins
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe plugin.reload`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe plugin.reload`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12727,7 +12727,7 @@ Run Plug-in
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe plugin.run`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe plugin.run`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12744,7 +12744,7 @@ Rename Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.rename`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.rename`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12761,7 +12761,7 @@ Move Brush
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.move`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.move`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12778,7 +12778,7 @@ Move Brush Group
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.moveGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.moveGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12795,7 +12795,7 @@ Rename Brush Group
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.renameGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.renameGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12812,7 +12812,7 @@ Delete Brush Group
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-retouch`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: true；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe brush.presets.deleteGroup`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe brush.presets.deleteGroup`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12829,7 +12829,7 @@ Expand/Collapse Group
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setExpanded`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setExpanded`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:
@@ -12846,7 +12846,7 @@ Expand/Collapse Effects
 - 安装 / Install: `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-cli-layers`。
 - 当前工作流映射 / Workflow mapped: false。
 - 空会话观察 / Empty-session observation: false；禁用原因 / reason: 目录未提供具体原因；执行时重新查询 / query live state。
-- 调用 / Invocation: `python3 -I -B "$SKILL_DIR/scripts/commands.py" describe layer.setEffectsExpanded`；按原生参数构造计划后执行 run。
+- 调用 / Invocation: `python3 -I -B "$HARNESS_DIR/scripts/commands.py" describe layer.setEffectsExpanded`；按原生参数构造计划后执行 run。
 - 完整逐命令验收 / Full command acceptance: NOT_RUN。
 
 原生参数原文 / Verbatim native parameters:

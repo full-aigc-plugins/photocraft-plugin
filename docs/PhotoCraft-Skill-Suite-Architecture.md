@@ -40,6 +40,9 @@ flowchart TD
 
 Each skill contains its own necessary scripts, runtime locks, workflow reference and examples. There are no sibling-directory reads or symlinks. `scripts/sync_skill_suite.py` copies canonical executable resources from the use skill during source maintenance; `--check` rejects drift. Scenario descriptions and command evidence remain individually maintained. This duplicates distribution resources to support granular installations while avoiding multiple hand-edited implementations.
 
+
+> Convergence candidate (2026-10-13, skill source v0.1.0-dev.60, plugin unpublished): the duplicated execution payload converges into one built-in `photocraft-harness` skill — the 13 domain skills drop their per-skill `scripts/` (previously 13×42 byte-identical copies); the single canonical copy lives in the harness (12 documented entry points + 42 execution files, byte-identical to the dev.59 payload, no true orphans found), and documentation routes execution by skill name via `HARNESS_DIR`. `sync_skill_suite.py` now syncs use→domain skills for examples/references and use→harness for execution-contract JSONs. Standalone installation still works: domain skills carry scenario knowledge while execution entries come from the harness skill (bundled with the plugin; standalone via `npx skills add full-aigc-skills/photocraft-skills --skill photocraft-harness`). The convergence does not change the published dev.77 snapshot identity or its evidence.
+
 The launcher accepts native argv after `--`, validates the leading subcommand before installation, invokes a fixed checksummed executable without a shell, preserves exit status and bounds waiting. Unknown operation/platform/corrupt install fails. Native parameters, command IDs and enabled state are discovered at runtime. Output timeouts are unknown results, not proof that writes never happened. Save a native checkpoint and inspect before any replay.
 
 ## 4. Source evidence and differences

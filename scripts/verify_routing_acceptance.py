@@ -10,14 +10,18 @@ def load(path,name):
  spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 
 def verify(installed,source,out):
- installed=installed.resolve();source=source.resolve();out=out.resolve();out.mkdir(parents=True,exist_ok=False);before=hashes(installed);source_before=hashes(source);lock=json.loads((installed/'skills.lock.json').read_text())['sources'][0];suite=json.loads((source/'skill-suite.json').read_text());assert len(lock['skills'])==13
+ installed=installed.resolve();source=source.resolve();out=out.resolve();out.mkdir(parents=True,exist_ok=False);before=hashes(installed);source_before=hashes(source);lock=json.loads((installed/'skills.lock.json').read_text())['sources'][0];suite=json.loads((source/'skill-suite.json').read_text());# 执行实现唯一收敛在 photocraft-harness；13 领域技能 + 1 harness。assert len(lock['skills'])==14
  env={k:v for k,v in os.environ.items() if not k.startswith(('CRAFT_','PHOTOCRAFT_'))};env.update(PYTHONDONTWRITEBYTECODE='1',PATH='/usr/bin:/bin')
  def run(argv,cwd=out):
   r=subprocess.run(argv,cwd=cwd,env=env,capture_output=True,text=True,timeout=600);assert r.returncode==0,r.stdout+r.stderr;return r.stdout
  vendor=load(installed/'scripts/vendor/skill_vendor.py','route_acceptance_vendor');skills=[];routes=[]
  for name in lock['skills']:
   actual=installed/'skills'/name;assert vendor.hash_skill_dir(actual)==lock['sha256'][name];assert vendor.hash_skill_dir(source/'skills'/name)==lock['sha256'][name]
-  home=out/'single'/name/'only-skill';home.parent.mkdir(parents=True);shutil.copytree(actual,home);runtime=home.parent/'empty-runtime';assert not runtime.exists();assert list(home.parent.iterdir())==[home]
+  home=out/'single'/name/'only-skill';home.parent.mkdir(parents=True);shutil.copytree(actual,home);runtime=home.parent/'empty-runtime';assert not runtime.exists()
+  # 领域技能只携带知识；执行入口取同名相邻的 harness 正典副本。
+  if name!='photocraft-harness':
+   shutil.copytree(installed/'skills/photocraft-harness',home.parent/'photocraft-harness',ignore=shutil.ignore_patterns('__pycache__'))
+  scripts=home/'scripts' if (home/'scripts').is_dir() else home.parent/'photocraft-harness'/'scripts'
   for p in home.rglob('*.md'):
    text=p.read_text()
    if p.name=='SKILL.md':assert len(text.splitlines())<500
@@ -26,13 +30,13 @@ def verify(installed,source,out):
     target=(p.parent/target.split('#')[0]).resolve();assert target.is_relative_to(home) and target.is_file(),(name,str(target))
   contract=(home/'references/scenario-contract.md').read_text();assert all(word in contract for word in ['输入与前置','修改与副作用','保护范围','输出','恢复','验收','不适用'])
   for filename in ['happy-path.md','failure-recovery.md','boundary-refusal.md']:assert (home/'examples'/filename).is_file()
-  start=hashes(home);version=run([sys.executable,'-I','-B',str(home/'scripts/cli.py'),'--runtime-home',str(runtime),'--','--version']);runtime_lock=json.loads((home/'scripts/runtime.lock.json').read_text());assert runtime_lock['artifacts']['darwin-arm64']['versionOutput'] in version
-  rows=json.loads(run([sys.executable,'-I','-B',str(home/'scripts/cli.py'),'--runtime-home',str(runtime),'--','commands','--json']));ids={r['id']for r in rows};assert {r['id']for r in json.loads((home/'references/commands.json').read_text())['commands']}.issubset(ids)
+  start=hashes(home);version=run([sys.executable,'-I','-B',str(scripts/'cli.py'),'--runtime-home',str(runtime),'--','--version']);runtime_lock=json.loads((home/'scripts/runtime.lock.json').read_text());assert runtime_lock['artifacts']['darwin-arm64']['versionOutput'] in version
+  rows=json.loads(run([sys.executable,'-I','-B',str(scripts/'cli.py'),'--runtime-home',str(runtime),'--','commands','--json']));ids={r['id']for r in rows};assert {r['id']for r in json.loads((home/'references/commands.json').read_text())['commands']}.issubset(ids)
   for intent,expected in [('query_commands',['photocraft-cli']),('edit_text',['photocraft-cli-text']),('filter_background',['photocraft-cli-filters']),('export',['photocraft-cli-export'])]:
-   value=json.loads(run([sys.executable,'-I','-B',str(home/'scripts/route.py'),intent]));assert value['skills']==expected and value['hostModelRouting']=='NOT_RUN';routes.append(dict(skill=name,intent=intent,skills=value['skills']))
-  value=json.loads(run([sys.executable,'-I','-B',str(home/'scripts/route.py'),'edit_text','--outcome','unknown']));assert value['action']=='reconcile' and value['skills']==[] and not value['replayAllowed']
-  value=json.loads(run([sys.executable,'-I','-B',str(home/'scripts/route.py'),'poster','--skill','photocraft-cli']));assert value['skills']==['photocraft-cli']
-  value=json.loads(run([sys.executable,'-I','-B',str(home/'scripts/route.py'),'poster','--completed','photocraft-cli-project','--completed','photocraft-cli-layers']));assert value['skills']==['photocraft-cli-text','photocraft-cli-export'];assert hashes(home)==start
+   value=json.loads(run([sys.executable,'-I','-B',str(scripts/'route.py'),intent]));assert value['skills']==expected and value['hostModelRouting']=='NOT_RUN';routes.append(dict(skill=name,intent=intent,skills=value['skills']))
+  value=json.loads(run([sys.executable,'-I','-B',str(scripts/'route.py'),'edit_text','--outcome','unknown']));assert value['action']=='reconcile' and value['skills']==[] and not value['replayAllowed']
+  value=json.loads(run([sys.executable,'-I','-B',str(scripts/'route.py'),'poster','--skill','photocraft-cli']));assert value['skills']==['photocraft-cli']
+  value=json.loads(run([sys.executable,'-I','-B',str(scripts/'route.py'),'poster','--completed','photocraft-cli-project','--completed','photocraft-cli-layers']));assert value['skills']==['photocraft-cli-text','photocraft-cli-export'];assert hashes(home)==start
   skills.append(dict(name=name,installedSha256=lock['sha256'][name],coldPublicRuntime=True,runtimeSha256=sha(runtime/'photocraft'/runtime_lock['resolvedVersion']/'photocraft-cli'),registeredCommands=len(rows),isolatedSkillUnchanged=True,documentationAndExamples=True,unknownNoEdit=True,explicitCliPreserved=True,reusesCompletedPrerequisites=True))
   print('PASS cold standalone '+name,flush=True)
  # 现有领域业务断言运行在实际安装资源上；输入、产物在自有目录留存。
@@ -51,10 +55,10 @@ def verify(installed,source,out):
  tasks.TaskSkillFirstUseTests.tearDown=retained
  workflow=load(source/'tests/test_native_workflow_first_use.py','fixed_route_use_tests');tests=unittest.TestSuite([unittest.defaultTestLoader.loadTestsFromModule(tasks),unittest.defaultTestLoader.loadTestsFromModule(workflow)]);result=unittest.TextTestRunner(verbosity=2).run(tests);assert result.wasSuccessful() and not result.skipped and result.testsRun==13;assert len(observed)==10 and all(x['sourceUnchanged'] for x in observed)
  # 公共CLI的原合法完整命令计划仍可执行。
- cli=out/'single/photocraft-cli/only-skill';reply=json.loads(run([sys.executable,'-I','-B',str(cli/'scripts/commands.py'),'run',str(cli/'examples/commands-advanced.json'),'--output',str(out/'cli-plan'),'--runtime-home',str(cli.parent/'empty-runtime')]));assert reply['result']=='PASS' and all(x.get('phase')=='reply_validated' for x in reply['steps'])
+ cli=out/'single/photocraft-cli/only-skill';cli_scripts=cli/'scripts' if (cli/'scripts').is_dir() else cli.parent/'photocraft-harness'/'scripts';reply=json.loads(run([sys.executable,'-I','-B',str(cli_scripts/'commands.py'),'run',str(cli/'examples/commands-advanced.json'),'--output',str(out/'cli-plan'),'--runtime-home',str(cli.parent/'empty-runtime')]));assert reply['result']=='PASS' and all(x.get('phase')=='reply_validated' for x in reply['steps'])
  # 发行检查拒绝缺少失败示例、场景合同变化及生成执行器漂移。
  drift=out/'drift-source';shutil.copytree(source,drift);negative=[]
- for relative in ['skills/photocraft-cli-text/examples/failure-recovery.md','skills/photocraft-cli-text/references/scenario-contract.md','skills/photocraft-cli-text/scripts/commands.py']:
+ for relative in ['skills/photocraft-cli-text/examples/failure-recovery.md','skills/photocraft-cli-text/references/scenario-contract.md','skills/photocraft-harness/references/commands.json']:
   p=drift/relative;original=p.read_bytes();p.write_bytes(original+b'\ntest-only drift\n')
   if p.name=='failure-recovery.md':p.unlink()
   r=subprocess.run([sys.executable,'-I','-B',str(drift/'scripts/sync_skill_suite.py'),'--check'],capture_output=True,text=True,env=env);assert r.returncode!=0 and 'skill_resource_drift' in r.stdout+r.stderr;assert relative.removeprefix('skills/') in r.stdout+r.stderr;negative.append(dict(path=relative,result='REFUSED',outputSha256=hashlib.sha256((r.stdout+r.stderr).encode()).hexdigest()));p.write_bytes(original)

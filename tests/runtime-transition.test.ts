@@ -10,9 +10,9 @@ test('public lifecycle exposes explicit upgrade rollback and readonly status',()
 import {mkdtempSync,realpathSync,mkdirSync,writeFileSync,readFileSync,rmSync,existsSync,cpSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
-import {Ledger} from '../src/harness/ledger.ts';
-import {RuntimeManager,probeRuntime} from '../src/harness/runtime_manager.ts';
-import {skillIdentity,runtimePlatformKey} from '../src/harness/preflight.ts';
+import {Ledger} from '../scripts/harness/ledger.ts';
+import {RuntimeManager,probeRuntime} from '../scripts/harness/runtime_manager.ts';
+import {skillIdentity,runtimePlatformKey} from '../scripts/harness/preflight.ts';
 import {canonical,digest,fileDigest,safePath} from '../src/protocol/files.ts';
 
 function fixture(){
@@ -81,7 +81,7 @@ test('actual fixed CLI and owned desktop produce separate readonly lifecycle pro
  }finally{rmSync(root,{recursive:true,force:true});}
 });
 
-import {Runner} from '../src/harness/runner.ts';
+import {Runner} from '../scripts/harness/runner.ts';
 
 test('native lifecycle drains saved tasks, fences old claims and reopens retained projects on upgrade and rollback',{skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},async()=>{
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-native-upgrade-'))),state=join(root,'state'),ledger=new Ledger(state);const skillRoot=process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-use'),python=process.env.PHOTOCRAFT_PYTHON??'/opt/anaconda3/bin/python3',options={skillRoot,python,runtimeHome:join(process.env.HOME!,'.local/share/craft-runtimes')};
@@ -131,7 +131,7 @@ test('different native binary upgrade preserves saved projects and rollback exec
 test('independent process creation waits for the transition transaction and cannot claim the retired source',async()=>{
  const f=fixture();let child:ReturnType<typeof spawn>|undefined;
  try{
-  const script=join(f.root,'transition.mjs');writeFileSync(script,`import {Ledger} from ${JSON.stringify(new URL('../src/harness/ledger.ts',import.meta.url).href)};import {RuntimeManager} from ${JSON.stringify(new URL('../src/harness/runtime_manager.ts',import.meta.url).href)};import {canonical,digest} from ${JSON.stringify(new URL('../src/protocol/files.ts',import.meta.url).href)};import {readFileSync} from 'node:fs';const ledger=new Ledger(process.argv[2]);const options=JSON.parse(process.argv[3]),proposal=JSON.parse(process.argv[4]);const manager=new RuntimeManager(ledger,options,(options,backend)=>{process.send('locked');Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,500);const lock=JSON.parse(readFileSync(options.skillRoot+'/scripts/runtime.lock.json','utf8')),snapshot={backend};return {schema:'photocraft-runtime-probe/v1',backend,runtimeVersion:lock.resolvedVersion,runtimeSha256:Object.values(lock.artifacts)[0].binarySha256,snapshot,snapshotSha256:digest(canonical(snapshot)),editingCalls:0};});try{manager.upgrade(proposal);}finally{ledger.close();process.disconnect();}`);
+  const script=join(f.root,'transition.mjs');writeFileSync(script,`import {Ledger} from ${JSON.stringify(new URL('../scripts/harness/ledger.ts',import.meta.url).href)};import {RuntimeManager} from ${JSON.stringify(new URL('../scripts/harness/runtime_manager.ts',import.meta.url).href)};import {canonical,digest} from ${JSON.stringify(new URL('../src/protocol/files.ts',import.meta.url).href)};import {readFileSync} from 'node:fs';const ledger=new Ledger(process.argv[2]);const options=JSON.parse(process.argv[3]),proposal=JSON.parse(process.argv[4]);const manager=new RuntimeManager(ledger,options,(options,backend)=>{process.send('locked');Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,500);const lock=JSON.parse(readFileSync(options.skillRoot+'/scripts/runtime.lock.json','utf8')),snapshot={backend};return {schema:'photocraft-runtime-probe/v1',backend,runtimeVersion:lock.resolvedVersion,runtimeSha256:Object.values(lock.artifacts)[0].binarySha256,snapshot,snapshotSha256:digest(canonical(snapshot)),editingCalls:0};});try{manager.upgrade(proposal);}finally{ledger.close();process.disconnect();}`);
   child=spawn(process.execPath,[script,f.state,JSON.stringify(f.options),JSON.stringify(f.proposal)],{stdio:['ignore','pipe','pipe','ipc']});let diagnostic='';child.stderr?.on('data',data=>diagnostic+=data);const finished=new Promise<number|null>((resolve,reject)=>{child!.once('error',reject);child!.once('exit',resolve);});
   await new Promise<void>((resolve,reject)=>{child!.once('message',message=>message==='locked'?resolve():reject(new Error('unexpected child message')));child!.once('exit',code=>reject(new Error('transition exited before probe '+code+' '+diagnostic)));});
   const task=f.ledger.create(f.request);assert.equal(f.manager.status().generation,1);assert.throws(()=>f.ledger.claim(task.id,f.identity(f.old)),/runtime_selection_conflict/);assert.equal(f.ledger.status(task.id).epoch,0);assert.equal(await finished,0,diagnostic);

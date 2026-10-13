@@ -5,12 +5,17 @@ from pathlib import Path
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+def scripts_dir(skill):
+    # 执行实现唯一收敛在 photocraft-harness；领域技能副本经同名相邻目录取正典脚本。
+    return skill/'scripts' if (skill/'scripts').is_dir() else skill.parent/'photocraft-harness'/'scripts'
+
 def verify(skill, binary):
-    spec=importlib.util.spec_from_file_location('fixed_link_guard_session',skill/'scripts/mcp_session.py')
+    scripts=scripts_dir(skill)
+    spec=importlib.util.spec_from_file_location('fixed_link_guard_session',scripts/'mcp_session.py')
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     from PIL import Image
     baseline={str(p.relative_to(skill)):sha(p) for p in skill.rglob('*') if p.is_file()}
-    lock=json.loads((skill/'scripts/runtime.lock.json').read_text())
+    lock=json.loads((scripts/'runtime.lock.json').read_text())
     assert sha(binary)==lock['artifacts']['darwin-arm64']['binarySha256']
     version=subprocess.check_output([str(binary),'--version'],text=True).strip()
     assert version==lock['artifacts']['darwin-arm64']['versionOutput']
