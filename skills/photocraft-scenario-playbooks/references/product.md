@@ -1,6 +1,6 @@
 # PhotoCraft product 场景
 
-以下参数是256×192示例坐标/低强度起点。先检查当前输入、对象和命令参数；按实际损伤重算坐标，不得直接套用。
+每条流程从新打开的栅格原图开始（无选区、无活动路径）。复用会话时先选择原像素层；仅在确有活动选区时取消选区，`select.deselect` 在无选区时会被拒绝。坐标以256×192为例，必须按当前输入重算。
 
 ## product-neutral-packshot：商品中性白底基础校正
 
@@ -68,4 +68,48 @@
 检查：蒙版保留细边；原图像素仍可恢复；输出透明图无锯齿。
 
 边界：这是当前命令的主体选择能力，不保证发丝、玻璃和重叠商品完美。
+
+## product-reflection-spot：商品小面积反光点缓和
+
+输入：高光周围有同曲率、同材质可采样区；仅处理不承载商标的小点。
+
+| 顺序与目的 | Craft 命令 | 参数示例 |
+| --- | --- | --- |
+| 1. 保留原始像素，复制并激活工作层 | `layer.duplicate` | `{"name":"Reflection cleanup"}` |
+| 2. 同材质取样以低透明度恢复局部过渡 | `paint.healingBrush` | `{"points":[[156,88,1]],"source":[144,88],"size":8,"hardness":30,"opacity":35,"sampleLayer":"current"}` |
+| 3. 减弱修饰层，仍保留材质光泽 | `layer.setProps` | `{"opacity":0.75}` |
+
+检查：高光未完全抹平；曲面光线连续；商标文字与产品形状保持。
+
+边界：大面积镜面高光没有可信纹理时不修补；不得编造产品表面信息。
+
+## product-label-edge-sharpen：商品标签定区锐化
+
+输入：标签文字本来可辨，需提高缩图前局部清晰度。
+
+| 顺序与目的 | Craft 命令 | 参数示例 |
+| --- | --- | --- |
+| 1. 保留原始像素，复制并激活工作层 | `layer.duplicate` | `{"name":"Label detail"}` |
+| 2. 按实际目标轮廓定位；此处为256×192测试矩形 | `select.rect` | `{"x":80,"y":64,"width":96,"height":56,"mode":"replace","feather":1}` |
+| 3. 只对标签像素轻度锐化 | `filter.sharpen.unsharpMask` | `{"amount":45,"radius":0.6,"threshold":3}` |
+| 4. 结束局部操作，清除活动选区 | `select.deselect` | `{}` |
+
+检查：标签外背景噪声不变；细字没有白边；没有产生不存在的笔画。
+
+边界：模糊到不可读的文字不能凭锐化恢复；确认缩图最终尺寸再调强度。
+
+## product-color-proof-area：商品配色局部试样
+
+输入：客户要求比较已有产品区域的替代配色，输出标明效果预览。
+
+| 顺序与目的 | Craft 命令 | 参数示例 |
+| --- | --- | --- |
+| 1. 保留原始像素，复制并激活工作层 | `layer.duplicate` | `{"name":"Color proof"}` |
+| 2. 按实际目标轮廓定位；此处为256×192测试矩形 | `select.rect` | `{"x":64,"y":64,"width":96,"height":80,"mode":"replace","feather":1}` |
+| 3. 在局部蒙版调整色相与饱和度 | `layer.newAdjustmentLayer.hueSaturation` | `{"hue":-35,"saturation":12}` |
+| 4. 结束局部操作，清除活动选区 | `select.deselect` | `{}` |
+
+检查：背景与商标排除区保持；反光阴影仍保留；文件名注明配色预览。
+
+边界：示例矩形需要减去商标和不可改色区；此图不是实物颜色证明。
 

@@ -273,6 +273,141 @@
       "needsDocument": true,
       "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}",
       "shortcut": null
+    },
+    "select.deselect": {
+      "disabledReason": "no selection",
+      "enabled": false,
+      "id": "select.deselect",
+      "label": "Deselect",
+      "menu": [
+        "Select"
+      ],
+      "needsDocument": false,
+      "params": "{}",
+      "shortcut": "Cmd+D"
+    },
+    "select.rect": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "select.rect",
+      "label": "Rectangular Selection",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"x\":i32,\"y\":i32,\"width\":u32,\"height\":u32,\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"ellipse\":bool=false,\"line\":\"row|column\"?,\"antiAlias\":bool=true,\"feather\":px=0}",
+      "shortcut": null
+    },
+    "select.inverse": {
+      "disabledReason": "no selection",
+      "enabled": false,
+      "id": "select.inverse",
+      "label": "Inverse",
+      "menu": [
+        "Select"
+      ],
+      "needsDocument": false,
+      "params": "{}",
+      "shortcut": "Cmd+Shift+I"
+    },
+    "select.modify.feather": {
+      "disabledReason": "no selection",
+      "enabled": false,
+      "id": "select.modify.feather",
+      "label": "Feather…",
+      "menu": [
+        "Select",
+        "Modify"
+      ],
+      "needsDocument": false,
+      "params": "{\"radius\":0.1..1000=1,\"applyAtCanvasBounds\":bool=false}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.hueSaturation": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.hueSaturation",
+      "label": "Hue/Saturation…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0,\"colorize\":bool=false,\"reds\":json,\"yellows\":json,\"greens\":json,\"cyans\":json,\"blues\":json,\"magentas\":json} (per range {\"hue\",\"saturation\",\"lightness\",\"range\":[4 hue degrees]}; colorize: hue 0..360, saturation 0..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "filter.blur.gaussianBlur": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.blur.gaussianBlur",
+      "label": "Gaussian Blur…",
+      "menu": [
+        "Filter",
+        "Blur"
+      ],
+      "needsDocument": true,
+      "params": "{\"radius\":0.1..1000=1}",
+      "shortcut": null
+    },
+    "select.lasso": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "select.lasso",
+      "label": "Lasso",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y],…],\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"antiAlias\":bool=true,\"feather\":px=0}",
+      "shortcut": null
+    },
+    "paint.gradient": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.gradient",
+      "label": "Gradient",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"from\":[x,y],\"to\":[x,y],\"style\":\"linear|radial|angle|reflected|diamond\"=\"linear\",\"colors\":[\"#rrggbb\",…]? (evenly spaced),\"gradient\":preset name?,\"stops\":[[t,\"#rrggbb\"|\"foreground\"|\"background\"],…]?,\"transparency\":[[t,0..100],…]? (default: the current gradient, see gradient.presets.select),\"method\":\"classic|perceptual|linear|smooth\"? (Photoshop's interpolation; omitted: straight stops),\"smoothness\":0..100=100,\"reverse\":bool=false,\"dither\":bool=true,\"opacity\":1..100=100,\"mode\":\"normal|multiply|…\"=\"normal\",\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "shortcut": null
+    },
+    "paint.patch": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.patch",
+      "label": "Patch",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"offset\":[dx,dy] (how far the selection was dragged),\"mode\":\"source|destination\"=\"source\",\"contentAware\":bool=false (fill the selection content-aware from the dragged-to place; a background job),\"structure\":1..7=4 (content-aware: 3..7 copy the middle exactly, 1..2 re-synthesise more of it),\"color\":0..10=0 (content-aware: how far the copy's level adapts to the selection's surroundings),\"sampleAllLayers\":bool=false (content-aware),\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target} → {\"damage\",\"offset\"}",
+      "shortcut": null
+    },
+    "paint.burn": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.burn",
+      "label": "Burn",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"range\":\"shadows|midtones|highlights\"=\"midtones\",\"exposure\":1..100=50,\"protectTones\":bool=true}",
+      "shortcut": null
+    },
+    "layer.setProps": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.setProps",
+      "label": "Layer Properties",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}",
+      "shortcut": null
+    },
+    "image.revealAll": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.revealAll",
+      "label": "Reveal All",
+      "menu": [
+        "Image"
+      ],
+      "needsDocument": true,
+      "params": "{}",
+      "shortcut": null
     }
   },
   "sceneAcceptance": "CREATIVE_NOT_RUN",
