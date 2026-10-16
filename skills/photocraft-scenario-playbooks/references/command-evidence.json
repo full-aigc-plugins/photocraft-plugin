@@ -277,7 +277,7 @@
   },
   "sceneAcceptance": "CREATIVE_NOT_RUN",
   "technicalRoundtrip": {
-    "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38922079603",
+    "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38924224124",
     "recipes": [
       "old-photo-conservative",
       "hairline-scratch",
@@ -294,6 +294,29 @@
       "duotone-editorial"
     ],
     "sourceCommit": "7558efcb36cc3a32117e04f253fbc260687fca2c",
-    "input": "deterministic synthetic 256x192 RGB fixture; not damaged-photo quality evidence"
+    "input": "deterministic synthetic 256x192 RGB fixture; not damaged-photo quality evidence",
+    "stepHashes": {
+      "old-photo-conservative": "b91d045b1d86316cc29f66315f20db9051018e797199690537222fbfb25c75de",
+      "hairline-scratch": "b26d512361b57a21a5af6af6c97b22b4ab14098d566614d7e8c3c16e7e624778",
+      "fold-line-background": "59edb54b0052260913012d83efa4f9afcf812919bb28d96c8e73415c606e7657",
+      "faded-gray-tones": "5aedeb9f7fa2d398184837215013bfc75ff1f3a3d666083292d35c3c42bf5e17",
+      "red-cast-aging": "a6754af95e720674d7446b64ae378cd35a5d7c3b077221f24a57740454a345b2",
+      "scan-deskew-border": "55e039e44b5e0c4c4f18b4762bbf732a0524016d94486b9264b243c890e930cf",
+      "jpeg-block-reduction": "5479311e3276d7e0a389c2079c88a611ad0ba7c9a7c2e46c65cf33a4725cbd2b",
+      "print-resolution-tag": "44fd72bd951319a605f6f42f658b8b4cdd82a4d9dce017aa86033ad9d440491e",
+      "portrait-small-blemish": "204245dd1c1ef18594047ca07fd770ecd452d3f10d149acee674dbd705c54e74",
+      "portrait-white-balance": "2ec9c4d298263a2ab72b6b37c61bbdfee716fc8dc210619deae35d6101778701",
+      "product-neutral-packshot": "1e0d6bb965be2fea9e016b223bee0aeba82b14476c0e1cf3fedff6f1583520de",
+      "web-image-downsample": "7f6b677f9f7093f01f4c2af46cdb513527c95acae986ceb3bd66af3b66e35884",
+      "duotone-editorial": "c47f25930e3b0a96fc150e0f1dea8adc9bf468d05c0e9f09602cd9f6b696367e"
+    },
+    "pixelEffectChecks": [
+      "old-photo-conservative",
+      "faded-gray-tones",
+      "red-cast-aging",
+      "portrait-white-balance",
+      "product-neutral-packshot",
+      "duotone-editorial"
+    ]
   }
 }
