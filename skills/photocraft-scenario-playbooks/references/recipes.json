@@ -1,0 +1,1322 @@
+{
+  "schema": "craft-scenario-playbooks/v1",
+  "application": "photocraft",
+  "coordinateExampleCanvas": [
+    256,
+    192
+  ],
+  "recipes": [
+    {
+      "id": "old-photo-conservative",
+      "title": "老照片保守修复全流程",
+      "category": "restoration",
+      "inputs": "有扫描图与可辨认的局部损伤；确认是否保持黑白。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "只点选已确认的灰尘，不覆盖眼睛、文字和胶片颗粒",
+          "command": "paint.spotHealing",
+          "params": {
+            "points": [
+              [
+                40,
+                30,
+                1
+              ],
+              [
+                44,
+                32,
+                1
+              ]
+            ],
+            "size": 5,
+            "type": "proximityMatch"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+        },
+        {
+          "purpose": "从同材质邻近完好位置采样，沿损伤做短笔触",
+          "command": "paint.healingBrush",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 40,
+            "sampleLayer": "current",
+            "opacity": 70
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        },
+        {
+          "purpose": "轻度降噪，保留可识别纹理和胶片颗粒",
+          "command": "filter.noise.reduceNoise",
+          "params": {
+            "strength": 2,
+            "preserveDetails": 85,
+            "reduceColorNoise": 20,
+            "sharpenDetails": 0
+          },
+          "parameterReference": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}"
+        },
+        {
+          "purpose": "观察直方图后恢复中间调，黑白场不硬截断",
+          "command": "layer.newAdjustmentLayer.levels",
+          "params": {
+            "inBlack": 5,
+            "gamma": 1.05,
+            "inWhite": 248
+          },
+          "parameterReference": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "修复层与原图均保留",
+        "人物边缘与字形未被改造",
+        "前后图同尺寸比较，未修区纹理一致"
+      ],
+      "limits": "大面积缺失和无法辨识的人脸不推测重建；逐分区采样，不把例子坐标用于整张照片。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "scan-dust-specks",
+      "title": "扫描灰尘与细小白点",
+      "category": "restoration",
+      "inputs": "灰尘位置可识别，并与真实高光、雀斑区分。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "只点选已确认的灰尘，不覆盖眼睛、文字和胶片颗粒",
+          "command": "paint.spotHealing",
+          "params": {
+            "points": [
+              [
+                40,
+                30,
+                1
+              ],
+              [
+                44,
+                32,
+                1
+              ]
+            ],
+            "size": 5,
+            "type": "proximityMatch"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+        }
+      ],
+      "checks": [
+        "灰尘点消失而纹理继续",
+        "没有一片糊斑或重复纹理"
+      ],
+      "limits": "高光反射、痣、衣服纹样不能按灰尘移除。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "hairline-scratch",
+      "title": "胶片细划痕局部修补",
+      "category": "restoration",
+      "inputs": "细划痕与邻近同材质采样位置。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "从同材质邻近完好位置采样，沿损伤做短笔触",
+          "command": "paint.healingBrush",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 40,
+            "sampleLayer": "current",
+            "opacity": 70
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "划痕两侧亮度连续",
+        "笔画没有越过人物轮廓"
+      ],
+      "limits": "划痕穿过五官时分段处理；不能从皮肤跨采样到背景。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "fold-line-background",
+      "title": "背景折痕分区修补",
+      "category": "restoration",
+      "inputs": "折痕分段位置、两侧对应材质、轮廓保护区。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "按边缘方向取样，以低透明度短笔触接续纹理",
+          "command": "paint.cloneStamp",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 65,
+            "opacity": 60,
+            "aligned": true,
+            "sampleLayer": "current"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\",\"wrap\":bool=false (repeat source and stroke at document edges for Pattern Preview) → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        },
+        {
+          "purpose": "从同材质邻近完好位置采样，沿损伤做短笔触",
+          "command": "paint.healingBrush",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 40,
+            "sampleLayer": "current",
+            "opacity": 70
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "折痕边界连续",
+        "没有重复图案",
+        "人物轮廓未移动"
+      ],
+      "limits": "先克隆重建纹理，再修复亮度过渡；两次采样各自重新选择。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "torn-corner-texture",
+      "title": "照片角部小块缺损修复",
+      "category": "restoration",
+      "inputs": "缺损限于可由邻近背景推定的小角部。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "按边缘方向取样，以低透明度短笔触接续纹理",
+          "command": "paint.cloneStamp",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 65,
+            "opacity": 60,
+            "aligned": true,
+            "sampleLayer": "current"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\",\"wrap\":bool=false (repeat source and stroke at document edges for Pattern Preview) → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "边框和背景接续方向一致",
+        "缺失处与原始留存区分明确"
+      ],
+      "limits": "不补造缺失文字、身体、建筑结构；大缺角另存推测版。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "faded-gray-tones",
+      "title": "褪色黑白照片灰阶恢复",
+      "category": "tone",
+      "inputs": "扫描保留灰阶层次；黑白点分布可检查。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "观察直方图后恢复中间调，黑白场不硬截断",
+          "command": "layer.newAdjustmentLayer.levels",
+          "params": {
+            "inBlack": 5,
+            "gamma": 1.05,
+            "inWhite": 248
+          },
+          "parameterReference": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        },
+        {
+          "purpose": "轻微抬升中间调而保留高光",
+          "command": "layer.newAdjustmentLayer.curves",
+          "params": {
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                64,
+                60
+              ],
+              [
+                128,
+                136
+              ],
+              [
+                192,
+                198
+              ],
+              [
+                255,
+                255
+              ]
+            ]
+          },
+          "parameterReference": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json,\"pencil\":bool=false,\"smooth\":0..10=0,\"eyedropper\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel; pencil = drawn curves (Draw to modify the curve): each curve is 256 output levels in 0..255 (point curves given are drawn in, and turning pencil off fits points to the drawing); smooth = Smooth passes over the drawn curves; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}, RGB and Grayscale (no gray) only, applied over the given curves) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "黑衣与头发仍有层次",
+        "纸面高光不变成纯白块"
+      ],
+      "limits": "参数为低强度起点；需观察实际直方图，不能对所有旧照统一套黑白点。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "yellow-paper-neutralize",
+      "title": "泛黄纸基色偏校正",
+      "category": "tone",
+      "inputs": "原图中存在可信中性参考，且用户希望减轻泛黄。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "先温和抵消偏黄色，再看肤色",
+          "command": "layer.newAdjustmentLayer.colorBalance",
+          "params": {
+            "midtones": [
+              0,
+              0,
+              6
+            ],
+            "preserveLuminosity": true
+          },
+          "parameterReference": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        },
+        {
+          "purpose": "观察直方图后恢复中间调，黑白场不硬截断",
+          "command": "layer.newAdjustmentLayer.levels",
+          "params": {
+            "inBlack": 5,
+            "gamma": 1.05,
+            "inWhite": 248
+          },
+          "parameterReference": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "中性参考更接近灰",
+        "肤色与旧照片原有暖调不过分抹去"
+      ],
+      "limits": "没有中性参考时保留年代色调，白衣不一定是纯白。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "red-cast-aging",
+      "title": "老彩照偏红衰变校正",
+      "category": "tone",
+      "inputs": "红通道偏移可由中性物体和其他通道比较确认。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "用红通道曲线做小幅中间调校正",
+          "command": "layer.newAdjustmentLayer.curves",
+          "params": {
+            "red": [
+              [
+                0,
+                0
+              ],
+              [
+                128,
+                120
+              ],
+              [
+                255,
+                255
+              ]
+            ]
+          },
+          "parameterReference": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json,\"pencil\":bool=false,\"smooth\":0..10=0,\"eyedropper\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel; pencil = drawn curves (Draw to modify the curve): each curve is 256 output levels in 0..255 (point curves given are drawn in, and turning pencil off fits points to the drawing); smooth = Smooth passes over the drawn curves; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}, RGB and Grayscale (no gray) only, applied over the given curves) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "白色与肤色更自然",
+        "绿色和蓝色区域没有异常变色"
+      ],
+      "limits": "颜色衰变不等于缺失通道可完全恢复。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "silver-mirror-local",
+      "title": "银镜反光区域保守校正",
+      "category": "restoration",
+      "inputs": "局部反光位置和相邻可靠纹理；仅能处理小面积扫描反光。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "按边缘方向取样，以低透明度短笔触接续纹理",
+          "command": "paint.cloneStamp",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 65,
+            "opacity": 60,
+            "aligned": true,
+            "sampleLayer": "current"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\",\"wrap\":bool=false (repeat source and stroke at document edges for Pattern Preview) → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "高光变化局限于确认损伤",
+        "图案边界连续"
+      ],
+      "limits": "广泛银镜反射优先重新布光扫描；命令不能恢复根本未采集到的细节。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "scan-deskew-border",
+      "title": "扫描倾斜与边框整理",
+      "category": "geometry",
+      "inputs": "确认水平参考与最终需保留的纸边；例子画布至少256×192。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "按实测倾斜角纠偏",
+          "command": "image.rotation.arbitrary",
+          "params": {
+            "angle": 1,
+            "direction": "ccw",
+            "interpolation": "bicubic"
+          },
+          "parameterReference": "{\"angle\":-359.99..359.99=0,\"direction\":\"cw|ccw\"=\"cw\",\"interpolation\":\"bicubic|bilinear|nearest\"=\"bicubic\"}"
+        },
+        {
+          "purpose": "纠偏后重新量取裁切框",
+          "command": "image.crop",
+          "params": {
+            "x": 8,
+            "y": 8,
+            "width": 240,
+            "height": 176,
+            "deleteCroppedPixels": false
+          },
+          "parameterReference": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"angle\":-3600..3600=0,\"deleteCroppedPixels\":bool=true,\"targetWidth\":px,\"targetHeight\":px,\"resolution\":ppi,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails\"=\"bicubic\"} → {x,y,width,height,documentWidth,documentHeight,resolution} (targetWidth/targetHeight, both or neither: the cropped area is resampled to exactly that size, as Image Size, in the same undo step; resolution: the document's new ppi)"
+        }
+      ],
+      "checks": [
+        "水平参考校正",
+        "裁切不切掉边缘文字或人物"
+      ],
+      "limits": "旋转后的尺寸会变化，裁切参数必须重新计算。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "moire-small-radius",
+      "title": "扫描印刷网点轻度抑制",
+      "category": "restoration",
+      "inputs": "明显网点而非胶片颗粒；输出允许轻微细节损失。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "在副本尝试最小半径中值滤波",
+          "command": "filter.noise.median",
+          "params": {
+            "radius": 1
+          },
+          "parameterReference": "{\"radius\":1..500=1}"
+        }
+      ],
+      "checks": [
+        "网点减轻",
+        "发丝、纸纹未被完全磨平"
+      ],
+      "limits": "单次小半径测试；网纹严重时重新扫描，不能靠强滤镜冒充修复。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "jpeg-block-reduction",
+      "title": "旧 JPEG 方块伪影减轻",
+      "category": "restoration",
+      "inputs": "有明显压缩网格的副本；原始文件不可得。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "对压缩伪影优先保留结构",
+          "command": "filter.noise.reduceNoise",
+          "params": {
+            "strength": 2,
+            "preserveDetails": 90,
+            "reduceColorNoise": 25,
+            "sharpenDetails": 0,
+            "removeJpegArtifact": true
+          },
+          "parameterReference": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}"
+        }
+      ],
+      "checks": [
+        "块状网格减轻",
+        "小字没有糊成团"
+      ],
+      "limits": "丢失的 JPEG 细节无法真实重建；不先锐化网格。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "bw-conversion-preserve",
+      "title": "旧彩照转黑白并保留层次",
+      "category": "tone",
+      "inputs": "用户明确需要黑白版本；原彩色文件另留。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "使用可编辑黑白调整层而非破坏性去色",
+          "command": "layer.newAdjustmentLayer.blackWhite",
+          "params": {
+            "reds": 40,
+            "yellows": 60,
+            "greens": 40,
+            "cyans": 60,
+            "blues": 20,
+            "magentas": 80
+          },
+          "parameterReference": "{\"reds\":-200..300=40,\"yellows\":-200..300=60,\"greens\":-200..300=40,\"cyans\":-200..300=60,\"blues\":-200..300=20,\"magentas\":-200..300=80,\"tint\":bool=false,\"tintColor\":\"#rrggbb\"} + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "肤色与背景在灰度上可区分",
+        "红绿物体不会并成一块"
+      ],
+      "limits": "不把转黑白当色偏修复；彩色原版继续保留。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "gentle-color-noise",
+      "title": "暗部彩色噪声抑制",
+      "category": "restoration",
+      "inputs": "暗部有彩色斑点，与真实颜色边缘区分。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "优先减彩噪，少动亮度细节",
+          "command": "filter.noise.reduceNoise",
+          "params": {
+            "strength": 1,
+            "preserveDetails": 90,
+            "reduceColorNoise": 35,
+            "sharpenDetails": 0
+          },
+          "parameterReference": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}"
+        }
+      ],
+      "checks": [
+        "彩色斑点减轻",
+        "暗部纹理仍存在"
+      ],
+      "limits": "显示器预览噪声不一定写入源文件，先以100%核对。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "small-stain-sampled",
+      "title": "小面积霉点取样修复",
+      "category": "restoration",
+      "inputs": "小霉点范围、同材质采样点、需要保留的斑纹。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "从同材质邻近完好位置采样，沿损伤做短笔触",
+          "command": "paint.healingBrush",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 40,
+            "sampleLayer": "current",
+            "opacity": 70
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        },
+        {
+          "purpose": "按边缘方向取样，以低透明度短笔触接续纹理",
+          "command": "paint.cloneStamp",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 65,
+            "opacity": 60,
+            "aligned": true,
+            "sampleLayer": "current"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\",\"wrap\":bool=false (repeat source and stroke at document edges for Pattern Preview) → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "霉点边界不突兀",
+        "没有残余取样十字纹"
+      ],
+      "limits": "仅小面积；大霉斑涉及缺失图案时无法可靠复原。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "restore-final-sharpen",
+      "title": "修复成片的最终锐化",
+      "category": "delivery",
+      "inputs": "修复与尺寸处理已经完成；确认最终展示尺寸。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "确认交付尺寸后轻度锐化，避开明显损伤",
+          "command": "filter.sharpen.unsharpMask",
+          "params": {
+            "amount": 35,
+            "radius": 0.6,
+            "threshold": 3
+          },
+          "parameterReference": "{\"amount\":1..500=50,\"radius\":0.1..1000=1,\"threshold\":0..255=0}"
+        }
+      ],
+      "checks": [
+        "100%下没有双边和白边",
+        "字形与颗粒不过锐"
+      ],
+      "limits": "不以锐化弥补失焦，打印和屏幕版分别调整强度。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "print-resolution-tag",
+      "title": "老照片打印分辨率标记",
+      "category": "delivery",
+      "inputs": "确认像素尺寸足够且打印需求只需修改ppi元数据。",
+      "steps": [
+        {
+          "purpose": "仅改分辨率，不重采样像素",
+          "command": "image.imageSize",
+          "params": {
+            "resolution": 300,
+            "resample": "none"
+          },
+          "parameterReference": "{\"width\":px,\"height\":px,\"percent\":%? (both sides; an explicit side wins),\"resolution\":ppi,\"keepPrintSize\":bool=false (with only a resolution: resample the pixels to keep the print size),\"resample\":\"automatic|preserveDetails|bicubicSmoother|bicubicSharper|bicubicAutomatic|bicubic|nearest|bilinear|lanczos|none\"=\"bicubic\"} → {width,height} (the document's size after the command; \"none\" changes the resolution only)"
+        }
+      ],
+      "checks": [
+        "导出像素数不变",
+        "打印尺寸由像素/300ppi得到"
+      ],
+      "limits": "不能把改ppi标记说成提高真实分辨率。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "portrait-small-blemish",
+      "title": "自然人像局部痘印修饰",
+      "category": "portrait",
+      "inputs": "明确要修饰临时痘印，保留痣和身份特征。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "只对临时痘印做单点近邻修复",
+          "command": "paint.spotHealing",
+          "params": {
+            "points": [
+              [
+                100,
+                72,
+                1
+              ]
+            ],
+            "size": 4,
+            "type": "proximityMatch"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+        }
+      ],
+      "checks": [
+        "皮肤纹理连续",
+        "原有身份特征保留"
+      ],
+      "limits": "示例点不是人脸检测坐标；没有可靠人脸定位时先看图手动确定。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "portrait-eye-shadow",
+      "title": "人像眼下阴影轻度减淡",
+      "category": "portrait",
+      "inputs": "确认阴影而非真实轮廓；采样仍位于同一肤色区。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "低透明度修复局部阴影而非抹平眼袋结构",
+          "command": "paint.healingBrush",
+          "params": {
+            "points": [
+              [
+                100,
+                72,
+                1
+              ],
+              [
+                104,
+                72,
+                1
+              ]
+            ],
+            "source": [
+              100,
+              82
+            ],
+            "size": 5,
+            "opacity": 25,
+            "hardness": 20,
+            "sampleLayer": "current"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "眼下与颧骨过渡自然",
+        "眼睛边缘未改变"
+      ],
+      "limits": "保留年龄特征和眼部结构，用户未要求时不消除全部阴影。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "portrait-white-balance",
+      "title": "人像整体轻微白平衡",
+      "category": "portrait",
+      "inputs": "可信中性参考、肤色与背景颜色可比较。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "仅从小幅色彩平衡起步",
+          "command": "layer.newAdjustmentLayer.colorBalance",
+          "params": {
+            "midtones": [
+              0,
+              -2,
+              3
+            ],
+            "preserveLuminosity": true
+          },
+          "parameterReference": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "脸和颈部一致",
+        "白衣与中性背景无异常色偏"
+      ],
+      "limits": "暖光场景不必强制中性；调整方向应由输入测量决定。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "portrait-backlit",
+      "title": "逆光人像暗部回调",
+      "category": "portrait",
+      "inputs": "高光未完全剪切，脸部有可用暗部层次。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "温和提升阴影并限制半径",
+          "command": "image.adjustments.shadowsHighlights",
+          "params": {
+            "shadowAmount": 15,
+            "shadowTone": 40,
+            "shadowRadius": 12,
+            "highlightAmount": 5,
+            "highlightTone": 50,
+            "highlightRadius": 12
+          },
+          "parameterReference": "{\"shadowAmount\":0..100=35,\"shadowTone\":0..100=50,\"shadowRadius\":0..2500=30,\"highlightAmount\":0..100=0,\"highlightTone\":0..100=50,\"highlightRadius\":0..2500=30,\"color\":-100..100=20,\"midtone\":-100..100=0,\"blackClip\":0..50=0.01,\"whiteClip\":0..50=0.01}"
+        }
+      ],
+      "checks": [
+        "发丝轮廓无光晕",
+        "脸部噪点不明显放大"
+      ],
+      "limits": "此命令直接处理像素，先用副本；不能恢复全黑无数据的区域。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "product-neutral-packshot",
+      "title": "商品中性白底基础校正",
+      "category": "product",
+      "inputs": "真实商品图、准确材质颜色和白底参考。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "观察直方图后恢复中间调，黑白场不硬截断",
+          "command": "layer.newAdjustmentLayer.levels",
+          "params": {
+            "inBlack": 5,
+            "gamma": 1.05,
+            "inWhite": 248
+          },
+          "parameterReference": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        },
+        {
+          "purpose": "控制饱和度，避免偏离商品真实颜色",
+          "command": "layer.newAdjustmentLayer.vibrance",
+          "params": {
+            "vibrance": 3,
+            "saturation": 0
+          },
+          "parameterReference": "{\"vibrance\":-100..100=0,\"saturation\":-100..100=0} + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "包装文字清晰",
+        "商品颜色与原物相符"
+      ],
+      "limits": "白底不等于主体可以过曝；反光应保留形体。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "product-surface-dust",
+      "title": "商品表面灰尘清理",
+      "category": "product",
+      "inputs": "拍摄灰尘与真实划伤、纹理、铭牌区分。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "只点选已确认的灰尘，不覆盖眼睛、文字和胶片颗粒",
+          "command": "paint.spotHealing",
+          "params": {
+            "points": [
+              [
+                40,
+                30,
+                1
+              ],
+              [
+                44,
+                32,
+                1
+              ]
+            ],
+            "size": 5,
+            "type": "proximityMatch"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+        },
+        {
+          "purpose": "按边缘方向取样，以低透明度短笔触接续纹理",
+          "command": "paint.cloneStamp",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 65,
+            "opacity": 60,
+            "aligned": true,
+            "sampleLayer": "current"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\",\"wrap\":bool=false (repeat source and stroke at document edges for Pattern Preview) → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "checks": [
+        "拍摄灰尘清除",
+        "真实材质与标签未修改"
+      ],
+      "limits": "商业交付不得把真实商品缺陷无说明地抹成不同商品状态。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "product-edge-halo",
+      "title": "白底抠图白边整理",
+      "category": "product",
+      "inputs": "已有带透明度的像素图层；确认白色边缘来自旧底色。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "仅去除白色杂边，保留alpha形状",
+          "command": "layer.matting.removeWhiteMatte",
+          "params": {},
+          "parameterReference": "{}"
+        }
+      ],
+      "checks": [
+        "深底下边缘无白边",
+        "浅色主体细边没有变黑"
+      ],
+      "limits": "先确认alpha存在；全白主体边缘不可用此命令盲处理。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "product-dark-matte",
+      "title": "深色旧底抠图黑边整理",
+      "category": "product",
+      "inputs": "透明图层边缘有来自旧黑底的污染。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "去黑底污染，保持alpha轮廓",
+          "command": "layer.matting.removeBlackMatte",
+          "params": {},
+          "parameterReference": "{}"
+        }
+      ],
+      "checks": [
+        "浅底下没有黑边",
+        "头发与半透明材质过渡自然"
+      ],
+      "limits": "玻璃和烟雾不应按不透明硬边处理。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "product-background-mask",
+      "title": "商品主体蒙版分离",
+      "category": "product",
+      "inputs": "单一清晰主体，底图与主体边缘对比足够。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "先用主体选择建立可编辑蒙版",
+          "command": "layer.removeBackground",
+          "params": {
+            "refine": true,
+            "sampleAllLayers": false
+          },
+          "parameterReference": "{\"layer\":id?,\"sampleAllLayers\":bool=false,\"refine\":bool=true} → {layer,bounds} (adds a layer mask from Select Subject; the Background becomes a normal layer)"
+        }
+      ],
+      "checks": [
+        "蒙版保留细边",
+        "原图像素仍可恢复",
+        "输出透明图无锯齿"
+      ],
+      "limits": "这是当前命令的主体选择能力，不保证发丝、玻璃和重叠商品完美。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "social-canvas-padding",
+      "title": "社交图片补画布留白",
+      "category": "layout",
+      "inputs": "已经确认目标比例，主体像素不能拉伸。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "以透明或统一背景扩画布，保持居中",
+          "command": "image.canvasSize",
+          "params": {
+            "width": 320,
+            "height": 240,
+            "anchor": "center",
+            "extensionColor": "white"
+          },
+          "parameterReference": "{\"width\":px,\"height\":px,\"relative\":bool=false,\"anchor\":\"topLeft|top|topRight|left|center|right|bottomLeft|bottom|bottomRight\"=\"center\",\"extensionColor\":\"background|foreground|white|black|transparent|#rrggbb\"=\"background\"}"
+        }
+      ],
+      "checks": [
+        "主体比例未改变",
+        "新边界留白一致"
+      ],
+      "limits": "输入大于目标时会裁内容，先读尺寸；需要完整保留时目标不得小于输入。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "photo-mirror-layout",
+      "title": "版式镜像副本制作",
+      "category": "layout",
+      "inputs": "用户明确需要镜像图用于构图，文字和标识需核对。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "只镜像副本，保存原始方向",
+          "command": "image.imageRotation.flipCanvasHorizontal",
+          "params": {},
+          "parameterReference": "{}"
+        }
+      ],
+      "checks": [
+        "人物或物体方向符合用途",
+        "文字、品牌标识没有反写进入交付"
+      ],
+      "limits": "含文字图像镜像可能不可用，不能把反写标识交付为真实照片。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "web-image-downsample",
+      "title": "网页展示图缩小",
+      "category": "delivery",
+      "inputs": "确认目标为256×192示例尺寸；保持同一长宽比。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "先缩小到目标像素尺寸",
+          "command": "image.imageSize",
+          "params": {
+            "width": 256,
+            "height": 192,
+            "resample": "bicubicSharper"
+          },
+          "parameterReference": "{\"width\":px,\"height\":px,\"percent\":%? (both sides; an explicit side wins),\"resolution\":ppi,\"keepPrintSize\":bool=false (with only a resolution: resample the pixels to keep the print size),\"resample\":\"automatic|preserveDetails|bicubicSmoother|bicubicSharper|bicubicAutomatic|bicubic|nearest|bilinear|lanczos|none\"=\"bicubic\"} → {width,height} (the document's size after the command; \"none\" changes the resolution only)"
+        }
+      ],
+      "checks": [
+        "比例不变",
+        "文字边缘清晰",
+        "没有反复放大再缩小"
+      ],
+      "limits": "非4:3输入必须按比例计算另一边，例子尺寸不能直接套用。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    },
+    {
+      "id": "duotone-editorial",
+      "title": "编辑插图双色映射",
+      "category": "tone",
+      "inputs": "明确属于风格化插图交付，不要求保留真实颜色。",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "先用可编辑渐变映射建立双色",
+          "command": "layer.newAdjustmentLayer.gradientMap",
+          "params": {
+            "stops": [
+              [
+                0,
+                "#1b2540"
+              ],
+              [
+                1,
+                "#f1dab1"
+              ]
+            ],
+            "dither": true
+          },
+          "parameterReference": "{\"stops\":json,\"reverse\":bool=false,\"dither\":bool=false} (stops [[location 0..1, \"#rrggbb\"], …], 2..64) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "checks": [
+        "暗部与高光仍分离",
+        "标题叠加区域对比足够"
+      ],
+      "limits": "双色版与真实色彩版分开命名，不覆盖原图。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+    }
+  ],
+  "templateOnly": true,
+  "argumentPolicy": "示例参数必须按当前输入、选择和实际返回ID替换；$变量先解析，数组变量整字段替换，不能将本文件直接当原生CLI脚本执行。"
+}

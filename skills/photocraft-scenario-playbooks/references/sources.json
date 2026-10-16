@@ -1,0 +1,47 @@
+{
+  "policy": "只借鉴工作流事实，场景正文与命令例子原创编写，不复制外部代码、正文或素材。许可不明的来源仅作为参考。",
+  "sources": [
+    {
+      "repository": "qzfcoder/photo-retouch-pro",
+      "commit": "bd963066b15f9dda1f46b10e63427f1046b57acc",
+      "license": null,
+      "readFiles": [
+        {
+          "path": "SKILL.md",
+          "url": "https://github.com/qzfcoder/photo-retouch-pro/blob/bd963066b15f9dda1f46b10e63427f1046b57acc/SKILL.md",
+          "bytes": 7755
+        }
+      ],
+      "reuse": "workflow facts and original adaptation only; no upstream text, code or assets copied"
+    },
+    {
+      "repository": "creold/photoshop-scripts",
+      "commit": "9a2a54cab1b4f737f86513fce0329d9e168dddb4",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readFiles": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/creold/photoshop-scripts/blob/9a2a54cab1b4f737f86513fce0329d9e168dddb4/README.md",
+          "bytes": 11295
+        },
+        {
+          "path": "jsx/ArtboardsFromCSV.jsx",
+          "url": "https://github.com/creold/photoshop-scripts/blob/9a2a54cab1b4f737f86513fce0329d9e168dddb4/jsx/ArtboardsFromCSV.jsx",
+          "bytes": 12696
+        },
+        {
+          "path": "jsx/TIFF2Print.jsx",
+          "url": "https://github.com/creold/photoshop-scripts/blob/9a2a54cab1b4f737f86513fce0329d9e168dddb4/jsx/TIFF2Print.jsx",
+          "bytes": 13784
+        }
+      ],
+      "reuse": "workflow facts and original adaptation only; no upstream text, code or assets copied"
+    }
+  ]
+}

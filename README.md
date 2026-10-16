@@ -385,3 +385,7 @@ Checkpoint recovery candidate: hash-bound saved-project forks and explicit Harne
 Plugin display name: **PhotoCraft Use**. Official upstream icon provenance and licenses are included under `assets/official-icon-source.json` and adjacent LICENSE files.
 
 源码增强候选采用 `ui/source.lock.json` 与 `ui/build-source.py`；兼容更新查询本插件自有 GitHub Releases，失败回退内置，原版 Web 不替换增强自动化运行时。当前会话保留；宿主安装验收另行记录。
+
+## 场景操作手册
+
+新增 `photocraft-scenario-playbooks`，包含 30 条具有实际命令、参数和结果检查的原创场景，覆盖修复、影调、人像、商品、版式和交付。入口见 [场景技能](skills/photocraft-scenario-playbooks/SKILL.md)。命令存在性已依据官方 Windows CLI 0.9.0 目录核对，完整场景效果仍需逐项运行与看图验收。
