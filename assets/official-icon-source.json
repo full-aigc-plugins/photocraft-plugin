@@ -1,0 +1,13 @@
+{
+  "name": "photocraft",
+  "icon": "photocraft/icon.png",
+  "source": "https://raw.githubusercontent.com/storytold/photocraft/ed7df56a2455375240959bae6e5273a71d858d84/assets/app-icon/photocraft.svg",
+  "homepage": "https://github.com/storytold/photocraft",
+  "matchedBy": "upstream-app-icon",
+  "mimeType": "image/png",
+  "license": "MIT",
+  "modifications": "Square full-bleed background; 256px PNG. Artwork preserved; corner rounding delegated to client.",
+  "sha256": "94f110c86d6d64243310a6b0bcf1c35be0ec540e39560ffd41cacdd10a31acdc",
+  "localFile": "./assets/official-logo.png",
+  "displayName": "PhotoCraft Use"
+}

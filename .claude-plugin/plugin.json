@@ -10,5 +10,6 @@
   "repository": "https://github.com/full-aigc-plugins/photocraft-plugin",
   "license": "Apache-2.0",
   "commands": "./com.anthropic.claude-code/commands/",
-  "hooks": "./com.anthropic.claude-code/hooks/hooks.json"
+  "hooks": "./com.anthropic.claude-code/hooks/hooks.json",
+  "skills": "./skills/"
 }

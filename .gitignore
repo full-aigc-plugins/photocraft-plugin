@@ -10,3 +10,6 @@ __pycache__/
 .openspec-cache/
 .codex/
 .claude/
+
+# Generated editor release bundle
+ui/dist/

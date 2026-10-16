@@ -1,5 +1,13 @@
 {
   "version": 1,
   "dest": "skills/",
-  "skills": []
+  "skills": [
+    "photocraft-batch-image-delivery",
+    "photocraft-editor",
+    "photocraft-product-cutout",
+    "photocraft-repair-scan",
+    "photocraft-restore-old-photo",
+    "photocraft-retouch-portrait",
+    "photocraft-social-cover"
+  ]
 }

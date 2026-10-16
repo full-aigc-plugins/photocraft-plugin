@@ -19,7 +19,7 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "PhotoCraft",
+        "displayName": "PhotoCraft Use",
         "shortDescription": "Editable creative workflows and pinned setup",
         "longDescription": "Use independently maintained, checksummed skills to install pinned maintained CLIs and create editable native projects. Development release; complete capability and host acceptance remain in progress.",
         "developerName": "Full AIGC Plugins",
@@ -31,7 +31,9 @@
         "websiteURL": "https://github.com/full-aigc-plugins/photocraft-plugin",
         "defaultPrompt": [
           "Create an editable PhotoCraft project from my assets"
-        ]
+        ],
+        "logo": "./assets/official-logo.png",
+        "logoDark": "./assets/official-logo.png"
       }
     },
     "ai.nanoco.nanoclaw": {
