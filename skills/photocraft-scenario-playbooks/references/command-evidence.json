@@ -412,7 +412,9 @@
   },
   "sceneAcceptance": "CREATIVE_NOT_RUN",
   "technicalRoundtrip": {
-    "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38924224124",
+    "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38926679341",
+    "sourceCommit": "7829f6d3e8882c651a7175e8579d219eca58a938",
+    "input": "deterministic synthetic 256x192 RGB fixture; not damaged-photo quality evidence",
     "recipes": [
       "old-photo-conservative",
       "hairline-scratch",
@@ -426,10 +428,13 @@
       "portrait-white-balance",
       "product-neutral-packshot",
       "web-image-downsample",
-      "duotone-editorial"
+      "duotone-editorial",
+      "window-highlight-local",
+      "portrait-subject-lift",
+      "background-desaturate-focus",
+      "scan-four-side-crop",
+      "selective-accent-color"
     ],
-    "sourceCommit": "7558efcb36cc3a32117e04f253fbc260687fca2c",
-    "input": "deterministic synthetic 256x192 RGB fixture; not damaged-photo quality evidence",
     "stepHashes": {
       "old-photo-conservative": "b91d045b1d86316cc29f66315f20db9051018e797199690537222fbfb25c75de",
       "hairline-scratch": "b26d512361b57a21a5af6af6c97b22b4ab14098d566614d7e8c3c16e7e624778",
@@ -443,7 +448,12 @@
       "portrait-white-balance": "2ec9c4d298263a2ab72b6b37c61bbdfee716fc8dc210619deae35d6101778701",
       "product-neutral-packshot": "1e0d6bb965be2fea9e016b223bee0aeba82b14476c0e1cf3fedff6f1583520de",
       "web-image-downsample": "7f6b677f9f7093f01f4c2af46cdb513527c95acae986ceb3bd66af3b66e35884",
-      "duotone-editorial": "c47f25930e3b0a96fc150e0f1dea8adc9bf468d05c0e9f09602cd9f6b696367e"
+      "duotone-editorial": "c47f25930e3b0a96fc150e0f1dea8adc9bf468d05c0e9f09602cd9f6b696367e",
+      "window-highlight-local": "3edc805f6c814f088f45ffd6b13223b201bc977afc2edeb44f3028f3cf2d5350",
+      "portrait-subject-lift": "cca0831fc5dc13c8b4ce02535ad4e3cce0490035f8a30654d11e5635432c1da7",
+      "background-desaturate-focus": "51446c896ee2d1e40872897a87c1a2dcca159948aa7ffbf11092305f2dc86dec",
+      "scan-four-side-crop": "6c9afc60e4643f5983567a7e730c2209abefe37c4c84d84a6f85c1766507b6be",
+      "selective-accent-color": "3e02638d4830923da46d059938692597b7470cbd40c6b80bb39722fccb19f55f"
     },
     "pixelEffectChecks": [
       "old-photo-conservative",
@@ -452,6 +462,21 @@
       "portrait-white-balance",
       "product-neutral-packshot",
       "duotone-editorial"
-    ]
+    ],
+    "localityChecks": [
+      "window-highlight-local",
+      "portrait-subject-lift",
+      "background-desaturate-focus",
+      "selective-accent-color"
+    ],
+    "savedCropRestoration": {
+      "recipe": "scan-four-side-crop",
+      "result": "PASS",
+      "checks": [
+        "saved crop reopened at 240x176",
+        "image.revealAll restored 256x192",
+        "restored export RGB equals baseline at every pixel"
+      ]
+    }
   }
 }
