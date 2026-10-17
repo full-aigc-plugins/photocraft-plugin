@@ -1,0 +1,30 @@
+{
+  "policy": "仅借鉴取样、边界保护及色阶流程事实；技能参数与正文原创，不分发手册文本或代码。",
+  "sources": [
+    {
+      "repository": "GNOME/gimp-help",
+      "commit": "47eda5c8db56271d30e19e8bd53a88a619fcee7f",
+      "licenseEvidence": "GNU FDL 1.2 (COPYING); workflow facts only, no manual text/code redistributed",
+      "readFiles": [
+        {
+          "path": "src/toolbox/paint/heal.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/toolbox/paint/heal.xml",
+          "bytes": 6768,
+          "sha256": "6d6962b2312807f6f9ff77156370e72593e6293df13486ec880dbb8e53b882da"
+        },
+        {
+          "path": "src/toolbox/paint/clone.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/toolbox/paint/clone.xml",
+          "bytes": 20727,
+          "sha256": "9ce479306026ce2a296aa194eb18e63e7d1a7938e74b793404aa6402f2de0de7"
+        },
+        {
+          "path": "src/menus/colors/levels.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/colors/levels.xml",
+          "bytes": 25574,
+          "sha256": "5019fb5c267aa1a5db3502cb20ce7960470cda36c661aaa618d64626e4fa1269"
+        }
+      ]
+    }
+  ]
+}

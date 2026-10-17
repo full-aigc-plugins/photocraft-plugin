@@ -1,0 +1,104 @@
+{
+  "schema": "photocraft-restoration-plan/v1",
+  "canonicalRecipeId": "old-photo-conservative",
+  "countsAsNewScene": false,
+  "inputPolicy": "样例坐标为256×192合成夹具；按实际分辨率、损伤与可靠采样点重新填写，不可盲用。",
+  "phases": [
+    {
+      "id": "local-repair",
+      "input": "input.png",
+      "project": "local-repair.pcraft",
+      "preview": "local-repair.png",
+      "steps": [
+        {
+          "purpose": "保留原图层，复制到修复工作层",
+          "command": "layer.duplicate",
+          "params": {
+            "name": "Restoration working copy"
+          },
+          "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+        },
+        {
+          "purpose": "只点选已确认的灰尘，不覆盖眼睛、文字和胶片颗粒",
+          "command": "paint.spotHealing",
+          "params": {
+            "points": [
+              [
+                40,
+                30,
+                1
+              ],
+              [
+                44,
+                32,
+                1
+              ]
+            ],
+            "size": 5,
+            "type": "proximityMatch"
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+        },
+        {
+          "purpose": "从同材质邻近完好位置采样，沿损伤做短笔触",
+          "command": "paint.healingBrush",
+          "params": {
+            "points": [
+              [
+                80,
+                40,
+                1
+              ],
+              [
+                84,
+                42,
+                1
+              ]
+            ],
+            "source": [
+              60,
+              40
+            ],
+            "size": 6,
+            "hardness": 40,
+            "sampleLayer": "current",
+            "opacity": 70
+          },
+          "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+        }
+      ],
+      "check": "检查局部修补前后，保护区不得改变；未过关不做整体调色。"
+    },
+    {
+      "id": "global-tone",
+      "input": "local-repair.pcraft",
+      "project": "restored.pcraft",
+      "preview": "restored.png",
+      "steps": [
+        {
+          "purpose": "轻度降噪，保留可识别纹理和胶片颗粒",
+          "command": "filter.noise.reduceNoise",
+          "params": {
+            "strength": 2,
+            "preserveDetails": 85,
+            "reduceColorNoise": 20,
+            "sharpenDetails": 0
+          },
+          "parameterReference": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}"
+        },
+        {
+          "purpose": "观察直方图后恢复中间调，黑白场不硬截断",
+          "command": "layer.newAdjustmentLayer.levels",
+          "params": {
+            "inBlack": 5,
+            "gamma": 1.05,
+            "inWhite": 248
+          },
+          "parameterReference": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+        }
+      ],
+      "check": "允许整体像素变化；检查黑白场剪切、颗粒与文字，保留原层及可编辑色阶。"
+    }
+  ],
+  "boundary": "大面积缺失和无法辨识的人脸不推测重建；逐分区采样，不把例子坐标用于整张照片。"
+}

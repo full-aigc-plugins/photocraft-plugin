@@ -1,0 +1,65 @@
+{
+  "observedRuntime": "photocraft-cli 0.9.0",
+  "observedCommands": {
+    "layer.duplicate": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.duplicate",
+      "label": "Duplicate Layer…",
+      "menu": [
+        "Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)",
+      "shortcut": null
+    },
+    "paint.spotHealing": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.spotHealing",
+      "label": "Spot Healing Brush",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}",
+      "shortcut": null
+    },
+    "paint.healingBrush": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.healingBrush",
+      "label": "Healing Brush",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "shortcut": null
+    },
+    "filter.noise.reduceNoise": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.noise.reduceNoise",
+      "label": "Reduce Noise…",
+      "menu": [
+        "Filter",
+        "Noise"
+      ],
+      "needsDocument": true,
+      "params": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.levels": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.levels",
+      "label": "Levels…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    }
+  },
+  "mcpObservation": "Current real host descriptors expose command_run(id,params,wait), doc_open(path), doc_inspect(index), doc_save/export(path,format,index). Actual business blocked until editor page ready; not MCP scene acceptance.",
+  "histogramQuery": "Native commands --filter histogram returned []; use exported pixel statistics or actual visible histogram, do not invent a command."
+}

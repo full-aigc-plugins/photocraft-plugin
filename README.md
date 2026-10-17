@@ -101,7 +101,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.77`; skill source: `0.1.0-dev.60`; 14 independent skills (13 domain + 1 bundled execution harness).
+Current plugin: `0.1.0-dev.20261017.5`; skill source: `0.1.0-dev.60`; 14 independent skills (13 domain + 1 bundled execution harness).
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -196,7 +196,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.77 |
+| Metadata version | 0.1.0-dev.20261017.5 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.60 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
@@ -419,3 +419,8 @@ The main-candidate guide maps named JPEG settings to the actual export command. 
 ### 候选启动修正
 
 本候选先完成轻量MCP握手及能力发现，在首次工具或资源调用时校验/获取固定编辑器资源。修复多个编辑器首次下载阻塞宿主握手的问题。Windows通过Git安装时须启用Git长路径支持（`git config --global core.longpaths true`）；完整ZIP不包含历史验收记录，可避免Git检出长路径的问题。运行资源沿用已核验的dev.20261017.2制品，不以入口版本号冒充上游升级。
+
+
+## 老照片修复分阶段操作候选 / Staged restoration candidate
+
+完善[老照片修复技能](skills/photocraft-restore-old-photo/SKILL.md)：独立包含具体CLI/MCP方法与参数、局部修补检查点、可选全局调色和原层核验；复用既有old-photo-conservative流程，不增加场景计数。合成损伤检查与真实照片质量、MCP业务及同画面同步分别记录，冻结基础技能版本不变。
