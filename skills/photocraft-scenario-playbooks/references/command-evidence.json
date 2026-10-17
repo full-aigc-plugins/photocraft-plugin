@@ -408,6 +408,19 @@
       "needsDocument": true,
       "params": "{}",
       "shortcut": null
+    },
+    "edit.transform.flipHorizontal": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "edit.transform.flipHorizontal",
+      "label": "Flip Horizontal",
+      "menu": [
+        "Edit",
+        "Transform"
+      ],
+      "needsDocument": true,
+      "params": "{\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target (an unlinked mask, an alpha channel or the Quick Mask turns alone)}",
+      "shortcut": null
     }
   },
   "sceneAcceptance": "CREATIVE_NOT_RUN",

@@ -22,9 +22,11 @@
 | 顺序与目的 | Craft 命令 | 参数示例 |
 | --- | --- | --- |
 | 1. 保留原图层，复制到修复工作层 | `layer.duplicate` | `{"name":"Restoration working copy"}` |
-| 2. 只镜像副本，保存原始方向 | `image.imageRotation.flipCanvasHorizontal` | `{}` |
+| 2. 只镜像副本，保存原始方向 | `edit.transform.flipHorizontal` | `{"target":"pixels"}` |
 
 检查：人物或物体方向符合用途；文字、品牌标识没有反写进入交付。
 
 边界：含文字图像镜像可能不可用，不能把反写标识交付为真实照片。
 
+
+镜像副本应使用选中图层的edit.transform.flipHorizontal；flipCanvasHorizontal会改变所有图层。保存后隐藏工作副本导出，核对底层原图方向，不能只看最终合成图。

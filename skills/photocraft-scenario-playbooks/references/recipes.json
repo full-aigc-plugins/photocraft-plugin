@@ -1231,16 +1231,18 @@
         },
         {
           "purpose": "只镜像副本，保存原始方向",
-          "command": "image.imageRotation.flipCanvasHorizontal",
-          "params": {},
-          "parameterReference": "{}"
+          "command": "edit.transform.flipHorizontal",
+          "params": {
+            "target": "pixels"
+          },
+          "parameterReference": "{\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target (an unlinked mask, an alpha channel or the Quick Mask turns alone)}"
         }
       ],
       "checks": [
         "人物或物体方向符合用途",
         "文字、品牌标识没有反写进入交付"
       ],
-      "limits": "含文字图像镜像可能不可用，不能把反写标识交付为真实照片。",
+      "limits": "含文字图像镜像可能不可用，不能把反写标识交付为真实照片。 先确认只选中目标工作副本；本步骤翻转选中图层像素，不能改用flipCanvasHorizontal，否则底层原图也会翻转。现有多图层工程先以真实layer参数复制目标层。",
       "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
     },
     {
