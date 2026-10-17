@@ -1,7 +1,7 @@
 {
   "releaseStatus": "BLOCKED",
-  "currentVersion": "0.1.0-dev.20261017.1",
-  "releaseTag": "v0.1.0-dev.20261017.1",
+  "currentVersion": "0.1.0-dev.20261017.2",
+  "releaseTag": "v0.1.0-dev.20261017.2",
   "installableDevelopmentCandidate": true,
   "limitations": [
     "Full creative/domain and all-host UI acceptance remains incomplete.",
