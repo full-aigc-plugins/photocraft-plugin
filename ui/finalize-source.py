@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """将已编译的锁定源码打包为独立增强编辑器；不替换运行中的候选。"""
-import argparse,pathlib,json,re,subprocess,shutil,hashlib
+import argparse,pathlib,json,re,subprocess,shutil,hashlib,os
 p=argparse.ArgumentParser();p.add_argument('--source',type=pathlib.Path,required=True);p.add_argument('--target-dir',type=pathlib.Path,required=True);p.add_argument('--output',type=pathlib.Path,required=True);a=p.parse_args()
 ui=pathlib.Path(__file__).resolve().parent;src=a.source.resolve();out=a.output.resolve();lock=json.loads((ui/'source.lock.json').read_text());name=lock['name']
 if out.exists():p.error('output exists; use a fresh directory')
@@ -17,6 +17,10 @@ for base in ['assets','docs/brand']:
  for f in (src/base).rglob('*') if (src/base).exists() else []:
   if f.is_file() and re.match(r'^(LICENSE|COPYING|NOTICE|OFL)([-.]|$)',f.name,re.I):
    dest=licenses/f.relative_to(src);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(f,dest)
+font_input=os.environ.get('CRAFT_FONTS_DIR')
+if font_input:
+ for f in (pathlib.Path(font_input)/'fonts').glob('OFL*.txt'):shutil.copy2(f,licenses/f.name)
+ shutil.copy2(ui/'fonts.lock.json',licenses/'FONT-PROVENANCE.json')
 metadata=json.loads(subprocess.check_output(['cargo','metadata','--locked','--format-version','1','--filter-platform','wasm32-unknown-unknown'],cwd=src))
 packages={p['id']:p for p in metadata['packages']};nodes={p['id']:p for p in metadata['resolve']['nodes']};visited=set()
 def visit(i):

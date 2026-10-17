@@ -18,7 +18,11 @@ for filename in lock.get('patches', []):
  subprocess.run(['git','apply',str(ui/'runtime/patches'/filename)],cwd=src,check=True)
 subprocess.run(['python3',str(ui/'runtime/prepare-automation.py'),str(src),lock['name']],check=True)
 env={**os.environ,'CARGO_TARGET_DIR':str(a.target_dir.resolve()),'CARGO_INCREMENTAL':'0'}
+fonts=out/'font-input'
+subprocess.run(['python3',str(ui/'fetch-fonts.py'),'--output',str(fonts)],check=True)
+subprocess.run(['python3',str(ui/'runtime/prepare-fonts.py'),str(src),lock['name']],check=True)
+env.update(CRAFT_FONTS_DIR=str(fonts),CRAFT_FONTS_REQUIRED='1',CRAFT_CJK_FONT=str(fonts/'fonts/LXGWWenKai-Regular.ttf'))
 html=(src/'apps'/f"{lock['name']}-web"/'index.html').read_text()
 match=re.search('data-cargo-profile="([^"]+)"',html);profile=match.group(1) if match else 'release'
 subprocess.run(['cargo','build','--target','wasm32-unknown-unknown','--profile',profile,'-p',lock['name']+'-web','-j',a.jobs],cwd=src,env=env,check=True)
-subprocess.run(['python3',str(ui/'finalize-source.py'),'--source',str(src),'--target-dir',str(a.target_dir.resolve()),'--output',str(out/'packaged')],check=True)
+subprocess.run(['python3',str(ui/'finalize-source.py'),'--source',str(src),'--target-dir',str(a.target_dir.resolve()),'--output',str(out/'packaged')],env=env,check=True)

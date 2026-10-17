@@ -80,3 +80,9 @@ stdio 负责 Agent 与插件通信，本地 HTTP 负责页面和同会话编辑�
 `runtime/patches/main-export-presets.patch`只用于目录仓固定的main候选（5f65579ecb44）：上游新增导出预设持久化字段后遗漏加载初始化字段，原生与WASM均发生E0063编译错误。补齐同名JSON字段读取，保持其他预设的独立加载逻辑。稳定版source.lock不引入此补丁；仅在隔离checkout应用，原始上游保持只读。
 
 The pinned main candidate needs the missing `export_presets` initializer when restoring persisted presets. This isolated build patch reads the existing JSON key; stable source locks and upstream repositories stay unchanged. Build and runtime acceptance are reported separately.
+
+### 中文字体构建输入 / Chinese font build input
+
+实际main宿主验收发现中文文档标题缺字。源码候选现在按`fonts.lock.json`取得并校验OFL字体，将文档字体和egui字体后备一起编入WASM；改动只在构建副本，许可证与字体来源随制品保留。必须重建并实际查看中文后再标为解决，不替换活动会话。
+
+Source builds now include the pinned OFL Chinese font in both document and UI fallback databases. Font files are verified build inputs; upstream repositories and active editors remain unchanged. Visual verification is separate from compilation.
