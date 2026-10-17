@@ -29,6 +29,10 @@
     {
       "name": "photocraft-batch-image-delivery",
       "sha256": "e7e673a539df811483b691aaa8dbd390fdf7fc8ac67c04eed754dc983206e6c9"
+    },
+    {
+      "name": "photocraft-scenario-playbooks",
+      "sha256": "b8a42bbacdf6b236db57fbe84b57a20a1a865ced5c89deb06429e409aee0fd14"
     }
   ]
 }
