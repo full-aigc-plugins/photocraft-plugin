@@ -62,7 +62,7 @@ async function main(){
   for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>child.kill(signal));
   child.on('exit',code=>{process.exitCode=code??1;});return;
  }
- const catalogBytes=await readFile(join(here,'catalog.lock.json'));if(lock.catalogSha256&&digest(catalogBytes)!==lock.catalogSha256)throw Error('MCP catalog checksum mismatch');
+ const catalogBytes=await readFile(join(here,'catalog.lock.json'));if(lock.catalogSha256&&digest(catalogBytes.toString('utf8').replaceAll('\r\n','\n'))!==lock.catalogSha256)throw Error('MCP catalog checksum mismatch');
  const catalog=JSON.parse(catalogBytes);
  let child,preparing,initParams,sequence=0;const pending=new Map();
  const emit=value=>process.stdout.write(JSON.stringify({jsonrpc:'2.0',...value})+'\n');
@@ -106,4 +106,4 @@ async function main(){
  });
  const close=()=>{child?.kill();process.exit(0);};process.stdin.on('end',close);process.on('SIGINT',close);process.on('SIGTERM',close);
 }
-if(process.argv[1]&&pathToFileURL(await realpath(process.argv[1])).href===import.meta.url)main().catch(error=>{console.error('Craft editor setup failed: '+error.message);process.exitCode=1;});
+if(process.argv[1]&&await realpath(process.argv[1])===await realpath(fileURLToPath(import.meta.url)))main().catch(error=>{console.error('Craft editor setup failed: '+error.message);process.exitCode=1;});
