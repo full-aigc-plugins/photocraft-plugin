@@ -101,7 +101,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.20261017.6`; skill source: `0.1.0-dev.60`; 14 independent skills (13 domain + 1 bundled execution harness).
+Current plugin: `0.1.0-dev.20261018.1`; skill source: `0.1.0-dev.60`; 14 independent skills (13 domain + 1 bundled execution harness).
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -196,7 +196,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.20261017.6 |
+| Metadata version | 0.1.0-dev.20261018.1 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.60 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
