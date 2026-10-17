@@ -1,0 +1,1450 @@
+{
+  "tools": [
+    {
+      "name": "open_editor",
+      "description": "Open PhotoCraft's interactive editor. Optionally load a file inside the current workspace. This opens the UI; it does not automate editing commands.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "description": "Workspace-relative file path",
+            "type": "string",
+            "maxLength": 4096
+          },
+          "workspace": {
+            "type": "string",
+            "description": "Absolute workspace path; set before opening an editor session."
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      },
+      "_meta": {
+        "ui": {
+          "resourceUri": "ui://photocraft/panel.html",
+          "surface": "editor",
+          "visibility": [
+            "model",
+            "app"
+          ]
+        },
+        "openai/ui": {
+          "preferredModelDisplayMode": "fullscreen"
+        }
+      }
+    },
+    {
+      "name": "session_list",
+      "description": "List open documents (index, name, size, dirty) and the active index.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_open",
+      "description": "Open an image or document file and make it active. Returns index, size and import warnings.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path beneath the configured automation read root: relative (forward slashes) or absolute."
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "OpenParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_place",
+      "description": "Place a file into the document as a Smart Object layer (Place Embedded), reading `path` beneath the read root. `scale` (percent), `fit` and `center` are the command's own.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "center": {
+            "default": null,
+            "description": "Centre of the placed layer, in document pixels.",
+            "anyOf": [
+              {
+                "minItems": 2,
+                "maxItems": 2,
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fit": {
+            "default": null,
+            "description": "Place at a centred size instead of a scaled one.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "index": {
+            "default": null,
+            "description": "Document index from `session_list` (default: the active document).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "path": {
+            "type": "string",
+            "description": "Path beneath the configured automation read root: relative (forward slashes) or absolute."
+          },
+          "scale": {
+            "default": null,
+            "description": "Scale as a percentage; defaults to fitting a file larger than the canvas.",
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "PlaceParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_export_layers",
+      "description": "Export each exported layer of the document as its own file beneath the write root (the capability-scoped Layers to Files). A file that already exists is an error, not an overwrite.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dir": {
+            "type": "string",
+            "description": "Directory beneath the configured automation write root: relative (forward slashes) or absolute."
+          },
+          "format": {
+            "default": null,
+            "description": "Export format (default png).",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "index": {
+            "default": null,
+            "description": "Document index from `session_list` (default: the active document).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prefix": {
+            "default": null,
+            "description": "Filename prefix (default: the document name).",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quality": {
+            "default": null,
+            "description": "Encoder quality, 0..12, for the formats that take one.",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "visible_only": {
+            "default": null,
+            "description": "Export only the layers that are visible (default true).",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "dir"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "ExportLayersParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_export_data_sets",
+      "description": "Export every data set of the document as its own flattened file beneath the write root (the capability-scoped Export Data Sets). The batch is planned first, so colliding filenames are refused before any file is written.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "data_sets": {
+            "default": null,
+            "description": "Only these data sets, by name; default every one of them.",
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dir": {
+            "type": "string",
+            "description": "Directory beneath the configured automation write root: relative (forward slashes) or absolute."
+          },
+          "format": {
+            "default": null,
+            "description": "Export format (default png).",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "index": {
+            "default": null,
+            "description": "Document index from `session_list` (default: the active document).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "naming": {
+            "default": null,
+            "description": "Filename template with `{name}`, `{index}` and `{document}` (default `{name}`).",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "dir"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "ExportDataSetsParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_import_data_sets",
+      "description": "Import a data set CSV from the read root into the document (the capability-scoped Import Variable Data Sets).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "delimiter": {
+            "default": null,
+            "description": "Field delimiter (default `,`).",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "index": {
+            "default": null,
+            "description": "Document index from `session_list` (default: the active document).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "path": {
+            "type": "string",
+            "description": "Path beneath the configured automation read root: relative (forward slashes) or absolute."
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "ImportDataSetsParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_new",
+      "description": "Create a new document (defaults: 1920x1080 RGB 8-bit white).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "background": {
+            "default": null,
+            "description": "white | black | transparent | #rrggbb",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "depth": {
+            "default": null,
+            "description": "8 | 16 | 32",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "height": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "mode": {
+            "default": null,
+            "description": "rgb | gray | cmyk | lab",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "width": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "NewParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_save",
+      "description": "Save the document. `.pcraft` is the lossless native format (incremental); other extensions (psd, png, jpg, tif, webp, exr, …) export. Without `path` only a PSD, PSB or .pcraft document is written back to its own         file. Returns warnings about anything the format cannot hold.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dpxBits": {
+            "default": null,
+            "description": "DPX: 8, 10, 12 or 16 bits per sample. Unset: 8 for an 8-bit document, else 16.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "format": {
+            "default": null,
+            "description": "Format override as an extension (pcraft, psd, png, jpg, tif, webp, exr, …).",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "index": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "path": {
+            "default": null,
+            "description": "Target beneath the configured automation write root: relative (forward slashes) or absolute.\nThe extension selects the format. Omit to write back to the document's own file, which\nworks only for a PSD, PSB or .pcraft file kept in its own format; any other save needs\n`path`, so a flattened or converted copy never replaces the opened file.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quality": {
+            "default": null,
+            "description": "JPEG or WebP quality 1..100. A WebP saved with a quality is lossy; without one it is lossless.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tgaBits": {
+            "default": null,
+            "description": "TGA: 24 or 32 bits per pixel. 32 writes the alpha channel (or else the transparency) as the\nalpha, 24 none. Unset: 32 with an alpha channel or transparency, else 24.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tiffLayers": {
+            "default": false,
+            "description": "TIFF: keep the layers (Photoshop layer data). Off by default: a flat TIFF.",
+            "type": "boolean"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "SaveParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_export",
+      "description": "Export the document to another format (same as doc_save with an explicit path/format).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dpxBits": {
+            "default": null,
+            "description": "DPX: 8, 10, 12 or 16 bits per sample. Unset: 8 for an 8-bit document, else 16.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "format": {
+            "default": null,
+            "description": "Format override as an extension (pcraft, psd, png, jpg, tif, webp, exr, …).",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "index": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "path": {
+            "default": null,
+            "description": "Target beneath the configured automation write root: relative (forward slashes) or absolute.\nThe extension selects the format. Omit to write back to the document's own file, which\nworks only for a PSD, PSB or .pcraft file kept in its own format; any other save needs\n`path`, so a flattened or converted copy never replaces the opened file.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quality": {
+            "default": null,
+            "description": "JPEG or WebP quality 1..100. A WebP saved with a quality is lossy; without one it is lossless.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tgaBits": {
+            "default": null,
+            "description": "TGA: 24 or 32 bits per pixel. 32 writes the alpha channel (or else the transparency) as the\nalpha, 24 none. Unset: 32 with an alpha channel or transparency, else 24.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tiffLayers": {
+            "default": false,
+            "description": "TIFF: keep the layers (Photoshop layer data). Off by default: a flat TIFF.",
+            "type": "boolean"
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "SaveParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_inspect",
+      "description": "Document state as JSON: layer tree (top to bottom), history, selection, active layer.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "default": null,
+            "description": "Document index from `session_list` (default: the active document).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "DocIndex"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_render_preview",
+      "description": "Render the flattened document and return it as a PNG image (bridge mode: window screenshot).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "default": null,
+            "description": "Headless mode only: document index (default: the active document).\nBridge previews capture the app window and reject `index`.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "max_side": {
+            "default": null,
+            "description": "Longest side of a headless preview (default 1024, maximum 2048).\nZero requests full size within that ceiling. Bridge mode returns the window screenshot.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "PreviewParams"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "render_preview",
+      "description": "Render a bounded flattened PNG preview (bridge mode: app window screenshot).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "default": null,
+            "description": "Headless mode only: document index (default: the active document).\nBridge previews capture the app window and reject `index`.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "max_side": {
+            "default": null,
+            "description": "Longest side of a headless preview (default 1024, maximum 2048).\nZero requests full size within that ceiling. Bridge mode returns the window screenshot.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "PreviewParams"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_select",
+      "description": "Make the document at `index` active.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "index"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "SelectParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "doc_close",
+      "description": "Close a document (default: the active one) without saving.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "default": null,
+            "description": "Document index from `session_list` (default: the active document).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "DocIndex"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "command_list",
+      "description": "List engine commands. Returns a JSON array (no wrapper object) of {id, label, menu: [path], shortcut: string|null, params: doc string, enabled: bool, disabledReason: string|null, needsDocument: bool}. `disabledReason` says why a command is off (null when enabled); `needsDocument` is true when it is off because no document is open: create or open one first (doc_new, doc_open).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "enabled_only": {
+            "default": null,
+            "description": "Only commands that can run right now.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "filter": {
+            "default": null,
+            "description": "Only commands whose id, label or keywords contain this text (case-insensitive).",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "ListParams"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "command_run",
+      "description": "Run an engine command by id with JSON params (see command_list). Returns the command's JSON result. Long commands (filters, Content-Aware Fill/Scale, Photomerge, brush import) wait to finish unless `wait` is false: then they run as a background job and the result is {job: id} (see jobs_list, jobs_cancel).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Command id, e.g. `layer.new.layer`, `filter.blur.gaussianBlur`."
+          },
+          "params": {
+            "default": null,
+            "description": "Command parameters as a JSON object (see the `params` doc in `command_list`)."
+          },
+          "wait": {
+            "default": null,
+            "description": "Wait for a long command (filters, Content-Aware Fill, Photomerge, …) to finish (default\ntrue). With false it runs as a background job and the result is `{\"job\": id}`: poll it\nwith `jobs_list`, stop it with `jobs_cancel`.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "RunParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "jobs_list",
+      "description": "List background jobs: running ones with progress (0-1), message and elapsed time, then the last few that ended (state done|failed|cancelled with their result or error). Finished jobs are applied first.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "jobs_cancel",
+      "description": "Cancel a background job by id (or every running job when `job` is omitted). The document is left unchanged.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "job": {
+            "default": null,
+            "description": "The job id from `command_run` / `jobs_list` (omit to cancel every running job).",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "JobCancelParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "command_batch",
+      "description": "Run several engine commands in one call, in order (fewer round trips). Returns {completed, failed, results:[{ok, result|error}]}; stops at the first error unless stop_on_error is false. Not an atomic transaction: earlier successful steps stay applied (no rollback).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Command id, e.g. `layer.new.layer`, `filter.blur.gaussianBlur`."
+                },
+                "params": {
+                  "default": null,
+                  "description": "Command parameters as a JSON object (see the `params` doc in `command_list`)."
+                },
+                "wait": {
+                  "default": null,
+                  "description": "Wait for a long command (filters, Content-Aware Fill, Photomerge, …) to finish (default\ntrue). With false it runs as a background job and the result is `{\"job\": id}`: poll it\nwith `jobs_list`, stop it with `jobs_cancel`.",
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Commands to run in order: `[{\"id\": \"layer.new.layer\", \"params\": {\"name\": \"Ink\"}}, …]`. A\nstep with `\"wait\": false` starts a long command as a background job (its result is\n`{\"job\": id}`, as in `command_run`); later steps that edit the same document fail until\nthe job ends."
+          },
+          "stop_on_error": {
+            "default": null,
+            "description": "Stop at the first failing step (default true).",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "steps"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "BatchParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "ui_inspect",
+      "description": "Bridge mode: full UI state of the live app (tool, panels, views, dialogs, windows). For the menu tree, call `control_call` with method `ui.menu.list`.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "ui_screenshot",
+      "description": "Bridge mode: screenshot of the live app window as PNG.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "max_side": {
+            "default": null,
+            "description": "Downscale the window screenshot to this longest side (maximum 2048).\nOmit or pass zero to keep the original size.",
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "ScreenshotParams"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "ui_pointer",
+      "description": "Bridge mode: send pointer events (document coordinates) to the active tool; with a Color Picker open they sample the image into it instead.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "button": {
+            "default": null,
+            "description": "Mouse button: `left` (default), or `right` / `secondary`: with the Move tool or\n`{\"command\":true}` it opens the canvas layer menu, with a painting tool the Brush Preset\npicker.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "down",
+                        "move",
+                        "up"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "`down`, `move` (default) or `up`."
+                },
+                "pressure": {
+                  "description": "Pen pressure 0..1 (default 1).",
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "rotation": {
+                  "description": "A simulated pen's barrel rotation.",
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "tiltX": {
+                  "description": "A simulated pen's tilt, as a stylus reports it.",
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "tiltY": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "x": {
+                  "type": "number",
+                  "description": "Document x in pixels."
+                },
+                "y": {
+                  "type": "number",
+                  "description": "Document y in pixels."
+                }
+              },
+              "required": [
+                "x",
+                "y"
+              ],
+              "additionalProperties": {},
+              "description": "One `ui_pointer` event, for the tool schema only: events are forwarded to `ui.pointer` as JSON."
+            },
+            "description": "Events in document coordinates: `[{\"kind\":\"down|move|up\",\"x\":..,\"y\":..,\"pressure\":..}]`."
+          },
+          "modifiers": {
+            "default": null,
+            "description": "Modifier keys, e.g. `{\"shift\":true}` (also `alt`, `command`, `ctrl`, `space`)."
+          }
+        },
+        "required": [
+          "events"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "PointerParams",
+        "description": "Strict: an argument the tool doesn't forward is an error, not silently dropped."
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "ui_menu_invoke",
+      "description": "Bridge mode: activate a menu item by id.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Menu item / command id."
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "MenuParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "ui_set",
+      "description": "Bridge mode: change UI state (tool, panels, dock, zoom, center, fit, theme, brush settings; see `fields`). Unknown fields are an error.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "description": "Fields for the control method `ui.set`: tool, panels, dock, dockTabs, dockWidth, colorPanel\n({background: bool} picks which swatch the Color panel edits), maskTarget,\nvectorMaskTarget, selectionMode, zoom, center, rotation (view angle in degrees), fit, theme (pro, proMedium, studio,\nstudioLight, classic, solarizedDark, adwaita, adwaitaDark, breezeLight, breezeDark, softLight, softDark), brushSection, brushTab,\nbrushesView, brushPicker ([x, y] opens the Brush Preset picker there, null closes it),\nbrushPickerName, brushPickerStroke, brushPickerTip (the picker card's parts, at least one\non), brushPickerScale (the picker footer's card-scale slider, 0.15 to 2, 1 the standard),\nbrushSize, gradientBlendMode\n(a blend mode name, for the Gradient tool), gradientClassic (bool), eyedropperSampleSize\n(\"point\" or 1, 3, 5, 11, 31, 51, 101), eyedropperSample (current, currentAndBelow, all,\nallNoAdjustments, currentAndBelowNoAdjustments), eyedropperRing (bool), cropOverlay (thirds,\ngrid, diagonal, triangle, goldenRatio, goldenSpiral), cropOverlayShow (auto, always, never),\ncropOverlayOrientation (0..3), cropShield (an object patching show_cropped_area, enabled,\ncolor (\"matchCanvas\" or \"custom\"), custom_color ([r, g, b]), opacity (0..100),\nauto_adjust, classic_mode and auto_center_preview), cropFill (background or contentAware,\nthe Crop tool's Fill), shapeStroke (an object patching width, align, cap, join, miterLimit,\ndashes, dashOffset and opacity; null disables the stroke). Shape stroke fields use\n`shape.edit` names and units; colour comes from `tools.setColors`. camTransformOnDrop (bool,\nthe Content-Aware Move tool's Transform On Drop). tileGrid (bool, a developer overlay of the\nactive layer's storage tiles). layerFilter (an object patching by (\"kind\", \"name\" or\n\"mode\"), kinds (a list of layer kinds), name (matches part of the layer name) and mode (a\nblend mode name) for the Layers panel filter). strokeTrace (true, false, \"stderr\" or \"off\":\nthe stroke latency trace at runtime; a CSV file is set at launch with --stroke-trace, not\nover this channel). Other fields are an error."
+          }
+        },
+        "required": [
+          "fields"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "UiSetParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "control_call",
+      "description": "Bridge mode: call any control-protocol method (docs/control-protocol.md) with raw params.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "description": "Any control-protocol method, e.g. `ui.dialog.open`."
+          },
+          "params": {
+            "default": null
+          }
+        },
+        "required": [
+          "method"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "additionalProperties": false,
+        "title": "ControlParams"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "_editor_attach",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      },
+      "_meta": {
+        "ui": {
+          "visibility": [
+            "app"
+          ]
+        }
+      }
+    },
+    {
+      "name": "_editor_poll",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      },
+      "_meta": {
+        "ui": {
+          "visibility": [
+            "app"
+          ]
+        }
+      }
+    },
+    {
+      "name": "_editor_reply",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "result": {}
+        },
+        "required": [
+          "token",
+          "id",
+          "result"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      },
+      "_meta": {
+        "ui": {
+          "visibility": [
+            "app"
+          ]
+        }
+      }
+    },
+    {
+      "name": "_editor_detach",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      },
+      "_meta": {
+        "ui": {
+          "visibility": [
+            "app"
+          ]
+        }
+      }
+    },
+    {
+      "name": "_editor_write",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 64
+          },
+          "data": {
+            "type": "string",
+            "maxLength": 3145728
+          }
+        },
+        "required": [
+          "token",
+          "id",
+          "path",
+          "part",
+          "total",
+          "data"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      },
+      "_meta": {
+        "ui": {
+          "visibility": [
+            "app"
+          ]
+        }
+      }
+    },
+    {
+      "name": "open_browser_editor",
+      "description": "Open the same editor session in the host built-in browser. Use the returned editorUrl with the host browser tool. Does not itself render the page.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "workspace": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "editor_status",
+      "description": "Report whether the actual editor has attached to this MCP session.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "panel",
+      "uri": "ui://photocraft/panel.html",
+      "mimeType": "text/html;profile=mcp-app",
+      "_meta": {
+        "ui": {
+          "prefersBorder": false
+        }
+      }
+    },
+    {
+      "name": "assets",
+      "uri": "ui://photocraft/assets.json",
+      "mimeType": "application/json"
+    }
+  ],
+  "resourceTemplates": [
+    {
+      "name": "asset-chunks",
+      "uriTemplate": "ui://photocraft/asset/{id}/{part}"
+    },
+    {
+      "name": "file-chunks",
+      "uriTemplate": "ui://photocraft/file/{id}/{part}"
+    }
+  ]
+}

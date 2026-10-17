@@ -6,8 +6,7 @@
       "args": [
         "ui/bootstrap.mjs"
       ],
-      "cwd": ".",
-      "startup_timeout_sec": 120
+      "cwd": "."
     }
   }
 }

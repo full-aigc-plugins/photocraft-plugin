@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261017.2",
+  "version": "0.1.0-dev.20261017.3",
   "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/download/v0.1.0-dev.20261017.2/photocraft-runtime.tgz",
   "sha256": "2264b017a751f7a8a5ef69664e8333d72daac89c59f2d821151d8caa409c1d95",
   "files": {
@@ -56,5 +56,6 @@
     "host.js": "313bda22e118fa812e72377f6b1106c3d7c3c8e716080798bb9b0710be291310",
     "host.js.LEGAL.txt": "eda25878a01ef5903efe932a6e7c99e175023a47ce70b7d7f901ab2c07c06562"
   },
-  "scope": "Pinned editor artifact; bundled upstream/build provenance remains in editor/BUILD.json or config.json. This does not certify all upstream main capabilities."
+  "scope": "Pinned editor artifact; bundled upstream/build provenance remains in editor/BUILD.json or config.json. This does not certify all upstream main capabilities.",
+  "catalogSha256": "cf78a5b4016aceb0bbc739cfce73777b2bd70c5dd20fa5329b049ba61f27a076"
 }
