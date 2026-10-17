@@ -57,3 +57,7 @@ license: Apache-2.0
 透明边缘与去背景配方中的`$ref:originalLayer`是手册记号：先inspect取得真实原图层ID并替换为整数。工作副本复制后保留但隐藏原图层，验证PNG的实际Alpha；可见原图会重新叠回背景或加重半透明边缘。
 
 逆光恢复使用本技能中已验证的可编辑曲线适配；不能仅根据shadowsHighlights同名方法推断它实现了Photoshop的阴影／高光恢复行为。
+
+## main导出预设
+
+在main开发候选中复用网页JPEG交付尺寸、质量和元数据策略时，读取[main预设到实际JPEG交付](references/main-export-presets.md)。预设get只返回参数，实际导出需要按当前schema显式映射；不要给doc_export传未支持的尺寸字段。

@@ -387,3 +387,9 @@ python3 -I -B skills/photocraft-use/scripts/workflow.py --help
 ## 场景操作手册
 
 新增 `photocraft-scenario-playbooks`，包含 50 条具有实际命令、参数和结果检查的原创场景，覆盖修复、影调、人像、商品、版式和交付。入口见 [场景技能](skills/photocraft-scenario-playbooks/SKILL.md)。命令存在性已依据官方 Windows CLI 0.9.0 目录核对，完整场景效果仍需逐项运行与看图验收。
+
+## main导出预设工作流 / main export presets
+
+新增[预设到实际JPEG交付](skills/photocraft-scenario-playbooks/references/main-export-presets.md)：真实Codex宿主同会话执行四个预设方法，映射到320×240 JPEG并核对母版不变。仅适用于支持对应方法的main候选；持久化和中文字体分别验收。
+
+The main-candidate guide maps named JPEG settings to the actual export command. Native Codex host calls, same-session editing and JPEG dimensions were checked; persistent reload and Chinese UI fonts have separate acceptance states.
