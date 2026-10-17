@@ -1935,13 +1935,13 @@
           "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
         },
         {
-          "purpose": "按实际目标轮廓定位；此处为256×192测试矩形",
+          "purpose": "把污点及少量干净边缘一起选入，避免羽化带落在污点内",
           "command": "select.rect",
           "params": {
-            "x": 96,
-            "y": 72,
-            "width": 24,
-            "height": 20,
+            "x": 92,
+            "y": 68,
+            "width": 32,
+            "height": 28,
             "mode": "replace",
             "feather": 1
           },
@@ -1972,7 +1972,7 @@
         "取样区没有同步破坏",
         "接缝与邻域明暗接近"
       ],
-      "limits": "平铺纹理可能重复；移动offset前确保源区没有另一处损伤。",
+      "limits": "平铺纹理可能重复；移动offset前确保源区没有另一处损伤。 选区不要紧贴污点：本例污点为96,72起24×20，选区向四周多取4像素干净边缘。真实素材按污点和羽化宽度重测，遇到接缝暗框先修正选区/供体，不因平均误差下降就验收。",
       "sourceReferences": [
         "GNOME/gimp-help:src/dialogs/layer-mask.xml"
       ],
