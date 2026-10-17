@@ -41,7 +41,7 @@ def validate(root):
     portable = json.loads((root/'mcp.json').read_text())
     if portable['$schema'] != 'https://agent-plugins.org/schemas/1.0.0/mcp.schema.json':
         raise ValueError('invalid_mcp_schema')
-    if portable['mcpServers'].get(server) != {'type':'stdio','command':'node','args':['${PLUGIN_ROOT}/ui/dist/adapter.mjs']}:
+    if portable['mcpServers'].get(server) != {'type':'stdio','command':'node','args':['${PLUGIN_ROOT}/ui/bootstrap.mjs']}:
         raise ValueError('invalid_portable_editor')
     codex = json.loads((root/'.codex-plugin/plugin.json').read_text())
     if codex.get('mcpServers') != './.codex-plugin/mcp.json':
