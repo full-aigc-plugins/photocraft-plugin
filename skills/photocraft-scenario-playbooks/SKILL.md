@@ -60,4 +60,4 @@ license: Apache-2.0
 
 ## main导出预设
 
-在main开发候选中复用网页JPEG交付尺寸、质量和元数据策略时，读取[main预设到实际JPEG交付](references/main-export-presets.md)。预设get只返回参数，实际导出需要按当前schema显式映射；不要给doc_export传未支持的尺寸字段。
+在main开发候选中复用网页JPEG交付尺寸、质量和元数据策略时，读取[main预设到实际JPEG交付](references/main-export-presets.md)。同时提供9个新增方法与17处契约变化的入口。预设get只返回参数，实际导出需要按当前schema显式映射；不要给doc_export传未支持的尺寸字段。

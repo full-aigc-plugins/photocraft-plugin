@@ -31,7 +31,12 @@
     "height": 240,
     "quality": 80,
     "masterDimensionsUnchanged": "PASS",
-    "persistentReload": "PENDING_NATIVE_TEST",
-    "chineseUiGlyphs": "FAIL_FIX_IN_PROGRESS"
-  }
+    "persistentReload": "PASS_NATIVE_PREFERENCE_SERIALIZATION_ONLY",
+    "chineseUiGlyphs": "PASS_VISUAL_SOURCE_FONT_CANDIDATE",
+    "webReloadPersistence": "NOT_TESTED",
+    "flatLayerList": "PASS_CODEX_NATIVE_HOST_SAVED_TWO_LAYER_DOCUMENT"
+  },
+  "nativePresetTestRun": 39008034368,
+  "nativePresetTestCount": 2,
+  "fontBuildRun": 39009228204
 }
