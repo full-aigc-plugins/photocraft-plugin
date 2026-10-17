@@ -45,3 +45,7 @@ license: Apache-2.0
 - 参数的固定版本观察见 [命令证据](references/command-evidence.json)，结构化步骤见 [recipes.json](references/recipes.json)。证据说明方法确实存在，不证明任意照片已经修复成功。
 - 创作流程参考和许可记录见 [sources.json](references/sources.json)。场景正文与例子为原创适配，没有复制外部脚本。输入素材须有本任务使用权。
 - 例子是低强度起点，采样点、损伤轮廓、裁切和尺寸必须由图像决定。输出新工程、成片和同尺寸前后对比；无法恢复的细节与推测区域明确列出。
+
+## 技能商店场景经验
+
+遇到修复与推测分开交付、保留身份特征的人像修饰、代表样片后再批量调色时，读取[商店工作流适配](references/market-workflows.md)，使用对应的Craft方法和实际结果检查。上游技能不作为运行依赖。
