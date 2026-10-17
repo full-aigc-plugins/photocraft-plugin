@@ -37,11 +37,14 @@
 | 顺序与目的 | Craft 命令 | 参数示例 |
 | --- | --- | --- |
 | 1. 保留原图层，复制到修复工作层 | `layer.duplicate` | `{"name":"Restoration working copy"}` |
-| 2. 仅去除白色杂边，保留alpha形状 | `layer.matting.removeWhiteMatte` | `{}` |
+| 2. 保留原图层用于恢复，但从成片合成中隐藏它，避免重新叠回背景/半透明边缘 | `layer.setProps` | `{"layer":{"$ref":"originalLayer"},"visible":false}` |
+| 3. 仅去除白色杂边，保留alpha形状 | `layer.matting.removeWhiteMatte` | `{}` |
 
 检查：深底下边缘无白边；浅色主体细边没有变黑。
 
 边界：先确认alpha存在；全白主体边缘不可用此命令盲处理。
+
+执行前先用当前inspect取得待处理原像素层的真实ID，记为originalLayer；$ref仅是手册记号，替换整个对象为实际整数后再调用原生CLI/MCP。复制工作层后隐藏原图层，不删除它；仍以工作副本为活动层。复杂工程还须检查其余可见底图，不无条件隐藏其他用户图层。
 
 ## product-dark-matte：深色旧底抠图黑边整理
 
@@ -50,11 +53,14 @@
 | 顺序与目的 | Craft 命令 | 参数示例 |
 | --- | --- | --- |
 | 1. 保留原图层，复制到修复工作层 | `layer.duplicate` | `{"name":"Restoration working copy"}` |
-| 2. 去黑底污染，保持alpha轮廓 | `layer.matting.removeBlackMatte` | `{}` |
+| 2. 保留原图层用于恢复，但从成片合成中隐藏它，避免重新叠回背景/半透明边缘 | `layer.setProps` | `{"layer":{"$ref":"originalLayer"},"visible":false}` |
+| 3. 去黑底污染，保持alpha轮廓 | `layer.matting.removeBlackMatte` | `{}` |
 
 检查：浅底下没有黑边；头发与半透明材质过渡自然。
 
 边界：玻璃和烟雾不应按不透明硬边处理。
+
+执行前先用当前inspect取得待处理原像素层的真实ID，记为originalLayer；$ref仅是手册记号，替换整个对象为实际整数后再调用原生CLI/MCP。复制工作层后隐藏原图层，不删除它；仍以工作副本为活动层。复杂工程还须检查其余可见底图，不无条件隐藏其他用户图层。
 
 ## product-background-mask：商品主体蒙版分离
 
@@ -63,11 +69,14 @@
 | 顺序与目的 | Craft 命令 | 参数示例 |
 | --- | --- | --- |
 | 1. 保留原图层，复制到修复工作层 | `layer.duplicate` | `{"name":"Restoration working copy"}` |
-| 2. 先用主体选择建立可编辑蒙版 | `layer.removeBackground` | `{"refine":true,"sampleAllLayers":false}` |
+| 2. 保留原图层用于恢复，但从成片合成中隐藏它，避免重新叠回背景/半透明边缘 | `layer.setProps` | `{"layer":{"$ref":"originalLayer"},"visible":false}` |
+| 3. 先用主体选择建立可编辑蒙版 | `layer.removeBackground` | `{"refine":true,"sampleAllLayers":false}` |
 
 检查：蒙版保留细边；原图像素仍可恢复；输出透明图无锯齿。
 
 边界：这是当前命令的主体选择能力，不保证发丝、玻璃和重叠商品完美。
+
+执行前先用当前inspect取得待处理原像素层的真实ID，记为originalLayer；$ref仅是手册记号，替换整个对象为实际整数后再调用原生CLI/MCP。复制工作层后隐藏原图层，不删除它；仍以工作副本为活动层。复杂工程还须检查其余可见底图，不无条件隐藏其他用户图层。
 
 ## product-reflection-spot：商品小面积反光点缓和
 

@@ -962,24 +962,40 @@
           "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
         },
         {
-          "purpose": "温和提升阴影并限制半径",
-          "command": "image.adjustments.shadowsHighlights",
+          "purpose": "用可编辑曲线温和提亮暗部、回收亮部，避免未验证的同名滤镜",
+          "command": "layer.newAdjustmentLayer.curves",
           "params": {
-            "shadowAmount": 15,
-            "shadowTone": 40,
-            "shadowRadius": 12,
-            "highlightAmount": 5,
-            "highlightTone": 50,
-            "highlightRadius": 12
+            "points": [
+              [
+                0,
+                0
+              ],
+              [
+                40,
+                55
+              ],
+              [
+                128,
+                132
+              ],
+              [
+                220,
+                210
+              ],
+              [
+                255,
+                255
+              ]
+            ]
           },
-          "parameterReference": "{\"shadowAmount\":0..100=35,\"shadowTone\":0..100=50,\"shadowRadius\":0..2500=30,\"highlightAmount\":0..100=0,\"highlightTone\":0..100=50,\"highlightRadius\":0..2500=30,\"color\":-100..100=20,\"midtone\":-100..100=0,\"blackClip\":0..50=0.01,\"whiteClip\":0..50=0.01}"
+          "parameterReference": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json,\"pencil\":bool=false,\"smooth\":0..10=0,\"eyedropper\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel; pencil = drawn curves (Draw to modify the curve): each curve is 256 output levels in 0..255 (point curves given are drawn in, and turning pencil off fits points to the drawing); smooth = Smooth passes over the drawn curves; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}, RGB and Grayscale (no gray) only, applied over the given curves) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
         }
       ],
       "checks": [
         "发丝轮廓无光晕",
         "脸部噪点不明显放大"
       ],
-      "limits": "此命令直接处理像素，先用副本；不能恢复全黑无数据的区域。",
+      "limits": "此命令直接处理像素，先用副本；不能恢复全黑无数据的区域。 官方0.9.0 shadowsHighlights在本轮40/220灰阶样例上反向增强对比，当前适配改用已验证曲线；不是局部人脸检测，真实输入应先试修并保护无需改变的背景。",
       "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
     },
     {
@@ -1109,6 +1125,17 @@
           "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
         },
         {
+          "purpose": "保留原图层用于恢复，但从成片合成中隐藏它，避免重新叠回背景/半透明边缘",
+          "command": "layer.setProps",
+          "params": {
+            "layer": {
+              "$ref": "originalLayer"
+            },
+            "visible": false
+          },
+          "parameterReference": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}"
+        },
+        {
           "purpose": "仅去除白色杂边，保留alpha形状",
           "command": "layer.matting.removeWhiteMatte",
           "params": {},
@@ -1119,8 +1146,9 @@
         "深底下边缘无白边",
         "浅色主体细边没有变黑"
       ],
-      "limits": "先确认alpha存在；全白主体边缘不可用此命令盲处理。",
-      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+      "limits": "先确认alpha存在；全白主体边缘不可用此命令盲处理。 原图层保留但隐藏；成片若仍有背景或边缘alpha叠加，检查可见图层，不以命令成功当作透明交付。此例不处理复杂多图层背景。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+      "bindings": "执行前先用当前inspect取得待处理原像素层的真实ID，记为originalLayer；$ref仅是手册记号，替换整个对象为实际整数后再调用原生CLI/MCP。复制工作层后隐藏原图层，不删除它；仍以工作副本为活动层。复杂工程还须检查其余可见底图，不无条件隐藏其他用户图层。"
     },
     {
       "id": "product-dark-matte",
@@ -1137,6 +1165,17 @@
           "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
         },
         {
+          "purpose": "保留原图层用于恢复，但从成片合成中隐藏它，避免重新叠回背景/半透明边缘",
+          "command": "layer.setProps",
+          "params": {
+            "layer": {
+              "$ref": "originalLayer"
+            },
+            "visible": false
+          },
+          "parameterReference": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}"
+        },
+        {
           "purpose": "去黑底污染，保持alpha轮廓",
           "command": "layer.matting.removeBlackMatte",
           "params": {},
@@ -1147,8 +1186,9 @@
         "浅底下没有黑边",
         "头发与半透明材质过渡自然"
       ],
-      "limits": "玻璃和烟雾不应按不透明硬边处理。",
-      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+      "limits": "玻璃和烟雾不应按不透明硬边处理。 原图层保留但隐藏；成片若仍有背景或边缘alpha叠加，检查可见图层，不以命令成功当作透明交付。此例不处理复杂多图层背景。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+      "bindings": "执行前先用当前inspect取得待处理原像素层的真实ID，记为originalLayer；$ref仅是手册记号，替换整个对象为实际整数后再调用原生CLI/MCP。复制工作层后隐藏原图层，不删除它；仍以工作副本为活动层。复杂工程还须检查其余可见底图，不无条件隐藏其他用户图层。"
     },
     {
       "id": "product-background-mask",
@@ -1165,6 +1205,17 @@
           "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
         },
         {
+          "purpose": "保留原图层用于恢复，但从成片合成中隐藏它，避免重新叠回背景/半透明边缘",
+          "command": "layer.setProps",
+          "params": {
+            "layer": {
+              "$ref": "originalLayer"
+            },
+            "visible": false
+          },
+          "parameterReference": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}"
+        },
+        {
           "purpose": "先用主体选择建立可编辑蒙版",
           "command": "layer.removeBackground",
           "params": {
@@ -1179,8 +1230,9 @@
         "原图像素仍可恢复",
         "输出透明图无锯齿"
       ],
-      "limits": "这是当前命令的主体选择能力，不保证发丝、玻璃和重叠商品完美。",
-      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+      "limits": "这是当前命令的主体选择能力，不保证发丝、玻璃和重叠商品完美。 原图层保留但隐藏；成片若仍有背景或边缘alpha叠加，检查可见图层，不以命令成功当作透明交付。此例不处理复杂多图层背景。",
+      "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+      "bindings": "执行前先用当前inspect取得待处理原像素层的真实ID，记为originalLayer；$ref仅是手册记号，替换整个对象为实际整数后再调用原生CLI/MCP。复制工作层后隐藏原图层，不删除它；仍以工作副本为活动层。复杂工程还须检查其余可见底图，不无条件隐藏其他用户图层。"
     },
     {
       "id": "social-canvas-padding",

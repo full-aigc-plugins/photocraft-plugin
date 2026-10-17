@@ -48,11 +48,13 @@
 | 顺序与目的 | Craft 命令 | 参数示例 |
 | --- | --- | --- |
 | 1. 保留原图层，复制到修复工作层 | `layer.duplicate` | `{"name":"Restoration working copy"}` |
-| 2. 温和提升阴影并限制半径 | `image.adjustments.shadowsHighlights` | `{"shadowAmount":15,"shadowTone":40,"shadowRadius":12,"highlightAmount":5,"highlightTone":50,"highlightRadius":12}` |
+| 2. 用可编辑曲线温和提亮暗部、回收亮部，避免未验证的同名滤镜 | `layer.newAdjustmentLayer.curves` | `{"points":[[0,0],[40,55],[128,132],[220,210],[255,255]]}` |
 
 检查：发丝轮廓无光晕；脸部噪点不明显放大。
 
 边界：此命令直接处理像素，先用副本；不能恢复全黑无数据的区域。
+
+运行限制：此命令直接处理像素，先用副本；不能恢复全黑无数据的区域。 官方0.9.0 shadowsHighlights在本轮40/220灰阶样例上反向增强对比，当前适配改用已验证曲线；不是局部人脸检测，真实输入应先试修并保护无需改变的背景。
 
 ## skin-shine-burn：保留皮肤纹理减弱局部油光
 
