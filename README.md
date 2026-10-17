@@ -1,5 +1,10 @@
 # PhotoCraft Use
 
+## Installable editor development candidate
+
+`0.1.0-dev.20261017.1` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+
+
 Published dev.77 / unchanged source dev.59: 755 command registrations and enabled predicates bind to the pinned maintained source; 14 Codex skills discovered in the public fixed install, 68 Python and 102 offline TypeScript tests pass, and 4 CI runs pass. Claude manifest validation is static; model routing and 1,510 command contexts remain NOT_RUN. 19 tasks and full V1 stay open. [Evidence](docs/evidence/optimization/command-acceptance/source-context-publication.json).
 
 Claude-specific commands and a SessionStart hook now route the 14 packaged skills and remind the host to reuse the native instance. The portable package remains rooted in `plugin.json` and `skills/`; actual host routing is still open. [Component boundary](docs/PhotoCraft-Plugin-Components.md).

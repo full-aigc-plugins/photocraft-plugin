@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.77",
+  "version": "0.1.0-dev.20261017.1",
   "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
   "author": {
     "name": "Full AIGC Plugins"
@@ -28,7 +28,7 @@
       "type": "stdio",
       "command": "node",
       "args": [
-        "ui/dist/adapter.mjs"
+        "ui/bootstrap.mjs"
       ],
       "cwd": "./"
     }

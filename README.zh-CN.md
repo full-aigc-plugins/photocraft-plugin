@@ -1,5 +1,10 @@
 # PhotoCraft Use
 
+## Installable editor development candidate
+
+`0.1.0-dev.20261017.1` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+
+
 dev.77已发布／技能源仍为dev.59：755条命令注册及启用谓词绑定维护版源码；公开固定安装在Codex发现14项技能，68项Python、102项离线TypeScript及4项CI通过。Claude manifest校验仅为静态证据；模型路由与1510个命令上下文仍NOT_RUN，19项任务及完整V1保持开放。[证据](docs/evidence/optimization/command-acceptance/source-context-publication.json)。
 
 现已增加指向14个打包技能的Claude专用命令及SessionStart提示钩子，提醒宿主复用原生实例。可移植包仍以根`plugin.json`和`skills/`为准；实际宿主路由仍开放。[组件边界](docs/PhotoCraft-Plugin-Components.zh_CN.md)。

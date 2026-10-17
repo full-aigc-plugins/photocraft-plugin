@@ -5,7 +5,7 @@
       "type": "stdio",
       "command": "node",
       "args": [
-        "${PLUGIN_ROOT}/ui/dist/adapter.mjs"
+        "${PLUGIN_ROOT}/ui/bootstrap.mjs"
       ]
     }
   }

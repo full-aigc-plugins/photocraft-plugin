@@ -2,8 +2,8 @@
 """生成宿主配置到明确输出路径；不修改宿主设置或安装插件。"""
 import argparse,json,pathlib,shutil
 p=argparse.ArgumentParser();p.add_argument('--host',choices=['workbuddy','codex'],required=True);p.add_argument('--workspace',required=True);p.add_argument('--output',required=True);a=p.parse_args()
-root=pathlib.Path(__file__).resolve().parents[1];workspace=pathlib.Path(a.workspace).resolve(strict=True);server=root/'ui/dist/adapter.mjs'
-if not server.is_file():p.error('Missing ui/dist/adapter.mjs; build the candidate first')
+root=pathlib.Path(__file__).resolve().parents[1];workspace=pathlib.Path(a.workspace).resolve(strict=True);server=root/'ui/bootstrap.mjs'
+if not server.is_file():p.error('Missing ui/bootstrap.mjs; build the candidate first')
 name=json.loads((root/'plugin.json').read_text())['name']+'-editor'
 node=shutil.which('node')
 if not node:p.error('Node.js 24+ is required')

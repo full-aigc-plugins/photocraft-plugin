@@ -1,0 +1,11 @@
+{
+  "releaseStatus": "BLOCKED",
+  "currentVersion": "0.1.0-dev.20261017.1",
+  "releaseTag": "v0.1.0-dev.20261017.1",
+  "installableDevelopmentCandidate": true,
+  "limitations": [
+    "Full creative/domain and all-host UI acceptance remains incomplete.",
+    "Production promotion is blocked; first Git launch requires network or an existing verified cache.",
+    "Web artifact versions are recorded independently; this release does not qualify every upstream main capability."
+  ]
+}
