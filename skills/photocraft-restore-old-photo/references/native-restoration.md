@@ -46,7 +46,7 @@ Agent分开调用两个阶段，自行查看结果后决定继续，无需机械
 ## 同一编辑器MCP路径
 
 1. 先调用open_browser_editor或open_editor并传任务workspace，用宿主浏览器呈现返回URL，等待editor_status报告attached/ready。仅返回URL或queued都不算就绪。不要先调用编辑命令再切工作区；已有实例拒绝切换时保留它，使用独立任务实例，不强停用户实例。
-2. `doc_open {"path":"input.png"}`；保存返回index，用`doc_inspect {"index":实际index}`确认文档和当前层，读取command_list当前参数。
+2. `doc_open {"path":"input.png"}`；若未返回index，调用`session_list {}`并读取active/documents中的实际index；工具结果可能在content文本内，需要先解析JSON，再用`doc_inspect {"index":实际index}`确认文档和当前层，读取command_list当前参数。
 3. 逐条`command_run {"id":"layer.duplicate","params":{"name":"Restoration working copy"}}`，然后两种修复画笔分别使用表中参数，按实际工作层ID补layer。每条检查结果；禁用、未就绪或超时先核对状态，不盲重放。
 4. `doc_save {"path":"local-repair.pcraft","index":实际index}`和`doc_export {"path":"local-repair.png","format":"png","index":实际index}`；检查图像后在同一文档继续后两条command_run。若使用另一个进程，须先显式保存并重开该检查点。
 5. 另存restored.pcraft、导出restored.png，检查保存警告；重开新工程检查层与最终图像。CLI独立进程不会自动更改这个Web文档。
@@ -58,3 +58,7 @@ Agent分开调用两个阶段，自行查看结果后决定继续，无需机械
 交付分层工程、同尺寸前后图、阶段PNG和简短修改记录。可在另一个仅用于核验的副本中，按info/doc_inspect真实返回ID删除工作层与色阶，导出只剩原层的PNG，与输入解码像素比较；只处理核验副本，不删最终交付工程的层。只有经过实际比较才能声称原层未变。真实人像需100%看五官、文字及损伤边界，不能用合成点状污点的误差数值代替。
 
 取样与色阶流程的[固定GitHub来源](workflow-sources.json)记录阅读路径和许可；未复制手册正文或代码。
+
+## 本次真实宿主观察
+
+Codex内置浏览器加载后，同一原生MCP实例完成五条业务命令，画布白点与层列表同步变化，保存并重开有三层的工程。这里只验证256×192合成夹具。局部修补导出与原生CLI解码像素相同；整体调色导出并非逐像素相同：该夹具最大通道差1/255，平均约0.051/255，两个范围均69–162。保留这个差异，不把Web与CLI视为位级相同，不据此推断全部真实照片表现。

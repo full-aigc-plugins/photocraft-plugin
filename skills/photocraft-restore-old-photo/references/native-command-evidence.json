@@ -60,6 +60,11 @@
       "shortcut": null
     }
   },
-  "mcpObservation": "Current real host descriptors expose command_run(id,params,wait), doc_open(path), doc_inspect(index), doc_save/export(path,format,index). Actual business blocked until editor page ready; not MCP scene acceptance.",
-  "histogramQuery": "Native commands --filter histogram returned []; use exported pixel statistics or actual visible histogram, do not invent a command."
+  "mcpObservation": "Actual installed Codex native app-server called all five recipe commands after editor attach; same in-app-browser canvas and layers observed. Synthetic 256x192 input only; no SDK used.",
+  "histogramQuery": "Native commands --filter histogram returned []; use exported pixel statistics or actual visible histogram, do not invent a command.",
+  "docOpenIndex": "Web doc_open returned name/path/warnings without index; session_list.active supplied 0, reopen supplied 1. Never hardcode or confuse document index with layer IDs.",
+  "renderComparison": {
+    "localRepair": "decoded pixels equal",
+    "globalTone": "not pixel identical; maximum channel delta 1, mean delta 0.051472981770833336 for this sample only"
+  }
 }
