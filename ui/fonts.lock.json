@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "file": "fonts/Inter-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/full-aigc-plugins/photocraft/3cb3580a46ba080d7ce4a037efc0a921724bd939/assets/fonts/Inter-Regular.ttf",
+      "sha256": "40d692fce188e4471e2b3cba937be967878f631ad3ebbbdcd587687c7ebe0c82",
+      "bytes": 411640
+    },
+    {
+      "file": "fonts/Inter-Medium.ttf",
+      "url": "https://raw.githubusercontent.com/full-aigc-plugins/photocraft/3cb3580a46ba080d7ce4a037efc0a921724bd939/assets/fonts/Inter-Medium.ttf",
+      "sha256": "97ad806f526e41546d46365bb3a393145f75b7b1568913db74549ad8b8dba872",
+      "bytes": 417300
+    },
+    {
+      "file": "fonts/Inter-SemiBold.ttf",
+      "url": "https://raw.githubusercontent.com/full-aigc-plugins/photocraft/3cb3580a46ba080d7ce4a037efc0a921724bd939/assets/fonts/Inter-SemiBold.ttf",
+      "sha256": "78a843fade9d4612a5567302fb595b56976eb5fcebf4fea5a5912d638bafcde3",
+      "bytes": 419744
+    },
+    {
+      "file": "fonts/OFL-Inter.txt",
+      "url": "https://raw.githubusercontent.com/full-aigc-plugins/photocraft/3cb3580a46ba080d7ce4a037efc0a921724bd939/assets/fonts/OFL-Inter.txt",
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+      "bytes": 4380
+    },
+    {
+      "file": "fonts/BIZUDPGothic-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/storytold/craft-fonts/3d9ab3a132ed0eff457e424226a435a901da30d3/fonts/biz-ud-pgothic/BIZUDPGothic-Regular.ttf",
+      "sha256": "258d7156c165f2ff774b6efee637c22c3b950de0d8a10e501137061bc8085d01",
+      "bytes": 4669688
+    },
+    {
+      "file": "fonts/OFL-BIZUDPGothic.txt",
+      "url": "https://raw.githubusercontent.com/storytold/craft-fonts/3d9ab3a132ed0eff457e424226a435a901da30d3/fonts/biz-ud-pgothic/OFL.txt",
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc",
+      "bytes": 4408
+    },
+    {
+      "file": "fonts/LXGWWenKai-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/bce47e180d802eaca4b21741d4bc1fc5fa1b541a/fonts/TTF/LXGWWenKai-Regular.ttf",
+      "sha256": "39ad71264b588165b469e35e6afb162a378dacd1f95348160240ba9038ac3009",
+      "bytes": 25575676
+    },
+    {
+      "file": "fonts/OFL-LXGWWenKai.txt",
+      "url": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/bce47e180d802eaca4b21741d4bc1fc5fa1b541a/OFL.txt",
+      "sha256": "1a25e35da1031c6c3436fde545bb9cb5aca954e9873afe510c834b8b79bd21a0",
+      "bytes": 5171
+    }
+  ],
+  "manifest": "BIZ UDPGothic | Regular | fonts/BIZUDPGothic-Regular.ttf | Latn,Jpan | OFL-1.1 | fonts/OFL-BIZUDPGothic.txt\nLXGW WenKai | Regular | fonts/LXGWWenKai-Regular.ttf | Latn,Hans,Hant,Jpan,Kore | OFL-1.1 | fonts/OFL-LXGWWenKai.txt\n",
+  "latinManifest": "Inter | Regular | fonts/Inter-Regular.ttf | Latn | OFL-1.1 | fonts/OFL-Inter.txt\nInter | Medium | fonts/Inter-Medium.ttf | Latn | OFL-1.1 | fonts/OFL-Inter.txt\nInter | SemiBold | fonts/Inter-SemiBold.ttf | Latn | OFL-1.1 | fonts/OFL-Inter.txt\n"
+}

@@ -1,0 +1,363 @@
+{
+  "schema": "craft-market-adaptations/v1",
+  "application": "photocraft",
+  "skill": "photocraft-scenario-playbooks",
+  "counting": "existing recipes with adapted task guidance; not additional mapped scenes",
+  "sources": [
+    {
+      "id": "eachlabs/skills/photo-restoration",
+      "repository": "eachlabs/skills",
+      "commit": "a881258627b81b6bb53812491edaa5917479687e",
+      "path": "skills/photo-restoration/SKILL.md",
+      "url": "https://github.com/eachlabs/skills/blob/a881258627b81b6bb53812491edaa5917479687e/skills/photo-restoration/SKILL.md",
+      "sha256": "39f833d54fdf83ad847a9c4f0c42628ef6905abd3de4f1fa7b7ee321232899f9",
+      "bytes": 13479,
+      "market": "skills.sh",
+      "marketUrl": "https://skills.sh/eachlabs/skills/photo-restoration",
+      "repositoryLicense": "UNDECLARED",
+      "declaredSkillLicense": "UNDECLARED",
+      "reuse": "仅借鉴操作事实并原创适配，不复制正文、代码或素材",
+      "reading": "selected sections",
+      "readExcerptSha256": "dc9c443dcb71325b09453b80a408c38bb3f270ca2b9371c307ef7e9d499f2832"
+    },
+    {
+      "id": "skillhub:aihive-en-photo-restoration-studio",
+      "market": "SkillHub",
+      "marketUrl": "https://skillhub.cn/",
+      "downloadUrl": "https://api.skillhub.cn/api/v1/download?slug=aihive-en-photo-restoration-studio",
+      "slug": "aihive-en-photo-restoration-studio",
+      "version": "1.0.0",
+      "sha256": "9c7b1fbfc67fd21f02af7be2f4af10297ab706fd24da0b82e8ce1a45b9fa26de",
+      "bytes": 6203,
+      "declaredSkillLicense": "UNDECLARED",
+      "reuse": "仅借鉴操作事实并原创适配，不复制正文、代码或素材",
+      "reading": "selected sections"
+    },
+    {
+      "id": "qzfcoder/photo-retouch-pro/photo-retouch-pro",
+      "repository": "qzfcoder/photo-retouch-pro",
+      "commit": "bd963066b15f9dda1f46b10e63427f1046b57acc",
+      "path": "SKILL.md",
+      "url": "https://github.com/qzfcoder/photo-retouch-pro/blob/bd963066b15f9dda1f46b10e63427f1046b57acc/SKILL.md",
+      "sha256": "96a2b5f9decc4990462de893b8014427a799cdb7154823f11b86285a8b24d1b4",
+      "bytes": 7755,
+      "market": "skills.sh",
+      "marketUrl": "https://skills.sh/qzfcoder/photo-retouch-pro/photo-retouch-pro",
+      "repositoryLicense": "UNDECLARED",
+      "declaredSkillLicense": "UNDECLARED",
+      "reuse": "仅借鉴操作事实并原创适配，不复制正文、代码或素材",
+      "reading": "selected sections",
+      "readExcerptSha256": "cefc0bd152f73b3863eb01d4f081285f1a7960669ccefcd688b5424c2fc2879a"
+    },
+    {
+      "id": "calesthio/generative-media-skills/still-image-retouching-finishing",
+      "repository": "calesthio/generative-media-skills",
+      "commit": "8c85352d5d75d4dcbe58480bd138e37b9742bab1",
+      "path": "skills/production/post-production/still-image-retouching-finishing/SKILL.md",
+      "url": "https://github.com/calesthio/generative-media-skills/blob/8c85352d5d75d4dcbe58480bd138e37b9742bab1/skills/production/post-production/still-image-retouching-finishing/SKILL.md",
+      "sha256": "eb609ddab365f85a4fb3bd2c7baa8c2c7c607d64da4f84f784ecb7ec9f76980b",
+      "bytes": 36258,
+      "market": "skills.sh",
+      "marketUrl": "https://skills.sh/calesthio/generative-media-skills/still-image-retouching-finishing",
+      "repositoryLicense": "MIT",
+      "declaredSkillLicense": "UNDECLARED",
+      "reuse": "仅借鉴操作事实并原创适配，不复制正文、代码或素材",
+      "reading": "selected sections",
+      "readExcerptSha256": "c1356f017b2a718403b053cb0b2d7fafe2e8b407ee56a54d3436db792b6fb5b7"
+    },
+    {
+      "id": "adobe/skills/adobe-retouch-portraits",
+      "repository": "adobe/skills",
+      "commit": "e9692ed98504e8a8658b99daeb698f81498dfc9b",
+      "path": "plugins/creative-cloud/adobe-for-creativity/skills/adobe-retouch-portraits/SKILL.md",
+      "url": "https://github.com/adobe/skills/blob/e9692ed98504e8a8658b99daeb698f81498dfc9b/plugins/creative-cloud/adobe-for-creativity/skills/adobe-retouch-portraits/SKILL.md",
+      "sha256": "034e447380eabf4a8b5d3bbd20458c1a8358b197f79906d944d6c7c24439e2e3",
+      "bytes": 42707,
+      "market": "skills.sh",
+      "marketUrl": "https://skills.sh/adobe/skills/adobe-retouch-portraits",
+      "repositoryLicense": "Apache-2.0",
+      "declaredSkillLicense": "Apache-2.0",
+      "reuse": "仅借鉴操作事实并原创适配，不复制正文、代码或素材",
+      "reading": "selected sections",
+      "readExcerptSha256": "006202768507f694a9554384bb39c11764eaaa2fe5ffaf1070837451b20349a8"
+    }
+  ],
+  "adaptations": [
+    {
+      "id": "old-photo-conservative",
+      "title": "修复与推测分开交付",
+      "sourceIds": [
+        "eachlabs/skills/photo-restoration",
+        "skillhub:aihive-en-photo-restoration-studio"
+      ],
+      "adaptation": "先标出划痕、缺损、褪色和不可判断的内容；先做局部修补，再处理整体影调。人物五官和历史文字逐区比对。上色或补造不存在的细节属于另一个选择，不能混入保真修复。",
+      "taskCheck": "保留原扫描；同尺寸检查人物和字迹，列出无法恢复的区域。",
+      "capabilityBoundary": "Craft的取样修补不等于生成模型的人脸重建或自动上色。",
+      "existingRecipe": "skills/photocraft-scenario-playbooks/references/recipes.json",
+      "recipe": {
+        "id": "old-photo-conservative",
+        "title": "老照片保守修复全流程",
+        "category": "restoration",
+        "inputs": "有扫描图与可辨认的局部损伤；确认是否保持黑白。",
+        "steps": [
+          {
+            "purpose": "保留原图层，复制到修复工作层",
+            "command": "layer.duplicate",
+            "params": {
+              "name": "Restoration working copy"
+            },
+            "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+          },
+          {
+            "purpose": "只点选已确认的灰尘，不覆盖眼睛、文字和胶片颗粒",
+            "command": "paint.spotHealing",
+            "params": {
+              "points": [
+                [
+                  40,
+                  30,
+                  1
+                ],
+                [
+                  44,
+                  32,
+                  1
+                ]
+              ],
+              "size": 5,
+              "type": "proximityMatch"
+            },
+            "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+          },
+          {
+            "purpose": "从同材质邻近完好位置采样，沿损伤做短笔触",
+            "command": "paint.healingBrush",
+            "params": {
+              "points": [
+                [
+                  80,
+                  40,
+                  1
+                ],
+                [
+                  84,
+                  42,
+                  1
+                ]
+              ],
+              "source": [
+                60,
+                40
+              ],
+              "size": 6,
+              "hardness": 40,
+              "sampleLayer": "current",
+              "opacity": 70
+            },
+            "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}"
+          },
+          {
+            "purpose": "轻度降噪，保留可识别纹理和胶片颗粒",
+            "command": "filter.noise.reduceNoise",
+            "params": {
+              "strength": 2,
+              "preserveDetails": 85,
+              "reduceColorNoise": 20,
+              "sharpenDetails": 0
+            },
+            "parameterReference": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}"
+          },
+          {
+            "purpose": "观察直方图后恢复中间调，黑白场不硬截断",
+            "command": "layer.newAdjustmentLayer.levels",
+            "params": {
+              "inBlack": 5,
+              "gamma": 1.05,
+              "inWhite": 248
+            },
+            "parameterReference": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+          }
+        ],
+        "checks": [
+          "修复层与原图均保留",
+          "人物边缘与字形未被改造",
+          "前后图同尺寸比较，未修区纹理一致"
+        ],
+        "limits": "大面积缺失和无法辨识的人脸不推测重建；逐分区采样，不把例子坐标用于整张照片。",
+        "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+      },
+      "execution": "REFERENCE_ADAPTATION_NOT_NEW_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "id": "portrait-small-blemish",
+      "title": "保留身份特征的人像修饰",
+      "sourceIds": [
+        "qzfcoder/photo-retouch-pro/photo-retouch-pro",
+        "calesthio/generative-media-skills/still-image-retouching-finishing"
+      ],
+      "adaptation": "先看缩略图判断主体，再在原尺寸区分暂时性痘印与痣、皱纹、轮廓等身份特征。只对获准区域取样，先少量修，再比较纹理，不能全脸同强度涂抹。",
+      "taskCheck": "保护区与原图对照；痘印减弱而毛孔和轮廓仍在。",
+      "capabilityBoundary": "不移植外部生成式换脸或自动美颜调用；坐标由本次照片决定。",
+      "existingRecipe": "skills/photocraft-scenario-playbooks/references/recipes.json",
+      "recipe": {
+        "id": "portrait-small-blemish",
+        "title": "自然人像局部痘印修饰",
+        "category": "portrait",
+        "inputs": "明确要修饰临时痘印，保留痣和身份特征。",
+        "steps": [
+          {
+            "purpose": "保留原图层，复制到修复工作层",
+            "command": "layer.duplicate",
+            "params": {
+              "name": "Restoration working copy"
+            },
+            "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+          },
+          {
+            "purpose": "只对临时痘印做单点近邻修复",
+            "command": "paint.spotHealing",
+            "params": {
+              "points": [
+                [
+                  100,
+                  72,
+                  1
+                ]
+              ],
+              "size": 4,
+              "type": "proximityMatch"
+            },
+            "parameterReference": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}"
+          }
+        ],
+        "checks": [
+          "皮肤纹理连续",
+          "原有身份特征保留"
+        ],
+        "limits": "示例点不是人脸检测坐标；没有可靠人脸定位时先看图手动确定。",
+        "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+      },
+      "execution": "REFERENCE_ADAPTATION_NOT_NEW_RUNTIME_ACCEPTANCE"
+    },
+    {
+      "id": "portrait-white-balance",
+      "title": "代表样片后再批量调色",
+      "sourceIds": [
+        "adobe/skills/adobe-retouch-portraits"
+      ],
+      "adaptation": "按光照和色偏分组，各组选一张代表图先修；把白平衡与肤色看清再决定其余照片的起点。预览尺寸可以缩小，最终从原尺寸输入重新处理，不能放大预览充当成片。",
+      "taskCheck": "逐组检查肤色、白衣和高光，异常曝光单张处理。",
+      "capabilityBoundary": "不同照明不共用一套白平衡；不依赖Adobe账户、预设服务或外部初始化工具。",
+      "existingRecipe": "skills/photocraft-scenario-playbooks/references/recipes.json",
+      "recipe": {
+        "id": "portrait-white-balance",
+        "title": "人像整体轻微白平衡",
+        "category": "portrait",
+        "inputs": "可信中性参考、肤色与背景颜色可比较。",
+        "steps": [
+          {
+            "purpose": "保留原图层，复制到修复工作层",
+            "command": "layer.duplicate",
+            "params": {
+              "name": "Restoration working copy"
+            },
+            "parameterReference": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)"
+          },
+          {
+            "purpose": "仅从小幅色彩平衡起步",
+            "command": "layer.newAdjustmentLayer.colorBalance",
+            "params": {
+              "midtones": [
+                0,
+                -2,
+                3
+              ],
+              "preserveLuminosity": true
+            },
+            "parameterReference": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}"
+          }
+        ],
+        "checks": [
+          "脸和颈部一致",
+          "白衣与中性背景无异常色偏"
+        ],
+        "limits": "暖光场景不必强制中性；调整方向应由输入测量决定。",
+        "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED"
+      },
+      "execution": "REFERENCE_ADAPTATION_NOT_NEW_RUNTIME_ACCEPTANCE"
+    }
+  ],
+  "observedCommands": {
+    "layer.duplicate": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.duplicate",
+      "label": "Duplicate Layer…",
+      "menu": [
+        "Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)",
+      "shortcut": null
+    },
+    "paint.spotHealing": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.spotHealing",
+      "label": "Spot Healing Brush",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}",
+      "shortcut": null
+    },
+    "paint.healingBrush": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.healingBrush",
+      "label": "Healing Brush",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "shortcut": null
+    },
+    "filter.noise.reduceNoise": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.noise.reduceNoise",
+      "label": "Reduce Noise…",
+      "menu": [
+        "Filter",
+        "Noise"
+      ],
+      "needsDocument": true,
+      "params": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.levels": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.levels",
+      "label": "Levels…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.colorBalance": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.colorBalance",
+      "label": "Color Balance…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    }
+  }
+}

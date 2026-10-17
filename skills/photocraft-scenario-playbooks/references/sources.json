@@ -1,0 +1,127 @@
+{
+  "policy": "只借鉴工作流事实，场景正文与命令例子原创编写，不复制外部代码、正文或素材。许可不明的来源仅作为参考。",
+  "sources": [
+    {
+      "repository": "qzfcoder/photo-retouch-pro",
+      "commit": "bd963066b15f9dda1f46b10e63427f1046b57acc",
+      "license": null,
+      "readFiles": [
+        {
+          "path": "SKILL.md",
+          "url": "https://github.com/qzfcoder/photo-retouch-pro/blob/bd963066b15f9dda1f46b10e63427f1046b57acc/SKILL.md",
+          "bytes": 7755
+        }
+      ],
+      "reuse": "workflow facts and original adaptation only; no upstream text, code or assets copied"
+    },
+    {
+      "repository": "creold/photoshop-scripts",
+      "commit": "9a2a54cab1b4f737f86513fce0329d9e168dddb4",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "readFiles": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/creold/photoshop-scripts/blob/9a2a54cab1b4f737f86513fce0329d9e168dddb4/README.md",
+          "bytes": 11295
+        },
+        {
+          "path": "jsx/ArtboardsFromCSV.jsx",
+          "url": "https://github.com/creold/photoshop-scripts/blob/9a2a54cab1b4f737f86513fce0329d9e168dddb4/jsx/ArtboardsFromCSV.jsx",
+          "bytes": 12696
+        },
+        {
+          "path": "jsx/TIFF2Print.jsx",
+          "url": "https://github.com/creold/photoshop-scripts/blob/9a2a54cab1b4f737f86513fce0329d9e168dddb4/jsx/TIFF2Print.jsx",
+          "bytes": 13784
+        }
+      ],
+      "reuse": "workflow facts and original adaptation only; no upstream text, code or assets copied"
+    },
+    {
+      "repository": "GNOME/gimp-help",
+      "commit": "47eda5c8db56271d30e19e8bd53a88a619fcee7f",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "readFiles": [
+        {
+          "path": "COPYING",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/COPYING",
+          "bytes": 20402
+        },
+        {
+          "path": "src/dialogs/layer-mask.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/dialogs/layer-mask.xml",
+          "bytes": 7638
+        },
+        {
+          "path": "src/toolbox/paint/heal.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/toolbox/paint/heal.xml",
+          "bytes": 6768
+        },
+        {
+          "path": "src/toolbox/paint/clone.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/toolbox/paint/clone.xml",
+          "bytes": 20727
+        },
+        {
+          "path": "src/toolbox/paint/dodge-burn.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/toolbox/paint/dodge-burn.xml",
+          "bytes": 5278
+        },
+        {
+          "path": "src/menus/select/feather.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/select/feather.xml",
+          "bytes": 3342
+        },
+        {
+          "path": "src/menus/select/invert.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/select/invert.xml",
+          "bytes": 2016
+        },
+        {
+          "path": "src/menus/select/grow.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/select/grow.xml",
+          "bytes": 2469
+        },
+        {
+          "path": "src/menus/select/shrink.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/select/shrink.xml",
+          "bytes": 2397
+        },
+        {
+          "path": "src/menus/image/canvas-size.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/image/canvas-size.xml",
+          "bytes": 14580
+        },
+        {
+          "path": "src/toolbox/transform/crop.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/toolbox/transform/crop.xml",
+          "bytes": 12742
+        },
+        {
+          "path": "src/menus/colors/hue-saturation.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/colors/hue-saturation.xml",
+          "bytes": 6640
+        },
+        {
+          "path": "src/menus/colors/desaturate/mono-mixer.xml",
+          "url": "https://github.com/GNOME/gimp-help/blob/47eda5c8db56271d30e19e8bd53a88a619fcee7f/src/menus/colors/desaturate/mono-mixer.xml",
+          "bytes": 500
+        }
+      ],
+      "reuse": "workflow facts and original adaptation only; no upstream text, code or assets copied",
+      "licenseEvidence": "COPYING: GNU Free Documentation License 1.2; no manual text redistributed"
+    }
+  ]
+}

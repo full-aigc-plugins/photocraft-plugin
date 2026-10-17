@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.77",
+  "version": "0.1.0-dev.20261017.3",
   "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
   "author": {
     "name": "Full AIGC Plugins"
@@ -14,11 +14,23 @@
     "development-release"
   ],
   "interface": {
-    "displayName": "PhotoCraft",
+    "displayName": "PhotoCraft Use",
     "shortDescription": "Editable creative workflows and pinned setup",
     "longDescription": "Use independently maintained, checksummed skills to install pinned maintained CLIs and create editable native projects. Development release; complete capability and host acceptance remain in progress.",
     "developerName": "Full AIGC Plugins",
-    "websiteURL": "https://github.com/full-aigc-plugins/photocraft-plugin"
+    "websiteURL": "https://github.com/full-aigc-plugins/photocraft-plugin",
+    "logo": "./assets/official-logo.png",
+    "logoDark": "./assets/official-logo.png"
   },
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": {
+    "photocraft-editor": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "ui/bootstrap.mjs"
+      ],
+      "cwd": "./"
+    }
+  }
 }

@@ -1,0 +1,42 @@
+{
+  "upstreamCommit": "5f65579ecb44047c2a619036c18ff273202e1389",
+  "webBuildRun": 39007493774,
+  "observedHost": "Codex CLI 0.162.1 native app-server plus Codex desktop in-app browser",
+  "commands": [
+    {
+      "id": "file.export.presets.list",
+      "label": "List Export Presets",
+      "params": "{}"
+    },
+    {
+      "id": "file.export.presets.get",
+      "label": "Get Export Preset",
+      "params": "{\"name\":str} -> {preset} (settings for Export As; nothing is exported)"
+    },
+    {
+      "id": "file.export.presets.save",
+      "label": "Save Export Preset",
+      "params": "{\"name\":str,\"settings\":{\"format\":\"png|jpg|webp|tif|tga|ico\",\"quality\":1..100,\"lossless\":bool,\"transparency\":bool,\"scale\":1..1000,\"width\":px,\"height\":px,\"lockAspect\":bool,\"sizing\":\"scale|pixels\",\"metadata\":\"none|exif|all\",\"profile\":\"document|srgb\",\"embedProfile\":bool,\"tgaBits\":\"auto|24|32\"}} (a saved name is replaced)"
+    },
+    {
+      "id": "file.export.presets.delete",
+      "label": "Delete Export Preset",
+      "params": "{\"name\":str}"
+    }
+  ],
+  "validation": {
+    "saveGetListDelete": "PASS",
+    "mappedJpegFile": "PASS",
+    "width": 320,
+    "height": 240,
+    "quality": 80,
+    "masterDimensionsUnchanged": "PASS",
+    "persistentReload": "PASS_NATIVE_PREFERENCE_SERIALIZATION_ONLY",
+    "chineseUiGlyphs": "PASS_VISUAL_SOURCE_FONT_CANDIDATE",
+    "webReloadPersistence": "NOT_TESTED",
+    "flatLayerList": "PASS_CODEX_NATIVE_HOST_SAVED_TWO_LAYER_DOCUMENT"
+  },
+  "nativePresetTestRun": 39008034368,
+  "nativePresetTestCount": 2,
+  "fontBuildRun": 39009228204
+}

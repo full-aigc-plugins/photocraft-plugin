@@ -1,0 +1,188 @@
+{
+  "baselineCount": 909,
+  "mainCount": 918,
+  "added": [
+    "actions.setColor",
+    "brush.presets.importImage",
+    "file.export.presets.delete",
+    "file.export.presets.get",
+    "file.export.presets.list",
+    "file.export.presets.save",
+    "image.detectFaces",
+    "layer.list",
+    "view.editGuide"
+  ],
+  "removed": [],
+  "contractsChanged": [
+    {
+      "id": "actions.get",
+      "baseline": {
+        "params": "{\"action\":name|index} → {name, steps:[[id, params]…], disabled:[step…], dialogs:[step…], set:name|null} (steps is the shape file.automate.batch and droplets take; disabled lists the 0-based steps playback skips; dialogs the steps whose dialog Photoshop would show; set the action set from Load Actions)"
+      },
+      "main": {
+        "params": "{\"action\":name|index} → {name, steps:[[id, params]…], disabled:[step…], dialogs:[step…], set:name|null, color:str} (steps is the shape file.automate.batch and droplets take; disabled lists the 0-based steps playback skips; dialogs the steps whose dialog Photoshop would show; set the action set from Load Actions; color is the Button Mode swatch, or empty)"
+      }
+    },
+    {
+      "id": "edit.keyboardShortcuts",
+      "baseline": {
+        "params": "{\"set\":{\"<command id>|tools.temporary.hand|zoomIn|zoomOut\":\"Cmd+Shift+X\"|\"\"(remove)|null(default)}?,\"reset\":true|[\"<id>\",…]?,\"removeConflicts\":bool=true,\"filter\":str?,\"list\":bool=false,\"importKys\":\"<.kys XML>\"?}"
+      },
+      "main": {
+        "params": "{\"set\":{\"<command id>|tools.temporary.hand|zoomIn|zoomOut\":\"Cmd+Shift+X\"|\"\"(remove)|null(default)}?,\"alternates\":{\"<command id>\":[\"F3\",…]|[](none)|null(default)}?,\"reset\":true|[\"<id>\",…]?,\"removeConflicts\":bool=true,\"filter\":str?,\"list\":bool=false,\"importKys\":\"<.kys XML>\"|{\"path\":\".kys\"}?,\"useSet\":\"<name>\"|\"\"(defaults)?,\"saveSet\":\"<name>\"?,\"deleteSet\":\"<name>\"?,\"sets\":{\"<name>\":{\"shortcuts\":{…},\"alternateShortcuts\":{…}}}?,\"activeSet\":\"<name>\"|\"\"?,\"exportKys\":true|{\"path\":\".kys\"}?,\"summarize\":true|{\"mac\":bool,\"path\":\".html\"}?} (with a path the file is written and the reply has kysPath/htmlPath instead of kys/html)"
+      }
+    },
+    {
+      "id": "file.automate.batch",
+      "baseline": {
+        "params": "{\"steps\":[[commandId,params]|{\"command\":id,\"params\":{}}…] (a recorded action),\"input\":folder|[paths],\"output\":folder,\"format\":\"same|png|jpg|psd|tiff|…\"=\"same\",\"quality\":0..12?,\"naming\":string? (blank keeps source names; {name}, {serial} padded to 3 digits, {date} as YYYY-MM-DD UTC; extension added automatically),\"startingSerial\":1..4294967295=1 (input position, including failed inputs),\"tiffLayers\":bool=false,\"tgaBits\":24|32?,\"dpxBits\":8|10|12|16? (DPX: bits per sample; unset, 8 for an 8-bit document, else 16),\"calledActions\":[{\"name\",\"steps\"}…]? (the actions Play Action steps call; default: the session's)} → {files, errors} (an input whose output name was already written in the run goes to errors)"
+      },
+      "main": {
+        "params": "{\"steps\":[[commandId,params]|{\"command\":id,\"params\":{}}…] (a recorded action),\"input\":folder|[paths],\"includeSubfolders\":bool=false (a folder input also takes the images in its subfolders, up to 32 levels and 100000 files; each result keeps its subfolder under output),\"output\":folder,\"format\":\"same|png|jpg|psd|tiff|…\"=\"same\",\"quality\":0..12?,\"naming\":string? (blank keeps source names; {name}, {serial} padded to 3 digits, {date} as YYYY-MM-DD UTC; extension added automatically),\"startingSerial\":1..4294967295=1 (input position, including failed inputs),\"tiffLayers\":bool=false,\"tgaBits\":24|32?,\"dpxBits\":8|10|12|16? (DPX: bits per sample; unset, 8 for an 8-bit document, else 16),\"calledActions\":[{\"name\",\"steps\"}…]? (the actions Play Action steps call; default: the session's)} → {files, errors} (an input whose output name was already written in the run goes to errors)"
+      }
+    },
+    {
+      "id": "file.scripts.imageProcessor",
+      "baseline": {
+        "params": "{\"input\":folder|[paths],\"output\":folder,\"format\":\"jpg|png|psd|tiff|…\"=\"jpg\",\"quality\":0..12=8,\"tiffLayers\":bool=false,\"tgaBits\":24|32?,\"dpxBits\":8|10|12|16? (DPX: bits per sample; unset, 8 for an 8-bit document, else 16),\"width\":px?,\"height\":px? (fit, never enlarge),\"convertToSrgb\":bool=false} → {files, errors} (an input whose output name was already written in the run goes to errors)"
+      },
+      "main": {
+        "params": "{\"input\":folder|[paths],\"includeSubfolders\":bool=false (a folder input also takes the images in its subfolders, up to 32 levels and 100000 files; each result keeps its subfolder under output),\"output\":folder,\"format\":\"jpg|png|psd|tiff|…\"=\"jpg\",\"quality\":0..12=8,\"tiffLayers\":bool=false,\"tgaBits\":24|32?,\"dpxBits\":8|10|12|16? (DPX: bits per sample; unset, 8 for an 8-bit document, else 16),\"width\":px?,\"height\":px? (fit, never enlarge),\"convertToSrgb\":bool=false} → {files, errors} (an input whose output name was already written in the run goes to errors)"
+      }
+    },
+    {
+      "id": "image.crop",
+      "baseline": {
+        "params": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"angle\":-3600..3600=0,\"deleteCroppedPixels\":bool=true,\"targetWidth\":px,\"targetHeight\":px,\"resolution\":ppi,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails\"=\"bicubic\"} → {x,y,width,height,documentWidth,documentHeight,resolution} (targetWidth/targetHeight, both or neither: the cropped area is resampled to exactly that size, as Image Size, in the same undo step; resolution: the document's new ppi)"
+      },
+      "main": {
+        "params": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"angle\":-3600..3600=0,\"deleteCroppedPixels\":bool=true,\"contentAware\":bool=false,\"targetWidth\":px,\"targetHeight\":px,\"resolution\":ppi,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails\"=\"bicubic\"} → {x,y,width,height,documentWidth,documentHeight,resolution} (targetWidth/targetHeight, both or neither: the cropped area is resampled to exactly that size, as Image Size, in the same undo step; resolution: the document's new ppi; contentAware: the Crop tool's Fill › Content-Aware Fill, the area a rotated or extending crop uncovers filled from its surroundings on the Background, else the active pixel layer)"
+      }
+    },
+    {
+      "id": "layer.align.bottomEdges",
+      "baseline": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)"
+      },
+      "main": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the active selection's bounds when there is one, however many layers are selected; else one layer aligns to the canvas and several to their combined bounds)"
+      }
+    },
+    {
+      "id": "layer.align.horizontalCenters",
+      "baseline": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)"
+      },
+      "main": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the active selection's bounds when there is one, however many layers are selected; else one layer aligns to the canvas and several to their combined bounds)"
+      }
+    },
+    {
+      "id": "layer.align.leftEdges",
+      "baseline": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)"
+      },
+      "main": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the active selection's bounds when there is one, however many layers are selected; else one layer aligns to the canvas and several to their combined bounds)"
+      }
+    },
+    {
+      "id": "layer.align.rightEdges",
+      "baseline": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)"
+      },
+      "main": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the active selection's bounds when there is one, however many layers are selected; else one layer aligns to the canvas and several to their combined bounds)"
+      }
+    },
+    {
+      "id": "layer.align.topEdges",
+      "baseline": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)"
+      },
+      "main": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the active selection's bounds when there is one, however many layers are selected; else one layer aligns to the canvas and several to their combined bounds)"
+      }
+    },
+    {
+      "id": "layer.align.verticalCenters",
+      "baseline": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the selection bounds with one layer and an active selection, else the selected layers' bounds)"
+      },
+      "main": {
+        "params": "{\"to\":\"auto|layers|selection|canvas\"=\"auto\"} (auto: the active selection's bounds when there is one, however many layers are selected; else one layer aligns to the canvas and several to their combined bounds)"
+      }
+    },
+    {
+      "id": "layer.new.frame",
+      "baseline": {
+        "params": "{\"x\":i32,\"y\":i32,\"width\":u32,\"height\":u32,\"shape\":\"rectangle|ellipse\"=\"rectangle\",\"layer\":id?,\"name\":str?} → {layer, frame:[x,y,w,h], shape}: Frame tool; a group clipped to the shape, holding pixel layer `layer` if given"
+      },
+      "main": {
+        "params": "{\"x\":i32,\"y\":i32,\"width\":u32,\"height\":u32,\"shape\":\"rectangle|ellipse\"=\"rectangle\",\"layer\":id?,\"name\":str?} → {layer, frame:[x,y,w,h], shape}: Frame tool; a group clipped to the shape, holding pixel, type, shape or smart object layer `layer` if given"
+      }
+    },
+    {
+      "id": "layer.new.groupFromLayers",
+      "baseline": {
+        "params": "{\"name\":str?}"
+      },
+      "main": {
+        "params": "{\"layer\":id?,\"name\":str?} (no layer: every selected layer)"
+      }
+    },
+    {
+      "id": "layer.select",
+      "baseline": {
+        "params": "{\"layer\":id,\"mode\":\"replace|toggle|range|add|remove\"=\"replace\"} (toggle = ⌘-click, range = ⇧-click, remove = deselect it, keeping at least one)"
+      },
+      "main": {
+        "params": "{\"layer\":id|str | \"name\":str,\"occurrence\":index?,\"mode\":\"replace|toggle|range|add|remove\"=\"replace\"} (name occurrence: zero-based document walk order; required for duplicate names; toggle = ⌘-click, range = ⇧-click, remove = deselect it, keeping at least one)"
+      }
+    },
+    {
+      "id": "layer.setProps",
+      "baseline": {
+        "params": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}"
+      },
+      "main": {
+        "params": "{\"layer\":id?,\"layers\":[id,…]? (the same change to each, one step: the Layers panel's controls with several layers selected),\"name\":str? (one layer only),\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}"
+      }
+    },
+    {
+      "id": "path.convertPoint",
+      "baseline": {
+        "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"layer\":id? (with \"layer\": a shape layer's path or a vector mask),\"subpath\":i,\"knot\":j,\"out\":[x,y]? (none: corner with retracted handles; given: smooth with this out handle and its mirror)} → {name,path}"
+      },
+      "main": {
+        "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"layer\":id? (with \"layer\": a shape layer's path or a vector mask),\"subpath\":i,\"knot\":j,\"out\":[x,y]? (none: corner with retracted handles; given: smooth with this out handle and its mirror),\"curvature\":bool=false (the Curvature Pen's double-click: toggles smooth/corner and reflows the smooth knots of the subpath; out ignored)} → {name,path}"
+      }
+    },
+    {
+      "id": "path.moveAnchors",
+      "baseline": {
+        "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"layer\":id? (with \"layer\": a shape layer's path or a vector mask),\"anchors\":[[subpath,knot],…],\"move\":[dx,dy] (anchors move with their handles; Direct Selection drag)} → {name,path}"
+      },
+      "main": {
+        "params": "{\"name\":str|\"work\"|\"layer\"=\"work\",\"layer\":id? (with \"layer\": a shape layer's path or a vector mask),\"anchors\":[[subpath,knot],…],\"move\":[dx,dy],\"curvature\":bool=false (anchors move with their handles; Direct Selection drag. curvature = the Curvature Pen's drag: every smooth knot of the touched subpaths gets its handles recomputed so the curve flows through the anchors)} → {name,path}"
+      }
+    }
+  ],
+  "app": "photocraft",
+  "run": 39008034368,
+  "sourceCommit": "5f65579ecb44047c2a619036c18ff273202e1389",
+  "baselineScope": "observed stable native CLI; not embedded editor",
+  "baselineSha256": "5f678f8596bbb49c1059896b644aaaf2d9ad19b43854706ebee905e217259adc",
+  "mainSha256": "d84045acd4bbaf1fee4a388b2d935563e2db76e5ba39d7202bbcae72e23cd8fb",
+  "calls": 226,
+  "records": 50,
+  "verifiedOutputs": 186,
+  "candidatePatches": [
+    {
+      "file": "main-export-presets.patch",
+      "sha256": "96b25f7c1fde0020aa53efd01f84afcf2ceb2ac42cc3030caabbcf5c68b06cc4"
+    }
+  ],
+  "upstreamExportPresetTests": "2 PASS",
+  "scope": "stable-native to source-built-native; UI-only command counts not compared"
+}

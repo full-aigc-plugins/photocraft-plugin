@@ -1,0 +1,9 @@
+{
+  "name": "photocraft",
+  "title": "PhotoCraft",
+  "repository": "https://github.com/full-aigc-plugins/photocraft",
+  "commit": "3cb3580a46ba080d7ce4a037efc0a921724bd939",
+  "version": "0.9.0",
+  "releaseRepository": "full-aigc-plugins/photocraft-plugin",
+  "patches": []
+}
