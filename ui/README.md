@@ -74,3 +74,9 @@ stdio 负责 Agent 与插件通信，本地 HTTP 负责页面和同会话编辑�
 stdio 负责 Agent 与插件通信，本地 HTTP 负责页面和同会话编辑桥接。Agent 指令作用于当前页面的编辑器状态；等待 `editor_status` 就绪后再执行编辑。保存源工程后重开检查，关闭 MCP 进程前先保存。
 
 本轮优先验证标准插件入口、Codex 和 Claude Code 清单。仅支持 MCP 的工具不属于当前安装交付范围。
+
+### main开发候选补丁 / main candidate patch
+
+`runtime/patches/main-export-presets.patch`只用于目录仓固定的main候选（5f65579ecb44）：上游新增导出预设持久化字段后遗漏加载初始化字段，原生与WASM均发生E0063编译错误。补齐同名JSON字段读取，保持其他预设的独立加载逻辑。稳定版source.lock不引入此补丁；仅在隔离checkout应用，原始上游保持只读。
+
+The pinned main candidate needs the missing `export_presets` initializer when restoring persisted presets. This isolated build patch reads the existing JSON key; stable source locks and upstream repositories stay unchanged. Build and runtime acceptance are reported separately.
