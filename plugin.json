@@ -33,7 +33,9 @@
           "Create an editable PhotoCraft project from my assets"
         ],
         "logo": "./assets/official-logo.png",
-        "logoDark": "./assets/official-logo.png"
+        "logoDark": "./assets/official-logo.png",
+        "composerIcon": "./assets/official-logo.png",
+        "composerIconDark": "./assets/official-logo.png"
       }
     },
     "ai.nanoco.nanoclaw": {
