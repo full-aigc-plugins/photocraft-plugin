@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "repository": "https://github.com/TouchTone/make_contact",
+      "commit": "825604311889c9d1f5900dc565a228b581822702",
+      "path": "README.md",
+      "sha256": "4f298ee8f8e3d14eb48b2bccb466fd2690b4b02604e78d49729a45240f714873",
+      "license": "No SPDX license detected; no code, prose or assets copied",
+      "usedFacts": [
+        "explicit thumbnail layout",
+        "filename labels",
+        "thumbnail sizing"
+      ]
+    },
+    {
+      "url": "https://helpx.adobe.com/photoshop/desktop/app-integrations/create-a-contact-sheet.html",
+      "usedFacts": [
+        "row/column layout",
+        "filename captions"
+      ],
+      "copiedContent": false
+    }
+  ],
+  "adaptation": "Original PhotoCraft CLI implementation using observed file.placeEmbedded and type.create schemas"
+}
