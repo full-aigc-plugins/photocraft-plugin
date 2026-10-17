@@ -76,7 +76,7 @@ test('bridge selection never silently dispatches a headless task',()=>{
 
 test('actual fixed CLI and owned desktop produce separate readonly lifecycle probes',{skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},()=>{
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-runtime-probes-')));const receipts:any[]=[];
- try{for(const backend of ['headless','bridge'] as const){const output=join(root,backend);mkdirSync(output);const result=probeRuntime({skillRoot:process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-use'),python:process.env.PHOTOCRAFT_PYTHON??'/opt/anaconda3/bin/python3',runtimeHome:join(process.env.HOME!,'.local/share/craft-runtimes')},backend,output);assert.equal(result.editingCalls,0);assert.equal(result.snapshot.backend,backend);receipts.push(result);}
+ try{for(const backend of ['headless','bridge'] as const){const output=join(root,backend);mkdirSync(output);const result=probeRuntime({skillRoot:process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-harness'),python:process.env.PHOTOCRAFT_PYTHON??'/opt/anaconda3/bin/python3',runtimeHome:join(process.env.HOME!,'.local/share/craft-runtimes')},backend,output);assert.equal(result.editingCalls,0);assert.equal(result.snapshot.backend,backend);receipts.push(result);}
  if(process.env.PHOTOCRAFT_RUNTIME_PROBE_REPORT)writeFileSync(process.env.PHOTOCRAFT_RUNTIME_PROBE_REPORT,JSON.stringify({schema:'photocraft-runtime-probes-native/v1',status:'PASS',receipts,scope:'Actual unchanged craft.1 binary; readonly headless and owned desktop registry discovery. Different-version upgrade and rollback fixed acceptance remain open.'},null,2)+'\n');
  }finally{rmSync(root,{recursive:true,force:true});}
 });
@@ -84,7 +84,7 @@ test('actual fixed CLI and owned desktop produce separate readonly lifecycle pro
 import {Runner} from '../scripts/harness/runner.ts';
 
 test('native lifecycle drains saved tasks, fences old claims and reopens retained projects on upgrade and rollback',{skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1'},async()=>{
- const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-native-upgrade-'))),state=join(root,'state'),ledger=new Ledger(state);const skillRoot=process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-use'),python=process.env.PHOTOCRAFT_PYTHON??'/opt/anaconda3/bin/python3',options={skillRoot,python,runtimeHome:join(process.env.HOME!,'.local/share/craft-runtimes')};
+ const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-native-upgrade-'))),state=join(root,'state'),ledger=new Ledger(state);const skillRoot=process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-harness'),python=process.env.PHOTOCRAFT_PYTHON??'/opt/anaconda3/bin/python3',options={skillRoot,python,runtimeHome:join(process.env.HOME!,'.local/share/craft-runtimes')};
  try{
   const next=join(root,'candidate');cpSync(skillRoot,next,{recursive:true,filter:path=>!path.split('/').includes('__pycache__')});writeFileSync(join(next,'references/lifecycle-identity.json'),canonical({purpose:'same-binary candidate source identity; not a new runtime version'}));
   const request={idempotencyKey:'baseline',brief:'Keep this editable title through runtime lifecycle',plan:{document:{width:32,height:32,background:'#ffffff'},operations:[{command:'type.create',params:{text:'KEEP',font:'Arial',size:12,x:1,y:16}}],exports:[{format:'png'}]},output:join(root,'baseline'),authorization:{ref:'user',writeRoot:root},budget:{deadline:Date.now()+180000,maxRevisions:0,reserveBytes:0}};
@@ -106,7 +106,7 @@ test('different native binary upgrade preserves saved projects and rollback exec
  skip:process.env.PHOTOCRAFT_NATIVE_TEST!=='1' || !process.env.PHOTOCRAFT_UPGRADE_SKILL_ROOT
 },async()=>{
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-version-upgrade-'))),ledger=new Ledger(join(root,'state'));
- const skillRoot=process.env.PHOTOCRAFT_UPGRADE_BASELINE_SKILL_ROOT??process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-use'),next=safePath(process.env.PHOTOCRAFT_UPGRADE_SKILL_ROOT!),runtimeHome=safePath(process.env.PHOTOCRAFT_UPGRADE_RUNTIME_HOME!);
+ const skillRoot=process.env.PHOTOCRAFT_UPGRADE_BASELINE_SKILL_ROOT??process.env.PHOTOCRAFT_SKILL_ROOT??resolve('skills/photocraft-harness'),next=safePath(process.env.PHOTOCRAFT_UPGRADE_SKILL_ROOT!),runtimeHome=safePath(process.env.PHOTOCRAFT_UPGRADE_RUNTIME_HOME!);
  const options={skillRoot,python:process.env.PHOTOCRAFT_PYTHON??'python3',runtimeHome};
  const oldLock=JSON.parse(readFileSync(join(skillRoot,'scripts/runtime.lock.json'),'utf8')),newLock=JSON.parse(readFileSync(join(next,'scripts/runtime.lock.json'),'utf8'));
  const oldSha=oldLock.artifacts[runtimePlatformKey()].binarySha256,newSha=newLock.artifacts[runtimePlatformKey()].binarySha256;

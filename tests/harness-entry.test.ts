@@ -9,7 +9,7 @@ import { Runner } from '../scripts/harness/runner.ts';
 import { Review } from '../src/evaluation/review.ts';
 import { strictJson } from '../src/protocol/strict_json.ts';
 import { fileDigest } from '../src/protocol/files.ts';
-const skillRoot=resolve('skills/photocraft-use');
+const skillRoot=resolve('skills/photocraft-harness');
 const python=process.env.PHOTOCRAFT_PYTHON??'python3';
 function fixture(){
  const root=realpathSync(mkdtempSync(join(tmpdir(),'photocraft-entry-')));
@@ -161,4 +161,12 @@ test('readonly snapshot refuses a commit racing its copy and preserves the write
   fs.copyFileSync=((source:any,target:any,mode:any)=>{original(source,target,mode);if(!raced && source===join(writer!.root,'tasks.sqlite')){raced=true;committed=writer!.create({...f.request,idempotencyKey:'concurrent',output:join(f.root,'second')});}}) as typeof fs.copyFileSync;syncBuiltinESMExports();
   assert.throws(()=>new Ledger(writer!.root,{readOnly:true}),(error:any)=>{assert.equal(error.code,'ledger_read_conflict');assert.equal(error.outcome,'not_executed');assert.equal(error.category,'state_conflict');assert.equal(error.recoveryAction,'inspect');return true;});assert.equal(raced,true);assert.equal(writer.status(committed.id).request.idempotencyKey,'concurrent');assert.equal(writer.db.prepare('SELECT count(*) AS count FROM tasks').get()!.count,2);
  }finally{fs.copyFileSync=original;syncBuiltinESMExports();writer?.close();f.close();}
+});
+
+test('default bundled harness validates before task state without a skill-root override',()=>{
+ const f=fixture();try{
+  const file=join(f.root,'request.json');writeFileSync(file,JSON.stringify({...f.request,plan:{...f.request.plan,operations:[{command:'layer.select',params:{layer:true}}]}}));
+  const result=spawnSync(process.execPath,['src/cli.ts','create','--state-dir',join(f.root,'state'),'--request',file,'--python',python,'--runtime-home',join(f.root,'runtime')],{encoding:'utf8',timeout:30000});
+  assert.equal(result.status,1,result.stdout+result.stderr);refusal(JSON.parse(result.stdout),'$.plan.operations[0].params.layer');assert.deepEqual(readdirSync(f.root),['request.json']);
+ }finally{f.close();}
 });

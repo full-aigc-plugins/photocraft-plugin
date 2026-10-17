@@ -6,7 +6,7 @@ import {PLAN_IDENTITY,planDigest} from '../src/protocol/plan_identity.ts';
 import {canonical,digest} from '../src/protocol/files.ts';
 test('versioned plan identity matches Python for finite numeric and UTF16 edge cases',()=>{
  const values=[{x:0.000001,small:1e-7,large:1e21,zero:-0,integer:100,float:100.0},[Number.MIN_VALUE,Number.MAX_VALUE,1.0000000000000002,333333333.3333333],{'😀':1,'\ue000':2,zh:'中文\n"\\',control:'\u007f',surrogate:'\ud800'},null,true,{},[],{'nested':[1,{'number':'3ff0000000000000'}]}];
- const script=join(process.env.PHOTOCRAFT_SKILL_ROOT??join(import.meta.dirname,'../skills/photocraft-use'),'scripts/plan_identity.py');
+ const script=join(process.env.PHOTOCRAFT_SKILL_ROOT??join(import.meta.dirname,'../skills/photocraft-harness'),'scripts/plan_identity.py');
  for(const value of values){const result=spawnSync(process.env.PHOTOCRAFT_PYTHON??'python3',['-I','-B',script],{input:JSON.stringify(value),encoding:'utf8'});assert.equal(result.status,0,result.stdout+result.stderr);assert.equal(JSON.parse(result.stdout).sha256,planDigest(value,PLAN_IDENTITY));}
 });
 test('legacy plan identity stays unchanged and unknown/nonfinite algorithms fail',()=>{

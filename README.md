@@ -425,4 +425,6 @@ The main-candidate guide maps named JPEG settings to the actual export command. 
 
 完善[老照片修复技能](skills/photocraft-restore-old-photo/SKILL.md)：独立包含具体CLI/MCP方法与参数、局部修补检查点、可选全局调色和原层核验；复用既有old-photo-conservative流程，不增加场景计数。合成损伤检查与真实照片质量、MCP业务及同画面同步分别记录，冻结基础技能版本不变。
 
-Development candidate: the batch delivery skill includes a native CLI contact sheet workflow with embedded pictures, editable filename captions and pagination. Source: full-aigc-skills/photocraft-skills commit 754cc6ae272b2ec1b7385a1a004cccb9518d56a2. macOS synthetic tests passed; Windows and embedded-editor validation remain pending.
+Development candidate: the batch delivery skill includes a native CLI contact sheet workflow with embedded pictures, editable filename captions and pagination. Source: full-aigc-skills/photocraft-skills commit 754cc6ae272b2ec1b7385a1a004cccb9518d56a2. macOS/Windows native CLI and Codex shared-editor synthetic checks passed; real-photo quality and other hosts remain pending.
+
+当前可选Harness默认执行入口已对齐photocraft-harness/scripts；Node回归103项通过、16项条件跳过，默认入口拒绝无效计划的用例已补齐。

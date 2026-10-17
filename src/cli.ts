@@ -33,7 +33,7 @@ try {
    const state=safePath(options['--state-dir']);if(!existsSync(join(state,'tasks.sqlite')))throw new Error('ledger_missing');
    const proposal=action==='runtime-status'?undefined:readJson(options['--request']);
    ledger=new Ledger(state,{readOnly:action==='runtime-status'});const selected=runtimeBinding(ledger);
-   const manager=new RuntimeManager(ledger,{skillRoot:options['--skill-root']??selected?.active.skillRoot??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']??selected?.active.runtimeHome});
+   const manager=new RuntimeManager(ledger,{skillRoot:options['--skill-root']??selected?.active.skillRoot??join(root,'skills/photocraft-harness'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']??selected?.active.runtimeHome});
    console.log(JSON.stringify(action==='runtime-status'?manager.status():action==='runtime-upgrade'?manager.upgrade(proposal):manager.rollback(proposal)));
   } else {
   if(!options['--state-dir'])throw new Error('state_directory_required');
@@ -42,7 +42,7 @@ try {
   if(action!=='create' && !options['--task'])throw validationError('task_id_required','$.task');
   if(action!=='create' && !existsSync(join(state,'tasks.sqlite')))throw new Error('ledger_missing');
   let selected:any;if(existsSync(join(state,'tasks.sqlite'))){const prior=new Ledger(state,{readOnly:true});try{selected=runtimeBinding(prior);}finally{prior.close();}}
-  const adapterOptions={skillRoot:options['--skill-root']??selected?.active.skillRoot??join(root,'skills/photocraft-use'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']??selected?.active.runtimeHome};
+  const adapterOptions={skillRoot:options['--skill-root']??selected?.active.skillRoot??join(root,'skills/photocraft-harness'),python:options['--python']??'python3',runtimeHome:options['--runtime-home']??selected?.active.runtimeHome};
   let existing:any;
   if(action==='create') {
    try {Ledger.validateRequest(input);}
