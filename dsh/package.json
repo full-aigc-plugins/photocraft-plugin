@@ -1,0 +1,32 @@
+{
+  "name": "@partme-dsh/photocraft",
+  "version": "0.1.0-dev.20261018.1",
+  "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+  "type": "module",
+  "main": "lib/index.js",
+  "icon": "./icon.png",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "lib/index.js",
+    "icon.svg",
+    "icon.png",
+    "README.md"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-plugin",
+    "photocraft",
+    "creative-workflow",
+    "development-release"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
