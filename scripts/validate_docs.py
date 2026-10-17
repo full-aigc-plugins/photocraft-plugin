@@ -15,7 +15,7 @@ contract_module = importlib.util.module_from_spec(contract_spec)
 contract_spec.loader.exec_module(contract_module)
 errors.extend(contract_module.validate_reference(json.loads((ROOT / "docs/contracts-reference.json").read_text())))
 markdown = sorted(ROOT.rglob('*.md'))
-markdown = [p for p in markdown if '.git' not in p.parts]
+markdown = [p for p in markdown if not {'.git', 'node_modules', 'dist', '.local'}.intersection(p.relative_to(ROOT).parts)]
 for path in markdown:
     text = path.read_text(encoding='utf-8')
     relative = str(path.relative_to(ROOT))
@@ -105,7 +105,7 @@ declared = set(re.findall(r'^- `([^`]+)`:', new_caps, flags=re.M))
 if declared != {f.parent.name for f in spec_files}:
     errors.append('proposal capabilities and spec directories differ')
 
-product_dirs = list((ROOT / 'product-docs').iterdir())
+product_dirs = [p for p in (ROOT / 'product-docs').iterdir() if p.is_dir()]
 if len(product_dirs) != 1:
     errors.append('expected one product documentation root')
 else:
@@ -143,7 +143,7 @@ if en_sections!=zh_sections:
     errors.append('README languages differ in section coverage')
 
 for path in ROOT.rglob('*.json'):
-    if '.git' not in path.parts:
+    if not {'.git', 'node_modules', 'dist', '.local'}.intersection(path.relative_to(ROOT).parts):
         try:
             json.loads(path.read_text())
         except (json.JSONDecodeError,UnicodeDecodeError) as exc:

@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "photocraft-editor": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/ABSOLUTE/PLUGIN/ui/dist/adapter.mjs"
+      ],
+      "cwd": "/ABSOLUTE/WORKSPACE",
+      "env": {
+        "CRAFT_WORKSPACE_ROOT": "/ABSOLUTE/WORKSPACE"
+      }
+    }
+  }
+}

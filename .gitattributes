@@ -1,0 +1,2 @@
+# 构建补丁以固定字节摘要校验；Windows检出不得转换为CRLF。
+ui/runtime/patches/*.patch text eol=lf

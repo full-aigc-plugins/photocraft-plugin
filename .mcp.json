@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "photocraft-editor": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/ui/bootstrap.mjs"
+      ],
+      "env": {
+        "CRAFT_PANEL_METADATA_FILE": "${CLAUDE_PLUGIN_ROOT}/.zcode-plugin/panel-meta.json"
+      }
+    }
+  }
+}

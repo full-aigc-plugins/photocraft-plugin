@@ -1,0 +1,38 @@
+{
+  "status": "local-unreleased",
+  "sourcePackage": "full-aigc-skills/photocraft-skills",
+  "skills": [
+    {
+      "name": "photocraft-editor",
+      "sha256": "85ac80da2839a5206d71cf24744afee973332f1b4c63902edc75d0a33180981f"
+    },
+    {
+      "name": "photocraft-restore-old-photo",
+      "sha256": "ff014d103e5d7247212de4b310cc971ff9d36976c245c75f0ffe95fe4eacc83f"
+    },
+    {
+      "name": "photocraft-retouch-portrait",
+      "sha256": "c1e1f097e9a4364ec5a7c8398680df9f1b658c08d305a586ba17122d02b1b51d"
+    },
+    {
+      "name": "photocraft-product-cutout",
+      "sha256": "3d776b70a5436326a54b530daef5db5345d75d0a6c34f9b5dd5d8aab3fd16b33"
+    },
+    {
+      "name": "photocraft-repair-scan",
+      "sha256": "1fe9a63bdc1e504e248f90ea8bd3875adea30ec45ea7f595d36f9db4f262285f"
+    },
+    {
+      "name": "photocraft-social-cover",
+      "sha256": "d74b68ad5f208320a9f374b5a1b705d7fc576787434780c7023df50aed5d97d1"
+    },
+    {
+      "name": "photocraft-batch-image-delivery",
+      "sha256": "e7e673a539df811483b691aaa8dbd390fdf7fc8ac67c04eed754dc983206e6c9"
+    },
+    {
+      "name": "photocraft-scenario-playbooks",
+      "sha256": "b02bf9da0c338cb042f4873ff5df4a141fec76fad54c9215ddfb0ffdd4fbfbd3"
+    }
+  ]
+}

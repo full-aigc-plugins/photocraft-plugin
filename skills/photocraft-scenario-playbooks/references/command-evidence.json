@@ -1,0 +1,495 @@
+{
+  "runtime": "photocraft-cli 0.9.0 Windows x64",
+  "archiveSha256": "e87bbe26f84d3c359765b61d128b9cc59f016a995956fe7909b328a97650fc97",
+  "catalogSha256": "5f678f8596bbb49c1059896b644aaaf2d9ad19b43854706ebee905e217259adc",
+  "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38920971702",
+  "observedCommands": {
+    "filter.noise.median": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.noise.median",
+      "label": "Median…",
+      "menu": [
+        "Filter",
+        "Noise"
+      ],
+      "needsDocument": true,
+      "params": "{\"radius\":1..500=1}",
+      "shortcut": null
+    },
+    "filter.noise.reduceNoise": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.noise.reduceNoise",
+      "label": "Reduce Noise…",
+      "menu": [
+        "Filter",
+        "Noise"
+      ],
+      "needsDocument": true,
+      "params": "{\"strength\":0..10=6,\"preserveDetails\":0..100=60,\"reduceColorNoise\":0..100=45,\"sharpenDetails\":0..100=25,\"removeJpegArtifact\":bool}",
+      "shortcut": null
+    },
+    "filter.sharpen.unsharpMask": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.sharpen.unsharpMask",
+      "label": "Unsharp Mask…",
+      "menu": [
+        "Filter",
+        "Sharpen"
+      ],
+      "needsDocument": true,
+      "params": "{\"amount\":1..500=50,\"radius\":0.1..1000=1,\"threshold\":0..255=0}",
+      "shortcut": null
+    },
+    "image.adjustments.shadowsHighlights": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.adjustments.shadowsHighlights",
+      "label": "Shadows/Highlights…",
+      "menu": [
+        "Image",
+        "Adjustments"
+      ],
+      "needsDocument": true,
+      "params": "{\"shadowAmount\":0..100=35,\"shadowTone\":0..100=50,\"shadowRadius\":0..2500=30,\"highlightAmount\":0..100=0,\"highlightTone\":0..100=50,\"highlightRadius\":0..2500=30,\"color\":-100..100=20,\"midtone\":-100..100=0,\"blackClip\":0..50=0.01,\"whiteClip\":0..50=0.01}",
+      "shortcut": null
+    },
+    "image.canvasSize": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.canvasSize",
+      "label": "Canvas Size…",
+      "menu": [
+        "Image"
+      ],
+      "needsDocument": true,
+      "params": "{\"width\":px,\"height\":px,\"relative\":bool=false,\"anchor\":\"topLeft|top|topRight|left|center|right|bottomLeft|bottom|bottomRight\"=\"center\",\"extensionColor\":\"background|foreground|white|black|transparent|#rrggbb\"=\"background\"}",
+      "shortcut": null
+    },
+    "image.crop": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.crop",
+      "label": "Crop",
+      "menu": [
+        "Image"
+      ],
+      "needsDocument": true,
+      "params": "{\"x\":px,\"y\":px,\"width\":px,\"height\":px,\"angle\":-3600..3600=0,\"deleteCroppedPixels\":bool=true,\"targetWidth\":px,\"targetHeight\":px,\"resolution\":ppi,\"resample\":\"bicubic|bilinear|nearest|lanczos|preserveDetails\"=\"bicubic\"} → {x,y,width,height,documentWidth,documentHeight,resolution} (targetWidth/targetHeight, both or neither: the cropped area is resampled to exactly that size, as Image Size, in the same undo step; resolution: the document's new ppi)",
+      "shortcut": null
+    },
+    "image.imageRotation.flipCanvasHorizontal": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.imageRotation.flipCanvasHorizontal",
+      "label": "Flip Canvas Horizontal",
+      "menu": [
+        "Image",
+        "Image Rotation"
+      ],
+      "needsDocument": true,
+      "params": "{}",
+      "shortcut": null
+    },
+    "image.imageSize": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.imageSize",
+      "label": "Image Size…",
+      "menu": [
+        "Image"
+      ],
+      "needsDocument": true,
+      "params": "{\"width\":px,\"height\":px,\"percent\":%? (both sides; an explicit side wins),\"resolution\":ppi,\"keepPrintSize\":bool=false (with only a resolution: resample the pixels to keep the print size),\"resample\":\"automatic|preserveDetails|bicubicSmoother|bicubicSharper|bicubicAutomatic|bicubic|nearest|bilinear|lanczos|none\"=\"bicubic\"} → {width,height} (the document's size after the command; \"none\" changes the resolution only)",
+      "shortcut": null
+    },
+    "image.rotation.arbitrary": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.rotation.arbitrary",
+      "label": "Arbitrary…",
+      "menu": [
+        "Image",
+        "Image Rotation"
+      ],
+      "needsDocument": true,
+      "params": "{\"angle\":-359.99..359.99=0,\"direction\":\"cw|ccw\"=\"cw\",\"interpolation\":\"bicubic|bilinear|nearest\"=\"bicubic\"}",
+      "shortcut": null
+    },
+    "layer.duplicate": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.duplicate",
+      "label": "Duplicate Layer…",
+      "menu": [
+        "Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"layer\":id?,\"inPlace\":bool=false (artboards: keep the copy on the original instead of beside it),\"name\":str? (one layer: the copy's name),\"document\":index|\"new\"=same document (Photoshop's Destination: \"new\" makes a new document the size of this canvas holding just the copies),\"documentName\":str? (the new document's name)} (no layer: every selected layer)",
+      "shortcut": null
+    },
+    "layer.matting.removeBlackMatte": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.matting.removeBlackMatte",
+      "label": "Remove Black Matte",
+      "menu": [
+        "Layer",
+        "Matting"
+      ],
+      "needsDocument": true,
+      "params": "{}",
+      "shortcut": null
+    },
+    "layer.matting.removeWhiteMatte": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.matting.removeWhiteMatte",
+      "label": "Remove White Matte",
+      "menu": [
+        "Layer",
+        "Matting"
+      ],
+      "needsDocument": true,
+      "params": "{}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.blackWhite": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.blackWhite",
+      "label": "Black & White…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"reds\":-200..300=40,\"yellows\":-200..300=60,\"greens\":-200..300=40,\"cyans\":-200..300=60,\"blues\":-200..300=20,\"magentas\":-200..300=80,\"tint\":bool=false,\"tintColor\":\"#rrggbb\"} + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.colorBalance": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.colorBalance",
+      "label": "Color Balance…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"shadows\":json,\"midtones\":json,\"highlights\":json,\"preserveLuminosity\":bool=true} (each tone [cyan-red, magenta-green, yellow-blue] in -100..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.curves": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.curves",
+      "label": "Curves…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"points\":json,\"red\":json,\"green\":json,\"blue\":json,\"pencil\":bool=false,\"smooth\":0..10=0,\"eyedropper\":json} (curves as [[in,out],…] in 0..255, 2..19 points: points = composite; red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b per channel; pencil = drawn curves (Draw to modify the curve): each curve is 256 output levels in 0..255 (point curves given are drawn in, and turning pencil off fits points to the drawing); smooth = Smooth passes over the drawn curves; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}, RGB and Grayscale (no gray) only, applied over the given curves) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.gradientMap": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.gradientMap",
+      "label": "Gradient Map…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"stops\":json,\"reverse\":bool=false,\"dither\":bool=false} (stops [[location 0..1, \"#rrggbb\"], …], 2..64) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.levels": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.levels",
+      "label": "Levels…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"inBlack\":0..253=0,\"gamma\":0.01..9.99=1,\"inWhite\":2..255=255,\"outBlack\":0..255=0,\"outWhite\":0..255=255,\"red\":json,\"green\":json,\"blue\":json,\"eyedropper\":json} (top level = composite; per channel {\"inBlack\",\"gamma\",\"inWhite\",\"outBlack\",\"outWhite\"} under red/green/blue, gray, cyan/magenta/yellow/black or lightness/a/b; eyedropper = the dialog's Set Black/Neutral Gray/White Point picker {\"point\":\"black|gray|white\",\"at\":[x,y],\"size\":1..101=1} or {\"point\",…,\"color\":[r,g,b] 0..1}: black/white set each channel's input black/white to the sample, gray each channel's gamma so the sample turns neutral at its luma; RGB and Grayscale (no gray) only, applied over the given levels) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.vibrance": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.vibrance",
+      "label": "Vibrance…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"vibrance\":-100..100=0,\"saturation\":-100..100=0} + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "layer.removeBackground": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.removeBackground",
+      "label": "Remove Background",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"layer\":id?,\"sampleAllLayers\":bool=false,\"refine\":bool=true} → {layer,bounds} (adds a layer mask from Select Subject; the Background becomes a normal layer)",
+      "shortcut": null
+    },
+    "paint.cloneStamp": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.cloneStamp",
+      "label": "Clone Stamp",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] (sampled under the first point) | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|multiply|…\"=\"normal\",\"wrap\":bool=false (repeat source and stroke at document edges for Pattern Preview) → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "shortcut": null
+    },
+    "paint.healingBrush": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.healingBrush",
+      "label": "Healing Brush",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"source\":[sx,sy] | \"offset\":[dx,dy],\"aligned\":bool=true,\"sampleLayer\":\"current|currentAndBelow|all\"=\"current\",\"mode\":\"normal|…\"=\"normal\" → {\"damage\",\"offset\",\"aligned\",\"nextSource\"}}",
+      "shortcut": null
+    },
+    "paint.spotHealing": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.spotHealing",
+      "label": "Spot Healing Brush",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"type\":\"contentAware|createTexture|proximityMatch\"=\"contentAware\",\"sampleAllLayers\":bool=false}",
+      "shortcut": null
+    },
+    "select.deselect": {
+      "disabledReason": "no selection",
+      "enabled": false,
+      "id": "select.deselect",
+      "label": "Deselect",
+      "menu": [
+        "Select"
+      ],
+      "needsDocument": false,
+      "params": "{}",
+      "shortcut": "Cmd+D"
+    },
+    "select.rect": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "select.rect",
+      "label": "Rectangular Selection",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"x\":i32,\"y\":i32,\"width\":u32,\"height\":u32,\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"ellipse\":bool=false,\"line\":\"row|column\"?,\"antiAlias\":bool=true,\"feather\":px=0}",
+      "shortcut": null
+    },
+    "select.inverse": {
+      "disabledReason": "no selection",
+      "enabled": false,
+      "id": "select.inverse",
+      "label": "Inverse",
+      "menu": [
+        "Select"
+      ],
+      "needsDocument": false,
+      "params": "{}",
+      "shortcut": "Cmd+Shift+I"
+    },
+    "select.modify.feather": {
+      "disabledReason": "no selection",
+      "enabled": false,
+      "id": "select.modify.feather",
+      "label": "Feather…",
+      "menu": [
+        "Select",
+        "Modify"
+      ],
+      "needsDocument": false,
+      "params": "{\"radius\":0.1..1000=1,\"applyAtCanvasBounds\":bool=false}",
+      "shortcut": null
+    },
+    "layer.newAdjustmentLayer.hueSaturation": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.newAdjustmentLayer.hueSaturation",
+      "label": "Hue/Saturation…",
+      "menu": [
+        "Layer",
+        "New Adjustment Layer"
+      ],
+      "needsDocument": true,
+      "params": "{\"hue\":-180..180=0,\"saturation\":-100..100=0,\"lightness\":-100..100=0,\"colorize\":bool=false,\"reds\":json,\"yellows\":json,\"greens\":json,\"cyans\":json,\"blues\":json,\"magentas\":json} (per range {\"hue\",\"saturation\",\"lightness\",\"range\":[4 hue degrees]}; colorize: hue 0..360, saturation 0..100) + {\"path\":\"work\"|saved path name|{…path}? (the active path: becomes the vector mask; else the selection is the layer mask, or white with no selection)}",
+      "shortcut": null
+    },
+    "filter.blur.gaussianBlur": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "filter.blur.gaussianBlur",
+      "label": "Gaussian Blur…",
+      "menu": [
+        "Filter",
+        "Blur"
+      ],
+      "needsDocument": true,
+      "params": "{\"radius\":0.1..1000=1}",
+      "shortcut": null
+    },
+    "select.lasso": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "select.lasso",
+      "label": "Lasso",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y],…],\"mode\":\"replace|add|subtract|intersect\"=\"replace\",\"antiAlias\":bool=true,\"feather\":px=0}",
+      "shortcut": null
+    },
+    "paint.gradient": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.gradient",
+      "label": "Gradient",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"from\":[x,y],\"to\":[x,y],\"style\":\"linear|radial|angle|reflected|diamond\"=\"linear\",\"colors\":[\"#rrggbb\",…]? (evenly spaced),\"gradient\":preset name?,\"stops\":[[t,\"#rrggbb\"|\"foreground\"|\"background\"],…]?,\"transparency\":[[t,0..100],…]? (default: the current gradient, see gradient.presets.select),\"method\":\"classic|perceptual|linear|smooth\"? (Photoshop's interpolation; omitted: straight stops),\"smoothness\":0..100=100,\"reverse\":bool=false,\"dither\":bool=true,\"opacity\":1..100=100,\"mode\":\"normal|multiply|…\"=\"normal\",\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target}",
+      "shortcut": null
+    },
+    "paint.patch": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.patch",
+      "label": "Patch",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"offset\":[dx,dy] (how far the selection was dragged),\"mode\":\"source|destination\"=\"source\",\"contentAware\":bool=false (fill the selection content-aware from the dragged-to place; a background job),\"structure\":1..7=4 (content-aware: 3..7 copy the middle exactly, 1..2 re-synthesise more of it),\"color\":0..10=0 (content-aware: how far the copy's level adapts to the selection's surroundings),\"sampleAllLayers\":bool=false (content-aware),\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target} → {\"damage\",\"offset\"}",
+      "shortcut": null
+    },
+    "paint.burn": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "paint.burn",
+      "label": "Burn",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"points\":[[x,y,pressure?],…],\"size\":1..5000 px=tool size,\"hardness\":0..100=tool hardness,\"opacity\":1..100=100,\"flow\":1..100=100,\"spacing\":1..1000 (% of size)=Brush Settings spacing,\"layer\":id?=active,\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target,\"range\":\"shadows|midtones|highlights\"=\"midtones\",\"exposure\":1..100=50,\"protectTones\":bool=true}",
+      "shortcut": null
+    },
+    "layer.setProps": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "layer.setProps",
+      "label": "Layer Properties",
+      "menu": [],
+      "needsDocument": true,
+      "params": "{\"layer\":id?,\"name\":str?,\"visible\":bool?,\"opacity\":0..1?,\"fill\":0..1?,\"blend\":\"Multiply|…\"?,\"clipped\":bool?,\"locked\":bool?,\"locks\":{\"transparency\",\"pixels\",\"position\",\"artboard\",\"all\":bool}?,\"channels\":[bool,…]? (Advanced Blending: which colour channels blend, R G B / C M Y K / L a b)}",
+      "shortcut": null
+    },
+    "image.revealAll": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "image.revealAll",
+      "label": "Reveal All",
+      "menu": [
+        "Image"
+      ],
+      "needsDocument": true,
+      "params": "{}",
+      "shortcut": null
+    },
+    "edit.transform.flipHorizontal": {
+      "disabledReason": "no document open",
+      "enabled": false,
+      "id": "edit.transform.flipHorizontal",
+      "label": "Flip Horizontal",
+      "menu": [
+        "Edit",
+        "Transform"
+      ],
+      "needsDocument": true,
+      "params": "{\"target\":\"pixels\"|\"mask\"|\"quickMask\"|{\"channel\":i}=Channels panel target (an unlinked mask, an alpha channel or the Quick Mask turns alone)}",
+      "shortcut": null
+    }
+  },
+  "sceneAcceptance": "CREATIVE_NOT_RUN",
+  "technicalRoundtrip": {
+    "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38926679341",
+    "sourceCommit": "7829f6d3e8882c651a7175e8579d219eca58a938",
+    "input": "deterministic synthetic 256x192 RGB fixture; not damaged-photo quality evidence",
+    "recipes": [
+      "old-photo-conservative",
+      "hairline-scratch",
+      "fold-line-background",
+      "faded-gray-tones",
+      "red-cast-aging",
+      "scan-deskew-border",
+      "jpeg-block-reduction",
+      "print-resolution-tag",
+      "portrait-small-blemish",
+      "portrait-white-balance",
+      "product-neutral-packshot",
+      "web-image-downsample",
+      "duotone-editorial",
+      "window-highlight-local",
+      "portrait-subject-lift",
+      "background-desaturate-focus",
+      "scan-four-side-crop",
+      "selective-accent-color"
+    ],
+    "stepHashes": {
+      "old-photo-conservative": "b91d045b1d86316cc29f66315f20db9051018e797199690537222fbfb25c75de",
+      "hairline-scratch": "b26d512361b57a21a5af6af6c97b22b4ab14098d566614d7e8c3c16e7e624778",
+      "fold-line-background": "59edb54b0052260913012d83efa4f9afcf812919bb28d96c8e73415c606e7657",
+      "faded-gray-tones": "5aedeb9f7fa2d398184837215013bfc75ff1f3a3d666083292d35c3c42bf5e17",
+      "red-cast-aging": "a6754af95e720674d7446b64ae378cd35a5d7c3b077221f24a57740454a345b2",
+      "scan-deskew-border": "55e039e44b5e0c4c4f18b4762bbf732a0524016d94486b9264b243c890e930cf",
+      "jpeg-block-reduction": "5479311e3276d7e0a389c2079c88a611ad0ba7c9a7c2e46c65cf33a4725cbd2b",
+      "print-resolution-tag": "44fd72bd951319a605f6f42f658b8b4cdd82a4d9dce017aa86033ad9d440491e",
+      "portrait-small-blemish": "204245dd1c1ef18594047ca07fd770ecd452d3f10d149acee674dbd705c54e74",
+      "portrait-white-balance": "2ec9c4d298263a2ab72b6b37c61bbdfee716fc8dc210619deae35d6101778701",
+      "product-neutral-packshot": "1e0d6bb965be2fea9e016b223bee0aeba82b14476c0e1cf3fedff6f1583520de",
+      "web-image-downsample": "7f6b677f9f7093f01f4c2af46cdb513527c95acae986ceb3bd66af3b66e35884",
+      "duotone-editorial": "c47f25930e3b0a96fc150e0f1dea8adc9bf468d05c0e9f09602cd9f6b696367e",
+      "window-highlight-local": "3edc805f6c814f088f45ffd6b13223b201bc977afc2edeb44f3028f3cf2d5350",
+      "portrait-subject-lift": "cca0831fc5dc13c8b4ce02535ad4e3cce0490035f8a30654d11e5635432c1da7",
+      "background-desaturate-focus": "51446c896ee2d1e40872897a87c1a2dcca159948aa7ffbf11092305f2dc86dec",
+      "scan-four-side-crop": "6c9afc60e4643f5983567a7e730c2209abefe37c4c84d84a6f85c1766507b6be",
+      "selective-accent-color": "3e02638d4830923da46d059938692597b7470cbd40c6b80bb39722fccb19f55f"
+    },
+    "pixelEffectChecks": [
+      "old-photo-conservative",
+      "faded-gray-tones",
+      "red-cast-aging",
+      "portrait-white-balance",
+      "product-neutral-packshot",
+      "duotone-editorial"
+    ],
+    "localityChecks": [
+      "window-highlight-local",
+      "portrait-subject-lift",
+      "background-desaturate-focus",
+      "selective-accent-color"
+    ],
+    "savedCropRestoration": {
+      "recipe": "scan-four-side-crop",
+      "result": "PASS",
+      "checks": [
+        "saved crop reopened at 240x176",
+        "image.revealAll restored 256x192",
+        "restored export RGB equals baseline at every pixel"
+      ]
+    }
+  }
+}
