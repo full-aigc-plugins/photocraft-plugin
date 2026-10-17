@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "photocraft",
-  "version": "0.1.0-dev.20261017.4",
+  "version": "0.1.0-dev.20261017.5",
   "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
   "author": {
     "name": "Full AIGC Plugins",
@@ -33,7 +33,9 @@
           "Create an editable PhotoCraft project from my assets"
         ],
         "logo": "./assets/official-logo.png",
-        "logoDark": "./assets/official-logo.png"
+        "logoDark": "./assets/official-logo.png",
+        "composerIcon": "./assets/official-logo.png",
+        "composerIconDark": "./assets/official-logo.png"
       }
     },
     "ai.nanoco.nanoclaw": {
