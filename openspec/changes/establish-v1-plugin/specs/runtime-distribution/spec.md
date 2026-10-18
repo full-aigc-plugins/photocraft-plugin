@@ -67,6 +67,15 @@
 - **THEN** 系统 SHALL 在受影响操作前返回 capability_mismatch，保留旧组合及已有产物，不用目录集合包含关系代替 schema 校验
 - **AND** 仅重新核验变化影响的能力；不能从 headless 通过推断 desktop bridge 通过，也不静默升级运行时
 
+#### Scenario: 编辑器只显示一层正常加载提示
+- **WHEN** 编辑器页面加载、MCP 客户端连接或正常打开文件
+- **THEN** 包装层 SHALL 从初始 HTML 起隐藏通知浮层，保留引擎自身加载画面，不叠加第二个加载提示
+
+#### Scenario: 启动或导出错误仍可见
+- **WHEN** 编辑器启动或操作失败
+- **THEN** 包装层 SHALL 显示错误；只有存在可重试导出时才显示导出重试按钮，恢复正常后隐藏错误浮层
+
+
 ### Requirement: PC-DS-001 Owned standalone desktop workflow
 Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
 

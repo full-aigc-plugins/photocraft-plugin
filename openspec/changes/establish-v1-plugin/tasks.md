@@ -153,3 +153,11 @@
 
 - [x] 14.1 [PC-SK-003] 完成 13 份单技能运行资源的限定审计与可达性分析：带扩展名子串＋引号内无扩展模块名两遍法，自 12 个文档化入口闭包，42/42 执行文件可达、无真孤儿；确认不能仅凭文件名删除模块。结果与本迁移证据：`docs/evidence/photocraft-harness-convergence-20261013.json`。
 - [x] 14.2 [PC-SK-003] 收敛重复执行实现（保留单技能独立安装、旧公开入口与防重放）。结果：技能源 v0.1.0-dev.60（本地 commit c267692，未 push）新增内置 photocraft-harness 技能承载唯一执行载荷（12 入口＋42 文件逐字节一致＋5 执行契约 JSON），13 个领域技能删除各自 scripts/ 并按名称路由（HARNESS_DIR）；插件已重 vendor 至该标签并通过 `skill_vendor.py check --offline` 与等价冒烟（cli/commands/route/bootstrap/delivery 入口）。上游全量回归 373 项通过（85 项显式 opt-in 跳过）；插件 unittest 66/68 通过，剩余 2 项失败为 2026-10-12 裁剪并行工作树的 132 条 spec/task 追溯预存错误（HEAD＋裁剪基线复现完全相同，与本迁移无关）。证据：`docs/evidence/photocraft-harness-convergence-20261013.json`。
+
+## 2026-10-19 重复加载提示修复
+
+- [x] LN-1 添加初始 HTML、初始化通知与错误/导出重试回归，确认目标失败。
+- [x] LN-2 隐藏正常加载浮层，修正打包模板并验证生成的内嵌客户端。
+- [x] LN-3 执行受影响回归、包校验与构建验证，记录真实宿主未验收边界。
+
+本轮 LN 验证记录：`docs/verification/2026-10-19-loading-notice.md`。仅表示加载提示源码和本地回归工作已完成；原有整仓门禁失败、真实宿主与安装升级状态以该记录为准，未归档或提升发行状态。

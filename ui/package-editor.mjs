@@ -66,7 +66,7 @@ const client = await build({
   target: "chrome120", write: false, minify: true, legalComments: "inline", metafile: true,
   define: { __CRAFT_SETTINGS__: JSON.stringify({ name: config.name, version: pkg.version }) },
 });
-const notice = `<div id="craft-notice"><span id="craft-status" role="status">正在加载…</span><button id="craft-retry-export" hidden>重新保存导出</button></div>`;
+const notice = `<div id="craft-notice" hidden><span id="craft-status" role="status">正在加载…</span><button id="craft-retry-export" hidden>重新保存导出</button></div>`;
 const style = `<style>
 #craft-notice{position:fixed;top:8px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);display:flex;align-items:center;gap:8px;padding:8px 12px;box-sizing:border-box;border-radius:6px;background:#20242b;color:#e4e8ef;font:12px system-ui;z-index:1000}
 #craft-notice[hidden]{display:none}#craft-notice button{flex-shrink:0;background:#343b46;color:inherit;border:1px solid #555;border-radius:4px;padding:4px 8px;cursor:pointer}#craft-status{overflow-wrap:anywhere}#craft-status[data-error=true]{color:#ffa5a5}
