@@ -26,6 +26,14 @@ license: Apache-2.0
 
 使用[分阶段方法与参数](references/native-restoration.md)及[独立操作计划](references/restoration-plan.json)。先完成局部修补并查看检查点，再进行可选降噪与整体色阶；具体CLI、MCP调用和保存重开方法均在本技能内。它完善已有流程，不新增场景计数。
 
+## 按实际像素生成局部计划
+
+先用当前文档的实际宽高、已确认的损伤笔触和同纹理取样点填写 [输入样例](assets/local-repair-input.json)，再执行 `python3 <本技能目录>/scripts/repair_plan.py --input actual-input.json --output local-plan.json`。坐标单位是像素，不能沿用样例位置。`protected` 是经素材检查后声明的脸部、文字等矩形保护区，不是自动识别结果。
+
+脚本只生成复制工作层和局部修复命令，不调用CLI/MCP、不修改图片、不执行整体调色。它检查笔刷半径、相邻点之间的保守包围盒，以及修复画笔随笔触移动的采样范围；触及保护区或越过画布即拒绝。保守矩形可能误拒绝安全斜线，可在看过图后拆为更短笔触，不能删保护区绕过。未声明的区域不受此检查保护；算法实际影响范围和最终画质仍须看导出图。
+
+读取输出steps后，先在已确认的活动像素层上复制工作层，回读当前层，再按当前工具schema逐条调用command_run；禁止把一组步骤发送后假定全部成功。CLI的run/--cmd格式沿用本技能的具体操作手册。局部阶段另存新工程和PNG，检查损伤与保护区后，才决定是否执行原有整体影调阶段。输出文件已存在时脚本拒绝覆盖。
+
 ## 工具落地
 
 用 doc_open/doc_new 打开或新建，doc_inspect 查看图层；command_list 查询实际命令，command_run 执行；doc_save 保存 .pcraft，doc_export 导出。
