@@ -68,7 +68,8 @@ const text = (zh, en) => chinese() ? zh : en;
 function message(value, error = false) {
   status.textContent = value;
   status.dataset.error = String(error);
-  notice.hidden = loaded && !error;
+  // 引擎已有加载画面；此浮层仅显示错误，避免重复加载提示。
+  notice.hidden = !error;
   retry.hidden = !error || !lastExport;
 }
 function fail(error) {
