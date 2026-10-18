@@ -77,7 +77,12 @@
 
 
 ### Requirement: PC-DS-001 Owned standalone desktop workflow
-Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
+
+The system SHALL preserve the complete owned desktop execution contract in the scenario below, including fixed identities, process ownership, authentication isolation and no replay.
+
+#### Scenario: Complete execution contract
+- **WHEN** the described standalone desktop or bridge workflow is requested
+- **THEN** Each domain skill SHALL offer `desktop.py run PLAN --output NEW_DIRECTORY` that validates the plan before installation, verifies fixed desktop and CLI identities, starts only its own isolated desktop, confirms the loopback listener belongs to that process, executes the existing full-command bridge gateway, and closes only its owned desktop/MCP processes on success or failure. Photo authentication SHALL use a private token file and the same authorized output root in both desktop and CLI. Unknown editing outcomes SHALL not be replayed.
 
 #### Scenario: First use without a running desktop
 - **WHEN** a standalone skill runs a valid plan against empty runtime caches

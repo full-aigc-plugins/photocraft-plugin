@@ -1,11 +1,11 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261018.4",
-  "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/download/v0.1.0-dev.20261017.2/photocraft-runtime.tgz",
-  "sha256": "2264b017a751f7a8a5ef69664e8333d72daac89c59f2d821151d8caa409c1d95",
+  "version": "0.1.0-dev.20261019.1",
+  "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/download/v0.1.0-dev.20261019.1/photocraft-runtime.tgz",
+  "sha256": "6028078fe6bbd31620aa60f6b123396fdf9b3dd0656626cd8ddfc841227293e3",
   "files": {
     "adapter.mjs": "26462c45bbbe99045bd16d47209e44d8e2db088a65919adf95dbeccc2f389d4c",
-    "editor/BUILD.json": "b7b847495af2aaf1b653ab0e091ae45f4b170a37d4d1483eaf80c07e9390f677",
+    "editor/BUILD.json": "5b6ba28a5753148a0f75bdeb0337d1c9ea14a574b156eb25c48fdd6e6cfd9c2b",
     "editor/assets/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.gz": "3a7d79968322274c7c78bc511fadca9444b92f9958e4639e0ffe3b579cfa9715",
     "editor/assets/1484c37b549525ae71c6dc9811c8550b0b784868b4035b89b9a41e218b699959.gz": "f2e741ce95b71eb8ce70d4763247464b1ebb6be164512730a8bc9aca662f3115",
     "editor/assets/19765c0a070567dbac9bef6cf0d6505c6b2f00b3f24e68049f1f5a5dbf0e690e.gz": "18857be446b295988f7809d021cf4c4ec85578e5ad518205f008b625750ddee1",
@@ -29,7 +29,7 @@
     "editor/assets/e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc.gz": "cdb0c66a0b29610883f781288bab51936a0249673f3a08e01c7d390f28f0925d",
     "editor/assets/e86ff08f27be7f2a64ae2d8f89b647fe56ba23014ab4762c8a2cf1e1e3b7e143.gz": "75b65434785f9e176d2537b2fdd47a9ce1e1d030554dbfabab1438fbfcda9312",
     "editor/assets/f0a582a0645a2ec9c979ac2619e9503315483a33f1bb39b56fe5b55632b0ca79.gz": "3e1a9c9bdd474ceb6b400291547cd04e0f1051a4a2bd1d7edeab1cfc3b688f15",
-    "editor/assets.json": "922a75a30fe509e47c4e78ac95cdd500e10c8b475ffce5085f035b4590100d07",
+    "editor/assets.json": "621a287b5e4a5ada5b5721c08f6e61afb218b39ec14c03cf11c800319cd5d398",
     "editor/licenses/ATTRIBUTION.md": "91db84c9ae42400b3af130f9385c7d7e35e7fddb70313e01bbc54bc890de3f15",
     "editor/licenses/FONT-PROVENANCE.json": "19765c0a070567dbac9bef6cf0d6505c6b2f00b3f24e68049f1f5a5dbf0e690e",
     "editor/licenses/JAVASCRIPT-NOTICES.txt": "768f574458916a5b95dec21c680ef1b07034e808d076bc2b5521f398b201dbf4",
@@ -50,12 +50,12 @@
     "editor/licenses/assets/icons/LICENSE-noun-magnetic-lasso.txt": "667185ed8a375d40aff0d19f02ce880e786e355253b7c5adba2be7471b70c36a",
     "editor/licenses/assets/icons/LICENSE-symmetry-axes.txt": "d43c48d168983b4d2a48e3d0d1b3c8f3ff662e8161da2d91d229b587f5e421ec",
     "editor/licenses/docs/brand/LICENSE-brand.txt": "f0a582a0645a2ec9c979ac2619e9503315483a33f1bb39b56fe5b55632b0ca79",
-    "editor/panel.html": "6143db9f571c0ae3f6b57b4fcb8da8e2fd54f554ac9f211592c933a01eb7fcd3",
-    "editor/server.mjs": "5193467a52c8a47175cbb4b14dfb1fd42334afa89dcb0a5ba08e4aa8f0b2836d",
+    "editor/panel.html": "ccb0253b44ee1300f4bdf46648e812846e26085e9b708496192ca5e8ea96b787",
+    "editor/server.mjs": "aa4857942f68ef1220a825d9883ab738196540e5c7a6bd6f77bb9b82b110a076",
     "editor/tools.json": "4ec61374ad973d28b4c8c94a4ad01b2674709fd9dd56d0c80de5899021b9080a",
     "host.js": "313bda22e118fa812e72377f6b1106c3d7c3c8e716080798bb9b0710be291310",
     "host.js.LEGAL.txt": "eda25878a01ef5903efe932a6e7c99e175023a47ce70b7d7f901ab2c07c06562"
   },
-  "scope": "Pinned editor artifact; bundled upstream/build provenance remains in editor/BUILD.json or config.json. This does not certify all upstream main capabilities.",
-  "catalogSha256": "cf78a5b4016aceb0bbc739cfce73777b2bd70c5dd20fa5329b049ba61f27a076"
+  "catalogSha256": "cf78a5b4016aceb0bbc739cfce73777b2bd70c5dd20fa5329b049ba61f27a076",
+  "scope": "Source-built development runtime; public release and production acceptance are separate."
 }
