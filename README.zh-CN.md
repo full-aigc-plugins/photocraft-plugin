@@ -1,6 +1,6 @@
 # PhotoCraft Use
 
-当前本地开发候选：`0.1.0-dev.20261018.3`。补齐官方输入框图标，Codex市场使用完整薄包快照以在安装前读取列表图标；运行资源沿用已核验的dev.20261017.2，不代表上游引擎升级或全部创作验收通过。
+当前开发候选：`0.1.0-dev.20261018.4`。老照片技能新增按实际像素生成局部修复计划，检查笔刷与采样路径是否触及声明保护区；macOS/Windows三种合成方案及实际Codex同画布修补、保存重开已验证。运行资源沿用已核验的dev.20261017.2；真实人物修复质量和其他宿主尚未验收，本版本仍待发布。
 
 ## Installable editor development candidate
 
@@ -101,7 +101,7 @@ PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切�
 
 图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
 
-当前插件：`0.1.0-dev.20261018.3`；技能源：`0.1.0-dev.60`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。
+当前插件：`0.1.0-dev.20261018.4`；技能源：`0.1.0-dev.60`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。
 
 已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
 
@@ -196,7 +196,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.20261018.3 |
+| Metadata version | 0.1.0-dev.20261018.4 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.60 |
 | Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |

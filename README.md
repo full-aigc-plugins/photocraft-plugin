@@ -1,6 +1,6 @@
 # PhotoCraft Use
 
-当前本地开发候选：`0.1.0-dev.20261018.3`。补齐官方输入框图标，Codex市场使用完整薄包快照以在安装前读取列表图标；运行资源沿用已核验的dev.20261017.2，不代表上游引擎升级或全部创作验收通过。
+当前开发候选：`0.1.0-dev.20261018.4`。老照片技能新增按实际像素生成局部修复计划，检查笔刷与采样路径是否触及声明保护区；macOS/Windows三种合成方案及实际Codex同画布修补、保存重开已验证。运行资源沿用已核验的dev.20261017.2；真实人物修复质量和其他宿主尚未验收，本版本仍待发布。
 
 ## Installable editor development candidate
 
@@ -101,7 +101,7 @@ Four-domain RT-001 runtime source/integrity acceptance now covers every current 
 
 Turn images, text and layer-design requirements into `.pcraft`, applicable PSD and flat exports.
 
-Current plugin: `0.1.0-dev.20261018.3`; skill source: `0.1.0-dev.60`; 14 independent skills (13 domain + 1 bundled execution harness).
+Current plugin: `0.1.0-dev.20261018.4`; skill source: `0.1.0-dev.60`; 14 independent skills (13 domain + 1 bundled execution harness).
 
 Verified first-use platform: macOS arm64 and Python 3.11+. Pinned runtimes install into the user data directory; skill files stay in their host-loaded directory. These are development releases; complete V1 acceptance and generic Skills CLI installation remain open.
 
@@ -196,7 +196,7 @@ Intent + assets
 | Property | Value |
 | :--- | :--- |
 | Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.20261018.3 |
+| Metadata version | 0.1.0-dev.20261018.4 |
 | Stage | implementation-in-progress |
 | Skills source | photocraft-skills / 0.1.0-dev.60 |
 | Execution | SQLite task control and pinned maintained CLI; ArtCraft uses child adapters |
