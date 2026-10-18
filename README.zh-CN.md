@@ -13,7 +13,7 @@
 
 > 制作可编辑的 `.pcraft` 海报、封面与合成：图层、蒙版、选区、局部调整、修饰、文字与尺寸变体，并导出 PSD 或平面图时记录损失。
 
-[![版本](https://img.shields.io/badge/release-0.1.0--dev.20261018.5-1A73E8)](.codex-plugin/plugin.json)
+[![版本](https://img.shields.io/badge/release-0.1.0--dev.20261019.1-1A73E8)](.codex-plugin/plugin.json)
 [![技能数](https://img.shields.io/badge/skills-22-00A67E)](#技能)
 [![MCP server](https://img.shields.io/badge/MCP%20server-1-00A67E)](#mcp-工具)
 [![许可证](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
@@ -28,7 +28,15 @@ PhotoCraft Use 让位图设计保持可编辑。产品、背景与文字是有�
 
 ## 状态与版本
 
-`0.1.0-dev.20261018.5` · 开发预览 · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`、`installableDevelopmentCandidate: true`。
+`0.1.0-dev.20261019.1` · 开发预览 · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`、`installableDevelopmentCandidate: true`。
+
+当前插件：`0.1.0-dev.20261019.1`；技能源：`0.1.0-dev.60`；插件与技能保持独立版本。
+
+| Identity | Current value |
+| --- | --- |
+| Metadata version | 0.1.0-dev.20261019.1 |
+| Skills source | photocraft-skills / 0.1.0-dev.60 |
+
 
 ## 安装
 
