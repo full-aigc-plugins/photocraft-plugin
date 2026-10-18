@@ -9,5 +9,11 @@
   "scripts": {
     "test": "node --test tests/*.test.ts",
     "harness": "node src/cli.ts"
-  }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "main": "./dsh/lib/index.js"
 }
