@@ -8,7 +8,7 @@
 
     - id: mcp-photocraft-photocraft-editor
       name: '@deepseek-ai/dsh-mcp-client'
-      disabled: !!js "!process.env.DSH_MCP_PHOTOCRAFT"
+      disabled: !!js "process.env.DSH_MCP_PHOTOCRAFT === '0'"
       config:
         serverName: "photocraft-editor"
         toolCallTimeoutMs: 60000
