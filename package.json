@@ -15,5 +15,6 @@
       "patch": "./cordis.patch.yml"
     }
   },
-  "main": "./dsh/lib/index.js"
+  "main": "./dsh/lib/index.js",
+  "icon": "./dsh/icon.png"
 }
