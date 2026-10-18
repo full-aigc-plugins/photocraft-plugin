@@ -1,428 +1,195 @@
 # PhotoCraft Use
 
-当前开发候选：`0.1.0-dev.20261018.4`。老照片技能新增按实际像素生成局部修复计划，检查笔刷与采样路径是否触及声明保护区；macOS/Windows三种合成方案及实际Codex同画布修补、保存重开已验证。运行资源沿用已核验的dev.20261017.2；真实人物修复质量和其他宿主尚未验收，本版本保持开发预发布状态。
+## 插件市场导航
 
-## Installable editor development candidate
+本插件所属分类：**AIGC 内容创作**。
 
-`0.1.0-dev.20261017.3` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+| 分类 | 插件市场入口 | 用途 |
+| --- | --- | --- |
+| 全栈开发 | [Full Stack Plugins](https://github.com/partme-ai/full-stack-plugins) | 架构与 UI 设计、代码理解、质量检查、代码审查、流程治理与服务器运维 |
+| AIGC 内容创作 | [Full AIGC Plugins](https://github.com/partme-ai/full-aigc-plugins) | 图像、视频、音频、音乐、3D 与多模态内容创作 |
 
+![PhotoCraft Use——图层化图像编辑](assets/official-logo.png)
 
-## Previous development candidate
+> 制作可编辑的 `.pcraft` 海报、封面与合成：图层、蒙版、选区、局部调整、修饰、文字与尺寸变体，并导出 PSD 或平面图时记录损失。
 
-`0.1.0-dev.20261017.1` is distributed through the Full AIGC plugin marketplace as a development prerelease. Node.js 24 is required. Git installations use `ui/bootstrap.mjs` to download and verify the pinned editor archive on first start; complete release ZIPs also include that archive unpacked for offline startup. No Rust build or npm installation is required. Startup diagnostics use stderr; stdio remains MCP-only. The editor shares its session with Agent commands. Full creative quality and all-host embedded UI acceptance are still incomplete. Existing dated validation below describes its original version.
+[![版本](https://img.shields.io/badge/release-0.1.0--dev.20261018.5-1A73E8)](.codex-plugin/plugin.json)
+[![技能数](https://img.shields.io/badge/skills-22-00A67E)](#技能)
+[![MCP server](https://img.shields.io/badge/MCP%20server-1-00A67E)](#mcp-工具)
+[![许可证](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
+[English](README.md) | [简体中文](README.zh-CN.md) · [安装](#安装) · [快速开始](#快速开始) · [可完成的工作](#可完成的工作) · [技能](#技能) · [故障排查](#故障排查)
 
-dev.77已发布／技能源仍为dev.59：755条命令注册及启用谓词绑定维护版源码；公开固定安装在Codex发现14项技能，68项Python、102项离线TypeScript及4项CI通过。Claude manifest校验仅为静态证据；模型路由与1510个命令上下文仍NOT_RUN，19项任务及完整V1保持开放。[证据](docs/evidence/optimization/command-acceptance/source-context-publication.json)。
+## 项目定位
 
-现已增加指向14个打包技能的Claude专用命令及SessionStart提示钩子，提醒宿主复用原生实例。可移植包仍以根`plugin.json`和`skills/`为准；实际宿主路由仍开放。[组件边界](docs/PhotoCraft-Plugin-Components.zh_CN.md)。
-dev.75／源dev.59已发布：全部13技能提供连续任务会话。实际隔离安装通过一个原生进程完成五阶段公开JSONL操作，保全旧工程并仅关闭自有进程。源405项通过（9项既有跳过），固定Harness118项（16原生）、插件Python48项、会话单测20项及13技能独立预检通过。桌面候选仅启动一次，执行代码与发行一致；固定桌面未重复运行。发行4项CI成功。完整V1及19项任务仍开放。[证据](docs/evidence/optimization/task-session/publication.json)。[用法](docs/PhotoCraft-Task-Session.zh_CN.md)。
+PhotoCraft Use 让位图设计保持可编辑。产品、背景与文字是有稳定 ID 和蒙版引用的独立图层；局部修饰会对照“不得改动”的像素检查；尺寸变体从源工程派生，而不是覆盖源工程。
 
-dev.74／源dev.58已发布：技能源未变，复用384项通过及9项桌面／能力跳过的源回归证据；118项安装Harness（16原生）及48项插件Python通过。13个实际安装技能在安装前拒绝247个无效MCP生命周期输入；数值stdio／TCP和初始化前ping模式单进程保存／重开。5个Harness动作拒绝25个代理项及5个坏字节输入；真实原生保存后外层坏UTF-8回复保持unknown、工程保全且不重放。安装字节与公开ZIP一致且不变，发行4项CI成功。本轮零GUI启动，完整9.6及V1仍开放，138/157完成。[证据](docs/evidence/optimization/numeric-wire-lifecycle/publication.json)。[合同](docs/PhotoCraft-Numeric-Wire-Lifecycle.zh_CN.md)。
+原生 `.pcraft` 工程是交付事实源。压平的 PNG，或悄悄丢掉必要特性的 PSD，都不算设计交付。PSD 支持按必要特性把关：一旦观察到缺特性、降级或未知，除非你明确接受已记录的损失，否则会阻止成功。
 
-dev.73／源dev.58公开macOS固定安装通过，但两项Linux实施CI失败；dev.74修正测试解释器与退出观察断言。[保留失败记录](docs/evidence/optimization/ci-portability/previous-dev73.json)。
+## 状态与版本
 
-dev.72／源dev.57已发布：374项源回归通过，9项未改动桌面／能力用例跳过。实际安装13技能的429个无效初始化及65个非法Unicode输入均在安装前拒绝，3项原生编码边界及110项Harness通过；健康流单进程完成创建／保存／重开／检查。安装字节与公开ZIP一致且不变，发行4项CI通过。本轮零GUI启动，完整9.6与V1仍开放，138/157完成。[证据](docs/evidence/optimization/wire-boundary/publication.json)。[合同](docs/PhotoCraft-Wire-Boundary.zh_CN.md)。
+`0.1.0-dev.20261018.5` · 开发预览 · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`、`installableDevelopmentCandidate: true`。
 
-dev.71／源dev.56已发布：366项源回归通过，9项未改动桌面／能力验收跳过；110项固定Harness及48项插件Python测试通过。13个实际安装独立技能的208个无效启动在安装／进程前拒绝；MCP／serve连续创建／保存／检查每个输入流只启动一个原生进程。公开载荷与安装字节一致且不变，发行4项CI通过；本增量零GUI启动。完整9.6与V1仍开放，138/157完成。[证据](docs/evidence/optimization/stream-launch/publication.json)。[合同](docs/PhotoCraft-Stream-Launch-Preflight.zh_CN.md)。
+## 安装
 
-dev.70／源dev.55已发布：371项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例、MCP／计划聚合21例、签名桌面聚合12例及发行4项CI通过。完整公开输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/desktop-aggregate/publication.json)。[合同](docs/PhotoCraft-Desktop-Aggregate-Supervision.zh_CN.md)。
+### 前置条件
 
-dev.68／源dev.53已发布：355项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，serve聚合20例及发行4项CI通过。MCP／命令计划聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-aggregate/publication.json)。[合同](docs/PhotoCraft-Serve-Aggregate-Supervision.zh_CN.md)。
+- macOS arm64，且公开脚本需要 `PATH` 上有 Python 3.11 或更新版本。
+- 内嵌编辑器 MCP 服务需要 Node.js 24.15 或更新版本（harness 包限定 `<25`）。Git 检出没有 `ui/dist/`，需先按 `ui/README.md` 构建，或安装自带该目录的发布包。
+- 固定的维护版 PhotoCraft CLI 在首次获得授权时安装到用户数据目录（`--runtime-home` 或 `CRAFT_RUNTIME_HOME` 可迁移）。不需要 `sudo`，不修改 `PATH`。
+- 首次使用需要网络或已核验缓存。离线使用需要锁定归档或完好的已核验缓存。
 
-dev.67／源dev.52已发布：345项源回归、110项固定Harness（15项原生）、15例argv、6例MCP、7例serve stdio、7例TCP故障及TCP交付丢失竞态通过；健康共享会话、自有进程退出和真实30秒空闲超时已验证。隔离Codex发现14技能，安装字节不变，发行4项CI通过。聚合内部及完整输入矩阵使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/serve-tcp/publication.json)。[合同](docs/PhotoCraft-Serve-TCP-Supervision.zh_CN.md)。
+### 安装插件
 
-早期serve stdio候选（已整合入dev.67）：333项源码回归零跳过通过，七类真实原生保存后故障停止后续编辑并保全工程。固定安装、TCP及聚合内部仍开放，9.6不勾选。[候选证据](docs/evidence/optimization/serve-stream/candidate.json)。[合同](docs/PhotoCraft-Serve-Stream-Supervision.zh_CN.md)。
-
-dev.66／源dev.51已发布：326项源测试、110项固定安装Harness（15项原生）、15例公开argv故障、6例真实MCP保存后故障、健康MCP预览及四项发行CI通过。隔离Codex发现14技能，安装字节不变。serve／TCP及聚合内部逐项确认使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/mcp-stream/publication.json)。[合同](docs/PhotoCraft-MCP-Stream-Supervision.zh_CN.md)。
-
-dev.65／源dev.50已发布：314项源测试、110项固定安装Harness（15项原生）、15例真实原生公开CLI保存后故障及四项发行CI通过。隔离Codex发现14技能，安装字节不变。流式与嵌套聚合使9.6继续开放，仍138/157完成、19开放。[证据](docs/evidence/optimization/public-cli-supervision/publication.json)。[合同](docs/PhotoCraft-Public-CLI-Supervision.zh_CN.md)。
-
-dev.64已发布：实际公开安装110项Harness（15项原生）、签名桌面已保存／未保存两项版本拒绝复验通过，安装树不变。旧计划面对已保存新工程，在预检／意图前返回结构化revision_conflict；不可观察版本要求检查。共享可变写入及3.3／10.6仍开放，现138/157完成、19开放。[发行证据](docs/evidence/optimization/project-ownership/publication.json)。[合同](docs/PhotoCraft-Project-Ownership.zh_CN.md)。
-
-dev.63／源dev.49／craft.5已发布：固定公开macOS arm64安装通过全部6个PC-RT-002场景，真实craft.1 → craft.5 → craft.1、108项Harness（15项原生）、双后端14例、外链拒绝及下载边界均有证据。源回归为全量305项通过＋唯一HTTP404失败项同源码复验通过，保留失败记录。2.6完成，现138/157完成、19开放；完整V1仍未验收。[验收](docs/evidence/optimization/runtime-version/acceptance-audit.json)。
-
-dev.62已发布：固定公开安装107项Harness（14项原生）通过，安装树不变。单账本显式运行时组合切换／回退、排空、备份与认领隔离已实施，2.4／2.5完成，当时137/157完成、20开放。原生切换仍为相同craft.1二进制；不同版本及完整PC-RT-002任务2.6当时保持开放。[发行证据](docs/evidence/optimization/runtime-transition/publication.json)。[生命周期](docs/PhotoCraft-Runtime-Transition.zh_CN.md)。
-
-dev.61／源dev.48已发布：固定公开macOS arm64安装通过全部9个PC-TX-002规范场景，包括真实六窗口、监督丢失无回执拒绝、独立只读查询及损坏状态保全。3.6／10.9完成；当时135/157完成、22开放。创作／模型及完整V1仍未验收。[验收](docs/evidence/optimization/task-recovery/acceptance-audit.json)。
-
-dev.54补充独立进程监督、绑定身份的重启停止回执及迟到文件观察。公开固定macOS arm64安装通过全部PC-TX-003场景，3.9／10.12完成；当时133/157完成、24开放。[证据合同](docs/PhotoCraft-Cancellation-Observation.zh_CN.md)。
-
-dev.52／源dev.44已发布：实际固定macOS arm64原生副本及不可变ArtCraft109消费者通过全部PC-AR-001规范场景，17项逐文件替换拒绝、旧dev.50只读兼容。5.3／11.9完成，当时131/157完成、26开放；创作接受及来源真实性未证明。[验收](docs/evidence/optimization/artifact-lineage/acceptance-audit.json)。
-
-dev.52目标技能源dev.44：PSD门禁保留在公共schema允许的观察字段。源候选已通过实际固定ArtCraft109消费及17项逐文件替换拒绝；固定发行证明待完成。[合同](docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md)。
-
-dev.51将保留的原生.pcraft映射至固定消费者已有二进制类型合同；既有x-photocraft包保持只读检查并明确消费者尚不支持。固定消费验收待完成。[合同](docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md)。
-
-dev.50拒绝畸形或空旧交付清单；真实原生创建、修订与移动包血缘验证单独记录，不代替创作接受。固定安装待验收。[合同](docs/PhotoCraft-Artifact-Lineage-Acceptance.zh_CN.md)。
-
-dev.49／源dev.43已发布：公开ZIP摘要与标签提交一致，发布提交／标签4项CI通过。隔离Codex发现14技能；实际安装副本70项Harness、14例只读原生故障及52例独立入口整数拒绝通过，安装树字节不变。公开运行时仍为craft.1，不启用或验收craft.5监督。[证据](docs/evidence/optimization/integer-overflow/publication.json)。
-
-dev.49锁定技能源dev.43：全部13个独立公开入口在安装前拒绝超大整数JSON，并保留准确字段路径。[合同](docs/PhotoCraft-Integer-Overflow-Contract.zh_CN.md)。任务9.6及完整V1仍开放。
-
-技能源dev.43打包内部craft.5 droplet监督及质量绑定模块；40项定向原生／单元测试及58项Rust测试通过。插件dev.49包含这些模块，公开运行时仍使用craft.1。[候选范围](docs/PhotoCraft-Supervised-Droplet-Candidate.zh_CN.md)。
-
-dev.48／源dev.42已发布：公开ZIP摘要及标签提交核验通过，发布提交／标签4项CI通过。隔离Codex发现14项技能，固定副本70项Harness及14例只读原生故障通过，安装树不变。公开运行时仍为craft.1，本记录不启用或验收监督候选craft.4。[发行证据](docs/evidence/optimization/supervised-convert/publication.json)。
-
-dev.48锁定技能源dev.42，打包内部run／batch／convert监督候选及只读能力门禁。公开cli.py及craft.1锁保持不变。[候选范围](docs/PhotoCraft-Supervised-Convert-Candidate.zh_CN.md)。候选固定安装、任务9.6与完整首版仍开放。
-
-dev.47 固定技能源dev.41，加入只读重开内层语义校验，并接入Harness检查点记录／文件／运行时绑定。候选技能源240项测试通过，14例真实只读故障保持原文件且停止后续调用；固定副本70项Harness及14例真实只读故障通过，安装树不变；[固定验收](docs/PhotoCraft-Readonly-Reply-Acceptance.zh_CN.md)。任务9.6的raw逐命令、流式编辑及完整入口矩阵仍开放。[源码合同](https://github.com/full-aigc-skills/photocraft-skills/blob/v0.1.0-dev.41/docs/PhotoCraft-Readonly-Reply-Contract.zh_CN.md)。
-
-dev.46 固定技能源dev.40，补齐 Harness 创建／修订预检、严格回执绑定与只读账本快照。候选本地49项 TypeScript（含3项真实原生）和48项 Python 测试通过；公开固定副本49项Harness测试通过，安装树不变；发布提交及标签4项CI通过。[发行证据](docs/evidence/optimization/harness-entry-publication.json)。任务9.6、流式入口、逐命令回执及完整V1仍开放。[范围与证据](docs/PhotoCraft-Harness-Entry-Contract.zh_CN.md)。
-
-dev.45 固定技能源dev.40，加入原生argv安装前预检，并保全Harness失败预检的任务、事件和持久计划状态。任务9.6、流式回复、创建／修订及完整首版验收仍开放。[范围与验证](docs/PhotoCraft-Native-Argv-Preflight.zh_CN.md)。
-
-dev.44 固定技能源dev.39，修复预检字段位置／非法别名类型及未验证保存回执。候选和公开固定安装分别通过52项预检与48项原生／桌面场景；CLI透传预检缺口与Harness入口审计仍使任务9.6保持未完成。[入口验收](docs/PhotoCraft-Entry-Contract-Acceptance.zh_CN.md)。
-
-dev.43 增加完整当前发行组合摘要及来源冲突拒绝，技能源仍固定dev.38。公开dev.43固定安装通过18项身份拒绝案例及13项技能独立冷启动与代表任务；任务9.3／9.9完成，真实模型派发仍开放。[身份门禁](docs/PhotoCraft-Release-Combination.zh_CN.md)。
-
-dev.42 固定技能源dev.38，能力快照绑定版本／平台和双后端身份，按本次操作依赖核验合同并保留发现摘要。公开dev.42安装通过双后端14例与安装副本全部28项插件测试，任务10.3完成；完整升级回退仍开放。[能力验收](docs/PhotoCraft-Capability-Acceptance.zh_CN.md)。
-
-dev.41 增加实际平面导出的颜色／ICC／整幅透明门禁与已有供应方回执保全，返工继承导出要求。dev.41 固定安装、原生重开与安装副本全部28项插件测试通过。[合同与证据边界](docs/PhotoCraft-Flat-Export-Acceptance.zh_CN.md)。
-
-已发布 [技能源 dev.36](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.36) 与 [插件 dev.40](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.40)：公开压缩包摘要与提交一致，main／标签两条 CI 均通过。固定 Codex 发现14个技能；独立单技能冷启动 PSD 验收及28项安装副本测试通过。任务4.15、5.6、12.12完成，未知保真边界保持明确。[发布证据](docs/evidence/optimization/psd-release-publication.json) · [场景审计](docs/evidence/optimization/psd-acceptance-audit.json)。
-
-PSD 必要特性交付现会拒绝未接受的实际损失及必要未知项；返工继承策略，接受记录绑定源版本。[门禁与验证](docs/PhotoCraft-PSD-Policy-Architecture.zh_CN.md)。公开 dev.40 固定安装通过当前原生／PSD 交换的全部7个规范场景。
-
-开发版本 dev.47 包含 SQLite 任务控制、绑定评审与受限修订；插件固定快照锁定独立技能源 dev.41。实现范围与剩余门禁见 [候选架构](docs/PhotoCraft-Harness-Candidate.zh_CN.md)。
-
-开发预发布 [技能源 dev.35](https://github.com/full-aigc-skills/photocraft-skills/releases/tag/v0.1.0-dev.35) 与 [插件 dev.39](https://github.com/full-aigc-plugins/photocraft-plugin/releases/tag/v0.1.0-dev.39) 已发布。插件两条 CI 通过；隔离 Codex 无错误发现14个技能，13个来源技能分别通过空运行时冷启动，安装副本通过原生标题／局部调整修订及交付包搬迁检查。见[版本绑定发布证据](docs/evidence/optimization/release-publication.json)。计划当前为129/157项完成，28项门禁开放。
-
-
-固定安装领域验收新增关闭7项任务：递归图层、蒙版保护、中文文字及复杂布局／滤镜的16个规范场景通过。不可获取的布局指标、可编辑智能滤镜和非 RGB8 保护明确拒绝；PSD 必要功能损失等门禁仍开放。见[验收与复验方式](docs/PhotoCraft-Fixed-Domain-Acceptance.zh_CN.md)。
-## 2026-10-08 优化规划
-
-Dreamina 对比分析已纳入现有 OpenSpec。本开发实现包含严格入口与批次校验、持久任务预算、可移动血缘包、保存后的蒙版事实和原生文字布局检查。[任务进展](docs/evidence/optimization/task-progress.json) 记录已验证完成项与全部剩余门禁；[候选回归](docs/evidence/optimization/candidate-validation.json) 绑定实际测试源码。完整 V1、真实宿主／模型及独立创作接受仍开放；固定安装证据单独记录。
-
-[范围与兼容设计](openspec/changes/establish-v1-plugin/design.md#optimization-ownership-and-compatibility) · [规范与任务](openspec/changes/establish-v1-plugin/tasks.md#optimization-task-policy--2026-10-08)
-
-PC-DM-004尺寸变体完整合同已通过固定安装首用：留白、裁切、重采样、可编辑原生／PSD图层、安全区／尺寸拒绝、源工程及失败暂存保全。[验收架构](docs/PhotoCraft-Complete-Variant-Contract-Architecture.zh_CN.md)。完整首版继续开放。
-
-四领域RT-001运行时来源与完整性已完成当前全部场景验收，固定技能字节保持不变；运行时升级与完整首版仍开放。[验收架构](docs/Craft-Fixed-Runtime-Integrity-Architecture.zh_CN.md)。
-
-图像、文字与图层设计需求进入，交付 `.pcraft`，适用时附 PSD 与平面导出。
-
-当前插件：`0.1.0-dev.20261018.4`；技能源：`0.1.0-dev.60`；14 个独立技能（13 领域技能 + 1 内置执行 harness）。
-
-已验证首次使用平台：macOS arm64、Python 3.11+。固定运行时安装在用户数据目录，技能文件保留在宿主加载目录。当前为开发版本；完整首版验收及通用 Skills CLI 实际安装仍未完成。
-
-维护者来源校验拒绝符号链接、不完整锁及版本同名分支，并在替换任一管理技能前检查全部声明来源；已发布技能／运行时身份保持。[快照预检架构](docs/Skill-Snapshot-Self-Contained.zh_CN.md)。
-
-## 首次使用
-
-在宿主中调用 **`photocraft-use`**。直接使用 CLI 时，将 `SKILL_DIR` 设为宿主实际加载的 `SKILL.md` 所在绝对目录；可能位于用户／项目 `.agents/skills`、插件内部或宿主缓存，以实际路径为准。以下入口在调用前安装并核验固定运行时。
-
-<!-- CRAFT_FIRST_USE_START -->
 ```bash
-: "${SKILL_DIR:?Set to the actual loaded skill directory}"
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- --version
-python3 -I -B "$SKILL_DIR/scripts/cli.py" -- commands --json
+codex plugin marketplace add full-aigc-plugins/photocraft-plugin
+codex plugin add photocraft@full-aigc-plugins-photocraft
 ```
-<!-- CRAFT_FIRST_USE_END -->
 
-实际制作、所需输入、原生工程和局部修改参见[可编辑工作流](skills/photocraft-use/references/workflow.md)。[安装与技能入口](skills/photocraft-use/SKILL.md) · [版本绑定历史](RELEASE-HISTORY.zh-CN.md)。版本与命令查询验证安装和发现，不代表创作完成。
+`docs/verification/release-candidate.json` 记录 `installableDevelopmentCandidate: true` 与 `releaseStatus: BLOCKED`；`project-status.json` 保持 `marketplaceEligible: false`。
 
-[首次使用入口证据](docs/evidence/craft-readme-first-use-navigation-20261007.json)。
+仓库带有 Codex（`.codex-plugin/`）、Claude Code（`.claude-plugin/`）、ZCode（`.zcode-plugin/`）与 Kimi（`kimi.plugin.json`）清单；在宿主验收出现之前，`supportedPluginHosts` 保持为空。
 
-固定安装路径验收：独立技能及 Art 混合工作流在含中文和空格的路径下，通过原生创建与重开、定点返工及导出；Art 另验证移动交付包。技能与运行时身份保持不变。该结果仅覆盖 macOS arm64 的本次首次使用场景。 [路径验收证据](docs/evidence/craft-fixed-unicode-path-first-use-20261007.json).
+## 快速开始
 
-固定发行前的历史源码候选：结构损坏的 runtime／Node 锁在写运行时目录或下载前返回本地恢复诊断。五项候选原生首次使用通过；发布插件快照保持不变，新不可变发行安装需另行验收。 [锁诊断候选](docs/PhotoCraft-Lock-Shape-Architecture.zh_CN.md).
-
----
-
-固定原生首次安装与完整命令恢复验收通过：新版五插件58技能逐项独立冷安装，十个Art技能分别安装四领域；四个原生下载半包SSL EOF恢复、72个原生保存后故障、四个健康命令返工及混合HD返工／恢复／移动包通过，全部安装摘要保全。仅关闭领域2.10／8.11与Art4.10；2639条命令逐项、GUI、模型、通用Skills CLI及完整V1仍开放。 [版本及证据](docs/evidence/codex-native-download-first-use-20261007.json).
-
-历史发行记录：当前插件：`0.1.0-dev.21`；技能源：`0.1.0-dev.19`；包含调整层／蒙版计划，固定安装待验收，完整 V1 仍开放。
-
-固定发布前的候选记录：原生下载恢复候选：最多三次只读重试并丢弃半包；此前固定版本冷安装遇到SSL EOF失败，修复后的固定安装验收仍开放。
-
-历史插件版本记录 `0.1.0-dev.18`／技能源 `0.1.0-dev.16` 固定完整命令内层JSON修复；实际安装首用复验进行中。
-
-当前固定失败暂存验收：插件 dev.17、独立技能源 dev.15。全部58项独立CLI冷启动、24个原暂存原生故障案例及37原生场景＋6合同检查通过；Art77领域包升级仍开放。[证据](docs/evidence/codex-failed-stage-first-use-20261007.json)。
-
-固定领域客户端首用复验：Film 插件 dev.16／技能源 dev.15，Effect／Photo／Vector 插件 dev.15／技能源 dev.14。隔离 Codex 发现58项零错误；实际安装副本24类保存后故障、四个健康公开工作流和已发布 Art 引擎＋安装后 Vector 客户端六类故障通过，全部58项安装摘要保全。Art dev.75 内置旧领域分发包尚需升级，全量命令／GUI／模型验收仍开放。[版本绑定证据](docs/evidence/codex-public-workflow-session-first-use-20261007.json)。
-先前固定版本协议故障首用复验通过：48个独立技能源共288例，实际安装副本24例及四领域健康返工通过；58项安装摘要保持一致。验收范围与固定标签见 [协议故障验收记录](docs/evidence/codex-protocol-fault-first-use-20261007.json)。全量逐命令／GUI验收以及Art领域包升级仍开放。
-
-协议故障修复候选：本领域12项技能逐个单独复制、空运行时公开安装后，原生保存成功再注入六种坏回复全部通过（72例，零跳过）。不重放、未知回执、工程重开与交付／技能保全均已检查。[证据](docs/evidence/protocol-fault-first-use-20261007.json)。固定安装副本与Art领域包升级仍为独立门禁。
-
-固定插件 0.1.0-dev.13／技能源 0.1.0-dev.12 已通过安装后的返工门禁：隔离 Codex 发现全部58项技能零加载错误，本领域安装技能从空运行时直接执行文档创建／返工计划、保存重开与非目标保全。全部58项安装摘要不变，当前固定发行CI通过。[固定返工证据](docs/evidence/codex-complete-command-revision-first-use-20261007.json)。全量命令／GUI／模型验收保持开放。
-
-本领域 12 个技能逐个单独复制、从各自空运行时公开安装后，配套返工计划全部通过（62.759 秒，零跳过）。[返工证据](docs/evidence/complete-command-revision-first-use-20261007.json)。更新快照的真实固定宿主安装另设门禁。
-
-完整命令入口补充了配套的创建／返工 JSON 示例、重新打开后的显式选择前置条件，以及原生保存重开、非目标对象与像素检查。每个独立技能均包含两个可执行计划。[调用指南](skills/photocraft-use/references/command-usage.md#7-可执行局部返工--executable-targeted-revision)。全量逐命令及 GUI 验收保持开放。
-
-先前固定发行首用通过：隔离 Codex 0.153.4 发现全部 58 项技能零加载错误；每项安装技能独立空运行时公开安装（385.234 秒）；安装后的领域新命令入口及 Art 1080p 混合返工／恢复／移动包检查通过。全部安装摘要保全，固定 CI 与五包重建通过。[版本绑定证据](docs/evidence/codex-complete-command-first-use-20261007.json)。通用 Skills CLI、全命令／GUI 与完整创作验收仍开放。
-
-## 完整原生命令入口
-
-全部 12 项独立技能分别从空运行时使用公开锁定 CLI 附件安装，随后完成创建、保存重开、领域参数及渲染检查（74.187 秒，零跳过）。[逐技能冷首用证据](docs/evidence/complete-commands-cold-first-use-20261007.json)。本轮覆盖每项技能的完整命令代表样例；全命令／GUI 和实际宿主安装另行验收。
-
-已发布开发快照：skills dev.11 / plugin dev.12；固定宿主首用代表门禁通过。
-
-748 条命令现在均有逐项参数说明、技能归属与同会话调用入口。运行 `commands.py list / describe / check / run`；原生状态按实时 enabled 校验。旧工作流的 32 项交付合同保留。GUI 命令需显式 bridge，命令目录覆盖不代表全量验收。
-
-[架构与操作指南](docs/PhotoCraft-Complete-Commands-Architecture.zh_CN.md) · [逐项参考](skills/photocraft-use/references/command-reference.md) · [可运行示例](skills/photocraft-use/examples/commands-advanced.json)
-
-独立技能驱动的保留图层的图像编辑与平面设计.
-
-[English](README.md) | [简体中文](README.zh-CN.md)
-
-## 当前版本与可复现宿主验证
-
-此前完成宿主验证的插件/技能源版本：`0.1.0-dev.3`。Codex 0.147.0 与 0.153.4 均安装五个固定公开发布，发现全部 58 项启用的命名空间技能，加载错误为零，来源摘要一致。五项代表流程已通过 0.147.0 安装后的场景技能入口验证，包括原生工程、局部修订和 ArtCraft 在线混合流程。模型自动派发、桌面 GUI、创作最终评审和完整交换保真尚未验证。
-
-[宿主验证设计](docs/PhotoCraft-Host-Verification-Architecture.zh_CN.md) · [绑定版本的证据](docs/evidence/codex-skill-suite.json)。历史里程碑保留原证据范围；当前版本身份以 manifest 和锁文件为准。
-
-> 开发版已通过固定标签的 Codex 安装、技能发现和原生代表工作流；完整产品与创作验收仍未完成。
-
-独立技能包已进入实施，单技能隔离安装已在 macOS arm64 实测；完整创作流程与插件宿主验收仍未完成。[证据](docs/evidence/bootstrap-tests.json)
-
-独立技能已实测原生分层编辑、蒙版、局部改字和尺寸变体；合成样例通过 PSD 图层语义与像素往返检查。[工作流证据](docs/evidence/photo-workflow-tests.json)
-
-## 定位
-
-用产品图制作海报与封面；重开 .pcraft 后文字、产品、背景仍可独立编辑；适用时输出经验证的 PSD。
-
-面向需要原生可编辑工程、反复修改和可靠自动化的创作者。
-
-## 一眼了解
-
-```text
-Intent + assets
-  -> independent Skills (pinned development release)
-  -> public skill workflow / ArtCraft adapter
-  -> verified runtime / child adapter
-  -> native project + preview + export + evidence
+```bash
+: "${HARNESS_DIR:?请设为已加载 photocraft-harness 的 SKILL.md 所在目录}"
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
 ```
-| Property | Value |
-| :--- | :--- |
-| Plugin ID | photocraft |
-| Metadata version | 0.1.0-dev.20261018.4 |
-| Stage | implementation-in-progress |
-| Skills source | photocraft-skills / 0.1.0-dev.60 |
-| Execution | SQLite 任务控制与固定维护版 CLI；ArtCraft 使用子适配器 |
-| Host compatibility | Codex development install/discovery pass; GUI and other hosts pending |
-| License | Apache-2.0 (original repository content) |
 
+然后直接说明你要的成品，例如“把这个商品抠到干净的白底上，并保持工程可编辑”。默认走 headless；桌面桥接需要单独的连接与能力验证。
 
-## 能力与边界
+```mermaid
+flowchart LR
+    A[商品图、文案、品牌] --> B[photocraft-use 规划图层]
+    B --> C[固定运行时与原生 .pcraft]
+    C --> D[蒙版、选区、局部调整]
+    D --> E[重开并核对图层]
+    E --> F[PSD 或平面导出与损失记录]
+```
 
-| 能力 | 行为边界 | 状态 |
-| :--- | :--- | :--- |
-| 分层文档与编辑身份 | 明确文字、产品和背景图层，保留名称、ID、顺序、混合模式与可见性；禁止为通过验收而整体扁平化。 | 待完整验收 |
-| 蒙版与局部调整 | 将蒙版绑定至目标图层并记录作用区域；局部调整前后检查保护区域，确保未授权区域保持不变。 | 待完整验收 |
-| 文字排版与字体依赖 | 保存文本内容、字体、尺寸、行距和布局；缺少字体时阻止需要精确排版的交付或显式接受替代。 | 待完整验收 |
-| 海报封面尺寸变体 | 从源工程创建独立画幅变体，记录裁切、留白和安全区；尺寸变化不覆盖源工程。 | 待完整验收 |
-| 原生与 PSD 保真 | 将 .pcraft 作为原生事实源；PSD 交付逐项验证所用图层功能并记录兼容损失；不宣称所有 PSD 无损兼容。 | 待完整验收 |
-| 平面导出与来源 | 输出绑定源文档版本、ICC 或颜色空间与透明要求；外部生成素材保留来源回执，生成服务与图层编辑分开计量。 | 固定 RGB8 合同已验收；真实生成／计费未验收 |
+## 可完成的工作
 
-不重写上游编辑引擎，不暗中改变原生交付格式，不宣称 GUI 或跨平台验收完成。
+| 工作流 | 内置路径 | 可验证输出 |
+|:---|:---|:---|
+| 海报或社交封面 | `photocraft-use`、`photocraft-social-cover` | 文字、商品与背景仍可编辑的重开 `.pcraft` |
+| 商品抠图 | `photocraft-product-cutout` | 透明或白底输出，以及可编辑工程 |
+| 老照片修复 | `photocraft-restore-old-photo` | 已检查人物特征与损伤区域的修复工程 |
+| 扫描件清理 | `photocraft-repair-scan` | 已校正倾斜、去尘并记录纸张底色的扫描件 |
+| 人像精修 | `photocraft-retouch-portrait` | 自然观感，且非目标区域已核对 |
+| 批量交付变体 | `photocraft-batch-image-delivery` | 同尺寸同格式的输出，以及带文件名的联系表 |
+| PSD 交换 | `photocraft-cli-export` | 必要特性通过校验的 PSD，并记录损失 |
+| 在内嵌编辑器中修改 | `photocraft-editor` MCP 工具 | 保存后重开并检查的 `.pcraft` |
 
-## 架构与文档
+## 技能
 
-- [完整运行时架构](docs/PhotoCraft-Runtime-Architecture.zh_CN.md)
-- [技术方案与路线](product-docs/PhotoCraft/5%E3%80%81PhotoCraft-%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88%E4%B8%8E%E8%B7%AF%E7%BA%BF.md)
-- [V1 PRD 与需求映射](product-docs/PhotoCraft/V1/5%E3%80%81PhotoCraft-PRD%E6%96%87%E6%A1%A3-V1.md)
-- [完整文档导航](docs/README.zh-CN.md)
-- [OpenSpec proposal](openspec/changes/establish-v1-plugin/proposal.md)
-- [OpenSpec tasks](openspec/changes/establish-v1-plugin/tasks.md)
+| 技能 | 作用 |
+|:---|:---|
+| `photocraft-use` | 默认入口：可编辑 `.pcraft` 海报、封面与合成；安装维护版 CLI |
+| `photocraft-cli` | 查询原生命令、参数与能力；执行明确指定的公共命令 |
+| `photocraft-cli-setup` | 首次安装、摘要校验、版本检查与缺失运行时排障 |
+| `photocraft-cli-project` | 创建、打开、保存与复制 `.pcraft`；色彩模式与位深 |
+| `photocraft-cli-layers` | 商品、背景、文字与图层组；层级与混合 |
+| `photocraft-cli-selection` | 选区、反选、羽化与局部选择 |
+| `photocraft-cli-masks` | 图层蒙版、矢量蒙版与剪贴合成 |
+| `photocraft-cli-adjustments` | 调整图层与已授权的局部颜色调整 |
+| `photocraft-cli-retouch` | 对已授权图像做修复、克隆、画笔与局部修饰 |
+| `photocraft-cli-text` | 文字图层、字体、段落与布局 |
+| `photocraft-cli-resize` | 图像与画布尺寸、裁边、扩展、旋转与封面变体 |
+| `photocraft-cli-filters` | 局部滤镜、背景虚化、颗粒与输出锐化 |
+| `photocraft-cli-export` | 从原生工程导出 PSD、PNG 或其他交换文件 |
+| `photocraft-harness` | 唯一执行通道：bootstrap、commands、workflow、任务会话 |
+| `photocraft-editor` | 打开真实编辑界面，一次会话内完成全部编辑 |
+| `photocraft-product-cutout` | 电商抠图：透明底、白底与边缘清理 |
+| `photocraft-repair-scan` | 扫描件清理：歪斜、污点与纸张底色 |
+| `photocraft-restore-old-photo` | 划痕、折痕、褪色与局部缺损 |
+| `photocraft-retouch-portrait` | 自然人像的皮肤、瑕疵、肤色与光影 |
+| `photocraft-social-cover` | 封面构图、标题与按平台裁切 |
+| `photocraft-batch-image-delivery` | 统一尺寸、色彩与格式，或生成带文件名的联系表 |
+| `photocraft-scenario-playbooks` | 覆盖 6 个图像场景的带真实参数手册 |
 
-- [专业领域技术设计](docs/PhotoCraft-Domain-Design.zh_CN.md)
+## 斜杠命令
 
-## 当前可执行的快速开始
+Claude Code 清单（`com.anthropic.claude-code/`）提供 22 个命令，每个技能一个，并附带 `SessionStart` 指引钩子。命令只转交对应技能，不会自行启动任何原生实例。
+
+| 命令 | 作用 |
+|:---|:---|
+| `/photocraft-use` | 完整任务入口与最短技能链 |
+| `/photocraft-editor` | 内嵌编辑器会话 |
+| `/photocraft-harness` | 受管理执行通道与任务控制 |
+| `/photocraft-scenario-playbooks` | 按当前问题选择场景手册 |
+| `/photocraft-cli`、`/photocraft-cli-{project,layers,selection,masks,adjustments,retouch,text,resize,filters,export,setup}` | 命令级技能族，每个技能一个命令 |
+| `/photocraft-{restore-old-photo,retouch-portrait,product-cutout,repair-scan,social-cover,batch-image-delivery}` | 场景入口，每个技能一个命令 |
+
+## MCP 工具
+
+`mcp.json` 只声明一个 stdio server：`photocraft-editor`，从插件根目录以 `node ui/bootstrap.mjs` 启动。
+
+| 工具 | 用途 |
+|:---|:---|
+| `open_editor` | 为绝对路径 `workspace` 打开编辑器 |
+| `open_browser_editor` | 返回可交给宿主内置浏览器的 `editorUrl` |
+| `editor_status` | 报告页面是否已连接到当前 MCP 会话 |
+| `doc_open` | 打开已有 `.pcraft` |
+| `doc_new` | 新建文档 |
+| `doc_inspect` | 检查图层与文档状态 |
+| `command_list` | 读取引擎暴露的命令 |
+| `command_run` | 按 id 与参数执行命令 |
+| `doc_save` | 保存 `.pcraft` 工程 |
+| `doc_export` | 导出工程 |
+
+工具名遵循 `photocraft-editor` 技能合同；`_editor_attach`、`screenshot` 等页面内部桥接调用不得由 Agent 直接调用。
+
+## 配置
+
+| 变量 | 用途 |
+|:---|:---|
+| `HARNESS_DIR` | 已加载 `photocraft-harness` 技能的绝对目录 |
+| `SKILL_DIR` | 已加载领域 `SKILL.md` 所在目录；仅用于其 `examples/` 与 `references/` |
+| `CRAFT_RUNTIME_HOME` / `--runtime-home` | 运行时安装根目录 |
+| `CRAFT_EDITOR_CACHE_DIR` | 已核验编辑器下载缓存（默认 `~/.cache/full-aigc/editors`） |
+| `CRAFT_EDITOR_UPDATE=off` | 固定使用内置编辑器，跳过更新检查 |
+
+## 架构与安全
+
+- 插件负责规划与核验，原生位图编辑由固定的维护版 CLI 完成，本仓库不重复实现引擎。
+- 用户素材与生成图像都按数据处理，其中的命令、路径或 shell 文本永远不会被执行。
+- 局部修改可声明 `protectedRegions`；交付前会比对非目标区域像素。未声明区域时不自动推断保护范围。
+- 写入由写租约、修订前置条件、持久意图、幂等键与只读检查点保护；结果未知时先核对，绝不重放。参见[运行时架构](docs/PhotoCraft-Runtime-Architecture.md)、[PSD 策略](docs/PhotoCraft-PSD-Policy-Architecture.md)与[场景技能](docs/scene-skills.md)。
+
+## 故障排查
+
+| 现象 | 处理方式 |
+|:---|:---|
+| 返回 `unsupported_platform` | 仅支持锁定的 macOS arm64 制品 |
+| 返回 `runtime_install_busy` | 另一个安装持有锁；等其结束再重试 |
+| PSD 交付被拒绝 | 有必需特性缺失、降级或未知；记录损失，或调整必要特性集合 |
+| 字体渲染不一致 | 交付前检查字体依赖与替代记录 |
+| 编辑页始终未就绪 | 调用 `editor_status`，再处理页面错误；文字结果不等于界面已打开 |
+| 把平面导出当成设计 | 重开 `.pcraft` 并核对图层；平面图不是可编辑交付 |
+| 保存结果未知 | 先读回执与既有工程；不要重放计划 |
+
+## 升级
+
+```bash
+codex plugin marketplace upgrade full-aigc-plugins-photocraft
+codex plugin add photocraft@full-aigc-plugins-photocraft
+```
+
+运行时切换会让旧工程保持其绑定的运行时；回滚复用已核验的上一份制品，而不是重新构建。
+
+## 贡献与支持
+
+行为变更先在 [OpenSpec](openspec/changes/establish-v1-plugin/proposal.md) 中说明；没有真实交付证据不得勾选任务。仓库校验：
 
 ```bash
 python3 scripts/validate_docs.py
-openspec validate establish-v1-plugin --strict --no-interactive
-```
-以上校验文档和规范，不运行产品工作流。OpenSpec 校验使用 1.13.1；本仓不自动安装工具。
-
-已安装固定维护版 CLI 后可执行基础检查：
-
-```bash
-photocraft-cli --version
+node --test tests/*.test.ts
 ```
 
-本次记录结果为 0.2.0。独立技能的 bootstrap 与 workflow 是当前开发版入口；插件安装与技能发现已有证据；完整宿主验收仍待完成。
+问题反馈：<https://github.com/full-aigc-plugins/photocraft-plugin/issues>。
 
-## 配置与运行时
+## 许可证
 
-目标配置包含 CLI 路径、允许读写根目录、运行模式、预算、超时与输出目录；配置 schema 尚待实现。技能锁文件固定已发布的独立技能源提交与内容摘要。当前活动运行时锁与固定技能一致；维护版与上游来源分别记录，历史证据保持原版本及范围。
-
-## 可靠性与安全
-
-本地候选实现了写入租约、版本前置条件、持久化意图、幂等键、不明确结果核对、只读原生检查点和受限修订；完整并发故障矩阵与固定发行验收仍开放。密钥只通过宿主秘密引用传递；素材元数据不作为执行指令。
-
-## 验证与成熟度
-
-[脱敏 CLI 证据](docs/evidence/runtime-baseline.json)
-
-| 层面 | 状态 |
-| :--- | :--- |
-| 上游 CLI 与只读 MCP | 已观察，仅 macOS arm64 |
-| 独立技能与适配器 | 任务控制候选通过；完整 Harness 验收待完成 |
-| 原生工程与创作验收 | 原生技术用例通过；创作质量待验收 |
-| 目标宿主安装 | Codex 受控安装与发现通过；完整宿主验收待完成 |
-
-
-## 路线与贡献
-
-| 阶段 | 交付 | 进入下一阶段条件 |
-| :--- | :--- | :--- |
-| D0 | 双语文档与 OpenSpec 基线 | 文档、链接、规范校验通过；实现任务仍未完成 |
-| M1 | 独立技能与运行时适配 | 清洁环境安装、摘要检查、真实 MCP 调用 |
-| M2 | 专业领域完整闭环 | 代表任务、工程重开、输出解码、局部修改 |
-| M3 | ArtCraft 跨插件协作 | 版本传播、局部失效、断线恢复与幂等 |
-| M4 | 宿主与发布验收 | 宿主实装与多平台证据；市场清单一致 |
-
-先更新 OpenSpec 再实现行为；每项任务通过实际验收后才能勾选。中英文文档同时维护。参考 CONTRIBUTING.md 与 AGENTS.md。
-
-## 许可与上游
-
-原创内容遵循 [Apache-2.0](LICENSE)。这是第三方集成规划，不代表上游背书。四款应用的代码许可与 ArtCraft/Services 的受限许可分别处理；不复制上游 ArtCraft/Services 代码或品牌资产。
-
-[Upstream PhotoCraft](https://github.com/storytold/photocraft) · [Issues](https://github.com/full-aigc-plugins/photocraft-plugin/issues)
-
-独立技能现已绑定当前已发布开发标签 `v0.1.0-dev.4`，`skills.lock.json` 固定来源提交与整个技能摘要。使用 `python3 scripts/vendor/skill_vendor.py check` 核对。技能源快照发布不代表宿主验收或生产完成。
-
-## 开发版独立技能安装与使用
-
-安装独立技能：`npx skills add full-aigc-skills/photocraft-skills --skill photocraft-use`。安装技能后，从其真实目录运行公开入口；插件快照也包含相同技能。
-
-```bash
-python3 -I -B skills/photocraft-use/scripts/bootstrap.py
-python3 -I -B skills/photocraft-use/scripts/workflow.py --help
-```
-
-首次入口会安装锁定维护版 CLI 到用户数据目录；要求 macOS arm64 与 Python 3.11+。使用技能内示例计划并提供真实素材；交付与修订合同见技能的 SKILL.md。[来源与校验证据](docs/evidence/skill-publication.json)。
-
-## Codex 开发版宿主验证
-
-五个插件已在隔离 Codex 配置中从公开标签安装，app-server 发现带命名空间的技能且无加载错误；安装缓存中的 ArtCraft 入口已交付四种原生工程。[宿主证据](docs/evidence/codex-installation.json)。此为受控开发验收，不代表桌面 GUI、其他宿主、完整创作或正式市场发布通过。
-
-开发版本 `0.1.0-dev.1` 同步独立技能的安装锁等待修复；并行安装和复用按有界互斥协调，原生任务不自动重放。
-
-当前开发里程碑为原生交付增加摘要绑定的交换损失报告，区分 lost、observed、unknown；派生导出不替代原生工程。跨编辑器字体、效果和蒙版保真尚未验证，完整交换验收任务保持未完成。
-
-## CLI 与场景技能体系
-
-技能源包含 12 项可独立安装的技能，分为安装、CLI 公共操作与场景任务。[架构与清单](docs/PhotoCraft-Skill-Suite-Architecture.zh_CN.md)。运行时与插件版本分别维护；旧宿主证据保持原版本范围。
-
-历史插件版本记录版本：`0.1.0-dev.5`；技能源版本：`0.1.0-dev.4`。命令示例以宿主实际加载的 `SKILL.md` 所在目录调用脚本。全部技能在用户、项目与插件三种含空格布局中通过隔离入口检查。[路径证据](docs/evidence/installed-skill-paths.json)。此前宿主验证仍对应其记录版本，既有安装需更新。
-
-插件 `0.1.0-dev.5` 从固定公开标签重新取快照并修正整个技能摘要，未带入本地 Python 缓存。插件标签 `v0.1.0-dev.4` 的摘要误包含被忽略的开发缓存，已被替代，不可安装该标签。
-
-历史插件版本记录 `0.1.0-dev.6` 固定技能源 `0.1.0-dev.5`。九类独立场景技能通过冷安装及真实原生编辑，验证局部调整蒙版、修图数值范围和保护区域；完整回归 36 项、零跳过。[证据](docs/evidence/task-skill-first-use.json)。完整创作、GUI 与模型派发验收仍未完成。
-
-当前固定发布的宿主核验（2026-10-06）：Codex 0.153.4 安装五个当前固定插件，加载全部 58 技能并逐项核对内容身份。本插件代表性原生工作流从实际安装路径调用，在新的原生运行时中完成创建、重开和修订检查；五工作流调用后，全部 58 个技能摘要保持不变。[证据](docs/evidence/codex-current-release-20261006.json)。显式标签生成器由 ArtCraft 统一持有。模型派发等待授权，GUI、创作与完整宿主验收仍未完成；本次 QA 维护不改变已发布技能/运行时内容或标签。
-
-当前固定发布矩阵（FilmCraft dev.6、EffectCraft dev.7、PhotoCraft dev.6、VectorCraft dev.6、ArtCraft dev.17）在隔离 Codex 安装后通过 58 技能发现及原生代表工作流；执行后所有技能摘要保持不变。[宿主安装内容的原生验证](docs/evidence/codex-release17-native-20261006.json)。此证据不代表模型调度、GUI 或完整创作验收。
-
-固定插件 dev.6／技能 dev.5 的实际安装单文字技能中文海报冷启动与标题修订通过（1 项，5.927 秒）。源文件和保护区域不变，PSD 保留文字且解码像素与 PNG 一致；未知图层和缺失字体被拒绝。人工接受仍为 NOT_RUN。[架构](docs/PhotoCraft-Chinese-Text-Architecture.zh_CN.md)、[证据](docs/evidence/chinese-text-first-use.json)。
-
-候选插件 dev.7 同步固定技能 dev.6，新增源工程局部修改像素保护。原生 CLI 保持 0.2.0。源仓全量原生测试 44 项通过、0 跳过；实际宿主安装复验尚待完成。[架构](docs/PhotoCraft-Protected-Region-Architecture.zh_CN.md)、[证据](docs/evidence/protected-regions-first-use.json)。
-
-固定 PhotoCraft 插件 dev.7／技能 dev.6 与 ArtCraft 插件 dev.30／技能 dev.26 的实际安装原生保护／交接复验通过；五插件全部 58 个技能摘要不变。只完成对应保护任务，整体实现和创作接受仍未完成。[证据](docs/evidence/codex-release30-protected-native-20261006.json)。
-
-候选插件 dev.8 固定 PhotoCraft 技能源 dev.7，接通有界修图工作流。源码 45 项原生回归通过；实际安装后的插件复验仍待完成。[证据](docs/evidence/retouch-workflow-first-use.json)。
-
-固定 PhotoCraft 插件 dev.8／技能源 dev.7 与 ArtCraft 插件 dev.31／技能源 dev.27 通过安装后的原生修图和交接测试（13.260 秒／23.264 秒）。58 个安装后技能摘要全部保持不变。仅完成有界修图任务；完整目标仍未完成。[证据](docs/evidence/codex-release31-retouch-native-20261006.json)。
-
-尺寸变体 / Layout variants: [English architecture](docs/PhotoCraft-Layout-Variant-Architecture.md) · [中文架构](docs/PhotoCraft-Layout-Variant-Architecture.zh_CN.md) · [cold native evidence](docs/evidence/layout-variant-first-use.json). Plugin development version 0.1.0-dev.9 pins independent skills v0.1.0-dev.8; native runtime remains 0.2.0. Installed-plugin cold repetition passed; [version-bound evidence](docs/evidence/codex-photo9-layout-first-use-20261006.json). Full creative acceptance remains open.
-
-固定已安装插件 dev.9／技能源 dev.8 的补充首次使用验收验证分层蒙版海报、改字与封面，并用 Pillow 独立核对三份不透明 PSD 合成图与 PNG 全部 RGB 像素；这与原生图层检查分开，不代表 Photoshop 实际编辑验收。[验收记录](docs/PhotoCraft-Independent-PSD-Acceptance.zh_CN.md)。
-
-纯图片工作流字体前置条件：[架构](docs/PhotoCraft-Font-Preconditions-Architecture.zh_CN.md)。技能源 dev.9 候选通过公开冷启动原生创建／修订与独立 PNG／PSD 检查；固定插件实际安装复验仍待完成。
-
-固定插件 dev.10／技能源 dev.9 通过实际 Codex 0.153.4 安装及单技能纯图片冷启动原生验收（5.601 秒）；58 个已发现安装技能摘要全部不变。升级后的 ArtCraft 固定混合验收单独执行。[证据](docs/evidence/codex-photo10-fontless-first-use-20261006.json)。
-
-固定已安装矩阵 Film9／Effect8／Photo10／Vector11／Art61 通过登记 PNG／JPEG 的 Vector→Photo 替换复用（1 项）、四领域原生首用／恢复／打包（3 项），以及更新的 Photo／Art 全部 22 技能独立空缓存 CLI 检查（190.051 秒）；58 个安装技能摘要保持不变。SVG 混合输入、动态透明序列与完整创作验收仍开放。[证据](docs/evidence/codex-release61-vector-photo-first-use-20261006.json)。
-
-当前固定发行领域场景矩阵：FilmCraft dev.10、EffectCraft dev.9、PhotoCraft dev.10、VectorCraft dev.11 共 37 个原生场景及 6 项合同检查通过，零跳过。每个场景仅复制对应安装技能，从空运行时目录使用默认公开附件安装原生 CLI；核验原生工程、实际像素／音频及局部修改保持，全部 58 项安装身份保持一致。[版本绑定证据](docs/evidence/codex-current-domain-task-matrix-20261006.json)。完整首版、通用 Skills CLI 安装、模型派发、GUI 与创作验收仍开放。
-
-历史插件版本记录 `0.1.0-dev.11` 固定独立技能源 `0.1.0-dev.10` 与维护版 CLI `0.2.0-craft.1`，支持登记的可编辑智能对象内容。单技能公开源冷首用通过；实际固定插件安装及 Art 混合验收待执行。[证据](docs/evidence/smart-public-source-first-use-20261006.json)。
-
-固定 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1 已通过安装副本单技能智能对象放置／替换／重新链接收集与移动修订（4.633 秒）、PSD 独立解码及纯图片回归两项、十二项独立冷启动（51.647 秒）、全部 58 安装摘要、公开附件及四项标签 CI。默认维护版安装与旧官方 0.2.0 并存，旧二进制不变。[版本证据](docs/evidence/codex-photocraft11-smart-first-use-20261006.json)。Art 混合升级已按下述版本验收；完整首版仍开放。
-
-2026-10-06 固定智能对象混合验收：Art 插件 dev.70／技能源 dev.47／运行时 dev.68 与 Photo 插件 dev.11／技能源 dev.10／维护版 CLI 0.2.0-craft.1，通过安装后原生测试一项（64.957 秒）、十项 Art 独立冷启动、58 安装摘要保全、五固定包重建及四项对应提交 CI。Logo 替换保留海报智能对象变换、蒙版及非目标图层；受影响 Logo／海报／片头／影片更新，独立任务复用，成片十二帧独立解码、坏帧恢复及五子工程移动验包通过。[证据](docs/evidence/codex-artcraft70-smart-mixed-first-use-20261006.json)。完整首版、通用 Skills CLI、GUI／模型调度、持久外部链接及外部 PSD 保真仍开放。
-
-公开工作流回复检查已同步领域技能源候选，并通过有界原生／Art 协议验证。新的固定领域和 Art 分发包仍待发行与实际安装验收。[候选架构](docs/PhotoCraft-Complete-Commands-Architecture.zh_CN.md) · [证据](docs/evidence/public-workflow-session-candidate-20261007.json)。
-
-失败暂存候选：公开工作流保留原生暂存原路径、依赖摘要、最后提交请求与已完成回执，禁止重放；固定发行与安装副本验收仍开放。[架构](docs/PhotoCraft-Failed-Stage-Architecture.zh_CN.md)。
-
-固定领域失败暂存首用门禁已通过：Film插件18／源16，其他领域插件17／源15；五插件58技能发现零错误，全部58项独立空运行时CLI冷启动通过（417.646秒），实际安装副本24个真实保存后故障直接重开产品保留的原工程及依赖，四个健康创作／返工通过。全部安装摘要和16项固定插件CI保持通过；源仓未提供CI运行，仅有本地回归。只关闭领域OpenSpec3.12；Art77内置旧领域源，4.9升级和完整V1仍开放。 [Evidence](docs/evidence/codex-failed-stage-first-use-20261007.json).
-
-固定安装场景矩阵通过37个原生场景及6个合同检查，零跳过。Photo测试已从安装后的技能锁读取维护版原生版本，CLI与安装技能未修改。 [Evidence](docs/evidence/codex-failed-stage-first-use-20261007.json).
-
-
-完整命令内层JSON修复候选：非有限值、溢出和重复键在绑定返回值前记录unknown，真实保存后九类故障与原工程重开通过。这是候选技能源证据，固定发布与实际安装复验尚未完成；逐命令／GUI门禁仍开放。
-
-## 桌面安装组件（候选源码）
-
-每个领域技能自带固定桌面安装、自动启动与完整命令工作流入口。使用当前技能实际目录运行 desktop.py run PLAN --output NEW_DIRECTORY；保留原生工程、命令与生命周期回执。源码48项冷启动已有证据，本次固定版本的实际安装复验仍待完成。见 [桌面使用架构](docs/Craft-Desktop-First-Use-Architecture.zh_CN.md)。
-
-命令计划 JSON 源候选：重复键在安装和创建输出前被拒绝，全部 13 个领域技能的独立副本拒绝测试与有效计划校验通过，3 项专项测试通过。固定插件发布和安装后复验仍为 NOT_RUN。[证据](docs/evidence/command-plan-json-candidate-20261007.json)。
-
-严格计划解析的固定安装复验通过：64 个 CLI 探测、54 个独立安装领域技能的 324 次重复键拒绝、54 次有效计划结构检查，以及四领域空缓存原生保存／重开／渲染实例通过；执行后全部 64 个安装技能摘要不变。仅关闭本次修复的发布门禁；通用 Skills CLI、Art 领域包升级、全部命令上下文和完整首版仍开放。[证据](docs/evidence/command-plan-json-fixed-first-use-20261007.json)。
-
-场景安装示例已使用实际加载的技能自身目录。源路径／布局检查通过；固定安装运行时验收另行记录。 [Architecture / 架构](docs/Scenario-Own-Path-Architecture.zh_CN.md).
-
-新场景自身目录已通过固定安装复验；64项宿主身份匹配。完整V1仍开放。 [Evidence / 证据](docs/evidence/craft-scenario-paths-fixed-first-use-20261008.json).
-
-固定 PhotoCraft 插件 dev.35／技能源 dev.33 通过 64 项安装身份与发现，以及 13 项独立 Photo 公开空缓存原生保存／重开／局部返工／错误保护及 CLI 命令参数查询。其余 51 项冷安装记录仅复用摘要一致的历史运行。完整首版仍开放。[固定持久选区证据](docs/evidence/photocraft-saved-selection-fixed-first-use-20261008.json)。
-
-固定独立安装边界验收：全部 64 个当前技能的自身安装器／CLI 共 128 个不可用归档失败案例通过；错误保留本技能 setup 路径，无重试／原生启动，源副本摘要不变。四领域 SK-002 按当前精确锁验收；Art SK-002 和通用 Skills CLI 实际安装仍开放。历史 CLI 红灯为本轮重建，不冒充旧运行。[证据](docs/evidence/craft-fixed-setup-boundary-20261008.json)。
-
-公共协议来源已固定到 ArtCraft v0.1.0-dev.109：[引用与校验说明](docs/Craft-Protocol-Authority.zh_CN.md)。这项检查核对协议来源，完整运行时协议验收仍未完成。
-
-此前已验证的固定协议引用发行矩阵（Film／Effect dev.37、Photo dev.36、Vector dev.34、Art dev.107）已通过隔离 Codex 安装／发现 64 项技能、16 项实际安装所有者文件摘要核对，以及五个全新领域缓存下的 64 项独立公开 CLI 探测。原生场景证据仅对字节一致的技能复用，完整首版仍开放。[固定发行证据](docs/evidence/craft-protocol-authority-fixed-first-use-20261008.json)。
-
-本次插件固定协议引用升级至 ArtCraft dev.109；技能快照保持原固定来源，新的实际宿主安装矩阵正在验证。完整首版与运行时协议验收仍开放。
-
-固定发行 Film38／Effect38／Photo37／Vector35／Art109 已通过实际隔离 Codex 安装和发现 64 项技能、16 项安装副本协议文件摘要核对、五个全新领域缓存下的 64 项 CLI 探测。十项 ArtCraft 技能分别从空缓存完成原生 Photo 蒙版调整、源工程返工与迁移打包；另外 54 项技能仅复用整个技能摘要一致的历史原生证据。默认维护验收矩阵已更新；通用 Skills CLI 安装、模型调度、GUI 和完整 V1／协议验收仍开放。[本次固定证据](docs/evidence/craft-archive-prefix-fixed-first-use-20261008.json)。
-
-[完整交付校验](docs/PhotoCraft-Delivery-Integrity-Architecture.zh_CN.md)：13个独立技能均提供只读入口；固定原生海报移动／返工及同名替换拒绝通过，完整V1仍开放。
-
-检查点恢复候选：已实现摘要绑定的保存工程副本及显式Harness恢复修订；完整恢复验收保持开放。[合同](docs/PhotoCraft-Checkpoint-Recovery.zh_CN.md)。
-
-## 场景技能开发候选
-
-已增加 6 个领域场景技能及 1 个内嵌编辑器入口。详见 [场景目录](docs/scene-skills.md)。本地未发布候选，不代表全部场景的创作质量已验收。
-
-## 内嵌编辑器候选
-
-新增 MCP Apps 与宿主浏览器接入，详见 [配置与构建](docs/editor-integration.md)。`ui/dist/` 为本地生成物；首次分发须带齐生成物。
-
-插件展示使用上游官方图标；名称为 **PhotoCraft Use**。图标来源与许可证保存在 `assets/official-icon-source.json` 和相邻 LICENSE 文件中。
-
-源码增强候选采用 `ui/source.lock.json` 与 `ui/build-source.py`；兼容更新查询本插件自有 GitHub Releases，失败回退内置，原版 Web 不替换增强自动化运行时。当前会话保留；宿主安装验收另行记录。
-
-## 场景操作手册
-
-新增 `photocraft-scenario-playbooks`，包含 50 条具有实际命令、参数和结果检查的原创场景，覆盖修复、影调、人像、商品、版式和交付。入口见 [场景技能](skills/photocraft-scenario-playbooks/SKILL.md)。命令存在性已依据官方 Windows CLI 0.9.0 目录核对，完整场景效果仍需逐项运行与看图验收。
-
-## main导出预设工作流 / main export presets
-
-新增[预设到实际JPEG交付](skills/photocraft-scenario-playbooks/references/main-export-presets.md)：真实Codex宿主同会话执行四个预设方法，映射到320×240 JPEG并核对母版不变。仅适用于支持对应方法的main候选；持久化和中文字体分别验收。
-
-The main-candidate guide maps named JPEG settings to the actual export command. Native Codex host calls, same-session editing and JPEG dimensions were checked; persistent reload and Chinese UI fonts have separate acceptance states.
-
-### 候选启动修正
-
-本候选先完成轻量MCP握手及能力发现，在首次工具或资源调用时校验/获取固定编辑器资源。修复多个编辑器首次下载阻塞宿主握手的问题。Windows通过Git安装时须启用Git长路径支持（`git config --global core.longpaths true`）；完整ZIP不包含历史验收记录，可避免Git检出长路径的问题。运行资源沿用已核验的dev.20261017.2制品，不以入口版本号冒充上游升级。
-
-### Windows 启动兼容修正
-
-规范化入口真实路径，能力清单校验统一使用 LF 换行，兼容 Windows Git CRLF 检出。
-
-### 候选启动修正
-
-本候选先完成轻量MCP握手及能力发现，在首次工具或资源调用时校验/获取固定编辑器资源。修复多个编辑器首次下载阻塞宿主握手的问题。Windows通过Git安装时须启用Git长路径支持（`git config --global core.longpaths true`）；完整ZIP不包含历史验收记录，可避免Git检出长路径的问题。运行资源沿用已核验的dev.20261017.2制品，不以入口版本号冒充上游升级。
-
-
-## 老照片修复分阶段操作候选 / Staged restoration candidate
-
-完善[老照片修复技能](skills/photocraft-restore-old-photo/SKILL.md)：独立包含具体CLI/MCP方法与参数、局部修补检查点、可选全局调色和原层核验；复用既有old-photo-conservative流程，不增加场景计数。合成损伤检查与真实照片质量、MCP业务及同画面同步分别记录，冻结基础技能版本不变。
-
-开发候选：批量交付技能新增原生CLI联系表流程，保留嵌入图片和可编辑文件名并分页。技能源提交754cc6ae272b2ec1b7385a1a004cccb9518d56a2。macOS/Windows原生CLI及Codex同画面合成样例验收通过，真实照片和其他宿主待验收。既有固定技能源锁和编辑器资源保持不变。
-
-当前可选Harness默认执行入口已对齐photocraft-harness/scripts；Node回归103项通过、16项条件跳过，默认入口拒绝无效计划的用例已补齐。
+本仓库原创内容采用 [Apache-2.0](LICENSE)。PhotoCraft CLI 与内置 Web 编辑器各自保留其上游许可证与 NOTICE；上游图标来源记录在 `assets/official-icon-source.json` 与 `assets/THIRD-PARTY-SOURCE.md`。
