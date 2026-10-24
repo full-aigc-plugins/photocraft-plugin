@@ -18,8 +18,37 @@
   "skills": "./skills/",
   "displayName": "PhotoCraft · Image Editing",
   "icon": "./assets/official-logo.png",
-  "mcpServers": "./.mcp.json",
+  "mcpServers": {
+    "photocraft-editor": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${ZCODE_PLUGIN_ROOT}/ui/bootstrap.mjs"
+      ],
+      "cwd": "${ZCODE_PROJECT_DIR}",
+      "env": {
+        "CRAFT_PANEL_METADATA_FILE": "${ZCODE_PLUGIN_ROOT}/.zcode-plugin/panel-meta.json",
+        "CRAFT_WORKSPACE_ROOT": "${ZCODE_PROJECT_DIR}"
+      }
+    }
+  },
   "displayName_i18n": {
     "en": "PhotoCraft · Image Editing"
-  }
+  },
+  "ui": {
+    "surfaces": [
+      {
+        "id": "editor",
+        "title": {
+          "en-US": "PhotoCraft · Image Editing",
+          "zh-CN": "PhotoCraft · 图片编辑"
+        },
+        "icon": "image",
+        "server": "photocraft-editor",
+        "resourceUri": "ui://photocraft/panel.html",
+        "availability": "session"
+      }
+    ]
+  },
+  "commands": "commands"
 }
