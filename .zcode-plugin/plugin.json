@@ -1,7 +1,7 @@
 {
   "name": "photocraft",
   "version": "0.1.0-dev.20261019.1",
-  "description": "Layers, masks, cutouts, retouching and filters with text and resize variants. Projects stay editable and export to PSD, PNG and other formats.",
+  "description": "图层、蒙版、抠图、修复与滤镜，支持文字与尺寸适配；工程可继续编辑，可导出 PSD、PNG 等格式。",
   "author": {
     "name": "Full AIGC Plugins",
     "url": "https://github.com/full-aigc-plugins"
@@ -16,7 +16,7 @@
     "development-release"
   ],
   "skills": "./skills/",
-  "displayName": "PhotoCraft · Image Editing",
+  "displayName": "PhotoCraft（图片编辑）",
   "icon": "./assets/official-logo.png",
   "mcpServers": {
     "photocraft-editor": {
@@ -33,15 +33,15 @@
     }
   },
   "displayName_i18n": {
-    "en": "PhotoCraft · Image Editing"
+    "zh-CN": "PhotoCraft（图片编辑）"
   },
   "ui": {
     "surfaces": [
       {
         "id": "editor",
         "title": {
-          "en-US": "PhotoCraft · Image Editing",
-          "zh-CN": "PhotoCraft · 图片编辑"
+          "en-US": "PhotoCraft (Image Editing)",
+          "zh-CN": "PhotoCraft（图片编辑）"
         },
         "icon": "image",
         "server": "photocraft-editor",

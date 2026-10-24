@@ -1,5 +1,7 @@
 ---
-description: Open PhotoCraft · Image Editing and optionally a workspace file
+description: 打开 PhotoCraft（图片编辑），可同时打开工作区文件
 ---
 
-Open PhotoCraft · Image Editing using its `open_editor` MCP tool. If `$ARGUMENTS` names a file, pass it as `path`, relative to the current workspace. Otherwise omit `path`. The panel provides interactive editing; do not claim to have edited a document merely by opening it. After the panel is ready, use this plugin's MCP tools to inspect and edit the same document. Use workspace paths for imports and saves; manual exports use the host Save As dialog. Check every tool result and saved file; do not automatically retry a timed-out edit.
+打开 PhotoCraft（图片编辑），需要时同时打开工作区文件。
+
+调用 PhotoCraft（图片编辑） 的 `open_editor` MCP 工具。若 `$ARGUMENTS` 指定文件，把工作区相对路径作为 `path` 传入；否则省略 `path`。面板提供交互式编辑；仅仅打开面板不算完成编辑。面板就绪后，通过本插件的 MCP 工具检查和修改同一份文档。导入与保存使用工作区路径；手动导出使用宿主的“另存为”。检查每次工具结果和已保存文件；不要自动重试超时的编辑。
