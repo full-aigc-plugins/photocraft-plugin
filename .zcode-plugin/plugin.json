@@ -1,7 +1,7 @@
 {
   "name": "photocraft",
   "version": "0.1.0-dev.20261019.1",
-  "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+  "description": "Layers, masks, cutouts, retouching and filters with text and resize variants. Projects stay editable and export to PSD, PNG and other formats.",
   "author": {
     "name": "Full AIGC Plugins",
     "url": "https://github.com/full-aigc-plugins"
@@ -16,7 +16,10 @@
     "development-release"
   ],
   "skills": "./skills/",
-  "displayName": "PhotoCraft Use",
+  "displayName": "PhotoCraft · Image Editing",
   "icon": "./assets/official-logo.png",
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "displayName_i18n": {
+    "en": "PhotoCraft · Image Editing"
+  }
 }

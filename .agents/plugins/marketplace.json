@@ -1,7 +1,7 @@
 {
   "name": "full-aigc-plugins-photocraft",
   "interface": {
-    "displayName": "PhotoCraft Use"
+    "displayName": "PhotoCraft · Image Editing"
   },
   "plugins": [
     {
@@ -17,10 +17,10 @@
       },
       "category": "Creativity",
       "version": "0.1.0-dev.20261019.1",
-      "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending.",
+      "description": "Layers, masks, cutouts, retouching and filters with text and resize variants. Projects stay editable and export to PSD, PNG and other formats.",
       "interface": {
-        "displayName": "PhotoCraft Use",
-        "shortDescription": "Editable creative workflows and pinned setup",
+        "displayName": "PhotoCraft · Image Editing",
+        "shortDescription": "Layers, masks, cutouts and retouching into editable image projects",
         "logo": "https://cdn.jsdelivr.net/gh/full-aigc-plugins/photocraft-plugin@v0.1.0-dev.20261018.5/assets/official-logo.png"
       },
       "icon": "https://cdn.jsdelivr.net/gh/full-aigc-plugins/photocraft-plugin@v0.1.0-dev.20261019.1/assets/official-logo.png"
