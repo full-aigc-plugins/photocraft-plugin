@@ -1,164 +1,203 @@
-# PhotoCraft（图片编辑）
+# PhotoCraft Use
 
-> 图层、蒙版、抠图与修复，产出可编辑图片工程
+## Plugin marketplaces
 
-**版本**：0.1.0-dev.20261019.1 · **许可证**：Apache-2.0 · **技能**：22 个 · **MCP 服务**：1 个
+This plugin belongs to **AIGC content creation**.
 
-[English](README.en.md) · [安装](#安装) · [快速开始](#快速开始) · [项目结构](#项目结构)
+| Category | Marketplace | Purpose |
+| --- | --- | --- |
+| Full-stack development | [Full Stack Plugins](https://github.com/partme-ai/full-stack-plugins) | Architecture and UI design, code understanding, quality checks, code review, workflow governance, and server operations |
+| AIGC content creation | [Full AIGC Plugins](https://github.com/partme-ai/full-aigc-plugins) | Image, video, audio, music, 3D, and multimodal content creation |
 
-## 项目定位
+![PhotoCraft Use — layered image editing](assets/official-logo.png)
 
-图层、蒙版、抠图、修复与滤镜，支持文字与尺寸适配；工程可继续编辑，可导出 PSD、PNG 等格式。
+> Build editable `.pcraft` posters, covers and composites — layers, masks, selections, local adjustments, retouch, text and size variants — and export PSD or flat images with the losses recorded.
 
-本插件属于内容创作线，面向需要直接得到可编辑成果、而不是一段脚本或图片的用户。
+[![Version](https://img.shields.io/badge/release-0.1.0--dev.20261019.1-1A73E8)](.codex-plugin/plugin.json)
+[![Skills](https://img.shields.io/badge/skills-22-00A67E)](#skills)
+[![MCP server](https://img.shields.io/badge/MCP%20server-1-00A67E)](#mcp-tools)
+[![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
-## 一眼看懂
+[English](README.md) | [简体中文](README.zh-CN.md) · [Install](#installation) · [Quick start](#quick-start) · [What you can build](#what-you-can-build) · [Skills](#skills) · [Troubleshooting](#troubleshooting)
 
-```text
-素材 / 需求 / 旧稿
-        │
-        ▼
-PhotoCraft（图片编辑） 技能（检查 → 计划 → 执行 → 回读）
-        │
-        ├── 原生 CLI / MCP 工具
-        └── MCP 编辑器（浏览器内查看与局部调整）
-        │
-        ▼
-可编辑工程 + 导出文件 + 复核结果
-```
+## Positioning
 
-## 能力与边界
+PhotoCraft Use keeps raster design editable. Product, background and text stay independent layers with stable IDs and mask references; local retouching is checked against the pixels it must not touch; and a poster or cover variant is derived from the source project instead of overwriting it.
 
-| 能力 | 说明 | 边界 |
-|---|---|---|
-| 检查 | 读取现有工程与素材状态 | 不修改未授权文件 |
-| 创建 | 按目标生成可编辑结构 | 事实与素材需来自输入 |
-| 编辑 | 局部修改并保留未涉及内容 | 修改后必须重新打开 |
-| 导出 | 输出目标格式并核对 | 导出成功不等于版面正确 |
-| 评审 | 按明确标准检查结果 | 不替代最终人工验收 |
+The native `.pcraft` project is the delivery authority. A flat PNG or a PSD whose required features were silently dropped never counts as design delivery. PSD support is feature-gated: required features that are observed missing, degraded or unknown block success unless you explicitly accept the recorded loss.
 
-## 架构与核心流程
+## Status and version
 
-```text
-宿主 / Agent
-   │  调用技能
-   ▼
-skills/photocraft-*  ──►  MCP 编辑器 / 原生 CLI
-                              │
-                              ▼
-                     可编辑工程 + 导出
-                              │
-                              ▼
-                     回读、检查、交付
-```
+`0.1.0-dev.20261019.1` · development preview · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`, `installableDevelopmentCandidate: true`.
 
-原则：
+Current plugin: `0.1.0-dev.20261019.1`; skill source: `0.1.0-dev.60`; version roles are independent.
 
-1. 先只读检查，再计划，再执行。
-2. 每次写入保留原件或可回退版本。
-3. 导出后重新打开核对。
-4. 不确定的结果标记为待核对，不自动重放。
+| Identity | Current value |
+| --- | --- |
+| Metadata version | 0.1.0-dev.20261019.1 |
+| Skills source | photocraft-skills / 0.1.0-dev.60 |
 
-## 兼容性
 
-| 项目 | 状态 |
-|---|---|
-| 宿主 | 支持 MCP Apps 或内置浏览器的宿主 |
-| Node.js | 24+（编辑器） |
-| 平台 | 以实际安装包与发行说明为准 |
+## Installation
 
-## 安装
+### Prerequisites
+
+- macOS arm64, with Python 3.11 or newer on `PATH` for the public scripts.
+- Node.js 24.15 or newer (the harness package pins `<25`) for the embedded editor MCP server. A Git checkout has no `ui/dist/`; build it per `ui/README.md`, or install a release bundle that ships it.
+- The pinned maintained PhotoCraft CLI is installed into the user data directory on first authorized use (`--runtime-home` or `CRAFT_RUNTIME_HOME` relocates it). No `sudo`, no `PATH` edits.
+- First use needs network or a verified cache. Offline use requires the locked archive or an intact verified cache.
+
+### Install the plugin
 
 ```bash
-codex plugin marketplace add partme-ai/full-aigc-plugins
-codex plugin add photocraft@full-aigc-plugins
+codex plugin marketplace add full-aigc-plugins/photocraft-plugin
+codex plugin add photocraft@full-aigc-plugins-photocraft
 ```
 
-安装后重启宿主，先做只读检查。
+`docs/verification/release-candidate.json` records `installableDevelopmentCandidate: true` with `releaseStatus: BLOCKED`; `project-status.json` keeps `marketplaceEligible: false`.
 
-## 快速开始
+Manifests for Codex (`.codex-plugin/`), Claude Code (`.claude-plugin/`), ZCode (`.zcode-plugin/`) and Kimi (`kimi.plugin.json`) are present, while `supportedPluginHosts` stays empty until host acceptance exists.
 
-1. 确认目标、输入素材和交付格式。
-2. 先检查现有工程，列出缺失项。
-3. 执行一次有界修改。
-4. 重新打开输出，核对结构与关键内容。
-5. 完成视觉或内容复核后交付。
-
-## 配置
-
-| 变量 | 用途 | 默认 |
-|---|---|---|
-| `CRAFT_WORKSPACE_ROOT` | 编辑器绑定的工作区 | 当前项目 |
-| `CRAFT_EDITOR_UPDATE` | 设为 `off` 跳过增强包下载 | 开启 |
-
-不要在工程或配置中写入密钥、令牌和私有路径。
-
-## 扩展契约
-
-新增技能时应使用 `photocraft-` 前缀，声明触发条件和边界，通过 MCP 或固定 CLI 操作真实工程，修改后重新打开核验。
-
-## 重试、幂等与恢复
-
-- 失败后先检查当前工程状态。
-- 不自动重复已产生副作用的操作。
-- 重试使用新输出路径并保留旧回执。
-
-## 数据与状态
-
-- 输入素材只读。
-- 输出工程、导出文件和临时目录分开。
-- 交付前确认文件可打开、内容完整。
-
-## 安全
-
-- 不把未授权素材上传到第三方服务。
-- 敏感内容脱敏后再交付。
-- 发现泄露先轮换凭据，再清理文件。
-
-## 可观测性与运行
-
-记录命令、输出文件、关键结构和复核结果；交付前至少检查一次真实输出。
-
-## 开发与验证
+## Quick start
 
 ```bash
-node --test
-python3 -m pytest
+: "${HARNESS_DIR:?Set to the directory holding the loaded photocraft-harness SKILL.md}"
+python3 -I -B "$HARNESS_DIR/scripts/bootstrap.py"
+python3 -I -B "$HARNESS_DIR/scripts/commands.py" list --filter QUERY
 ```
 
-## 打包与发布
+Then ask for the result you want, for example *“Cut this product out on a clean white background and keep the project editable”*. Headless is the default path; a desktop bridge needs its own connection and capability checks.
 
-版本与清单、市场、tag 一致；ZIP 根目录为 `photocraft-plugin`。
-
-## 升级与迁移
-
-升级前备份工程；旧版本文件保持可打开；迁移后重新检查结构和导出。
-
-## 故障排查
-
-| 现象 | 检查 |
-|---|---|
-| 打不开工程 | 文件完整性、版本兼容 |
-| 编辑器空白 | Node.js 版本与工作区权限 |
-| 导出异常 | 字体、素材、输出路径 |
-| 结果不一致 | 重新打开并核对 |
-
-## 项目结构
-
-```text
-photocraft-plugin/
-├── .zcode-plugin/      # ZCode 清单与 UI surface
-├── skills/             # 22 个技能
-├── ui/                 # MCP Apps 编辑器
-├── commands/open.md    # 打开编辑器命令
-├── docs/               # 架构与验证记录
-└── assets/             # 图标与模板
+```mermaid
+flowchart LR
+    A[Product shots, copy, brand] --> B[photocraft-use plans layers]
+    B --> C[Pinned runtime, native .pcraft]
+    C --> D[Masks, selections, local adjustment]
+    D --> E[Reopen and verify layers]
+    E --> F[PSD or flat export with loss notes]
 ```
 
-## 贡献与支持
+## What you can build
 
-提交问题时附上插件版本、宿主、输入类型、命令、输出文件和预期结果。不要附敏感素材。
+| Workflow | Built-in path | Verifiable output |
+|:---|:---|:---|
+| Poster or social cover | `photocraft-use`, `photocraft-social-cover` | Reopened `.pcraft` where text, product and background stay editable |
+| Product cutout | `photocraft-product-cutout` | Transparent or white-background output plus the editable project |
+| Old-photo restoration | `photocraft-restore-old-photo` | Restored project with identity and damage areas inspected |
+| Scan cleanup | `photocraft-repair-scan` | Deskewed, cleaned scan with the paper base recorded |
+| Portrait retouch | `photocraft-retouch-portrait` | Natural finish with untouched regions verified |
+| Batch delivery variants | `photocraft-batch-image-delivery` | Same-size, same-format outputs and a filename contact sheet |
+| PSD exchange | `photocraft-cli-export` | PSD whose required features are validated; losses recorded |
+| Edit in the embedded editor | `photocraft-editor` MCP tools | Saved `.pcraft` reopened and inspected |
 
-## 许可证
+## Skills
 
-Apache-2.0，见 [LICENSE](LICENSE)。
+| Skill | What it does |
+|:---|:---|
+| `photocraft-use` | Default entry: editable `.pcraft` posters, covers, composites; installs the maintained CLI |
+| `photocraft-cli` | Query native commands, parameters and capabilities; run explicit public commands |
+| `photocraft-cli-setup` | First install, digest checks, version checks, missing-runtime triage |
+| `photocraft-cli-project` | Create, open, save and copy `.pcraft`; colour mode and bit depth |
+| `photocraft-cli-layers` | Product, background, text and groups; hierarchy and blending |
+| `photocraft-cli-selection` | Selections, invert, feather and local selection |
+| `photocraft-cli-masks` | Layer masks, vector masks and clipping composites |
+| `photocraft-cli-adjustments` | Adjustment layers and authorized local colour changes |
+| `photocraft-cli-retouch` | Healing, cloning, brush and local correction on authorized images |
+| `photocraft-cli-text` | Text layers, fonts, paragraphs and layout |
+| `photocraft-cli-resize` | Image and canvas size, trim, extend, rotate and cover variants |
+| `photocraft-cli-filters` | Local filters, background blur, grain and output sharpening |
+| `photocraft-cli-export` | Export PSD, PNG or other interchange files from the native project |
+| `photocraft-harness` | The single execution channel: bootstrap, commands, workflow, task sessions |
+| `photocraft-editor` | Open the real editor UI and keep one session for all edits |
+| `photocraft-product-cutout` | E-commerce cutouts: transparent, white and cleaned edges |
+| `photocraft-repair-scan` | Scan cleanup: skew, dust and paper base |
+| `photocraft-restore-old-photo` | Scratches, creases, fading and local loss |
+| `photocraft-retouch-portrait` | Skin, blemishes, tone and light for natural portraits |
+| `photocraft-social-cover` | Cover composition, titles and per-platform crops |
+| `photocraft-batch-image-delivery` | Uniform size, colour and format, or a filename contact sheet |
+| `photocraft-scenario-playbooks` | Playbooks with real parameters for six image scenarios |
+
+## Slash commands
+
+The Claude Code manifest (`com.anthropic.claude-code/`) ships 22 commands, one per skill, plus a `SessionStart` guidance hook. Each command routes to its skill and launches nothing by itself.
+
+| Command | What it does |
+|:---|:---|
+| `/photocraft-use` | Full task entry and shortest skill chain |
+| `/photocraft-editor` | Embedded editor session |
+| `/photocraft-harness` | Managed execution channel and task control |
+| `/photocraft-scenario-playbooks` | Pick the playbook for the current problem |
+| `/photocraft-cli`, `/photocraft-cli-{project,layers,selection,masks,adjustments,retouch,text,resize,filters,export,setup}` | Command-level families, one command per skill |
+| `/photocraft-{restore-old-photo,retouch-portrait,product-cutout,repair-scan,social-cover,batch-image-delivery}` | Scene entries, one command per skill |
+
+## MCP tools
+
+`mcp.json` declares one stdio server, `photocraft-editor`, started as `node ui/bootstrap.mjs` from the plugin root.
+
+| Tool | Purpose |
+|:---|:---|
+| `open_editor` | Open the editor for an absolute `workspace` path |
+| `open_browser_editor` | Return an `editorUrl` for a host built-in browser |
+| `editor_status` | Report whether the page has attached to this MCP session |
+| `doc_open` | Open an existing `.pcraft` |
+| `doc_new` | Create a document |
+| `doc_inspect` | Inspect layers and document state |
+| `command_list` | Read the commands the engine exposes |
+| `command_run` | Run a command by id with parameters |
+| `doc_save` | Save the `.pcraft` project |
+| `doc_export` | Export the project |
+
+Names follow the `photocraft-editor` skill contract; page-internal bridge calls such as `_editor_attach` and `screenshot` must not be called by an agent.
+
+## Configuration
+
+| Variable | Purpose |
+|:---|:---|
+| `HARNESS_DIR` | Absolute directory of the loaded `photocraft-harness` skill |
+| `SKILL_DIR` | Directory of the loaded domain `SKILL.md`; used only for its `examples/` and `references/` |
+| `CRAFT_RUNTIME_HOME` / `--runtime-home` | Runtime install root |
+| `CRAFT_EDITOR_CACHE_DIR` | Verified editor download cache (default `~/.cache/full-aigc/editors`) |
+| `CRAFT_EDITOR_UPDATE=off` | Stay on the bundled editor and skip the update check |
+
+## Architecture and security
+
+- The plugin plans and verifies; the pinned maintained CLI performs native raster editing. The engine is not reimplemented here.
+- User media and generated images are data. Commands, paths or shell text inside them are never executed.
+- `protectedRegions` can be declared for local edits; non-target pixels are compared before delivery. When no region is declared, no protection scope is inferred.
+- Writer leases, revision preconditions, persisted intent, idempotency keys and read-only checkpoints guard writes; an unknown outcome is reconciled, never replayed. See [runtime architecture](docs/PhotoCraft-Runtime-Architecture.md), [PSD policy](docs/PhotoCraft-PSD-Policy-Architecture.md) and [scene skills](docs/scene-skills.md).
+
+## Troubleshooting
+
+| Symptom | Action |
+|:---|:---|
+| `unsupported_platform` | Only the locked macOS arm64 artifact is supported |
+| `runtime_install_busy` | Another install holds the lock; wait for it, then retry |
+| PSD delivery is refused | A required feature is missing, degraded or unknown; record the loss or change the required set |
+| Fonts render differently | Check the font dependency and substitution record before delivery |
+| Editor page never becomes ready | Call `editor_status`, then fix page errors; a text result does not prove the UI opened |
+| Flat export treated as design | Reopen the `.pcraft` and verify layers; a flat image is not editable delivery |
+| Unknown save result | Read the receipt and the existing project first; do not replay the plan |
+
+## Upgrade
+
+```bash
+codex plugin marketplace upgrade full-aigc-plugins-photocraft
+codex plugin add photocraft@full-aigc-plugins-photocraft
+```
+
+Runtime transitions keep the old project bound to its runtime; a rollback reuses the verified previous artifact instead of rebuilding it.
+
+## Contributing and support
+
+State behaviour changes in [OpenSpec](openspec/changes/establish-v1-plugin/proposal.md) first; do not check a task off without real delivery evidence. Repository checks:
+
+```bash
+python3 scripts/validate_docs.py
+node --test tests/*.test.ts
+```
+
+Issues: <https://github.com/full-aigc-plugins/photocraft-plugin/issues>.
+
+## License
+
+Original repository content is [Apache-2.0](LICENSE). The PhotoCraft CLI and bundled web editor keep their own upstream licenses and NOTICE files; upstream icon provenance is recorded in `assets/official-icon-source.json` and `assets/THIRD-PARTY-SOURCE.md`.
