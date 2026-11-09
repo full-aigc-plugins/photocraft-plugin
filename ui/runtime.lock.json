@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261109.3",
+  "version": "0.1.0-dev.20261109.4",
   "url": "https://github.com/full-aigc-plugins/photocraft-plugin/releases/download/v0.1.0-dev.20261019.1/photocraft-runtime.tgz",
   "sha256": "6028078fe6bbd31620aa60f6b123396fdf9b3dd0656626cd8ddfc841227293e3",
   "files": {

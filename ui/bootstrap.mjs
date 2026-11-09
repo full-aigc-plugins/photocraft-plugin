@@ -100,7 +100,7 @@ async function main(){
    if(!initParams)throw Error('MCP initialization required');
    if(method==='ping'){emit({id,result:{}});return;}
    if(method==='tools/list'){emit({id,result:{tools:catalog.tools}});return;}
-   if(method==='resources/list'){emit({id,result:{resources:catalog.resources||[]}});return;}
+   if(method==='resources/list'){emit({id,result:alignZcodeResponse(method,params,{resources:catalog.resources||[]},lock.name)});return;}
    if(method==='resources/templates/list'){emit({id,result:{resourceTemplates:catalog.resourceTemplates||[]}});return;}
    await engine();emit({id,result:alignZcodeResponse(method,params,await send(method,params),lock.name)});
   }catch(error){emit({id:request?.id??null,error:error.rpcError||{code:-32603,message:error.message}});}
