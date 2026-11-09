@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261109.4",
+  "version": "0.1.0-dev.20261109.5",
   "description": "图层、蒙版、抠图、修复与滤镜，支持文字和尺寸适配，工程可继续编辑并导出 PSD/PNG。",
   "author": {
     "name": "Full AIGC Plugins",
@@ -16,7 +16,7 @@
     "development-release"
   ],
   "skills": "./skills/",
-  "displayName": "PhotoCraft",
+  "displayName": "PhotoCraft（图片编辑）",
   "icon": "./assets/official-logo.png",
   "mcpServers": {
     "photocraft-editor": {
@@ -34,7 +34,7 @@
   },
   "displayName_i18n": {
     "en": "PhotoCraft",
-    "zh-CN": "PhotoCraft"
+    "zh-CN": "PhotoCraft（图片编辑）"
   },
   "ui": {
     "surfaces": [
@@ -42,7 +42,7 @@
         "id": "editor",
         "title": {
           "en-US": "PhotoCraft",
-          "zh-CN": "PhotoCraft"
+          "zh-CN": "PhotoCraft（图片编辑）"
         },
         "icon": "image",
         "server": "photocraft-editor",

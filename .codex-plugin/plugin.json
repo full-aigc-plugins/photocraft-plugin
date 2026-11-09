@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261109.4",
+  "version": "0.1.0-dev.20261109.5",
   "description": "图层、蒙版、抠图、修复与滤镜，支持文字和尺寸适配，工程可继续编辑并导出 PSD/PNG。",
   "author": {
     "name": "Full AIGC Plugins",
@@ -18,7 +18,7 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "PhotoCraft",
+    "displayName": "PhotoCraft（图片编辑）",
     "shortDescription": "图层、蒙版、抠图、修复与滤镜，支持文字和尺寸适配，工程可继续编辑并导出 PSD/PNG。",
     "longDescription": "Use independently maintained, checksummed skills to install pinned maintained CLIs and create editable native projects. Development release; complete capability and host acceptance remain in progress.",
     "developerName": "Full AIGC Plugins",
