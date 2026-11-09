@@ -7,6 +7,7 @@ import {homedir} from 'node:os';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {spawn} from 'node:child_process';
 import {createInterface} from 'node:readline';
+import {alignZcodeResponse} from './zcode-parity.mjs';
 const digest=b=>createHash('sha256').update(b).digest('hex');
 function safePath(root,name){
  if(!name||name.includes('\\')||name.includes(':')||name.includes('\0')||isAbsolute(name)||name.split('/').includes('..'))throw Error('Unsafe runtime path: '+name);
@@ -101,7 +102,7 @@ async function main(){
    if(method==='tools/list'){emit({id,result:{tools:catalog.tools}});return;}
    if(method==='resources/list'){emit({id,result:{resources:catalog.resources||[]}});return;}
    if(method==='resources/templates/list'){emit({id,result:{resourceTemplates:catalog.resourceTemplates||[]}});return;}
-   await engine();emit({id,result:await send(method,params)});
+   await engine();emit({id,result:alignZcodeResponse(method,params,await send(method,params),lock.name)});
   }catch(error){emit({id:request?.id??null,error:error.rpcError||{code:-32603,message:error.message}});}
  });
  const close=()=>{child?.kill();process.exit(0);};process.stdin.on('end',close);process.on('SIGINT',close);process.on('SIGTERM',close);
