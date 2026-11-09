@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261019.1",
+  "version": "0.1.0-dev.20261109.1",
   "description": "Layers, masks, cutouts, retouching and filters with text and resize variants. Projects stay editable and export to PSD, PNG and other formats.",
   "author": {
     "name": "Full AIGC Plugins",

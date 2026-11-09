@@ -28,13 +28,13 @@ The native `.pcraft` project is the delivery authority. A flat PNG or a PSD whos
 
 ## Status and version
 
-`0.1.0-dev.20261019.1` · development preview · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`, `installableDevelopmentCandidate: true`.
+`0.1.0-dev.20261109.1` · development preview · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`, `installableDevelopmentCandidate: true`.
 
-Current plugin: `0.1.0-dev.20261019.1`; skill source: `0.1.0-dev.60`; version roles are independent.
+Current plugin: `0.1.0-dev.20261109.1`; skill source: `0.1.0-dev.60`; version roles are independent.
 
 | Identity | Current value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.20261019.1 |
+| Metadata version | 0.1.0-dev.20261109.1 |
 | Skills source | photocraft-skills / 0.1.0-dev.60 |
 
 
