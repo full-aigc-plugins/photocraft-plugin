@@ -1,6 +1,6 @@
 {
   "name": "photocraft-plugin-harness",
-  "version": "0.1.0-dev.20261109.2",
+  "version": "0.1.0-dev.20261109.3",
   "private": true,
   "type": "module",
   "engines": {
