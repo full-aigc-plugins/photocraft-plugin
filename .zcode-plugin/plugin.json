@@ -16,10 +16,40 @@
     "development-release"
   ],
   "skills": "./skills/",
-  "displayName": "PhotoCraft · Image Editing",
+  "displayName": "PhotoCraft",
   "icon": "./assets/official-logo.png",
-  "mcpServers": "./.mcp.json",
+  "mcpServers": {
+    "photocraft-editor": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${ZCODE_PLUGIN_ROOT}/ui/bootstrap.mjs"
+      ],
+      "cwd": "${ZCODE_PROJECT_DIR}",
+      "env": {
+        "CRAFT_PANEL_METADATA_FILE": "${ZCODE_PLUGIN_ROOT}/.zcode-plugin/panel-meta.json",
+        "CRAFT_WORKSPACE_ROOT": "${ZCODE_PROJECT_DIR}"
+      }
+    }
+  },
   "displayName_i18n": {
-    "en": "PhotoCraft · Image Editing"
-  }
+    "en": "PhotoCraft",
+    "zh-CN": "PhotoCraft"
+  },
+  "ui": {
+    "surfaces": [
+      {
+        "id": "editor",
+        "title": {
+          "en-US": "PhotoCraft",
+          "zh-CN": "PhotoCraft"
+        },
+        "icon": "image",
+        "server": "photocraft-editor",
+        "resourceUri": "ui://photocraft/panel.html",
+        "availability": "session"
+      }
+    ]
+  },
+  "commands": "commands"
 }
