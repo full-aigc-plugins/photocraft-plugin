@@ -19,4 +19,5 @@ jobs:
           cache: npm
           cache-dependency-path: ui/package-lock.json
       - run: npm ci
+      - run: npm audit --audit-level=low
       - run: npm test

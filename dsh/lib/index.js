@@ -33,6 +33,18 @@ const PROVIDER = 'photocraft'
 const SOURCE = 'agent-plugin:photocraft'
 const RANK = 600 // BUNDLED_SKILL_RANK from @deepseek-ai/dsh-skill
 const SKILL_NAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+const DSH_SKILL = {
+  name: `${PROVIDER}-dsh`,
+  description: 'Open this plugin editor in the DeepSeek Harness right Sidebar Browser and keep the MCP session attached before running editor tools.',
+  whenToUse: 'When this plugin runs inside DeepSeek Harness and the editor tools report that no editor is attached.',
+  invocation: { modelInvocable: true, userInvocable: true },
+  provider: PROVIDER,
+  source: `${SOURCE}:dsh`,
+  rank: RANK,
+  command: false,
+  synthetic: true,
+}
+
 
 /* --------------------------------------------------------- frontmatter ---- */
 
@@ -216,6 +228,7 @@ const provider = {
   async list() {
     const ctx = provider.ctx || {}
     const [skills, commands] = await Promise.all([listSkills(ctx), listCommands()])
+    skills.push(DSH_SKILL)
     const taken = new Set(skills.map((skill) => skill.name))
     for (const command of commands) {
       let name = command.name
@@ -228,6 +241,27 @@ const provider = {
   },
 
   async get(candidate) {
+    if (candidate.synthetic === true) {
+      return {
+        name: DSH_SKILL.name,
+        description: DSH_SKILL.description,
+        whenToUse: DSH_SKILL.whenToUse,
+        invocation: DSH_SKILL.invocation,
+        provider: PROVIDER,
+        source: DSH_SKILL.source,
+        resourceBase: { kind: 'directory', path: REPO_ROOT },
+        content: [
+          '# DeepSeek Harness: open the editor in the right Sidebar Browser',
+          '',
+          '1. Call `open_browser_editor` (or `open_editor`) and keep the returned `editorUrl`; never guess a port.',
+          '2. Present that URL to the user as a Markdown link. DeepSeek Harness opens chat links in the right Sidebar Browser by default; if the panel stays closed, ask the user to click the link.',
+          '3. Poll `editor_status` until `attached` is true (usually within 20 seconds after the page loads).',
+          '4. Only then run the editor tools. Do not launch an external browser for DeepSeek Harness.',
+          '5. If the user closes the panel, call `open_browser_editor` again instead of reusing a stale URL.',
+          '',
+        ].join('\n'),
+      }
+    }
     if (candidate.command === true) {
       const definition = JSON.parse(await readFile(candidate.path, 'utf8'))
       return {
