@@ -28,13 +28,13 @@ PhotoCraft Use 让位图设计保持可编辑。产品、背景与文字是有�
 
 ## 状态与版本
 
-`0.1.0-dev.20261109.4` · 开发预览 · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`、`installableDevelopmentCandidate: true`。
+`0.1.0-dev.20261109.5` · 开发预览 · `docs/verification/release-candidate.json` → `releaseStatus: BLOCKED`、`installableDevelopmentCandidate: true`。
 
-当前插件：`0.1.0-dev.20261109.4`；技能源：`0.1.0-dev.60`；插件与技能保持独立版本。
+当前插件：`0.1.0-dev.20261109.5`；技能源：`0.1.0-dev.60`；插件与技能保持独立版本。
 
 | Identity | Current value |
 | --- | --- |
-| Metadata version | 0.1.0-dev.20261109.4 |
+| Metadata version | 0.1.0-dev.20261109.5 |
 | Skills source | photocraft-skills / 0.1.0-dev.60 |
 
 
