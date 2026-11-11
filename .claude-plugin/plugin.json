@@ -1,6 +1,6 @@
 {
   "name": "photocraft",
-  "version": "0.1.0-dev.20261109.5",
+  "version": "0.1.0-dev.20261111.1",
   "description": "图层、蒙版、抠图、修复与滤镜，支持文字和尺寸适配，工程可继续编辑并导出 PSD/PNG。",
   "author": {
     "name": "Full AIGC Plugins",
