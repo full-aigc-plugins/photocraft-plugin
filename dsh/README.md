@@ -17,7 +17,7 @@ dsh plugin --profile desktop add https://github.com/full-aigc-plugins/photocraft
 For local development, link this directory instead:
 
 ```sh
-dsh plugin --profile desktop add link:./dsh
+dsh plugin --profile desktop add link:/path/to/photocraft-plugin
 ```
 
 The marketplace repository (`full-aigc-plugins`) stores catalog metadata only and
