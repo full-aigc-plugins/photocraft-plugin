@@ -1,6 +1,6 @@
 {
   "name": "photocraft-plugin-harness",
-  "version": "0.1.0-dev.20261109.5",
+  "version": "0.1.0-dev.20261111.1",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,9 +12,10 @@
   },
   "dsh": {
     "bundle": {
-      "patch": "./cordis.patch.yml"
+      "patch": "./dsh/cordis.patch.yml"
     }
   },
   "main": "./dsh/lib/index.js",
-  "icon": "./dsh/icon.png"
+  "icon": "./dsh/icon.png",
+  "description": "PhotoCraft creative workflows with pinned first-use installation and independent skill snapshots; development release, full domain and host acceptance pending."
 }
